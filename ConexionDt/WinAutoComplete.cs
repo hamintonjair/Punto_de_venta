@@ -13,7 +13,6 @@ namespace Punto_de_venta.ConexionDt
     {
         public static DataTable LoadDataTable()
         {
-
             DataTable dt = new DataTable();
             SqlDataAdapter da;
             SqlConnection con = new SqlConnection();
@@ -24,9 +23,7 @@ namespace Punto_de_venta.ConexionDt
 
             da.Fill(dt);
 
-
             return dt;
-
         }
 
         public static AutoCompleteStringCollection LoadAutoComplete()
@@ -39,7 +36,6 @@ namespace Punto_de_venta.ConexionDt
             {
                 stringCol.Add(Convert.ToString(row["Descripcion"]));
             }
-
             return stringCol;
         }
     }

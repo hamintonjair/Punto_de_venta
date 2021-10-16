@@ -16,7 +16,7 @@ namespace Punto_de_venta
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Panel_de_Administracion_del_Software.Conexion_Manual());
+            Application.Run(new Modulos.LOGIN());
         }
     }
 }

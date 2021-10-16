@@ -74,7 +74,7 @@ namespace Punto_de_venta.Modulos
                 p1.Controls.Add(I1);
                 b.BringToFront();
                 flowLayoutPanel1.Controls.Add(p1);
-                //funcion para que lleve al usuario a la opcion al darle clic
+                //funcion para que lleve al usuario a la opcion al darle clic                
                 b.Click += new EventHandler(mieventoLabel);
                 I1.Click += new EventHandler(mieventoImage);
             }
@@ -123,6 +123,7 @@ namespace Punto_de_venta.Modulos
         private void LOGIN_Load(object sender, EventArgs e)
         {
             DibujarUsuario();
+            panel3.Visible = true;
             panel2.Visible = false;
             timer1.Start();
             PictureBox2.Location = new Point((Width - PictureBox2.Width) / 2, (Height - PictureBox2.Height) / 2);

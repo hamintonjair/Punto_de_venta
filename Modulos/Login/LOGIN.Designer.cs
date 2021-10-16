@@ -312,7 +312,7 @@ namespace Punto_de_venta.Modulos
             this.panel5.Controls.Add(this.label7);
             this.panel5.Location = new System.Drawing.Point(14, 15);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(54, 32);
+            this.panel5.Size = new System.Drawing.Size(54, 54);
             this.panel5.TabIndex = 628;
             // 
             // dataGridView1
@@ -402,6 +402,7 @@ namespace Punto_de_venta.Modulos
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(401, 69);
             this.panel3.TabIndex = 6;
+            this.panel3.Visible = false;
             // 
             // MenuStrip15
             // 
@@ -472,7 +473,7 @@ namespace Punto_de_venta.Modulos
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
@@ -486,7 +487,7 @@ namespace Punto_de_venta.Modulos
             this.lblestadolicencia.AutoSize = true;
             this.lblestadolicencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblestadolicencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblestadolicencia.Location = new System.Drawing.Point(46, 637);
+            this.lblestadolicencia.Location = new System.Drawing.Point(46, 628);
             this.lblestadolicencia.Name = "lblestadolicencia";
             this.lblestadolicencia.Size = new System.Drawing.Size(60, 17);
             this.lblestadolicencia.TabIndex = 8;
@@ -495,7 +496,7 @@ namespace Punto_de_venta.Modulos
             // pboxLicencia
             // 
             this.pboxLicencia.Image = ((System.Drawing.Image)(resources.GetObject("pboxLicencia.Image")));
-            this.pboxLicencia.Location = new System.Drawing.Point(25, 639);
+            this.pboxLicencia.Location = new System.Drawing.Point(25, 630);
             this.pboxLicencia.Name = "pboxLicencia";
             this.pboxLicencia.Size = new System.Drawing.Size(15, 15);
             this.pboxLicencia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -747,7 +748,7 @@ namespace Punto_de_venta.Modulos
             // 
             this.richTextBox1.Location = new System.Drawing.Point(94, 137);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(20, 28);
+            this.richTextBox1.Size = new System.Drawing.Size(26, 21);
             this.richTextBox1.TabIndex = 617;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             this.richTextBox1.Visible = false;
@@ -756,6 +757,7 @@ namespace Punto_de_venta.Modulos
             // 
             this.panel9.Controls.Add(this.PanelRestaurarCuenta);
             this.panel9.Controls.Add(this.lblEstado_de_envio);
+            this.panel9.Controls.Add(this.dataListado);
             this.panel9.Location = new System.Drawing.Point(149, 132);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(81, 56);
@@ -807,7 +809,7 @@ namespace Punto_de_venta.Modulos
             this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eli});
             this.dataListado.EnableHeadersVisualStyles = false;
-            this.dataListado.Location = new System.Drawing.Point(116, 194);
+            this.dataListado.Location = new System.Drawing.Point(-92, -27);
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
             this.dataListado.RowHeadersVisible = false;
@@ -831,11 +833,11 @@ namespace Punto_de_venta.Modulos
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 127);
+            this.label1.Location = new System.Drawing.Point(12, 116);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 20);
+            this.label1.Size = new System.Drawing.Size(156, 40);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Sistema contable";
+            this.label1.Text = "Sistema Contable \r\nJojama";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridViewImageColumn1
@@ -847,7 +849,7 @@ namespace Punto_de_venta.Modulos
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(148, 112);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -858,7 +860,6 @@ namespace Punto_de_venta.Modulos
             // 
             this.panel6.Controls.Add(this.datalistado_movimiento_validar);
             this.panel6.Controls.Add(this.datalistado_caja);
-            this.panel6.Controls.Add(this.dataListado);
             this.panel6.Controls.Add(this.progressBar2);
             this.panel6.Controls.Add(this.lblSerialPc);
             this.panel6.Controls.Add(this.datalistado_detalle_cierre_de_caja);
@@ -877,9 +878,9 @@ namespace Punto_de_venta.Modulos
             this.panel6.Controls.Add(this.lblRol);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.lblresultadocontraseña);
-            this.panel6.Location = new System.Drawing.Point(192, 29);
+            this.panel6.Location = new System.Drawing.Point(150, 15);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(36, 22);
+            this.panel6.Size = new System.Drawing.Size(43, 10);
             this.panel6.TabIndex = 5;
             // 
             // datalistado_movimiento_validar
@@ -894,7 +895,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_movimiento_validar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn5});
             this.datalistado_movimiento_validar.EnableHeadersVisualStyles = false;
-            this.datalistado_movimiento_validar.Location = new System.Drawing.Point(19, 98);
+            this.datalistado_movimiento_validar.Location = new System.Drawing.Point(106, 130);
             this.datalistado_movimiento_validar.Name = "datalistado_movimiento_validar";
             this.datalistado_movimiento_validar.ReadOnly = true;
             this.datalistado_movimiento_validar.RowHeadersVisible = false;
@@ -948,14 +949,14 @@ namespace Punto_de_venta.Modulos
             // 
             // progressBar2
             // 
-            this.progressBar2.Location = new System.Drawing.Point(57, 57);
+            this.progressBar2.Location = new System.Drawing.Point(224, 22);
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(85, 23);
             this.progressBar2.TabIndex = 628;
             // 
             // lblSerialPc
             // 
-            this.lblSerialPc.Location = new System.Drawing.Point(25, 255);
+            this.lblSerialPc.Location = new System.Drawing.Point(134, 221);
             this.lblSerialPc.Name = "lblSerialPc";
             this.lblSerialPc.Size = new System.Drawing.Size(108, 20);
             this.lblSerialPc.TabIndex = 619;
@@ -1060,7 +1061,7 @@ namespace Punto_de_venta.Modulos
             // 
             this.txtidcaja.AutoSize = true;
             this.txtidcaja.BackColor = System.Drawing.Color.White;
-            this.txtidcaja.Location = new System.Drawing.Point(22, 119);
+            this.txtidcaja.Location = new System.Drawing.Point(22, 166);
             this.txtidcaja.Name = "txtidcaja";
             this.txtidcaja.Size = new System.Drawing.Size(46, 13);
             this.txtidcaja.TabIndex = 618;
@@ -1132,7 +1133,7 @@ namespace Punto_de_venta.Modulos
             // 
             this.PictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
-            this.PictureBox2.Location = new System.Drawing.Point(150, 43);
+            this.PictureBox2.Location = new System.Drawing.Point(7, 168);
             this.PictureBox2.Name = "PictureBox2";
             this.PictureBox2.Size = new System.Drawing.Size(433, 707);
             this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1148,15 +1149,15 @@ namespace Punto_de_venta.Modulos
             this.ClientSize = new System.Drawing.Size(1188, 701);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.PictureBox2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LOGIN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sistema contable";
+            this.Text = "Jojama";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.LOGIN_Load);
             this.panel1.ResumeLayout(false);

@@ -16,16 +16,28 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Caja.Cierre_de_Caja frm = new Caja.Cierre_de_Caja();
-            frm.ShowDialog();
-        }
+             
 
         private void iToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Ventas_Menu_Princi_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Productos.Productoss frm = new Productos.Productoss();
+            frm.ShowDialog();
+        }
+
+        private void BtnCerrar_turno_Click(object sender, EventArgs e)
+        {
+            Caja.Cierre_de_Caja frm = new Caja.Cierre_de_Caja();
+            frm.ShowDialog();
         }
     }
 }

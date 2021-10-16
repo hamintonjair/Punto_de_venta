@@ -93,5 +93,10 @@ namespace Punto_de_venta.Panel_de_Administracion_del_Software
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
