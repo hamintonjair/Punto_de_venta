@@ -81,9 +81,9 @@ namespace Punto_de_venta.Modulos
             this.panel9 = new System.Windows.Forms.Panel();
             this.PanelRestaurarCuenta = new System.Windows.Forms.Label();
             this.lblEstado_de_envio = new System.Windows.Forms.Label();
-            this.txtcontador = new System.Windows.Forms.Label();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.Eli = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtcontador = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -306,6 +306,7 @@ namespace Punto_de_venta.Modulos
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.IDUSUARIO);
             this.panel5.Controls.Add(this.dataGridView1);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label6);
@@ -787,16 +788,6 @@ namespace Punto_de_venta.Modulos
             this.lblEstado_de_envio.TabIndex = 602;
             this.lblEstado_de_envio.Text = "Correo electronico:";
             // 
-            // txtcontador
-            // 
-            this.txtcontador.AutoSize = true;
-            this.txtcontador.ForeColor = System.Drawing.Color.White;
-            this.txtcontador.Location = new System.Drawing.Point(11, 77);
-            this.txtcontador.Name = "txtcontador";
-            this.txtcontador.Size = new System.Drawing.Size(35, 13);
-            this.txtcontador.TabIndex = 616;
-            this.txtcontador.Text = "label1";
-            // 
             // dataListado
             // 
             this.dataListado.AllowUserToAddRows = false;
@@ -827,6 +818,16 @@ namespace Punto_de_venta.Modulos
             this.Eli.Image = ((System.Drawing.Image)(resources.GetObject("Eli.Image")));
             this.Eli.Name = "Eli";
             this.Eli.ReadOnly = true;
+            // 
+            // txtcontador
+            // 
+            this.txtcontador.AutoSize = true;
+            this.txtcontador.ForeColor = System.Drawing.Color.White;
+            this.txtcontador.Location = new System.Drawing.Point(11, 77);
+            this.txtcontador.Name = "txtcontador";
+            this.txtcontador.Size = new System.Drawing.Size(35, 13);
+            this.txtcontador.TabIndex = 616;
+            this.txtcontador.Text = "label1";
             // 
             // label1
             // 
@@ -868,7 +869,6 @@ namespace Punto_de_venta.Modulos
             this.panel6.Controls.Add(this.lblnombredeCajero);
             this.panel6.Controls.Add(this.lblusuario_queinicioCaja);
             this.panel6.Controls.Add(this.panel5);
-            this.panel6.Controls.Add(this.IDUSUARIO);
             this.panel6.Controls.Add(this.richTextBox1);
             this.panel6.Controls.Add(this.panel9);
             this.panel6.Controls.Add(this.lblcaja);
@@ -878,9 +878,9 @@ namespace Punto_de_venta.Modulos
             this.panel6.Controls.Add(this.lblRol);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.lblresultadocontraseña);
-            this.panel6.Location = new System.Drawing.Point(150, 15);
+            this.panel6.Location = new System.Drawing.Point(193, 24);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(43, 10);
+            this.panel6.Size = new System.Drawing.Size(36, 16);
             this.panel6.TabIndex = 5;
             // 
             // datalistado_movimiento_validar
@@ -895,7 +895,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_movimiento_validar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn5});
             this.datalistado_movimiento_validar.EnableHeadersVisualStyles = false;
-            this.datalistado_movimiento_validar.Location = new System.Drawing.Point(106, 130);
+            this.datalistado_movimiento_validar.Location = new System.Drawing.Point(207, 84);
             this.datalistado_movimiento_validar.Name = "datalistado_movimiento_validar";
             this.datalistado_movimiento_validar.ReadOnly = true;
             this.datalistado_movimiento_validar.RowHeadersVisible = false;
@@ -1041,7 +1041,7 @@ namespace Punto_de_venta.Modulos
             this.IDUSUARIO.AutoSize = true;
             this.IDUSUARIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDUSUARIO.ForeColor = System.Drawing.Color.White;
-            this.IDUSUARIO.Location = new System.Drawing.Point(20, 233);
+            this.IDUSUARIO.Location = new System.Drawing.Point(3, 16);
             this.IDUSUARIO.Name = "IDUSUARIO";
             this.IDUSUARIO.Size = new System.Drawing.Size(100, 26);
             this.IDUSUARIO.TabIndex = 622;
@@ -1147,11 +1147,11 @@ namespace Punto_de_venta.Modulos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1188, 701);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.PictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -32,7 +32,7 @@ namespace Punto_de_venta.Modulos
             con.ConnectionString = ConexionDt.ConexionData.conexion;
             con.Open();
             SqlCommand cmd = new SqlCommand();
-            cmd = new SqlCommand("select * from Usuario where Estado = 'ACTIVO'", con);
+            cmd = new SqlCommand("select * from USUARIO2 where Estado = 'ACTIVO'", con);
             SqlDataReader rdr = cmd.ExecuteReader();
             while (rdr.Read())
             {
@@ -85,7 +85,7 @@ namespace Punto_de_venta.Modulos
             SqlConnection con = new SqlConnection();
             con.ConnectionString = ConexionDt.ConexionData.conexion;
 
-            SqlCommand com = new SqlCommand(" mostrar_permisos_por_usuario_Rol_Unico", con);
+            SqlCommand com = new SqlCommand(" mostrar_permisos_por_usuario_ROL_UNICO", con);
             com.CommandType = CommandType.StoredProcedure;
             com.Parameters.AddWithValue("@LOGIN", txtlogin.Text);
             string importe;
@@ -140,7 +140,7 @@ namespace Punto_de_venta.Modulos
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = ConexionDt.ConexionData.conexion;
                 con.Open();
-                da = new SqlDataAdapter("mostrar_movimientos_de_Caja_por_Serial", con);
+                da = new SqlDataAdapter("MOSTRAR_MOVIMIENTOS_DE_CAJA_POR_SERIAL", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@serial", lblSerialPc.Text);
                 da.Fill(dt);
@@ -181,12 +181,12 @@ namespace Punto_de_venta.Modulos
                 cmd.Parameters.AddWithValue("@egresos", "0.00");
                 cmd.Parameters.AddWithValue("@saldo", "0.00");
                 cmd.Parameters.AddWithValue("@idusuario", IDUSUARIO.Text);
-                cmd.Parameters.AddWithValue("@totalcalculado", "0.00");
+                cmd.Parameters.AddWithValue("@totalcaluclado", "0.00");
                 cmd.Parameters.AddWithValue("@totalreal", "0.00");
 
                 cmd.Parameters.AddWithValue("@estado", "CAJA APERTURADA");
                 cmd.Parameters.AddWithValue("@diferencia", "0.00");
-                cmd.Parameters.AddWithValue("@idcaja", txtidcaja.Text);
+                cmd.Parameters.AddWithValue("@id_caja", txtidcaja.Text);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -206,6 +206,7 @@ namespace Punto_de_venta.Modulos
             {
                 IDUSUARIO.Text = dataListado.SelectedCells[1].Value.ToString();
                 txtnombre.Text = dataListado.SelectedCells[2].Value.ToString();
+                idusuariovariable = IDUSUARIO.Text;
             }
             catch
             {
@@ -287,7 +288,7 @@ namespace Punto_de_venta.Modulos
                 con.ConnectionString = ConexionDt.ConexionData.conexion;
                 con.Open();
 
-                da = new SqlDataAdapter("mostrar_movimientos_de_Caja_por_Serial_y_usuario", con);
+                da = new SqlDataAdapter("MOSTRAR_MOVIMIENTOS_DE_CAJA_POR_SERIAL_y_usuario", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@serial", lblSerialPc.Text);
                 da.SelectCommand.Parameters.AddWithValue("@idusuario", IDUSUARIO.Text);
@@ -351,7 +352,7 @@ namespace Punto_de_venta.Modulos
                 con.ConnectionString = ConexionDt.ConexionData.conexion;
                 con.Open();
 
-                da = new SqlDataAdapter("select Correo from usuario where Estado='ACTIVO'", con);
+                da = new SqlDataAdapter("select Correo from USUARIO2 where Estado='ACTIVO'", con);
               
                 da.Fill(dt);
                 txtcorreo.DisplayMember = "Correo";
@@ -385,7 +386,7 @@ namespace Punto_de_venta.Modulos
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = ConexionDt.ConexionData.conexion;         
 
-                SqlCommand da = new SqlCommand("buscar_usuario_por_correo", con);
+                SqlCommand da = new SqlCommand("buscar_USUARIO_por_correo", con);
                 da.CommandType = CommandType.StoredProcedure;
                 da.Parameters.AddWithValue("@correo", txtcorreo.Text);
                 con.Open();
@@ -485,6 +486,7 @@ namespace Punto_de_venta.Modulos
                     {
                         txtidcaja.Text = datalistado_caja.SelectedCells[1].Value.ToString();
                         lblcaja.Text = datalistado_caja.SelectedCells[2].Value.ToString();
+                        idcajavariable = txtidcaja.Text;
                     }
                     catch (Exception ex)
                     {

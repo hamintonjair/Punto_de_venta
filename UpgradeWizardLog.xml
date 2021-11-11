@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_UpgradeWizard_Files\UpgradeWizardLog.xslt"?>
+<log>
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Punto_de_venta.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\App.config" />
+  <event action="Analyze" type="Success" name="Apertura_de_Caja.resx" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Modulos\Caja\Apertura_de_Caja.resx" />
+  <event action="Analyze" type="Success" name="Cierre_de_Caja.resx" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Modulos\Caja\Cierre_de_Caja.resx" />
+  <event action="Analyze" type="Success" name="Inventarios_Menu.resx" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Modulos\Inventarioss_Kardex\Inventarios_Menu.resx" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Modulos\Login\HTMLPage1.html" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Modulos\Login\HTMLPage1.html" />
+  <event action="Analyze" type="Success" name="HTMLPage1.html" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Modulos\Login\HTMLPage1.html" />
+  <event action="Analyze" type="Success" name="LOGIN.resx" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Modulos\Login\LOGIN.resx" />
+  <event action="Analyze" type="Success" name="Productoss.resx" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Modulos\Productos\Productoss.resx" />
+  <event action="Analyze" type="Success" name="usuarios.resx" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Modulos\Usuarios_y_Permisos\usuarios.resx" />
+  <event action="Analyze" type="Success" name="Ventas_Menu_Princi.resx" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Modulos\Ventas_Menu_Principal\Ventas_Menu_Princi.resx" />
+  <event action="Analyze" type="Success" name="Conexion_Manual.resx" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Panel_de_Administracion_del_Software\Conexion_Manual.resx" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Properties\Resources.resx" />
+  <event action="Analyze" type="Success" name="Punto_de_venta" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Punto_de_venta.csproj" />
+  <event action="Analyze" type="Success" name="Punto_de_venta" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Punto_de_venta.sln" />
+  <event action="Backup" type="Success" name="Punto_de_venta" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Punto_de_venta.csproj" />
+  <event action="Upgrade" type="Success" name="Assembly References" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Punto_de_venta.csproj" />
+  <event action="Upgrade" type="Success" name="Punto_de_venta" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Punto_de_venta.csproj" />
+  <event action="Upgrade" type="Success" name="Punto_de_venta" path="C:\Users\PC2\source\repos\hamintonjair\Punto_de_venta\Punto_de_venta.sln" />
+</log>

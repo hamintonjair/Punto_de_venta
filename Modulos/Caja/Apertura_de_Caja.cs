@@ -33,7 +33,7 @@ namespace Punto_de_venta.Modulos.Caja
                 SqlCommand cmd = new SqlCommand();
                 cmd = new SqlCommand("editar_dinero_caja_inicial", con);
                 cmd.CommandType = CommandType.StoredProcedure;         
-                cmd.Parameters.AddWithValue("@id_caja",lbltidcaja.Text);
+                cmd.Parameters.AddWithValue("@Id_caja", lbltidcaja.Text);
                 cmd.Parameters.AddWithValue("@saldo", txtMonto.Text);
                 cmd.ExecuteNonQuery();
      

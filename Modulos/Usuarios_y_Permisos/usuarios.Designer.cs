@@ -643,7 +643,7 @@ namespace Punto_de_venta
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Punto_de_venta.Properties.Resources.add_insert_new_17850;
+            //this.pictureBox1.Image = global::Punto_de_venta.Properties.Resources.add_insert_new_17850;
             this.pictureBox1.Location = new System.Drawing.Point(-33, 136);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(263, 219);
@@ -654,7 +654,7 @@ namespace Punto_de_venta
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.Image = global::Punto_de_venta.Properties.Resources.searchmagnifierinterfacesymbol1_79893;
+            //this.toolStripMenuItem1.Image = global::Punto_de_venta.Properties.Resources.searchmagnifierinterfacesymbol1_79893;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(28, 20);
             // 
@@ -760,6 +760,11 @@ namespace Punto_de_venta
         private System.Windows.Forms.OpenFileDialog dlg;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+    }
+
+    internal class Properties
+    {
+        internal static object Resources;
     }
 }
 

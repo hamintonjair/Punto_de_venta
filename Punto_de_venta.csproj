@@ -6,12 +6,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D2937657-3CC5-48C7-9D0B-AF4B22CAA89D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Punto_de_venta</RootNamespace>
-    <AssemblyName>Punto_de_venta</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>Telerink_complemento_CS</RootNamespace>
+    <AssemblyName>Telerink_complemento_CS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +33,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,7 +49,9 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
-    <Reference Include="Telerik.ReportViewer.WinForms, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.ReportViewer.WinForms, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionDt\ConecionData.cs" />
@@ -65,6 +69,12 @@
     </Compile>
     <Compile Include="Modulos\Caja\Cierre_de_Caja.Designer.cs">
       <DependentUpon>Cierre_de_Caja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Inventarioss_Kardex\Inventarios_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Inventarioss_Kardex\Inventarios_Menu.Designer.cs">
+      <DependentUpon>Inventarios_Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Login\LOGIN.cs">
       <SubType>Form</SubType>
@@ -105,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Caja\Cierre_de_Caja.resx">
       <DependentUpon>Cierre_de_Caja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Inventarioss_Kardex\Inventarios_Menu.resx">
+      <DependentUpon>Inventarios_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Login\LOGIN.resx">
       <DependentUpon>LOGIN.cs</DependentUpon>
@@ -153,6 +166,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Modulos\Login\HTMLPage1.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modulos\Productos\Reportes_de_kardex_listo\Reportes_de_inventarios_todos\" />
+    <Folder Include="Modulos\Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

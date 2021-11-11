@@ -47,7 +47,7 @@ namespace Punto_de_venta.Modulos.Productos
             BtnCancelar.Visible = false;
             btnNuevoGrupo.Visible = true;
             mostrar_grupos();
-
+             
             txtapartirde.Text = "0";
             txtstock2.ReadOnly = false;
             Panel25.Enabled = true;
@@ -71,14 +71,11 @@ namespace Punto_de_venta.Modulos.Productos
             btnagregaryguardar.Visible = true;
             btnagregar.Visible = false;
 
-
             txtdescripcion.Text = "";
             PANELINVENTARIO.Visible = true;
 
-
             TGUARDAR.Visible = true;
             TGUARDARCAMBIOS.Visible = false;
-
         }
         internal void LIMPIAR()
         {
@@ -103,7 +100,6 @@ namespace Punto_de_venta.Modulos.Productos
             System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyGroupSeparator = ",";
             System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator = ".";
             System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberGroupSeparator = ",";
-
            
             PANELDEPARTAMENTO.Visible = false;
             txtbusca.Text = "Buscar...";
@@ -132,14 +128,13 @@ namespace Punto_de_venta.Modulos.Productos
                 datalistadoGrupos.DataSource = dt;
                 datalistadoGrupos.Columns[2].Visible = false;
                 datalistadoGrupos.Columns[3].Width = 500;
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
-           //ConexionDt.Tamaño_automatico_de_datatables.Multilinea(ref datalistado);
+           ConexionDt.Tamaño_automatico_de_datatables.Multilinea2(ref datalistado);
         }
                            
         private void GENERAR_CODIGO_DE_BARRAS_AUTOMATICO()
@@ -167,7 +162,6 @@ namespace Punto_de_venta.Modulos.Productos
             Palabra = Cadena.Split(Convert.ToChar(espacio));
             try
             {
-
                 txtcodigodebarras.Text = resultado + Palabra[0].Substring(0, 2) + 369;
             }
             catch (Exception ex)
@@ -216,8 +210,6 @@ namespace Punto_de_venta.Modulos.Productos
                     {
                         cmd.Parameters.AddWithValue("@Fecha_de_vencimiento", txtfechaoka.Text);
                     }
-
-
                 }
                 if (PANELINVENTARIO.Visible == false)
                 {
@@ -225,18 +217,16 @@ namespace Punto_de_venta.Modulos.Productos
                     cmd.Parameters.AddWithValue("@Stock_minimo", 0);
                     cmd.Parameters.AddWithValue("@Fecha_de_vencimiento", "NO APLICA");
                     cmd.Parameters.AddWithValue("@Stock", "Ilimitado");
-
                 }
                 cmd.Parameters.AddWithValue("@Fecha", DateTime.Today);
                 cmd.Parameters.AddWithValue("@Motivo", "Registro inicial de Producto");
                 cmd.Parameters.AddWithValue("@Cantidad ", txtstock2.Text);
-                cmd.Parameters.AddWithValue("@Id_usuario", idusuario);
+                cmd.Parameters.AddWithValue("@Id_usuario", Modulos.LOGIN.idusuariovariable);
                 cmd.Parameters.AddWithValue("@Tipo", "ENTRADA");
                 cmd.Parameters.AddWithValue("@Estado", "CONFIRMADO");
-                cmd.Parameters.AddWithValue("@Id_caja", idcaja);
+                cmd.Parameters.AddWithValue("@Id_caja", Modulos.LOGIN.idcajavariable);               
 
                 cmd.ExecuteNonQuery();
-
                
                 con.Close();
                 PANELDEPARTAMENTO.Visible = false;
@@ -296,7 +286,6 @@ namespace Punto_de_venta.Modulos.Productos
                         cmd.Parameters.AddWithValue("@Fecha_de_vencimiento", txtfechaoka.Text);
                     }
 
-
                 }
                 if (PANELINVENTARIO.Visible == false)
                 {
@@ -304,11 +293,9 @@ namespace Punto_de_venta.Modulos.Productos
                     cmd.Parameters.AddWithValue("@Stock_minimo", 0);
                     cmd.Parameters.AddWithValue("@Fecha_de_vencimiento", "NO APLICA");
                     cmd.Parameters.AddWithValue("@Stock", "Ilimitado");
-
                 }
 
                 cmd.ExecuteNonQuery();
-
 
                 con.Close();
                 PANELDEPARTAMENTO.Visible = false;
@@ -348,10 +335,9 @@ namespace Punto_de_venta.Modulos.Productos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
             }
 
-            ConexionDt.Tamaño_automatico_de_datatables.Multilinea(ref datalistado);
+            ConexionDt.Tamaño_automatico_de_datatables.Multilinea2(ref datalistado);
             sumar_costo_de_inventario_CONTAR_PRODUCTOS();
         }
         private void contar()
@@ -360,7 +346,6 @@ namespace Punto_de_venta.Modulos.Productos
 
             x = DATALISTADO_PRODUCTOS_OKA.Rows.Count;
             txtcontador = (x);
-
         }
        
         internal void sumar_costo_de_inventario_CONTAR_PRODUCTOS()
@@ -459,12 +444,8 @@ namespace Punto_de_venta.Modulos.Productos
             {
                 MessageBox.Show(ex.Message);
             }
-        }         
-
-        private void btnGenerarCodigo_Click(object sender, EventArgs e)
-        {
-            GENERAR_CODIGO_DE_BARRAS_AUTOMATICO();
-        }
+        }        
+               
         internal void proceso_para_obtener_datos_de_productos()
         {
             try
@@ -892,7 +873,6 @@ namespace Punto_de_venta.Modulos.Productos
 
             }
         }
-
         private void btnGuardar_grupo_Click_1(object sender, EventArgs e)
         {
             try
@@ -954,7 +934,7 @@ namespace Punto_de_venta.Modulos.Productos
             datalistado.Visible = true;
             panelizquierdo.Visible = true;
             panederecho.Visible = true;
-        }
+                  }
 
         private void CheckInventarios_CheckedChanged_1(object sender, EventArgs e)
         {
@@ -1100,6 +1080,11 @@ namespace Punto_de_venta.Modulos.Productos
             {
 
             }
+        }
+
+        private void btnGenerarCodigo_Click_1(object sender, EventArgs e)
+        {
+            GENERAR_CODIGO_DE_BARRAS_AUTOMATICO();
         }
     }
 }
