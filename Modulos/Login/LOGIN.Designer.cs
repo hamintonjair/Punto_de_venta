@@ -46,6 +46,7 @@ namespace Punto_de_venta.Modulos
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.IDUSUARIO = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.label5 = new System.Windows.Forms.Label();
@@ -100,7 +101,6 @@ namespace Punto_de_venta.Modulos
             this.lblApertura_De_caja = new System.Windows.Forms.Label();
             this.lblnombredeCajero = new System.Windows.Forms.Label();
             this.lblusuario_queinicioCaja = new System.Windows.Forms.Label();
-            this.IDUSUARIO = new System.Windows.Forms.Label();
             this.lblcaja = new System.Windows.Forms.Label();
             this.txtidcaja = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.Label();
@@ -311,10 +311,22 @@ namespace Punto_de_venta.Modulos
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.label7);
-            this.panel5.Location = new System.Drawing.Point(14, 15);
+            this.panel5.Controls.Add(this.lblcaja);
+            this.panel5.Location = new System.Drawing.Point(17, 16);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(54, 54);
+            this.panel5.Size = new System.Drawing.Size(64, 31);
             this.panel5.TabIndex = 628;
+            // 
+            // IDUSUARIO
+            // 
+            this.IDUSUARIO.AutoSize = true;
+            this.IDUSUARIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDUSUARIO.ForeColor = System.Drawing.Color.White;
+            this.IDUSUARIO.Location = new System.Drawing.Point(3, 16);
+            this.IDUSUARIO.Name = "IDUSUARIO";
+            this.IDUSUARIO.Size = new System.Drawing.Size(100, 26);
+            this.IDUSUARIO.TabIndex = 622;
+            this.IDUSUARIO.Text = "Ada 369";
             // 
             // dataGridView1
             // 
@@ -747,9 +759,9 @@ namespace Punto_de_venta.Modulos
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(94, 137);
+            this.richTextBox1.Location = new System.Drawing.Point(149, 289);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(26, 21);
+            this.richTextBox1.Size = new System.Drawing.Size(18, 16);
             this.richTextBox1.TabIndex = 617;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             this.richTextBox1.Visible = false;
@@ -759,9 +771,9 @@ namespace Punto_de_venta.Modulos
             this.panel9.Controls.Add(this.PanelRestaurarCuenta);
             this.panel9.Controls.Add(this.lblEstado_de_envio);
             this.panel9.Controls.Add(this.dataListado);
-            this.panel9.Location = new System.Drawing.Point(149, 132);
+            this.panel9.Location = new System.Drawing.Point(332, 36);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(81, 56);
+            this.panel9.Size = new System.Drawing.Size(32, 36);
             this.panel9.TabIndex = 615;
             // 
             // PanelRestaurarCuenta
@@ -800,7 +812,7 @@ namespace Punto_de_venta.Modulos
             this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eli});
             this.dataListado.EnableHeadersVisualStyles = false;
-            this.dataListado.Location = new System.Drawing.Point(-92, -27);
+            this.dataListado.Location = new System.Drawing.Point(11, 26);
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
             this.dataListado.RowHeadersVisible = false;
@@ -809,7 +821,7 @@ namespace Punto_de_venta.Modulos
             this.dataListado.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataListado.RowTemplate.Height = 30;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(255, 83);
+            this.dataListado.Size = new System.Drawing.Size(58, 56);
             this.dataListado.TabIndex = 9;
             // 
             // Eli
@@ -871,16 +883,15 @@ namespace Punto_de_venta.Modulos
             this.panel6.Controls.Add(this.panel5);
             this.panel6.Controls.Add(this.richTextBox1);
             this.panel6.Controls.Add(this.panel9);
-            this.panel6.Controls.Add(this.lblcaja);
             this.panel6.Controls.Add(this.txtidcaja);
             this.panel6.Controls.Add(this.txtnombre);
             this.panel6.Controls.Add(this.txtcontador);
             this.panel6.Controls.Add(this.lblRol);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.lblresultadocontraseña);
-            this.panel6.Location = new System.Drawing.Point(193, 24);
+            this.panel6.Location = new System.Drawing.Point(182, 38);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(36, 16);
+            this.panel6.Size = new System.Drawing.Size(19, 12);
             this.panel6.TabIndex = 5;
             // 
             // datalistado_movimiento_validar
@@ -927,7 +938,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_caja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn2});
             this.datalistado_caja.EnableHeadersVisualStyles = false;
-            this.datalistado_caja.Location = new System.Drawing.Point(91, 22);
+            this.datalistado_caja.Location = new System.Drawing.Point(266, 146);
             this.datalistado_caja.Name = "datalistado_caja";
             this.datalistado_caja.ReadOnly = true;
             this.datalistado_caja.RowHeadersVisible = false;
@@ -936,7 +947,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_caja.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.datalistado_caja.RowTemplate.Height = 30;
             this.datalistado_caja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado_caja.Size = new System.Drawing.Size(110, 42);
+            this.datalistado_caja.Size = new System.Drawing.Size(83, 22);
             this.datalistado_caja.TabIndex = 614;
             // 
             // dataGridViewImageColumn2
@@ -956,7 +967,7 @@ namespace Punto_de_venta.Modulos
             // 
             // lblSerialPc
             // 
-            this.lblSerialPc.Location = new System.Drawing.Point(134, 221);
+            this.lblSerialPc.Location = new System.Drawing.Point(20, 24);
             this.lblSerialPc.Name = "lblSerialPc";
             this.lblSerialPc.Size = new System.Drawing.Size(108, 20);
             this.lblSerialPc.TabIndex = 619;
@@ -1036,22 +1047,11 @@ namespace Punto_de_venta.Modulos
             this.lblusuario_queinicioCaja.TabIndex = 621;
             this.lblusuario_queinicioCaja.Text = "Ada 369";
             // 
-            // IDUSUARIO
-            // 
-            this.IDUSUARIO.AutoSize = true;
-            this.IDUSUARIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDUSUARIO.ForeColor = System.Drawing.Color.White;
-            this.IDUSUARIO.Location = new System.Drawing.Point(3, 16);
-            this.IDUSUARIO.Name = "IDUSUARIO";
-            this.IDUSUARIO.Size = new System.Drawing.Size(100, 26);
-            this.IDUSUARIO.TabIndex = 622;
-            this.IDUSUARIO.Text = "Ada 369";
-            // 
             // lblcaja
             // 
             this.lblcaja.AutoSize = true;
             this.lblcaja.BackColor = System.Drawing.Color.White;
-            this.lblcaja.Location = new System.Drawing.Point(22, 34);
+            this.lblcaja.Location = new System.Drawing.Point(8, 6);
             this.lblcaja.Name = "lblcaja";
             this.lblcaja.Size = new System.Drawing.Size(37, 13);
             this.lblcaja.TabIndex = 618;
@@ -1061,7 +1061,7 @@ namespace Punto_de_venta.Modulos
             // 
             this.txtidcaja.AutoSize = true;
             this.txtidcaja.BackColor = System.Drawing.Color.White;
-            this.txtidcaja.Location = new System.Drawing.Point(22, 166);
+            this.txtidcaja.Location = new System.Drawing.Point(33, 183);
             this.txtidcaja.Name = "txtidcaja";
             this.txtidcaja.Size = new System.Drawing.Size(46, 13);
             this.txtidcaja.TabIndex = 618;
