@@ -52,6 +52,7 @@ namespace Punto_de_venta.Modulos
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblcaja = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.MenuStrip15 = new System.Windows.Forms.MenuStrip();
@@ -101,7 +102,6 @@ namespace Punto_de_venta.Modulos
             this.lblApertura_De_caja = new System.Windows.Forms.Label();
             this.lblnombredeCajero = new System.Windows.Forms.Label();
             this.lblusuario_queinicioCaja = new System.Windows.Forms.Label();
-            this.lblcaja = new System.Windows.Forms.Label();
             this.txtidcaja = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
@@ -133,7 +133,8 @@ namespace Punto_de_venta.Modulos
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.txtlogin);
             this.panel1.Controls.Add(this.panelRestaurarcontraseña);
@@ -389,6 +390,16 @@ namespace Punto_de_venta.Modulos
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 615;
             this.label7.Text = "label1";
+            // 
+            // lblcaja
+            // 
+            this.lblcaja.AutoSize = true;
+            this.lblcaja.BackColor = System.Drawing.Color.White;
+            this.lblcaja.Location = new System.Drawing.Point(8, 6);
+            this.lblcaja.Name = "lblcaja";
+            this.lblcaja.Size = new System.Drawing.Size(37, 13);
+            this.lblcaja.TabIndex = 618;
+            this.lblcaja.Text = "lblcaja";
             // 
             // panel2
             // 
@@ -891,7 +902,7 @@ namespace Punto_de_venta.Modulos
             this.panel6.Controls.Add(this.lblresultadocontraseña);
             this.panel6.Location = new System.Drawing.Point(182, 38);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(19, 12);
+            this.panel6.Size = new System.Drawing.Size(19, 19);
             this.panel6.TabIndex = 5;
             // 
             // datalistado_movimiento_validar
@@ -1046,16 +1057,6 @@ namespace Punto_de_venta.Modulos
             this.lblusuario_queinicioCaja.Size = new System.Drawing.Size(100, 26);
             this.lblusuario_queinicioCaja.TabIndex = 621;
             this.lblusuario_queinicioCaja.Text = "Ada 369";
-            // 
-            // lblcaja
-            // 
-            this.lblcaja.AutoSize = true;
-            this.lblcaja.BackColor = System.Drawing.Color.White;
-            this.lblcaja.Location = new System.Drawing.Point(8, 6);
-            this.lblcaja.Name = "lblcaja";
-            this.lblcaja.Size = new System.Drawing.Size(37, 13);
-            this.lblcaja.TabIndex = 618;
-            this.lblcaja.Text = "lblcaja";
             // 
             // txtidcaja
             // 

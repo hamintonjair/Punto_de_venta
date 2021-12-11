@@ -84,10 +84,9 @@ namespace Punto_de_venta.Modulos.Caja
             System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyGroupSeparator = ",";
             System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator = ".";
             System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberGroupSeparator = ",";
-            ManagementObjectSearcher MOS = new ManagementObjectSearcher("Select * From Win32_BaseBoard");
-            foreach (ManagementObject getserial in MOS.Get())
-            {
-                lblserialPC.Text = getserial.Properties["SerialNumber"].Value.ToString();
+            ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
+            
+                lblserialPC.Text = MOS.Properties["SerialNumber"].Value.ToString();
                 MOSTRAR_CAJA_POR_SERIAL();
                 try
                 {
@@ -97,7 +96,7 @@ namespace Punto_de_venta.Modulos.Caja
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
+            
 
         }
         private static void OnlyNumber(KeyPressEventArgs e, bool isdecimal)

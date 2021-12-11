@@ -228,7 +228,10 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             }
 
         }
-
+        public static string Tipo_de_movimiento;
+        public static DateTime fecha;
+        public static int id_usuario;
+        public static int idProducto;
         private void DATALISTADO_PRODUCTOS_Movimientos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtbuscarMovimiento.Text = DATALISTADO_PRODUCTOS_Movimientos.SelectedCells[2].Value.ToString();
@@ -413,8 +416,37 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
                 buscar_MOVIMIENTOS_FILTROS();
                 buscar_MOVIMIENTOS_FILTROS_ACUMULADO();
             }
-        }
+        }        
+        Reportes.Reportes_de_Kardex_listo.ReportKARDEX_Movimientos_ok rptFREPORT2 = new Reportes.Reportes_de_Kardex_listo.ReportKARDEX_Movimientos_ok();
+       
+        private void mostrar_kardex_movimientos()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter da;
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = ConexionDt.ConexionData.conexion;
+                con.Open();
 
+                da = new SqlDataAdapter("MOSTRAR_MOVIMIENTOS_DE_KARDEX", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idProducto", DATALISTADO_PRODUCTOS_Kardex.SelectedCells[1].Value.ToString());
+                da.Fill(dt);
+                con.Close();
+                rptFREPORT2 = new Reportes.Reportes_de_Kardex_listo.ReportKARDEX_Movimientos_ok();
+                rptFREPORT2.DataSource = dt;
+                rptFREPORT2.table1.DataSource = dt;
+                reportViewer1.Report = rptFREPORT2;
+                reportViewer1.RefreshReport();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+        }
         private void Inventarios_Menu_Load(object sender, EventArgs e)
         {
             PanelMOVIMIENTOS.Dock = DockStyle.None;
@@ -677,5 +709,77 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
                 buscar_productos_movimientos();
             }
         }
+
+        private void ToolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            Tipo_de_movimiento = txtTipoMovi.Text;
+            fecha = txtfechaM.Value;
+            id_usuario = Convert.ToInt32(txtIdusuario.Text);
+
+            Modulos.Reportes.Reportes_de_Kardex_listo.Reportes_de_Inventario_Todos.FormReporteMovimientosFILTROS frm = new Modulos.Reportes.Reportes_de_Kardex_listo.Reportes_de_Inventario_Todos.FormReporteMovimientosFILTROS();
+            frm.ShowDialog();
+        }
+
+        private void DATALISTADO_PRODUCTOS_Kardex_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtbuscarKardex_movimientos.Text = DATALISTADO_PRODUCTOS_Kardex.SelectedCells[2].Value.ToString();
+            DATALISTADO_PRODUCTOS_Kardex.Visible = false;
+            mostrar_kardex_movimientos();
+        }
+
+        private void txtbuscarKardex_movimientos_TextChanged(object sender, EventArgs e)
+        {
+            if (txtbuscarKardex_movimientos.Text == "Buscar producto" | txtbuscarKardex_movimientos.Text == "")
+            {
+                DATALISTADO_PRODUCTOS_Kardex.Visible = false;
+            }
+            else
+            {
+                buscar_productos_kardex();
+            }
+        }
+        private void buscar_productos_kardex()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter da;
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = ConexionDt.ConexionData.conexion;
+                con.Open();
+
+                da = new SqlDataAdapter("BUSCAR_PRODUCTOS_KARDEX", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@letrab", txtbuscarKardex_movimientos.Text);
+                da.Fill(dt);
+                DATALISTADO_PRODUCTOS_Kardex.DataSource = dt;
+                con.Close();
+
+
+                DATALISTADO_PRODUCTOS_Kardex.Columns[1].Visible = false;
+                DATALISTADO_PRODUCTOS_Kardex.Columns[3].Visible = false;
+                DATALISTADO_PRODUCTOS_Kardex.Columns[4].Visible = false;
+                DATALISTADO_PRODUCTOS_Kardex.Columns[5].Visible = false;
+                DATALISTADO_PRODUCTOS_Kardex.Columns[6].Visible = false;
+                DATALISTADO_PRODUCTOS_Kardex.Columns[7].Visible = false;
+                DATALISTADO_PRODUCTOS_Kardex.Columns[8].Visible = false;
+                DATALISTADO_PRODUCTOS_Kardex.Columns[9].Visible = false;
+                DATALISTADO_PRODUCTOS_Kardex.Columns[10].Visible = false;
+                DATALISTADO_PRODUCTOS_Kardex.Columns[11].Visible = false;
+                DATALISTADO_PRODUCTOS_Kardex.Columns[12].Visible = false;
+                DATALISTADO_PRODUCTOS_Kardex.Columns[13].Visible = false;
+                DATALISTADO_PRODUCTOS_Kardex.Columns[14].Visible = false;
+                DATALISTADO_PRODUCTOS_Kardex.Columns[15].Visible = false;
+                DATALISTADO_PRODUCTOS_Kardex.Columns[16].Visible = false;
+                DATALISTADO_PRODUCTOS_Kardex.Visible = true;
+                ConexionDt.Tamaño_automatico_de_datatables.Multilinea2(ref DATALISTADO_PRODUCTOS_Kardex);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

@@ -476,10 +476,9 @@ namespace Punto_de_venta.Modulos
             timer1.Stop();
             try
             {
-                ManagementObjectSearcher MOS = new ManagementObjectSearcher("Select * From Win32_BaseBoard");
-                foreach (ManagementObject getserial in MOS.Get())
-                {
-                    lblSerialPc.Text = getserial.Properties["SerialNumber"].Value.ToString();
+                ManagementObject MOS = new ManagementObject (@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
+                
+                    lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
 
                     MOSTRAR_CAJA_POR_SERIAL();
                     try
@@ -492,7 +491,7 @@ namespace Punto_de_venta.Modulos
                     {
                         MessageBox.Show(ex.Message);
                     }
-                }
+                
             }
             catch(Exception ex)
             {

@@ -88,6 +88,48 @@
     <Compile Include="Modulos\Productos\Productoss.Designer.cs">
       <DependentUpon>Productoss.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormInventarioTodos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormInventarioTodos.Designer.cs">
+      <DependentUpon>FormInventarioTodos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormMovimientosBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormMovimientosBuscar.Designer.cs">
+      <DependentUpon>FormMovimientosBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormReporteMovimientosFILTROS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormReporteMovimientosFILTROS.Designer.cs">
+      <DependentUpon>FormReporteMovimientosFILTROS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\Reporte_Movimientos_con_filtros.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\Reporte_Movimientos_con_filtros.designer.cs">
+      <DependentUpon>Reporte_Movimientos_con_filtros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportInventarios_Todos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportInventarios_Todos.designer.cs">
+      <DependentUpon>ReportInventarios_Todos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportMovimientosBuscar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportMovimientosBuscar.designer.cs">
+      <DependentUpon>ReportMovimientosBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reporte_de_Kardex_diseño\ReportKARDEX_Movimientos_ok.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reporte_de_Kardex_diseño\ReportKARDEX_Movimientos_ok.designer.cs">
+      <DependentUpon>ReportKARDEX_Movimientos_ok.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Usuarios_y_Permisos\usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +166,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Productos\Productoss.resx">
       <DependentUpon>Productoss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormInventarioTodos.resx">
+      <DependentUpon>FormInventarioTodos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormMovimientosBuscar.resx">
+      <DependentUpon>FormMovimientosBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormReporteMovimientosFILTROS.resx">
+      <DependentUpon>FormReporteMovimientosFILTROS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\Reporte_Movimientos_con_filtros.resx">
+      <DependentUpon>Reporte_Movimientos_con_filtros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportInventarios_Todos.resx">
+      <DependentUpon>ReportInventarios_Todos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportMovimientosBuscar.resx">
+      <DependentUpon>ReportMovimientosBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reporte_de_Kardex_diseño\ReportKARDEX_Movimientos_ok.resx">
+      <DependentUpon>ReportKARDEX_Movimientos_ok.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Usuarios_y_Permisos\usuarios.resx">
       <DependentUpon>usuarios.cs</DependentUpon>
@@ -167,9 +230,6 @@
   <ItemGroup>
     <Content Include="Modulos\Login\HTMLPage1.html" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Modulos\Productos\Reportes_de_kardex_listo\Reportes_de_inventarios_todos\" />
-    <Folder Include="Modulos\Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

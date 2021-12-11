@@ -45,11 +45,12 @@ namespace Punto_de_venta.Modulos.Caja
 
         private void Cierre_de_Caja_Load(object sender, EventArgs e)
         {
-            ManagementObjectSearcher MOS = new ManagementObjectSearcher("Select * From Win32_BaseBoard");
-            foreach (ManagementObject getserial in MOS.Get())
-            {
-                lblSerialPc.Text = getserial.Properties["SerialNumber"].Value.ToString();
-                MOSTRAR_CAJA_POR_SERIAL();
+            ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
+
+            lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
+
+            lblSerialPc.Text = lblSerialPc.Text.Trim();
+            MOSTRAR_CAJA_POR_SERIAL();
                 try
                 {
                     txtidcaja.Text = datalistado_caja.SelectedCells[1].Value.ToString();
@@ -58,7 +59,7 @@ namespace Punto_de_venta.Modulos.Caja
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
+           
         }
         private void MOSTRAR_CAJA_POR_SERIAL()
         {

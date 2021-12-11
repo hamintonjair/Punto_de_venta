@@ -337,7 +337,7 @@ namespace Punto_de_venta.Modulos.Productos
                 MessageBox.Show(ex.Message);
             }
 
-            ConexionDt.Tamaño_automatico_de_datatables.Multilinea2(ref datalistado);
+            ConexionDt.Tamaño_automatico_de_datatables.Multilinea(ref datalistado);
             sumar_costo_de_inventario_CONTAR_PRODUCTOS();
         }
         private void contar()
