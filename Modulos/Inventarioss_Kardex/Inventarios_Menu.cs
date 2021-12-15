@@ -237,6 +237,15 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             txtbuscarMovimiento.Text = DATALISTADO_PRODUCTOS_Movimientos.SelectedCells[2].Value.ToString();
             DATALISTADO_PRODUCTOS_Movimientos.Visible = false;
             buscar_MOVIMIENTOS_DE_KARDEX();
+
+            try
+            {
+                idProducto = Convert.ToInt32(DATALISTADO_PRODUCTOS_Movimientos.SelectedCells[1].Value.ToString());
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
         private void buscar_MOVIMIENTOS_DE_KARDEX()
         {
@@ -276,6 +285,8 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             panel7.Visible = true;
             MenuStrip2.Visible = false;
             MenuStrip6.Visible = false;
+            panel33.Visible = false;
+            panel32.Visible = false;
         }
         private void buscar_MOVIMIENTOS_FILTROS()
         {
@@ -407,6 +418,8 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             txtbuscarMovimiento.Text = "Buscar producto";
             MenuStrip2.Visible = true;
             MenuStrip6.Visible = true;
+            panel33.Visible = true;
+            panel32.Visible = true;
         }
 
         private void txtfechaM_ValueChanged(object sender, EventArgs e)
@@ -781,5 +794,10 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             }
         }
 
+        private void ToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Modulos.Reportes.Reportes_de_Kardex_listo.Reportes_de_Inventario_Todos.FormMovimientosBuscar frm = new Reportes.Reportes_de_Kardex_listo.Reportes_de_Inventario_Todos.FormMovimientosBuscar();
+            frm.ShowDialog();
+        }
     }
 }

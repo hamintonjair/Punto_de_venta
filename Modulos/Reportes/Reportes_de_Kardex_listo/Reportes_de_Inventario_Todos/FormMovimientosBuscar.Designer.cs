@@ -36,7 +36,6 @@ namespace Punto_de_venta.Modulos.Reportes.Reportes_de_Kardex_listo.Reportes_de_I
             // reportViewer1
             // 
             this.reportViewer1.AccessibilityKeyMap = null;
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
@@ -50,6 +49,8 @@ namespace Punto_de_venta.Modulos.Reportes.Reportes_de_Kardex_listo.Reportes_de_I
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMovimientosBuscar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormMovimientosBuscar_Load);
             this.ResumeLayout(false);
 

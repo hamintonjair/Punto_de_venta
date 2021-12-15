@@ -436,7 +436,7 @@ namespace Punto_de_venta.Modulos.Productos
             // ToolStripMenuItem4
             // 
             this.ToolStripMenuItem4.Name = "ToolStripMenuItem4";
-            this.ToolStripMenuItem4.Size = new System.Drawing.Size(127, 41);
+            this.ToolStripMenuItem4.Size = new System.Drawing.Size(126, 41);
             this.ToolStripMenuItem4.Text = "ToolStripMenuItem3";
             // 
             // Panel24
@@ -655,7 +655,7 @@ namespace Punto_de_venta.Modulos.Productos
             // 
             // PANELDEPARTAMENTOS
             // 
-            this.PANELDEPARTAMENTOS.BackColor = System.Drawing.Color.White;
+            this.PANELDEPARTAMENTOS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.PANELDEPARTAMENTOS.Controls.Add(this.groupBox1);
             this.PANELDEPARTAMENTOS.Controls.Add(this.PanelGrupo);
             this.PANELDEPARTAMENTOS.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -876,7 +876,7 @@ namespace Punto_de_venta.Modulos.Productos
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(127, 41);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(126, 41);
             this.toolStripMenuItem6.Text = "ToolStripMenuItem3";
             // 
             // Panel28
@@ -2339,7 +2339,7 @@ namespace Punto_de_venta.Modulos.Productos
             // ToolStripMenuItem22
             // 
             this.ToolStripMenuItem22.Name = "ToolStripMenuItem22";
-            this.ToolStripMenuItem22.Size = new System.Drawing.Size(127, 41);
+            this.ToolStripMenuItem22.Size = new System.Drawing.Size(126, 41);
             this.ToolStripMenuItem22.Text = "ToolStripMenuItem3";
             // 
             // Panel30

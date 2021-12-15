@@ -29,6 +29,7 @@ namespace Punto_de_venta.Modulos.Reportes.Reportes_de_Kardex_listo.Reportes_de_I
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReporteMovimientosFILTROS));
             this.reportViewer1 = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
@@ -47,8 +48,10 @@ namespace Punto_de_venta.Modulos.Reportes.Reportes_de_Kardex_listo.Reportes_de_I
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(621, 553);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormReporteMovimientosFILTROS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormReporteMovimientosFILTROS_Load);
             this.ResumeLayout(false);
 

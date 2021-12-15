@@ -88,6 +88,8 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             this.panel13 = new System.Windows.Forms.Panel();
             this.DatalistadoMovimientos = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel33 = new System.Windows.Forms.Panel();
+            this.panel32 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.DatalistadoMovimientosACUMULADO_PRODUCTO = new System.Windows.Forms.DataGridView();
@@ -497,7 +499,7 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             this.Label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Label6.AutoSize = true;
             this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Label6.Location = new System.Drawing.Point(-342, 27);
+            this.Label6.Location = new System.Drawing.Point(-342, 19);
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(735, 20);
             this.Label6.TabIndex = 603;
@@ -604,7 +606,7 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             this.menuStrip8.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem8});
             this.menuStrip8.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.menuStrip8.Location = new System.Drawing.Point(422, 38);
+            this.menuStrip8.Location = new System.Drawing.Point(1572, 38);
             this.menuStrip8.Name = "menuStrip8";
             this.menuStrip8.ShowItemToolTips = true;
             this.menuStrip8.Size = new System.Drawing.Size(107, 32);
@@ -725,7 +727,7 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             this.menuStrip7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem5});
             this.menuStrip7.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.menuStrip7.Location = new System.Drawing.Point(2097, 36);
+            this.menuStrip7.Location = new System.Drawing.Point(1119, 36);
             this.menuStrip7.Name = "menuStrip7";
             this.menuStrip7.ShowItemToolTips = true;
             this.menuStrip7.Size = new System.Drawing.Size(153, 32);
@@ -843,6 +845,8 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             // 
             this.panel13.BackColor = System.Drawing.Color.White;
             this.panel13.Controls.Add(this.DatalistadoMovimientos);
+            this.panel13.Controls.Add(this.panel33);
+            this.panel13.Controls.Add(this.panel32);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Name = "panel13";
@@ -864,7 +868,7 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             this.dataGridViewImageColumn5});
             this.DatalistadoMovimientos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DatalistadoMovimientos.EnableHeadersVisualStyles = false;
-            this.DatalistadoMovimientos.Location = new System.Drawing.Point(0, 0);
+            this.DatalistadoMovimientos.Location = new System.Drawing.Point(193, 0);
             this.DatalistadoMovimientos.Name = "DatalistadoMovimientos";
             this.DatalistadoMovimientos.ReadOnly = true;
             this.DatalistadoMovimientos.RowHeadersVisible = false;
@@ -873,7 +877,7 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             this.DatalistadoMovimientos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.DatalistadoMovimientos.RowTemplate.Height = 30;
             this.DatalistadoMovimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DatalistadoMovimientos.Size = new System.Drawing.Size(728, 379);
+            this.DatalistadoMovimientos.Size = new System.Drawing.Size(342, 379);
             this.DatalistadoMovimientos.TabIndex = 5;
             // 
             // dataGridViewImageColumn5
@@ -883,6 +887,24 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             this.dataGridViewImageColumn5.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn5.Name = "dataGridViewImageColumn5";
             this.dataGridViewImageColumn5.ReadOnly = true;
+            // 
+            // panel33
+            // 
+            this.panel33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.panel33.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel33.Location = new System.Drawing.Point(0, 0);
+            this.panel33.Name = "panel33";
+            this.panel33.Size = new System.Drawing.Size(193, 379);
+            this.panel33.TabIndex = 11;
+            // 
+            // panel32
+            // 
+            this.panel32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.panel32.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel32.Location = new System.Drawing.Point(535, 0);
+            this.panel32.Name = "panel32";
+            this.panel32.Size = new System.Drawing.Size(193, 379);
+            this.panel32.TabIndex = 10;
             // 
             // panel7
             // 
@@ -1326,6 +1348,7 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             this.ToolStripMenuItem3.Name = "ToolStripMenuItem3";
             this.ToolStripMenuItem3.Size = new System.Drawing.Size(96, 28);
             this.ToolStripMenuItem3.Text = "Imprimir";
+            this.ToolStripMenuItem3.Click += new System.EventHandler(this.ToolStripMenuItem3_Click);
             // 
             // MenuStrip6
             // 
@@ -1361,9 +1384,9 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             this.PanelVencimientos.Controls.Add(this.panel25);
             this.PanelVencimientos.Controls.Add(this.panel26);
             this.PanelVencimientos.Controls.Add(this.panel22);
-            this.PanelVencimientos.Location = new System.Drawing.Point(962, 432);
+            this.PanelVencimientos.Location = new System.Drawing.Point(991, 432);
             this.PanelVencimientos.Name = "PanelVencimientos";
-            this.PanelVencimientos.Size = new System.Drawing.Size(82, 30);
+            this.PanelVencimientos.Size = new System.Drawing.Size(53, 27);
             this.PanelVencimientos.TabIndex = 608;
             // 
             // panel24
@@ -1422,7 +1445,7 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             // 
             this.panel26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
             this.panel26.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel26.Location = new System.Drawing.Point(-111, 99);
+            this.panel26.Location = new System.Drawing.Point(-140, 99);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(193, 0);
             this.panel26.TabIndex = 10;
@@ -1438,7 +1461,7 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel22.Location = new System.Drawing.Point(0, 0);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(82, 99);
+            this.panel22.Size = new System.Drawing.Size(53, 99);
             this.panel22.TabIndex = 0;
             // 
             // menuStrip14
@@ -1557,9 +1580,9 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             this.PanelKardex.Controls.Add(this.panel30);
             this.PanelKardex.Controls.Add(this.panel4);
             this.PanelKardex.Controls.Add(this.panel27);
-            this.PanelKardex.Location = new System.Drawing.Point(776, 374);
+            this.PanelKardex.Location = new System.Drawing.Point(830, 323);
             this.PanelKardex.Name = "PanelKardex";
-            this.PanelKardex.Size = new System.Drawing.Size(180, 88);
+            this.PanelKardex.Size = new System.Drawing.Size(60, 29);
             this.PanelKardex.TabIndex = 609;
             // 
             // DATALISTADO_PRODUCTOS_Kardex
@@ -1609,25 +1632,25 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.Location = new System.Drawing.Point(243, 58);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(0, 30);
+            this.reportViewer1.Size = new System.Drawing.Size(0, 0);
             this.reportViewer1.TabIndex = 1;
             // 
             // panel31
             // 
-            this.panel31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(63)))), ((int)(((byte)(67)))));
+            this.panel31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
             this.panel31.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel31.Location = new System.Drawing.Point(-63, 58);
+            this.panel31.Location = new System.Drawing.Point(-183, 58);
             this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(243, 30);
+            this.panel31.Size = new System.Drawing.Size(243, 0);
             this.panel31.TabIndex = 613;
             // 
             // panel30
             // 
-            this.panel30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(63)))), ((int)(((byte)(67)))));
+            this.panel30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
             this.panel30.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel30.Location = new System.Drawing.Point(0, 58);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(243, 30);
+            this.panel30.Size = new System.Drawing.Size(243, 0);
             this.panel30.TabIndex = 612;
             // 
             // panel4
@@ -1646,7 +1669,7 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
             this.panel27.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel27.Location = new System.Drawing.Point(0, 0);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(180, 58);
+            this.panel27.Size = new System.Drawing.Size(60, 58);
             this.panel27.TabIndex = 0;
             // 
             // panel28
@@ -1910,5 +1933,7 @@ namespace Punto_de_venta.Modulos.Inventarioss_Kardex
         private System.Windows.Forms.Panel panel31;
         private System.Windows.Forms.Panel panel30;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel33;
+        private System.Windows.Forms.Panel panel32;
     }
 }

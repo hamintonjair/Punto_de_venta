@@ -196,7 +196,7 @@ namespace Punto_de_venta
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Telerink_complemento_CS.Properties.Resources.add_insert_new_17850;
+            this.pictureBox1.Image = global::Punto_de_venta.Properties.Resources.add_insert_new_17850;
             this.pictureBox1.Location = new System.Drawing.Point(-33, 136);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(263, 219);
@@ -759,10 +759,6 @@ namespace Punto_de_venta
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
-
-    internal class Properties
-    {
-        internal static object Resources;
-    }
+    
 }
 

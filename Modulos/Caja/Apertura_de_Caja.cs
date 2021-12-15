@@ -12,6 +12,8 @@ using System.Net.Mail;
 using System.Net;
 using System.Management;
 using System.Windows.Forms;
+using Punto_de_venta.Logica;
+using Punto_de_venta.Datos;
 
 namespace Punto_de_venta.Modulos.Caja
 {
@@ -21,35 +23,44 @@ namespace Punto_de_venta.Modulos.Caja
         {
             InitializeComponent();
         }
-
+        int txtidcaja;
         private void iniciarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
-            try
+            if (string.IsNullOrEmpty(txtmonto.Text))
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("editar_dinero_caja_inicial", con);
-                cmd.CommandType = CommandType.StoredProcedure;         
-                cmd.Parameters.AddWithValue("@Id_caja", lbltidcaja.Text);
-                cmd.Parameters.AddWithValue("@saldo", txtMonto.Text);
-                cmd.ExecuteNonQuery();
+                txtmonto.Text = "0";
+            }
+            bool estado = Editar_datos.editar_dinero_caja_inicial(txtidcaja, Convert.ToDouble(txtmonto.Text));
+            if (estado == true)
+            {
+                pasar_a_ventas();
+            }
+
+            //try
+            //{
+            //    SqlConnection con = new SqlConnection();
+            //    con.ConnectionString = ConexionDt.ConexionData.conexion;
+            //    con.Open();
+            //    SqlCommand cmd = new SqlCommand();
+            //    cmd = new SqlCommand("editar_dinero_caja_inicial", con);
+            //    cmd.CommandType = CommandType.StoredProcedure;         
+            //    cmd.Parameters.AddWithValue("@Id_caja", lbltidcaja.Text);
+            //    cmd.Parameters.AddWithValue("@saldo", txtMonto.Text);
+            //    cmd.ExecuteNonQuery();
      
-                con.Close();
+            //    con.Close();
 
-                this.Hide();
-                Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
-                frm.ShowDialog();
-                this.Hide();
+            //    this.Hide();
+            //    Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
+            //    frm.ShowDialog();
+            //    this.Hide();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
             
-            }
+            //}
         }
         private void MOSTRAR_CAJA_POR_SERIAL()
         {
@@ -78,24 +89,27 @@ namespace Punto_de_venta.Modulos.Caja
         }
         private void Apertura_de_Caja_Load_1(object sender, EventArgs e)
         {
+            Bases.Cambiar_idioma_regional();
+            Obtener_datos.Obtener_id_caja_PorSerial(ref txtidcaja);
+            centrar_panel(); ;
 
-            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-CO");
-            System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyDecimalSeparator = ".";
-            System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyGroupSeparator = ",";
-            System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator = ".";
-            System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberGroupSeparator = ",";
-            ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
+            //System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-CO");
+            //System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyDecimalSeparator = ".";
+            //System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyGroupSeparator = ",";
+            //System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator = ".";
+            //System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberGroupSeparator = ",";
+            //ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
             
-                lblserialPC.Text = MOS.Properties["SerialNumber"].Value.ToString();
-                MOSTRAR_CAJA_POR_SERIAL();
-                try
-                {
-                    lbltidcaja.Text = datalistado_caja.SelectedCells[1].Value.ToString();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+            //    lblserialPC.Text = MOS.Properties["SerialNumber"].Value.ToString();
+            //    MOSTRAR_CAJA_POR_SERIAL();
+            //    try
+            //    {
+            //        lbltidcaja.Text = datalistado_caja.SelectedCells[1].Value.ToString();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message);
+            //    }
             
 
         }
@@ -121,32 +135,43 @@ namespace Punto_de_venta.Modulos.Caja
 
         private void omitirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("editar_dinero_caja_inicial", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Id_caja", lbltidcaja.Text);
-                cmd.Parameters.AddWithValue("@saldo", 0);
-                cmd.ExecuteNonQuery();
+            pasar_a_ventas();
+            //try
+            //{
+            //    SqlConnection con = new SqlConnection();
+            //    con.ConnectionString = ConexionDt.ConexionData.conexion;
+            //    con.Open();
+            //    SqlCommand cmd = new SqlCommand();
+            //    cmd = new SqlCommand("editar_dinero_caja_inicial", con);
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    cmd.Parameters.AddWithValue("@Id_caja", lbltidcaja.Text);
+            //    cmd.Parameters.AddWithValue("@saldo", 0);
+            //    cmd.ExecuteNonQuery();
 
-                con.Close();
+            //    con.Close();
 
-                this.Hide();
-                Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
-                this.ShowDialog();
-                this.Hide();
+            //    this.Hide();
+            //    Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
+            //    this.ShowDialog();
+            //    this.Hide();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
+        private void pasar_a_ventas()
+        {
+            Dispose();
+            Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
+            frm.ShowDialog();
 
+        }
+        private void centrar_panel()
+        {
+            panelCaja.Location = new Point((Width - panelCaja.Width) / 2, (Height - panelCaja.Height) / 2);
+        }
         private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
         {
             //OnlyNumber(e, false);
@@ -189,7 +214,7 @@ namespace Punto_de_venta.Modulos.Caja
             //}
 
 
-          ConexionDt.Numeros_separadores.Separador_de_Numeros(txtMonto, e);
+          ConexionDt.Numeros_separadores.Separador_de_Numeros(txtmonto, e);
         }
 
      

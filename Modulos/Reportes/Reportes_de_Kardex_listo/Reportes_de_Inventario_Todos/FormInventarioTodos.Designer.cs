@@ -50,6 +50,8 @@ namespace Punto_de_venta.Modulos.Reportes.Reportes_de_Kardex_listo.Reportes_de_I
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormInventarioTodos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormInventarioTodos_Load);
             this.ResumeLayout(false);
 

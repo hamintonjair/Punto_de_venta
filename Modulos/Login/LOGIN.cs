@@ -28,57 +28,65 @@ namespace Punto_de_venta.Modulos
         }
         public void DibujarUsuario()
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = ConexionDt.ConexionData.conexion;
-            con.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd = new SqlCommand("select * from USUARIO2 where Estado = 'ACTIVO'", con);
-            SqlDataReader rdr = cmd.ExecuteReader();
-            while (rdr.Read())
+            try
             {
-                Label b = new Label();
-                Panel p1 = new Panel();
-                PictureBox I1 = new PictureBox();
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = ConexionDt.ConexionData.conexion;
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd = new SqlCommand("select * from USUARIO2 where Estado = 'ACTIVO'", con);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    Label b = new Label();
+                    Panel p1 = new Panel();
+                    PictureBox I1 = new PictureBox();
 
-                //propiedades programada para el label
-                b.Text = rdr["Login"].ToString();
-                b.Name = rdr["idUsuario"].ToString();
-                b.Size = new System.Drawing.Size(175, 25);
-                b.Font = new System.Drawing.Font("Microsoft Sans Serif", 13);
-                b.FlatStyle = FlatStyle.Flat;
-                b.BackColor = Color.FromArgb(20, 20, 20);
-                b.ForeColor = Color.White;
-                b.Dock = DockStyle.Bottom;
-                b.TextAlign = ContentAlignment.MiddleCenter;
-                b.Cursor = Cursors.Hand;
+                    //propiedades programada para el label
+                    b.Text = rdr["Login"].ToString();
+                    b.Name = rdr["idUsuario"].ToString();
+                    b.Size = new System.Drawing.Size(175, 25);
+                    b.Font = new System.Drawing.Font("Microsoft Sans Serif", 13);
+                    b.FlatStyle = FlatStyle.Flat;
+                    b.BackColor = Color.FromArgb(20, 20, 20);
+                    b.ForeColor = Color.White;
+                    b.Dock = DockStyle.Bottom;
+                    b.TextAlign = ContentAlignment.MiddleCenter;
+                    b.Cursor = Cursors.Hand;
 
-                //propiedades programada para el panel
-                p1.Size = new System.Drawing.Size(155, 167);
-                p1.BorderStyle = BorderStyle.None;
-                p1.Dock = DockStyle.Bottom;
-                p1.BackColor = Color.FromArgb(20, 20, 20);
+                    //propiedades programada para el panel
+                    p1.Size = new System.Drawing.Size(155, 167);
+                    p1.BorderStyle = BorderStyle.None;
+                    p1.Dock = DockStyle.Bottom;
+                    p1.BackColor = Color.FromArgb(20, 20, 20);
 
-                //propiedades programada para el picturebox
-                I1.Size = new System.Drawing.Size(175, 132);
-                I1.Dock = DockStyle.Top;
-                I1.BackgroundImage = null;
-                Byte[] bi = (Byte[])rdr["icono"];
-                MemoryStream ms = new MemoryStream(bi);
-                I1.Image = Image.FromStream(ms);
-                I1.SizeMode = PictureBoxSizeMode.Zoom;
-                I1.Tag = rdr["Login"].ToString();
-                I1.Cursor = Cursors.Hand;
+                    //propiedades programada para el picturebox
+                    I1.Size = new System.Drawing.Size(175, 132);
+                    I1.Dock = DockStyle.Top;
+                    I1.BackgroundImage = null;
+                    Byte[] bi = (Byte[])rdr["icono"];
+                    MemoryStream ms = new MemoryStream(bi);
+                    I1.Image = Image.FromStream(ms);
+                    I1.SizeMode = PictureBoxSizeMode.Zoom;
+                    I1.Tag = rdr["Login"].ToString();
+                    I1.Cursor = Cursors.Hand;
 
-                //MOSTRAMOS EN EL PANEL
-                p1.Controls.Add(b);
-                p1.Controls.Add(I1);
-                b.BringToFront();
-                flowLayoutPanel1.Controls.Add(p1);
-                //funcion para que lleve al usuario a la opcion al darle clic                
-                b.Click += new EventHandler(mieventoLabel);
-                I1.Click += new EventHandler(mieventoImage);
+                    //MOSTRAMOS EN EL PANEL
+                    p1.Controls.Add(b);
+                    p1.Controls.Add(I1);
+                    b.BringToFront();
+                    flowLayoutPanel1.Controls.Add(p1);
+                    //funcion para que lleve al usuario a la opcion al darle clic                
+                    b.Click += new EventHandler(mieventoLabel);
+                    I1.Click += new EventHandler(mieventoImage);
+                }
+                con.Close();
             }
-            con.Close();
+            catch(Exception ex)
+            {
+
+            }
+           
         }
         private void MOSTRAR_PERMISOS()
         {
@@ -102,7 +110,28 @@ namespace Punto_de_venta.Modulos
 
             }
         }
-       
+        string INDICADOR;
+        private void mostrar_usuarios_registrados()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter da;
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = ConexionDt.ConexionData.conexion;
+                con.Open();
+                da = new SqlDataAdapter("select * from USUARIO2", con);
+                da.Fill(dt);
+                datalistado_usuarios_registrado.DataSource = dt;
+                con.Close();
+                INDICADOR = "CORRECTO";
+            }
+            catch (Exception ex)
+            {
+                INDICADOR = "INCORRECTO";
+            }
+        }
+
         private void mieventoLabel(System.Object sender, EventArgs e)
         {
             //se trae el texto del label, es decir el login
@@ -440,7 +469,6 @@ namespace Punto_de_venta.Modulos
                 lblEstado_de_envio.Text = "Correo no registrado";
             }
         }
-
         private void btncerrar_Click(object sender, EventArgs e)
         {
             panelRestaurarcontraseña.Hide();
@@ -467,13 +495,42 @@ namespace Punto_de_venta.Modulos
                 MessageBox.Show(ex.Message);
 
             }
+        }
+        int txtcontador_USUARIOS;
+        private void contar_USUARIOS()
+        {
+            int x;
 
+            x = datalistado_usuarios_registrado.Rows.Count;
+            txtcontador_USUARIOS = (x);
 
         }
         //metodo para selecionar el serial del equipo ya que la caja se registra es cada equipo
         private void timer1_Tick(object sender, EventArgs e)
         {
+           
             timer1.Stop();
+            mostrar_usuarios_registrados();
+
+            if (INDICADOR == "CORRECTO")
+            {
+                contar_USUARIOS();
+                if (txtcontador_USUARIOS == 0)
+                {
+                    Hide();
+                    Modulos.Asistente_de_Instalacion_Servidor.REGISTRO_DE_EMPRESA frm = new Modulos.Asistente_de_Instalacion_Servidor.REGISTRO_DE_EMPRESA();
+                    frm.ShowDialog();
+                    this.Dispose();
+                }
+            }
+
+            if (INDICADOR == "INCORRECTO")
+            {
+                Hide();
+                Modulos.Asistente_de_Instalacion_Servidor.Eleccion_Servidor_o_remoto frm = new Modulos.Asistente_de_Instalacion_Servidor.Eleccion_Servidor_o_remoto();
+                frm.ShowDialog();
+                Dispose();
+            }
             try
             {
                 ManagementObject MOS = new ManagementObject (@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
@@ -497,7 +554,93 @@ namespace Punto_de_venta.Modulos
             {
                 MessageBox.Show(ex.Message);
             }
+            MOSTRAR_licencia_temporal();
+            try
+            {
+                txtfecha_final_licencia_temporal.Value = Convert.ToDateTime(ConexionDt.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[3].Value.ToString()));
+                lblSerialPcLocal.Text = (ConexionDt.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[2].Value.ToString()));
+                LBLESTADOLicenciaLocal.Text = ConexionDt.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[4].Value.ToString());
+                txtfecha_inicio_licencia.Value = Convert.ToDateTime(ConexionDt.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[5].Value.ToString()));
 
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            if (LBLESTADOLicenciaLocal.Text != "VENCIDO")
+
+            {
+                string fechaHoy = Convert.ToString(DateTime.Now);
+                DateTime fecha_ddmmyyyy = Convert.ToDateTime(fechaHoy.Split(' ')[0]);
+
+                if (txtfecha_final_licencia_temporal.Value >= fecha_ddmmyyyy)
+                {
+                    if (txtfecha_inicio_licencia.Value <= fecha_ddmmyyyy)
+                    {
+                        if (LBLESTADOLicenciaLocal.Text == "?ACTIVO?")
+                        {
+                            Ingresar_por_licencia_Temporal();
+                        }
+                        else if (LBLESTADOLicenciaLocal.Text == "?ACTIVADO PRO?")
+                        {
+                            Ingresar_por_licencia_de_paga();
+                        }
+                    }
+                    else
+                    {
+                        Hide();
+                        Modulos.Licencias_Membresias.Membresias frm = new Modulos.Licencias_Membresias.Membresias();
+                        frm.ShowDialog();
+                        Dispose();
+                    }
+                }
+                else
+                {
+                    Hide();
+
+                    Modulos.Licencias_Membresias.Membresias frm = new Modulos.Licencias_Membresias.Membresias();
+                    frm.ShowDialog();
+                    Dispose();
+                }
+            }
+            else
+            {
+                Hide();
+
+                Modulos.Licencias_Membresias.Membresias frm = new Modulos.Licencias_Membresias.Membresias();
+                frm.ShowDialog();
+                Dispose();
+            }
+        }
+        private void Ingresar_por_licencia_Temporal()
+        {
+            lblestadoLicencias.Text = "Licencia de Prueba Activada hasta el: " + txtfecha_final_licencia_temporal.Text;
+
+        }
+        private void Ingresar_por_licencia_de_paga()
+        {
+            lblestadoLicencias.Text = "Licencia PROFESIONAL Activada hasta el: " + txtfecha_final_licencia_temporal.Text;
+        }
+        private void MOSTRAR_licencia_temporal()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter da;
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = ConexionDt.ConexionData.conexion;
+                con.Open();
+                da = new SqlDataAdapter("select * from Marcan", con);
+                da.Fill(dt);
+                datalistado_licencia_temporal.DataSource = dt;
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         private void btn0_Click(object sender, EventArgs e)

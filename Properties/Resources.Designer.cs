@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Telerink_complemento_CS.Properties {
+namespace Punto_de_venta.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Telerink_complemento_CS.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Telerink_complemento_CS.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Punto_de_venta.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -59,6 +59,68 @@ namespace Telerink_complemento_CS.Properties {
                 resourceCulture = value;
             }
         }
+        internal static System.Drawing.Bitmap menuCajas_claro
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("menuCajas_claro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap Caja_activa
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Caja_activa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap caja_eliminada
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("caja_eliminada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Caja_eliminada_oficial
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Caja_eliminada_oficial", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Caja_recien_creada
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Caja_recien_creada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Accountin {
+            get {
+                object obj = ResourceManager.GetObject("Accountin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
         
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -66,6 +128,26 @@ namespace Telerink_complemento_CS.Properties {
         internal static System.Drawing.Bitmap add_insert_new_17850 {
             get {
                 object obj = ResourceManager.GetObject("add_insert_new_17850", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap azul {
+            get {
+                object obj = ResourceManager.GetObject("azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap naranja {
+            get {
+                object obj = ResourceManager.GetObject("naranja", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

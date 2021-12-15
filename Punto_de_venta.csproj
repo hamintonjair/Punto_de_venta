@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D2937657-3CC5-48C7-9D0B-AF4B22CAA89D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Telerink_complemento_CS</RootNamespace>
-    <AssemblyName>Telerink_complemento_CS</AssemblyName>
+    <RootNamespace>Punto_de_venta</RootNamespace>
+    <AssemblyName>Punto_de_venta</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,17 +52,90 @@
     <Reference Include="Telerik.ReportViewer.WinForms, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
       <SpecificVersion>True</SpecificVersion>
     </Reference>
+    <Reference Include="UIDC">
+      <HintPath>E:\Ada369Csharp+al+04+mayo+2021\Ada369Csharp\UIDC.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConexionDt\Agregar_ceros_adelante_De_numero.cs" />
+    <Compile Include="ConexionDt\cambiar_el_formato_de_separador_de_decimales.cs" />
     <Compile Include="ConexionDt\ConecionData.cs" />
+    <Compile Include="ConexionDt\Encryptar_en_texto.cs" />
     <Compile Include="ConexionDt\Numeros_separadores.cs" />
     <Compile Include="ConexionDt\Tamaño_automatico_de_datatables.cs" />
+    <Compile Include="ConexionDt\total_en_letras.cs" />
     <Compile Include="ConexionDt\WinAutoComplete.cs" />
+    <Compile Include="Datos\Dcaja.cs" />
+    <Compile Include="Datos\Dcompras.cs" />
+    <Compile Include="Datos\Ddetallecompra.cs" />
+    <Compile Include="Datos\Diniciossesion.cs" />
+    <Compile Include="Datos\Dkardex.cs" />
+    <Compile Include="Datos\DLicencias.cs" />
+    <Compile Include="Datos\Dproductos.cs" />
+    <Compile Include="Datos\Dproveedores.cs" />
+    <Compile Include="Datos\Editar_datos.cs" />
+    <Compile Include="Datos\Eliminar_datos.cs" />
+    <Compile Include="Datos\Insertar_datos.cs" />
+    <Compile Include="Logica\Bases.cs" />
+    <Compile Include="Datos\Obtener_datos.cs" />
+    <Compile Include="Logica\Lcaja.cs" />
+    <Compile Include="Logica\Lclientes.cs" />
+    <Compile Include="Logica\Lcompras.cs" />
+    <Compile Include="Logica\Lcontrolcobros.cs" />
+    <Compile Include="Logica\Lcorreo.cs" />
+    <Compile Include="Logica\LcreditoPorCobrar.cs" />
+    <Compile Include="Logica\LcreditosPorPagar.cs" />
+    <Compile Include="Logica\Ldetallecompra.cs" />
+    <Compile Include="Logica\LdetalleVenta.cs" />
+    <Compile Include="Logica\Lempresa.cs" />
+    <Compile Include="Logica\Limpresoras.cs" />
+    <Compile Include="Logica\LKardex.cs" />
+    <Compile Include="Logica\LMarcan.cs" />
+    <Compile Include="Logica\Lmcaja.cs" />
+    <Compile Include="Logica\Lproductos.cs" />
+    <Compile Include="Logica\Lproveedores.cs" />
+    <Compile Include="Logica\Lventas.cs" />
+    <Compile Include="Modulos\Asistente_de_Instalacion_Servidor\Eleccion_Servidor_o_remoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Asistente_de_Instalacion_Servidor\Eleccion_Servidor_o_remoto.Designer.cs">
+      <DependentUpon>Eleccion_Servidor_o_remoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Asistente_de_Instalacion_Servidor\Instalacion_del_servidorSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Asistente_de_Instalacion_Servidor\Instalacion_del_servidorSQL.Designer.cs">
+      <DependentUpon>Instalacion_del_servidorSQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Asistente_de_Instalacion_Servidor\REGISTRO_DE_EMPRESA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Asistente_de_Instalacion_Servidor\REGISTRO_DE_EMPRESA.Designer.cs">
+      <DependentUpon>REGISTRO_DE_EMPRESA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Asistente_de_Instalacion_Servidor\USUARIOS_AUTORIZADOS_AL_SISTEMA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Asistente_de_Instalacion_Servidor\USUARIOS_AUTORIZADOS_AL_SISTEMA.Designer.cs">
+      <DependentUpon>USUARIOS_AUTORIZADOS_AL_SISTEMA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Caja\Apertura_de_Caja.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\Caja\Apertura_de_Caja.Designer.cs">
       <DependentUpon>Apertura_de_Caja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Caja\Cajas_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Caja\Cajas_form.Designer.cs">
+      <DependentUpon>Cajas_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Caja\CierreTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Caja\CierreTurno.Designer.cs">
+      <DependentUpon>CierreTurno.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Caja\Cierre_de_Caja.cs">
       <SubType>Form</SubType>
@@ -70,11 +143,47 @@
     <Compile Include="Modulos\Caja\Cierre_de_Caja.Designer.cs">
       <DependentUpon>Cierre_de_Caja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Conexion_remota\Conexion_secundaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Conexion_remota\Conexion_secundaria.Designer.cs">
+      <DependentUpon>Conexion_secundaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Conexion_remota\Caja_secundaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Conexion_remota\Caja_secundaria.Designer.cs">
+      <DependentUpon>Caja_secundaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CopiasBd\CopiasBd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CopiasBd\CopiasBd.Designer.cs">
+      <DependentUpon>CopiasBd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CopiasBd\GeneradorAutomatico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CopiasBd\GeneradorAutomatico.Designer.cs">
+      <DependentUpon>GeneradorAutomatico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CorreoBase\ConfigurarCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CorreoBase\ConfigurarCorreo.Designer.cs">
+      <DependentUpon>ConfigurarCorreo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Inventarioss_Kardex\Inventarios_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\Inventarioss_Kardex\Inventarios_Menu.Designer.cs">
       <DependentUpon>Inventarios_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Licencias_Membresias\Membresias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Licencias_Membresias\Membresias.Designer.cs">
+      <DependentUpon>Membresias.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Login\LOGIN.cs">
       <SubType>Form</SubType>
@@ -152,14 +261,44 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Modulos\Asistente_de_Instalacion_Servidor\Eleccion_Servidor_o_remoto.resx">
+      <DependentUpon>Eleccion_Servidor_o_remoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Asistente_de_Instalacion_Servidor\Instalacion_del_servidorSQL.resx">
+      <DependentUpon>Instalacion_del_servidorSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Asistente_de_Instalacion_Servidor\REGISTRO_DE_EMPRESA.resx">
+      <DependentUpon>REGISTRO_DE_EMPRESA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Asistente_de_Instalacion_Servidor\USUARIOS_AUTORIZADOS_AL_SISTEMA.resx">
+      <DependentUpon>USUARIOS_AUTORIZADOS_AL_SISTEMA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Caja\Apertura_de_Caja.resx">
       <DependentUpon>Apertura_de_Caja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Caja\Cajas_form.resx">
+      <DependentUpon>Cajas_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Caja\CierreTurno.resx">
+      <DependentUpon>CierreTurno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Caja\Cierre_de_Caja.resx">
       <DependentUpon>Cierre_de_Caja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Conexion_remota\Conexion_secundaria.resx">
+      <DependentUpon>Conexion_secundaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Conexion_remota\Caja_secundaria.resx">
+      <DependentUpon>Caja_secundaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CorreoBase\ConfigurarCorreo.resx">
+      <DependentUpon>ConfigurarCorreo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Inventarioss_Kardex\Inventarios_Menu.resx">
       <DependentUpon>Inventarios_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Licencias_Membresias\Membresias.resx">
+      <DependentUpon>Membresias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Login\LOGIN.resx">
       <DependentUpon>LOGIN.cs</DependentUpon>
@@ -229,7 +368,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Modulos\Login\HTMLPage1.html" />
+    <None Include="Resources\naranja.png" />
+    <None Include="Resources\azul.png" />
+    <None Include="Resources\Accountin.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
