@@ -368,6 +368,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Modulos\Login\HTMLPage1.html" />
+    <None Include="Resources\Rojo.png" />
+    <None Include="Resources\negro.png" />
     <None Include="Resources\naranja.png" />
     <None Include="Resources\azul.png" />
     <None Include="Resources\Accountin.png" />

@@ -181,7 +181,9 @@ namespace Punto_de_venta.Modulos.Conexion_remota
             this.ClientSize = new System.Drawing.Size(800, 454);
             this.Controls.Add(this.Panel3);
             this.Controls.Add(this.Panel7);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Caja_secundaria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Conexion_secundaria";
             this.Load += new System.EventHandler(this.Conexion_secundaria_Load);
             this.Panel3.ResumeLayout(false);

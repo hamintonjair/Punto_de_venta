@@ -61,7 +61,7 @@ namespace Punto_de_venta.Modulos
             this.Panel4 = new System.Windows.Forms.Panel();
             this.txtPasswor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblestadolicencia = new System.Windows.Forms.Label();
+            this.lblestadoLicencias = new System.Windows.Forms.Label();
             this.pboxLicencia = new System.Windows.Forms.PictureBox();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.btnOlvidoContraseña = new System.Windows.Forms.Button();
@@ -90,12 +90,8 @@ namespace Punto_de_venta.Modulos
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.lblSerialPcLocal = new System.Windows.Forms.Label();
-            this.LBLESTADOLicenciaLocal = new System.Windows.Forms.Label();
-            this.datalistado_licencia_temporal = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.txtfecha_inicio_licencia = new System.Windows.Forms.DateTimePicker();
-            this.txtfecha_final_licencia_temporal = new System.Windows.Forms.DateTimePicker();
+            this.datalistado_usuarios_registrado = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.datalistado_movimiento_validar = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.datalistado_caja = new System.Windows.Forms.DataGridView();
@@ -113,13 +109,16 @@ namespace Punto_de_venta.Modulos
             this.lblRol = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblresultadocontraseña = new System.Windows.Forms.Label();
+            this.lblSerialPcLocal = new System.Windows.Forms.Label();
+            this.LBLESTADOLicenciaLocal = new System.Windows.Forms.Label();
+            this.datalistado_licencia_temporal = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtfecha_inicio_licencia = new System.Windows.Forms.DateTimePicker();
+            this.txtfecha_final_licencia_temporal = new System.Windows.Forms.DateTimePicker();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.PictureBox2 = new System.Windows.Forms.PictureBox();
-            this.datalistado_usuarios_registrado = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.lblestadoLicencias = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelRestaurarcontraseña.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -134,12 +133,12 @@ namespace Punto_de_venta.Modulos
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado_usuarios_registrado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_movimiento_validar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_detalle_cierre_de_caja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistado_usuarios_registrado)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -152,7 +151,7 @@ namespace Punto_de_venta.Modulos
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(258, 12);
+            this.panel1.Location = new System.Drawing.Point(258, 59);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(660, 502);
             this.panel1.TabIndex = 2;
@@ -169,6 +168,7 @@ namespace Punto_de_venta.Modulos
             // 
             // panelRestaurarcontraseña
             // 
+            this.panelRestaurarcontraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelRestaurarcontraseña.BackColor = System.Drawing.Color.Black;
             this.panelRestaurarcontraseña.Controls.Add(this.txtcorreo);
             this.panelRestaurarcontraseña.Controls.Add(this.btncerrar);
@@ -321,6 +321,7 @@ namespace Punto_de_venta.Modulos
             this.panel5.Controls.Add(this.IDUSUARIO);
             this.panel5.Controls.Add(this.dataGridView1);
             this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.datalistado_licencia_temporal);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.lblcaja);
@@ -414,9 +415,10 @@ namespace Punto_de_venta.Modulos
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.lblestadolicencia);
+            this.panel2.Controls.Add(this.lblestadoLicencias);
             this.panel2.Controls.Add(this.pboxLicencia);
             this.panel2.Controls.Add(this.btnIniciarSesion);
             this.panel2.Controls.Add(this.btnOlvidoContraseña);
@@ -517,16 +519,16 @@ namespace Punto_de_venta.Modulos
             this.label3.Text = "Inicio de Sesion";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblestadolicencia
+            // lblestadoLicencias
             // 
-            this.lblestadolicencia.AutoSize = true;
-            this.lblestadolicencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblestadolicencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblestadolicencia.Location = new System.Drawing.Point(46, 628);
-            this.lblestadolicencia.Name = "lblestadolicencia";
-            this.lblestadolicencia.Size = new System.Drawing.Size(60, 17);
-            this.lblestadolicencia.TabIndex = 8;
-            this.lblestadolicencia.Text = "Licencia";
+            this.lblestadoLicencias.AutoSize = true;
+            this.lblestadoLicencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblestadoLicencias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblestadoLicencias.Location = new System.Drawing.Point(46, 628);
+            this.lblestadoLicencias.Name = "lblestadoLicencias";
+            this.lblestadoLicencias.Size = new System.Drawing.Size(60, 17);
+            this.lblestadoLicencias.TabIndex = 8;
+            this.lblestadoLicencias.Text = "Licencia";
             // 
             // pboxLicencia
             // 
@@ -540,7 +542,9 @@ namespace Punto_de_venta.Modulos
             // 
             // btnIniciarSesion
             // 
-            this.btnIniciarSesion.BackColor = System.Drawing.Color.Red;
+            this.btnIniciarSesion.BackColor = System.Drawing.Color.Black;
+            this.btnIniciarSesion.BackgroundImage = global::Punto_de_venta.Properties.Resources.Rojo;
+            this.btnIniciarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnIniciarSesion.FlatAppearance.BorderSize = 0;
             this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -588,6 +592,8 @@ namespace Punto_de_venta.Modulos
             // btn1
             // 
             this.btn1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn1.BackgroundImage")));
+            this.btn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn1.FlatAppearance.BorderSize = 0;
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn1.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -603,6 +609,8 @@ namespace Punto_de_venta.Modulos
             // btn2
             // 
             this.btn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn2.BackgroundImage")));
+            this.btn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn2.FlatAppearance.BorderSize = 0;
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -618,6 +626,8 @@ namespace Punto_de_venta.Modulos
             // btn3
             // 
             this.btn3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn3.BackgroundImage")));
+            this.btn3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn3.FlatAppearance.BorderSize = 0;
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -633,6 +643,8 @@ namespace Punto_de_venta.Modulos
             // btn4
             // 
             this.btn4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn4.BackgroundImage")));
+            this.btn4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn4.FlatAppearance.BorderSize = 0;
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -648,6 +660,8 @@ namespace Punto_de_venta.Modulos
             // btn5
             // 
             this.btn5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn5.BackgroundImage")));
+            this.btn5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn5.FlatAppearance.BorderSize = 0;
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn5.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -663,6 +677,8 @@ namespace Punto_de_venta.Modulos
             // btn6
             // 
             this.btn6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn6.BackgroundImage")));
+            this.btn6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn6.FlatAppearance.BorderSize = 0;
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn6.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -678,6 +694,8 @@ namespace Punto_de_venta.Modulos
             // btn7
             // 
             this.btn7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn7.BackgroundImage")));
+            this.btn7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn7.FlatAppearance.BorderSize = 0;
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn7.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -693,6 +711,8 @@ namespace Punto_de_venta.Modulos
             // btn8
             // 
             this.btn8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn8.BackgroundImage")));
+            this.btn8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn8.FlatAppearance.BorderSize = 0;
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn8.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -708,6 +728,8 @@ namespace Punto_de_venta.Modulos
             // btn9
             // 
             this.btn9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn9.BackgroundImage")));
+            this.btn9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn9.FlatAppearance.BorderSize = 0;
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn9.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -723,6 +745,8 @@ namespace Punto_de_venta.Modulos
             // btnborrar
             // 
             this.btnborrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnborrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnborrar.BackgroundImage")));
+            this.btnborrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnborrar.FlatAppearance.BorderSize = 0;
             this.btnborrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnborrar.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -738,6 +762,8 @@ namespace Punto_de_venta.Modulos
             // btn0
             // 
             this.btn0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn0.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn0.BackgroundImage")));
+            this.btn0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn0.FlatAppearance.BorderSize = 0;
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn0.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -753,6 +779,8 @@ namespace Punto_de_venta.Modulos
             // btnBorrarDerecha
             // 
             this.btnBorrarDerecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBorrarDerecha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBorrarDerecha.BackgroundImage")));
+            this.btnBorrarDerecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBorrarDerecha.FlatAppearance.BorderSize = 0;
             this.btnBorrarDerecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarDerecha.Font = new System.Drawing.Font("Calibri", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -793,9 +821,9 @@ namespace Punto_de_venta.Modulos
             this.panel9.Controls.Add(this.PanelRestaurarCuenta);
             this.panel9.Controls.Add(this.lblEstado_de_envio);
             this.panel9.Controls.Add(this.dataListado);
-            this.panel9.Location = new System.Drawing.Point(332, 36);
+            this.panel9.Location = new System.Drawing.Point(241, 72);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(32, 36);
+            this.panel9.Size = new System.Drawing.Size(192, 42);
             this.panel9.TabIndex = 615;
             // 
             // PanelRestaurarCuenta
@@ -893,14 +921,12 @@ namespace Punto_de_venta.Modulos
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.datalistado_usuarios_registrado);
-            this.panel6.Controls.Add(this.lblestadoLicencias);
-            this.panel6.Controls.Add(this.lblSerialPcLocal);
             this.panel6.Controls.Add(this.LBLESTADOLicenciaLocal);
-            this.panel6.Controls.Add(this.datalistado_licencia_temporal);
-            this.panel6.Controls.Add(this.txtfecha_inicio_licencia);
+            this.panel6.Controls.Add(this.lblSerialPcLocal);
             this.panel6.Controls.Add(this.txtfecha_final_licencia_temporal);
+            this.panel6.Controls.Add(this.datalistado_usuarios_registrado);
             this.panel6.Controls.Add(this.datalistado_movimiento_validar);
+            this.panel6.Controls.Add(this.txtfecha_inicio_licencia);
             this.panel6.Controls.Add(this.datalistado_caja);
             this.panel6.Controls.Add(this.progressBar2);
             this.panel6.Controls.Add(this.lblSerialPc);
@@ -918,79 +944,42 @@ namespace Punto_de_venta.Modulos
             this.panel6.Controls.Add(this.lblRol);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.lblresultadocontraseña);
-            this.panel6.Location = new System.Drawing.Point(176, 19);
+            this.panel6.Location = new System.Drawing.Point(203, 25);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(67, 21);
+            this.panel6.Size = new System.Drawing.Size(31, 12);
             this.panel6.TabIndex = 5;
             // 
-            // lblSerialPcLocal
+            // datalistado_usuarios_registrado
             // 
-            this.lblSerialPcLocal.AutoSize = true;
-            this.lblSerialPcLocal.ForeColor = System.Drawing.Color.White;
-            this.lblSerialPcLocal.Location = new System.Drawing.Point(54, 245);
-            this.lblSerialPcLocal.Name = "lblSerialPcLocal";
-            this.lblSerialPcLocal.Size = new System.Drawing.Size(82, 13);
-            this.lblSerialPcLocal.TabIndex = 633;
-            this.lblSerialPcLocal.Text = "lblSerialPcLocal";
+            this.datalistado_usuarios_registrado.AllowUserToAddRows = false;
+            this.datalistado_usuarios_registrado.AllowUserToResizeRows = false;
+            this.datalistado_usuarios_registrado.BackgroundColor = System.Drawing.Color.White;
+            this.datalistado_usuarios_registrado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datalistado_usuarios_registrado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.datalistado_usuarios_registrado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.datalistado_usuarios_registrado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datalistado_usuarios_registrado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewImageColumn6});
+            this.datalistado_usuarios_registrado.EnableHeadersVisualStyles = false;
+            this.datalistado_usuarios_registrado.Location = new System.Drawing.Point(9, 229);
+            this.datalistado_usuarios_registrado.Name = "datalistado_usuarios_registrado";
+            this.datalistado_usuarios_registrado.ReadOnly = true;
+            this.datalistado_usuarios_registrado.RowHeadersVisible = false;
+            this.datalistado_usuarios_registrado.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datalistado_usuarios_registrado.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.datalistado_usuarios_registrado.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.datalistado_usuarios_registrado.RowTemplate.Height = 30;
+            this.datalistado_usuarios_registrado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datalistado_usuarios_registrado.Size = new System.Drawing.Size(365, 54);
+            this.datalistado_usuarios_registrado.TabIndex = 629;
             // 
-            // LBLESTADOLicenciaLocal
+            // dataGridViewImageColumn6
             // 
-            this.LBLESTADOLicenciaLocal.AutoSize = true;
-            this.LBLESTADOLicenciaLocal.ForeColor = System.Drawing.Color.White;
-            this.LBLESTADOLicenciaLocal.Location = new System.Drawing.Point(272, 208);
-            this.LBLESTADOLicenciaLocal.Name = "LBLESTADOLicenciaLocal";
-            this.LBLESTADOLicenciaLocal.Size = new System.Drawing.Size(136, 13);
-            this.LBLESTADOLicenciaLocal.TabIndex = 632;
-            this.LBLESTADOLicenciaLocal.Text = "LBLESTADOLicenciaLocal";
-            // 
-            // datalistado_licencia_temporal
-            // 
-            this.datalistado_licencia_temporal.AllowUserToAddRows = false;
-            this.datalistado_licencia_temporal.AllowUserToResizeRows = false;
-            this.datalistado_licencia_temporal.BackgroundColor = System.Drawing.Color.White;
-            this.datalistado_licencia_temporal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.datalistado_licencia_temporal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.datalistado_licencia_temporal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.datalistado_licencia_temporal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datalistado_licencia_temporal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn7});
-            this.datalistado_licencia_temporal.EnableHeadersVisualStyles = false;
-            this.datalistado_licencia_temporal.Location = new System.Drawing.Point(176, 159);
-            this.datalistado_licencia_temporal.Name = "datalistado_licencia_temporal";
-            this.datalistado_licencia_temporal.ReadOnly = true;
-            this.datalistado_licencia_temporal.RowHeadersVisible = false;
-            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.datalistado_licencia_temporal.RowTemplate.Height = 30;
-            this.datalistado_licencia_temporal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado_licencia_temporal.Size = new System.Drawing.Size(95, 37);
-            this.datalistado_licencia_temporal.TabIndex = 631;
-            // 
-            // dataGridViewImageColumn7
-            // 
-            this.dataGridViewImageColumn7.HeaderText = "";
-            this.dataGridViewImageColumn7.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn7.Image")));
-            this.dataGridViewImageColumn7.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn7.Name = "dataGridViewImageColumn7";
-            this.dataGridViewImageColumn7.ReadOnly = true;
-            // 
-            // txtfecha_inicio_licencia
-            // 
-            this.txtfecha_inicio_licencia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtfecha_inicio_licencia.Location = new System.Drawing.Point(165, 107);
-            this.txtfecha_inicio_licencia.Name = "txtfecha_inicio_licencia";
-            this.txtfecha_inicio_licencia.Size = new System.Drawing.Size(105, 20);
-            this.txtfecha_inicio_licencia.TabIndex = 629;
-            // 
-            // txtfecha_final_licencia_temporal
-            // 
-            this.txtfecha_final_licencia_temporal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtfecha_final_licencia_temporal.Location = new System.Drawing.Point(173, 227);
-            this.txtfecha_final_licencia_temporal.Name = "txtfecha_final_licencia_temporal";
-            this.txtfecha_final_licencia_temporal.Size = new System.Drawing.Size(109, 20);
-            this.txtfecha_final_licencia_temporal.TabIndex = 630;
-            this.txtfecha_final_licencia_temporal.Value = new System.DateTime(2019, 11, 30, 18, 11, 0, 0);
+            this.dataGridViewImageColumn6.HeaderText = "";
+            this.dataGridViewImageColumn6.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn6.Image")));
+            this.dataGridViewImageColumn6.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn6.Name = "dataGridViewImageColumn6";
+            this.dataGridViewImageColumn6.ReadOnly = true;
             // 
             // datalistado_movimiento_validar
             // 
@@ -1004,7 +993,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_movimiento_validar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn5});
             this.datalistado_movimiento_validar.EnableHeadersVisualStyles = false;
-            this.datalistado_movimiento_validar.Location = new System.Drawing.Point(17, 49);
+            this.datalistado_movimiento_validar.Location = new System.Drawing.Point(39, 121);
             this.datalistado_movimiento_validar.Name = "datalistado_movimiento_validar";
             this.datalistado_movimiento_validar.ReadOnly = true;
             this.datalistado_movimiento_validar.RowHeadersVisible = false;
@@ -1036,7 +1025,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_caja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn2});
             this.datalistado_caja.EnableHeadersVisualStyles = false;
-            this.datalistado_caja.Location = new System.Drawing.Point(266, 146);
+            this.datalistado_caja.Location = new System.Drawing.Point(209, 199);
             this.datalistado_caja.Name = "datalistado_caja";
             this.datalistado_caja.ReadOnly = true;
             this.datalistado_caja.RowHeadersVisible = false;
@@ -1058,14 +1047,14 @@ namespace Punto_de_venta.Modulos
             // 
             // progressBar2
             // 
-            this.progressBar2.Location = new System.Drawing.Point(224, 22);
+            this.progressBar2.Location = new System.Drawing.Point(187, 43);
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(85, 23);
             this.progressBar2.TabIndex = 628;
             // 
             // lblSerialPc
             // 
-            this.lblSerialPc.Location = new System.Drawing.Point(510, 120);
+            this.lblSerialPc.Location = new System.Drawing.Point(462, 121);
             this.lblSerialPc.Name = "lblSerialPc";
             this.lblSerialPc.Size = new System.Drawing.Size(108, 20);
             this.lblSerialPc.TabIndex = 619;
@@ -1082,7 +1071,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_detalle_cierre_de_caja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn4});
             this.datalistado_detalle_cierre_de_caja.EnableHeadersVisualStyles = false;
-            this.datalistado_detalle_cierre_de_caja.Location = new System.Drawing.Point(33, 22);
+            this.datalistado_detalle_cierre_de_caja.Location = new System.Drawing.Point(33, 47);
             this.datalistado_detalle_cierre_de_caja.Name = "datalistado_detalle_cierre_de_caja";
             this.datalistado_detalle_cierre_de_caja.ReadOnly = true;
             this.datalistado_detalle_cierre_de_caja.RowHeadersVisible = false;
@@ -1091,7 +1080,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_detalle_cierre_de_caja.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.datalistado_detalle_cierre_de_caja.RowTemplate.Height = 30;
             this.datalistado_detalle_cierre_de_caja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado_detalle_cierre_de_caja.Size = new System.Drawing.Size(95, 68);
+            this.datalistado_detalle_cierre_de_caja.Size = new System.Drawing.Size(128, 68);
             this.datalistado_detalle_cierre_de_caja.TabIndex = 627;
             // 
             // dataGridViewImageColumn4
@@ -1198,6 +1187,75 @@ namespace Punto_de_venta.Modulos
             this.lblresultadocontraseña.TabIndex = 11;
             this.lblresultadocontraseña.Text = "label5";
             // 
+            // lblSerialPcLocal
+            // 
+            this.lblSerialPcLocal.AutoSize = true;
+            this.lblSerialPcLocal.ForeColor = System.Drawing.Color.White;
+            this.lblSerialPcLocal.Location = new System.Drawing.Point(38, 60);
+            this.lblSerialPcLocal.Name = "lblSerialPcLocal";
+            this.lblSerialPcLocal.Size = new System.Drawing.Size(82, 13);
+            this.lblSerialPcLocal.TabIndex = 633;
+            this.lblSerialPcLocal.Text = "lblSerialPcLocal";
+            // 
+            // LBLESTADOLicenciaLocal
+            // 
+            this.LBLESTADOLicenciaLocal.AutoSize = true;
+            this.LBLESTADOLicenciaLocal.ForeColor = System.Drawing.Color.White;
+            this.LBLESTADOLicenciaLocal.Location = new System.Drawing.Point(46, 90);
+            this.LBLESTADOLicenciaLocal.Name = "LBLESTADOLicenciaLocal";
+            this.LBLESTADOLicenciaLocal.Size = new System.Drawing.Size(136, 13);
+            this.LBLESTADOLicenciaLocal.TabIndex = 632;
+            this.LBLESTADOLicenciaLocal.Text = "LBLESTADOLicenciaLocal";
+            // 
+            // datalistado_licencia_temporal
+            // 
+            this.datalistado_licencia_temporal.AllowUserToAddRows = false;
+            this.datalistado_licencia_temporal.AllowUserToResizeRows = false;
+            this.datalistado_licencia_temporal.BackgroundColor = System.Drawing.Color.White;
+            this.datalistado_licencia_temporal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datalistado_licencia_temporal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.datalistado_licencia_temporal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.datalistado_licencia_temporal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datalistado_licencia_temporal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewImageColumn7});
+            this.datalistado_licencia_temporal.EnableHeadersVisualStyles = false;
+            this.datalistado_licencia_temporal.Location = new System.Drawing.Point(-3, 6);
+            this.datalistado_licencia_temporal.Name = "datalistado_licencia_temporal";
+            this.datalistado_licencia_temporal.ReadOnly = true;
+            this.datalistado_licencia_temporal.RowHeadersVisible = false;
+            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.datalistado_licencia_temporal.RowTemplate.Height = 30;
+            this.datalistado_licencia_temporal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datalistado_licencia_temporal.Size = new System.Drawing.Size(86, 25);
+            this.datalistado_licencia_temporal.TabIndex = 631;
+            // 
+            // dataGridViewImageColumn7
+            // 
+            this.dataGridViewImageColumn7.HeaderText = "";
+            this.dataGridViewImageColumn7.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn7.Image")));
+            this.dataGridViewImageColumn7.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn7.Name = "dataGridViewImageColumn7";
+            this.dataGridViewImageColumn7.ReadOnly = true;
+            // 
+            // txtfecha_inicio_licencia
+            // 
+            this.txtfecha_inicio_licencia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtfecha_inicio_licencia.Location = new System.Drawing.Point(57, 17);
+            this.txtfecha_inicio_licencia.Name = "txtfecha_inicio_licencia";
+            this.txtfecha_inicio_licencia.Size = new System.Drawing.Size(105, 20);
+            this.txtfecha_inicio_licencia.TabIndex = 629;
+            // 
+            // txtfecha_final_licencia_temporal
+            // 
+            this.txtfecha_final_licencia_temporal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtfecha_final_licencia_temporal.Location = new System.Drawing.Point(28, 93);
+            this.txtfecha_final_licencia_temporal.Name = "txtfecha_final_licencia_temporal";
+            this.txtfecha_final_licencia_temporal.Size = new System.Drawing.Size(109, 20);
+            this.txtfecha_final_licencia_temporal.TabIndex = 630;
+            this.txtfecha_final_licencia_temporal.Value = new System.DateTime(2019, 11, 30, 18, 11, 0, 0);
+            // 
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -1219,6 +1277,7 @@ namespace Punto_de_venta.Modulos
             // 
             // PictureBox2
             // 
+            this.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
             this.PictureBox2.Location = new System.Drawing.Point(7, 168);
@@ -1229,59 +1288,17 @@ namespace Punto_de_venta.Modulos
             this.PictureBox2.TabStop = false;
             this.PictureBox2.Visible = false;
             // 
-            // datalistado_usuarios_registrado
-            // 
-            this.datalistado_usuarios_registrado.AllowUserToAddRows = false;
-            this.datalistado_usuarios_registrado.AllowUserToResizeRows = false;
-            this.datalistado_usuarios_registrado.BackgroundColor = System.Drawing.Color.White;
-            this.datalistado_usuarios_registrado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.datalistado_usuarios_registrado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.datalistado_usuarios_registrado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.datalistado_usuarios_registrado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datalistado_usuarios_registrado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn6});
-            this.datalistado_usuarios_registrado.EnableHeadersVisualStyles = false;
-            this.datalistado_usuarios_registrado.Location = new System.Drawing.Point(48, 110);
-            this.datalistado_usuarios_registrado.Name = "datalistado_usuarios_registrado";
-            this.datalistado_usuarios_registrado.ReadOnly = true;
-            this.datalistado_usuarios_registrado.RowHeadersVisible = false;
-            this.datalistado_usuarios_registrado.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datalistado_usuarios_registrado.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.datalistado_usuarios_registrado.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.datalistado_usuarios_registrado.RowTemplate.Height = 30;
-            this.datalistado_usuarios_registrado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado_usuarios_registrado.Size = new System.Drawing.Size(365, 54);
-            this.datalistado_usuarios_registrado.TabIndex = 629;
-            // 
-            // dataGridViewImageColumn6
-            // 
-            this.dataGridViewImageColumn6.HeaderText = "";
-            this.dataGridViewImageColumn6.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn6.Image")));
-            this.dataGridViewImageColumn6.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn6.Name = "dataGridViewImageColumn6";
-            this.dataGridViewImageColumn6.ReadOnly = true;
-            // 
-            // lblestadoLicencias
-            // 
-            this.lblestadoLicencias.AutoSize = true;
-            this.lblestadoLicencias.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblestadoLicencias.Location = new System.Drawing.Point(206, 171);
-            this.lblestadoLicencias.Name = "lblestadoLicencias";
-            this.lblestadoLicencias.Size = new System.Drawing.Size(35, 13);
-            this.lblestadoLicencias.TabIndex = 634;
-            this.lblestadoLicencias.Text = "label4";
-            // 
             // LOGIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1188, 701);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.PictureBox2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1312,12 +1329,12 @@ namespace Punto_de_venta.Modulos
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado_usuarios_registrado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_movimiento_validar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_detalle_cierre_de_caja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistado_usuarios_registrado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1340,7 +1357,6 @@ namespace Punto_de_venta.Modulos
         internal System.Windows.Forms.ToolStripMenuItem tver;
         internal System.Windows.Forms.ToolStripMenuItem tocultar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Label lblestadolicencia;
         internal System.Windows.Forms.Button btn1;
         internal System.Windows.Forms.Button btn2;
         internal System.Windows.Forms.Button btn3;

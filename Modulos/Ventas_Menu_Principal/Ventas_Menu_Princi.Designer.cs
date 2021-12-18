@@ -415,6 +415,8 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             // 
             // Panel17
             // 
+            this.Panel17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.Panel17.Controls.Add(this.PictureBox4);
             this.Panel17.Controls.Add(this.Panel30);
@@ -1911,7 +1913,7 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             // ToolStripMenuItem3
             // 
             this.ToolStripMenuItem3.Name = "ToolStripMenuItem3";
-            this.ToolStripMenuItem3.Size = new System.Drawing.Size(127, 41);
+            this.ToolStripMenuItem3.Size = new System.Drawing.Size(126, 41);
             this.ToolStripMenuItem3.Text = "ToolStripMenuItem3";
             // 
             // CheckBox1

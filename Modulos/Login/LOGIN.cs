@@ -130,7 +130,7 @@ namespace Punto_de_venta.Modulos
             {
                 INDICADOR = "INCORRECTO";
             }
-        }
+        }      
 
         private void mieventoLabel(System.Object sender, EventArgs e)
         {
@@ -356,7 +356,7 @@ namespace Punto_de_venta.Modulos
 
                 da = new SqlDataAdapter("validar_usuario", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@password", txtPasswor.Text);
+                da.SelectCommand.Parameters.AddWithValue("@password", ConexionDt.Encryptar_en_texto.Encriptar(txtPasswor.Text));
                 da.SelectCommand.Parameters.AddWithValue("@login", txtlogin.Text);
                 da.Fill(dt);
                 dataListado.DataSource = dt;
@@ -522,6 +522,7 @@ namespace Punto_de_venta.Modulos
                     frm.ShowDialog();
                     this.Dispose();
                 }
+                
             }
 
             if (INDICADOR == "INCORRECTO")
@@ -554,6 +555,7 @@ namespace Punto_de_venta.Modulos
             {
                 MessageBox.Show(ex.Message);
             }
+      
             MOSTRAR_licencia_temporal();
             try
             {

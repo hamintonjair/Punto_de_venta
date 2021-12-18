@@ -483,6 +483,7 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(1208, 664);
             this.Controls.Add(this.PanelActivando_licencia);
             this.Controls.Add(this.lblIDSERIAL);
