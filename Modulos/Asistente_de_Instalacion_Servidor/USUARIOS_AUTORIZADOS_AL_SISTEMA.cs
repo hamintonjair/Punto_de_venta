@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Management;
 
 namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
 {
@@ -23,8 +24,12 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
         private void USUARIOS_AUTORIZADOS_AL_SISTEMA_Load(object sender, EventArgs e)
         {
             Panel2.Location = new Point((Width - Panel2.Width) / 2, (Height - Panel2.Height) / 2);
+            ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
 
-            Bases.Obtener_serialPC(ref lblIdeserial);
+            lblIDSERIAL.Text = MOS.Properties["SerialNumber"].Value.ToString();
+            lblIDSERIAL.Text = lblIDSERIAL.Text.Trim();
+
+            //Bases.Obtener_serialPC(ref lblIdeserial);
         }
 
         private void ToolStripMenuItem1_Click(object sender, EventArgs e)

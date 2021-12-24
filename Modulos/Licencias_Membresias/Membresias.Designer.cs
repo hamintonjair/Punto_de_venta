@@ -29,22 +29,25 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Membresias));
             this.Panel12 = new System.Windows.Forms.Panel();
+            this.datalistado_licencia_temporal = new System.Windows.Forms.DataGridView();
+            this.DataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TXTFECHA_SISTEMA = new System.Windows.Forms.DateTimePicker();
             this.txtfecha_final_licencia_temporal = new System.Windows.Forms.DateTimePicker();
-            this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelActivando_licencia = new System.Windows.Forms.Panel();
             this.Button5 = new System.Windows.Forms.Button();
             this.lblActivando_licencia = new System.Windows.Forms.Label();
-            this.PictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblIDSERIAL = new System.Windows.Forms.TextBox();
             this.lblSerialPcLocal = new System.Windows.Forms.TextBox();
             this.lblSerial = new System.Windows.Forms.TextBox();
             this.PanelActivacion_manual_de_Licencias = new System.Windows.Forms.Panel();
-            this.Button3 = new System.Windows.Forms.Button();
+            this.LBLESTADOLicenciaLocal = new System.Windows.Forms.Label();
             this.Panel5 = new System.Windows.Forms.Panel();
             this.lblEstado = new System.Windows.Forms.TextBox();
             this.Label13 = new System.Windows.Forms.Label();
@@ -56,37 +59,88 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
             this.Label12 = new System.Windows.Forms.Label();
             this.Label8 = new System.Windows.Forms.Label();
             this.Button2 = new System.Windows.Forms.Button();
+            this.lblarchivo1 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
+            this.lblruta = new System.Windows.Forms.Label();
+            this.lblSoftware = new System.Windows.Forms.Label();
+            this.Button3 = new System.Windows.Forms.Button();
             this.Label1 = new System.Windows.Forms.Label();
-            this.LBLESTADOLicenciaLocal = new System.Windows.Forms.Label();
             this.Button1 = new System.Windows.Forms.Button();
             this.btn_insertar = new System.Windows.Forms.Button();
             this.Label4 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
             this.lblSerialPc = new System.Windows.Forms.TextBox();
             this.Panel4 = new System.Windows.Forms.Panel();
-            this.lblSoftware = new System.Windows.Forms.Label();
-            this.lblruta = new System.Windows.Forms.Label();
-            this.lblarchivo1 = new System.Windows.Forms.Label();
-            this.Panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
+            this.dlg = new System.Windows.Forms.OpenFileDialog();
+            this.PictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).BeginInit();
             this.PanelActivando_licencia.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
+            this.PanelActivacion_manual_de_Licencias.SuspendLayout();
             this.Panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel12
             // 
             this.Panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.Panel12.Controls.Add(this.label3);
-            this.Panel12.Controls.Add(this.label5);
-            this.Panel12.Controls.Add(this.TXTFECHA_SISTEMA);
-            this.Panel12.Controls.Add(this.txtfecha_final_licencia_temporal);
             this.Panel12.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel12.Location = new System.Drawing.Point(0, 0);
             this.Panel12.Name = "Panel12";
             this.Panel12.Size = new System.Drawing.Size(1208, 139);
             this.Panel12.TabIndex = 633;
+            // 
+            // datalistado_licencia_temporal
+            // 
+            this.datalistado_licencia_temporal.AllowUserToAddRows = false;
+            this.datalistado_licencia_temporal.AllowUserToDeleteRows = false;
+            this.datalistado_licencia_temporal.AllowUserToResizeRows = false;
+            this.datalistado_licencia_temporal.BackgroundColor = System.Drawing.Color.White;
+            this.datalistado_licencia_temporal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datalistado_licencia_temporal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.datalistado_licencia_temporal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datalistado_licencia_temporal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridViewCheckBoxColumn1});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datalistado_licencia_temporal.DefaultCellStyle = dataGridViewCellStyle2;
+            this.datalistado_licencia_temporal.Location = new System.Drawing.Point(12, 3);
+            this.datalistado_licencia_temporal.Name = "datalistado_licencia_temporal";
+            this.datalistado_licencia_temporal.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datalistado_licencia_temporal.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.datalistado_licencia_temporal.RowHeadersVisible = false;
+            this.datalistado_licencia_temporal.RowHeadersWidth = 5;
+            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            this.datalistado_licencia_temporal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datalistado_licencia_temporal.Size = new System.Drawing.Size(47, 44);
+            this.datalistado_licencia_temporal.TabIndex = 667;
+            // 
+            // DataGridViewCheckBoxColumn1
+            // 
+            this.DataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
+            this.DataGridViewCheckBoxColumn1.HeaderText = "Activo";
+            this.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1";
+            this.DataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
             // label3
             // 
@@ -94,7 +148,7 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(750, 87);
+            this.label3.Location = new System.Drawing.Point(39, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 20);
             this.label3.TabIndex = 612;
@@ -106,7 +160,7 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(724, 110);
+            this.label5.Location = new System.Drawing.Point(13, 64);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 20);
             this.label5.TabIndex = 612;
@@ -115,7 +169,7 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
             // TXTFECHA_SISTEMA
             // 
             this.TXTFECHA_SISTEMA.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.TXTFECHA_SISTEMA.Location = new System.Drawing.Point(803, 112);
+            this.TXTFECHA_SISTEMA.Location = new System.Drawing.Point(92, 66);
             this.TXTFECHA_SISTEMA.Name = "TXTFECHA_SISTEMA";
             this.TXTFECHA_SISTEMA.Size = new System.Drawing.Size(139, 20);
             this.TXTFECHA_SISTEMA.TabIndex = 623;
@@ -123,21 +177,10 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
             // txtfecha_final_licencia_temporal
             // 
             this.txtfecha_final_licencia_temporal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtfecha_final_licencia_temporal.Location = new System.Drawing.Point(803, 86);
+            this.txtfecha_final_licencia_temporal.Location = new System.Drawing.Point(92, 40);
             this.txtfecha_final_licencia_temporal.Name = "txtfecha_final_licencia_temporal";
             this.txtfecha_final_licencia_temporal.Size = new System.Drawing.Size(120, 20);
             this.txtfecha_final_licencia_temporal.TabIndex = 624;
-            // 
-            // PictureBox1
-            // 
-            this.PictureBox1.BackColor = System.Drawing.Color.White;
-            this.PictureBox1.Image = global::Punto_de_venta.Properties.Resources.Accountin;
-            this.PictureBox1.Location = new System.Drawing.Point(271, 49);
-            this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(374, 223);
-            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox1.TabIndex = 634;
-            this.PictureBox1.TabStop = false;
             // 
             // PanelActivando_licencia
             // 
@@ -163,6 +206,7 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
             this.Button5.TabIndex = 611;
             this.Button5.Text = "Aceptar";
             this.Button5.UseVisualStyleBackColor = false;
+            this.Button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // lblActivando_licencia
             // 
@@ -176,58 +220,55 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
             this.lblActivando_licencia.Text = "Licencia Activada";
             this.lblActivando_licencia.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // PictureBox2
-            // 
-            this.PictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
-            this.PictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.PictureBox2.Name = "PictureBox2";
-            this.PictureBox2.Size = new System.Drawing.Size(148, 131);
-            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox2.TabIndex = 609;
-            this.PictureBox2.TabStop = false;
-            // 
             // lblIDSERIAL
             // 
-            this.lblIDSERIAL.Location = new System.Drawing.Point(469, 314);
+            this.lblIDSERIAL.Location = new System.Drawing.Point(898, 278);
             this.lblIDSERIAL.Name = "lblIDSERIAL";
-            this.lblIDSERIAL.Size = new System.Drawing.Size(667, 20);
+            this.lblIDSERIAL.Size = new System.Drawing.Size(88, 20);
             this.lblIDSERIAL.TabIndex = 666;
             // 
             // lblSerialPcLocal
             // 
-            this.lblSerialPcLocal.Location = new System.Drawing.Point(469, 340);
+            this.lblSerialPcLocal.Location = new System.Drawing.Point(898, 304);
             this.lblSerialPcLocal.Name = "lblSerialPcLocal";
-            this.lblSerialPcLocal.Size = new System.Drawing.Size(667, 20);
+            this.lblSerialPcLocal.Size = new System.Drawing.Size(88, 20);
             this.lblSerialPcLocal.TabIndex = 665;
             // 
             // lblSerial
             // 
-            this.lblSerial.Location = new System.Drawing.Point(469, 368);
+            this.lblSerial.Location = new System.Drawing.Point(898, 332);
             this.lblSerial.Name = "lblSerial";
-            this.lblSerial.Size = new System.Drawing.Size(640, 20);
+            this.lblSerial.Size = new System.Drawing.Size(61, 20);
             this.lblSerial.TabIndex = 664;
             // 
             // PanelActivacion_manual_de_Licencias
             // 
-            this.PanelActivacion_manual_de_Licencias.Location = new System.Drawing.Point(53, 181);
+            this.PanelActivacion_manual_de_Licencias.Controls.Add(this.label3);
+            this.PanelActivacion_manual_de_Licencias.Controls.Add(this.datalistado_licencia_temporal);
+            this.PanelActivacion_manual_de_Licencias.Controls.Add(this.label5);
+            this.PanelActivacion_manual_de_Licencias.Controls.Add(this.txtfecha_final_licencia_temporal);
+            this.PanelActivacion_manual_de_Licencias.Controls.Add(this.TXTFECHA_SISTEMA);
+            this.PanelActivacion_manual_de_Licencias.Controls.Add(this.LBLESTADOLicenciaLocal);
+            this.PanelActivacion_manual_de_Licencias.Controls.Add(this.Panel5);
+            this.PanelActivacion_manual_de_Licencias.Controls.Add(this.lblarchivo1);
+            this.PanelActivacion_manual_de_Licencias.Controls.Add(this.lblFecha);
+            this.PanelActivacion_manual_de_Licencias.Controls.Add(this.lblruta);
+            this.PanelActivacion_manual_de_Licencias.Controls.Add(this.lblSoftware);
+            this.PanelActivacion_manual_de_Licencias.Location = new System.Drawing.Point(30, 145);
             this.PanelActivacion_manual_de_Licencias.Name = "PanelActivacion_manual_de_Licencias";
-            this.PanelActivacion_manual_de_Licencias.Size = new System.Drawing.Size(10, 10);
+            this.PanelActivacion_manual_de_Licencias.Size = new System.Drawing.Size(10, 46);
             this.PanelActivacion_manual_de_Licencias.TabIndex = 662;
             // 
-            // Button3
+            // LBLESTADOLicenciaLocal
             // 
-            this.Button3.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.Button3.FlatAppearance.BorderSize = 0;
-            this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.Button3.ForeColor = System.Drawing.Color.White;
-            this.Button3.Location = new System.Drawing.Point(378, 517);
-            this.Button3.Name = "Button3";
-            this.Button3.Size = new System.Drawing.Size(318, 39);
-            this.Button3.TabIndex = 653;
-            this.Button3.Text = "Activar via WEB (Requiere Internet)";
-            this.Button3.UseVisualStyleBackColor = false;
+            this.LBLESTADOLicenciaLocal.AutoSize = true;
+            this.LBLESTADOLicenciaLocal.BackColor = System.Drawing.Color.Transparent;
+            this.LBLESTADOLicenciaLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLESTADOLicenciaLocal.Location = new System.Drawing.Point(30, 112);
+            this.LBLESTADOLicenciaLocal.Name = "LBLESTADOLicenciaLocal";
+            this.LBLESTADOLicenciaLocal.Size = new System.Drawing.Size(200, 20);
+            this.LBLESTADOLicenciaLocal.TabIndex = 648;
+            this.LBLESTADOLicenciaLocal.Text = "LBLESTADOLicenciaLocal";
             // 
             // Panel5
             // 
@@ -241,7 +282,7 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
             this.Panel5.Controls.Add(this.Label12);
             this.Panel5.Controls.Add(this.Label8);
             this.Panel5.Controls.Add(this.Button2);
-            this.Panel5.Location = new System.Drawing.Point(804, 200);
+            this.Panel5.Location = new System.Drawing.Point(128, 21);
             this.Panel5.Name = "Panel5";
             this.Panel5.Size = new System.Drawing.Size(10, 10);
             this.Panel5.TabIndex = 663;
@@ -345,38 +386,76 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
             this.Button2.Text = "Button2";
             this.Button2.UseVisualStyleBackColor = true;
             // 
+            // lblarchivo1
+            // 
+            this.lblarchivo1.AutoSize = true;
+            this.lblarchivo1.BackColor = System.Drawing.Color.Transparent;
+            this.lblarchivo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblarchivo1.Location = new System.Drawing.Point(30, 34);
+            this.lblarchivo1.Name = "lblarchivo1";
+            this.lblarchivo1.Size = new System.Drawing.Size(62, 20);
+            this.lblarchivo1.TabIndex = 652;
+            this.lblarchivo1.Text = "cadena";
+            // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.BackColor = System.Drawing.Color.Transparent;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(706, 267);
+            this.lblFecha.Location = new System.Drawing.Point(30, 88);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(82, 20);
             this.lblFecha.TabIndex = 651;
             this.lblFecha.Text = "fecha final";
             // 
+            // lblruta
+            // 
+            this.lblruta.AutoSize = true;
+            this.lblruta.BackColor = System.Drawing.Color.Transparent;
+            this.lblruta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblruta.Location = new System.Drawing.Point(30, 2);
+            this.lblruta.Name = "lblruta";
+            this.lblruta.Size = new System.Drawing.Size(37, 20);
+            this.lblruta.TabIndex = 650;
+            this.lblruta.Text = "ruta";
+            // 
+            // lblSoftware
+            // 
+            this.lblSoftware.AutoSize = true;
+            this.lblSoftware.BackColor = System.Drawing.Color.Transparent;
+            this.lblSoftware.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoftware.Location = new System.Drawing.Point(30, 67);
+            this.lblSoftware.Name = "lblSoftware";
+            this.lblSoftware.Size = new System.Drawing.Size(100, 20);
+            this.lblSoftware.TabIndex = 649;
+            this.lblSoftware.Text = "SOFTWARE";
+            // 
+            // Button3
+            // 
+            this.Button3.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Button3.FlatAppearance.BorderSize = 0;
+            this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.Button3.ForeColor = System.Drawing.Color.White;
+            this.Button3.Location = new System.Drawing.Point(378, 517);
+            this.Button3.Name = "Button3";
+            this.Button3.Size = new System.Drawing.Size(318, 39);
+            this.Button3.TabIndex = 653;
+            this.Button3.Text = "Activar via WEB (Requiere Internet)";
+            this.Button3.UseVisualStyleBackColor = false;
+            // 
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.BackColor = System.Drawing.Color.White;
+            this.Label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.Label1.ForeColor = System.Drawing.Color.Black;
             this.Label1.Location = new System.Drawing.Point(57, 390);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(1099, 92);
+            this.Label1.Size = new System.Drawing.Size(1423, 92);
             this.Label1.TabIndex = 656;
-            this.Label1.Text = "Sigue usando \"ADA 369\" por Solo $ 12 (dolares americanos)\r\npor Todo 1 AÑO";
-            // 
-            // LBLESTADOLicenciaLocal
-            // 
-            this.LBLESTADOLicenciaLocal.AutoSize = true;
-            this.LBLESTADOLicenciaLocal.BackColor = System.Drawing.Color.Transparent;
-            this.LBLESTADOLicenciaLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLESTADOLicenciaLocal.Location = new System.Drawing.Point(706, 291);
-            this.LBLESTADOLicenciaLocal.Name = "LBLESTADOLicenciaLocal";
-            this.LBLESTADOLicenciaLocal.Size = new System.Drawing.Size(200, 20);
-            this.LBLESTADOLicenciaLocal.TabIndex = 648;
-            this.LBLESTADOLicenciaLocal.Text = "LBLESTADOLicenciaLocal";
+            this.Label1.Text = "Sigue usando \"JOJAMA\" por Solo $ 450.000 (Pesos Colombianos americanos)\r\npor Todo" +
+    " 2 AÑO";
             // 
             // Button1
             // 
@@ -391,6 +470,7 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
             this.Button1.TabIndex = 654;
             this.Button1.Text = "Activar Licencia Manualmente";
             this.Button1.UseVisualStyleBackColor = false;
+            this.Button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // btn_insertar
             // 
@@ -446,38 +526,32 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
             this.Panel4.Size = new System.Drawing.Size(810, 1);
             this.Panel4.TabIndex = 660;
             // 
-            // lblSoftware
+            // dlg
             // 
-            this.lblSoftware.AutoSize = true;
-            this.lblSoftware.BackColor = System.Drawing.Color.Transparent;
-            this.lblSoftware.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoftware.Location = new System.Drawing.Point(706, 246);
-            this.lblSoftware.Name = "lblSoftware";
-            this.lblSoftware.Size = new System.Drawing.Size(100, 20);
-            this.lblSoftware.TabIndex = 649;
-            this.lblSoftware.Text = "SOFTWARE";
+            this.dlg.FileName = "OpenFileDialog1";
             // 
-            // lblruta
+            // PictureBox1
             // 
-            this.lblruta.AutoSize = true;
-            this.lblruta.BackColor = System.Drawing.Color.Transparent;
-            this.lblruta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblruta.Location = new System.Drawing.Point(706, 181);
-            this.lblruta.Name = "lblruta";
-            this.lblruta.Size = new System.Drawing.Size(37, 20);
-            this.lblruta.TabIndex = 650;
-            this.lblruta.Text = "ruta";
+            this.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PictureBox1.BackColor = System.Drawing.Color.White;
+            this.PictureBox1.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA2;
+            this.PictureBox1.Location = new System.Drawing.Point(435, 33);
+            this.PictureBox1.Name = "PictureBox1";
+            this.PictureBox1.Size = new System.Drawing.Size(374, 223);
+            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox1.TabIndex = 634;
+            this.PictureBox1.TabStop = false;
             // 
-            // lblarchivo1
+            // PictureBox2
             // 
-            this.lblarchivo1.AutoSize = true;
-            this.lblarchivo1.BackColor = System.Drawing.Color.Transparent;
-            this.lblarchivo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblarchivo1.Location = new System.Drawing.Point(706, 213);
-            this.lblarchivo1.Name = "lblarchivo1";
-            this.lblarchivo1.Size = new System.Drawing.Size(62, 20);
-            this.lblarchivo1.TabIndex = 652;
-            this.lblarchivo1.Text = "cadena";
+            this.PictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
+            this.PictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.PictureBox2.Name = "PictureBox2";
+            this.PictureBox2.Size = new System.Drawing.Size(148, 131);
+            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox2.TabIndex = 609;
+            this.PictureBox2.TabStop = false;
             // 
             // Membresias
             // 
@@ -485,37 +559,35 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(1208, 664);
+            this.Controls.Add(this.PictureBox1);
             this.Controls.Add(this.PanelActivando_licencia);
             this.Controls.Add(this.lblIDSERIAL);
             this.Controls.Add(this.lblSerialPcLocal);
             this.Controls.Add(this.lblSerial);
             this.Controls.Add(this.PanelActivacion_manual_de_Licencias);
             this.Controls.Add(this.Button3);
-            this.Controls.Add(this.Panel5);
-            this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.Label1);
-            this.Controls.Add(this.LBLESTADOLicenciaLocal);
             this.Controls.Add(this.Button1);
             this.Controls.Add(this.btn_insertar);
             this.Controls.Add(this.Label4);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.lblSerialPc);
             this.Controls.Add(this.Panel4);
-            this.Controls.Add(this.lblSoftware);
-            this.Controls.Add(this.lblruta);
-            this.Controls.Add(this.lblarchivo1);
-            this.Controls.Add(this.PictureBox1);
             this.Controls.Add(this.Panel12);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Membresias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Membresias";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Membresias_Load);
-            this.Panel12.ResumeLayout(false);
-            this.Panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).EndInit();
             this.PanelActivando_licencia.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
+            this.PanelActivacion_manual_de_Licencias.ResumeLayout(false);
+            this.PanelActivacion_manual_de_Licencias.PerformLayout();
             this.Panel5.ResumeLayout(false);
             this.Panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -561,5 +633,8 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
         internal System.Windows.Forms.Label lblSoftware;
         internal System.Windows.Forms.Label lblruta;
         internal System.Windows.Forms.Label lblarchivo1;
+        internal System.Windows.Forms.OpenFileDialog dlg;
+        public System.Windows.Forms.DataGridView datalistado_licencia_temporal;
+        internal System.Windows.Forms.DataGridViewCheckBoxColumn DataGridViewCheckBoxColumn1;
     }
 }

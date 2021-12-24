@@ -105,8 +105,56 @@ namespace Punto_de_venta.Modulos.Productos
             txtbusca.Text = "Buscar...";
             sumar_costo_de_inventario_CONTAR_PRODUCTOS();
             buscar();
+            mostrar_grupos();
+
+            ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
+            lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
+            lblSerialPc.Text = lblSerialPc.Text.Trim();
+
+            mostrar_inicio_de_sesion();
+            MOSTRAR_CAJA_POR_SERIAL();         
         }
-        
+        int idusuario;
+        int idcaja;
+        private void mostrar_inicio_de_sesion()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = ConexionDt.ConexionData.conexion;
+
+            SqlCommand com = new SqlCommand("mostrar_inicio_De_sesion", con);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@id_serial_pc", ConexionDt.Encryptar_en_texto.Encriptar(lblSerialPc.Text));
+
+            try
+            {
+                con.Open();
+                idusuario = Convert.ToInt32(com.ExecuteScalar());
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        private void MOSTRAR_CAJA_POR_SERIAL()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = ConexionDt.ConexionData.conexion;
+
+            SqlCommand com = new SqlCommand("mostrar_cajas_por_Serial_de_DiscoDuro", con);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@Serial", lblSerialPc.Text);
+            try
+            {
+                con.Open();
+                idcaja = Convert.ToInt32(com.ExecuteScalar());
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void mostrar_grupos()
         {
             PanelGRUPOSSELECT.Visible = true;
@@ -168,8 +216,7 @@ namespace Punto_de_venta.Modulos.Productos
             {
             }
         }      
-        int idusuario;
-        int idcaja;     
+           
         private void insertar_productos()
         {
             if (txtpreciomayoreo.Text == "0" | txtpreciomayoreo.Text == "") txtapartirde.Text = "0";
@@ -221,10 +268,10 @@ namespace Punto_de_venta.Modulos.Productos
                 cmd.Parameters.AddWithValue("@Fecha", DateTime.Today);
                 cmd.Parameters.AddWithValue("@Motivo", "Registro inicial de Producto");
                 cmd.Parameters.AddWithValue("@Cantidad ", txtstock2.Text);
-                cmd.Parameters.AddWithValue("@Id_usuario", Modulos.LOGIN.idusuariovariable);
+                cmd.Parameters.AddWithValue("@Id_usuario", idusuario);
                 cmd.Parameters.AddWithValue("@Tipo", "ENTRADA");
                 cmd.Parameters.AddWithValue("@Estado", "CONFIRMADO");
-                cmd.Parameters.AddWithValue("@Id_caja", Modulos.LOGIN.idcajavariable);               
+                cmd.Parameters.AddWithValue("@Id_caja", idcaja);               
 
                 cmd.ExecuteNonQuery();
                

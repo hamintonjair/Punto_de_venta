@@ -94,7 +94,7 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             this.lblIcono = new System.Windows.Forms.Label();
             this.lblStock_de_Productos = new System.Windows.Forms.Label();
             this.lbltipodebusqueda2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
             this.Panel24 = new System.Windows.Forms.Panel();
             this.datalistadoCajas = new System.Windows.Forms.DataGridView();
             this.DataGridViewCheckBoxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -231,6 +231,9 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip13 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.DATALISTADO_PRODUCTOS_OKA = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblSerialPc = new System.Windows.Forms.Label();
             this.Panel21.SuspendLayout();
             this.StatusStrip4.SuspendLayout();
             this.Panel17.SuspendLayout();
@@ -273,17 +276,18 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             this.menuStrip11.SuspendLayout();
             this.menuStrip12.SuspendLayout();
             this.menuStrip13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DATALISTADO_PRODUCTOS_OKA)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 3);
+            this.label1.Location = new System.Drawing.Point(70, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 40);
+            this.label1.Size = new System.Drawing.Size(66, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Sistema Contable \r\nJojama";
+            this.label1.Text = "Jojama";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Panel21
@@ -423,7 +427,7 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             this.Panel17.Controls.Add(this.Panel26);
             this.Panel17.Controls.Add(this.lbltipodebusqueda2);
             this.Panel17.Controls.Add(this.label1);
-            this.Panel17.Controls.Add(this.textBox1);
+            this.Panel17.Controls.Add(this.txtbuscar);
             this.Panel17.Controls.Add(this.Panel24);
             this.Panel17.Controls.Add(this.panel_granel);
             this.Panel17.Controls.Add(this.dtempresaok);
@@ -437,9 +441,9 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             // 
             // PictureBox4
             // 
-            this.PictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBox4.BackColor = System.Drawing.Color.White;
             this.PictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox4.Image")));
+            this.PictureBox4.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA2;
             this.PictureBox4.Location = new System.Drawing.Point(0, 0);
             this.PictureBox4.Name = "PictureBox4";
             this.PictureBox4.Size = new System.Drawing.Size(52, 47);
@@ -830,22 +834,22 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             this.lbltipodebusqueda2.BackColor = System.Drawing.Color.White;
             this.lbltipodebusqueda2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbltipodebusqueda2.ForeColor = System.Drawing.Color.DimGray;
-            this.lbltipodebusqueda2.Location = new System.Drawing.Point(223, 13);
+            this.lbltipodebusqueda2.Location = new System.Drawing.Point(140, 13);
             this.lbltipodebusqueda2.Name = "lbltipodebusqueda2";
             this.lbltipodebusqueda2.Size = new System.Drawing.Size(201, 18);
             this.lbltipodebusqueda2.TabIndex = 0;
             this.lbltipodebusqueda2.Text = "Buscar por Codigo de Barras";
             this.lbltipodebusqueda2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // txtbuscar
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox1.Location = new System.Drawing.Point(218, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(374, 26);
-            this.textBox1.TabIndex = 457;
+            this.txtbuscar.BackColor = System.Drawing.Color.White;
+            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtbuscar.Location = new System.Drawing.Point(135, 9);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(374, 26);
+            this.txtbuscar.TabIndex = 457;
             // 
             // Panel24
             // 
@@ -2347,7 +2351,7 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             this.ToolStripSeparator6,
             this.BTNTECLADO});
             this.menuStrip10.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.menuStrip10.Location = new System.Drawing.Point(595, 4);
+            this.menuStrip10.Location = new System.Drawing.Point(512, 4);
             this.menuStrip10.Name = "menuStrip10";
             this.menuStrip10.ShowItemToolTips = true;
             this.menuStrip10.Size = new System.Drawing.Size(243, 39);
@@ -2365,6 +2369,7 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             this.BTNLECTORA.Size = new System.Drawing.Size(94, 30);
             this.BTNLECTORA.Text = "Lectora";
             this.BTNLECTORA.ToolTipText = "Conecta tu Lectora";
+            this.BTNLECTORA.Click += new System.EventHandler(this.BTNLECTORA_Click);
             // 
             // ToolStripSeparator6
             // 
@@ -2385,6 +2390,7 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             this.BTNTECLADO.Name = "BTNTECLADO";
             this.BTNTECLADO.Size = new System.Drawing.Size(94, 30);
             this.BTNTECLADO.Text = "Teclado";
+            this.BTNTECLADO.Click += new System.EventHandler(this.BTNTECLADO_Click);
             // 
             // Panel11
             // 
@@ -2574,12 +2580,58 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             this.toolStripMenuItem6.Size = new System.Drawing.Size(28, 27);
             this.toolStripMenuItem6.ToolTipText = "Configuracion";
             // 
+            // DATALISTADO_PRODUCTOS_OKA
+            // 
+            this.DATALISTADO_PRODUCTOS_OKA.AllowUserToAddRows = false;
+            this.DATALISTADO_PRODUCTOS_OKA.AllowUserToDeleteRows = false;
+            this.DATALISTADO_PRODUCTOS_OKA.AllowUserToResizeRows = false;
+            this.DATALISTADO_PRODUCTOS_OKA.BackgroundColor = System.Drawing.Color.DimGray;
+            this.DATALISTADO_PRODUCTOS_OKA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DATALISTADO_PRODUCTOS_OKA.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersVisible = false;
+            this.DATALISTADO_PRODUCTOS_OKA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.DATALISTADO_PRODUCTOS_OKA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DATALISTADO_PRODUCTOS_OKA.EnableHeadersVisualStyles = false;
+            this.DATALISTADO_PRODUCTOS_OKA.Location = new System.Drawing.Point(487, 229);
+            this.DATALISTADO_PRODUCTOS_OKA.MultiSelect = false;
+            this.DATALISTADO_PRODUCTOS_OKA.Name = "DATALISTADO_PRODUCTOS_OKA";
+            this.DATALISTADO_PRODUCTOS_OKA.ReadOnly = true;
+            this.DATALISTADO_PRODUCTOS_OKA.RowHeadersVisible = false;
+            this.DATALISTADO_PRODUCTOS_OKA.RowHeadersWidth = 9;
+            this.DATALISTADO_PRODUCTOS_OKA.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            this.DATALISTADO_PRODUCTOS_OKA.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DATALISTADO_PRODUCTOS_OKA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DATALISTADO_PRODUCTOS_OKA.Size = new System.Drawing.Size(325, 184);
+            this.DATALISTADO_PRODUCTOS_OKA.TabIndex = 600;
+            this.DATALISTADO_PRODUCTOS_OKA.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // lblSerialPc
+            // 
+            this.lblSerialPc.AutoSize = true;
+            this.lblSerialPc.Location = new System.Drawing.Point(356, 162);
+            this.lblSerialPc.Name = "lblSerialPc";
+            this.lblSerialPc.Size = new System.Drawing.Size(56, 13);
+            this.lblSerialPc.TabIndex = 629;
+            this.lblSerialPc.Text = "lblSerialPc";
+            // 
             // Ventas_Menu_Princi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1298, 643);
+            this.Controls.Add(this.lblSerialPc);
+            this.Controls.Add(this.DATALISTADO_PRODUCTOS_OKA);
             this.Controls.Add(this.Panel17);
             this.Controls.Add(this.Panel21);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2654,7 +2706,9 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             this.menuStrip12.PerformLayout();
             this.menuStrip13.ResumeLayout(false);
             this.menuStrip13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DATALISTADO_PRODUCTOS_OKA)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -2704,7 +2758,7 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
         internal System.Windows.Forms.Label lblIcono;
         internal System.Windows.Forms.Label lblStock_de_Productos;
         internal System.Windows.Forms.Label lbltipodebusqueda2;
-        internal System.Windows.Forms.TextBox textBox1;
+        internal System.Windows.Forms.TextBox txtbuscar;
         internal System.Windows.Forms.Panel Panel24;
         public System.Windows.Forms.DataGridView datalistadoCajas;
         internal System.Windows.Forms.DataGridViewCheckBoxColumn DataGridViewCheckBoxColumn6;
@@ -2841,5 +2895,8 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
         internal System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         internal System.Windows.Forms.MenuStrip menuStrip13;
         internal System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        public System.Windows.Forms.DataGridView DATALISTADO_PRODUCTOS_OKA;
+        private System.Windows.Forms.DataGridViewImageColumn Column1;
+        private System.Windows.Forms.Label lblSerialPc;
     }
 }

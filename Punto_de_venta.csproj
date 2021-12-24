@@ -95,6 +95,12 @@
     <Compile Include="Logica\Lproductos.cs" />
     <Compile Include="Logica\Lproveedores.cs" />
     <Compile Include="Logica\Lventas.cs" />
+    <Compile Include="Modulos\Admin_nivel_dios\DASHBOARD_PRINCIPAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Admin_nivel_dios\DASHBOARD_PRINCIPAL.Designer.cs">
+      <DependentUpon>DASHBOARD_PRINCIPAL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Asistente_de_Instalacion_Servidor\Eleccion_Servidor_o_remoto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,11 +131,11 @@
     <Compile Include="Modulos\Caja\Apertura_de_Caja.Designer.cs">
       <DependentUpon>Apertura_de_Caja.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos\Caja\Cajas_form.cs">
+    <Compile Include="Modulos\Caja\Cajas_formu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos\Caja\Cajas_form.Designer.cs">
-      <DependentUpon>Cajas_form.cs</DependentUpon>
+    <Compile Include="Modulos\Caja\Cajas_formu.Designer.cs">
+      <DependentUpon>Cajas_formu.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Caja\CierreTurno.cs">
       <SubType>Form</SubType>
@@ -155,6 +161,12 @@
     <Compile Include="Modulos\Conexion_remota\Caja_secundaria.Designer.cs">
       <DependentUpon>Caja_secundaria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Configuracion\PANEL_CONFIGURACIONES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Configuracion\PANEL_CONFIGURACIONES.Designer.cs">
+      <DependentUpon>PANEL_CONFIGURACIONES.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\CopiasBd\CopiasBd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +185,12 @@
     <Compile Include="Modulos\CorreoBase\ConfigurarCorreo.Designer.cs">
       <DependentUpon>ConfigurarCorreo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Epresa_Configuracion\EMPRESA_CONFIG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Epresa_Configuracion\EMPRESA_CONFIG.Designer.cs">
+      <DependentUpon>EMPRESA_CONFIG.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Inventarioss_Kardex\Inventarios_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +202,12 @@
     </Compile>
     <Compile Include="Modulos\Licencias_Membresias\Membresias.Designer.cs">
       <DependentUpon>Membresias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Licencias_Membresias\MembresiasNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Licencias_Membresias\MembresiasNuevo.Designer.cs">
+      <DependentUpon>MembresiasNuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Login\LOGIN.cs">
       <SubType>Form</SubType>
@@ -261,6 +285,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Modulos\Admin_nivel_dios\DASHBOARD_PRINCIPAL.resx">
+      <DependentUpon>DASHBOARD_PRINCIPAL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Asistente_de_Instalacion_Servidor\Eleccion_Servidor_o_remoto.resx">
       <DependentUpon>Eleccion_Servidor_o_remoto.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,8 +303,8 @@
     <EmbeddedResource Include="Modulos\Caja\Apertura_de_Caja.resx">
       <DependentUpon>Apertura_de_Caja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\Caja\Cajas_form.resx">
-      <DependentUpon>Cajas_form.cs</DependentUpon>
+    <EmbeddedResource Include="Modulos\Caja\Cajas_formu.resx">
+      <DependentUpon>Cajas_formu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Caja\CierreTurno.resx">
       <DependentUpon>CierreTurno.cs</DependentUpon>
@@ -291,14 +318,23 @@
     <EmbeddedResource Include="Modulos\Conexion_remota\Caja_secundaria.resx">
       <DependentUpon>Caja_secundaria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Configuracion\PANEL_CONFIGURACIONES.resx">
+      <DependentUpon>PANEL_CONFIGURACIONES.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CorreoBase\ConfigurarCorreo.resx">
       <DependentUpon>ConfigurarCorreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Epresa_Configuracion\EMPRESA_CONFIG.resx">
+      <DependentUpon>EMPRESA_CONFIG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Inventarioss_Kardex\Inventarios_Menu.resx">
       <DependentUpon>Inventarios_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Licencias_Membresias\Membresias.resx">
       <DependentUpon>Membresias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Licencias_Membresias\MembresiasNuevo.resx">
+      <DependentUpon>MembresiasNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Login\LOGIN.resx">
       <DependentUpon>LOGIN.cs</DependentUpon>
@@ -368,6 +404,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Modulos\Login\HTMLPage1.html" />
+    <None Include="Resources\menuCajas_claro.png" />
+    <None Include="Resources\Caja_recien_creada.png" />
+    <None Include="Resources\Caja_eliminada_oficial.png" />
+    <None Include="Resources\caja_eliminada.png" />
+    <None Include="Resources\Caja_activa.png" />
+    <None Include="Resources\logoJOJAMA2.png" />
+    <None Include="Resources\logoJOJAMA1.png" />
+    <None Include="Resources\Untitled Design %281%29.png" />
+    <None Include="Resources\My project %282%29.png" />
+    <None Include="Resources\Negro y Marrón Cuadrado Comunidad y Sin ánimo de lucro Logotipo %281%29.png" />
+    <None Include="Resources\Negro y Marrón Cuadrado Comunidad y Sin ánimo de lucro Logotipo.png" />
+    <None Include="Resources\lohoJojama.png" />
+    <None Include="Resources\supermercado.png" />
+    <None Include="Resources\whatsappmessage_conversation_whatsap_7149.png" />
     <None Include="Resources\Rojo.png" />
     <None Include="Resources\negro.png" />
     <None Include="Resources\naranja.png" />

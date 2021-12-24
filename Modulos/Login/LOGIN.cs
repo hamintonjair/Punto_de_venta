@@ -508,7 +508,7 @@ namespace Punto_de_venta.Modulos
         //metodo para selecionar el serial del equipo ya que la caja se registra es cada equipo
         private void timer1_Tick(object sender, EventArgs e)
         {
-           
+
             timer1.Stop();
             mostrar_usuarios_registrados();
 
@@ -522,7 +522,7 @@ namespace Punto_de_venta.Modulos
                     frm.ShowDialog();
                     this.Dispose();
                 }
-                
+
             }
 
             if (INDICADOR == "INCORRECTO")
@@ -534,28 +534,29 @@ namespace Punto_de_venta.Modulos
             }
             try
             {
-                ManagementObject MOS = new ManagementObject (@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
-                
-                    lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
+                ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
 
-                    MOSTRAR_CAJA_POR_SERIAL();
-                    try
-                    {
-                        txtidcaja.Text = datalistado_caja.SelectedCells[1].Value.ToString();
-                        lblcaja.Text = datalistado_caja.SelectedCells[2].Value.ToString();
-                        idcajavariable = txtidcaja.Text;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                
+                lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
+                lblSerialPc.Text = lblSerialPc.Text.Trim();
+
+                MOSTRAR_CAJA_POR_SERIAL();
+                try
+                {
+                    txtidcaja.Text = datalistado_caja.SelectedCells[1].Value.ToString();
+                    lblcaja.Text = datalistado_caja.SelectedCells[2].Value.ToString();
+                    idcajavariable = txtidcaja.Text;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-      
+
             MOSTRAR_licencia_temporal();
             try
             {
@@ -588,10 +589,19 @@ namespace Punto_de_venta.Modulos
                         {
                             Ingresar_por_licencia_de_paga();
                         }
+
+                        else
+                        {
+                            Hide();
+                            Modulos.Licencias_Membresias.Membresias frm = new Modulos.Licencias_Membresias.Membresias();
+                            frm.ShowDialog();
+                            Dispose();
+                        }
                     }
                     else
                     {
                         Hide();
+
                         Modulos.Licencias_Membresias.Membresias frm = new Modulos.Licencias_Membresias.Membresias();
                         frm.ShowDialog();
                         Dispose();
@@ -605,14 +615,6 @@ namespace Punto_de_venta.Modulos
                     frm.ShowDialog();
                     Dispose();
                 }
-            }
-            else
-            {
-                Hide();
-
-                Modulos.Licencias_Membresias.Membresias frm = new Modulos.Licencias_Membresias.Membresias();
-                frm.ShowDialog();
-                Dispose();
             }
         }
         private void Ingresar_por_licencia_Temporal()
@@ -757,21 +759,68 @@ namespace Punto_de_venta.Modulos
             {
                 progressBar1.Value = 0;
                 timer2.Stop();
-                if (lblApertura_De_caja.Text == "Nuevo*****" & lblRol.Text != "Solo Ventas (no esta autorizado para manejar dinero)")
+
+                if (txtlogin.Text == "admin")
                 {
+                    editar_inicio_De_sesion();
                     this.Hide();
-                    Caja.Apertura_de_Caja frm = new Caja.Apertura_de_Caja();
+                    Admin_nivel_dios.DASHBOARD_PRINCIPAL frm = new Admin_nivel_dios.DASHBOARD_PRINCIPAL();
                     frm.ShowDialog();
-                    this.Hide();
+                    Dispose();
                 }
                 else
                 {
-                    this.Hide();
-                    Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
-                    frm.ShowDialog();
-                    this.Hide();
 
+                    if (lblApertura_De_caja.Text == "Nuevo*****" & lblRol.Text == "Cajero (Si esta autorizado para manejar dinero)")
+                    {
+                        editar_inicio_De_sesion();
+                        this.Hide();
+                        Caja.Apertura_de_Caja frm = new Caja.Apertura_de_Caja();
+                        frm.ShowDialog();
+                        Dispose();
+                    }
+                    else if (lblApertura_De_caja.Text != "Nuevo*****" & lblRol.Text == "Cajero (Si esta autorizado para manejar dinero)")
+                    {
+                        editar_inicio_De_sesion();
+                        this.Hide();
+                        Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
+                        frm.ShowDialog();
+                        Dispose();
+                    }
+                    else if (lblRol.Text == "Solo Ventas (no esta autorizado para manejar dinero)")
+                    {
+                        editar_inicio_De_sesion();
+                        this.Hide();
+                        Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
+                        frm.ShowDialog();
+                        Dispose();
+
+                    }
                 }
+            }
+        }
+        private void editar_inicio_De_sesion()
+        {
+            try
+            {
+
+
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = ConexionDt.ConexionData.conexion;
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd = new SqlCommand("editar_inicio_De_sesion", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@id_usuario", IDUSUARIO.Text);
+                cmd.Parameters.AddWithValue("@Id_serial_Pc", ConexionDt.Encryptar_en_texto.Encriptar(lblSerialPc.Text));
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

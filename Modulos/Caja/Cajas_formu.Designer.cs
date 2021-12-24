@@ -1,7 +1,7 @@
 ﻿
 namespace Punto_de_venta.Modulos.Caja
 {
-    partial class Cajas_form
+    partial class Cajas_formu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@ namespace Punto_de_venta.Modulos.Caja
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cajas_formu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panelEdicion_de_caja = new System.Windows.Forms.Panel();
@@ -37,19 +38,6 @@ namespace Punto_de_venta.Modulos.Caja
             this.panel20 = new System.Windows.Forms.Panel();
             this.txtcaja = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.restaurarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -62,25 +50,41 @@ namespace Punto_de_venta.Modulos.Caja
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restaurarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panelEdicion_de_caja.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.panel1.Controls.Add(this.panel18);
             this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.panel2);
@@ -89,22 +93,22 @@ namespace Punto_de_venta.Modulos.Caja
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(75, 51);
+            this.panel1.Location = new System.Drawing.Point(77, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1357, 627);
+            this.panel1.Size = new System.Drawing.Size(1329, 696);
             this.panel1.TabIndex = 1;
             // 
             // panel18
             // 
             this.panel18.Controls.Add(this.panelEdicion_de_caja);
-            this.panel18.Location = new System.Drawing.Point(12, 61);
+            this.panel18.Location = new System.Drawing.Point(52, 50);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(356, 356);
-            this.panel18.TabIndex = 8;
+            this.panel18.Size = new System.Drawing.Size(356, 228);
+            this.panel18.TabIndex = 9;
             this.panel18.Visible = false;
             // 
             // panelEdicion_de_caja
@@ -158,7 +162,7 @@ namespace Punto_de_venta.Modulos.Caja
             // 
             // txtcaja
             // 
-            this.txtcaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.txtcaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.txtcaja.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcaja.ForeColor = System.Drawing.Color.White;
@@ -179,131 +183,6 @@ namespace Punto_de_venta.Modulos.Caja
             this.label8.TabIndex = 0;
             this.label8.Text = "Nombre de Caja";
             // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
-            this.panel9.Controls.Add(this.label6);
-            this.panel9.Controls.Add(this.label7);
-            this.panel9.Controls.Add(this.panel13);
-            this.panel9.Location = new System.Drawing.Point(1097, 36);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(208, 143);
-            this.panel9.TabIndex = 7;
-            this.panel9.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(0, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(208, 91);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "CAJA PRINCIPAL";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(0, 116);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(208, 27);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "label7";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.panel15);
-            this.panel13.Controls.Add(this.label5);
-            this.panel13.Controls.Add(this.menuStrip1);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel13.Location = new System.Drawing.Point(0, 0);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(208, 25);
-            this.panel13.TabIndex = 0;
-            // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.pictureBox1);
-            this.panel15.Controls.Add(this.panel17);
-            this.panel15.Controls.Add(this.panel16);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel15.Location = new System.Drawing.Point(0, 0);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(28, 25);
-            this.panel15.TabIndex = 3;
-            // 
-            // panel17
-            // 
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel17.Location = new System.Drawing.Point(0, 4);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(4, 21);
-            this.panel17.TabIndex = 1;
-            // 
-            // panel16
-            // 
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel16.Location = new System.Drawing.Point(0, 0);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(28, 4);
-            this.panel16.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.ForeColor = System.Drawing.Color.Blue;
-            this.label5.Location = new System.Drawing.Point(59, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 25);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Caja Apertura";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(163, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(45, 25);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editarToolStripMenuItem,
-            this.eliminarToolStripMenuItem,
-            this.restaurarToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(38, 4);
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
-            // 
-            // restaurarToolStripMenuItem
-            // 
-            this.restaurarToolStripMenuItem.Name = "restaurarToolStripMenuItem";
-            this.restaurarToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.restaurarToolStripMenuItem.Text = "Restaurar";
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel14);
@@ -312,7 +191,7 @@ namespace Punto_de_venta.Modulos.Caja
             this.panel2.Controls.Add(this.panel11);
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.panel8);
-            this.panel2.Location = new System.Drawing.Point(666, 16);
+            this.panel2.Location = new System.Drawing.Point(732, 15);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(208, 143);
             this.panel2.TabIndex = 0;
@@ -368,16 +247,16 @@ namespace Punto_de_venta.Modulos.Caja
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Yellow;
-            this.panel4.Location = new System.Drawing.Point(386, 224);
+            this.panel4.Location = new System.Drawing.Point(452, 224);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(731, 10);
             this.panel4.TabIndex = 4;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(374, 285);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(414, 291);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(791, 369);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(791, 363);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // label4
@@ -385,7 +264,7 @@ namespace Punto_de_venta.Modulos.Caja
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1185, 321);
+            this.label4.Location = new System.Drawing.Point(1225, 321);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 51);
             this.label4.TabIndex = 1;
@@ -396,7 +275,7 @@ namespace Punto_de_venta.Modulos.Caja
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(880, 60);
+            this.label2.Location = new System.Drawing.Point(946, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 51);
             this.label2.TabIndex = 1;
@@ -407,16 +286,27 @@ namespace Punto_de_venta.Modulos.Caja
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(3, 321);
+            this.label3.Location = new System.Drawing.Point(43, 321);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(357, 51);
             this.label3.TabIndex = 1;
             this.label3.Text = "Cajas Remotas {";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(396, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(330, 51);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Caja Principal {";
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Yellow;
-            this.panel5.Location = new System.Drawing.Point(386, 224);
+            this.panel5.Location = new System.Drawing.Point(444, 224);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(10, 74);
             this.panel5.TabIndex = 5;
@@ -424,7 +314,7 @@ namespace Punto_de_venta.Modulos.Caja
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Yellow;
-            this.panel6.Location = new System.Drawing.Point(1107, 224);
+            this.panel6.Location = new System.Drawing.Point(1173, 224);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(10, 77);
             this.panel6.TabIndex = 6;
@@ -432,25 +322,105 @@ namespace Punto_de_venta.Modulos.Caja
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Yellow;
-            this.panel3.Location = new System.Drawing.Point(758, 150);
+            this.panel3.Location = new System.Drawing.Point(824, 150);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(10, 77);
             this.panel3.TabIndex = 3;
             // 
-            // label1
+            // panel13
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(330, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(330, 51);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Caja Principal {";
+            this.panel13.Controls.Add(this.panel15);
+            this.panel13.Controls.Add(this.label5);
+            this.panel13.Controls.Add(this.menuStrip1);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(208, 25);
+            this.panel13.TabIndex = 0;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(163, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(45, 25);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem,
+            this.eliminarToolStripMenuItem,
+            this.restaurarToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(38, 4);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            // 
+            // restaurarToolStripMenuItem
+            // 
+            this.restaurarToolStripMenuItem.Name = "restaurarToolStripMenuItem";
+            this.restaurarToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.restaurarToolStripMenuItem.Text = "Restaurar";
+            // 
+            // label5
+            // 
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(163, 25);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Caja Apertura";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.pictureBox1);
+            this.panel15.Controls.Add(this.panel17);
+            this.panel15.Controls.Add(this.panel16);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel15.Location = new System.Drawing.Point(0, 0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(28, 25);
+            this.panel15.TabIndex = 3;
+            // 
+            // panel16
+            // 
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel16.Location = new System.Drawing.Point(0, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(28, 4);
+            this.panel16.TabIndex = 0;
+            // 
+            // panel17
+            // 
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel17.Location = new System.Drawing.Point(0, 4);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(4, 21);
+            this.panel17.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Punto_de_venta.Properties.Resources.Caja_activa;
             this.pictureBox1.Location = new System.Drawing.Point(4, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 21);
@@ -458,30 +428,66 @@ namespace Punto_de_venta.Modulos.Caja
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // Cajas_form
+            // label7
+            // 
+            this.label7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(0, 116);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(208, 27);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "label7";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(0, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(208, 91);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "CAJA PRINCIPAL";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(143)))), ((int)(((byte)(62)))));
+            this.panel9.Controls.Add(this.label6);
+            this.panel9.Controls.Add(this.label7);
+            this.panel9.Controls.Add(this.panel13);
+            this.panel9.Location = new System.Drawing.Point(1080, 27);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(208, 143);
+            this.panel9.TabIndex = 8;
+            this.panel9.Visible = false;
+            // 
+            // Cajas_formu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.ClientSize = new System.Drawing.Size(1460, 709);
+            this.ClientSize = new System.Drawing.Size(1483, 750);
             this.Controls.Add(this.panel1);
-            this.Name = "Cajas_form";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Cajas_formu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cajas_form";
+            this.Text = "Cajas_formu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Cajas_form_Load);
+            this.Load += new System.EventHandler(this.Cajas_formu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panelEdicion_de_caja.ResumeLayout(false);
             this.panelEdicion_de_caja.PerformLayout();
-            this.panel9.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -489,6 +495,22 @@ namespace Punto_de_venta.Modulos.Caja
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panelEdicion_de_caja;
         private System.Windows.Forms.Button button2;
@@ -510,21 +532,5 @@ namespace Punto_de_venta.Modulos.Caja
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restaurarToolStripMenuItem;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
     }
 }

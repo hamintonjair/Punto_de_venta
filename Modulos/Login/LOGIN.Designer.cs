@@ -53,7 +53,10 @@ namespace Punto_de_venta.Modulos
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblcaja = new System.Windows.Forms.Label();
+            this.datalistado_licencia_temporal = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblestadoLicencias = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.MenuStrip15 = new System.Windows.Forms.MenuStrip();
             this.tver = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +64,8 @@ namespace Punto_de_venta.Modulos
             this.Panel4 = new System.Windows.Forms.Panel();
             this.txtPasswor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblestadoLicencias = new System.Windows.Forms.Label();
+            this.txtfecha_final_licencia_temporal = new System.Windows.Forms.DateTimePicker();
+            this.txtfecha_inicio_licencia = new System.Windows.Forms.DateTimePicker();
             this.pboxLicencia = new System.Windows.Forms.PictureBox();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.btnOlvidoContraseña = new System.Windows.Forms.Button();
@@ -86,10 +90,11 @@ namespace Punto_de_venta.Modulos
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.Eli = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtcontador = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.LBLESTADOLicenciaLocal = new System.Windows.Forms.Label();
+            this.lblSerialPcLocal = new System.Windows.Forms.Label();
             this.datalistado_usuarios_registrado = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.datalistado_movimiento_validar = new System.Windows.Forms.DataGridView();
@@ -109,12 +114,6 @@ namespace Punto_de_venta.Modulos
             this.lblRol = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblresultadocontraseña = new System.Windows.Forms.Label();
-            this.lblSerialPcLocal = new System.Windows.Forms.Label();
-            this.LBLESTADOLicenciaLocal = new System.Windows.Forms.Label();
-            this.datalistado_licencia_temporal = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.txtfecha_inicio_licencia = new System.Windows.Forms.DateTimePicker();
-            this.txtfecha_final_licencia_temporal = new System.Windows.Forms.DateTimePicker();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
@@ -124,6 +123,7 @@ namespace Punto_de_venta.Modulos
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.MenuStrip15.SuspendLayout();
@@ -137,7 +137,6 @@ namespace Punto_de_venta.Modulos
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_movimiento_validar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_detalle_cierre_de_caja)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,7 +150,7 @@ namespace Punto_de_venta.Modulos
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(258, 59);
+            this.panel1.Location = new System.Drawing.Point(255, 59);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(660, 502);
             this.panel1.TabIndex = 2;
@@ -321,7 +320,6 @@ namespace Punto_de_venta.Modulos
             this.panel5.Controls.Add(this.IDUSUARIO);
             this.panel5.Controls.Add(this.dataGridView1);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.datalistado_licencia_temporal);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.lblcaja);
@@ -413,21 +411,66 @@ namespace Punto_de_venta.Modulos
             this.lblcaja.TabIndex = 618;
             this.lblcaja.Text = "lblcaja";
             // 
+            // datalistado_licencia_temporal
+            // 
+            this.datalistado_licencia_temporal.AllowUserToAddRows = false;
+            this.datalistado_licencia_temporal.AllowUserToResizeRows = false;
+            this.datalistado_licencia_temporal.BackgroundColor = System.Drawing.Color.White;
+            this.datalistado_licencia_temporal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datalistado_licencia_temporal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.datalistado_licencia_temporal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.datalistado_licencia_temporal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datalistado_licencia_temporal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewImageColumn7});
+            this.datalistado_licencia_temporal.EnableHeadersVisualStyles = false;
+            this.datalistado_licencia_temporal.Location = new System.Drawing.Point(197, 78);
+            this.datalistado_licencia_temporal.Name = "datalistado_licencia_temporal";
+            this.datalistado_licencia_temporal.ReadOnly = true;
+            this.datalistado_licencia_temporal.RowHeadersVisible = false;
+            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.datalistado_licencia_temporal.RowTemplate.Height = 30;
+            this.datalistado_licencia_temporal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datalistado_licencia_temporal.Size = new System.Drawing.Size(77, 36);
+            this.datalistado_licencia_temporal.TabIndex = 631;
+            // 
+            // dataGridViewImageColumn7
+            // 
+            this.dataGridViewImageColumn7.HeaderText = "";
+            this.dataGridViewImageColumn7.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn7.Image")));
+            this.dataGridViewImageColumn7.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn7.Name = "dataGridViewImageColumn7";
+            this.dataGridViewImageColumn7.ReadOnly = true;
+            // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Controls.Add(this.lblestadoLicencias);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.lblestadoLicencias);
+            this.panel2.Controls.Add(this.txtfecha_final_licencia_temporal);
+            this.panel2.Controls.Add(this.txtfecha_inicio_licencia);
             this.panel2.Controls.Add(this.pboxLicencia);
             this.panel2.Controls.Add(this.btnIniciarSesion);
             this.panel2.Controls.Add(this.btnOlvidoContraseña);
             this.panel2.Controls.Add(this.flowLayoutPanel2);
             this.panel2.Controls.Add(this.btnCambiarUsuario);
-            this.panel2.Location = new System.Drawing.Point(223, 43);
+            this.panel2.Location = new System.Drawing.Point(220, 43);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(401, 677);
             this.panel2.TabIndex = 0;
+            // 
+            // lblestadoLicencias
+            // 
+            this.lblestadoLicencias.AutoSize = true;
+            this.lblestadoLicencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblestadoLicencias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblestadoLicencias.Location = new System.Drawing.Point(46, 628);
+            this.lblestadoLicencias.Name = "lblestadoLicencias";
+            this.lblestadoLicencias.Size = new System.Drawing.Size(60, 17);
+            this.lblestadoLicencias.TabIndex = 8;
+            this.lblestadoLicencias.Text = "Licencia";
             // 
             // panel3
             // 
@@ -519,16 +562,22 @@ namespace Punto_de_venta.Modulos
             this.label3.Text = "Inicio de Sesion";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblestadoLicencias
+            // txtfecha_final_licencia_temporal
             // 
-            this.lblestadoLicencias.AutoSize = true;
-            this.lblestadoLicencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblestadoLicencias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblestadoLicencias.Location = new System.Drawing.Point(46, 628);
-            this.lblestadoLicencias.Name = "lblestadoLicencias";
-            this.lblestadoLicencias.Size = new System.Drawing.Size(60, 17);
-            this.lblestadoLicencias.TabIndex = 8;
-            this.lblestadoLicencias.Text = "Licencia";
+            this.txtfecha_final_licencia_temporal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtfecha_final_licencia_temporal.Location = new System.Drawing.Point(-42, 35);
+            this.txtfecha_final_licencia_temporal.Name = "txtfecha_final_licencia_temporal";
+            this.txtfecha_final_licencia_temporal.Size = new System.Drawing.Size(109, 20);
+            this.txtfecha_final_licencia_temporal.TabIndex = 630;
+            this.txtfecha_final_licencia_temporal.Value = new System.DateTime(2019, 11, 30, 18, 11, 0, 0);
+            // 
+            // txtfecha_inicio_licencia
+            // 
+            this.txtfecha_inicio_licencia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtfecha_inicio_licencia.Location = new System.Drawing.Point(-39, 48);
+            this.txtfecha_inicio_licencia.Name = "txtfecha_inicio_licencia";
+            this.txtfecha_inicio_licencia.Size = new System.Drawing.Size(105, 20);
+            this.txtfecha_inicio_licencia.TabIndex = 629;
             // 
             // pboxLicencia
             // 
@@ -891,18 +940,6 @@ namespace Punto_de_venta.Modulos
             this.txtcontador.TabIndex = 616;
             this.txtcontador.Text = "label1";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 116);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 40);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Sistema Contable \r\nJojama";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "";
@@ -911,8 +948,8 @@ namespace Punto_de_venta.Modulos
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 1);
+            this.pictureBox1.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA1;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(148, 112);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -923,11 +960,10 @@ namespace Punto_de_venta.Modulos
             // 
             this.panel6.Controls.Add(this.LBLESTADOLicenciaLocal);
             this.panel6.Controls.Add(this.lblSerialPcLocal);
-            this.panel6.Controls.Add(this.txtfecha_final_licencia_temporal);
             this.panel6.Controls.Add(this.datalistado_usuarios_registrado);
             this.panel6.Controls.Add(this.datalistado_movimiento_validar);
-            this.panel6.Controls.Add(this.txtfecha_inicio_licencia);
             this.panel6.Controls.Add(this.datalistado_caja);
+            this.panel6.Controls.Add(this.datalistado_licencia_temporal);
             this.panel6.Controls.Add(this.progressBar2);
             this.panel6.Controls.Add(this.lblSerialPc);
             this.panel6.Controls.Add(this.datalistado_detalle_cierre_de_caja);
@@ -944,10 +980,30 @@ namespace Punto_de_venta.Modulos
             this.panel6.Controls.Add(this.lblRol);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.lblresultadocontraseña);
-            this.panel6.Location = new System.Drawing.Point(203, 25);
+            this.panel6.Location = new System.Drawing.Point(170, 59);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(31, 12);
+            this.panel6.Size = new System.Drawing.Size(34, 13);
             this.panel6.TabIndex = 5;
+            // 
+            // LBLESTADOLicenciaLocal
+            // 
+            this.LBLESTADOLicenciaLocal.AutoSize = true;
+            this.LBLESTADOLicenciaLocal.ForeColor = System.Drawing.Color.White;
+            this.LBLESTADOLicenciaLocal.Location = new System.Drawing.Point(46, 90);
+            this.LBLESTADOLicenciaLocal.Name = "LBLESTADOLicenciaLocal";
+            this.LBLESTADOLicenciaLocal.Size = new System.Drawing.Size(136, 13);
+            this.LBLESTADOLicenciaLocal.TabIndex = 632;
+            this.LBLESTADOLicenciaLocal.Text = "LBLESTADOLicenciaLocal";
+            // 
+            // lblSerialPcLocal
+            // 
+            this.lblSerialPcLocal.AutoSize = true;
+            this.lblSerialPcLocal.ForeColor = System.Drawing.Color.White;
+            this.lblSerialPcLocal.Location = new System.Drawing.Point(38, 60);
+            this.lblSerialPcLocal.Name = "lblSerialPcLocal";
+            this.lblSerialPcLocal.Size = new System.Drawing.Size(82, 13);
+            this.lblSerialPcLocal.TabIndex = 633;
+            this.lblSerialPcLocal.Text = "lblSerialPcLocal";
             // 
             // datalistado_usuarios_registrado
             // 
@@ -961,7 +1017,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_usuarios_registrado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn6});
             this.datalistado_usuarios_registrado.EnableHeadersVisualStyles = false;
-            this.datalistado_usuarios_registrado.Location = new System.Drawing.Point(9, 229);
+            this.datalistado_usuarios_registrado.Location = new System.Drawing.Point(108, 134);
             this.datalistado_usuarios_registrado.Name = "datalistado_usuarios_registrado";
             this.datalistado_usuarios_registrado.ReadOnly = true;
             this.datalistado_usuarios_registrado.RowHeadersVisible = false;
@@ -970,7 +1026,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_usuarios_registrado.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.datalistado_usuarios_registrado.RowTemplate.Height = 30;
             this.datalistado_usuarios_registrado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado_usuarios_registrado.Size = new System.Drawing.Size(365, 54);
+            this.datalistado_usuarios_registrado.Size = new System.Drawing.Size(258, 32);
             this.datalistado_usuarios_registrado.TabIndex = 629;
             // 
             // dataGridViewImageColumn6
@@ -1071,7 +1127,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_detalle_cierre_de_caja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn4});
             this.datalistado_detalle_cierre_de_caja.EnableHeadersVisualStyles = false;
-            this.datalistado_detalle_cierre_de_caja.Location = new System.Drawing.Point(33, 47);
+            this.datalistado_detalle_cierre_de_caja.Location = new System.Drawing.Point(77, 54);
             this.datalistado_detalle_cierre_de_caja.Name = "datalistado_detalle_cierre_de_caja";
             this.datalistado_detalle_cierre_de_caja.ReadOnly = true;
             this.datalistado_detalle_cierre_de_caja.RowHeadersVisible = false;
@@ -1187,75 +1243,6 @@ namespace Punto_de_venta.Modulos
             this.lblresultadocontraseña.TabIndex = 11;
             this.lblresultadocontraseña.Text = "label5";
             // 
-            // lblSerialPcLocal
-            // 
-            this.lblSerialPcLocal.AutoSize = true;
-            this.lblSerialPcLocal.ForeColor = System.Drawing.Color.White;
-            this.lblSerialPcLocal.Location = new System.Drawing.Point(38, 60);
-            this.lblSerialPcLocal.Name = "lblSerialPcLocal";
-            this.lblSerialPcLocal.Size = new System.Drawing.Size(82, 13);
-            this.lblSerialPcLocal.TabIndex = 633;
-            this.lblSerialPcLocal.Text = "lblSerialPcLocal";
-            // 
-            // LBLESTADOLicenciaLocal
-            // 
-            this.LBLESTADOLicenciaLocal.AutoSize = true;
-            this.LBLESTADOLicenciaLocal.ForeColor = System.Drawing.Color.White;
-            this.LBLESTADOLicenciaLocal.Location = new System.Drawing.Point(46, 90);
-            this.LBLESTADOLicenciaLocal.Name = "LBLESTADOLicenciaLocal";
-            this.LBLESTADOLicenciaLocal.Size = new System.Drawing.Size(136, 13);
-            this.LBLESTADOLicenciaLocal.TabIndex = 632;
-            this.LBLESTADOLicenciaLocal.Text = "LBLESTADOLicenciaLocal";
-            // 
-            // datalistado_licencia_temporal
-            // 
-            this.datalistado_licencia_temporal.AllowUserToAddRows = false;
-            this.datalistado_licencia_temporal.AllowUserToResizeRows = false;
-            this.datalistado_licencia_temporal.BackgroundColor = System.Drawing.Color.White;
-            this.datalistado_licencia_temporal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.datalistado_licencia_temporal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.datalistado_licencia_temporal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.datalistado_licencia_temporal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datalistado_licencia_temporal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn7});
-            this.datalistado_licencia_temporal.EnableHeadersVisualStyles = false;
-            this.datalistado_licencia_temporal.Location = new System.Drawing.Point(-3, 6);
-            this.datalistado_licencia_temporal.Name = "datalistado_licencia_temporal";
-            this.datalistado_licencia_temporal.ReadOnly = true;
-            this.datalistado_licencia_temporal.RowHeadersVisible = false;
-            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.datalistado_licencia_temporal.RowTemplate.Height = 30;
-            this.datalistado_licencia_temporal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado_licencia_temporal.Size = new System.Drawing.Size(86, 25);
-            this.datalistado_licencia_temporal.TabIndex = 631;
-            // 
-            // dataGridViewImageColumn7
-            // 
-            this.dataGridViewImageColumn7.HeaderText = "";
-            this.dataGridViewImageColumn7.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn7.Image")));
-            this.dataGridViewImageColumn7.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn7.Name = "dataGridViewImageColumn7";
-            this.dataGridViewImageColumn7.ReadOnly = true;
-            // 
-            // txtfecha_inicio_licencia
-            // 
-            this.txtfecha_inicio_licencia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtfecha_inicio_licencia.Location = new System.Drawing.Point(57, 17);
-            this.txtfecha_inicio_licencia.Name = "txtfecha_inicio_licencia";
-            this.txtfecha_inicio_licencia.Size = new System.Drawing.Size(105, 20);
-            this.txtfecha_inicio_licencia.TabIndex = 629;
-            // 
-            // txtfecha_final_licencia_temporal
-            // 
-            this.txtfecha_final_licencia_temporal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtfecha_final_licencia_temporal.Location = new System.Drawing.Point(28, 93);
-            this.txtfecha_final_licencia_temporal.Name = "txtfecha_final_licencia_temporal";
-            this.txtfecha_final_licencia_temporal.Size = new System.Drawing.Size(109, 20);
-            this.txtfecha_final_licencia_temporal.TabIndex = 630;
-            this.txtfecha_final_licencia_temporal.Value = new System.DateTime(2019, 11, 30, 18, 11, 0, 0);
-            // 
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -1294,11 +1281,10 @@ namespace Punto_de_venta.Modulos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1188, 701);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.PictureBox2);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1315,6 +1301,7 @@ namespace Punto_de_venta.Modulos
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1333,10 +1320,8 @@ namespace Punto_de_venta.Modulos
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_movimiento_validar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_detalle_cierre_de_caja)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1346,7 +1331,6 @@ namespace Punto_de_venta.Modulos
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pboxLicencia;

@@ -11,36 +11,11 @@ using System.Windows.Forms;
 
 namespace Punto_de_venta.Modulos.Caja
 {
-    public partial class Cajas_form : Form
+    public partial class Cajas_formu : Form
     {
-        public Cajas_form()
+        public Cajas_formu()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("editar_caja", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idcaja", idcaja);
-                cmd.Parameters.AddWithValue("@descripcion", txtcaja.Text);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                panel18.Visible = false;
-                panel18.Dock = DockStyle.None;
-                dibujarCAJA_PRINCIPAL();
-                dibujarCAJAS_REMOTAS();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
         private void dibujarCAJA_PRINCIPAL()
         {
@@ -72,35 +47,27 @@ namespace Punto_de_venta.Modulos.Caja
                     L.Font = new System.Drawing.Font("Microsoft Sans Serif", 20);
                     L.AutoSize = false;
                     L.BackColor = Color.Transparent;
-                    L.ForeColor = Color.White;
+                    L.ForeColor = Color.Black;
                     L.Dock = DockStyle.Fill;
                     L.TextAlign = ContentAlignment.MiddleCenter;
 
-                    try
-                    {
-
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
                     LABELusuario.Text = "Por " + rdr["Nombres_y_Apellidos"].ToString();
                     LABELusuario.Dock = DockStyle.Bottom;
                     LABELusuario.AutoSize = false;
                     LABELusuario.TextAlign = ContentAlignment.MiddleCenter;
                     LABELusuario.BackColor = Color.Transparent;
-                    LABELusuario.ForeColor = Color.White;
+                    LABELusuario.ForeColor = Color.Black;
                     LABELusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10);
                     LABELusuario.Size = new System.Drawing.Size(430, 31);
 
                     p1.Size = new System.Drawing.Size(208, 143);
                     p1.BorderStyle = BorderStyle.None;
                     p1.Dock = DockStyle.Top;
-                    p1.BackColor = Color.FromArgb(20, 20, 20);
+                    p1.BackColor = Color.FromArgb(255, 204, 41);
 
                     p2.Size = new System.Drawing.Size(208, 24);
                     p2.Dock = DockStyle.Top;
-                    p2.BackColor = Color.Transparent;
+                    p2.BackColor = Color.FromArgb(255, 204, 41);
 
                     L2.Text = rdr["Estado"].ToString();
                     L2.Size = new System.Drawing.Size(430, 18);
@@ -129,7 +96,6 @@ namespace Punto_de_venta.Modulos.Caja
                     Menustrip.Items.Add(ToolStripPRINCIPAL);
                     ToolStripPRINCIPAL.DropDownItems.Add(ToolStripEDITAR);
 
-
                     if (L2.Text == "RECIEN CREADA")
                     {
                         I1.BackgroundImage = Properties.Resources.Caja_recien_creada;
@@ -153,7 +119,6 @@ namespace Punto_de_venta.Modulos.Caja
                         I1.BackgroundImage = Properties.Resources.Caja_eliminada_oficial;
                         L.ForeColor = Color.DimGray;
                     }
-
                     I1.BackgroundImageLayout = ImageLayout.Zoom;
                     I1.Size = new System.Drawing.Size(22, 24);
                     I1.Dock = DockStyle.Fill;
@@ -188,14 +153,15 @@ namespace Punto_de_venta.Modulos.Caja
 
                     ToolStripEDITAR.Click += new EventHandler(miEventoToolStripEDITAR);
 
+
                 }
                 con.Close();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
         private void dibujarCAJAS_REMOTAS()
         {
@@ -228,7 +194,7 @@ namespace Punto_de_venta.Modulos.Caja
                     L.Font = new System.Drawing.Font("Microsoft Sans Serif", 20);
                     L.AutoSize = false;
                     L.BackColor = Color.Transparent;
-                    L.ForeColor = Color.White;
+                    L.ForeColor = Color.Black;
                     L.Dock = DockStyle.Fill;
                     L.TextAlign = ContentAlignment.MiddleCenter;
 
@@ -245,14 +211,14 @@ namespace Punto_de_venta.Modulos.Caja
                     LABELusuario.AutoSize = false;
                     LABELusuario.TextAlign = ContentAlignment.MiddleCenter;
                     LABELusuario.BackColor = Color.Transparent;
-                    LABELusuario.ForeColor = Color.White;
+                    LABELusuario.ForeColor = Color.Black;
                     LABELusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10);
                     LABELusuario.Size = new System.Drawing.Size(430, 31);
 
                     p1.Size = new System.Drawing.Size(208, 143);
                     p1.BorderStyle = BorderStyle.None;
                     p1.Dock = DockStyle.Top;
-                    p1.BackColor = Color.FromArgb(20, 20, 20);
+                    p1.BackColor = Color.FromArgb(255, 204, 41);
 
                     p2.Size = new System.Drawing.Size(208, 24);
                     p2.Dock = DockStyle.Top;
@@ -373,6 +339,11 @@ namespace Punto_de_venta.Modulos.Caja
             }
         }
 
+        private void Cajas_formu_Load(object sender, EventArgs e)
+        {
+            dibujarCAJA_PRINCIPAL();
+            dibujarCAJAS_REMOTAS();
+        }
         int idcaja;
         private void miEventoToolStripEDITAR(System.Object sender, EventArgs e)
         {
@@ -384,18 +355,6 @@ namespace Punto_de_venta.Modulos.Caja
             txtcaja.SelectAll();
             txtcaja.Focus();
         }
-
-        private void Cajas_form_Load(object sender, EventArgs e)
-        {
-            dibujarCAJA_PRINCIPAL();
-            dibujarCAJAS_REMOTAS();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            panel18.Visible = false;
-        }
-
         private void miEventoToolStripELIMINAR(System.Object sender, EventArgs e)
         {
             DialogResult result;
@@ -405,25 +364,6 @@ namespace Punto_de_venta.Modulos.Caja
                 idcaja = Convert.ToInt32(((ToolStripMenuItem)sender).Tag);
                 eliminar_caja();
                 dibujarCAJAS_REMOTAS();
-            }
-        }
-        private void eliminar_caja()
-        {
-            try
-            {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("eliminar_caja", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idcaja", idcaja);
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
         private void miEventoToolStripRESTAURAR(System.Object sender, EventArgs e)
@@ -453,5 +393,56 @@ namespace Punto_de_venta.Modulos.Caja
             }
 
         }
+        private void eliminar_caja()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = ConexionDt.ConexionData.conexion;
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd = new SqlCommand("eliminar_caja", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idcaja", idcaja);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+    
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = ConexionDt.ConexionData.conexion;
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd = new SqlCommand("editar_caja", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idcaja", idcaja);
+                cmd.Parameters.AddWithValue("@descripcion", txtcaja.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                panel18.Visible = false;
+                panel18.Dock = DockStyle.None;
+                dibujarCAJA_PRINCIPAL();
+                dibujarCAJAS_REMOTAS();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel18.Visible = false;
+        }
     }
+
 }

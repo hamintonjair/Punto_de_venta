@@ -39,6 +39,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.datalistado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Label10 = new System.Windows.Forms.Label();
+            this.PictureBox7 = new System.Windows.Forms.PictureBox();
             this.Panel4 = new System.Windows.Forms.Panel();
             this.Label4 = new System.Windows.Forms.Label();
             this.Button3 = new System.Windows.Forms.Button();
@@ -48,20 +49,18 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Panel1 = new System.Windows.Forms.Panel();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.PictureBox7 = new System.Windows.Forms.PictureBox();
             this.Panel8.SuspendLayout();
             this.Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).BeginInit();
             this.Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel8
             // 
             this.Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
             this.Panel8.Controls.Add(this.Panel3);
-            this.Panel8.Controls.Add(this.datalistado);
             this.Panel8.Controls.Add(this.Label10);
             this.Panel8.Controls.Add(this.PictureBox7);
             this.Panel8.Dock = System.Windows.Forms.DockStyle.Top;
@@ -74,9 +73,10 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             // Panel3
             // 
             this.Panel3.Controls.Add(this.lblEstado_de_conexion);
+            this.Panel3.Controls.Add(this.datalistado);
             this.Panel3.Location = new System.Drawing.Point(347, 7);
             this.Panel3.Name = "Panel3";
-            this.Panel3.Size = new System.Drawing.Size(30, 23);
+            this.Panel3.Size = new System.Drawing.Size(30, 12);
             this.Panel3.TabIndex = 606;
             // 
             // lblEstado_de_conexion
@@ -120,7 +120,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.datalistado.DefaultCellStyle = dataGridViewCellStyle2;
             this.datalistado.EnableHeadersVisualStyles = false;
             this.datalistado.GridColor = System.Drawing.Color.LightGray;
-            this.datalistado.Location = new System.Drawing.Point(402, 12);
+            this.datalistado.Location = new System.Drawing.Point(13, 13);
             this.datalistado.Name = "datalistado";
             this.datalistado.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -138,7 +138,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.datalistado.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.datalistado.RowTemplate.Height = 60;
             this.datalistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado.Size = new System.Drawing.Size(299, 55);
+            this.datalistado.Size = new System.Drawing.Size(50, 21);
             this.datalistado.TabIndex = 606;
             // 
             // Eliminar
@@ -159,6 +159,16 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Label10.Size = new System.Drawing.Size(184, 46);
             this.Label10.TabIndex = 1;
             this.Label10.Text = "JOJAMA";
+            // 
+            // PictureBox7
+            // 
+            this.PictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox7.Image")));
+            this.PictureBox7.Location = new System.Drawing.Point(192, 12);
+            this.PictureBox7.Name = "PictureBox7";
+            this.PictureBox7.Size = new System.Drawing.Size(110, 63);
+            this.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox7.TabIndex = 604;
+            this.PictureBox7.TabStop = false;
             // 
             // Panel4
             // 
@@ -272,16 +282,6 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.PictureBox1.TabIndex = 604;
             this.PictureBox1.TabStop = false;
             // 
-            // PictureBox7
-            // 
-            this.PictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox7.Image")));
-            this.PictureBox7.Location = new System.Drawing.Point(192, 12);
-            this.PictureBox7.Name = "PictureBox7";
-            this.PictureBox7.Size = new System.Drawing.Size(110, 63);
-            this.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox7.TabIndex = 604;
-            this.PictureBox7.TabStop = false;
-            // 
             // Eleccion_Servidor_o_remoto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,10 +300,10 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Panel3.ResumeLayout(false);
             this.Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).EndInit();
             this.Panel4.ResumeLayout(false);
             this.Panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }

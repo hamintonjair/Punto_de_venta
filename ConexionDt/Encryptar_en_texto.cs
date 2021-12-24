@@ -14,7 +14,7 @@ namespace Punto_de_venta.ConexionDt
             try
             {
 
-                string key = "ada369Ss4dDSdssad34sdsasf34323df";
+                string key = "Jojama01.mono08.BASEJOJAMA.Hola_MundoÑ";
 
                 byte[] keyArray;
 
@@ -52,7 +52,7 @@ namespace Punto_de_venta.ConexionDt
         {
             try
             {
-                string key = "ada369Ss4dDSdssad34sdsasf34323df";
+                string key = "Jojama01.mono08.BASEJOJAMA.Hola_MundoÑ";
                 byte[] keyArray;
                 byte[] Array_a_Descifrar = Convert.FromBase64String(textoEncriptado);
 

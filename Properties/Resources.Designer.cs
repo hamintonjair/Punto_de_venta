@@ -45,46 +45,7 @@ namespace Punto_de_venta.Properties {
                 return resourceMan;
             }
         }
-        internal static System.Drawing.Bitmap menuCajas_claro
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("menuCajas_claro", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap Caja_recien_creada
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("Caja_recien_creada", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap Caja_activa
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("Caja_activa", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap caja_eliminada
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("caja_eliminada", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap Caja_eliminada_oficial
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("Caja_eliminada_oficial", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
+        
         /// <summary>
         ///   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
@@ -132,6 +93,96 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Caja_activa {
+            get {
+                object obj = ResourceManager.GetObject("Caja_activa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap caja_eliminada {
+            get {
+                object obj = ResourceManager.GetObject("caja_eliminada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Caja_eliminada_oficial {
+            get {
+                object obj = ResourceManager.GetObject("Caja_eliminada_oficial", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Caja_recien_creada {
+            get {
+                object obj = ResourceManager.GetObject("Caja_recien_creada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoJOJAMA1 {
+            get {
+                object obj = ResourceManager.GetObject("logoJOJAMA1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoJOJAMA2 {
+            get {
+                object obj = ResourceManager.GetObject("logoJOJAMA2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lohoJojama {
+            get {
+                object obj = ResourceManager.GetObject("lohoJojama", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menuCajas_claro {
+            get {
+                object obj = ResourceManager.GetObject("menuCajas_claro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap My_project__2_ {
+            get {
+                object obj = ResourceManager.GetObject("My project (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap naranja {
             get {
                 object obj = ResourceManager.GetObject("naranja", resourceCulture);
@@ -152,6 +203,26 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Negro_y_Marrón_Cuadrado_Comunidad_y_Sin_ánimo_de_lucro_Logotipo {
+            get {
+                object obj = ResourceManager.GetObject("Negro y Marrón Cuadrado Comunidad y Sin ánimo de lucro Logotipo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Negro_y_Marrón_Cuadrado_Comunidad_y_Sin_ánimo_de_lucro_Logotipo__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Negro y Marrón Cuadrado Comunidad y Sin ánimo de lucro Logotipo (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rojo {
             get {
                 object obj = ResourceManager.GetObject("Rojo", resourceCulture);
@@ -165,6 +236,36 @@ namespace Punto_de_venta.Properties {
         internal static System.Drawing.Bitmap searchmagnifierinterfacesymbol1_79893 {
             get {
                 object obj = ResourceManager.GetObject("searchmagnifierinterfacesymbol1_79893", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap supermercado {
+            get {
+                object obj = ResourceManager.GetObject("supermercado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_Design__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Untitled Design (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap whatsappmessage_conversation_whatsap_7149 {
+            get {
+                object obj = ResourceManager.GetObject("whatsappmessage_conversation_whatsap_7149", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
