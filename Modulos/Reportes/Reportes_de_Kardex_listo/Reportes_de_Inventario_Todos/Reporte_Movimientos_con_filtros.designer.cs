@@ -110,9 +110,9 @@ namespace Punto_de_venta.Modulos.Reportes.Reportes_de_Kardex_listo.Reportes_de_I
             // 
             // TextBox1
             // 
-            this.TextBox1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(0.901D), Telerik.Reporting.Drawing.Unit.Cm(0.7D));
+            this.TextBox1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(2.1D), Telerik.Reporting.Drawing.Unit.Cm(0.7D));
             this.TextBox1.Name = "TextBox1";
-            this.TextBox1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(12.1D), Telerik.Reporting.Drawing.Unit.Cm(0.7D));
+            this.TextBox1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(10.901D), Telerik.Reporting.Drawing.Unit.Cm(0.7D));
             this.TextBox1.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
             this.TextBox1.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.TextBox1.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
@@ -120,10 +120,10 @@ namespace Punto_de_venta.Modulos.Reportes.Reportes_de_Kardex_listo.Reportes_de_I
             // 
             // PictureBox1
             // 
-            this.PictureBox1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(0D), Telerik.Reporting.Drawing.Unit.Cm(0.7D));
+            this.PictureBox1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(0D), Telerik.Reporting.Drawing.Unit.Cm(0D));
             this.PictureBox1.MimeType = "";
             this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(0.9D), Telerik.Reporting.Drawing.Unit.Cm(0.7D));
+            this.PictureBox1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(1.8D), Telerik.Reporting.Drawing.Unit.Cm(1.811D));
             this.PictureBox1.Sizing = Telerik.Reporting.Drawing.ImageSizeMode.ScaleProportional;
             this.PictureBox1.Value = "=Fields.Logo";
             // 

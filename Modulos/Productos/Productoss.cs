@@ -114,8 +114,9 @@ namespace Punto_de_venta.Modulos.Productos
             mostrar_inicio_de_sesion();
             MOSTRAR_CAJA_POR_SERIAL();         
         }
-        int idusuario;
-        int idcaja;
+       
+        public static int idusuario;
+        public static int idcaja;
         private void mostrar_inicio_de_sesion()
         {
             SqlConnection con = new SqlConnection();
@@ -162,16 +163,14 @@ namespace Punto_de_venta.Modulos.Productos
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter da;
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
+                ConexionDt.ConexionData.conectar.Open();
 
-                da = new SqlDataAdapter("mostrar_grupos", con);
+                da = new SqlDataAdapter("mostrar_grupos", ConexionDt.ConexionData.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@buscar", txtgrupo.Text);
                 da.Fill(dt);
                 datalistadoGrupos.DataSource = dt;
-                con.Close();
+                ConexionDt.ConexionData.conectar.Close();
 
                 datalistadoGrupos.DataSource = dt;
                 datalistadoGrupos.Columns[2].Visible = false;
@@ -224,11 +223,9 @@ namespace Punto_de_venta.Modulos.Productos
 
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
+                ConexionDt.ConexionData.conectar.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("insertar_Producto", con);
+                cmd = new SqlCommand("insertar_Producto", ConexionDt.ConexionData.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Descripcion", txtdescripcion.Text);
                 cmd.Parameters.AddWithValue("@Imagen", ".");
@@ -275,8 +272,8 @@ namespace Punto_de_venta.Modulos.Productos
                 cmd.Parameters.AddWithValue("@Id_caja", idcaja);               
 
                 cmd.ExecuteNonQuery();
-               
-                con.Close();
+
+                ConexionDt.ConexionData.conectar.Close();
                 PANELDEPARTAMENTO.Visible = false;
                 panelFrom.Visible = true;
                 datalistado.Visible = true;
@@ -297,11 +294,9 @@ namespace Punto_de_venta.Modulos.Productos
 
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
+                ConexionDt.ConexionData.conectar.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("editar_Producto1", con);
+                cmd = new SqlCommand("editar_Producto1", ConexionDt.ConexionData.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Id_Producto1", TXTIDPRODUCTOOk.Text);
                 cmd.Parameters.AddWithValue("@Descripcion", txtdescripcion.Text);
@@ -345,7 +340,7 @@ namespace Punto_de_venta.Modulos.Productos
 
                 cmd.ExecuteNonQuery();
 
-                con.Close();
+                ConexionDt.ConexionData.conectar.Close();
                 PANELDEPARTAMENTO.Visible = false;
                 txtbusca.Text = txtdescripcion.Text;
                 buscar();
@@ -362,16 +357,14 @@ namespace Punto_de_venta.Modulos.Productos
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter da;
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
+                ConexionDt.ConexionData.conectar.Open();
 
-                da = new SqlDataAdapter("buscar_producto_por_descripcion", con);
+                da = new SqlDataAdapter("buscar_producto_por_descripcion", ConexionDt.ConexionData.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@letra", txtbusca.Text);
                 da.Fill(dt);
                 datalistado.DataSource = dt;
-                con.Close();
+                ConexionDt.ConexionData.conectar.Close();
 
                 datalistado.Columns[2].Visible = false;
                 datalistado.Columns[7].Visible = false;
@@ -475,16 +468,14 @@ namespace Punto_de_venta.Modulos.Productos
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter da;
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString =ConexionDt.ConexionData.conexion;
-                con.Open();
+                ConexionDt.ConexionData.conectar.Open();
 
-                da = new SqlDataAdapter("mostrar_descripcion_produco_sin_repetir", con);
+                da = new SqlDataAdapter("mostrar_descripcion_produco_sin_repetir", ConexionDt.ConexionData.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@buscar", txtdescripcion.Text);
                 da.Fill(dt);
                 DATALISTADO_PRODUCTOS_OKA.DataSource = dt;
-                con.Close();
+                ConexionDt.ConexionData.conectar.Close();
 
                 datalistado.Columns[1].Width = 500;
             }
@@ -630,16 +621,14 @@ namespace Punto_de_venta.Modulos.Productos
                             {
                                 try
                                 {
-                                    SqlConnection con = new SqlConnection();
-                                    con.ConnectionString = ConexionDt.ConexionData.conexion;
-                                    con.Open();
-                                    cmd = new SqlCommand("eliminar_Producto1", con);
+                                    ConexionDt.ConexionData.conectar.Open();
+                                    cmd = new SqlCommand("eliminar_Producto1", ConexionDt.ConexionData.conectar);
                                     cmd.CommandType = CommandType.StoredProcedure;
 
                                     cmd.Parameters.AddWithValue("@id", onekey);
                                     cmd.ExecuteNonQuery();
 
-                                    con.Close();
+                                    ConexionDt.ConexionData.conectar.Close();
 
                                 }
                                 catch (Exception ex)
@@ -856,16 +845,14 @@ namespace Punto_de_venta.Modulos.Productos
                                 try
                                 {
 
-                                    SqlConnection con = new SqlConnection();
-                                    con.ConnectionString = ConexionDt.ConexionData.conexion;
-                                    con.Open();
-                                    cmd = new SqlCommand("eliminar_grupos", con);
+                                    ConexionDt.ConexionData.conectar.Open();
+                                    cmd = new SqlCommand("eliminar_grupos", ConexionDt.ConexionData.conectar);
                                     cmd.CommandType = CommandType.StoredProcedure;
 
                                     cmd.Parameters.AddWithValue("@id", onekey);
                                     cmd.ExecuteNonQuery();
 
-                                    con.Close();
+                                    ConexionDt.ConexionData.conectar.Close();
 
                                 }
                                 catch (Exception ex)
@@ -925,16 +912,14 @@ namespace Punto_de_venta.Modulos.Productos
         {
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
+                ConexionDt.ConexionData.conectar.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("insertar_Grupo", con);
+                cmd = new SqlCommand("insertar_Grupo", ConexionDt.ConexionData.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Grupo", txtgrupo.Text);
                 cmd.Parameters.AddWithValue("@Por_defecto", "NO");
                 cmd.ExecuteNonQuery();
-                con.Close();
+                ConexionDt.ConexionData.conectar.Close();
                 mostrar_grupos();
 
                 lblIdGrupo.Text = datalistadoGrupos.SelectedCells[2].Value.ToString();
@@ -982,7 +967,8 @@ namespace Punto_de_venta.Modulos.Productos
             datalistado.Visible = true;
             panelizquierdo.Visible = true;
             panederecho.Visible = true;
-                  }
+            ConexionDt.Tamaño_automatico_de_datatables.Multilinea(ref datalistado);
+        }
 
         private void CheckInventarios_CheckedChanged_1(object sender, EventArgs e)
         {
@@ -1133,6 +1119,12 @@ namespace Punto_de_venta.Modulos.Productos
         private void btnGenerarCodigo_Click_1(object sender, EventArgs e)
         {
             GENERAR_CODIGO_DE_BARRAS_AUTOMATICO();
+        }
+
+        private void ToolStripMenuItem15_Click(object sender, EventArgs e)
+        {
+            Modulos.Productos.Asistente_de_importacionExcel frm = new Modulos.Productos.Asistente_de_importacionExcel();
+            frm.ShowDialog();
         }
     }
 }

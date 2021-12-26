@@ -505,6 +505,7 @@ namespace Punto_de_venta.Modulos.Productos
             this.ToolStripMenuItem15.Size = new System.Drawing.Size(204, 32);
             this.ToolStripMenuItem15.Text = "&Importar desde EXCEL";
             this.ToolStripMenuItem15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ToolStripMenuItem15.Click += new System.EventHandler(this.ToolStripMenuItem15_Click);
             // 
             // Label20
             // 

@@ -35,6 +35,12 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="SpreadsheetLight, Version=3.4.11.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <HintPath>packages\SpreadsheetLight.3.4.11\lib\net40\SpreadsheetLight.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -51,9 +57,6 @@
     <Reference Include="Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
     <Reference Include="Telerik.ReportViewer.WinForms, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
       <SpecificVersion>True</SpecificVersion>
-    </Reference>
-    <Reference Include="UIDC">
-      <HintPath>E:\Ada369Csharp+al+04+mayo+2021\Ada369Csharp\UIDC.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +152,12 @@
     <Compile Include="Modulos\Caja\Cierre_de_Caja.Designer.cs">
       <DependentUpon>Cierre_de_Caja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Clientes_Proveedores\clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Clientes_Proveedores\clientes.Designer.cs">
+      <DependentUpon>clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Conexion_remota\Conexion_secundaria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +193,12 @@
     </Compile>
     <Compile Include="Modulos\CorreoBase\ConfigurarCorreo.Designer.cs">
       <DependentUpon>ConfigurarCorreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Diseñador_de_Comprobantes\Ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Diseñador_de_Comprobantes\Ticket.Designer.cs">
+      <DependentUpon>Ticket.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Epresa_Configuracion\EMPRESA_CONFIG.cs">
       <SubType>Form</SubType>
@@ -221,11 +236,23 @@
     <Compile Include="Modulos\Notificaciones\Notificaciones_form.Designer.cs">
       <DependentUpon>Notificaciones_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Productos\Asistente_de_importacionExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Productos\Asistente_de_importacionExcel.Designer.cs">
+      <DependentUpon>Asistente_de_importacionExcel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Productos\Productoss.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\Productos\Productoss.Designer.cs">
       <DependentUpon>Productoss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reportes\Impresion_de_comprobantes\Ticket_report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reportes\Impresion_de_comprobantes\Ticket_report.Designer.cs">
+      <DependentUpon>Ticket_report.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormInventarioTodos.cs">
       <SubType>Form</SubType>
@@ -268,6 +295,12 @@
     </Compile>
     <Compile Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reporte_de_Kardex_diseño\ReportKARDEX_Movimientos_ok.designer.cs">
       <DependentUpon>ReportKARDEX_Movimientos_ok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Serializacion_de_Comprobantes\SERIALIZACION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Serializacion_de_Comprobantes\SERIALIZACION.Designer.cs">
+      <DependentUpon>SERIALIZACION.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Usuarios_y_Permisos\usuarios.cs">
       <SubType>Form</SubType>
@@ -319,6 +352,9 @@
     <EmbeddedResource Include="Modulos\Caja\Cierre_de_Caja.resx">
       <DependentUpon>Cierre_de_Caja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Clientes_Proveedores\clientes.resx">
+      <DependentUpon>clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Conexion_remota\Conexion_secundaria.resx">
       <DependentUpon>Conexion_secundaria.cs</DependentUpon>
     </EmbeddedResource>
@@ -330,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\CorreoBase\ConfigurarCorreo.resx">
       <DependentUpon>ConfigurarCorreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Diseñador_de_Comprobantes\Ticket.resx">
+      <DependentUpon>Ticket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Epresa_Configuracion\EMPRESA_CONFIG.resx">
       <DependentUpon>EMPRESA_CONFIG.cs</DependentUpon>
@@ -349,8 +388,14 @@
     <EmbeddedResource Include="Modulos\Notificaciones\Notificaciones_form.resx">
       <DependentUpon>Notificaciones_form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Productos\Asistente_de_importacionExcel.resx">
+      <DependentUpon>Asistente_de_importacionExcel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Productos\Productoss.resx">
       <DependentUpon>Productoss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Reportes\Impresion_de_comprobantes\Ticket_report.resx">
+      <DependentUpon>Ticket_report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormInventarioTodos.resx">
       <DependentUpon>FormInventarioTodos.cs</DependentUpon>
@@ -373,6 +418,9 @@
     <EmbeddedResource Include="Modulos\Reportes\Reportes_de_Kardex_listo\Reporte_de_Kardex_diseño\ReportKARDEX_Movimientos_ok.resx">
       <DependentUpon>ReportKARDEX_Movimientos_ok.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Serializacion_de_Comprobantes\SERIALIZACION.resx">
+      <DependentUpon>SERIALIZACION.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Usuarios_y_Permisos\usuarios.resx">
       <DependentUpon>usuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -393,6 +441,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -414,6 +463,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Modulos\Login\HTMLPage1.html" />
+    <None Include="Resources\documentediting_editdocuments_text_documentedi_2820.png" />
     <None Include="Resources\calendario.png" />
     <None Include="Resources\advertencia.png" />
     <None Include="Resources\trash-can_115312.png" />
@@ -440,5 +490,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

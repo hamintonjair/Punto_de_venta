@@ -40,6 +40,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
         }
         private void comprobar_si_ya_hay_servidor_instalado_SQL_NORMAL()
         {
+            MessageBox.Show("Espere por favor, se esta validando si hay servidor instalado...");
             txtservidor.Text = ".";
             ejecutar_scryt_ELIMINARBase_comprobacion_de_inicio();
             ejecutar_scryt_crearBase_comprobacion_De_inicio();
@@ -51,6 +52,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             ejecutar_scryt_ELIMINARBase_comprobacion_de_inicio();
             ejecutar_scryt_crearBase_comprobacion_De_inicio();
         }
+       
         private void Reemplazar()
         {
             //Solo modificar este campo

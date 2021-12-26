@@ -63,7 +63,7 @@ namespace Punto_de_venta.Modulos.Reportes.Reportes_de_Kardex_listo.Reportes_de_I
             // 
             // TextBox2
             // 
-            this.TextBox2.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(0.1D), Telerik.Reporting.Drawing.Unit.Cm(2.011D));
+            this.TextBox2.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(0.1D), Telerik.Reporting.Drawing.Unit.Cm(2D));
             this.TextBox2.Name = "TextBox2";
             this.TextBox2.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(14.399D), Telerik.Reporting.Drawing.Unit.Cm(0.7D));
             this.TextBox2.Style.Font.Bold = true;
@@ -73,18 +73,18 @@ namespace Punto_de_venta.Modulos.Reportes.Reportes_de_Kardex_listo.Reportes_de_I
             // 
             // PictureBox1
             // 
-            this.PictureBox1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(0.1D), Telerik.Reporting.Drawing.Unit.Cm(0.9D));
+            this.PictureBox1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(0D), Telerik.Reporting.Drawing.Unit.Cm(0D));
             this.PictureBox1.MimeType = "";
             this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(0.9D), Telerik.Reporting.Drawing.Unit.Cm(0.7D));
+            this.PictureBox1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(1.7D), Telerik.Reporting.Drawing.Unit.Cm(1.811D));
             this.PictureBox1.Sizing = Telerik.Reporting.Drawing.ImageSizeMode.ScaleProportional;
             this.PictureBox1.Value = "=Fields.Logo";
             // 
             // TextBox1
             // 
-            this.TextBox1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(1.001D), Telerik.Reporting.Drawing.Unit.Cm(0.9D));
+            this.TextBox1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(2.11D), Telerik.Reporting.Drawing.Unit.Cm(0.9D));
             this.TextBox1.Name = "TextBox1";
-            this.TextBox1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(12.1D), Telerik.Reporting.Drawing.Unit.Cm(0.7D));
+            this.TextBox1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(10.991D), Telerik.Reporting.Drawing.Unit.Cm(0.7D));
             this.TextBox1.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(8D);
             this.TextBox1.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.TextBox1.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
