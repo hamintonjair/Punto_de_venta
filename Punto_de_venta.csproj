@@ -414,6 +414,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Modulos\Login\HTMLPage1.html" />
+    <None Include="Resources\calendario.png" />
+    <None Include="Resources\advertencia.png" />
     <None Include="Resources\trash-can_115312.png" />
     <None Include="Resources\menuCajas_claro.png" />
     <None Include="Resources\Caja_recien_creada.png" />
