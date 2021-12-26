@@ -55,5 +55,10 @@ namespace Punto_de_venta.Modulos.Configuracion
         {
             Usuarios();
         }
+
+        private void PANEL_CONFIGURACIONES_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

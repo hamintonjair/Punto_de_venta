@@ -58,6 +58,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.DataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.DATALISTADOUSUARIOSSNUEVOS = new System.Windows.Forms.DataGridView();
             this.DataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Panel1 = new System.Windows.Forms.Panel();
             this.txtfechaFinalOK = new System.Windows.Forms.Label();
             this.txtfechaInicio = new System.Windows.Forms.DateTimePicker();
@@ -68,6 +69,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.MenuStrip4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_empresas_nuevas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DATALISTADOUSUARIOSSNUEVOS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +103,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Panel2.Controls.Add(this.Label1);
             this.Panel2.Controls.Add(this.datalistado_empresas_nuevas);
             this.Panel2.Controls.Add(this.DATALISTADOUSUARIOSSNUEVOS);
+            this.Panel2.Controls.Add(this.pictureBox1);
             this.Panel2.Location = new System.Drawing.Point(232, 105);
             this.Panel2.Name = "Panel2";
             this.Panel2.Size = new System.Drawing.Size(666, 454);
@@ -116,6 +119,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.LBLcontador_de_contraseña2.Size = new System.Drawing.Size(13, 13);
             this.LBLcontador_de_contraseña2.TabIndex = 596;
             this.LBLcontador_de_contraseña2.Text = "6";
+            this.LBLcontador_de_contraseña2.Visible = false;
             // 
             // Label7
             // 
@@ -138,6 +142,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.LBLcontador_de_contraseña.Size = new System.Drawing.Size(13, 13);
             this.LBLcontador_de_contraseña.TabIndex = 596;
             this.LBLcontador_de_contraseña.Text = "6";
+            this.LBLcontador_de_contraseña.Visible = false;
             // 
             // Label5
             // 
@@ -391,6 +396,17 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.DataGridViewCheckBoxColumn3.Name = "DataGridViewCheckBoxColumn3";
             this.DataGridViewCheckBoxColumn3.ReadOnly = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA1;
+            this.pictureBox1.Location = new System.Drawing.Point(185, 214);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(291, 191);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 597;
+            this.pictureBox1.TabStop = false;
+            // 
             // Panel1
             // 
             this.Panel1.Controls.Add(this.txtfechaFinalOK);
@@ -461,6 +477,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.MenuStrip4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_empresas_nuevas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DATALISTADOUSUARIOSSNUEVOS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -496,5 +513,6 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
         internal System.Windows.Forms.DateTimePicker txtfechaInicio;
         internal System.Windows.Forms.DateTimePicker txtfechaFinal;
         internal System.Windows.Forms.Label lblIDSERIAL;
+        internal System.Windows.Forms.PictureBox pictureBox1;
     }
 }

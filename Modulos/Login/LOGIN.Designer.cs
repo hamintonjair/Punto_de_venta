@@ -33,6 +33,10 @@ namespace Punto_de_venta.Modulos
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LOGIN));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtlogin = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnrestaurarContraseña = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelRestaurarcontraseña = new System.Windows.Forms.Panel();
             this.txtcorreo = new System.Windows.Forms.ComboBox();
             this.btncerrar = new System.Windows.Forms.Button();
@@ -41,10 +45,6 @@ namespace Punto_de_venta.Modulos
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.btnrestaurarContraseña = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.IDUSUARIO = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -119,8 +119,8 @@ namespace Punto_de_venta.Modulos
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.PictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panelRestaurarcontraseña.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panelRestaurarcontraseña.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).BeginInit();
@@ -146,7 +146,6 @@ namespace Punto_de_venta.Modulos
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.txtlogin);
-            this.panel1.Controls.Add(this.panelRestaurarcontraseña);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.label2);
@@ -164,111 +163,6 @@ namespace Punto_de_venta.Modulos
             this.txtlogin.Size = new System.Drawing.Size(35, 13);
             this.txtlogin.TabIndex = 617;
             this.txtlogin.Text = "label1";
-            // 
-            // panelRestaurarcontraseña
-            // 
-            this.panelRestaurarcontraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelRestaurarcontraseña.BackColor = System.Drawing.Color.Black;
-            this.panelRestaurarcontraseña.Controls.Add(this.txtcorreo);
-            this.panelRestaurarcontraseña.Controls.Add(this.btncerrar);
-            this.panelRestaurarcontraseña.Controls.Add(this.btnenviar);
-            this.panelRestaurarcontraseña.Controls.Add(this.Panel12);
-            this.panelRestaurarcontraseña.Controls.Add(this.label9);
-            this.panelRestaurarcontraseña.Controls.Add(this.label10);
-            this.panelRestaurarcontraseña.Controls.Add(this.label11);
-            this.panelRestaurarcontraseña.Location = new System.Drawing.Point(289, 3);
-            this.panelRestaurarcontraseña.Name = "panelRestaurarcontraseña";
-            this.panelRestaurarcontraseña.Size = new System.Drawing.Size(457, 351);
-            this.panelRestaurarcontraseña.TabIndex = 618;
-            this.panelRestaurarcontraseña.Visible = false;
-            // 
-            // txtcorreo
-            // 
-            this.txtcorreo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtcorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtcorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcorreo.FormattingEnabled = true;
-            this.txtcorreo.Location = new System.Drawing.Point(105, 99);
-            this.txtcorreo.Name = "txtcorreo";
-            this.txtcorreo.Size = new System.Drawing.Size(259, 26);
-            this.txtcorreo.TabIndex = 616;
-            // 
-            // btncerrar
-            // 
-            this.btncerrar.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.FlatAppearance.BorderSize = 0;
-            this.btncerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncerrar.ForeColor = System.Drawing.Color.White;
-            this.btncerrar.Location = new System.Drawing.Point(186, 268);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(98, 35);
-            this.btncerrar.TabIndex = 614;
-            this.btncerrar.Text = "Cerrar";
-            this.btncerrar.UseVisualStyleBackColor = false;
-            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            // 
-            // btnenviar
-            // 
-            this.btnenviar.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnenviar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnenviar.FlatAppearance.BorderSize = 0;
-            this.btnenviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnenviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnenviar.ForeColor = System.Drawing.Color.White;
-            this.btnenviar.Location = new System.Drawing.Point(105, 163);
-            this.btnenviar.Name = "btnenviar";
-            this.btnenviar.Size = new System.Drawing.Size(259, 35);
-            this.btnenviar.TabIndex = 614;
-            this.btnenviar.Text = "Enviar";
-            this.btnenviar.UseVisualStyleBackColor = false;
-            this.btnenviar.Click += new System.EventHandler(this.btnenviar_Click_1);
-            // 
-            // Panel12
-            // 
-            this.Panel12.BackColor = System.Drawing.Color.Silver;
-            this.Panel12.Location = new System.Drawing.Point(105, 127);
-            this.Panel12.Name = "Panel12";
-            this.Panel12.Size = new System.Drawing.Size(259, 1);
-            this.Panel12.TabIndex = 604;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(457, 59);
-            this.label9.TabIndex = 602;
-            this.label9.Text = "Restaurar Contraseña";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label10.Location = new System.Drawing.Point(142, 131);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(179, 15);
-            this.label10.TabIndex = 602;
-            this.label10.Text = "Con el que registraste tu cuenta";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(159, 68);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(138, 20);
-            this.label11.TabIndex = 602;
-            this.label11.Text = "Correo electronico";
             // 
             // panel8
             // 
@@ -314,6 +208,111 @@ namespace Punto_de_venta.Modulos
             this.label2.TabIndex = 3;
             this.label2.Text = "¿Quién está Iniciando Sesión?";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelRestaurarcontraseña
+            // 
+            this.panelRestaurarcontraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelRestaurarcontraseña.BackColor = System.Drawing.Color.Black;
+            this.panelRestaurarcontraseña.Controls.Add(this.txtcorreo);
+            this.panelRestaurarcontraseña.Controls.Add(this.btncerrar);
+            this.panelRestaurarcontraseña.Controls.Add(this.btnenviar);
+            this.panelRestaurarcontraseña.Controls.Add(this.Panel12);
+            this.panelRestaurarcontraseña.Controls.Add(this.label9);
+            this.panelRestaurarcontraseña.Controls.Add(this.label10);
+            this.panelRestaurarcontraseña.Controls.Add(this.label11);
+            this.panelRestaurarcontraseña.Location = new System.Drawing.Point(279, 102);
+            this.panelRestaurarcontraseña.Name = "panelRestaurarcontraseña";
+            this.panelRestaurarcontraseña.Size = new System.Drawing.Size(619, 358);
+            this.panelRestaurarcontraseña.TabIndex = 618;
+            this.panelRestaurarcontraseña.Visible = false;
+            // 
+            // txtcorreo
+            // 
+            this.txtcorreo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtcorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtcorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcorreo.FormattingEnabled = true;
+            this.txtcorreo.Location = new System.Drawing.Point(177, 119);
+            this.txtcorreo.Name = "txtcorreo";
+            this.txtcorreo.Size = new System.Drawing.Size(259, 26);
+            this.txtcorreo.TabIndex = 616;
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.FlatAppearance.BorderSize = 0;
+            this.btncerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncerrar.ForeColor = System.Drawing.Color.White;
+            this.btncerrar.Location = new System.Drawing.Point(258, 288);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(98, 35);
+            this.btncerrar.TabIndex = 614;
+            this.btncerrar.Text = "Cerrar";
+            this.btncerrar.UseVisualStyleBackColor = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            // 
+            // btnenviar
+            // 
+            this.btnenviar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnenviar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnenviar.FlatAppearance.BorderSize = 0;
+            this.btnenviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnenviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnenviar.ForeColor = System.Drawing.Color.White;
+            this.btnenviar.Location = new System.Drawing.Point(177, 183);
+            this.btnenviar.Name = "btnenviar";
+            this.btnenviar.Size = new System.Drawing.Size(259, 35);
+            this.btnenviar.TabIndex = 614;
+            this.btnenviar.Text = "Enviar";
+            this.btnenviar.UseVisualStyleBackColor = false;
+            this.btnenviar.Click += new System.EventHandler(this.btnenviar_Click_1);
+            // 
+            // Panel12
+            // 
+            this.Panel12.BackColor = System.Drawing.Color.Silver;
+            this.Panel12.Location = new System.Drawing.Point(177, 147);
+            this.Panel12.Name = "Panel12";
+            this.Panel12.Size = new System.Drawing.Size(259, 1);
+            this.Panel12.TabIndex = 604;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(619, 59);
+            this.label9.TabIndex = 602;
+            this.label9.Text = "Restaurar Contraseña";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label10.Location = new System.Drawing.Point(214, 151);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(179, 15);
+            this.label10.TabIndex = 602;
+            this.label10.Text = "Con el que registraste tu cuenta";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(231, 88);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(138, 20);
+            this.label11.TabIndex = 602;
+            this.label11.Text = "Correo electronico";
             // 
             // panel5
             // 
@@ -432,7 +431,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.datalistado_licencia_temporal.RowTemplate.Height = 30;
             this.datalistado_licencia_temporal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado_licencia_temporal.Size = new System.Drawing.Size(77, 36);
+            this.datalistado_licencia_temporal.Size = new System.Drawing.Size(49, 53);
             this.datalistado_licencia_temporal.TabIndex = 631;
             // 
             // dataGridViewImageColumn7
@@ -456,7 +455,7 @@ namespace Punto_de_venta.Modulos
             this.panel2.Controls.Add(this.btnOlvidoContraseña);
             this.panel2.Controls.Add(this.flowLayoutPanel2);
             this.panel2.Controls.Add(this.btnCambiarUsuario);
-            this.panel2.Location = new System.Drawing.Point(220, 43);
+            this.panel2.Location = new System.Drawing.Point(298, 31);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(401, 677);
             this.panel2.TabIndex = 0;
@@ -980,9 +979,9 @@ namespace Punto_de_venta.Modulos
             this.panel6.Controls.Add(this.lblRol);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.lblresultadocontraseña);
-            this.panel6.Location = new System.Drawing.Point(170, 59);
+            this.panel6.Location = new System.Drawing.Point(835, 59);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(34, 13);
+            this.panel6.Size = new System.Drawing.Size(110, 13);
             this.panel6.TabIndex = 5;
             // 
             // LBLESTADOLicenciaLocal
@@ -1017,7 +1016,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_usuarios_registrado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn6});
             this.datalistado_usuarios_registrado.EnableHeadersVisualStyles = false;
-            this.datalistado_usuarios_registrado.Location = new System.Drawing.Point(108, 134);
+            this.datalistado_usuarios_registrado.Location = new System.Drawing.Point(60, 206);
             this.datalistado_usuarios_registrado.Name = "datalistado_usuarios_registrado";
             this.datalistado_usuarios_registrado.ReadOnly = true;
             this.datalistado_usuarios_registrado.RowHeadersVisible = false;
@@ -1049,7 +1048,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_movimiento_validar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn5});
             this.datalistado_movimiento_validar.EnableHeadersVisualStyles = false;
-            this.datalistado_movimiento_validar.Location = new System.Drawing.Point(39, 121);
+            this.datalistado_movimiento_validar.Location = new System.Drawing.Point(0, 180);
             this.datalistado_movimiento_validar.Name = "datalistado_movimiento_validar";
             this.datalistado_movimiento_validar.ReadOnly = true;
             this.datalistado_movimiento_validar.RowHeadersVisible = false;
@@ -1081,7 +1080,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_caja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn2});
             this.datalistado_caja.EnableHeadersVisualStyles = false;
-            this.datalistado_caja.Location = new System.Drawing.Point(209, 199);
+            this.datalistado_caja.Location = new System.Drawing.Point(138, 216);
             this.datalistado_caja.Name = "datalistado_caja";
             this.datalistado_caja.ReadOnly = true;
             this.datalistado_caja.RowHeadersVisible = false;
@@ -1110,7 +1109,7 @@ namespace Punto_de_venta.Modulos
             // 
             // lblSerialPc
             // 
-            this.lblSerialPc.Location = new System.Drawing.Point(462, 121);
+            this.lblSerialPc.Location = new System.Drawing.Point(374, 123);
             this.lblSerialPc.Name = "lblSerialPc";
             this.lblSerialPc.Size = new System.Drawing.Size(108, 20);
             this.lblSerialPc.TabIndex = 619;
@@ -1136,7 +1135,7 @@ namespace Punto_de_venta.Modulos
             this.datalistado_detalle_cierre_de_caja.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.datalistado_detalle_cierre_de_caja.RowTemplate.Height = 30;
             this.datalistado_detalle_cierre_de_caja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado_detalle_cierre_de_caja.Size = new System.Drawing.Size(128, 68);
+            this.datalistado_detalle_cierre_de_caja.Size = new System.Drawing.Size(59, 77);
             this.datalistado_detalle_cierre_de_caja.TabIndex = 627;
             // 
             // dataGridViewImageColumn4
@@ -1281,10 +1280,11 @@ namespace Punto_de_venta.Modulos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1188, 701);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.PictureBox2);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelRestaurarcontraseña);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1295,9 +1295,9 @@ namespace Punto_de_venta.Modulos
             this.Load += new System.EventHandler(this.LOGIN_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel8.ResumeLayout(false);
             this.panelRestaurarcontraseña.ResumeLayout(false);
             this.panelRestaurarcontraseña.PerformLayout();
-            this.panel8.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

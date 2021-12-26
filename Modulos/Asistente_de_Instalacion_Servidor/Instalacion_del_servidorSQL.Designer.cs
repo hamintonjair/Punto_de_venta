@@ -34,6 +34,8 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Panel8 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.Panel3 = new System.Windows.Forms.Panel();
+            this.GroupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtCrearUsuarioDb = new System.Windows.Forms.TextBox();
             this.txtusuario = new System.Windows.Forms.TextBox();
             this.Label15 = new System.Windows.Forms.Label();
             this.txtArgumentosini = new System.Windows.Forms.RichTextBox();
@@ -50,8 +52,6 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.seg3 = new System.Windows.Forms.Label();
             this.mil3 = new System.Windows.Forms.Label();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.GroupBox6 = new System.Windows.Forms.GroupBox();
-            this.txtCrearUsuarioDb = new System.Windows.Forms.TextBox();
             this.txtCrear_procedimientos = new System.Windows.Forms.RichTextBox();
             this.txtnombre_scrypt = new System.Windows.Forms.TextBox();
             this.TXTbasededatos = new System.Windows.Forms.TextBox();
@@ -62,7 +62,6 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.lblBasededatos = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
             this.Label8 = new System.Windows.Forms.Label();
-            this.Label10 = new System.Windows.Forms.Label();
             this.PictureBox7 = new System.Windows.Forms.PictureBox();
             this.lblwindows = new System.Windows.Forms.Label();
             this.Panel2 = new System.Windows.Forms.Panel();
@@ -87,12 +86,11 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.Panel8.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.Panel3.SuspendLayout();
+            this.GroupBox6.SuspendLayout();
             this.Panel10.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
-            this.GroupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).BeginInit();
             this.Panel2.SuspendLayout();
             this.Panel4.SuspendLayout();
@@ -107,7 +105,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             // 
             this.Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
             this.Panel8.Controls.Add(this.panel11);
-            this.Panel8.Controls.Add(this.Label10);
+            this.Panel8.Controls.Add(this.Panel3);
             this.Panel8.Controls.Add(this.PictureBox7);
             this.Panel8.Controls.Add(this.lblwindows);
             this.Panel8.Dock = System.Windows.Forms.DockStyle.Top;
@@ -118,15 +116,15 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.Panel3);
-            this.panel11.Location = new System.Drawing.Point(611, 43);
+            this.panel11.Location = new System.Drawing.Point(465, 12);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(47, 23);
+            this.panel11.Size = new System.Drawing.Size(35, 32);
             this.panel11.TabIndex = 622;
             // 
             // Panel3
             // 
             this.Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.Panel3.Controls.Add(this.GroupBox6);
             this.Panel3.Controls.Add(this.txtusuario);
             this.Panel3.Controls.Add(this.Label15);
             this.Panel3.Controls.Add(this.txtArgumentosini);
@@ -141,10 +139,31 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Panel3.Controls.Add(this.lblBasededatos);
             this.Panel3.Controls.Add(this.Label6);
             this.Panel3.Controls.Add(this.Label8);
-            this.Panel3.Location = new System.Drawing.Point(47, 18);
+            this.Panel3.Location = new System.Drawing.Point(596, 12);
             this.Panel3.Name = "Panel3";
-            this.Panel3.Size = new System.Drawing.Size(476, 501);
+            this.Panel3.Size = new System.Drawing.Size(27, 14);
             this.Panel3.TabIndex = 621;
+            // 
+            // GroupBox6
+            // 
+            this.GroupBox6.Controls.Add(this.txtCrearUsuarioDb);
+            this.GroupBox6.ForeColor = System.Drawing.Color.White;
+            this.GroupBox6.Location = new System.Drawing.Point(510, 202);
+            this.GroupBox6.Name = "GroupBox6";
+            this.GroupBox6.Size = new System.Drawing.Size(233, 306);
+            this.GroupBox6.TabIndex = 633;
+            this.GroupBox6.TabStop = false;
+            this.GroupBox6.Text = "Servira para Crear un Usuario para el Servidor - NO TOCAR";
+            // 
+            // txtCrearUsuarioDb
+            // 
+            this.txtCrearUsuarioDb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCrearUsuarioDb.Location = new System.Drawing.Point(3, 16);
+            this.txtCrearUsuarioDb.Multiline = true;
+            this.txtCrearUsuarioDb.Name = "txtCrearUsuarioDb";
+            this.txtCrearUsuarioDb.Size = new System.Drawing.Size(227, 287);
+            this.txtCrearUsuarioDb.TabIndex = 629;
+            this.txtCrearUsuarioDb.Text = resources.GetString("txtCrearUsuarioDb.Text");
             // 
             // txtusuario
             // 
@@ -153,7 +172,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(134, 20);
             this.txtusuario.TabIndex = 637;
-            this.txtusuario.Text = "prueba2020";
+            this.txtusuario.Text = "jojama";
             // 
             // Label15
             // 
@@ -305,7 +324,6 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             // 
             // GroupBox2
             // 
-            this.GroupBox2.Controls.Add(this.GroupBox6);
             this.GroupBox2.Controls.Add(this.txtCrear_procedimientos);
             this.GroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBox2.ForeColor = System.Drawing.Color.White;
@@ -315,27 +333,6 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.GroupBox2.TabIndex = 622;
             this.GroupBox2.TabStop = false;
             this.GroupBox2.Text = "PEGA TU Script para Crear las Tablas y Procedimientos";
-            // 
-            // GroupBox6
-            // 
-            this.GroupBox6.Controls.Add(this.txtCrearUsuarioDb);
-            this.GroupBox6.ForeColor = System.Drawing.Color.White;
-            this.GroupBox6.Location = new System.Drawing.Point(311, 58);
-            this.GroupBox6.Name = "GroupBox6";
-            this.GroupBox6.Size = new System.Drawing.Size(233, 306);
-            this.GroupBox6.TabIndex = 633;
-            this.GroupBox6.TabStop = false;
-            this.GroupBox6.Text = "Servira para Crear un Usuario para el Servidor - NO TOCAR";
-            // 
-            // txtCrearUsuarioDb
-            // 
-            this.txtCrearUsuarioDb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCrearUsuarioDb.Location = new System.Drawing.Point(3, 16);
-            this.txtCrearUsuarioDb.Multiline = true;
-            this.txtCrearUsuarioDb.Name = "txtCrearUsuarioDb";
-            this.txtCrearUsuarioDb.Size = new System.Drawing.Size(227, 287);
-            this.txtCrearUsuarioDb.TabIndex = 629;
-            this.txtCrearUsuarioDb.Text = resources.GetString("txtCrearUsuarioDb.Text");
             // 
             // txtCrear_procedimientos
             // 
@@ -429,24 +426,12 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Label8.TabIndex = 618;
             this.Label8.Text = "Nombre de Instancia:";
             // 
-            // Label10
-            // 
-            this.Label10.AutoSize = true;
-            this.Label10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold);
-            this.Label10.ForeColor = System.Drawing.Color.White;
-            this.Label10.Location = new System.Drawing.Point(12, 20);
-            this.Label10.Name = "Label10";
-            this.Label10.Size = new System.Drawing.Size(184, 46);
-            this.Label10.TabIndex = 1;
-            this.Label10.Text = "JOJAMA";
-            // 
             // PictureBox7
             // 
-            this.PictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox7.Image")));
-            this.PictureBox7.Location = new System.Drawing.Point(191, 12);
+            this.PictureBox7.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA1;
+            this.PictureBox7.Location = new System.Drawing.Point(0, 0);
             this.PictureBox7.Name = "PictureBox7";
-            this.PictureBox7.Size = new System.Drawing.Size(110, 63);
+            this.PictureBox7.Size = new System.Drawing.Size(109, 86);
             this.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBox7.TabIndex = 604;
             this.PictureBox7.TabStop = false;
@@ -697,16 +682,14 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Instalacion_del_servidorSQL_Load);
             this.Panel8.ResumeLayout(false);
-            this.Panel8.PerformLayout();
-            this.panel11.ResumeLayout(false);
             this.Panel3.ResumeLayout(false);
             this.Panel3.PerformLayout();
+            this.GroupBox6.ResumeLayout(false);
+            this.GroupBox6.PerformLayout();
             this.Panel10.ResumeLayout(false);
             this.Panel10.PerformLayout();
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox2.ResumeLayout(false);
-            this.GroupBox6.ResumeLayout(false);
-            this.GroupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).EndInit();
             this.Panel2.ResumeLayout(false);
             this.Panel4.ResumeLayout(false);
@@ -723,7 +706,6 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
         #endregion
 
         internal System.Windows.Forms.Panel Panel8;
-        internal System.Windows.Forms.Label Label10;
         internal System.Windows.Forms.PictureBox PictureBox7;
         internal System.Windows.Forms.Label lblwindows;
         internal System.Windows.Forms.Panel Panel3;

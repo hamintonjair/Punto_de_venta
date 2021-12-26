@@ -58,9 +58,9 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             //********
 
             txtEliminarBase.Text = txtEliminarBase.Text.Replace("SistemaContable", TXTbasededatos.Text);
-            txtCrearUsuarioDb.Text = txtCrearUsuarioDb.Text.Replace("Jjojama", txtusuario.Text);
+            txtCrearUsuarioDb.Text = txtCrearUsuarioDb.Text.Replace("jojama", txtusuario.Text);
             txtCrearUsuarioDb.Text = txtCrearUsuarioDb.Text.Replace("BASEJOJAMA", TXTbasededatos.Text);
-            txtCrearUsuarioDb.Text = txtCrearUsuarioDb.Text.Replace("softwarereal", lblcontraseña.Text);
+            txtCrearUsuarioDb.Text = txtCrearUsuarioDb.Text.Replace("Johanjair01", lblcontraseña.Text);
             //Adjuntando al texbox que contiene los procedimientos almacenados
             txtCrear_procedimientos.Text = txtCrear_procedimientos.Text + Environment.NewLine + txtCrearUsuarioDb.Text;
         }

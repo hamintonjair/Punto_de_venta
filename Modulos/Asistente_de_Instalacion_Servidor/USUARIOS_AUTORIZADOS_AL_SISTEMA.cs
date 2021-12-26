@@ -55,7 +55,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
                         cmd.Parameters.AddWithValue("@Correo", Modulos.Asistente_de_Instalacion_Servidor.REGISTRO_DE_EMPRESA.correo);
                         cmd.Parameters.AddWithValue("@Rol", "Administrador (Control total)");
                         System.IO.MemoryStream ms = new System.IO.MemoryStream();
-                        PictureBox2.Image.Save(ms, PictureBox2.Image.RawFormat);
+                        pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
 
 
                         cmd.Parameters.AddWithValue("@Icono", ms.GetBuffer());
@@ -86,6 +86,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             {
                 MessageBox.Show("Falta ingresar Datos", "Datos incompletos", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             }
+          
         }
         private void Insertar_licencia_de_prueba_30_dias()
         {
@@ -136,9 +137,9 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
                 cmd.Parameters.AddWithValue("@Direccion_para_factura", 0);
                 cmd.Parameters.AddWithValue("@Ruc ", 0);
                 cmd.Parameters.AddWithValue("@movil", 0);
-                cmd.Parameters.AddWithValue("@Cliente ", "NEUTRO");
-                cmd.Parameters.AddWithValue("@Proveedor", "NEUTRO");
-                cmd.Parameters.AddWithValue("@Estado", 0);
+                cmd.Parameters.AddWithValue("@Cliente", "NEUTRO");
+                cmd.Parameters.AddWithValue("@Proveedor","NEUTRO" );
+                cmd.Parameters.AddWithValue("@Estado ", 0);
                 cmd.Parameters.AddWithValue("@Saldo", 0);
                 cmd.ExecuteNonQuery();
                 con.Close();                

@@ -215,6 +215,12 @@
     <Compile Include="Modulos\Login\LOGIN.Designer.cs">
       <DependentUpon>LOGIN.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Notificaciones\Notificaciones_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Notificaciones\Notificaciones_form.Designer.cs">
+      <DependentUpon>Notificaciones_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Productos\Productoss.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +299,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Asistente_de_Instalacion_Servidor\Instalacion_del_servidorSQL.resx">
       <DependentUpon>Instalacion_del_servidorSQL.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Asistente_de_Instalacion_Servidor\REGISTRO_DE_EMPRESA.resx">
       <DependentUpon>REGISTRO_DE_EMPRESA.cs</DependentUpon>
@@ -338,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Login\LOGIN.resx">
       <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Notificaciones\Notificaciones_form.resx">
+      <DependentUpon>Notificaciones_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Productos\Productoss.resx">
       <DependentUpon>Productoss.cs</DependentUpon>
@@ -404,6 +414,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Modulos\Login\HTMLPage1.html" />
+    <None Include="Resources\trash-can_115312.png" />
     <None Include="Resources\menuCajas_claro.png" />
     <None Include="Resources\Caja_recien_creada.png" />
     <None Include="Resources\Caja_eliminada_oficial.png" />

@@ -46,7 +46,7 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
 
         private void MembresiasNuevo_Load(object sender, EventArgs e)
         {
-            obtenerSerialPc();
+            obtenerSerialPc();           
         }
 
         private void btnActivacioManual_Click(object sender, EventArgs e)
@@ -74,7 +74,8 @@ namespace Punto_de_venta.Modulos.Licencias_Membresias
                     }
                 }
 
-            }
+            }          
+
         }
         private void activarLicenciaManual()
         {

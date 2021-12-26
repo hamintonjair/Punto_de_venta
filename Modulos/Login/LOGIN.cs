@@ -159,6 +159,7 @@ namespace Punto_de_venta.Modulos
             panel1.Location = new Point((Width - panel1.Width) / 2, (Height - panel1.Height) / 2);
             panelRestaurarcontraseña.Location = new Point((Width - panelRestaurarcontraseña.Width) / 2, (Height - panelRestaurarcontraseña.Height) / 2);
             panel2.Location = new Point((Width - panel2.Width) / 2, (Height - panel2.Height) / 2);
+           
         }
         private void ListarApertura_de_detallles_de_cierre_de_caja()
         {
@@ -431,7 +432,7 @@ namespace Punto_de_venta.Modulos
         {
             mostrar_usuario_por_correo();
             richTextBox1.Text = richTextBox1.Text.Replace("@pass", lblresultadocontraseña.Text);
-            enviarCorreo("jairjomena@gmail.com", "Johanjair01", richTextBox1.Text, "Solicitud de Contraseña", txtcorreo.Text, "");
+            enviarCorreo("hamintonjair@gmail.com", "johanernestoM", richTextBox1.Text, "Solicitud de Contraseña", txtcorreo.Text, "");
         }
 
 
@@ -593,7 +594,7 @@ namespace Punto_de_venta.Modulos
                         else
                         {
                             Hide();
-                            Modulos.Licencias_Membresias.Membresias frm = new Modulos.Licencias_Membresias.Membresias();
+                            Modulos.Licencias_Membresias.MembresiasNuevo frm = new Modulos.Licencias_Membresias.MembresiasNuevo();
                             frm.ShowDialog();
                             Dispose();
                         }
@@ -602,7 +603,7 @@ namespace Punto_de_venta.Modulos
                     {
                         Hide();
 
-                        Modulos.Licencias_Membresias.Membresias frm = new Modulos.Licencias_Membresias.Membresias();
+                        Modulos.Licencias_Membresias.MembresiasNuevo frm = new Modulos.Licencias_Membresias.MembresiasNuevo();
                         frm.ShowDialog();
                         Dispose();
                     }
@@ -611,7 +612,7 @@ namespace Punto_de_venta.Modulos
                 {
                     Hide();
 
-                    Modulos.Licencias_Membresias.Membresias frm = new Modulos.Licencias_Membresias.Membresias();
+                    Modulos.Licencias_Membresias.MembresiasNuevo frm = new Modulos.Licencias_Membresias.MembresiasNuevo();
                     frm.ShowDialog();
                     Dispose();
                 }
@@ -751,8 +752,7 @@ namespace Punto_de_venta.Modulos
                 BackColor = Color.FromArgb(26, 26, 26);
                 progressBar1.Value = progressBar1.Value + 10;
                 progressBar1.Visible = true;
-                PictureBox2.Visible = true;
-                
+                PictureBox2.Visible = true;               
 
             }
             else
@@ -803,8 +803,6 @@ namespace Punto_de_venta.Modulos
         {
             try
             {
-
-
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = ConexionDt.ConexionData.conexion;
                 con.Open();

@@ -754,6 +754,7 @@ namespace Punto_de_venta.Modulos.Configuracion
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuración";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.PANEL_CONFIGURACIONES_Load);
             this.ToolStrip1.ResumeLayout(false);
             this.ToolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);

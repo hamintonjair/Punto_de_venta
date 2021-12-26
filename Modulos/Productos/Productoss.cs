@@ -207,10 +207,11 @@ namespace Punto_de_venta.Modulos.Productos
             string Cadena = txtgrupo.Text;
             string[] Palabra;
             String espacio = " ";
+      
             Palabra = Cadena.Split(Convert.ToChar(espacio));
             try
             {
-                txtcodigodebarras.Text = resultado + Palabra[0].Substring(0, 2) + 369;
+                txtcodigodebarras.Text = resultado + Palabra[0].Substring(0, 2) + 761;
             }
             catch (Exception ex)
             {
