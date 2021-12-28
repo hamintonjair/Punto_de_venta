@@ -114,7 +114,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.LBLcontador_de_contraseña2.AutoSize = true;
             this.LBLcontador_de_contraseña2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.LBLcontador_de_contraseña2.ForeColor = System.Drawing.Color.DimGray;
-            this.LBLcontador_de_contraseña2.Location = new System.Drawing.Point(370, 150);
+            this.LBLcontador_de_contraseña2.Location = new System.Drawing.Point(442, 150);
             this.LBLcontador_de_contraseña2.Name = "LBLcontador_de_contraseña2";
             this.LBLcontador_de_contraseña2.Size = new System.Drawing.Size(13, 13);
             this.LBLcontador_de_contraseña2.TabIndex = 596;
@@ -126,7 +126,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Label7.AutoSize = true;
             this.Label7.BackColor = System.Drawing.Color.White;
             this.Label7.ForeColor = System.Drawing.Color.DimGray;
-            this.Label7.Location = new System.Drawing.Point(389, 119);
+            this.Label7.Location = new System.Drawing.Point(461, 119);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(123, 13);
             this.Label7.TabIndex = 596;
@@ -137,7 +137,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.LBLcontador_de_contraseña.AutoSize = true;
             this.LBLcontador_de_contraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.LBLcontador_de_contraseña.ForeColor = System.Drawing.Color.DimGray;
-            this.LBLcontador_de_contraseña.Location = new System.Drawing.Point(370, 121);
+            this.LBLcontador_de_contraseña.Location = new System.Drawing.Point(442, 121);
             this.LBLcontador_de_contraseña.Name = "LBLcontador_de_contraseña";
             this.LBLcontador_de_contraseña.Size = new System.Drawing.Size(13, 13);
             this.LBLcontador_de_contraseña.TabIndex = 596;
@@ -150,7 +150,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Label5.BackColor = System.Drawing.Color.White;
             this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Label5.Location = new System.Drawing.Point(11, 143);
+            this.Label5.Location = new System.Drawing.Point(83, 143);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(187, 20);
             this.Label5.TabIndex = 2;
@@ -162,7 +162,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Label4.BackColor = System.Drawing.Color.White;
             this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Label4.Location = new System.Drawing.Point(91, 114);
+            this.Label4.Location = new System.Drawing.Point(163, 114);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(107, 20);
             this.Label4.TabIndex = 2;
@@ -185,7 +185,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Label3.BackColor = System.Drawing.Color.White;
             this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.Label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Label3.Location = new System.Drawing.Point(121, 88);
+            this.Label3.Location = new System.Drawing.Point(193, 88);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(76, 20);
             this.Label3.TabIndex = 2;
@@ -197,7 +197,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Label2.BackColor = System.Drawing.Color.White;
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Label2.Location = new System.Drawing.Point(14, 53);
+            this.Label2.Location = new System.Drawing.Point(86, 53);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(184, 20);
             this.Label2.TabIndex = 2;
@@ -234,7 +234,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             // txtconfirmarcontraseña
             // 
             this.txtconfirmarcontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtconfirmarcontraseña.Location = new System.Drawing.Point(203, 143);
+            this.txtconfirmarcontraseña.Location = new System.Drawing.Point(275, 143);
             this.txtconfirmarcontraseña.MaxLength = 6;
             this.txtconfirmarcontraseña.Name = "txtconfirmarcontraseña";
             this.txtconfirmarcontraseña.PasswordChar = '*';
@@ -244,7 +244,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             // TXTCONTRASEÑA
             // 
             this.TXTCONTRASEÑA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TXTCONTRASEÑA.Location = new System.Drawing.Point(203, 114);
+            this.TXTCONTRASEÑA.Location = new System.Drawing.Point(275, 114);
             this.TXTCONTRASEÑA.MaxLength = 6;
             this.TXTCONTRASEÑA.Name = "TXTCONTRASEÑA";
             this.TXTCONTRASEÑA.PasswordChar = '*';
@@ -255,7 +255,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             // 
             this.TXTUSUARIO.Enabled = false;
             this.TXTUSUARIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TXTUSUARIO.Location = new System.Drawing.Point(203, 85);
+            this.TXTUSUARIO.Location = new System.Drawing.Point(275, 85);
             this.TXTUSUARIO.Name = "TXTUSUARIO";
             this.TXTUSUARIO.Size = new System.Drawing.Size(206, 23);
             this.TXTUSUARIO.TabIndex = 3;
@@ -264,7 +264,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             // txtnombre
             // 
             this.txtnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtnombre.Location = new System.Drawing.Point(203, 53);
+            this.txtnombre.Location = new System.Drawing.Point(275, 53);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(231, 23);
             this.txtnombre.TabIndex = 3;
@@ -277,7 +277,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(569, 29);
             this.Label6.TabIndex = 2;
-            this.Label6.Text = "El Administrador siempre tendra Acceso a todas las Funciones del Programa";
+            this.Label6.Text = "El Administrador siempre tendrá Acceso a todas las Funciones del Programa";
             this.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Label1
@@ -285,7 +285,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.Label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Label1.Location = new System.Drawing.Point(5, 7);
+            this.Label1.Location = new System.Drawing.Point(181, 0);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(340, 20);
             this.Label1.TabIndex = 2;

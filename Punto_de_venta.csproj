@@ -65,6 +65,7 @@
     <Compile Include="ConexionDt\ConecionData.cs" />
     <Compile Include="ConexionDt\Encryptar_en_texto.cs" />
     <Compile Include="ConexionDt\Numeros_separadores.cs" />
+    <Compile Include="ConexionDt\Obtener_serial_de_PC.cs" />
     <Compile Include="ConexionDt\Tamaño_automatico_de_datatables.cs" />
     <Compile Include="ConexionDt\total_en_letras.cs" />
     <Compile Include="ConexionDt\WinAutoComplete.cs" />
@@ -308,6 +309,12 @@
     <Compile Include="Modulos\Usuarios_y_Permisos\usuarios.Designer.cs">
       <DependentUpon>usuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Ventas_Menu_Principal\MEDIOS_DE_PAGO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Ventas_Menu_Principal\MEDIOS_DE_PAGO.Designer.cs">
+      <DependentUpon>MEDIOS_DE_PAGO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Ventas_Menu_Principal\Ventas_Menu_Princi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -423,6 +430,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Usuarios_y_Permisos\usuarios.resx">
       <DependentUpon>usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Ventas_Menu_Principal\MEDIOS_DE_PAGO.resx">
+      <DependentUpon>MEDIOS_DE_PAGO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Ventas_Menu_Principal\Ventas_Menu_Princi.resx">
       <DependentUpon>Ventas_Menu_Princi.cs</DependentUpon>

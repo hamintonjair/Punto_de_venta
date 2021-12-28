@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ada369Csharp.CONEXION
+namespace Punto_de_venta.ConexionDt
 {
    public static   class Agregar_ceros_adelante_De_numero
     {

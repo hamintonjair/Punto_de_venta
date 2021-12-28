@@ -139,9 +139,9 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Panel3.Controls.Add(this.lblBasededatos);
             this.Panel3.Controls.Add(this.Label6);
             this.Panel3.Controls.Add(this.Label8);
-            this.Panel3.Location = new System.Drawing.Point(596, 12);
+            this.Panel3.Location = new System.Drawing.Point(391, 26);
             this.Panel3.Name = "Panel3";
-            this.Panel3.Size = new System.Drawing.Size(27, 14);
+            this.Panel3.Size = new System.Drawing.Size(18, 18);
             this.Panel3.TabIndex = 621;
             // 
             // GroupBox6

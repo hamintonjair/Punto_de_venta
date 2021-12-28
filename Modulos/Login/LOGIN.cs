@@ -48,7 +48,7 @@ namespace Punto_de_venta.Modulos
                     b.Size = new System.Drawing.Size(175, 25);
                     b.Font = new System.Drawing.Font("Microsoft Sans Serif", 13);
                     b.FlatStyle = FlatStyle.Flat;
-                    b.BackColor = Color.FromArgb(20, 20, 20);
+                    b.BackColor = Color.FromArgb(32, 106, 93);
                     b.ForeColor = Color.White;
                     b.Dock = DockStyle.Bottom;
                     b.TextAlign = ContentAlignment.MiddleCenter;
@@ -58,7 +58,7 @@ namespace Punto_de_venta.Modulos
                     p1.Size = new System.Drawing.Size(155, 167);
                     p1.BorderStyle = BorderStyle.None;
                     p1.Dock = DockStyle.Bottom;
-                    p1.BackColor = Color.FromArgb(20, 20, 20);
+                    p1.BackColor = Color.FromArgb(32, 106, 93);
 
                     //propiedades programada para el picturebox
                     I1.Size = new System.Drawing.Size(175, 132);

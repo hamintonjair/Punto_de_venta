@@ -212,7 +212,7 @@ namespace Punto_de_venta.Modulos
             // panelRestaurarcontraseña
             // 
             this.panelRestaurarcontraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelRestaurarcontraseña.BackColor = System.Drawing.Color.Black;
+            this.panelRestaurarcontraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
             this.panelRestaurarcontraseña.Controls.Add(this.txtcorreo);
             this.panelRestaurarcontraseña.Controls.Add(this.btncerrar);
             this.panelRestaurarcontraseña.Controls.Add(this.btnenviar);
@@ -486,7 +486,7 @@ namespace Punto_de_venta.Modulos
             // MenuStrip15
             // 
             this.MenuStrip15.AutoSize = false;
-            this.MenuStrip15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.MenuStrip15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
             this.MenuStrip15.Dock = System.Windows.Forms.DockStyle.None;
             this.MenuStrip15.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tver,
@@ -502,7 +502,7 @@ namespace Punto_de_venta.Modulos
             // 
             // tver
             // 
-            this.tver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.tver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
             this.tver.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.tver.ForeColor = System.Drawing.Color.Black;
             this.tver.Image = ((System.Drawing.Image)(resources.GetObject("tver.Image")));
@@ -537,7 +537,7 @@ namespace Punto_de_venta.Modulos
             // 
             // txtPasswor
             // 
-            this.txtPasswor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.txtPasswor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
             this.txtPasswor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPasswor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtPasswor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
@@ -610,7 +610,7 @@ namespace Punto_de_venta.Modulos
             this.btnOlvidoContraseña.FlatAppearance.BorderSize = 0;
             this.btnOlvidoContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOlvidoContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOlvidoContraseña.ForeColor = System.Drawing.Color.Silver;
+            this.btnOlvidoContraseña.ForeColor = System.Drawing.Color.Gray;
             this.btnOlvidoContraseña.Location = new System.Drawing.Point(71, 594);
             this.btnOlvidoContraseña.Name = "btnOlvidoContraseña";
             this.btnOlvidoContraseña.Size = new System.Drawing.Size(259, 35);
@@ -843,11 +843,11 @@ namespace Punto_de_venta.Modulos
             // 
             // btnCambiarUsuario
             // 
-            this.btnCambiarUsuario.BackColor = System.Drawing.Color.Black;
+            this.btnCambiarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(194)))), ((int)(((byte)(176)))));
             this.btnCambiarUsuario.FlatAppearance.BorderSize = 0;
             this.btnCambiarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarUsuario.ForeColor = System.Drawing.Color.Gray;
+            this.btnCambiarUsuario.ForeColor = System.Drawing.Color.White;
             this.btnCambiarUsuario.Location = new System.Drawing.Point(74, 553);
             this.btnCambiarUsuario.Name = "btnCambiarUsuario";
             this.btnCambiarUsuario.Size = new System.Drawing.Size(252, 35);
@@ -1278,7 +1278,7 @@ namespace Punto_de_venta.Modulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
             this.ClientSize = new System.Drawing.Size(1188, 701);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.PictureBox2);

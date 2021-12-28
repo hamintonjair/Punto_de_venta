@@ -23,12 +23,17 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
         int contador_stock_detalle_de_venta;
         int idproducto;
         int idClienteEstandar;
-        int idusuario_que_inicio_sesion;
-        int idVenta;
+        public static int idusuario_que_inicio_sesion;
+        public static int idVenta;
         int iddetalleventa;
         int Contador;
- 
- 
+        double txtpantalla;
+        double lblStock_de_Productos;
+        public static double total;
+        public static int Id_caja;
+
+
+
 
         private void iToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -87,8 +92,7 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             {
                 MessageBox.Show(ex.StackTrace);
             }
-        }
-        int Id_caja;
+        }        
         private void MOSTRAR_CAJA_POR_SERIAL()
         {
             SqlConnection con = new SqlConnection();
@@ -240,12 +244,12 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             if (contador_stock_detalle_de_venta == 0)
             {
                 // Si es producto no esta agregado a las ventas se tomara el Stock de la tabla Productos
-                lblStock_de_Productos.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[4].Value.ToString();
+                lblStock_de_Productos = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[4].Value.ToString());
             }
             else
             {
                 //en caso que el producto ya este agregado al detalle de venta se va a extraer el Stock de la tabla Detalle_de_venta
-                lblStock_de_Productos.Text = datalistado_stock_detalle_venta.SelectedCells[1].Value.ToString();
+                lblStock_de_Productos = Convert.ToDouble(datalistado_stock_detalle_venta.SelectedCells[1].Value.ToString());
             }
             //Extraemos los datos del producto de la tabla Productos directamente
             lblUsaInventarios.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[3].Value.ToString();
@@ -261,7 +265,7 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             }
             else if (TXTSEVENDEPOR.Text == "Unidad")
             {
-                txtpantalla.Text = "1";
+                txtpantalla = 1;
                 vender_por_unidad();
             }
 
@@ -456,7 +460,7 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             {
                 if (lblUsaInventarios.Text == "SI")
                 {
-                    if (Convert.ToDouble(lblStock_de_Productos.Text) >= Convert.ToDouble(txtpantalla.Text))
+                    if (Convert.ToDouble(lblStock_de_Productos) >= Convert.ToDouble(txtpantalla))
                     {
                         insertar_detalle_venta_SIN_VALIDAR();
                     }
@@ -486,15 +490,15 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idventa", idVenta);
                 cmd.Parameters.AddWithValue("@Id_presentacionfraccionada", idproducto);
-                cmd.Parameters.AddWithValue("@cantidad", txtpantalla.Text);
+                cmd.Parameters.AddWithValue("@cantidad", txtpantalla);
                 cmd.Parameters.AddWithValue("@preciounitario", txtprecio_unitario.Text);
                 cmd.Parameters.AddWithValue("@moneda", 0);
                 cmd.Parameters.AddWithValue("@unidades", "Unidad");
-                cmd.Parameters.AddWithValue("@Cantidad_mostrada", txtpantalla.Text);
+                cmd.Parameters.AddWithValue("@Cantidad_mostrada", txtpantalla);
                 cmd.Parameters.AddWithValue("@Estado", "EN ESPERA");
                 cmd.Parameters.AddWithValue("@Descripcion", lbldescripcion.Text);
                 cmd.Parameters.AddWithValue("@Codigo", lblcodigo.Text);
-                cmd.Parameters.AddWithValue("@Stock", lblStock_de_Productos.Text);
+                cmd.Parameters.AddWithValue("@Stock", lblStock_de_Productos);
                 cmd.Parameters.AddWithValue("@Se_vende_a", TXTSEVENDEPOR.Text);
                 cmd.Parameters.AddWithValue("@Usa_inventarios", lblUsaInventarios.Text);
                 cmd.Parameters.AddWithValue("@Costo", lblcosto.Text);
@@ -807,11 +811,11 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
 
                 if (contador_stock_detalle_de_venta == 0)
                 {
-                    lblStock_de_Productos.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[4].Value.ToString();
+                    lblStock_de_Productos = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[4].Value.ToString());
                 }
                 else
                 {
-                    lblStock_de_Productos.Text = datalistado_stock_detalle_venta.SelectedCells[1].Value.ToString();
+                    lblStock_de_Productos =Convert.ToDouble( datalistado_stock_detalle_venta.SelectedCells[1].Value.ToString());
                 }
                 lblUsaInventarios.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[3].Value.ToString();
                 lbldescripcion.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[9].Value.ToString();
@@ -821,7 +825,7 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
                 TXTSEVENDEPOR.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[8].Value.ToString();
                 if (TXTSEVENDEPOR.Text == "Unidad")
                 {
-                    txtpantalla.Text = "1";
+                    txtpantalla = 1;
                     vender_por_unidad();
                 }
 
@@ -892,6 +896,25 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void befectivo_Click(object sender, EventArgs e)
+        {
+            total = Convert.ToDouble(txt_total_suma.Text);
+            Ventas_Menu_Principal.MEDIOS_DE_PAGO frm = new Ventas_Menu_Principal.MEDIOS_DE_PAGO();
+            frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
+            frm.ShowDialog();
+        }
+        private void frm_FormClosed(Object sender, FormClosedEventArgs e)
+        {
+            Limpiar_para_venta_nueva();
+        }
+        private void Limpiar_para_venta_nueva()
+        {
+            idVenta = 0;
+            Listarproductosagregados();
+            txtventagenerada.Text = "VENTA NUEVA";
+            sumar();
         }
     }
 }
