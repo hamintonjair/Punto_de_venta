@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
+using Telerik.Reporting.Processing;
 
 namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
 {
@@ -1007,7 +1008,7 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idventa", idventa);
                 cmd.Parameters.AddWithValue("@montototal", total);
-                cmd.Parameters.AddWithValue("@IGV", 0);
+                cmd.Parameters.AddWithValue("@IVA", 0);
                 cmd.Parameters.AddWithValue("@Saldo", vuelto);
                 cmd.Parameters.AddWithValue("@Tipo_de_pago", txttipo);
                 cmd.Parameters.AddWithValue("@Estado", "CONFIRMADO");
@@ -1171,8 +1172,8 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
                 {
                     PrinterSettings printerSettings = new PrinterSettings();
                     printerSettings.PrinterName = txtImpresora.Text;
-                    //ReportProcessor reportProcessor = new ReportProcessor();
-                    //reportProcessor.PrintReport(reportViewer2.ReportSource, printerSettings);
+                    ReportProcessor reportProcessor = new ReportProcessor();
+                    reportProcessor.PrintReport(reportViewer2.ReportSource, printerSettings);
                 }
                 Dispose();
             }
@@ -1187,18 +1188,18 @@ namespace Punto_de_venta.Modulos.Ventas_Menu_Principal
             DataTable dt = new DataTable();
             try
             {
-                //ConexionDt.ConexionData.abrir();
-                //SqlDataAdapter da = new SqlDataAdapter("mostrar_ticket_impreso", ConexionDt.ConexionData.conectar);
-                //da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                //da.SelectCommand.Parameters.AddWithValue("@Id_venta", idventa);
-                //da.SelectCommand.Parameters.AddWithValue("@total_en_letras", txtnumeroconvertidoenletra.Text);
-                //da.Fill(dt);
-                //rpt = new Modulos.Reportes.Impresion_de_comprobantes.Ticket_report();
-                ////rpt.table1.DataSource = dt;
-                //rpt.DataSource = dt;
-                //reportViewer2.Report = rpt;
-                //reportViewer2.RefreshReport();
-                //ConexionDt.ConexionData.cerrar();
+                ConexionDt.ConexionData.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrar_ticket_impreso", ConexionDt.ConexionData.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@Id_venta", idventa);
+                da.SelectCommand.Parameters.AddWithValue("@total_en_letras", txtnumeroconvertidoenletra.Text);
+                da.Fill(dt);
+                rpt = new Modulos.Reportes.Impresion_de_comprobantes.Ticket_report();
+                rpt.table1.DataSource = dt;
+                rpt.DataSource = dt;
+                reportViewer2.Report = rpt;
+                reportViewer2.RefreshReport();
+                ConexionDt.ConexionData.cerrar();
 
             }
             catch (Exception ex)

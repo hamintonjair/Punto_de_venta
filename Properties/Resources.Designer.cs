@@ -63,16 +63,6 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Accountin {
-            get {
-                object obj = ResourceManager.GetObject("Accountin", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap add_insert_new_17850 {
             get {
                 object obj = ResourceManager.GetObject("add_insert_new_17850", resourceCulture);
@@ -96,6 +86,26 @@ namespace Punto_de_venta.Properties {
         internal static System.Drawing.Bitmap azul {
             get {
                 object obj = ResourceManager.GetObject("azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap azul1 {
+            get {
+                object obj = ResourceManager.GetObject("azul1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap basedatoss {
+            get {
+                object obj = ResourceManager.GetObject("basedatoss", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +163,89 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cobrosIcono {
+            get {
+                object obj = ResourceManager.GetObject("cobrosIcono", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Coins_96x96_32_37900 {
+            get {
+                object obj = ResourceManager.GetObject("Coins_96x96-32_37900", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap costo {
+            get {
+                object obj = ResourceManager.GetObject("costo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap detener {
+            get {
+                object obj = ResourceManager.GetObject("detener", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap documentediting_editdocuments_text_documentedi_2820 {
             get {
                 object obj = ResourceManager.GetObject("documentediting_editdocuments_text_documentedi_2820", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap euro {
+            get {
+                object obj = ResourceManager.GetObject("euro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ios7_bell_icon_icons_com_50334 {
+            get {
+                object obj = ResourceManager.GetObject("ios7-bell_icon-icons.com_50334", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jugar {
+            get {
+                object obj = ResourceManager.GetObject("jugar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lapiz {
+            get {
+                object obj = ResourceManager.GetObject("lapiz", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,16 +273,6 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lohoJojama {
-            get {
-                object obj = ResourceManager.GetObject("lohoJojama", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap menuCajas_claro {
             get {
                 object obj = ResourceManager.GetObject("menuCajas_claro", resourceCulture);
@@ -203,9 +283,9 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap My_project__2_ {
+        internal static System.Drawing.Bitmap money_dollar_cash_coins_riches_wealth_icon_icons_com_53585 {
             get {
-                object obj = ResourceManager.GetObject("My project (2)", resourceCulture);
+                object obj = ResourceManager.GetObject("money_dollar_cash_coins_riches_wealth_icon-icons.com_53585", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +313,9 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Negro_y_Marrón_Cuadrado_Comunidad_y_Sin_ánimo_de_lucro_Logotipo {
+        internal static System.Drawing.Bitmap notificacion_BLACK2 {
             get {
-                object obj = ResourceManager.GetObject("Negro y Marrón Cuadrado Comunidad y Sin ánimo de lucro Logotipo", resourceCulture);
+                object obj = ResourceManager.GetObject("notificacion_BLACK2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +323,9 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Negro_y_Marrón_Cuadrado_Comunidad_y_Sin_ánimo_de_lucro_Logotipo__1_ {
+        internal static System.Drawing.Bitmap pagosicono {
             get {
-                object obj = ResourceManager.GetObject("Negro y Marrón Cuadrado Comunidad y Sin ánimo de lucro Logotipo (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("pagosicono", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,6 +353,16 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap suma {
+            get {
+                object obj = ResourceManager.GetObject("suma", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap supermercado {
             get {
                 object obj = ResourceManager.GetObject("supermercado", resourceCulture);
@@ -285,7 +375,7 @@ namespace Punto_de_venta.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap trash_can_115312 {
             get {
-                object obj = ResourceManager.GetObject("trash-can_115312", resourceCulture);
+                object obj = ResourceManager.GetObject("trash_can_115312", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -296,6 +386,16 @@ namespace Punto_de_venta.Properties {
         internal static System.Drawing.Bitmap Untitled_Design__1_ {
             get {
                 object obj = ResourceManager.GetObject("Untitled Design (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap verde {
+            get {
+                object obj = ResourceManager.GetObject("verde", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

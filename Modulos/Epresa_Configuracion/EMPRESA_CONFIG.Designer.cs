@@ -256,13 +256,13 @@ namespace Punto_de_venta.Modulos.Epresa_Configuracion
             this.txtimpuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtimpuesto.FormattingEnabled = true;
             this.txtimpuesto.Items.AddRange(new object[] {
-            "IGV ",
+            "IVA ",
             "IVA"});
             this.txtimpuesto.Location = new System.Drawing.Point(3, 3);
             this.txtimpuesto.Name = "txtimpuesto";
             this.txtimpuesto.Size = new System.Drawing.Size(64, 28);
             this.txtimpuesto.TabIndex = 553;
-            this.txtimpuesto.Text = "IGV";
+            this.txtimpuesto.Text = "IVA";
             // 
             // Label14
             // 

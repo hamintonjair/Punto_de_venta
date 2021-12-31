@@ -503,12 +503,13 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.txtimpuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtimpuesto.FormattingEnabled = true;
             this.txtimpuesto.Items.AddRange(new object[] {
-            "IVA"});
+            "IVA",
+            "IGV "});
             this.txtimpuesto.Location = new System.Drawing.Point(3, 3);
             this.txtimpuesto.Name = "txtimpuesto";
             this.txtimpuesto.Size = new System.Drawing.Size(64, 28);
             this.txtimpuesto.TabIndex = 553;
-            this.txtimpuesto.Text = "IGV";
+            this.txtimpuesto.Text = "IVA";
             // 
             // Label14
             // 
@@ -1111,7 +1112,7 @@ namespace Punto_de_venta.Modulos.Asistente_de_Instalacion_Servidor
             this.Panel1.Controls.Add(this.Panel14);
             this.Panel1.Location = new System.Drawing.Point(22, 382);
             this.Panel1.Name = "Panel1";
-            this.Panel1.Size = new System.Drawing.Size(12, 20);
+            this.Panel1.Size = new System.Drawing.Size(10, 10);
             this.Panel1.TabIndex = 611;
             // 
             // datalistado_EMPRESASNUEVAS

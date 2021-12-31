@@ -134,8 +134,7 @@ namespace Punto_de_venta.Modulos.Conexion_remota
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Image = global::Punto_de_venta.Properties.Resources.Accountin;
+            this.pictureBox2.BackColor = System.Drawing.Color.White;          
             this.pictureBox2.Location = new System.Drawing.Point(124, 157);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(27, 19);
@@ -145,8 +144,7 @@ namespace Punto_de_venta.Modulos.Conexion_remota
             // 
             // PictureBox7
             // 
-            this.PictureBox7.BackColor = System.Drawing.Color.Black;
-            this.PictureBox7.Image = global::Punto_de_venta.Properties.Resources.Accountin;
+            this.PictureBox7.BackColor = System.Drawing.Color.Black;          
             this.PictureBox7.Location = new System.Drawing.Point(142, 198);
             this.PictureBox7.Name = "PictureBox7";
             this.PictureBox7.Size = new System.Drawing.Size(130, 128);

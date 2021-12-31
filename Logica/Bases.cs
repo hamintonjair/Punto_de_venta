@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Punto_de_venta.Logica
 {
-    class Bases
+    public class Bases
     {
         public static void Obtener_serialPC(ref string serial)
         {

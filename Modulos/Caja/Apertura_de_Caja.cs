@@ -30,6 +30,7 @@ namespace Punto_de_venta.Modulos.Caja
             {
                 txtmonto.Text = "0";
             }
+            
             bool estado = Editar_datos.editar_dinero_caja_inicial(txtidcaja, Convert.ToDouble(txtmonto.Text));
             if (estado == true)
             {

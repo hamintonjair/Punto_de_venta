@@ -14,7 +14,7 @@ namespace Punto_de_venta.Logica
         public double  Monto_total { get; set; }
         public string Tipo_de_pago { get; set; }
         public string Estado { get; set; }
-        public double IGV { get; set; }
+        public double IVA { get; set; }
         public string Comprobante { get; set; }
         public int Id_usuario { get; set; }
         public string Fecha_de_pago { get; set; }

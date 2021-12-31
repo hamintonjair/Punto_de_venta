@@ -7,7 +7,7 @@ using System.Data;
 using Punto_de_venta.ConexionDt;
 using System.Windows.Forms;
 using Punto_de_venta.Logica;
-namespace Ada369Csharp.Datos
+namespace Punto_de_venta.Datos
 {
     class Eliminar_datos
     {

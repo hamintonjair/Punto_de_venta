@@ -136,30 +136,41 @@ namespace Punto_de_venta.Modulos
         {
             //se trae el texto del label, es decir el login
             txtlogin.Text = ((Label)sender).Text;
-            panel2.Visible = true;
-            panel1.Visible = false;
+            PanelIngreso_de_contraseña.Visible = true;
+            PanelUsuarios.Visible = false;
             MOSTRAR_PERMISOS();
         }
         private void mieventoImage(System.Object sender, EventArgs e)
         {
             //traemos la imagen del login
             txtlogin.Text = ((PictureBox)sender).Tag.ToString();
-            panel2.Visible = true;
-            panel1.Visible = false;
+            PanelIngreso_de_contraseña.Visible = true;
+            PanelUsuarios.Visible = false;
             MOSTRAR_PERMISOS();
         }
 
         private void LOGIN_Load(object sender, EventArgs e)
         {
             DibujarUsuario();
-            panel3.Visible = true;
-            panel2.Visible = false;
+            escalar_paneles();
             timer1.Start();
-            PictureBox2.Location = new Point((Width - PictureBox2.Width) / 2, (Height - PictureBox2.Height) / 2);
-            panel1.Location = new Point((Width - panel1.Width) / 2, (Height - panel1.Height) / 2);
+
+
+        }
+        void escalar_paneles()
+        {
+            PanelUsuarios.Size = new System.Drawing.Size(1005, 649);
+            PanelIngreso_de_contraseña.Size = new System.Drawing.Size(397, 654);
+            PdeCarga.Size = new System.Drawing.Size(397, 654);
+            PanelRestaurarCuenta.Size = new System.Drawing.Size(538, 654);
+            PanelUsuarios.Location = new Point((Width - PanelUsuarios.Width) / 2, (Height - PanelUsuarios.Height) / 2);
+            panel3.Visible = true;
+            PanelIngreso_de_contraseña.Visible = false;        
+            PdeCarga.Location = new Point((Width - PdeCarga.Width) / 2, (Height - PdeCarga.Height) / 2);
+          
             panelRestaurarcontraseña.Location = new Point((Width - panelRestaurarcontraseña.Width) / 2, (Height - panelRestaurarcontraseña.Height) / 2);
-            panel2.Location = new Point((Width - panel2.Width) / 2, (Height - panel2.Height) / 2);
-           
+            PanelIngreso_de_contraseña.Location = new Point((Width - PanelIngreso_de_contraseña.Width) / 2, (Height - PanelIngreso_de_contraseña.Height) / 2);
+
         }
         private void ListarApertura_de_detallles_de_cierre_de_caja()
         {
@@ -752,7 +763,7 @@ namespace Punto_de_venta.Modulos
                 BackColor = Color.FromArgb(26, 26, 26);
                 progressBar1.Value = progressBar1.Value + 10;
                 progressBar1.Visible = true;
-                PictureBox2.Visible = true;               
+                PdeCarga.Visible = true;               
 
             }
             else

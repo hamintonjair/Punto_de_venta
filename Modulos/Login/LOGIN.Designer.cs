@@ -31,7 +31,7 @@ namespace Punto_de_venta.Modulos
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LOGIN));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelUsuarios = new System.Windows.Forms.Panel();
             this.txtlogin = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnrestaurarContraseña = new System.Windows.Forms.Button();
@@ -55,7 +55,7 @@ namespace Punto_de_venta.Modulos
             this.lblcaja = new System.Windows.Forms.Label();
             this.datalistado_licencia_temporal = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.PanelIngreso_de_contraseña = new System.Windows.Forms.Panel();
             this.lblestadoLicencias = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.MenuStrip15 = new System.Windows.Forms.MenuStrip();
@@ -117,14 +117,14 @@ namespace Punto_de_venta.Modulos
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.PictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.PdeCarga = new System.Windows.Forms.PictureBox();
+            this.PanelUsuarios.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panelRestaurarcontraseña.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.PanelIngreso_de_contraseña.SuspendLayout();
             this.panel3.SuspendLayout();
             this.MenuStrip15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxLicencia)).BeginInit();
@@ -137,22 +137,22 @@ namespace Punto_de_venta.Modulos
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_movimiento_validar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_detalle_cierre_de_caja)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PdeCarga)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // PanelUsuarios
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.PanelUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.txtlogin);
-            this.panel1.Controls.Add(this.panel8);
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(255, 59);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(660, 502);
-            this.panel1.TabIndex = 2;
+            this.PanelUsuarios.Controls.Add(this.txtlogin);
+            this.PanelUsuarios.Controls.Add(this.panel8);
+            this.PanelUsuarios.Controls.Add(this.flowLayoutPanel1);
+            this.PanelUsuarios.Controls.Add(this.label2);
+            this.PanelUsuarios.Location = new System.Drawing.Point(255, 59);
+            this.PanelUsuarios.Name = "PanelUsuarios";
+            this.PanelUsuarios.Size = new System.Drawing.Size(660, 502);
+            this.PanelUsuarios.TabIndex = 2;
             // 
             // txtlogin
             // 
@@ -220,7 +220,7 @@ namespace Punto_de_venta.Modulos
             this.panelRestaurarcontraseña.Controls.Add(this.label9);
             this.panelRestaurarcontraseña.Controls.Add(this.label10);
             this.panelRestaurarcontraseña.Controls.Add(this.label11);
-            this.panelRestaurarcontraseña.Location = new System.Drawing.Point(279, 102);
+            this.panelRestaurarcontraseña.Location = new System.Drawing.Point(961, 187);
             this.panelRestaurarcontraseña.Name = "panelRestaurarcontraseña";
             this.panelRestaurarcontraseña.Size = new System.Drawing.Size(619, 358);
             this.panelRestaurarcontraseña.TabIndex = 618;
@@ -442,23 +442,23 @@ namespace Punto_de_venta.Modulos
             this.dataGridViewImageColumn7.Name = "dataGridViewImageColumn7";
             this.dataGridViewImageColumn7.ReadOnly = true;
             // 
-            // panel2
+            // PanelIngreso_de_contraseña
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.Controls.Add(this.lblestadoLicencias);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txtfecha_final_licencia_temporal);
-            this.panel2.Controls.Add(this.txtfecha_inicio_licencia);
-            this.panel2.Controls.Add(this.pboxLicencia);
-            this.panel2.Controls.Add(this.btnIniciarSesion);
-            this.panel2.Controls.Add(this.btnOlvidoContraseña);
-            this.panel2.Controls.Add(this.flowLayoutPanel2);
-            this.panel2.Controls.Add(this.btnCambiarUsuario);
-            this.panel2.Location = new System.Drawing.Point(298, 31);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(401, 677);
-            this.panel2.TabIndex = 0;
+            this.PanelIngreso_de_contraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PanelIngreso_de_contraseña.Controls.Add(this.lblestadoLicencias);
+            this.PanelIngreso_de_contraseña.Controls.Add(this.panel3);
+            this.PanelIngreso_de_contraseña.Controls.Add(this.label3);
+            this.PanelIngreso_de_contraseña.Controls.Add(this.txtfecha_final_licencia_temporal);
+            this.PanelIngreso_de_contraseña.Controls.Add(this.txtfecha_inicio_licencia);
+            this.PanelIngreso_de_contraseña.Controls.Add(this.pboxLicencia);
+            this.PanelIngreso_de_contraseña.Controls.Add(this.btnIniciarSesion);
+            this.PanelIngreso_de_contraseña.Controls.Add(this.btnOlvidoContraseña);
+            this.PanelIngreso_de_contraseña.Controls.Add(this.flowLayoutPanel2);
+            this.PanelIngreso_de_contraseña.Controls.Add(this.btnCambiarUsuario);
+            this.PanelIngreso_de_contraseña.Location = new System.Drawing.Point(298, 31);
+            this.PanelIngreso_de_contraseña.Name = "PanelIngreso_de_contraseña";
+            this.PanelIngreso_de_contraseña.Size = new System.Drawing.Size(397, 740);
+            this.PanelIngreso_de_contraseña.TabIndex = 0;
             // 
             // lblestadoLicencias
             // 
@@ -479,7 +479,7 @@ namespace Punto_de_venta.Modulos
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 66);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(401, 69);
+            this.panel3.Size = new System.Drawing.Size(397, 52);
             this.panel3.TabIndex = 6;
             this.panel3.Visible = false;
             // 
@@ -492,7 +492,7 @@ namespace Punto_de_venta.Modulos
             this.tver,
             this.tocultar});
             this.MenuStrip15.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.MenuStrip15.Location = new System.Drawing.Point(286, 28);
+            this.MenuStrip15.Location = new System.Drawing.Point(286, 9);
             this.MenuStrip15.Name = "MenuStrip15";
             this.MenuStrip15.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.MenuStrip15.ShowItemToolTips = true;
@@ -530,7 +530,7 @@ namespace Punto_de_venta.Modulos
             // Panel4
             // 
             this.Panel4.BackColor = System.Drawing.Color.White;
-            this.Panel4.Location = new System.Drawing.Point(71, 59);
+            this.Panel4.Location = new System.Drawing.Point(71, 39);
             this.Panel4.Name = "Panel4";
             this.Panel4.Size = new System.Drawing.Size(255, 1);
             this.Panel4.TabIndex = 607;
@@ -542,7 +542,7 @@ namespace Punto_de_venta.Modulos
             this.txtPasswor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtPasswor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.txtPasswor.ForeColor = System.Drawing.Color.White;
-            this.txtPasswor.Location = new System.Drawing.Point(71, 26);
+            this.txtPasswor.Location = new System.Drawing.Point(71, 7);
             this.txtPasswor.Name = "txtPasswor";
             this.txtPasswor.PasswordChar = '*';
             this.txtPasswor.Size = new System.Drawing.Size(221, 31);
@@ -556,7 +556,7 @@ namespace Punto_de_venta.Modulos
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(401, 66);
+            this.label3.Size = new System.Drawing.Size(397, 66);
             this.label3.TabIndex = 4;
             this.label3.Text = "Inicio de Sesion";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -590,10 +590,13 @@ namespace Punto_de_venta.Modulos
             // 
             // btnIniciarSesion
             // 
-            this.btnIniciarSesion.BackColor = System.Drawing.Color.Black;
+            this.btnIniciarSesion.BackColor = System.Drawing.Color.Transparent;
             this.btnIniciarSesion.BackgroundImage = global::Punto_de_venta.Properties.Resources.Rojo;
             this.btnIniciarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnIniciarSesion.FlatAppearance.BorderSize = 0;
+            this.btnIniciarSesion.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnIniciarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnIniciarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesion.ForeColor = System.Drawing.Color.White;
@@ -632,17 +635,20 @@ namespace Punto_de_venta.Modulos
             this.flowLayoutPanel2.Controls.Add(this.btnborrar);
             this.flowLayoutPanel2.Controls.Add(this.btn0);
             this.flowLayoutPanel2.Controls.Add(this.btnBorrarDerecha);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(71, 149);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(71, 122);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(259, 347);
             this.flowLayoutPanel2.TabIndex = 5;
             // 
             // btn1
             // 
-            this.btn1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn1.BackColor = System.Drawing.Color.Transparent;
             this.btn1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn1.BackgroundImage")));
             this.btn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn1.FlatAppearance.BorderSize = 0;
+            this.btn1.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn1.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.ForeColor = System.Drawing.Color.White;
@@ -656,10 +662,13 @@ namespace Punto_de_venta.Modulos
             // 
             // btn2
             // 
-            this.btn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn2.BackColor = System.Drawing.Color.Transparent;
             this.btn2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn2.BackgroundImage")));
             this.btn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn2.FlatAppearance.BorderSize = 0;
+            this.btn2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.ForeColor = System.Drawing.Color.White;
@@ -673,10 +682,13 @@ namespace Punto_de_venta.Modulos
             // 
             // btn3
             // 
-            this.btn3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn3.BackColor = System.Drawing.Color.Transparent;
             this.btn3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn3.BackgroundImage")));
             this.btn3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn3.FlatAppearance.BorderSize = 0;
+            this.btn3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.ForeColor = System.Drawing.Color.White;
@@ -690,10 +702,13 @@ namespace Punto_de_venta.Modulos
             // 
             // btn4
             // 
-            this.btn4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn4.BackColor = System.Drawing.Color.Transparent;
             this.btn4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn4.BackgroundImage")));
             this.btn4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn4.FlatAppearance.BorderSize = 0;
+            this.btn4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.ForeColor = System.Drawing.Color.White;
@@ -707,10 +722,13 @@ namespace Punto_de_venta.Modulos
             // 
             // btn5
             // 
-            this.btn5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn5.BackColor = System.Drawing.Color.Transparent;
             this.btn5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn5.BackgroundImage")));
             this.btn5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn5.FlatAppearance.BorderSize = 0;
+            this.btn5.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn5.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn5.ForeColor = System.Drawing.Color.White;
@@ -724,10 +742,13 @@ namespace Punto_de_venta.Modulos
             // 
             // btn6
             // 
-            this.btn6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn6.BackColor = System.Drawing.Color.Transparent;
             this.btn6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn6.BackgroundImage")));
             this.btn6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn6.FlatAppearance.BorderSize = 0;
+            this.btn6.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn6.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn6.ForeColor = System.Drawing.Color.White;
@@ -741,10 +762,13 @@ namespace Punto_de_venta.Modulos
             // 
             // btn7
             // 
-            this.btn7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn7.BackColor = System.Drawing.Color.Transparent;
             this.btn7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn7.BackgroundImage")));
             this.btn7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn7.FlatAppearance.BorderSize = 0;
+            this.btn7.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn7.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn7.ForeColor = System.Drawing.Color.White;
@@ -758,10 +782,13 @@ namespace Punto_de_venta.Modulos
             // 
             // btn8
             // 
-            this.btn8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn8.BackColor = System.Drawing.Color.Transparent;
             this.btn8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn8.BackgroundImage")));
             this.btn8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn8.FlatAppearance.BorderSize = 0;
+            this.btn8.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn8.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn8.ForeColor = System.Drawing.Color.White;
@@ -775,10 +802,13 @@ namespace Punto_de_venta.Modulos
             // 
             // btn9
             // 
-            this.btn9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn9.BackColor = System.Drawing.Color.Transparent;
             this.btn9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn9.BackgroundImage")));
             this.btn9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn9.FlatAppearance.BorderSize = 0;
+            this.btn9.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn9.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn9.ForeColor = System.Drawing.Color.White;
@@ -792,10 +822,13 @@ namespace Punto_de_venta.Modulos
             // 
             // btnborrar
             // 
-            this.btnborrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnborrar.BackColor = System.Drawing.Color.Transparent;
             this.btnborrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnborrar.BackgroundImage")));
             this.btnborrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnborrar.FlatAppearance.BorderSize = 0;
+            this.btnborrar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnborrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnborrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnborrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnborrar.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnborrar.ForeColor = System.Drawing.Color.White;
@@ -809,10 +842,13 @@ namespace Punto_de_venta.Modulos
             // 
             // btn0
             // 
-            this.btn0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn0.BackColor = System.Drawing.Color.Transparent;
             this.btn0.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn0.BackgroundImage")));
             this.btn0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn0.FlatAppearance.BorderSize = 0;
+            this.btn0.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn0.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn0.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn0.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn0.ForeColor = System.Drawing.Color.White;
@@ -826,10 +862,13 @@ namespace Punto_de_venta.Modulos
             // 
             // btnBorrarDerecha
             // 
-            this.btnBorrarDerecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBorrarDerecha.BackColor = System.Drawing.Color.Transparent;
             this.btnBorrarDerecha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBorrarDerecha.BackgroundImage")));
             this.btnBorrarDerecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBorrarDerecha.FlatAppearance.BorderSize = 0;
+            this.btnBorrarDerecha.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnBorrarDerecha.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnBorrarDerecha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnBorrarDerecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarDerecha.Font = new System.Drawing.Font("Calibri", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarDerecha.ForeColor = System.Drawing.Color.White;
@@ -1261,18 +1300,18 @@ namespace Punto_de_venta.Modulos
             this.timer2.Interval = 200;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // PictureBox2
+            // PdeCarga
             // 
-            this.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
-            this.PictureBox2.Location = new System.Drawing.Point(7, 168);
-            this.PictureBox2.Name = "PictureBox2";
-            this.PictureBox2.Size = new System.Drawing.Size(433, 707);
-            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox2.TabIndex = 627;
-            this.PictureBox2.TabStop = false;
-            this.PictureBox2.Visible = false;
+            this.PdeCarga.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PdeCarga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.PdeCarga.Image = ((System.Drawing.Image)(resources.GetObject("PdeCarga.Image")));
+            this.PdeCarga.Location = new System.Drawing.Point(7, 168);
+            this.PdeCarga.Name = "PdeCarga";
+            this.PdeCarga.Size = new System.Drawing.Size(433, 707);
+            this.PdeCarga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PdeCarga.TabIndex = 627;
+            this.PdeCarga.TabStop = false;
+            this.PdeCarga.Visible = false;
             // 
             // LOGIN
             // 
@@ -1281,11 +1320,11 @@ namespace Punto_de_venta.Modulos
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
             this.ClientSize = new System.Drawing.Size(1188, 701);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.PictureBox2);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.PdeCarga);
+            this.Controls.Add(this.PanelIngreso_de_contraseña);
             this.Controls.Add(this.panelRestaurarcontraseña);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PanelUsuarios);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LOGIN";
@@ -1293,8 +1332,8 @@ namespace Punto_de_venta.Modulos
             this.Text = "Jojama";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.LOGIN_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.PanelUsuarios.ResumeLayout(false);
+            this.PanelUsuarios.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panelRestaurarcontraseña.ResumeLayout(false);
             this.panelRestaurarcontraseña.PerformLayout();
@@ -1302,8 +1341,8 @@ namespace Punto_de_venta.Modulos
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.PanelIngreso_de_contraseña.ResumeLayout(false);
+            this.PanelIngreso_de_contraseña.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.MenuStrip15.ResumeLayout(false);
@@ -1320,7 +1359,7 @@ namespace Punto_de_venta.Modulos
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_movimiento_validar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_detalle_cierre_de_caja)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PdeCarga)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1328,10 +1367,10 @@ namespace Punto_de_venta.Modulos
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PanelUsuarios;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel PanelIngreso_de_contraseña;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pboxLicencia;
         private System.Windows.Forms.Label txtcontador;
@@ -1403,7 +1442,7 @@ namespace Punto_de_venta.Modulos
         private System.Windows.Forms.DataGridView datalistado_movimiento_validar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
         private System.Windows.Forms.Timer timer2;
-        internal System.Windows.Forms.PictureBox PictureBox2;
+        internal System.Windows.Forms.PictureBox PdeCarga;
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.DataGridView datalistado_usuarios_registrado;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn6;

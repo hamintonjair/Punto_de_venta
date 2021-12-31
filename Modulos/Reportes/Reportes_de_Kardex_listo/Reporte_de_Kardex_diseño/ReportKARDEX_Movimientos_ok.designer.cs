@@ -392,7 +392,7 @@
             // 
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(2.346D), Telerik.Reporting.Drawing.Unit.Cm(0.516D));
-            this.textBox10.Value = "=Fields.Cantidad";
+            this.textBox10.Value = "=Fields.Stock";
             // 
             // textBox15
             // 

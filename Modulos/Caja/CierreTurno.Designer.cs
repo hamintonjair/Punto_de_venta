@@ -201,8 +201,7 @@ namespace Punto_de_venta.Modulos.Caja
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::Punto_de_venta.Properties.Resources.Accountin;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;            
             this.pictureBox1.Location = new System.Drawing.Point(0, 38);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(408, 112);

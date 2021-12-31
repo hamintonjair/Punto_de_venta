@@ -766,7 +766,7 @@ namespace Punto_de_venta.Modulos.Productos
             this.PanelGRUPOSSELECT.Controls.Add(this.panel1);
             this.PanelGRUPOSSELECT.Location = new System.Drawing.Point(136, 301);
             this.PanelGRUPOSSELECT.Name = "PanelGRUPOSSELECT";
-            this.PanelGRUPOSSELECT.Size = new System.Drawing.Size(632, 202);
+            this.PanelGRUPOSSELECT.Size = new System.Drawing.Size(632, 152);
             this.PanelGRUPOSSELECT.TabIndex = 645;
             // 
             // datalistadoGrupos
@@ -790,7 +790,6 @@ namespace Punto_de_venta.Modulos.Productos
             this.datalistadoGrupos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EliminarG,
             this.EditarG});
-            this.datalistadoGrupos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datalistadoGrupos.EnableHeadersVisualStyles = false;
             this.datalistadoGrupos.Location = new System.Drawing.Point(155, 0);
             this.datalistadoGrupos.Name = "datalistadoGrupos";
@@ -805,7 +804,7 @@ namespace Punto_de_venta.Modulos.Productos
             this.datalistadoGrupos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.datalistadoGrupos.RowTemplate.Height = 40;
             this.datalistadoGrupos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistadoGrupos.Size = new System.Drawing.Size(322, 202);
+            this.datalistadoGrupos.Size = new System.Drawing.Size(322, 129);
             this.datalistadoGrupos.TabIndex = 614;
             this.datalistadoGrupos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistadoGrupos_CellClick_1);
             // 
@@ -834,7 +833,7 @@ namespace Punto_de_venta.Modulos.Productos
             this.Panel33.Dock = System.Windows.Forms.DockStyle.Left;
             this.Panel33.Location = new System.Drawing.Point(0, 0);
             this.Panel33.Name = "Panel33";
-            this.Panel33.Size = new System.Drawing.Size(155, 202);
+            this.Panel33.Size = new System.Drawing.Size(155, 152);
             this.Panel33.TabIndex = 536;
             // 
             // panel1
@@ -843,7 +842,7 @@ namespace Punto_de_venta.Modulos.Productos
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(477, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(155, 202);
+            this.panel1.Size = new System.Drawing.Size(155, 152);
             this.panel1.TabIndex = 537;
             // 
             // menuStrip2
@@ -1150,9 +1149,9 @@ namespace Punto_de_venta.Modulos.Productos
             this.lbligvcalculo.AutoSize = true;
             this.lbligvcalculo.Location = new System.Drawing.Point(48, 37);
             this.lbligvcalculo.Name = "lbligvcalculo";
-            this.lbligvcalculo.Size = new System.Drawing.Size(109, 20);
+            this.lbligvcalculo.Size = new System.Drawing.Size(107, 20);
             this.lbligvcalculo.TabIndex = 1;
-            this.lbligvcalculo.Text = "+ 18% de IGV";
+            this.lbligvcalculo.Text = "+ 18% de IVA";
             // 
             // Label41
             // 
@@ -1170,9 +1169,9 @@ namespace Punto_de_venta.Modulos.Productos
             this.txtigv.ForeColor = System.Drawing.Color.Green;
             this.txtigv.Location = new System.Drawing.Point(10, 64);
             this.txtigv.Name = "txtigv";
-            this.txtigv.Size = new System.Drawing.Size(112, 24);
+            this.txtigv.Size = new System.Drawing.Size(110, 24);
             this.txtigv.TabIndex = 459;
-            this.txtigv.Text = "IGV (18%)";
+            this.txtigv.Text = "IVA (18%)";
             this.txtigv.UseVisualStyleBackColor = true;
             // 
             // Panel21
@@ -1982,9 +1981,9 @@ namespace Punto_de_venta.Modulos.Productos
             this.txtnumeroigv.AutoSize = true;
             this.txtnumeroigv.Location = new System.Drawing.Point(27, 108);
             this.txtnumeroigv.Name = "txtnumeroigv";
-            this.txtnumeroigv.Size = new System.Drawing.Size(109, 20);
+            this.txtnumeroigv.Size = new System.Drawing.Size(107, 20);
             this.txtnumeroigv.TabIndex = 1;
-            this.txtnumeroigv.Text = "+ 18% de IGV";
+            this.txtnumeroigv.Text = "+ 18% de IVA";
             // 
             // lblmoneda
             // 
@@ -2520,6 +2519,7 @@ namespace Punto_de_venta.Modulos.Productos
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productoss";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Productoss_FormClosed);
             this.Load += new System.EventHandler(this.Productoss_Load);
             this.Panel4.ResumeLayout(false);
             this.Panel4.PerformLayout();
