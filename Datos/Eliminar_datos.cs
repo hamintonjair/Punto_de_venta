@@ -16,10 +16,10 @@ namespace Punto_de_venta.Datos
             try
             {
                 ConexionData.abrir();
-            SqlCommand cmd = new SqlCommand("eliminar_venta", ConexionData.conectar);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@idventa", idventa);
-            cmd.ExecuteNonQuery();
+                SqlCommand cmd = new SqlCommand("eliminar_venta", ConexionData.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idventa", idventa);
+                cmd.ExecuteNonQuery();
                 ConexionData.cerrar();
             }
             catch (Exception ex)

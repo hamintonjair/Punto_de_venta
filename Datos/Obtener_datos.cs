@@ -18,10 +18,8 @@ namespace Punto_de_venta.Datos
 
         public static void Obtener_id_caja_PorSerial(ref int idcaja)
         {
-
             try
-            {
-           
+            {           
                 Bases.Obtener_serialPC(ref serialPC);
                 ConexionData.abrir();
                 SqlCommand com = new SqlCommand("mostrar_cajas_por_Serial_de_DiscoDuro", ConexionData.conectar);
@@ -39,7 +37,6 @@ namespace Punto_de_venta.Datos
 
         public static void mostrar_ventas_en_espera_con_fecha_y_monto(ref DataTable dt)
         {
-
             try
             {
                 ConexionData.abrir();
@@ -55,7 +52,6 @@ namespace Punto_de_venta.Datos
         }
         public static void mostrar_productos_agregados_a_ventas_en_espera(ref DataTable dt, int idventa)
         {
-
             try
             {
                 ConexionData.abrir();
@@ -73,7 +69,6 @@ namespace Punto_de_venta.Datos
         }
         public static void buscar_conceptos(ref DataTable dt, string buscador)
         {
-
             try
             {
                 ConexionData.abrir();
@@ -86,7 +81,6 @@ namespace Punto_de_venta.Datos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.StackTrace);
-
             }
         }
 
@@ -109,7 +103,6 @@ namespace Punto_de_venta.Datos
                 MessageBox.Show(ex.StackTrace);
 
             }
-
         }
         public static void mostrar_ingresos_por_turnos(int idcaja, DateTime fi, DateTime ff, ref DataTable dt)
         {
@@ -130,7 +123,6 @@ namespace Punto_de_venta.Datos
                 MessageBox.Show(ex.StackTrace);
 
             }
-
         }
 
         public static void mostrar_cierre_de_caja_pendiente(ref DataTable dt)
@@ -151,7 +143,6 @@ namespace Punto_de_venta.Datos
                 MessageBox.Show(ex.StackTrace);
 
             }
-
         }
         public static void mostrar_inicio_De_sesion(ref int idusuario)
         {
@@ -206,9 +197,7 @@ namespace Punto_de_venta.Datos
             {
 
                 monto = 0;
-
             }
-
         }
         public static void mostrar_cobros_en_efectivo_por_turno(int idcaja, DateTime fi, DateTime ff, ref double monto)
         {
@@ -227,9 +216,7 @@ namespace Punto_de_venta.Datos
             {
 
                 monto = 0;
-
             }
-
         }
         public static void mostrar_cobros_tarjeta_por_turno(int idcaja, DateTime fi, DateTime ff, ref double monto)
         {
@@ -246,11 +233,8 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-
                 monto = 0;
-
             }
-
         }
 
         public static void M_ventas_Tarjeta_por_turno(int idcaja, DateTime fi, DateTime ff, ref double monto)
@@ -286,7 +270,6 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-
                 monto = 0;
             }
         }
@@ -307,9 +290,7 @@ namespace Punto_de_venta.Datos
             catch (Exception ex)
             {
                 monto = 0;
-
             }
-
         }
         public static void sumar_gastos_por_turno(int idcaja, DateTime fi, DateTime ff, ref double monto)
         {
@@ -327,9 +308,7 @@ namespace Punto_de_venta.Datos
             catch (Exception ex)
             {
                 monto = 0;
-
             }
-
         }
         public static void buscar_Proveedores(ref DataTable dt, string buscador)
         {
@@ -382,7 +361,6 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception)
             {
-
                 monto = 0;
             }
         }
@@ -481,9 +459,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.StackTrace);
-
             }
         }
 
@@ -543,7 +519,6 @@ namespace Punto_de_venta.Datos
                 SqlCommand da = new SqlCommand("ReportePorPagar", ConexionData.conectar);
                 Monto = Convert.ToDouble(da.ExecuteScalar());
                 ConexionData.cerrar();
-
             }
             catch (Exception)
             {
@@ -558,7 +533,6 @@ namespace Punto_de_venta.Datos
                 SqlDataAdapter da = new SqlDataAdapter("mostrar_Proveedores", ConexionData.conectar);
                 da.Fill(dt);
                 ConexionData.cerrar();
-
             }
             catch (Exception ex)
             {
@@ -664,7 +638,6 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.StackTrace);
             }
         }
@@ -680,8 +653,6 @@ namespace Punto_de_venta.Datos
             catch (Exception)
             {
                 Contador = 0;
-
-
             }
         }
         public static void ReporteResumenVentasHoy(ref DataTable dt)
@@ -762,7 +733,6 @@ namespace Punto_de_venta.Datos
                 SqlCommand da = new SqlCommand("ReporteGanancias", ConexionData.conectar);
                 Monto = Convert.ToDouble(da.ExecuteScalar());
                 ConexionData.cerrar();
-
             }
             catch (Exception)
             {
@@ -799,7 +769,6 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.StackTrace);
             }
         }
@@ -843,9 +812,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.StackTrace);
-
             }
         }
         public static void imprimir_inventarios_todos(ref DataTable dt)
@@ -859,9 +826,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.StackTrace);
-
             }
         }
         public static void mostrar_productos_vencidos(ref DataTable dt)
@@ -875,9 +840,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.StackTrace);
-
             }
         }
         public static void MOSTRAR_Inventarios_bajo_minimo(ref DataTable dt)
@@ -891,9 +854,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.StackTrace);
-
             }
         }
         public static void BUSCAR_PRODUCTOS_KARDEX(ref DataTable dt, string buscador)
@@ -909,9 +870,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.StackTrace);
-
             }
         }
 
@@ -977,7 +936,6 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.StackTrace);
             }
         }
@@ -996,7 +954,6 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.StackTrace);
             }
         }
@@ -1012,11 +969,9 @@ namespace Punto_de_venta.Datos
                 da.SelectCommand.Parameters.AddWithValue("@idcaja", idcaja);
                 da.Fill(dt);
                 ConexionData.cerrar();
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.StackTrace);
             }
         }
@@ -1031,11 +986,9 @@ namespace Punto_de_venta.Datos
                 da.Parameters.AddWithValue("@idcaja", idcaja);
                 Tema = da.ExecuteScalar().ToString();
                 ConexionData.cerrar();
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.StackTrace);
             }
         }
@@ -1052,11 +1005,9 @@ namespace Punto_de_venta.Datos
                 da.SelectCommand.Parameters.AddWithValue("@total_en_letras", TotalLetras);
                 da.Fill(dt);
                 ConexionData.cerrar();
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.StackTrace);
             }
         }

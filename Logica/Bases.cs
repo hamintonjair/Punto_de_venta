@@ -20,6 +20,7 @@ namespace Punto_de_venta.Logica
             ManagementObject serialPC = new ManagementObject("Win32_PhysicalMedia='\\\\.\\PHYSICALDRIVE0'");
             serial = serialPC.Properties["SerialNumber"].Value.ToString();
             serial = Encriptar(serial.Trim());
+
         }
         public static void Cambiar_idioma_regional()
         {
@@ -32,6 +33,27 @@ namespace Punto_de_venta.Logica
 
         }
         public static void Multilinea(ref DataGridView List)
+        {
+            List.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            List.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            List.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            List.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            List.EnableHeadersVisualStyles = false;
+            List.BackgroundColor = Color.White;
+            List.RowTemplate.DefaultCellStyle.BackColor = Color.White;
+            List.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            List.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.Gainsboro;
+            List.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+
+
+            DataGridViewCellStyle styCabeceras = new DataGridViewCellStyle();
+            styCabeceras.BackColor = System.Drawing.Color.White;
+            styCabeceras.ForeColor = System.Drawing.Color.Black;
+            styCabeceras.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            List.ColumnHeadersDefaultCellStyle = styCabeceras;                        
+        }
+        public static void Multilinea2(ref DataGridView List)
         {
             List.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             List.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

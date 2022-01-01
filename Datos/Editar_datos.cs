@@ -23,6 +23,7 @@ namespace Punto_de_venta.Datos
             cmd.Parameters.AddWithValue("@idventa", idventa);
             cmd.ExecuteNonQuery();
             ConexionData.cerrar();
+  
         }
         public static void ingresar_nombre_a_venta_en_espera(int idventa, string nombre)
         {
