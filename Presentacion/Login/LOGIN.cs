@@ -12,6 +12,9 @@ using System.Net.Mail;
 using System.Net;
 using System.Management;
 using System.Windows.Forms;
+using Punto_de_venta.ConexionDt;
+using Punto_de_venta.Logica;
+using Punto_de_venta.Datos;
 
 namespace Punto_de_venta.Presentacion
 {
@@ -20,8 +23,20 @@ namespace Punto_de_venta.Presentacion
         int contador;
         int contadorCajas;
         int contador_Movimientos_de_caja;
-        public static String idusuariovariable;
-        public static String idcajavariable;
+        public static int idusuariovariable;
+        public static int idcajavariable;
+        int idusuarioVerificador;
+        string lblSerialPc;
+        string lblSerialPcLocal;
+        string cajero = "Cajero (¿Si estas autorizado para manejar dinero?)";
+        string vendedor = "Solo Ventas (no esta autorizado para manejar dinero)";
+        string administrador = "Administrador (Control total)";
+        string lblRol;
+        string txtlogin;
+        string lblApertura_De_caja;
+        string ResultadoLicencia;
+        string FechaFinal;
+        string Ip;
         public LOGIN()
         {
             InitializeComponent();
@@ -88,74 +103,72 @@ namespace Punto_de_venta.Presentacion
             }
            
         }
-        private void MOSTRAR_PERMISOS()
+       
+        
+        private void mostrar_roles()
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = ConexionDt.ConexionData.conexion;
-
-            SqlCommand com = new SqlCommand(" mostrar_permisos_por_usuario_ROL_UNICO", con);
+            ConexionData.abrir();
+            SqlCommand com = new SqlCommand("mostrar_permisos_por_usuario_ROL_UNICO", ConexionData.conectar);
             com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@LOGIN", txtlogin.Text);
-            string importe;
+            com.Parameters.AddWithValue("@idusario", idusuariovariable);
             try
             {
-                con.Open();
-                importe = Convert.ToString(com.ExecuteScalar());
-                con.Close();
-                lblRol.Text = importe;
 
+                lblRol = Convert.ToString(com.ExecuteScalar());
+                ConexionData.cerrar();
             }
             catch (Exception ex)
             {
 
             }
         }
-        string INDICADOR;
         private void mostrar_usuarios_registrados()
         {
             try
             {
-                DataTable dt = new DataTable();
-                SqlDataAdapter da;
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
-                da = new SqlDataAdapter("select * from USUARIO2", con);
-                da.Fill(dt);
-                datalistado_usuarios_registrado.DataSource = dt;
-                con.Close();
+                ConexionData.abrir();
+                SqlCommand da = new SqlCommand("select idUsuario from USUARIO2", ConexionData.conectar);
+                idusuarioVerificador = Convert.ToInt32(da.ExecuteScalar());
+                ConexionData.cerrar();
                 INDICADOR = "CORRECTO";
             }
             catch (Exception ex)
             {
                 INDICADOR = "INCORRECTO";
+                idusuarioVerificador = 0;
             }
         }      
 
         private void mieventoLabel(System.Object sender, EventArgs e)
         {
             //se trae el texto del label, es decir el login
-            txtlogin.Text = ((Label)sender).Text;
+            txtlogin = ((Label)sender).Text;
             PanelIngreso_de_contraseña.Visible = true;
             PanelUsuarios.Visible = false;
-            MOSTRAR_PERMISOS();
+        
         }
         private void mieventoImage(System.Object sender, EventArgs e)
         {
             //traemos la imagen del login
-            txtlogin.Text = ((PictureBox)sender).Tag.ToString();
+            txtlogin = Convert.ToString(((PictureBox)sender).Tag);
             PanelIngreso_de_contraseña.Visible = true;
             PanelUsuarios.Visible = false;
-            MOSTRAR_PERMISOS();
+      
         }
 
         private void LOGIN_Load(object sender, EventArgs e)
         {
-            DibujarUsuario();
+           
+            validar_conexion();
             escalar_paneles();
-            timer1.Start();
+            Bases.Obtener_serialPC(ref lblSerialPc);
+            ObtenerIpLocal();
+            //Obtener_datos.Obtener_id_caja_PorSerial(ref idcajavariable);
+        }
+        private void ObtenerIpLocal()
+        {
 
-
+            this.Text = Bases.ObtenerIp(ref Ip);
         }
         void escalar_paneles()
         {
@@ -172,7 +185,7 @@ namespace Punto_de_venta.Presentacion
             PanelIngreso_de_contraseña.Location = new Point((Width - PanelIngreso_de_contraseña.Width) / 2, (Height - PanelIngreso_de_contraseña.Height) / 2);
 
         }
-        private void ListarApertura_de_detallles_de_cierre_de_caja()
+        private void Listarcierres_de_caja()
         {
            try
            {
@@ -183,7 +196,7 @@ namespace Punto_de_venta.Presentacion
                 con.Open();
                 da = new SqlDataAdapter("MOSTRAR_MOVIMIENTOS_DE_CAJA_POR_SERIAL", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@serial", lblSerialPc.Text);
+                da.SelectCommand.Parameters.AddWithValue("@serial", lblSerialPc);
                 da.Fill(dt);
                 datalistado_detalle_cierre_de_caja.DataSource = dt;
                 con.Close();
@@ -199,7 +212,7 @@ namespace Punto_de_venta.Presentacion
         {
             Iniciar_sesion_correcto();
         }
-        public void contar_aperturas_de_dertalles_de_cierre_de_caja()
+        public void contar_cierres_de_caja()
         {
             int x;
             x = datalistado_detalle_cierre_de_caja.Rows.Count;
@@ -209,28 +222,27 @@ namespace Punto_de_venta.Presentacion
         {
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
+                ConexionData.abrir();
+                
                 SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("insertar_DETALLE_cierre_de_caja", con);
+                cmd = new SqlCommand("insertar_DETALLE_cierre_de_caja", ConexionData.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@fechaini", DateTime.Today);
-                cmd.Parameters.AddWithValue("@fechafin", DateTime.Today);
-                cmd.Parameters.AddWithValue("@fechacierre", DateTime.Today);
+                cmd.Parameters.AddWithValue("@fechaini", DateTime.Now);
+                cmd.Parameters.AddWithValue("@fechafin", DateTime.Now);
+                cmd.Parameters.AddWithValue("@fechacierre", DateTime.Now);
                 cmd.Parameters.AddWithValue("@ingresos", "0.00");
                 cmd.Parameters.AddWithValue("@egresos", "0.00");
                 cmd.Parameters.AddWithValue("@saldo", "0.00");
-                cmd.Parameters.AddWithValue("@idusuario", IDUSUARIO.Text);
+                cmd.Parameters.AddWithValue("@idusuario", idusuariovariable);
                 cmd.Parameters.AddWithValue("@totalcaluclado", "0.00");
                 cmd.Parameters.AddWithValue("@totalreal", "0.00");
 
                 cmd.Parameters.AddWithValue("@estado", "CAJA APERTURADA");
                 cmd.Parameters.AddWithValue("@diferencia", "0.00");
-                cmd.Parameters.AddWithValue("@id_caja", txtidcaja.Text);
+                cmd.Parameters.AddWithValue("@id_caja", idcajavariable);
 
                 cmd.ExecuteNonQuery();
-                con.Close();
+                ConexionData.cerrar();
 
             }
             catch (Exception ex)
@@ -238,104 +250,92 @@ namespace Punto_de_venta.Presentacion
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void Iniciar_sesion_correcto()
+        private void obtener_idusuario()
         {
-            cargar_usuarios();
-            contar();
             try
             {
-                IDUSUARIO.Text = dataListado.SelectedCells[1].Value.ToString();
-                txtnombre.Text = dataListado.SelectedCells[2].Value.ToString();
-                idusuariovariable = IDUSUARIO.Text;
+                idusuariovariable = Convert.ToInt32(dataListado.SelectedCells[1].Value);
+            }
+            catch
+            {
+            }        }
+        private void Iniciar_sesion_correcto()
+        {
+            cargarusuarios();
+            contar();
+
+            if (contador > 0)
+            {
+                obtener_idusuario();
+                mostrar_roles();
+                if (lblRol != cajero)
+                {
+                    timerValidarRol.Start();
+                }
+                if (lblRol == cajero)
+                {
+                    validar_aperturas_de_caja();
+                }
+            }
+
+
+        }
+        private void obtener_usuario_que_aperturo_caja()
+        {
+            try
+            {
+                lblusuario_queinicioCaja.Text = datalistado_detalle_cierre_de_caja.SelectedCells[1].Value.ToString();
+                lblnombredeCajero.Text = datalistado_detalle_cierre_de_caja.SelectedCells[2].Value.ToString();
             }
             catch
             {
 
             }
-            if (contador > 0)
+        }
+        private void validar_aperturas_de_caja()
+        {
+            Listarcierres_de_caja();
+            contar_cierres_de_caja();
+            if (contadorCajas == 0)
             {
-                ListarApertura_de_detallles_de_cierre_de_caja();
-                contar_aperturas_de_dertalles_de_cierre_de_caja();
-                if (contadorCajas == 0 & lblRol.Text != "Solo Ventas (no esta autorizado para manejar dinero)")
+                aperturar_detalle_de_cierre_caja();
+                lblApertura_De_caja = "Nuevo*****";
+                timerValidarRol.Start();
+
+            }
+            else
+            {
+                mostrar_movimientos_de_caja_por_serial_y_usuario();
+                contar_movimientos_de_caja_por_usuario();
+
+                if (contador_Movimientos_de_caja == 0)
                 {
-                   aperturar_detalle_de_cierre_caja();
-                   lblApertura_De_caja.Text = "Nuevo*****";
-                   timer2.Start();
+                    obtener_usuario_que_aperturo_caja();
+                    MessageBox.Show("Para poder continuar con el Turno de *" + lblnombredeCajero.Text + "* ,Inicia sesion con el Usuario " + lblusuario_queinicioCaja.Text + " -ó-el Usuario *admin*", "Caja Iniciada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                   if (lblRol.Text != "Solo Ventas (no esta autorizado para manejar dinero)")
-                   {
-                       Mostrar_movimientos_de_caja__por_serial_y_usuario();
-                       contar_mostrar_movimientos_de_Caja_por_Serial_y_usuario();
-                       try
-                       {
-                          lblusuario_queinicioCaja.Text = datalistado_detalle_cierre_de_caja.SelectedCells[1].Value.ToString();
-                          lblnombredeCajero.Text = datalistado_detalle_cierre_de_caja.SelectedCells[2].Value.ToString();
-                       }
-                       catch
-                       {
+                    lblApertura_De_caja = "Aperturado";
+                    timerValidarRol.Start();
 
-                       }
-                       if (contador_Movimientos_de_caja == 0)
-                       {
-                                //se valida que usuario inicio caja
-                          if (lblusuario_queinicioCaja.Text != "admin" & txtlogin.Text == "admin")
-                          {
-                               MessageBox.Show("Continuaras Turno de ''" + lblnombredeCajero.Text + "'' Todos los Registros seran con ese Usuario", "Caja Iniciada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    lblpermisodeCaja.Text = "correcto";
-                          }
-                          if (lblusuario_queinicioCaja.Text == "admin" & txtlogin.Text == "admin")
-                          {
-                              lblpermisodeCaja.Text = "correcto";
-                          }
-                          else if (lblusuario_queinicioCaja.Text != txtlogin.Text)
-                          {
-                             MessageBox.Show("Para poder continuar con el Turno de ''" + lblnombredeCajero.Text + "'', Inicia sesion con el Usuario " + lblusuario_queinicioCaja.Text + " ó el Usuario ''Admin''", "Caja Iniciada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    lblpermisodeCaja.Text = "vacio";
-
-                          }
-                          else if (lblusuario_queinicioCaja.Text == txtlogin.Text)
-                          {
-                            lblpermisodeCaja.Text = "correcto";
-                          }
-                       }
-                       else
-                       {
-                         lblpermisodeCaja.Text = "correcto";
-                       }                        
-                       if (lblpermisodeCaja.Text == "correcto")
-                       {
-                         lblApertura_De_caja.Text = "Aperturado";
-                         timer2.Start();
-                       }
-                   }
-                   else
-                   {
-                       timer2.Start();
-                   }
-                }                
+                }
             }
         }
-    
-        private void Mostrar_movimientos_de_caja__por_serial_y_usuario()
+        private void mostrar_movimientos_de_caja_por_serial_y_usuario()
         {
             try
             {
                 DataTable dt = new DataTable();
-                SqlDataAdapter da;
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
+                SqlDataAdapter da;               
+                ConexionData.abrir();             
 
-                da = new SqlDataAdapter("MOSTRAR_MOVIMIENTOS_DE_CAJA_POR_SERIAL_y_usuario", con);
+                da = new SqlDataAdapter("MOSTRAR_MOVIMIENTOS_DE_CAJA_POR_SERIAL_y_usuario", ConexionData.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@serial", lblSerialPc.Text);
-                da.SelectCommand.Parameters.AddWithValue("@idusuario", IDUSUARIO.Text);
+                da.SelectCommand.Parameters.AddWithValue("@serial", lblSerialPc);
+                da.SelectCommand.Parameters.AddWithValue("@idusuario", idusuariovariable);
                 da.Fill(dt);
                 datalistado_movimiento_validar.DataSource = dt;
-                con.Close();
+                ConexionData.cerrar();
 
             }
             catch (Exception ex)
@@ -343,71 +343,69 @@ namespace Punto_de_venta.Presentacion
                 MessageBox.Show(ex.Message);
 
             }
+
+
         }
-        public void contar_mostrar_movimientos_de_Caja_por_Serial_y_usuario()
+        private void contar_movimientos_de_caja_por_usuario()
         {
             int x;
+
             x = datalistado_movimiento_validar.Rows.Count;
             contador_Movimientos_de_caja = (x);
+
         }
-        public void contar()
+        private void contar()
         {
             int x;
+
             x = dataListado.Rows.Count;
             contador = (x);
+
         }
-        private void cargar_usuarios()
+        private void cargarusuarios()
         {
             try
             {
                 DataTable dt = new DataTable();
-                SqlDataAdapter da;
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
+                SqlDataAdapter da;         
+                ConexionData.abrir();           
 
-                da = new SqlDataAdapter("validar_usuario", con);
+                da = new SqlDataAdapter("validar_usuario", ConexionData.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@password", ConexionDt.Encryptar_en_texto.Encriptar(txtPasswor.Text));
-                da.SelectCommand.Parameters.AddWithValue("@login", txtlogin.Text);
+                da.SelectCommand.Parameters.AddWithValue("@password", Bases.Encriptar(txtPasswor.Text));
+                da.SelectCommand.Parameters.AddWithValue("@login", txtlogin);
                 da.Fill(dt);
                 dataListado.DataSource = dt;
-                con.Close();
-               
-
+               ConexionData.cerrar();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
 
-            }        
-
+            }
         }
         private void mostrar_correo()
         {
             try
             {
                 DataTable dt = new DataTable();
-                SqlDataAdapter da;
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
+                SqlDataAdapter da;               
+                ConexionData.abrir();              
+                da = new SqlDataAdapter("select Correo from USUARIO2 where Estado='ACTIVO'", ConexionData.conectar);
 
-                da = new SqlDataAdapter("select Correo from USUARIO2 where Estado='ACTIVO'", con);
-              
                 da.Fill(dt);
                 txtcorreo.DisplayMember = "Correo";
                 txtcorreo.ValueMember = "Correo";
                 txtcorreo.DataSource = dt;
-                con.Close();
+               ConexionData.cerrar();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
 
             }
-        }
-
+        }                  
+                
         private void btnrestaurarContraseña_Click(object sender, EventArgs e)
         {
             panelRestaurarcontraseña.Visible = true;
@@ -422,17 +420,14 @@ namespace Punto_de_venta.Presentacion
         {
             try
             {
-                string resultado;
-               
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;         
+                //string resultado;
 
-                SqlCommand da = new SqlCommand("buscar_USUARIO_por_correo", con);
+               ConexionData.abrir();
+                SqlCommand da = new SqlCommand("buscar_USUARIO_por_correo", ConexionData.conectar);
                 da.CommandType = CommandType.StoredProcedure;
-                da.Parameters.AddWithValue("@correo", txtcorreo.Text);
-                con.Open();
+                da.Parameters.AddWithValue("@correo", txtcorreo.Text);                
                 lblresultadocontraseña.Text = Convert.ToString(da.ExecuteScalar());
-                con.Close();
+                ConexionData.cerrar();
             }
             catch (Exception ex)
             {
@@ -441,11 +436,109 @@ namespace Punto_de_venta.Presentacion
         }
         private void btnenviar_Click_1(object sender, EventArgs e)
         {
+            enviarCorreo();
+        }
+        private void enviarCorreo()
+        {
             mostrar_usuario_por_correo();
             richTextBox1.Text = richTextBox1.Text.Replace("@pass", lblresultadocontraseña.Text);
             enviarCorreo("hamintonjair@gmail.com", "johanernestoM", richTextBox1.Text, "Solicitud de Contraseña", txtcorreo.Text, "");
         }
+        private void MOSTRAR_CAJA_POR_SERIAL()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter da;
+                ConexionData.abrir();              
+                da = new SqlDataAdapter("mostrar_cajas_por_Serial_de_DiscoDuro", ConexionData.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@Serial", lblSerialPc);
+                da.Fill(dt);
+                datalistado_caja.DataSource = dt;
+                ConexionData.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        string INDICADOR;
+        private void MOSTRAR_licencia_temporal()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter da;
+                ConexionData.abrir();               
+                da = new SqlDataAdapter("select * from Marcan", ConexionData.conectar);
+                da.Fill(dt);
+                datalistado_licencia_temporal.DataSource = dt;
+               ConexionData.cerrar();
 
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        int txtcontador_USUARIOS;
+        private void validarLicencia()
+        {
+            DLicencias funcion = new DLicencias();
+            funcion.ValidarLicencias(ref ResultadoLicencia, ref FechaFinal);
+            if (ResultadoLicencia == "?ACTIVO?")
+            {
+                lblestadoLicencias.Text = "Licencia de Prueba Activada hasta el: " + FechaFinal;
+            }
+            if (ResultadoLicencia == "?ACTIVADO PRO?")
+            {
+                lblestadoLicencias.Text = "Licencia PROFESIONAL Activada hasta el: " + FechaFinal;
+            }
+            if (ResultadoLicencia == "VENCIDA")
+            {
+                funcion.EditarMarcanVencidas();
+                Dispose();
+                Licencias_Membresias.MembresiasNuevo frm = new Licencias_Membresias.MembresiasNuevo();
+                frm.ShowDialog();
+            }
+
+
+
+        }
+        private void validar_conexion()
+        {
+
+            mostrar_usuarios_registrados();
+
+            if (INDICADOR == "CORRECTO")
+            {
+            
+                if (idusuarioVerificador == 0)
+                {
+                    Hide();
+                    Presentacion.Asistente_de_Instalacion_Servidor.REGISTRO_DE_EMPRESA frm = new Presentacion.Asistente_de_Instalacion_Servidor.REGISTRO_DE_EMPRESA();
+                    frm.ShowDialog();
+                    this.Dispose();
+
+                }
+                else
+                {
+                    validarLicencia();
+                    DibujarUsuario();
+                }
+
+            }
+
+            if (INDICADOR == "INCORRECTO")
+            {
+                Hide();
+                Presentacion.Asistente_de_Instalacion_Servidor.Eleccion_Servidor_o_remoto frm = new Presentacion.Asistente_de_Instalacion_Servidor.Eleccion_Servidor_o_remoto();
+                frm.ShowDialog();
+                this.Dispose();
+
+            }        
+        }
 
         internal void enviarCorreo(string emisor, string password, string mensaje, string asunto, string destinatario, string ruta)
         {
@@ -484,151 +577,7 @@ namespace Punto_de_venta.Presentacion
         private void btncerrar_Click(object sender, EventArgs e)
         {
             panelRestaurarcontraseña.Hide();
-        }
-        private void MOSTRAR_CAJA_POR_SERIAL()
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                SqlDataAdapter da;
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
-                da = new SqlDataAdapter("mostrar_cajas_por_Serial_de_DiscoDuro", con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@Serial", lblSerialPc.Text);
-                da.Fill(dt);
-                datalistado_caja.DataSource = dt;
-                con.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-
-            }
-        }
-        int txtcontador_USUARIOS;
-        private void contar_USUARIOS()
-        {
-            int x;
-
-            x = datalistado_usuarios_registrado.Rows.Count;
-            txtcontador_USUARIOS = (x);
-
-        }
-        //metodo para selecionar el serial del equipo ya que la caja se registra es cada equipo
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-            timer1.Stop();
-            mostrar_usuarios_registrados();
-
-            if (INDICADOR == "CORRECTO")
-            {
-                contar_USUARIOS();
-                if (txtcontador_USUARIOS == 0)
-                {
-                    Hide();
-                    Presentacion.Asistente_de_Instalacion_Servidor.REGISTRO_DE_EMPRESA frm = new Presentacion.Asistente_de_Instalacion_Servidor.REGISTRO_DE_EMPRESA();
-                    frm.ShowDialog();
-                    this.Dispose();
-                }
-
-            }
-
-            if (INDICADOR == "INCORRECTO")
-            {
-                Hide();
-                Presentacion.Asistente_de_Instalacion_Servidor.Eleccion_Servidor_o_remoto frm = new Presentacion.Asistente_de_Instalacion_Servidor.Eleccion_Servidor_o_remoto();
-                frm.ShowDialog();
-                Dispose();
-            }
-            try
-            {
-                ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
-
-                lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
-                lblSerialPc.Text = lblSerialPc.Text.Trim();
-
-                MOSTRAR_CAJA_POR_SERIAL();
-                try
-                {
-                    txtidcaja.Text = datalistado_caja.SelectedCells[1].Value.ToString();
-                    lblcaja.Text = datalistado_caja.SelectedCells[2].Value.ToString();
-                    idcajavariable = txtidcaja.Text;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            MOSTRAR_licencia_temporal();
-            try
-            {
-                txtfecha_final_licencia_temporal.Value = Convert.ToDateTime(ConexionDt.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[3].Value.ToString()));
-                lblSerialPcLocal.Text = (ConexionDt.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[2].Value.ToString()));
-                LBLESTADOLicenciaLocal.Text = ConexionDt.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[4].Value.ToString());
-                txtfecha_inicio_licencia.Value = Convert.ToDateTime(ConexionDt.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[5].Value.ToString()));
-
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            if (LBLESTADOLicenciaLocal.Text != "VENCIDO")
-
-            {
-                string fechaHoy = Convert.ToString(DateTime.Now);
-                DateTime fecha_ddmmyyyy = Convert.ToDateTime(fechaHoy.Split(' ')[0]);
-
-                if (txtfecha_final_licencia_temporal.Value >= fecha_ddmmyyyy)
-                {
-                    if (txtfecha_inicio_licencia.Value <= fecha_ddmmyyyy)
-                    {
-                        if (LBLESTADOLicenciaLocal.Text == "?ACTIVO?")
-                        {
-                            Ingresar_por_licencia_Temporal();
-                        }
-                        else if (LBLESTADOLicenciaLocal.Text == "?ACTIVADO PRO?")
-                        {
-                            Ingresar_por_licencia_de_paga();
-                        }
-
-                        else
-                        {
-                            Hide();
-                            Presentacion.Licencias_Membresias.MembresiasNuevo frm = new Presentacion.Licencias_Membresias.MembresiasNuevo();
-                            frm.ShowDialog();
-                            Dispose();
-                        }
-                    }
-                    else
-                    {
-                        Hide();
-
-                        Presentacion.Licencias_Membresias.MembresiasNuevo frm = new Presentacion.Licencias_Membresias.MembresiasNuevo();
-                        frm.ShowDialog();
-                        Dispose();
-                    }
-                }
-                else
-                {
-                    Hide();
-
-                    Presentacion.Licencias_Membresias.MembresiasNuevo frm = new Presentacion.Licencias_Membresias.MembresiasNuevo();
-                    frm.ShowDialog();
-                    Dispose();
-                }
-            }
-        }
+        }  
         private void Ingresar_por_licencia_Temporal()
         {
             lblestadoLicencias.Text = "Licencia de Prueba Activada hasta el: " + txtfecha_final_licencia_temporal.Text;
@@ -638,26 +587,7 @@ namespace Punto_de_venta.Presentacion
         {
             lblestadoLicencias.Text = "Licencia PROFESIONAL Activada hasta el: " + txtfecha_final_licencia_temporal.Text;
         }
-        private void MOSTRAR_licencia_temporal()
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                SqlDataAdapter da;
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
-                da = new SqlDataAdapter("select * from Marcan", con);
-                da.Fill(dt);
-                datalistado_licencia_temporal.DataSource = dt;
-                con.Close();
-
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
+    
 
         private void btn0_Click(object sender, EventArgs e)
         {
@@ -758,79 +688,105 @@ namespace Punto_de_venta.Presentacion
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if (progressBar1.Value < 100)
-            {
-                BackColor = Color.FromArgb(26, 26, 26);
-                progressBar1.Value = progressBar1.Value + 10;
-                progressBar1.Visible = true;
-                PdeCarga.Visible = true;               
-
-            }
-            else
-            {
-                progressBar1.Value = 0;
-                timer2.Stop();
-
-                if (txtlogin.Text == "admin")
-                {
-                    editar_inicio_De_sesion();
-                    this.Hide();
-                    Admin_nivel_dios.DASHBOARD_PRINCIPAL frm = new Admin_nivel_dios.DASHBOARD_PRINCIPAL();
-                    frm.ShowDialog();
-                    Dispose();
-                }
-                else
-                {
-
-                    if (lblApertura_De_caja.Text == "Nuevo*****" & lblRol.Text == "Cajero (Si esta autorizado para manejar dinero)")
-                    {
-                        editar_inicio_De_sesion();
-                        this.Hide();
-                        Caja.Apertura_de_Caja frm = new Caja.Apertura_de_Caja();
-                        frm.ShowDialog();
-                        Dispose();
-                    }
-                    else if (lblApertura_De_caja.Text != "Nuevo*****" & lblRol.Text == "Cajero (Si esta autorizado para manejar dinero)")
-                    {
-                        editar_inicio_De_sesion();
-                        this.Hide();
-                        Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
-                        frm.ShowDialog();
-                        Dispose();
-                    }
-                    else if (lblRol.Text == "Solo Ventas (no esta autorizado para manejar dinero)")
-                    {
-                        editar_inicio_De_sesion();
-                        this.Hide();
-                        Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
-                        frm.ShowDialog();
-                        Dispose();
-
-                    }
-                }
-            }
+          
+               
+            
         }
         private void editar_inicio_De_sesion()
         {
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
+                ConexionData.abrir();
+               
                 SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("editar_inicio_De_sesion", con);
+                cmd = new SqlCommand("editar_inicio_De_sesion", ConexionData.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@id_usuario", IDUSUARIO.Text);
-                cmd.Parameters.AddWithValue("@Id_serial_Pc", ConexionDt.Encryptar_en_texto.Encriptar(lblSerialPc.Text));
+                cmd.Parameters.AddWithValue("@Id_serial_Pc", lblSerialPc);
+                cmd.Parameters.AddWithValue("@id_usuario", idusuariovariable);
                 cmd.ExecuteNonQuery();
-                con.Close();
+                ConexionData.cerrar();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void timerValidarRol_Tick(object sender, EventArgs e)
+        {
+            if (progressBar1.Value < 100)
+            {
+                BackColor = Color.FromArgb(26, 26, 26);
+                progressBar1.Value = progressBar1.Value + 10;
+                progressBar1.Visible = true;
+                PdeCarga.Visible = true;
+
+            }
+            else
+            {
+                progressBar1.Value = 0;
+                timerValidarRol.Stop();
+          
+                if (lblRol == administrador)
+                {
+                    editar_inicio_De_sesion();
+                    Dispose();
+                    Admin_nivel_dios.DASHBOARD_PRINCIPAL frm = new Admin_nivel_dios.DASHBOARD_PRINCIPAL();
+                    frm.ShowDialog();
+             
+                }
+                else
+                {
+
+                    if (lblApertura_De_caja == "Nuevo*****" & lblRol == cajero)
+                    {
+                        editar_inicio_De_sesion();
+                        Dispose();
+                        Caja.Apertura_de_Caja frm = new Caja.Apertura_de_Caja();
+                        frm.ShowDialog();
+                     
+
+                    }
+                    //else if (lblApertura_De_caja == "Aperturado" & lblRol == cajero)
+                    //{
+                    //    editar_inicio_De_sesion();
+                    //    Dispose();
+                    //    Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
+                    //    frm.ShowDialog();
+
+
+                    //}
+                    else if (lblApertura_De_caja != "Aperturado" & lblRol == cajero)
+                    {
+                        editar_inicio_De_sesion();
+                        Dispose();
+                        Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
+                        frm.ShowDialog();
+                   
+
+                    }
+                   
+                    else if (lblRol == vendedor)
+                    {
+                        editar_inicio_De_sesion();
+                        Dispose();
+                        Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
+                        frm.ShowDialog();           
+
+
+                    }
+
+                }
+            }
+        }
+
+        private void btnCambiarUsuario_Click(object sender, EventArgs e)
+        {
+            PanelUsuarios.Visible = true;
+            PanelIngreso_de_contraseña.Visible = false;
+            txtPasswor.Clear();
         }
     }
 }

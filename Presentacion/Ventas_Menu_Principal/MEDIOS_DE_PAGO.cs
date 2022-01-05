@@ -55,6 +55,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             Obtener_id_de_venta();
             mostrar_impresora();
             cargar_impresoras_del_equipo();
+
             calcular_restante();
         }
         private void MOSTRAR_comprobante_serializado_POR_DEFECTO()
@@ -277,6 +278,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             txtrestante.Text = "0.0";
             TXTTOTAL.Text = moneda + " " + Ventas_Menu_Princi.total;
             total = Ventas_Menu_Princi.total;
+            txtefectivo2.Text =Convert.ToString( total);
             idcliente = 0;
 
         }

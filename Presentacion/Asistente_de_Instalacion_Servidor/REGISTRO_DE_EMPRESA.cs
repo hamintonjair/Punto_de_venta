@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Management;
+using Punto_de_venta.Logica;
 
 namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
 {
@@ -19,17 +20,13 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
         {
             InitializeComponent();
         }
+        string lblIDSERIAL;
         public static string correo;
         private void REGISTRO_DE_EMPRESA_Load(object sender, EventArgs e)
         {
-            Panel16.Location = new Point((Width - Panel16.Width) / 2, (Height - Panel16.Height) / 2);
-
-            ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
-
-
-            lblIDSERIAL.Text = MOS.Properties["SerialNumber"].Value.ToString();
-            lblIDSERIAL.Text = lblIDSERIAL.Text.Trim();
-
+            Bases.Obtener_serialPC(ref lblIDSERIAL);
+            Panel16.Location = new Point((Width - Panel16.Width) / 2, (Height - Panel16.Height) / 2);      
+                      
             TXTCON_LECTORA.Checked = true;
             txtteclado.Checked = false;
             no.Checked = true;
@@ -162,7 +159,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
 
                 cmd.Parameters.AddWithValue("@descripcion", txtcaja.Text);
                 cmd.Parameters.AddWithValue("@Tema", "Redentor");
-                cmd.Parameters.AddWithValue("@Serial_PC", lblIDSERIAL.Text);
+                cmd.Parameters.AddWithValue("@Serial_PC", lblIDSERIAL);
                 cmd.Parameters.AddWithValue("@Impresora_Ticket", "Ninguna");
                 cmd.Parameters.AddWithValue("@Impresora_A4", "Ninguna");
                 cmd.Parameters.AddWithValue("@Tipo", "PRINCIPAL");

@@ -540,7 +540,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.lblIDSERIAL.Name = "lblIDSERIAL";
             this.lblIDSERIAL.Size = new System.Drawing.Size(111, 20);
             this.lblIDSERIAL.TabIndex = 342;
-            this.lblIDSERIAL.Text = "lblIDSERIAL";
+            //this.lblIDSERIAL = "lblIDSERIAL";
             // 
             // datalistado_empresas_nuevas
             // 

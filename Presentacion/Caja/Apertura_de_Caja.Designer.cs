@@ -44,18 +44,11 @@ namespace Punto_de_venta.Presentacion.Caja
             this.txtmonto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbltidcaja = new System.Windows.Forms.Label();
-            this.lblserialPC = new System.Windows.Forms.Label();
-            this.datalistado_caja = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panelCaja.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).BeginInit();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCaja
@@ -179,8 +172,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.txtmonto.Multiline = true;
             this.txtmonto.Name = "txtmonto";
             this.txtmonto.Size = new System.Drawing.Size(239, 28);
-            this.txtmonto.TabIndex = 2;
-            this.txtmonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
+            this.txtmonto.TabIndex = 2;        
             // 
             // label2
             // 
@@ -201,73 +193,12 @@ namespace Punto_de_venta.Presentacion.Caja
             this.panel2.Size = new System.Drawing.Size(861, 233);
             this.panel2.TabIndex = 1;
             // 
-            // lbltidcaja
-            // 
-            this.lbltidcaja.AutoSize = true;
-            this.lbltidcaja.Location = new System.Drawing.Point(47, 15);
-            this.lbltidcaja.Name = "lbltidcaja";
-            this.lbltidcaja.Size = new System.Drawing.Size(35, 13);
-            this.lbltidcaja.TabIndex = 2;
-            this.lbltidcaja.Text = "idcaja";
-            // 
-            // lblserialPC
-            // 
-            this.lblserialPC.AutoSize = true;
-            this.lblserialPC.Location = new System.Drawing.Point(47, 42);
-            this.lblserialPC.Name = "lblserialPC";
-            this.lblserialPC.Size = new System.Drawing.Size(51, 13);
-            this.lblserialPC.TabIndex = 3;
-            this.lblserialPC.Text = "serialcaja";
-            // 
-            // datalistado_caja
-            // 
-            this.datalistado_caja.AllowUserToAddRows = false;
-            this.datalistado_caja.AllowUserToResizeRows = false;
-            this.datalistado_caja.BackgroundColor = System.Drawing.Color.White;
-            this.datalistado_caja.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.datalistado_caja.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.datalistado_caja.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.datalistado_caja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datalistado_caja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn2});
-            this.datalistado_caja.EnableHeadersVisualStyles = false;
-            this.datalistado_caja.Location = new System.Drawing.Point(17, 3);
-            this.datalistado_caja.Name = "datalistado_caja";
-            this.datalistado_caja.ReadOnly = true;
-            this.datalistado_caja.RowHeadersVisible = false;
-            this.datalistado_caja.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datalistado_caja.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.datalistado_caja.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.datalistado_caja.RowTemplate.Height = 30;
-            this.datalistado_caja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado_caja.Size = new System.Drawing.Size(217, 76);
-            this.datalistado_caja.TabIndex = 615;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.datalistado_caja);
-            this.panel5.Controls.Add(this.lblserialPC);
-            this.panel5.Controls.Add(this.lbltidcaja);
-            this.panel5.Location = new System.Drawing.Point(39, 275);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 18);
-            this.panel5.TabIndex = 616;
-            // 
             // Apertura_de_Caja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(861, 522);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panelCaja);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -283,9 +214,6 @@ namespace Punto_de_venta.Presentacion.Caja
             this.panel3.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -299,10 +227,6 @@ namespace Punto_de_venta.Presentacion.Caja
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem iniciarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem omitirToolStripMenuItem;
-        private System.Windows.Forms.Label lbltidcaja;
-        private System.Windows.Forms.Label lblserialPC;
-        private System.Windows.Forms.DataGridView datalistado_caja;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         internal System.Windows.Forms.TextBox txtmonto;
         internal System.Windows.Forms.Panel panel4;
         internal System.Windows.Forms.Label label3;
@@ -310,6 +234,5 @@ namespace Punto_de_venta.Presentacion.Caja
         internal System.Windows.Forms.DateTimePicker txtfecha;
         internal System.Windows.Forms.Label txtip;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel panel5;
     }
 }

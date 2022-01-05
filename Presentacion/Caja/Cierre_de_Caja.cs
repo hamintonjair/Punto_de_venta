@@ -41,27 +41,7 @@ namespace Punto_de_venta.Presentacion.Caja
         public static double cobrosTarjeta;
         public static double CobrosTotal;
         private void button1_Click(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    SqlConnection con = new SqlConnection();
-            //    con.ConnectionString = ConexionDt.ConexionData.conexion;
-            //    con.Open();
-            //    SqlCommand cmd = new SqlCommand();
-            //    cmd = new SqlCommand("Cerrar_caja", con);
-            //    cmd.CommandType = CommandType.StoredProcedure;
-            //    cmd.Parameters.AddWithValue("@idcaja", txtidcaja.Text);
-            //    cmd.Parameters.AddWithValue("@fechafin", txtfechacierre.Value);
-            //    cmd.Parameters.AddWithValue("@fechacierre", txtfechacierre.Value);
-            //    cmd.ExecuteNonQuery();
-            //    con.Close();
-            //    Application.Exit();
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+        {           
         }
 
         private void Cierre_de_Caja_Load(object sender, EventArgs e)
@@ -156,31 +136,7 @@ namespace Punto_de_venta.Presentacion.Caja
         {
             Obtener_datos.M_ventas_credito_por_turno(idcaja, fechaInicial, fechafinal, ref ventascredito);
             lblVentasAcredito.Text = ventascredito.ToString();
-        }
-        private void MOSTRAR_CAJA_POR_SERIAL()
-        {
-            //try
-            //{
-            //    DataTable dt = new DataTable();
-            //    SqlDataAdapter da;
-            //    SqlConnection con = new SqlConnection();
-            //    con.ConnectionString = ConexionDt.ConexionData.conexion;
-            //    con.Open();
-
-            //    da = new SqlDataAdapter("mostrar_cajas_por_Serial_de_DiscoDuro", con);
-            //    da.SelectCommand.CommandType = CommandType.StoredProcedure;
-            //    da.SelectCommand.Parameters.AddWithValue("@Serial", lblSerialPc.Text);
-            //    da.Fill(dt);
-            //    datalistado_caja.DataSource = dt;
-            //    con.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-
-        }
-
+        }       
         private void BtnCerrar_turno_Click(object sender, EventArgs e)
         {
             CierreTurno frm = new CierreTurno();

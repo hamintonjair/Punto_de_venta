@@ -62,9 +62,11 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.lblBasededatos = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
             this.Label8 = new System.Windows.Forms.Label();
+            this.PictureBox7 = new System.Windows.Forms.PictureBox();
             this.lblwindows = new System.Windows.Forms.Label();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.Panel4 = new System.Windows.Forms.Panel();
+            this.PictureBox2 = new System.Windows.Forms.PictureBox();
             this.Panel6 = new System.Windows.Forms.Panel();
             this.Panel7 = new System.Windows.Forms.Panel();
             this.Label5 = new System.Windows.Forms.Label();
@@ -73,39 +75,37 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.seg = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
+            this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.Panel5 = new System.Windows.Forms.Panel();
             this.Panel9 = new System.Windows.Forms.Panel();
             this.lblbuscador_de_servidores = new System.Windows.Forms.Label();
+            this.Panel1 = new System.Windows.Forms.Panel();
             this.Button2 = new System.Windows.Forms.Button();
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.TimerCRARINI = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.PictureBox2 = new System.Windows.Forms.PictureBox();
-            this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Panel1 = new System.Windows.Forms.Panel();
-            this.PictureBox7 = new System.Windows.Forms.PictureBox();
             this.Panel8.SuspendLayout();
             this.Panel3.SuspendLayout();
             this.GroupBox6.SuspendLayout();
             this.Panel10.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).BeginInit();
             this.Panel2.SuspendLayout();
             this.Panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
             this.Panel6.SuspendLayout();
             this.Panel7.SuspendLayout();
-            this.Panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).BeginInit();
+            this.Panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel8
             // 
             this.Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.Panel8.Controls.Add(this.panel11);
             this.Panel8.Controls.Add(this.Panel3);
+            this.Panel8.Controls.Add(this.panel11);
             this.Panel8.Controls.Add(this.PictureBox7);
             this.Panel8.Controls.Add(this.lblwindows);
             this.Panel8.Dock = System.Windows.Forms.DockStyle.Top;
@@ -139,9 +139,9 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel3.Controls.Add(this.lblBasededatos);
             this.Panel3.Controls.Add(this.Label6);
             this.Panel3.Controls.Add(this.Label8);
-            this.Panel3.Location = new System.Drawing.Point(284, 39);
+            this.Panel3.Location = new System.Drawing.Point(341, 22);
             this.Panel3.Name = "Panel3";
-            this.Panel3.Size = new System.Drawing.Size(31, 20);
+            this.Panel3.Size = new System.Drawing.Size(10, 10);
             this.Panel3.TabIndex = 621;
             // 
             // GroupBox6
@@ -426,6 +426,16 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Label8.TabIndex = 618;
             this.Label8.Text = "Nombre de Instancia:";
             // 
+            // PictureBox7
+            // 
+            this.PictureBox7.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA1;
+            this.PictureBox7.Location = new System.Drawing.Point(0, 0);
+            this.PictureBox7.Name = "PictureBox7";
+            this.PictureBox7.Size = new System.Drawing.Size(109, 86);
+            this.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox7.TabIndex = 604;
+            this.PictureBox7.TabStop = false;
+            // 
             // lblwindows
             // 
             this.lblwindows.BackColor = System.Drawing.Color.Transparent;
@@ -462,6 +472,18 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel4.Size = new System.Drawing.Size(482, 556);
             this.Panel4.TabIndex = 618;
             this.Panel4.Visible = false;
+            // 
+            // PictureBox2
+            // 
+            this.PictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.PictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
+            this.PictureBox2.Location = new System.Drawing.Point(0, 307);
+            this.PictureBox2.Name = "PictureBox2";
+            this.PictureBox2.Size = new System.Drawing.Size(482, 249);
+            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox2.TabIndex = 617;
+            this.PictureBox2.TabStop = false;
             // 
             // Panel6
             // 
@@ -557,6 +579,18 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
     "do esté todo Listo";
             this.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // PictureBox1
+            // 
+            this.PictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox1.Image")));
+            this.PictureBox1.Location = new System.Drawing.Point(0, 13);
+            this.PictureBox1.Name = "PictureBox1";
+            this.PictureBox1.Size = new System.Drawing.Size(482, 57);
+            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox1.TabIndex = 604;
+            this.PictureBox1.TabStop = false;
+            // 
             // Panel5
             // 
             this.Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
@@ -587,6 +621,15 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.lblbuscador_de_servidores.TabIndex = 614;
             this.lblbuscador_de_servidores.Text = "Buscando servidores instalados...";
             this.lblbuscador_de_servidores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Panel1
+            // 
+            this.Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Panel1.BackgroundImage")));
+            this.Panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Panel1.Location = new System.Drawing.Point(0, 0);
+            this.Panel1.Name = "Panel1";
+            this.Panel1.Size = new System.Drawing.Size(3, 153);
+            this.Panel1.TabIndex = 615;
             // 
             // Button2
             // 
@@ -625,49 +668,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.timer3.Interval = 10;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
-            // PictureBox2
-            // 
-            this.PictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
-            this.PictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
-            this.PictureBox2.Location = new System.Drawing.Point(0, 307);
-            this.PictureBox2.Name = "PictureBox2";
-            this.PictureBox2.Size = new System.Drawing.Size(482, 249);
-            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox2.TabIndex = 617;
-            this.PictureBox2.TabStop = false;
-            // 
-            // PictureBox1
-            // 
-            this.PictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
-            this.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox1.Image")));
-            this.PictureBox1.Location = new System.Drawing.Point(0, 13);
-            this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(482, 57);
-            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox1.TabIndex = 604;
-            this.PictureBox1.TabStop = false;
-            // 
-            // Panel1
-            // 
-            this.Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Panel1.BackgroundImage")));
-            this.Panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Panel1.Location = new System.Drawing.Point(0, 0);
-            this.Panel1.Name = "Panel1";
-            this.Panel1.Size = new System.Drawing.Size(3, 153);
-            this.Panel1.TabIndex = 615;
-            // 
-            // PictureBox7
-            // 
-            this.PictureBox7.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA1;
-            this.PictureBox7.Location = new System.Drawing.Point(0, 0);
-            this.PictureBox7.Name = "PictureBox7";
-            this.PictureBox7.Size = new System.Drawing.Size(109, 86);
-            this.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox7.TabIndex = 604;
-            this.PictureBox7.TabStop = false;
-            // 
             // Instalacion_del_servidorSQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -690,15 +690,15 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel10.PerformLayout();
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).EndInit();
             this.Panel2.ResumeLayout(false);
             this.Panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
             this.Panel6.ResumeLayout(false);
             this.Panel7.ResumeLayout(false);
             this.Panel7.PerformLayout();
-            this.Panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).EndInit();
+            this.Panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

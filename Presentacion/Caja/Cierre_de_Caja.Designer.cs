@@ -149,7 +149,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             this.Label19.AutoSize = true;
             this.Label19.ForeColor = System.Drawing.Color.Black;
-            this.Label19.Location = new System.Drawing.Point(31, 45);
+            this.Label19.Location = new System.Drawing.Point(34, 45);
             this.Label19.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label19.Name = "Label19";
             this.Label19.Size = new System.Drawing.Size(60, 13);
@@ -221,7 +221,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblgastos.BackColor = System.Drawing.Color.Transparent;
             this.lblgastos.Enabled = false;
             this.lblgastos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblgastos.Location = new System.Drawing.Point(188, 220);
+            this.lblgastos.Location = new System.Drawing.Point(188, 225);
             this.lblgastos.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblgastos.Name = "lblgastos";
             this.lblgastos.Size = new System.Drawing.Size(13, 13);
@@ -234,7 +234,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblingresos.BackColor = System.Drawing.Color.Transparent;
             this.lblingresos.Enabled = false;
             this.lblingresos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblingresos.Location = new System.Drawing.Point(188, 189);
+            this.lblingresos.Location = new System.Drawing.Point(188, 195);
             this.lblingresos.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblingresos.Name = "lblingresos";
             this.lblingresos.Size = new System.Drawing.Size(13, 13);
@@ -247,7 +247,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblPAGOSEfectivo.BackColor = System.Drawing.Color.Transparent;
             this.lblPAGOSEfectivo.Enabled = false;
             this.lblPAGOSEfectivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblPAGOSEfectivo.Location = new System.Drawing.Point(188, 164);
+            this.lblPAGOSEfectivo.Location = new System.Drawing.Point(188, 166);
             this.lblPAGOSEfectivo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblPAGOSEfectivo.Name = "lblPAGOSEfectivo";
             this.lblPAGOSEfectivo.Size = new System.Drawing.Size(13, 13);
@@ -260,7 +260,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblabonosTarjeta.BackColor = System.Drawing.Color.Transparent;
             this.lblabonosTarjeta.Enabled = false;
             this.lblabonosTarjeta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblabonosTarjeta.Location = new System.Drawing.Point(188, 138);
+            this.lblabonosTarjeta.Location = new System.Drawing.Point(188, 137);
             this.lblabonosTarjeta.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblabonosTarjeta.Name = "lblabonosTarjeta";
             this.lblabonosTarjeta.Size = new System.Drawing.Size(13, 13);
@@ -310,7 +310,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             this.Label40.AutoSize = true;
             this.Label40.ForeColor = System.Drawing.Color.Black;
-            this.Label40.Location = new System.Drawing.Point(62, 220);
+            this.Label40.Location = new System.Drawing.Point(62, 225);
             this.Label40.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label40.Name = "Label40";
             this.Label40.Size = new System.Drawing.Size(74, 13);
@@ -321,7 +321,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             this.Label27.AutoSize = true;
             this.Label27.ForeColor = System.Drawing.Color.Black;
-            this.Label27.Location = new System.Drawing.Point(49, 189);
+            this.Label27.Location = new System.Drawing.Point(55, 195);
             this.Label27.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label27.Name = "Label27";
             this.Label27.Size = new System.Drawing.Size(81, 13);
@@ -332,7 +332,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             this.Label6.AutoSize = true;
             this.Label6.ForeColor = System.Drawing.Color.Black;
-            this.Label6.Location = new System.Drawing.Point(33, 164);
+            this.Label6.Location = new System.Drawing.Point(40, 166);
             this.Label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(96, 13);
@@ -343,7 +343,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             this.Label7.AutoSize = true;
             this.Label7.ForeColor = System.Drawing.Color.Black;
-            this.Label7.Location = new System.Drawing.Point(27, 138);
+            this.Label7.Location = new System.Drawing.Point(33, 137);
             this.Label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(100, 13);
@@ -354,7 +354,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             this.Label28.AutoSize = true;
             this.Label28.ForeColor = System.Drawing.Color.Black;
-            this.Label28.Location = new System.Drawing.Point(27, 107);
+            this.Label28.Location = new System.Drawing.Point(34, 107);
             this.Label28.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label28.Name = "Label28";
             this.Label28.Size = new System.Drawing.Size(99, 13);
@@ -365,7 +365,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             this.Label29.AutoSize = true;
             this.Label29.ForeColor = System.Drawing.Color.Black;
-            this.Label29.Location = new System.Drawing.Point(27, 76);
+            this.Label29.Location = new System.Drawing.Point(34, 76);
             this.Label29.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label29.Name = "Label29";
             this.Label29.Size = new System.Drawing.Size(99, 13);
@@ -376,7 +376,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             this.Label30.AutoSize = true;
             this.Label30.ForeColor = System.Drawing.Color.Black;
-            this.Label30.Location = new System.Drawing.Point(58, 46);
+            this.Label30.Location = new System.Drawing.Point(55, 46);
             this.Label30.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label30.Name = "Label30";
             this.Label30.Size = new System.Drawing.Size(78, 13);
@@ -491,7 +491,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lbltotalventas.Enabled = false;
             this.lbltotalventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lbltotalventas.ForeColor = System.Drawing.Color.DimGray;
-            this.lbltotalventas.Location = new System.Drawing.Point(155, 14);
+            this.lbltotalventas.Location = new System.Drawing.Point(143, 14);
             this.lbltotalventas.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbltotalventas.Name = "lbltotalventas";
             this.lbltotalventas.Size = new System.Drawing.Size(19, 20);
@@ -650,7 +650,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             this.Label16.AutoSize = true;
             this.Label16.ForeColor = System.Drawing.Color.Black;
-            this.Label16.Location = new System.Drawing.Point(51, 107);
+            this.Label16.Location = new System.Drawing.Point(47, 107);
             this.Label16.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label16.Name = "Label16";
             this.Label16.Size = new System.Drawing.Size(53, 13);
@@ -703,7 +703,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblVentasTotal.Enabled = false;
             this.lblVentasTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblVentasTotal.ForeColor = System.Drawing.Color.Black;
-            this.lblVentasTotal.Location = new System.Drawing.Point(145, 142);
+            this.lblVentasTotal.Location = new System.Drawing.Point(144, 142);
             this.lblVentasTotal.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblVentasTotal.Name = "lblVentasTotal";
             this.lblVentasTotal.Size = new System.Drawing.Size(19, 20);
@@ -713,7 +713,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // Panel4
             // 
             this.Panel4.BackColor = System.Drawing.Color.White;
-            this.Panel4.Location = new System.Drawing.Point(149, 138);
+            this.Panel4.Location = new System.Drawing.Point(143, 138);
             this.Panel4.Name = "Panel4";
             this.Panel4.Size = new System.Drawing.Size(119, 1);
             this.Panel4.TabIndex = 193;
@@ -773,7 +773,8 @@ namespace Punto_de_venta.Presentacion.Caja
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Cierre_de_Caja";
-            this.Text = "Cierre_de_Caja";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cierre de caja";
             this.Load += new System.EventHandler(this.Cierre_de_Caja_Load);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();

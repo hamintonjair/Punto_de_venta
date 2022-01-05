@@ -63,7 +63,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtfechaFinalOK = new System.Windows.Forms.Label();
             this.txtfechaInicio = new System.Windows.Forms.DateTimePicker();
             this.txtfechaFinal = new System.Windows.Forms.DateTimePicker();
-            this.lblIDSERIAL = new System.Windows.Forms.Label();
             this.Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
             this.MenuStrip4.SuspendLayout();
@@ -412,7 +411,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel1.Controls.Add(this.txtfechaFinalOK);
             this.Panel1.Controls.Add(this.txtfechaInicio);
             this.Panel1.Controls.Add(this.txtfechaFinal);
-            this.Panel1.Controls.Add(this.lblIDSERIAL);
             this.Panel1.Location = new System.Drawing.Point(46, 372);
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(17, 24);
@@ -442,18 +440,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtfechaFinal.Name = "txtfechaFinal";
             this.txtfechaFinal.Size = new System.Drawing.Size(192, 20);
             this.txtfechaFinal.TabIndex = 596;
-            // 
-            // lblIDSERIAL
-            // 
-            this.lblIDSERIAL.AutoSize = true;
-            this.lblIDSERIAL.BackColor = System.Drawing.Color.White;
-            this.lblIDSERIAL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblIDSERIAL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblIDSERIAL.Location = new System.Drawing.Point(26, 15);
-            this.lblIDSERIAL.Name = "lblIDSERIAL";
-            this.lblIDSERIAL.Size = new System.Drawing.Size(84, 20);
-            this.lblIDSERIAL.TabIndex = 2;
-            this.lblIDSERIAL.Text = "lblidserial";
             // 
             // USUARIOS_AUTORIZADOS_AL_SISTEMA
             // 
@@ -512,7 +498,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
         private System.Windows.Forms.Label txtfechaFinalOK;
         internal System.Windows.Forms.DateTimePicker txtfechaInicio;
         internal System.Windows.Forms.DateTimePicker txtfechaFinal;
-        internal System.Windows.Forms.Label lblIDSERIAL;
         internal System.Windows.Forms.PictureBox pictureBox1;
     }
 }

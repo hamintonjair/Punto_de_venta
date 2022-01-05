@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Punto_de_venta.Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,57 @@ namespace Punto_de_venta.Presentacion.Ingresos_varios
         public IngresosVarios()
         {
             InitializeComponent();
+        }
+        int idcaja;
+        private void IngresosVarios_Load(object sender, EventArgs e)
+        {
+            limpiar_inicio();
+            Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
+        }
+        private void rellenar_campos_vacios()
+        {
+            if (string.IsNullOrEmpty(txtdetalle.Text)) { txtdetalle.Text = "Sin detallar"; }
+            if (string.IsNullOrEmpty(txtnrocomprobante.Text)) { txtnrocomprobante.Text = "-"; }
+            if (string.IsNullOrEmpty(txttipocomprobante.Text)) { txttipocomprobante.Text = "-"; }
+        }
+
+        private void GuardarRegistro_Click(object sender, EventArgs e)
+        {
+            rellenar_campos_vacios();
+            bool estado = Insertar_datos.insertar_Ingresos_varios(txtfecha.Value, txtnrocomprobante.Text,
+           txttipocomprobante.Text, Convert.ToDouble(txtimporte.Text), txtdetalle.Text,
+           idcaja);
+            if (estado == true)
+            {
+                limpiar_inicio();
+                MessageBox.Show("Datos ingresados correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void limpiar_inicio()
+        {
+
+            btnComprobante.Checked = true;
+            panelcomprobante.Visible = false;
+            txtimporte.Clear();
+            txtdetalle.Clear();
+            txtnrocomprobante.Clear();
+        }
+
+        private void btnComprobante_CheckedChanged(object sender, EventArgs e)
+        {
+            if (btnComprobante.Checked == true)
+            {
+                panelcomprobante.Visible = false;
+            }
+            else
+            {
+                panelcomprobante.Visible = true;
+            }
+        }
+
+        private void btnvolver_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

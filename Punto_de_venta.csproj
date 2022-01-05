@@ -402,6 +402,9 @@
     <EmbeddedResource Include="Presentacion\Caja\Cierre_de_Caja.resx">
       <DependentUpon>Cierre_de_Caja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Caja\Listado_gastos_ingresos.resx">
+      <DependentUpon>Listado_gastos_ingresos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Clientes_Proveedores\clientes.resx">
       <DependentUpon>clientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -422,6 +425,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Epresa_Configuracion\EMPRESA_CONFIG.resx">
       <DependentUpon>EMPRESA_CONFIG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Gastos_varios\Gastos.resx">
+      <DependentUpon>Gastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Ingresos_varios\IngresosVarios.resx">
+      <DependentUpon>IngresosVarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Inventarioss_Kardex\Inventarios_Menu.resx">
       <DependentUpon>Inventarios_Menu.cs</DependentUpon>

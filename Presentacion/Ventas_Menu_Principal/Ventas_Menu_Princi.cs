@@ -53,15 +53,14 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private void Ventas_Menu_Princi_Load(object sender, EventArgs e)
         {
             Bases.Cambiar_idioma_regional();
-            //Bases.Obtener_serialPC(ref SerialPC);
-            ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
-            lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
-            lblSerialPc.Text = lblSerialPc.Text.Trim();
+            Bases.Obtener_serialPC(ref SerialPC);
+            Obtener_datos.Obtener_id_caja_PorSerial(ref Id_caja);
 
-            MOSTRAR_CAJA_POR_SERIAL();
+            //MOSTRAR_CAJA_POR_SERIAL();
             MOSTRAR_TIPO_DE_BUSQUEDA();
             Obtener_id_de_cliente_estandar();
-            Obtener_datos.mostrar_inicio_De_sesion(ref idusuario_que_inicio_sesion);
+            Obtener_id_de_usuario_que_inicio_sesion();
+            //Obtener_datos.mostrar_inicio_De_sesion(ref idusuario_que_inicio_sesion);
 
             if (Tipo_de_busqueda == "TECLADO")
             {
@@ -76,6 +75,24 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 BTNTECLADO.BackColor = Color.WhiteSmoke;
             }
             limpiar_para_venta_nueva();
+        }
+        private void Obtener_id_de_usuario_que_inicio_sesion()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = ConexionDt.ConexionData.conexion;
+            SqlCommand com = new SqlCommand("mostrar_inicio_De_sesion", con);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@id_serial_pc", Bases.Encriptar(SerialPC));
+            try
+            {
+                con.Open();
+                idusuario_que_inicio_sesion = Convert.ToInt32(com.ExecuteScalar());
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
         }
         private void limpiar_para_venta_nueva()
         {
@@ -221,32 +238,57 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
            
-                if (Tipo_de_busqueda == "LECTORA")
+            if (Tipo_de_busqueda == "LECTORA")
+            {
+                ValidarVentasNuevas();
+                lbltipodebusqueda2.Visible = false;
+                TimerBUSCADORcodigodebarras.Start();
+            }
+            else if (Tipo_de_busqueda == "TECLADO")
+            {
+                if (txtbuscar.Text == "")
                 {
-                    lbltipodebusqueda2.Visible = false;
-                    TimerBUSCADORcodigodebarras.Start();
+                    ocultar_mostrar_productos();
 
                 }
-                else if (Tipo_de_busqueda == "TECLADO")
+                else if (txtbuscar.Text != "")
                 {
-                    if (txtbuscar.Text == "")
-                    {
-                        DATALISTADO_PRODUCTOS_OKA.Visible = false;
-                        lbltipodebusqueda2.Visible = true;
+                    mostrar_productos();
 
-                    }
-                    else if (txtbuscar.Text != "")
-                    {
-                        DATALISTADO_PRODUCTOS_OKA.Visible = true;
-                        lbltipodebusqueda2.Visible = false;
-
-                    }
-                    LISTAR_PRODUCTOS_Abuscador();
                 }
+                LISTAR_PRODUCTOS_Abuscador();
+            }
            
-        }       
-     
+        }
+      
+        private void mostrar_productos()
+        {
+            panel_mostrador_de_productos.Size = new System.Drawing.Size(372, 185);
+            panel_mostrador_de_productos.BackColor = Color.White;
+            panel_mostrador_de_productos.Location = new Point(txtreferencia.Location.X, txtreferencia.Location.Y);
+            panel_mostrador_de_productos.Visible = true;
+            DATALISTADO_PRODUCTOS_OKA.Visible = true;
+            DATALISTADO_PRODUCTOS_OKA.Dock = DockStyle.Fill;
+            DATALISTADO_PRODUCTOS_OKA.BackgroundColor = Color.White;
+            lbltipodebusqueda2.Visible = false;
+            panel_mostrador_de_productos.Controls.Add(DATALISTADO_PRODUCTOS_OKA);
 
+            this.Controls.Add(panel_mostrador_de_productos);
+            panel_mostrador_de_productos.BringToFront();
+        }
+        private void ocultar_mostrar_productos()
+        {
+            panel_mostrador_de_productos.Visible = false;
+            DATALISTADO_PRODUCTOS_OKA.Visible = false;
+            lbltipodebusqueda2.Visible = true;
+        }
+        public void ValidarVentasNuevas()
+        {
+            if (datalistadoDetalleVenta.RowCount == 0)
+            {
+                Limpiar_para_venta_nueva();
+            }
+        }
         private void vender_por_teclado()
         {
             // mostramos los registros del producto en el detalle de venta

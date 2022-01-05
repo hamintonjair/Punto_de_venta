@@ -88,8 +88,7 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
             parametros.E = estado;
             parametros.FA = fechaActivacion;
             parametros.F = fechaFin;
-            parametros.S = txtSerial.Text;
-            MessageBox.Show(txtSerial.Text);
+            parametros.S = txtSerial.Text;          
 
             if (funcion.editarMarcan(parametros) == true)
             {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Punto_de_venta.Logica;
-namespace Ada369Csharp.Datos
+namespace Punto_de_venta.Datos
 {
     public  class DLicencias
     {

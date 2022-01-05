@@ -11,6 +11,7 @@ using System.Linq;
 using System.Management;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 using System.Windows.Forms;
 
 namespace Punto_de_venta.Presentacion.Admin_nivel_dios
@@ -29,17 +30,206 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
         int idusuariovariable;
         string Base_De_datos = "BASEADACURSO";
         string Servidor = @".\SQLEXPRESS";
-        string ruta;       
-                
-          
+        string ruta;
+        string ResultadoLicencia;
+        string FechaFinal;
+        double PorCobrar;
+        double PorPagar;
+        double GananciasGenerales;
+        int ProductoMinimo;
+        int CantClientes;
+        int CantProductos;
+        string moneda;
+        DataTable dtventas;
+        double totalVentas;
+        double gananciasFecha;
+        DataTable dtProductos;
+        int año;
+
+
         private void DASHBOARD_PRINCIPAL_Load(object sender, EventArgs e)
         {
+            validarLicencia();
             Bases.Obtener_serialPC(ref lblIDSERIALL);
             Obtener_datos.Obtener_id_caja_PorSerial(ref idcajavariable);
-            Obtener_datos.mostrar_inicio_De_sesion(ref idusuariovariable);
+            //Obtener_datos.mostrar_inicio_De_sesion(ref idusuariovariable);
+            Obtener_id_de_usuario_que_inicio_sesion();
+            mostrarMoneda();
+            ReportePorCobrar();
+            ReportePorPagar();
+
+            ReporteProductoBajoMinimo();
+            ReporteCantClientes();
+            ReporteCantProductos();
+            mostrarVentasGrafica();
+            chekFiltros.Checked = false;
+            mostrarPmasVendidos();
+            ReporteGastosAnioCombo();
+            ObtenerMesAñoActual();
         }
-            
-      
+        private void Obtener_id_de_usuario_que_inicio_sesion()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = ConexionDt.ConexionData.conexion;
+            SqlCommand com = new SqlCommand("mostrar_inicio_De_sesion", con);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@id_serial_pc", Bases.Encriptar(lblIDSERIALL));
+            try
+            {
+                con.Open();
+                idusuariovariable = Convert.ToInt32(com.ExecuteScalar());
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        private void ObtenerMesAñoActual()
+
+        {
+            int año = DateTime.Today.Year;
+            DateTime fechaactual = DateTime.Now;
+            string mes = fechaactual.ToString("MMMM") + " " + año.ToString();
+            lblfechaHoy.Text = mes;
+        }
+        private void ReporteGastosMesCombo()
+        {
+
+            DataTable dt = new DataTable();
+            año = Convert.ToInt32(txtaño_gasto.Text);
+            Obtener_datos.ReporteGastosMesCombo(ref dt, año);
+            txtmes_gasto.DisplayMember = "mes";
+            txtmes_gasto.ValueMember = "mes";
+            txtmes_gasto.DataSource = dt;
+        }
+        private void ReporteGastosAnioCombo()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.ReporteGastosAnioCombo(ref dt);
+            txtaño_gasto.DisplayMember = "anio";
+            txtaño_gasto.ValueMember = "anio";
+            txtaño_gasto.DataSource = dt;
+        }
+        private void mostrarPmasVendidos()
+        {
+            ArrayList cantidad = new ArrayList();
+            ArrayList producto = new ArrayList();
+            dtProductos = new DataTable();
+            Obtener_datos.mostrarPmasVendidos(ref dtProductos);
+            foreach (DataRow filas in dtProductos.Rows)
+            {
+                cantidad.Add(filas["Cantidad"]);
+                producto.Add(filas["Descripcion"]);
+            }
+            //chartProductos.Series[0].Points.DataBindXY(producto, cantidad);
+        }
+        private void mostrarVentasGrafica()
+        {
+            ArrayList fecha = new ArrayList();
+            ArrayList monto = new ArrayList();
+            dtventas = new DataTable();
+            Obtener_datos.mostrarVentasGrafica(ref dtventas);
+            foreach (DataRow filas in dtventas.Rows)
+            {
+                fecha.Add(filas["fecha"]);
+                monto.Add(filas["Total"]);
+            }
+            //chartVentas.Series[0].Points.DataBindXY(fecha, monto);
+            ReporteTotalVentas();
+            ReporteGanancias();
+        }
+        private void mostrarVentasGraficaFechas()
+        {
+            ArrayList fecha = new ArrayList();
+            ArrayList monto = new ArrayList();
+            dtventas = new DataTable();
+            Obtener_datos.mostrarVentasGraficaFechas(ref dtventas, TXTFI.Value, TXTFF.Value);
+            foreach (DataRow filas in dtventas.Rows)
+            {
+                fecha.Add(filas["fecha"]);
+                monto.Add(filas["Total"]);
+            }
+            //chartVentas.Series[0].Points.DataBindXY(fecha, monto);
+            ReporteTotalVentasFechas();
+            ReporteGananciasFecha();
+        }
+        private void ReporteGananciasFecha()
+        {
+            Obtener_datos.ReporteGananciasFecha(ref gananciasFecha, TXTFI.Value, TXTFF.Value);
+            lblgananciasok.Text = moneda + " " + gananciasFecha.ToString();
+        }
+        private void ReporteTotalVentasFechas()
+        {
+            Obtener_datos.ReporteTotalVentasFechas(ref totalVentas, TXTFI.Value, TXTFF.Value);
+            txtventas.Text = moneda + " " + totalVentas.ToString();
+        }
+
+        private void ReporteTotalVentas()
+        {
+            Obtener_datos.ReporteTotalVentas(ref totalVentas);
+            txtventas.Text = moneda + " " + totalVentas.ToString();
+        }
+        private void mostrarMoneda()
+        {
+            Obtener_datos.MostrarMoneda(ref moneda);
+        }
+        private void ReporteCantProductos()
+        {
+            Obtener_datos.ReporteCantProductos(ref CantProductos);
+            lblProductos.Text = CantProductos.ToString();
+        }
+        private void ReporteCantClientes()
+        {
+            Obtener_datos.ReporteCantClientes(ref CantClientes);
+            lblNclientes.Text = CantClientes.ToString();
+        }
+        private void ReporteProductoBajoMinimo()
+        {
+            Obtener_datos.ReporteProductoBajoMinimo(ref ProductoMinimo);
+            lblStockBajo.Text = ProductoMinimo.ToString();
+        }
+        private void ReporteGanancias()
+        {
+            Obtener_datos.ReporteGanancias(ref GananciasGenerales);
+            lblGanancias.Text = moneda + " " + GananciasGenerales.ToString();
+            lblgananciasok.Text = lblGanancias.Text;
+        }
+
+        private void ReportePorCobrar()
+        {
+            Obtener_datos.ReportePorCobrar(ref PorCobrar);
+            lblPorcobrar.Text = moneda + " " + PorCobrar.ToString();
+        }
+        private void ReportePorPagar()
+        {
+            Obtener_datos.ReportePorPagar(ref PorPagar);
+            lblPorPagar.Text = moneda + " " + PorPagar.ToString();
+        }
+        private void validarLicencia()
+        {
+            DLicencias funcion = new DLicencias();
+            funcion.ValidarLicencias(ref ResultadoLicencia, ref FechaFinal);
+            if (ResultadoLicencia == "?ACTIVO?")
+            {
+                lblestadoLicencia.Text = "Licencia de Prueba Activada hasta el: " + FechaFinal;
+                btnLicencia.Visible = true;
+            }
+            if (ResultadoLicencia == "?ACTIVADO PRO?")
+            {
+                lblestadoLicencia.Text = "Licencia PROFESIONAL Activada hasta el: " + FechaFinal;
+                btnLicencia.Visible = false;
+            }
+            if (ResultadoLicencia == "VENCIDA")
+
+            {
+                funcion.EditarMarcanVencidas();
+                Dispose();
+                Licencias_Membresias.MembresiasNuevo frm = new Licencias_Membresias.MembresiasNuevo();
+                frm.ShowDialog();
+            }
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             Presentacion.Inventarioss_Kardex.Inventarios_Menu frm = new Presentacion.Inventarioss_Kardex.Inventarios_Menu();
@@ -63,8 +253,8 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
         {
             try
             {
-                MessageBox.Show(idusuariovariable.ToString());
-                MessageBox.Show(idcajavariable.ToString());
+            //    MessageBox.Show(idusuariovariable.ToString());
+            //    MessageBox.Show(idcajavariable.ToString());
 
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = ConexionDt.ConexionData.conexion;
@@ -310,5 +500,80 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
             }
         }
 
+        private void btnLicencia_Click(object sender, EventArgs e)
+        {
+            Licencias_Membresias.MembresiasNuevo frm = new Licencias_Membresias.MembresiasNuevo();
+            frm.ShowDialog();
+        }
+
+        private void txtaño_gasto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ReporteGastosAnio();
+            ReporteGastosMesCombo();
+        }
+        private void ReporteGastosAnio()
+        {
+            DataTable dt = new DataTable();
+            año = Convert.ToInt32(txtaño_gasto.Text);
+            Obtener_datos.ReporteGastosAnio(ref dt, año);
+            ArrayList monto = new ArrayList();
+            ArrayList descripcion = new ArrayList();
+            foreach (DataRow filas in dt.Rows)
+            {
+                monto.Add(filas["Monto"]);
+                descripcion.Add(filas["Descripcion"]);
+            }
+            //chartGastosAño.Series[0].Points.DataBindXY(descripcion, monto);
+        }
+
+        private void txtmes_gasto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ReporteGastosAnioMesGrafica();
+        }
+        private void ReporteGastosAnioMesGrafica()
+        {
+            DataTable dt = new DataTable();
+            año = Convert.ToInt32(txtaño_gasto.Text);
+            Obtener_datos.ReporteGastosAnioMesGrafica(ref dt, año, txtmes_gasto.Text);
+            ArrayList monto = new ArrayList();
+            ArrayList descripcion = new ArrayList();
+            foreach (DataRow filas in dt.Rows)
+            {
+                monto.Add(filas["Monto"]);
+                descripcion.Add(filas["Descripcion"]);
+            }
+            //chartGastosMes.Series[0].Points.DataBindXY(descripcion, monto);
+        }
+
+        private void Label13_Click(object sender, EventArgs e)
+        {
+            mostrarVentasGrafica();
+        }
+
+        private void TXTFF_ValueChanged(object sender, EventArgs e)
+        {
+            mostrarVentasGraficaFechas();
+        }
+
+        private void TXTFI_ValueChanged(object sender, EventArgs e)
+        {
+            mostrarVentasGraficaFechas();
+        }
+
+        private void chekFiltros_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chekFiltros.Checked == true)
+            {
+                PanelHoy.Visible = false;
+                PanelFiltros.Visible = true;
+                mostrarVentasGraficaFechas();
+            }
+            else
+            {
+                PanelHoy.Visible = true;
+                PanelFiltros.Visible = false;
+                mostrarVentasGrafica();
+            }
+        }
     }
 }

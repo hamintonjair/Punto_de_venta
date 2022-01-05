@@ -81,7 +81,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.lblmododebusqueda = new System.Windows.Forms.Label();
             this.TXTTRABAJASCONIMPUESTOS = new System.Windows.Forms.Label();
             this.txtcontador_empresas = new System.Windows.Forms.Label();
-            this.lblIDSERIAL = new System.Windows.Forms.Label();
             this.Panel6 = new System.Windows.Forms.Panel();
             this.txtmoneda = new System.Windows.Forms.ComboBox();
             this.TXTPAIS = new System.Windows.Forms.ComboBox();
@@ -595,7 +594,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel10.Controls.Add(this.lblmododebusqueda);
             this.Panel10.Controls.Add(this.TXTTRABAJASCONIMPUESTOS);
             this.Panel10.Controls.Add(this.txtcontador_empresas);
-            this.Panel10.Controls.Add(this.lblIDSERIAL);
             this.Panel10.Location = new System.Drawing.Point(21, 136);
             this.Panel10.Name = "Panel10";
             this.Panel10.Size = new System.Drawing.Size(10, 10);
@@ -716,17 +714,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtcontador_empresas.Size = new System.Drawing.Size(66, 20);
             this.txtcontador_empresas.TabIndex = 556;
             this.txtcontador_empresas.Text = "CAJAS";
-            // 
-            // lblIDSERIAL
-            // 
-            this.lblIDSERIAL.AutoSize = true;
-            this.lblIDSERIAL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblIDSERIAL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblIDSERIAL.Location = new System.Drawing.Point(38, 7);
-            this.lblIDSERIAL.Name = "lblIDSERIAL";
-            this.lblIDSERIAL.Size = new System.Drawing.Size(111, 20);
-            this.lblIDSERIAL.TabIndex = 342;
-            this.lblIDSERIAL.Text = "lblIDSERIAL";
             // 
             // Panel6
             // 
@@ -1592,7 +1579,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
         internal System.Windows.Forms.Label lblmododebusqueda;
         internal System.Windows.Forms.Label TXTTRABAJASCONIMPUESTOS;
         internal System.Windows.Forms.Label txtcontador_empresas;
-        internal System.Windows.Forms.Label lblIDSERIAL;
         internal System.Windows.Forms.Panel Panel6;
         internal System.Windows.Forms.ComboBox txtmoneda;
         internal System.Windows.Forms.ComboBox TXTPAIS;

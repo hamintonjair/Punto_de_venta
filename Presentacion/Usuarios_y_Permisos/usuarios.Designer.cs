@@ -108,7 +108,7 @@ namespace Punto_de_venta
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -140,7 +140,7 @@ namespace Punto_de_venta
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 53);
@@ -222,9 +222,9 @@ namespace Punto_de_venta
             this.PanelICONO.Controls.Add(this.pictureBox11);
             this.PanelICONO.Controls.Add(this.flowLayoutPanel2);
             this.PanelICONO.Controls.Add(this.flowLayoutPanel1);
-            this.PanelICONO.Location = new System.Drawing.Point(0, 0);
+            this.PanelICONO.Location = new System.Drawing.Point(8, 0);
             this.PanelICONO.Name = "PanelICONO";
-            this.PanelICONO.Size = new System.Drawing.Size(770, 510);
+            this.PanelICONO.Size = new System.Drawing.Size(762, 510);
             this.PanelICONO.TabIndex = 5;
             // 
             // pictureBox11
@@ -490,9 +490,9 @@ namespace Punto_de_venta
             this.cbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRol.FormattingEnabled = true;
             this.cbRol.Items.AddRange(new object[] {
-            "Solo Ventas(no esta autorizado para manejar dinero)",
-            "Cajero(¿Si estas autorizado para manejar dinero?)",
-            "Administraador(Control total"});
+            "Solo Ventas (no esta autorizado para manejar dinero)",
+            "Cajero (¿Si estas autorizado para manejar dinero?)",
+            "Administraador (Control total"});
             this.cbRol.Location = new System.Drawing.Point(196, 196);
             this.cbRol.Name = "cbRol";
             this.cbRol.Size = new System.Drawing.Size(447, 28);

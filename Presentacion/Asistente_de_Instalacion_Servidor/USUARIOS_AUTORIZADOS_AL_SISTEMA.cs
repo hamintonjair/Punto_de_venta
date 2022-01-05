@@ -20,16 +20,13 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
         {
             InitializeComponent();
         }
-        string lblIdeserial;
+        string lblIDSERIAL;
+      
         private void USUARIOS_AUTORIZADOS_AL_SISTEMA_Load(object sender, EventArgs e)
         {
             Panel2.Location = new Point((Width - Panel2.Width) / 2, (Height - Panel2.Height) / 2);
-            ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
-
-            lblIDSERIAL.Text = MOS.Properties["SerialNumber"].Value.ToString();
-            lblIDSERIAL.Text = lblIDSERIAL.Text.Trim();
-
-            //Bases.Obtener_serialPC(ref lblIdeserial);
+           
+            Bases.Obtener_serialPC(ref lblIDSERIAL);
         }
 
         private void ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -39,7 +36,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
                 if (TXTCONTRASEÑA.Text == txtconfirmarcontraseña.Text)
                 {
                     string contraseña_encryptada;
-                    contraseña_encryptada = ConexionDt.Encryptar_en_texto.Encriptar(this.TXTCONTRASEÑA.Text.Trim());
+                    contraseña_encryptada = Bases.Encriptar(this.TXTCONTRASEÑA.Text.Trim());
                     try
                     {
                         SqlConnection con = new SqlConnection();
@@ -94,13 +91,13 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             DateTime fechaFinal = today.AddDays(30);
             txtfechaFinalOK.Text = Convert.ToString(fechaFinal);
             string SERIALpC;
-            SERIALpC = ConexionDt.Encryptar_en_texto.Encriptar(this.lblIDSERIAL.Text.Trim());
+            SERIALpC = lblIDSERIAL;
             string FECHA_FINAL;
-            FECHA_FINAL = ConexionDt.Encryptar_en_texto.Encriptar(this.txtfechaFinalOK.Text.Trim());
+            FECHA_FINAL = Bases.Encriptar(this.txtfechaFinalOK.Text.Trim());
             string estado;
-            estado = ConexionDt.Encryptar_en_texto.Encriptar("?ACTIVO?");
+            estado = Bases.Encriptar("?ACTIVO?");
             string fecha_activacion;
-            fecha_activacion = ConexionDt.Encryptar_en_texto.Encriptar(this.txtfechaInicio.Text.Trim());
+            fecha_activacion = Bases.Encriptar(this.txtfechaInicio.Text.Trim());
 
 
             try
@@ -176,7 +173,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             {
 
                 string serialPC;
-                serialPC = ConexionDt.Encryptar_en_texto.Encriptar(this.lblIDSERIAL.Text.Trim());
+                serialPC = Bases.Encriptar(this.lblIDSERIAL.Trim());
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = ConexionDt.ConexionData.conexion;
                 con.Open();

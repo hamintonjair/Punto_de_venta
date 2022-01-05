@@ -365,6 +365,7 @@ namespace Punto_de_venta.Presentacion.Reportes.Impresion_de_comprobantes
             // 
             // textBox19
             // 
+            this.textBox19.Format = "{0:N2}";
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(2.575D), Telerik.Reporting.Drawing.Unit.Cm(0.609D));
             this.textBox19.Style.Font.Name = "Courier New";
@@ -373,6 +374,7 @@ namespace Punto_de_venta.Presentacion.Reportes.Impresion_de_comprobantes
             // 
             // textBox20
             // 
+            this.textBox20.Format = "{0:N2}";
             this.textBox20.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(4D), Telerik.Reporting.Drawing.Unit.Cm(1.459D));
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(4D), Telerik.Reporting.Drawing.Unit.Cm(0.4D));
@@ -409,6 +411,7 @@ namespace Punto_de_venta.Presentacion.Reportes.Impresion_de_comprobantes
             // 
             // textBox23
             // 
+            this.textBox23.Format = "{0:N2}";
             this.textBox23.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(4D), Telerik.Reporting.Drawing.Unit.Cm(1.859D));
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(4D), Telerik.Reporting.Drawing.Unit.Cm(0.4D));

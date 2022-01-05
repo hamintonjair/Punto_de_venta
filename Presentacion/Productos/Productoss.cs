@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Management;
 using System.Windows.Forms;
 using System.Threading;
+using Punto_de_venta.Logica;
+using Punto_de_venta.Datos;
 
 namespace Punto_de_venta.Presentacion.Productos
 {
@@ -21,7 +23,8 @@ namespace Punto_de_venta.Presentacion.Productos
         {
             InitializeComponent();            
         }
-
+        string lblSerialPc;
+        string lblIDSERIALL;
         private void PictureBox2_Click(object sender, EventArgs e)
         {
             panederecho.Visible = false;
@@ -77,6 +80,8 @@ namespace Punto_de_venta.Presentacion.Productos
             TGUARDAR.Visible = true;
             TGUARDARCAMBIOS.Visible = false;
         }
+        public static int idusuario;
+        public static int idcaja;
         internal void LIMPIAR()
         {
             txtidproducto.Text = "";
@@ -91,32 +96,48 @@ namespace Punto_de_venta.Presentacion.Productos
             txtstock2.Text = "0";
             lblEstadoCodigo.Text = "NUEVO";
         }
-
+        //public static int idusuario;
         private void Productoss_Load(object sender, EventArgs e)
         {
+            Bases.Cambiar_idioma_regional();
 
-            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-CO");
-            System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyDecimalSeparator = ".";
-            System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyGroupSeparator = ",";
-            System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator = ".";
-            System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberGroupSeparator = ",";
-           
             PANELDEPARTAMENTO.Visible = false;
             txtbusca.Text = "Buscar...";
             sumar_costo_de_inventario_CONTAR_PRODUCTOS();
             buscar();
             mostrar_grupos();
-
-            ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
-            lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
-            lblSerialPc.Text = lblSerialPc.Text.Trim();
-
+            Bases.Obtener_serialPC(ref lblSerialPc);
+            Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
+            //ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
+            //lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
+            //lblSerialPc.Text = lblSerialPc.Text.Trim();
+            ////Obtener_datos.mostrar_inicio_De_sesion(ref idusuario);
+            //Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
             mostrar_inicio_de_sesion();
-            MOSTRAR_CAJA_POR_SERIAL();         
+            //MOSTRAR_CAJA_POR_SERIAL();
+
+
         }
-       
-        public static int idusuario;
-        public static int idcaja;
+      
+        private void MOSTRAR_CAJA_POR_SERIAL()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = ConexionDt.ConexionData.conexion;
+
+            SqlCommand com = new SqlCommand("mostrar_cajas_por_Serial_de_DiscoDuro", con);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@Serial", lblSerialPc);
+            try
+            {
+                con.Open();
+                idcaja = Convert.ToInt32(com.ExecuteScalar());
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void mostrar_inicio_de_sesion()
         {
             SqlConnection con = new SqlConnection();
@@ -124,7 +145,7 @@ namespace Punto_de_venta.Presentacion.Productos
 
             SqlCommand com = new SqlCommand("mostrar_inicio_De_sesion", con);
             com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@id_serial_pc", ConexionDt.Encryptar_en_texto.Encriptar(lblSerialPc.Text));
+            com.Parameters.AddWithValue("@id_serial_pc", Bases.Encriptar(lblSerialPc));
 
             try
             {
@@ -137,25 +158,7 @@ namespace Punto_de_venta.Presentacion.Productos
 
             }
         }
-        private void MOSTRAR_CAJA_POR_SERIAL()
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = ConexionDt.ConexionData.conexion;
 
-            SqlCommand com = new SqlCommand("mostrar_cajas_por_Serial_de_DiscoDuro", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@Serial", lblSerialPc.Text);
-            try
-            {
-                con.Open();
-                idcaja = Convert.ToInt32(com.ExecuteScalar());
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
         private void mostrar_grupos()
         {
             PanelGRUPOSSELECT.Visible = true;
@@ -372,7 +375,7 @@ namespace Punto_de_venta.Presentacion.Productos
                 datalistado.Columns[15].Visible = false;
                 datalistado.Columns[16].Visible = false;
 
-            }
+            }           
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);

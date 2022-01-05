@@ -43,6 +43,7 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
             this.PanelActivando_licencia = new System.Windows.Forms.Panel();
             this.Button5 = new System.Windows.Forms.Button();
             this.lblActivando_licencia = new System.Windows.Forms.Label();
+            this.PictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblIDSERIAL = new System.Windows.Forms.TextBox();
             this.lblSerialPcLocal = new System.Windows.Forms.TextBox();
             this.lblSerial = new System.Windows.Forms.TextBox();
@@ -73,13 +74,12 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
             this.Panel4 = new System.Windows.Forms.Panel();
             this.dlg = new System.Windows.Forms.OpenFileDialog();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.PictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).BeginInit();
             this.PanelActivando_licencia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
             this.PanelActivacion_manual_de_Licencias.SuspendLayout();
             this.Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel12
@@ -219,6 +219,17 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
             this.lblActivando_licencia.TabIndex = 610;
             this.lblActivando_licencia.Text = "Licencia Activada";
             this.lblActivando_licencia.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // PictureBox2
+            // 
+            this.PictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
+            this.PictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.PictureBox2.Name = "PictureBox2";
+            this.PictureBox2.Size = new System.Drawing.Size(148, 131);
+            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox2.TabIndex = 609;
+            this.PictureBox2.TabStop = false;
             // 
             // lblIDSERIAL
             // 
@@ -542,17 +553,6 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
             this.PictureBox1.TabIndex = 634;
             this.PictureBox1.TabStop = false;
             // 
-            // PictureBox2
-            // 
-            this.PictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
-            this.PictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.PictureBox2.Name = "PictureBox2";
-            this.PictureBox2.Size = new System.Drawing.Size(148, 131);
-            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox2.TabIndex = 609;
-            this.PictureBox2.TabStop = false;
-            // 
             // Membresias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -582,12 +582,12 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
             this.Load += new System.EventHandler(this.Membresias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).EndInit();
             this.PanelActivando_licencia.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
             this.PanelActivacion_manual_de_Licencias.ResumeLayout(false);
             this.PanelActivacion_manual_de_Licencias.PerformLayout();
             this.Panel5.ResumeLayout(false);
             this.Panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

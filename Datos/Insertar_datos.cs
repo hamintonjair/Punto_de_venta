@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using Punto_de_venta.Logica;
 using Punto_de_venta.Datos;
 
-namespace Ada369Csharp.Datos
+namespace Punto_de_venta.Datos
 {
   public  class Insertar_datos
     {

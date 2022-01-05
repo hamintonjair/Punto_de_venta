@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using Punto_de_venta.Logica;
 
 namespace Punto_de_venta
 {
@@ -117,7 +118,7 @@ namespace Punto_de_venta
                                     cmd.CommandType = CommandType.StoredProcedure;
                                     cmd.Parameters.AddWithValue("@nombres", txtNombre.Text);
                                     cmd.Parameters.AddWithValue("@Login", txtUsuario.Text);
-                                    cmd.Parameters.AddWithValue("@Password", txtContraseña.Text);
+                                    cmd.Parameters.AddWithValue("@Password", Bases.Encriptar(txtContraseña.Text));
                                     cmd.Parameters.AddWithValue("@Correo", txtCorreo.Text);
                                     cmd.Parameters.AddWithValue("@Rol", cbRol.Text);
                                     //nos permiter guardar las imagenes y mopstarlas en la sesion del icono

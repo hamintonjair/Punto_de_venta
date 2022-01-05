@@ -28,6 +28,7 @@ namespace Punto_de_venta.Datos
             }
            
         }
+      
         public static void eliminar_ingreso(int idingreso)
         {
             try
