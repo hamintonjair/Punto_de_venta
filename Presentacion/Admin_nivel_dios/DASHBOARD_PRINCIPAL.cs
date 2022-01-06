@@ -52,8 +52,8 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
             validarLicencia();
             Bases.Obtener_serialPC(ref lblIDSERIALL);
             Obtener_datos.Obtener_id_caja_PorSerial(ref idcajavariable);
-            //Obtener_datos.mostrar_inicio_De_sesion(ref idusuariovariable);
-            Obtener_id_de_usuario_que_inicio_sesion();
+            Obtener_datos.mostrar_inicio_De_sesion2(ref idusuariovariable);
+          
             mostrarMoneda();
             ReportePorCobrar();
             ReportePorPagar();
@@ -66,25 +66,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
             mostrarPmasVendidos();
             ReporteGastosAnioCombo();
             ObtenerMesAñoActual();
-        }
-        private void Obtener_id_de_usuario_que_inicio_sesion()
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = ConexionDt.ConexionData.conexion;
-            SqlCommand com = new SqlCommand("mostrar_inicio_De_sesion", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@id_serial_pc", Bases.Encriptar(lblIDSERIALL));
-            try
-            {
-                con.Open();
-                idusuariovariable = Convert.ToInt32(com.ExecuteScalar());
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.StackTrace);
-            }
-        }
+        }     
         private void ObtenerMesAñoActual()
 
         {
@@ -253,8 +235,6 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
         {
             try
             {
-            //    MessageBox.Show(idusuariovariable.ToString());
-            //    MessageBox.Show(idcajavariable.ToString());
 
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = ConexionDt.ConexionData.conexion;

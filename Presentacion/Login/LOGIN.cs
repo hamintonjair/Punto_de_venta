@@ -163,7 +163,7 @@ namespace Punto_de_venta.Presentacion
             escalar_paneles();
             Bases.Obtener_serialPC(ref lblSerialPc);
             ObtenerIpLocal();
-            //Obtener_datos.Obtener_id_caja_PorSerial(ref idcajavariable);
+            Obtener_datos.Obtener_id_caja_PorSerial(ref idcajavariable);
         }
         private void ObtenerIpLocal()
         {
@@ -749,16 +749,8 @@ namespace Punto_de_venta.Presentacion
                      
 
                     }
-                    //else if (lblApertura_De_caja == "Aperturado" & lblRol == cajero)
-                    //{
-                    //    editar_inicio_De_sesion();
-                    //    Dispose();
-                    //    Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
-                    //    frm.ShowDialog();
-
-
-                    //}
-                    else if (lblApertura_De_caja != "Aperturado" & lblRol == cajero)
+                   
+                    else if (lblApertura_De_caja == "Aperturado" & lblRol == cajero)
                     {
                         editar_inicio_De_sesion();
                         Dispose();

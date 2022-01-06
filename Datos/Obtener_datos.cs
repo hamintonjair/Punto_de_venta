@@ -162,6 +162,24 @@ namespace Punto_de_venta.Datos
                 MessageBox.Show(ex.StackTrace);
             }
         }
+        public static void mostrar_inicio_De_sesion2(ref int idusuario)
+        {
+            Bases.Obtener_serialPC(ref serialPC);
+            try
+            {
+                ConexionData.abrir();
+                SqlCommand cmd = new SqlCommand("mostrar_inicio_De_sesion", ConexionData.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_serial_pc", Bases.Encriptar(serialPC));
+                idusuario = Convert.ToInt32(cmd.ExecuteScalar());
+                ConexionData.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
         public static void mostrarUsuariosSesion(ref DataTable dt)
         {
             try

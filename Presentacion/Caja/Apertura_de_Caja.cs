@@ -35,33 +35,7 @@ namespace Punto_de_venta.Presentacion.Caja
             if (estado == true)
             {
                 pasar_a_ventas();
-            }
-
-            //try
-            //{
-            //    SqlConnection con = new SqlConnection();
-            //    con.ConnectionString = ConexionDt.ConexionData.conexion;
-            //    con.Open();
-            //    SqlCommand cmd = new SqlCommand();
-            //    cmd = new SqlCommand("editar_dinero_caja_inicial", con);
-            //    cmd.CommandType = CommandType.StoredProcedure;         
-            //    cmd.Parameters.AddWithValue("@Id_caja", lbltidcaja.Text);
-            //    cmd.Parameters.AddWithValue("@saldo", txtMonto.Text);
-            //    cmd.ExecuteNonQuery();
-     
-            //    con.Close();
-
-            //    this.Hide();
-            //    Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
-            //    frm.ShowDialog();
-            //    this.Hide();
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            
-            //}
+            }          
         }
     
         private void Apertura_de_Caja_Load_1(object sender, EventArgs e)

@@ -110,7 +110,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // txtfecha
             // 
             this.txtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtfecha.Location = new System.Drawing.Point(137, 6);
+            this.txtfecha.Location = new System.Drawing.Point(164, 6);
             this.txtfecha.Name = "txtfecha";
             this.txtfecha.Size = new System.Drawing.Size(74, 20);
             this.txtfecha.TabIndex = 566;
@@ -172,7 +172,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.txtmonto.Multiline = true;
             this.txtmonto.Name = "txtmonto";
             this.txtmonto.Size = new System.Drawing.Size(239, 28);
-            this.txtmonto.TabIndex = 2;        
+            this.txtmonto.TabIndex = 2;
             // 
             // label2
             // 

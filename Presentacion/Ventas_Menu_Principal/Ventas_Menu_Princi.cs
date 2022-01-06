@@ -54,13 +54,10 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         {
             Bases.Cambiar_idioma_regional();
             Bases.Obtener_serialPC(ref SerialPC);
-            Obtener_datos.Obtener_id_caja_PorSerial(ref Id_caja);
-
-            //MOSTRAR_CAJA_POR_SERIAL();
+            Obtener_datos.Obtener_id_caja_PorSerial(ref Id_caja);           
             MOSTRAR_TIPO_DE_BUSQUEDA();
-            Obtener_id_de_cliente_estandar();
-            Obtener_id_de_usuario_que_inicio_sesion();
-            //Obtener_datos.mostrar_inicio_De_sesion(ref idusuario_que_inicio_sesion);
+            Obtener_id_de_cliente_estandar();           
+            Obtener_datos.mostrar_inicio_De_sesion2(ref idusuario_que_inicio_sesion);
 
             if (Tipo_de_busqueda == "TECLADO")
             {
@@ -76,24 +73,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             limpiar_para_venta_nueva();
         }
-        private void Obtener_id_de_usuario_que_inicio_sesion()
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = ConexionDt.ConexionData.conexion;
-            SqlCommand com = new SqlCommand("mostrar_inicio_De_sesion", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@id_serial_pc", Bases.Encriptar(SerialPC));
-            try
-            {
-                con.Open();
-                idusuario_que_inicio_sesion = Convert.ToInt32(com.ExecuteScalar());
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.StackTrace);
-            }
-        }
+      
         private void limpiar_para_venta_nueva()
         {
             idVenta = 0;
@@ -131,27 +111,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
                 MessageBox.Show(ex.Message);
             }
-        }
-  
-        private void MOSTRAR_CAJA_POR_SERIAL()
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = ConexionDt.ConexionData.conexion;
-            SqlCommand com = new SqlCommand("mostrar_cajas_por_Serial_de_DiscoDuro", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@Serial", lblSerialPc.Text);
-            try
-            {
-                con.Open();
-                Id_caja = Convert.ToInt32(com.ExecuteScalar());
-                con.Close();              
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.StackTrace);
-            }
-
-        }
+        }  
+       
         string Tipo_de_busqueda;
         private void MOSTRAR_TIPO_DE_BUSQUEDA()
         {

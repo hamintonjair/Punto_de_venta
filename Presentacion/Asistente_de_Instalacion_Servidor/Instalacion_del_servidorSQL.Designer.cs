@@ -32,7 +32,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Instalacion_del_servidorSQL));
             this.Panel8 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.Panel3 = new System.Windows.Forms.Panel();
             this.GroupBox6 = new System.Windows.Forms.GroupBox();
             this.txtCrearUsuarioDb = new System.Windows.Forms.TextBox();
@@ -62,6 +61,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.lblBasededatos = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
             this.Label8 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.PictureBox7 = new System.Windows.Forms.PictureBox();
             this.lblwindows = new System.Windows.Forms.Label();
             this.Panel2 = new System.Windows.Forms.Panel();
@@ -114,13 +114,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel8.Size = new System.Drawing.Size(1077, 86);
             this.Panel8.TabIndex = 591;
             // 
-            // panel11
-            // 
-            this.panel11.Location = new System.Drawing.Point(465, 12);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(35, 32);
-            this.panel11.TabIndex = 622;
-            // 
             // Panel3
             // 
             this.Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
@@ -139,7 +132,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel3.Controls.Add(this.lblBasededatos);
             this.Panel3.Controls.Add(this.Label6);
             this.Panel3.Controls.Add(this.Label8);
-            this.Panel3.Location = new System.Drawing.Point(341, 22);
+            this.Panel3.Location = new System.Drawing.Point(308, 22);
             this.Panel3.Name = "Panel3";
             this.Panel3.Size = new System.Drawing.Size(10, 10);
             this.Panel3.TabIndex = 621;
@@ -339,7 +332,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtCrear_procedimientos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCrear_procedimientos.Location = new System.Drawing.Point(6, 32);
             this.txtCrear_procedimientos.Name = "txtCrear_procedimientos";
-            this.txtCrear_procedimientos.Size = new System.Drawing.Size(434, 145);
+            this.txtCrear_procedimientos.Size = new System.Drawing.Size(432, 145);
             this.txtCrear_procedimientos.TabIndex = 589;
             this.txtCrear_procedimientos.Text = resources.GetString("txtCrear_procedimientos.Text");
             // 
@@ -425,6 +418,13 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Label8.Size = new System.Drawing.Size(108, 13);
             this.Label8.TabIndex = 618;
             this.Label8.Text = "Nombre de Instancia:";
+            // 
+            // panel11
+            // 
+            this.panel11.Location = new System.Drawing.Point(465, 12);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(35, 32);
+            this.panel11.TabIndex = 622;
             // 
             // PictureBox7
             // 

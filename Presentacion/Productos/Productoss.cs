@@ -108,57 +108,11 @@ namespace Punto_de_venta.Presentacion.Productos
             mostrar_grupos();
             Bases.Obtener_serialPC(ref lblSerialPc);
             Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
-            //ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
-            //lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
-            //lblSerialPc.Text = lblSerialPc.Text.Trim();
-            ////Obtener_datos.mostrar_inicio_De_sesion(ref idusuario);
-            //Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
-            mostrar_inicio_de_sesion();
-            //MOSTRAR_CAJA_POR_SERIAL();
+          
+            Obtener_datos.mostrar_inicio_De_sesion2(ref idusuario);         
 
-
-        }
-      
-        private void MOSTRAR_CAJA_POR_SERIAL()
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = ConexionDt.ConexionData.conexion;
-
-            SqlCommand com = new SqlCommand("mostrar_cajas_por_Serial_de_DiscoDuro", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@Serial", lblSerialPc);
-            try
-            {
-                con.Open();
-                idcaja = Convert.ToInt32(com.ExecuteScalar());
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        private void mostrar_inicio_de_sesion()
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = ConexionDt.ConexionData.conexion;
-
-            SqlCommand com = new SqlCommand("mostrar_inicio_De_sesion", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@id_serial_pc", Bases.Encriptar(lblSerialPc));
-
-            try
-            {
-                con.Open();
-                idusuario = Convert.ToInt32(com.ExecuteScalar());
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-
+        }      
+     
         private void mostrar_grupos()
         {
             PanelGRUPOSSELECT.Visible = true;

@@ -37,13 +37,15 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gastos));
             this.lbltipo = new System.Windows.Forms.Label();
             this.panelConceptos = new System.Windows.Forms.Panel();
+            this.panelConceptos2 = new System.Windows.Forms.Panel();
             this.Panel10 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.btnguardarConceptos = new System.Windows.Forms.Button();
-            this.txtdescripcionConcepto = new System.Windows.Forms.TextBox();
-            this.txtbancoseleccionado = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.btnguardarcambiosConceptos = new System.Windows.Forms.Button();
+            this.txtbancoseleccionado = new System.Windows.Forms.Label();
+            this.txtdescripcionConcepto = new System.Windows.Forms.TextBox();
             this.datalistadoConceptos = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.PanelbuscadorConceptos = new System.Windows.Forms.Panel();
             this.MenuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnNuevoconcepto = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,9 +75,8 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             this.txtimporte = new System.Windows.Forms.TextBox();
             this.Label2 = new System.Windows.Forms.Label();
             this.TXTACCION = new System.Windows.Forms.Label();
-            this.panelConceptos2 = new System.Windows.Forms.Panel();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelConceptos.SuspendLayout();
+            this.panelConceptos2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoConceptos)).BeginInit();
             this.PanelbuscadorConceptos.SuspendLayout();
             this.MenuStrip1.SuspendLayout();
@@ -83,7 +84,6 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             this.flowLayoutPanel1.SuspendLayout();
             this.panelcomprobante.SuspendLayout();
             this.PanelDetalle.SuspendLayout();
-            this.panelConceptos2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbltipo
@@ -94,7 +94,7 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             this.lbltipo.Location = new System.Drawing.Point(0, 0);
             this.lbltipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbltipo.Name = "lbltipo";
-            this.lbltipo.Size = new System.Drawing.Size(864, 34);
+            this.lbltipo.Size = new System.Drawing.Size(590, 34);
             this.lbltipo.TabIndex = 459;
             this.lbltipo.Text = "GASTOS (-)";
             this.lbltipo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,6 +110,19 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             this.panelConceptos.TabIndex = 541;
             this.panelConceptos.Visible = false;
             // 
+            // panelConceptos2
+            // 
+            this.panelConceptos2.Controls.Add(this.Panel10);
+            this.panelConceptos2.Controls.Add(this.btnguardarConceptos);
+            this.panelConceptos2.Controls.Add(this.button3);
+            this.panelConceptos2.Controls.Add(this.btnguardarcambiosConceptos);
+            this.panelConceptos2.Controls.Add(this.txtbancoseleccionado);
+            this.panelConceptos2.Controls.Add(this.txtdescripcionConcepto);
+            this.panelConceptos2.Location = new System.Drawing.Point(20, 8);
+            this.panelConceptos2.Name = "panelConceptos2";
+            this.panelConceptos2.Size = new System.Drawing.Size(409, 152);
+            this.panelConceptos2.TabIndex = 535;
+            // 
             // Panel10
             // 
             this.Panel10.BackColor = System.Drawing.Color.LightGray;
@@ -117,19 +130,6 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             this.Panel10.Name = "Panel10";
             this.Panel10.Size = new System.Drawing.Size(376, 2);
             this.Panel10.TabIndex = 534;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(213, 80);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(181, 33);
-            this.button3.TabIndex = 461;
-            this.button3.Text = "<Volver";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnguardarConceptos
             // 
@@ -145,30 +145,18 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             this.btnguardarConceptos.UseVisualStyleBackColor = false;
             this.btnguardarConceptos.Click += new System.EventHandler(this.btnguardarConceptos_Click);
             // 
-            // txtdescripcionConcepto
+            // button3
             // 
-            this.txtdescripcionConcepto.BackColor = System.Drawing.Color.White;
-            this.txtdescripcionConcepto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtdescripcionConcepto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtdescripcionConcepto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtdescripcionConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.txtdescripcionConcepto.ForeColor = System.Drawing.Color.Black;
-            this.txtdescripcionConcepto.Location = new System.Drawing.Point(18, 47);
-            this.txtdescripcionConcepto.Name = "txtdescripcionConcepto";
-            this.txtdescripcionConcepto.Size = new System.Drawing.Size(376, 19);
-            this.txtdescripcionConcepto.TabIndex = 2;
-            // 
-            // txtbancoseleccionado
-            // 
-            this.txtbancoseleccionado.AutoSize = true;
-            this.txtbancoseleccionado.BackColor = System.Drawing.Color.Transparent;
-            this.txtbancoseleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtbancoseleccionado.ForeColor = System.Drawing.Color.White;
-            this.txtbancoseleccionado.Location = new System.Drawing.Point(14, 24);
-            this.txtbancoseleccionado.Name = "txtbancoseleccionado";
-            this.txtbancoseleccionado.Size = new System.Drawing.Size(73, 20);
-            this.txtbancoseleccionado.TabIndex = 342;
-            this.txtbancoseleccionado.Text = "Etiqueta:";
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(213, 80);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(181, 33);
+            this.button3.TabIndex = 461;
+            this.button3.Text = "<Volver";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnguardarcambiosConceptos
             // 
@@ -183,6 +171,31 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             this.btnguardarcambiosConceptos.Text = "Guardar Cambios";
             this.btnguardarcambiosConceptos.UseVisualStyleBackColor = false;
             this.btnguardarcambiosConceptos.Click += new System.EventHandler(this.btnguardarcambiosConceptos_Click);
+            // 
+            // txtbancoseleccionado
+            // 
+            this.txtbancoseleccionado.AutoSize = true;
+            this.txtbancoseleccionado.BackColor = System.Drawing.Color.Transparent;
+            this.txtbancoseleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtbancoseleccionado.ForeColor = System.Drawing.Color.White;
+            this.txtbancoseleccionado.Location = new System.Drawing.Point(14, 24);
+            this.txtbancoseleccionado.Name = "txtbancoseleccionado";
+            this.txtbancoseleccionado.Size = new System.Drawing.Size(73, 20);
+            this.txtbancoseleccionado.TabIndex = 342;
+            this.txtbancoseleccionado.Text = "Etiqueta:";
+            // 
+            // txtdescripcionConcepto
+            // 
+            this.txtdescripcionConcepto.BackColor = System.Drawing.Color.White;
+            this.txtdescripcionConcepto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtdescripcionConcepto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtdescripcionConcepto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtdescripcionConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.txtdescripcionConcepto.ForeColor = System.Drawing.Color.Black;
+            this.txtdescripcionConcepto.Location = new System.Drawing.Point(18, 47);
+            this.txtdescripcionConcepto.Name = "txtdescripcionConcepto";
+            this.txtdescripcionConcepto.Size = new System.Drawing.Size(376, 19);
+            this.txtdescripcionConcepto.TabIndex = 2;
             // 
             // datalistadoConceptos
             // 
@@ -242,6 +255,15 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             this.datalistadoConceptos.Size = new System.Drawing.Size(250, 178);
             this.datalistadoConceptos.TabIndex = 542;
             this.datalistadoConceptos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistadoConceptos_CellClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::Punto_de_venta.Properties.Resources.documentediting_editdocuments_text_documentedi_2820;
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // PanelbuscadorConceptos
             // 
@@ -603,34 +625,12 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             this.TXTACCION.TabIndex = 528;
             this.TXTACCION.Text = "ACCION";
             // 
-            // panelConceptos2
-            // 
-            this.panelConceptos2.Controls.Add(this.Panel10);
-            this.panelConceptos2.Controls.Add(this.btnguardarConceptos);
-            this.panelConceptos2.Controls.Add(this.button3);
-            this.panelConceptos2.Controls.Add(this.btnguardarcambiosConceptos);
-            this.panelConceptos2.Controls.Add(this.txtbancoseleccionado);
-            this.panelConceptos2.Controls.Add(this.txtdescripcionConcepto);
-            this.panelConceptos2.Location = new System.Drawing.Point(20, 8);
-            this.panelConceptos2.Name = "panelConceptos2";
-            this.panelConceptos2.Size = new System.Drawing.Size(409, 152);
-            this.panelConceptos2.TabIndex = 535;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.Image = global::Punto_de_venta.Properties.Resources.documentediting_editdocuments_text_documentedi_2820;
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
             // Gastos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.ClientSize = new System.Drawing.Size(864, 553);
+            this.ClientSize = new System.Drawing.Size(590, 553);
             this.Controls.Add(this.panelConceptos);
             this.Controls.Add(this.datalistadoConceptos);
             this.Controls.Add(this.PanelbuscadorConceptos);
@@ -646,6 +646,8 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             this.Text = "Gastos";
             this.Load += new System.EventHandler(this.Gastos_Load);
             this.panelConceptos.ResumeLayout(false);
+            this.panelConceptos2.ResumeLayout(false);
+            this.panelConceptos2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoConceptos)).EndInit();
             this.PanelbuscadorConceptos.ResumeLayout(false);
             this.PanelbuscadorConceptos.PerformLayout();
@@ -658,8 +660,6 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             this.panelcomprobante.PerformLayout();
             this.PanelDetalle.ResumeLayout(false);
             this.PanelDetalle.PerformLayout();
-            this.panelConceptos2.ResumeLayout(false);
-            this.panelConceptos2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

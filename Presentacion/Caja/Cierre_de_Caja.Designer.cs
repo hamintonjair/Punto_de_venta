@@ -611,6 +611,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.btnvolver.TabIndex = 604;
             this.btnvolver.Text = "Volver";
             this.btnvolver.UseVisualStyleBackColor = false;
+            this.btnvolver.Click += new System.EventHandler(this.btnvolver_Click);
             // 
             // Label9
             // 

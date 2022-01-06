@@ -143,5 +143,12 @@ namespace Punto_de_venta.Presentacion.Caja
             dineroencaja = Convert.ToDouble(lblDineroEncaja.Text);
             frm.ShowDialog();
         }
+
+        private void btnvolver_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
+            frm.ShowDialog();
+        }
     }
 }
