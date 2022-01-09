@@ -2544,7 +2544,7 @@
         BMDuzaE3CcBHWub3cy30U3/owNaGd3eej/qqN6zf+v8BKrrxSJR4dh4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="Button3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCajas.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAB6
         LQAAei0BYAM4QAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADNuSURBVHhe7d1Z
@@ -3468,7 +3468,7 @@
         QPwe8ffpOfIQuZbw2Iy5hNd4yCdI1BMX9/8AOc8dQrPNTPMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="Button8.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnClientes.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAHXgSURBVHhe7d0H

@@ -96,7 +96,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             // panel12
             // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.panel12.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel12.Controls.Add(this.lblPorpagar);
             this.panel12.Controls.Add(this.lblPorCobrar);
@@ -113,11 +113,12 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblPorpagar.AutoSize = true;
             this.lblPorpagar.BackColor = System.Drawing.Color.Transparent;
             this.lblPorpagar.Enabled = false;
-            this.lblPorpagar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblPorpagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPorpagar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.lblPorpagar.Location = new System.Drawing.Point(135, 75);
             this.lblPorpagar.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblPorpagar.Name = "lblPorpagar";
-            this.lblPorpagar.Size = new System.Drawing.Size(13, 13);
+            this.lblPorpagar.Size = new System.Drawing.Size(18, 20);
             this.lblPorpagar.TabIndex = 191;
             this.lblPorpagar.Text = "0";
             // 
@@ -126,51 +127,55 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblPorCobrar.AutoSize = true;
             this.lblPorCobrar.BackColor = System.Drawing.Color.Transparent;
             this.lblPorCobrar.Enabled = false;
-            this.lblPorCobrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblPorCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPorCobrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.lblPorCobrar.Location = new System.Drawing.Point(135, 45);
             this.lblPorCobrar.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblPorCobrar.Name = "lblPorCobrar";
-            this.lblPorCobrar.Size = new System.Drawing.Size(13, 13);
+            this.lblPorCobrar.Size = new System.Drawing.Size(18, 20);
             this.lblPorCobrar.TabIndex = 191;
             this.lblPorCobrar.Text = "0";
             // 
             // Label18
             // 
             this.Label18.AutoSize = true;
+            this.Label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label18.ForeColor = System.Drawing.Color.Black;
-            this.Label18.Location = new System.Drawing.Point(37, 75);
+            this.Label18.Location = new System.Drawing.Point(47, 72);
             this.Label18.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label18.Name = "Label18";
-            this.Label18.Size = new System.Drawing.Size(57, 13);
+            this.Label18.Size = new System.Drawing.Size(83, 20);
             this.Label18.TabIndex = 192;
             this.Label18.Text = "Por Pagar:";
             // 
             // Label19
             // 
             this.Label19.AutoSize = true;
+            this.Label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label19.ForeColor = System.Drawing.Color.Black;
-            this.Label19.Location = new System.Drawing.Point(34, 45);
+            this.Label19.Location = new System.Drawing.Point(44, 42);
             this.Label19.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label19.Name = "Label19";
-            this.Label19.Size = new System.Drawing.Size(60, 13);
+            this.Label19.Size = new System.Drawing.Size(89, 20);
             this.Label19.TabIndex = 192;
             this.Label19.Text = "Por Cobrar:";
             // 
             // Label20
             // 
-            this.Label20.AutoSize = true;
-            this.Label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.Label20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.Label20.ForeColor = System.Drawing.Color.Black;
-            this.Label20.Location = new System.Drawing.Point(32, 13);
+            this.Label20.Location = new System.Drawing.Point(0, 0);
             this.Label20.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label20.Name = "Label20";
-            this.Label20.Size = new System.Drawing.Size(180, 20);
+            this.Label20.Size = new System.Drawing.Size(381, 31);
             this.Label20.TabIndex = 192;
             this.Label20.Text = "Creditos Aperturados";
+            this.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Panel5
             // 
-            this.Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.Panel5.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Panel5.Controls.Add(this.Panel6);
             this.Panel5.Controls.Add(this.lblDineroEncaja);
@@ -196,7 +201,8 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             // Panel6
             // 
-            this.Panel6.BackColor = System.Drawing.Color.White;
+            this.Panel6.BackColor = System.Drawing.Color.Black;
+            this.Panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Panel6.Location = new System.Drawing.Point(183, 256);
             this.Panel6.Name = "Panel6";
             this.Panel6.Size = new System.Drawing.Size(119, 1);
@@ -206,12 +212,12 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             this.lblDineroEncaja.AutoSize = true;
             this.lblDineroEncaja.Enabled = false;
-            this.lblDineroEncaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDineroEncaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDineroEncaja.ForeColor = System.Drawing.Color.Black;
             this.lblDineroEncaja.Location = new System.Drawing.Point(187, 260);
             this.lblDineroEncaja.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblDineroEncaja.Name = "lblDineroEncaja";
-            this.lblDineroEncaja.Size = new System.Drawing.Size(19, 20);
+            this.lblDineroEncaja.Size = new System.Drawing.Size(18, 20);
             this.lblDineroEncaja.TabIndex = 191;
             this.lblDineroEncaja.Text = "0";
             // 
@@ -220,11 +226,12 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblgastos.AutoSize = true;
             this.lblgastos.BackColor = System.Drawing.Color.Transparent;
             this.lblgastos.Enabled = false;
-            this.lblgastos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblgastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblgastos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.lblgastos.Location = new System.Drawing.Point(188, 225);
             this.lblgastos.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblgastos.Name = "lblgastos";
-            this.lblgastos.Size = new System.Drawing.Size(13, 13);
+            this.lblgastos.Size = new System.Drawing.Size(18, 20);
             this.lblgastos.TabIndex = 191;
             this.lblgastos.Text = "0";
             // 
@@ -233,11 +240,12 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblingresos.AutoSize = true;
             this.lblingresos.BackColor = System.Drawing.Color.Transparent;
             this.lblingresos.Enabled = false;
-            this.lblingresos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblingresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblingresos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.lblingresos.Location = new System.Drawing.Point(188, 195);
             this.lblingresos.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblingresos.Name = "lblingresos";
-            this.lblingresos.Size = new System.Drawing.Size(13, 13);
+            this.lblingresos.Size = new System.Drawing.Size(18, 20);
             this.lblingresos.TabIndex = 191;
             this.lblingresos.Text = "0";
             // 
@@ -246,11 +254,12 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblPAGOSEfectivo.AutoSize = true;
             this.lblPAGOSEfectivo.BackColor = System.Drawing.Color.Transparent;
             this.lblPAGOSEfectivo.Enabled = false;
-            this.lblPAGOSEfectivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblPAGOSEfectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPAGOSEfectivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.lblPAGOSEfectivo.Location = new System.Drawing.Point(188, 166);
             this.lblPAGOSEfectivo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblPAGOSEfectivo.Name = "lblPAGOSEfectivo";
-            this.lblPAGOSEfectivo.Size = new System.Drawing.Size(13, 13);
+            this.lblPAGOSEfectivo.Size = new System.Drawing.Size(18, 20);
             this.lblPAGOSEfectivo.TabIndex = 191;
             this.lblPAGOSEfectivo.Text = "0";
             // 
@@ -259,11 +268,12 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblabonosTarjeta.AutoSize = true;
             this.lblabonosTarjeta.BackColor = System.Drawing.Color.Transparent;
             this.lblabonosTarjeta.Enabled = false;
-            this.lblabonosTarjeta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblabonosTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblabonosTarjeta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.lblabonosTarjeta.Location = new System.Drawing.Point(188, 137);
             this.lblabonosTarjeta.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblabonosTarjeta.Name = "lblabonosTarjeta";
-            this.lblabonosTarjeta.Size = new System.Drawing.Size(13, 13);
+            this.lblabonosTarjeta.Size = new System.Drawing.Size(18, 20);
             this.lblabonosTarjeta.TabIndex = 191;
             this.lblabonosTarjeta.Text = "0";
             // 
@@ -272,11 +282,12 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblabonosEfectivo.AutoSize = true;
             this.lblabonosEfectivo.BackColor = System.Drawing.Color.Transparent;
             this.lblabonosEfectivo.Enabled = false;
-            this.lblabonosEfectivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblabonosEfectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblabonosEfectivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.lblabonosEfectivo.Location = new System.Drawing.Point(188, 107);
             this.lblabonosEfectivo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblabonosEfectivo.Name = "lblabonosEfectivo";
-            this.lblabonosEfectivo.Size = new System.Drawing.Size(13, 13);
+            this.lblabonosEfectivo.Size = new System.Drawing.Size(18, 20);
             this.lblabonosEfectivo.TabIndex = 191;
             this.lblabonosEfectivo.Text = "0";
             // 
@@ -285,11 +296,12 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblventasefectivo.AutoSize = true;
             this.lblventasefectivo.BackColor = System.Drawing.Color.Transparent;
             this.lblventasefectivo.Enabled = false;
-            this.lblventasefectivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblventasefectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblventasefectivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.lblventasefectivo.Location = new System.Drawing.Point(188, 76);
             this.lblventasefectivo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblventasefectivo.Name = "lblventasefectivo";
-            this.lblventasefectivo.Size = new System.Drawing.Size(13, 13);
+            this.lblventasefectivo.Size = new System.Drawing.Size(18, 20);
             this.lblventasefectivo.TabIndex = 191;
             this.lblventasefectivo.Text = "0";
             // 
@@ -298,102 +310,111 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblfondodeCaja.AutoSize = true;
             this.lblfondodeCaja.BackColor = System.Drawing.Color.Transparent;
             this.lblfondodeCaja.Enabled = false;
-            this.lblfondodeCaja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblfondodeCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfondodeCaja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.lblfondodeCaja.Location = new System.Drawing.Point(188, 46);
             this.lblfondodeCaja.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblfondodeCaja.Name = "lblfondodeCaja";
-            this.lblfondodeCaja.Size = new System.Drawing.Size(13, 13);
+            this.lblfondodeCaja.Size = new System.Drawing.Size(18, 20);
             this.lblfondodeCaja.TabIndex = 191;
             this.lblfondodeCaja.Text = "0";
             // 
             // Label40
             // 
             this.Label40.AutoSize = true;
+            this.Label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label40.ForeColor = System.Drawing.Color.Black;
-            this.Label40.Location = new System.Drawing.Point(62, 225);
+            this.Label40.Location = new System.Drawing.Point(69, 225);
             this.Label40.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label40.Name = "Label40";
-            this.Label40.Size = new System.Drawing.Size(74, 13);
+            this.Label40.Size = new System.Drawing.Size(110, 20);
             this.Label40.TabIndex = 192;
             this.Label40.Text = "Gastos varios:";
             // 
             // Label27
             // 
             this.Label27.AutoSize = true;
+            this.Label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label27.ForeColor = System.Drawing.Color.Black;
-            this.Label27.Location = new System.Drawing.Point(55, 195);
+            this.Label27.Location = new System.Drawing.Point(59, 195);
             this.Label27.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label27.Name = "Label27";
-            this.Label27.Size = new System.Drawing.Size(81, 13);
+            this.Label27.Size = new System.Drawing.Size(120, 20);
             this.Label27.TabIndex = 192;
             this.Label27.Text = "Ingresos varios:";
             // 
             // Label6
             // 
             this.Label6.AutoSize = true;
+            this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label6.ForeColor = System.Drawing.Color.Black;
             this.Label6.Location = new System.Drawing.Point(40, 166);
             this.Label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(96, 13);
+            this.Label6.Size = new System.Drawing.Size(139, 20);
             this.Label6.TabIndex = 192;
             this.Label6.Text = "Pagos en efectivo:";
             // 
             // Label7
             // 
             this.Label7.AutoSize = true;
+            this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label7.ForeColor = System.Drawing.Color.Black;
             this.Label7.Location = new System.Drawing.Point(33, 137);
             this.Label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(100, 13);
+            this.Label7.Size = new System.Drawing.Size(147, 20);
             this.Label7.TabIndex = 192;
             this.Label7.Text = "Cobros con Tarjeta:";
             // 
             // Label28
             // 
             this.Label28.AutoSize = true;
+            this.Label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label28.ForeColor = System.Drawing.Color.Black;
             this.Label28.Location = new System.Drawing.Point(34, 107);
             this.Label28.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label28.Name = "Label28";
-            this.Label28.Size = new System.Drawing.Size(99, 13);
+            this.Label28.Size = new System.Drawing.Size(145, 20);
             this.Label28.TabIndex = 192;
             this.Label28.Text = "Cobros en efectivo:";
             // 
             // Label29
             // 
             this.Label29.AutoSize = true;
+            this.Label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label29.ForeColor = System.Drawing.Color.Black;
             this.Label29.Location = new System.Drawing.Point(34, 76);
             this.Label29.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label29.Name = "Label29";
-            this.Label29.Size = new System.Drawing.Size(99, 13);
+            this.Label29.Size = new System.Drawing.Size(145, 20);
             this.Label29.TabIndex = 192;
             this.Label29.Text = "Ventas en efectivo:";
             // 
             // Label30
             // 
             this.Label30.AutoSize = true;
+            this.Label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label30.ForeColor = System.Drawing.Color.Black;
-            this.Label30.Location = new System.Drawing.Point(55, 46);
+            this.Label30.Location = new System.Drawing.Point(62, 46);
             this.Label30.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label30.Name = "Label30";
-            this.Label30.Size = new System.Drawing.Size(78, 13);
+            this.Label30.Size = new System.Drawing.Size(114, 20);
             this.Label30.TabIndex = 192;
             this.Label30.Text = "Fondo de caja:";
             // 
             // Label32
             // 
-            this.Label32.AutoSize = true;
-            this.Label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.Label32.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label32.ForeColor = System.Drawing.Color.Black;
-            this.Label32.Location = new System.Drawing.Point(87, 14);
+            this.Label32.Location = new System.Drawing.Point(0, 0);
             this.Label32.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label32.Name = "Label32";
-            this.Label32.Size = new System.Drawing.Size(137, 20);
+            this.Label32.Size = new System.Drawing.Size(381, 34);
             this.Label32.TabIndex = 192;
             this.Label32.Text = "Dinero en CAJA";
+            this.Label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Panel11
             // 
@@ -434,12 +455,12 @@ namespace Punto_de_venta.Presentacion.Caja
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 95);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(915, 55);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(805, 55);
             this.flowLayoutPanel1.TabIndex = 606;
             // 
             // Panel9
             // 
-            this.Panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.Panel9.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Panel9.Controls.Add(this.lblgananciasVentas);
             this.Panel9.Controls.Add(this.Label36);
@@ -453,7 +474,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblgananciasVentas.AutoSize = true;
             this.lblgananciasVentas.Enabled = false;
             this.lblgananciasVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblgananciasVentas.ForeColor = System.Drawing.Color.DimGray;
+            this.lblgananciasVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.lblgananciasVentas.Location = new System.Drawing.Point(100, 14);
             this.lblgananciasVentas.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblgananciasVentas.Name = "lblgananciasVentas";
@@ -475,7 +496,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             // Panel8
             // 
-            this.Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.Panel8.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Panel8.Controls.Add(this.lbltotalventas);
             this.Panel8.Controls.Add(this.Label34);
@@ -490,7 +511,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lbltotalventas.BackColor = System.Drawing.Color.Transparent;
             this.lbltotalventas.Enabled = false;
             this.lbltotalventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lbltotalventas.ForeColor = System.Drawing.Color.DimGray;
+            this.lbltotalventas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.lbltotalventas.Location = new System.Drawing.Point(143, 14);
             this.lbltotalventas.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbltotalventas.Name = "lbltotalventas";
@@ -512,7 +533,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             // Panel7
             // 
-            this.Panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.Panel7.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Panel7.Controls.Add(this.lbldineroTotalCaja);
             this.Panel7.Controls.Add(this.Label45);
@@ -527,7 +548,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lbldineroTotalCaja.BackColor = System.Drawing.Color.Transparent;
             this.lbldineroTotalCaja.Enabled = false;
             this.lbldineroTotalCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lbldineroTotalCaja.ForeColor = System.Drawing.Color.DimGray;
+            this.lbldineroTotalCaja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.lbldineroTotalCaja.Location = new System.Drawing.Point(160, 14);
             this.lbldineroTotalCaja.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbldineroTotalCaja.Name = "lbldineroTotalCaja";
@@ -554,7 +575,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.panel2.Location = new System.Drawing.Point(0, 51);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(915, 44);
+            this.panel2.Size = new System.Drawing.Size(805, 44);
             this.panel2.TabIndex = 605;
             // 
             // lbldesdehasta
@@ -564,7 +585,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lbldesdehasta.Location = new System.Drawing.Point(0, 0);
             this.lbldesdehasta.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbldesdehasta.Name = "lbldesdehasta";
-            this.lbldesdehasta.Size = new System.Drawing.Size(915, 44);
+            this.lbldesdehasta.Size = new System.Drawing.Size(805, 44);
             this.lbldesdehasta.TabIndex = 478;
             this.lbldesdehasta.Text = "De 12:24 pm a las 10:40 pm - (Turno Actual)";
             this.lbldesdehasta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -577,18 +598,18 @@ namespace Punto_de_venta.Presentacion.Caja
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 51);
+            this.panel1.Size = new System.Drawing.Size(805, 51);
             this.panel1.TabIndex = 604;
             // 
             // Label46
             // 
-            this.Label46.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Label46.Dock = System.Windows.Forms.DockStyle.Top;
             this.Label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.Label46.ForeColor = System.Drawing.Color.Black;
+            this.Label46.ForeColor = System.Drawing.Color.White;
             this.Label46.Location = new System.Drawing.Point(134, 0);
             this.Label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label46.Name = "Label46";
-            this.Label46.Size = new System.Drawing.Size(384, 51);
+            this.Label46.Size = new System.Drawing.Size(671, 51);
             this.Label46.TabIndex = 597;
             this.Label46.Text = "Cuadre de CAJA";
             this.Label46.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -615,46 +636,50 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             // Label9
             // 
-            this.Label9.AutoSize = true;
-            this.Label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.Label9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.Label9.ForeColor = System.Drawing.Color.Black;
-            this.Label9.Location = new System.Drawing.Point(42, 14);
+            this.Label9.Location = new System.Drawing.Point(0, 0);
             this.Label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label9.Name = "Label9";
-            this.Label9.Size = new System.Drawing.Size(130, 20);
+            this.Label9.Size = new System.Drawing.Size(327, 34);
             this.Label9.TabIndex = 192;
             this.Label9.Text = "Ventas Totales";
+            this.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Label12
             // 
             this.Label12.AutoSize = true;
+            this.Label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label12.ForeColor = System.Drawing.Color.Black;
-            this.Label12.Location = new System.Drawing.Point(35, 46);
+            this.Label12.Location = new System.Drawing.Point(42, 46);
             this.Label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label12.Name = "Label12";
-            this.Label12.Size = new System.Drawing.Size(65, 13);
+            this.Label12.Size = new System.Drawing.Size(94, 20);
             this.Label12.TabIndex = 192;
             this.Label12.Text = "En Efectivo:";
             // 
             // Label14
             // 
             this.Label14.AutoSize = true;
+            this.Label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label14.ForeColor = System.Drawing.Color.Black;
-            this.Label14.Location = new System.Drawing.Point(35, 76);
+            this.Label14.Location = new System.Drawing.Point(42, 76);
             this.Label14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label14.Name = "Label14";
-            this.Label14.Size = new System.Drawing.Size(65, 13);
+            this.Label14.Size = new System.Drawing.Size(95, 20);
             this.Label14.TabIndex = 192;
             this.Label14.Text = "Con Tarjeta:";
             // 
             // Label16
             // 
             this.Label16.AutoSize = true;
+            this.Label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label16.ForeColor = System.Drawing.Color.Black;
-            this.Label16.Location = new System.Drawing.Point(47, 107);
+            this.Label16.Location = new System.Drawing.Point(54, 107);
             this.Label16.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label16.Name = "Label16";
-            this.Label16.Size = new System.Drawing.Size(53, 13);
+            this.Label16.Size = new System.Drawing.Size(79, 20);
             this.Label16.TabIndex = 192;
             this.Label16.Text = "A Credito:";
             // 
@@ -663,11 +688,12 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblventasefectivoGeneral.AutoSize = true;
             this.lblventasefectivoGeneral.BackColor = System.Drawing.Color.Transparent;
             this.lblventasefectivoGeneral.Enabled = false;
-            this.lblventasefectivoGeneral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblventasefectivoGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblventasefectivoGeneral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.lblventasefectivoGeneral.Location = new System.Drawing.Point(145, 46);
             this.lblventasefectivoGeneral.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblventasefectivoGeneral.Name = "lblventasefectivoGeneral";
-            this.lblventasefectivoGeneral.Size = new System.Drawing.Size(13, 13);
+            this.lblventasefectivoGeneral.Size = new System.Drawing.Size(18, 20);
             this.lblventasefectivoGeneral.TabIndex = 191;
             this.lblventasefectivoGeneral.Text = "0";
             // 
@@ -676,11 +702,12 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblventas_Tarjeta.AutoSize = true;
             this.lblventas_Tarjeta.BackColor = System.Drawing.Color.Transparent;
             this.lblventas_Tarjeta.Enabled = false;
-            this.lblventas_Tarjeta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblventas_Tarjeta.Location = new System.Drawing.Point(145, 76);
+            this.lblventas_Tarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblventas_Tarjeta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
+            this.lblventas_Tarjeta.Location = new System.Drawing.Point(144, 76);
             this.lblventas_Tarjeta.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblventas_Tarjeta.Name = "lblventas_Tarjeta";
-            this.lblventas_Tarjeta.Size = new System.Drawing.Size(13, 13);
+            this.lblventas_Tarjeta.Size = new System.Drawing.Size(18, 20);
             this.lblventas_Tarjeta.TabIndex = 191;
             this.lblventas_Tarjeta.Text = "0";
             // 
@@ -689,11 +716,12 @@ namespace Punto_de_venta.Presentacion.Caja
             this.lblVentasAcredito.AutoSize = true;
             this.lblVentasAcredito.BackColor = System.Drawing.Color.Transparent;
             this.lblVentasAcredito.Enabled = false;
-            this.lblVentasAcredito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblVentasAcredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVentasAcredito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
             this.lblVentasAcredito.Location = new System.Drawing.Point(145, 107);
             this.lblVentasAcredito.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblVentasAcredito.Name = "lblVentasAcredito";
-            this.lblVentasAcredito.Size = new System.Drawing.Size(13, 13);
+            this.lblVentasAcredito.Size = new System.Drawing.Size(18, 20);
             this.lblVentasAcredito.TabIndex = 191;
             this.lblVentasAcredito.Text = "0";
             // 
@@ -713,7 +741,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             // Panel4
             // 
-            this.Panel4.BackColor = System.Drawing.Color.White;
+            this.Panel4.BackColor = System.Drawing.Color.Black;
             this.Panel4.Location = new System.Drawing.Point(143, 138);
             this.Panel4.Name = "Panel4";
             this.Panel4.Size = new System.Drawing.Size(119, 1);
@@ -721,7 +749,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             // Panel3
             // 
-            this.Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.Panel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Panel3.Controls.Add(this.Panel4);
             this.Panel3.Controls.Add(this.lblVentasTotal);
@@ -748,7 +776,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.BtnCerrar_turno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCerrar_turno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCerrar_turno.ForeColor = System.Drawing.Color.White;
-            this.BtnCerrar_turno.Location = new System.Drawing.Point(474, 538);
+            this.BtnCerrar_turno.Location = new System.Drawing.Point(599, 538);
             this.BtnCerrar_turno.Name = "BtnCerrar_turno";
             this.BtnCerrar_turno.Size = new System.Drawing.Size(194, 57);
             this.BtnCerrar_turno.TabIndex = 613;
@@ -761,7 +789,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.ClientSize = new System.Drawing.Size(915, 639);
+            this.ClientSize = new System.Drawing.Size(805, 639);
             this.Controls.Add(this.BtnCerrar_turno);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.Panel3);
@@ -773,9 +801,9 @@ namespace Punto_de_venta.Presentacion.Caja
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Cierre_de_Caja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cierre de caja";
             this.Load += new System.EventHandler(this.Cierre_de_Caja_Load);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();

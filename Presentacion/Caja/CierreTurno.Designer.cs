@@ -49,13 +49,13 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             // lblanuncio
             // 
-            this.lblanuncio.BackColor = System.Drawing.Color.White;
+            this.lblanuncio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
             this.lblanuncio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblanuncio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(63)))), ((int)(((byte)(67)))));
-            this.lblanuncio.Location = new System.Drawing.Point(28, 513);
+            this.lblanuncio.Location = new System.Drawing.Point(16, 529);
             this.lblanuncio.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.lblanuncio.Name = "lblanuncio";
-            this.lblanuncio.Size = new System.Drawing.Size(342, 47);
+            this.lblanuncio.Size = new System.Drawing.Size(354, 51);
             this.lblanuncio.TabIndex = 621;
             this.lblanuncio.Text = "...";
             this.lblanuncio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,8 +71,8 @@ namespace Punto_de_venta.Presentacion.Caja
             this.BtnCerrar_turno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BtnCerrar_turno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCerrar_turno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCerrar_turno.ForeColor = System.Drawing.Color.White;
-            this.BtnCerrar_turno.Location = new System.Drawing.Point(101, 441);
+            this.BtnCerrar_turno.ForeColor = System.Drawing.Color.Black;
+            this.BtnCerrar_turno.Location = new System.Drawing.Point(101, 457);
             this.BtnCerrar_turno.Name = "BtnCerrar_turno";
             this.BtnCerrar_turno.Size = new System.Drawing.Size(194, 57);
             this.BtnCerrar_turno.TabIndex = 620;
@@ -109,6 +109,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.checkCorreo.Text = "Se enviara a:";
             this.checkCorreo.UseVisualStyleBackColor = true;
             this.checkCorreo.CheckedChanged += new System.EventHandler(this.checkCorreo_CheckedChanged);
+            this.checkCorreo.Click += new System.EventHandler(this.checkCorreo_Click);
             // 
             // lbldiferencia
             // 
@@ -192,19 +193,21 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             // htmldeEnvio
             // 
-            this.htmldeEnvio.Location = new System.Drawing.Point(150, 82);
+            this.htmldeEnvio.Location = new System.Drawing.Point(153, 96);
             this.htmldeEnvio.Multiline = true;
             this.htmldeEnvio.Name = "htmldeEnvio";
-            this.htmldeEnvio.Size = new System.Drawing.Size(256, 68);
+            this.htmldeEnvio.Size = new System.Drawing.Size(17, 10);
             this.htmldeEnvio.TabIndex = 622;
             this.htmldeEnvio.Text = resources.GetString("htmldeEnvio.Text");
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;            
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA1;
             this.pictureBox1.Location = new System.Drawing.Point(0, 38);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(408, 112);
+            this.pictureBox1.Size = new System.Drawing.Size(408, 147);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 610;
             this.pictureBox1.TabStop = false;
@@ -213,7 +216,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(408, 601);
             this.Controls.Add(this.lblanuncio);
             this.Controls.Add(this.BtnCerrar_turno);
@@ -230,8 +233,10 @@ namespace Punto_de_venta.Presentacion.Caja
             this.Controls.Add(this.label1);
             this.Controls.Add(this.htmldeEnvio);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CierreTurno";
-            this.Text = "CierreTurno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.CierreTurno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -252,8 +257,8 @@ namespace Punto_de_venta.Presentacion.Caja
         internal System.Windows.Forms.Label label2;
         internal System.Windows.Forms.Label lblDeberiaHaber;
         internal System.Windows.Forms.Label Label6;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox htmldeEnvio;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

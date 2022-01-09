@@ -28,7 +28,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
         string lblIDSERIALL;
         int idcajavariable;
         int idusuariovariable;
-        string Base_De_datos = "BASEADACURSO";
+        string Base_De_datos = "SistemaContable";
         string Servidor = @".\SQLEXPRESS";
         string ruta;
         string ResultadoLicencia;
@@ -49,6 +49,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
 
         private void DASHBOARD_PRINCIPAL_Load(object sender, EventArgs e)
         {
+            Panel4.Location = new Point((Width - Panel4.Width) / 2, (Height - Panel4.Height) / 2);
             validarLicencia();
             Bases.Obtener_serialPC(ref lblIDSERIALL);
             Obtener_datos.Obtener_id_caja_PorSerial(ref idcajavariable);
@@ -431,8 +432,6 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
                         BorraRestaura.ExecuteNonQuery();
                         MessageBox.Show("La base de datos ha sido restaurada satisfactoriamente! Vuelve a Iniciar El Aplicativo", "Restauración de base de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Dispose();
-
-
                     }
                     catch (Exception)
                     {
@@ -446,8 +445,6 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
                         }
 
                     }
-
-
                 }
             }
         }
@@ -463,8 +460,6 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
                 BorraRestaura.ExecuteNonQuery();
                 MessageBox.Show("La base de datos ha sido restaurada satisfactoriamente! Vuelve a Iniciar El Aplicativo", "Restauración de base de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Dispose();
-
-
             }
             catch (Exception)
             {
@@ -476,7 +471,6 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
                 {
                     cnn.Close();
                 }
-
             }
         }
 

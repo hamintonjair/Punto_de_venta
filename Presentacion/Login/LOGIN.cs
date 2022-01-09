@@ -178,10 +178,11 @@ namespace Punto_de_venta.Presentacion
             PanelRestaurarCuenta.Size = new System.Drawing.Size(538, 654);
             PanelUsuarios.Location = new Point((Width - PanelUsuarios.Width) / 2, (Height - PanelUsuarios.Height) / 2);
             panel3.Visible = true;
-            PanelIngreso_de_contraseña.Visible = false;        
+            PanelIngreso_de_contraseña.Visible = false;
+            panelRestaurarcontraseña.Dock = DockStyle.Fill;
             PdeCarga.Location = new Point((Width - PdeCarga.Width) / 2, (Height - PdeCarga.Height) / 2);
           
-            panelRestaurarcontraseña.Location = new Point((Width - panelRestaurarcontraseña.Width) / 2, (Height - panelRestaurarcontraseña.Height) / 2);
+            //panelRestaurarcontraseña.Location = new Point((Width - panelRestaurarcontraseña.Width) / 2, (Height - panelRestaurarcontraseña.Height) / 2);
             PanelIngreso_de_contraseña.Location = new Point((Width - PanelIngreso_de_contraseña.Width) / 2, (Height - PanelIngreso_de_contraseña.Height) / 2);
 
         }

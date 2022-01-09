@@ -184,7 +184,6 @@ namespace Punto_de_venta.Presentacion.Conexion_remota
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Caja_secundaria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Conexion_secundaria";
             this.Load += new System.EventHandler(this.Conexion_secundaria_Load);
             this.Panel3.ResumeLayout(false);
             this.Panel3.PerformLayout();

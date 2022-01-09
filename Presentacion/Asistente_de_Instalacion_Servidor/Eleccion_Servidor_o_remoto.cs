@@ -62,7 +62,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
         private void Button3_Click(object sender, EventArgs e)
         {
             Dispose();
-            Conexion_remota.Caja_secundaria frm = new Conexion_remota.Caja_secundaria();
+            Conexion_remota.Conexion_secundaria frm = new Conexion_remota.Conexion_secundaria();
             frm.ShowDialog();
         }
     }

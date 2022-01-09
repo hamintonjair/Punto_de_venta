@@ -68,6 +68,8 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
                         MessageBox.Show("!LISTO! RECUERDA que para Iniciar Sesión tu Usuario es: " + TXTUSUARIO.Text + " y tu Contraseña es: " + TXTCONTRASEÑA.Text, "Registro Exitoso", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                         Dispose();
                         //Application.Restart();
+                        Presentacion.LOGIN frm = new Presentacion.LOGIN();
+                        frm.ShowDialog();
                     }
                     catch (Exception ex)
                     {
@@ -128,14 +130,12 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
                 con.ConnectionString = ConexionDt.ConexionData.conexion;
                 con.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("insertar_cliente", con);
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd = new SqlCommand("insertar_clientes", con);
+                cmd.CommandType = CommandType.StoredProcedure;              
                 cmd.Parameters.AddWithValue("@Nombre", "GENERICO");
-                cmd.Parameters.AddWithValue("@Direccion_para_factura", 0);
-                cmd.Parameters.AddWithValue("@Ruc ", 0);
-                cmd.Parameters.AddWithValue("@movil", 0);
-                cmd.Parameters.AddWithValue("@Cliente", "NEUTRO");
-                cmd.Parameters.AddWithValue("@Proveedor","NEUTRO" );
+                cmd.Parameters.AddWithValue("@Direccion", 0);
+                cmd.Parameters.AddWithValue("@IdentificadorFiscal ", 0);
+                cmd.Parameters.AddWithValue("@Celular", 0);
                 cmd.Parameters.AddWithValue("@Estado ", 0);
                 cmd.Parameters.AddWithValue("@Saldo", 0);
                 cmd.ExecuteNonQuery();

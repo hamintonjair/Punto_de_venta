@@ -35,24 +35,25 @@ namespace Punto_de_venta.Presentacion.CorreoBase
             this.lblusuario = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
             this.MenuStrip15 = new System.Windows.Forms.MenuStrip();
+            this.tver = new System.Windows.Forms.ToolStripMenuItem();
+            this.tocultar = new System.Windows.Forms.ToolStripMenuItem();
             this.Panel5 = new System.Windows.Forms.Panel();
             this.Panel7 = new System.Windows.Forms.Panel();
             this.TXTCORREO = new System.Windows.Forms.TextBox();
             this.txtpass = new System.Windows.Forms.TextBox();
+            this.PictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnsincronizar = new System.Windows.Forms.Label();
             this.Panel6 = new System.Windows.Forms.Panel();
-            this.Label7 = new System.Windows.Forms.Label();
-            this.Label5 = new System.Windows.Forms.Label();
-            this.tver = new System.Windows.Forms.ToolStripMenuItem();
-            this.tocultar = new System.Windows.Forms.ToolStripMenuItem();
-            this.PictureBox2 = new System.Windows.Forms.PictureBox();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.PictureBox3 = new System.Windows.Forms.PictureBox();
+            this.Label7 = new System.Windows.Forms.Label();
+            this.Label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.Panel1.SuspendLayout();
             this.Panel4.SuspendLayout();
             this.MenuStrip15.SuspendLayout();
-            this.Panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
+            this.Panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -122,6 +123,31 @@ namespace Punto_de_venta.Presentacion.CorreoBase
             this.MenuStrip15.TabIndex = 607;
             this.MenuStrip15.Text = "MenuStrip15";
             // 
+            // tver
+            // 
+            this.tver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.tver.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.tver.ForeColor = System.Drawing.Color.Black;
+            this.tver.Image = ((System.Drawing.Image)(resources.GetObject("tver.Image")));
+            this.tver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tver.Name = "tver";
+            this.tver.Size = new System.Drawing.Size(28, 24);
+            this.tver.ToolTipText = "Ver contraseña";
+            this.tver.Click += new System.EventHandler(this.tver_Click);
+            // 
+            // tocultar
+            // 
+            this.tocultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.tocultar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.tocultar.ForeColor = System.Drawing.Color.Black;
+            this.tocultar.Image = ((System.Drawing.Image)(resources.GetObject("tocultar.Image")));
+            this.tocultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tocultar.Name = "tocultar";
+            this.tocultar.Size = new System.Drawing.Size(28, 24);
+            this.tocultar.ToolTipText = "Ocultar contraseña";
+            this.tocultar.Visible = false;
+            this.tocultar.Click += new System.EventHandler(this.tocultar_Click);
+            // 
             // Panel5
             // 
             this.Panel5.BackColor = System.Drawing.Color.LightGray;
@@ -162,6 +188,17 @@ namespace Punto_de_venta.Presentacion.CorreoBase
             this.txtpass.TabIndex = 604;
             this.txtpass.Text = "Contraseña";
             // 
+            // PictureBox2
+            // 
+            this.PictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
+            this.PictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.PictureBox2.Name = "PictureBox2";
+            this.PictureBox2.Size = new System.Drawing.Size(457, 199);
+            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox2.TabIndex = 0;
+            this.PictureBox2.TabStop = false;
+            // 
             // btnsincronizar
             // 
             this.btnsincronizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
@@ -175,6 +212,7 @@ namespace Punto_de_venta.Presentacion.CorreoBase
             this.btnsincronizar.TabIndex = 352;
             this.btnsincronizar.Text = "Sincronizar con Google";
             this.btnsincronizar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnsincronizar.Click += new System.EventHandler(this.btnsincronizar_Click);
             // 
             // Panel6
             // 
@@ -188,6 +226,28 @@ namespace Punto_de_venta.Presentacion.CorreoBase
             this.Panel6.Name = "Panel6";
             this.Panel6.Size = new System.Drawing.Size(543, 443);
             this.Panel6.TabIndex = 621;
+            // 
+            // PictureBox1
+            // 
+            this.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox1.Image")));
+            this.PictureBox1.Location = new System.Drawing.Point(28, 204);
+            this.PictureBox1.Name = "PictureBox1";
+            this.PictureBox1.Size = new System.Drawing.Size(497, 215);
+            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox1.TabIndex = 611;
+            this.PictureBox1.TabStop = false;
+            this.PictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
+            // 
+            // PictureBox3
+            // 
+            this.PictureBox3.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA2;
+            this.PictureBox3.Location = new System.Drawing.Point(211, 84);
+            this.PictureBox3.Name = "PictureBox3";
+            this.PictureBox3.Size = new System.Drawing.Size(118, 67);
+            this.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox3.TabIndex = 611;
+            this.PictureBox3.TabStop = false;
             // 
             // Label7
             // 
@@ -209,63 +269,20 @@ namespace Punto_de_venta.Presentacion.CorreoBase
             this.Label5.Size = new System.Drawing.Size(427, 72);
             this.Label5.TabIndex = 609;
             this.Label5.Text = "Para que puedas Recibir reportes en tu Correo deberas Sincronizar tu Cuenta Gmail" +
-    " con ADA 369";
+    " con Jojama";
             this.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tver
+            // label1
             // 
-            this.tver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.tver.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.tver.ForeColor = System.Drawing.Color.Black;
-            this.tver.Image = ((System.Drawing.Image)(resources.GetObject("tver.Image")));
-            this.tver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tver.Name = "tver";
-            this.tver.Size = new System.Drawing.Size(28, 24);
-            this.tver.ToolTipText = "Ver contraseña";
-            // 
-            // tocultar
-            // 
-            this.tocultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.tocultar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.tocultar.ForeColor = System.Drawing.Color.Black;
-            this.tocultar.Image = ((System.Drawing.Image)(resources.GetObject("tocultar.Image")));
-            this.tocultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tocultar.Name = "tocultar";
-            this.tocultar.Size = new System.Drawing.Size(28, 24);
-            this.tocultar.ToolTipText = "Ocultar contraseña";
-            this.tocultar.Visible = false;
-            // 
-            // PictureBox2
-            // 
-            this.PictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
-            this.PictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.PictureBox2.Name = "PictureBox2";
-            this.PictureBox2.Size = new System.Drawing.Size(457, 199);
-            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox2.TabIndex = 0;
-            this.PictureBox2.TabStop = false;
-            // 
-            // PictureBox1
-            // 
-            this.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox1.Image")));
-            this.PictureBox1.Location = new System.Drawing.Point(28, 204);
-            this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(497, 215);
-            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox1.TabIndex = 611;
-            this.PictureBox1.TabStop = false;
-            this.PictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
-            // 
-            // PictureBox3
-            // 
-            this.PictureBox3.Location = new System.Drawing.Point(225, 102);
-            this.PictureBox3.Name = "PictureBox3";
-            this.PictureBox3.Size = new System.Drawing.Size(74, 49);
-            this.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox3.TabIndex = 611;
-            this.PictureBox3.TabStop = false;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1008, 47);
+            this.label1.TabIndex = 625;
+            this.label1.Text = "Configurar Correo";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ConfigurarCorreo
             // 
@@ -273,16 +290,20 @@ namespace Punto_de_venta.Presentacion.CorreoBase
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
             this.ClientSize = new System.Drawing.Size(1008, 623);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ConfigurarCorreo";
-            this.Text = "ConfigurarCorreo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Panel1.ResumeLayout(false);
             this.Panel4.ResumeLayout(false);
             this.Panel4.PerformLayout();
             this.MenuStrip15.ResumeLayout(false);
             this.MenuStrip15.PerformLayout();
-            this.Panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
+            this.Panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox3)).EndInit();
             this.ResumeLayout(false);
@@ -309,5 +330,6 @@ namespace Punto_de_venta.Presentacion.CorreoBase
         internal System.Windows.Forms.PictureBox PictureBox3;
         internal System.Windows.Forms.Label Label7;
         internal System.Windows.Forms.Label Label5;
+        internal System.Windows.Forms.Label label1;
     }
 }

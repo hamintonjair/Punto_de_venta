@@ -267,6 +267,21 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
                 cmd.ExecuteNonQuery();
                 con.Close();
 
+                con.Open();
+                cmd = new SqlCommand("insertarCorreo", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                string correo;
+                string pass;
+                string estado;
+                correo = Bases.Encriptar("-");
+                pass = Bases.Encriptar("-");
+                estado = "Sin confirmar";
+                cmd.Parameters.AddWithValue("@Correo", correo);
+                cmd.Parameters.AddWithValue("@Password", pass);
+                cmd.Parameters.AddWithValue("@Estado_De_envio", estado);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
             }
             catch (Exception ex)
             {

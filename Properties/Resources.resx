@@ -121,11 +121,11 @@
   <data name="verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\verde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="negro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\negro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="money_dollar_cash_coins_riches_wealth_icon-icons.com_53585" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\money_dollar_cash_coins_riches_wealth_icon-icons.com_53585.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Coins_96x96-32_37900" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Coins_96x96-32_37900.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Captura de pantalla 2022-01-07 161543" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura de pantalla 2022-01-07 161543.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Caja_activa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Caja_activa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,8 +136,11 @@
   <data name="ios7-bell_icon-icons.com_50334" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ios7-bell_icon-icons.com_50334.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Caja_recien_creada" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Caja_recien_creada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="euro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\euro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="out_37478" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\out_37478.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="calendario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,8 +154,8 @@
   <data name="caja_eliminada" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\caja_eliminada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Rojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Rojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Coins_96x96-32_37900" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Coins_96x96-32_37900.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="azul1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\azul1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,8 +163,14 @@
   <data name="whatsappmessage_conversation_whatsap_7149" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\whatsappmessage_conversation_whatsap_7149.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="notificacion_BLACK2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\notificacion_BLACK2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Caja_recien_creada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Caja_recien_creada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Untitled Design (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Untitled Design (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Captura de pantalla 2022-01-07 072646" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura de pantalla 2022-01-07 072646.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="documentediting_editdocuments_text_documentedi_2820" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\documentediting_editdocuments_text_documentedi_2820.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,11 +187,17 @@
   <data name="trash_can_115312" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trash-can_115312.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="costo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\costo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="basedatoss" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\basedatoss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="searchmagnifierinterfacesymbol1_79893" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchmagnifierinterfacesymbol1_79893.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoJOJAMA1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoJOJAMA1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,11 +208,20 @@
   <data name="menuCajas_claro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menuCajas_claro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pagosicono" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pagosicono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="jugar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jugar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cobrosIcono" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cobrosIcono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="supermercado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\supermercado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="notificacion_BLACK2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notificacion_BLACK2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="naranja" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\naranja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,22 +229,10 @@
   <data name="Caja_eliminada_oficial" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Caja_eliminada_oficial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Untitled Design (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Untitled Design (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="negro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\negro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="money_dollar_cash_coins_riches_wealth_icon-icons.com_53585" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\money_dollar_cash_coins_riches_wealth_icon-icons.com_53585.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cobrosIcono" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cobrosIcono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="costo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\costo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="euro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\euro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pagosicono" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pagosicono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cards_finance_money_icon_197129" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards_finance_money_icon_197129.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

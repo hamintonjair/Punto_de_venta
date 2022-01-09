@@ -56,7 +56,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel21 = new System.Windows.Forms.Panel();
-            this.uI_TecladoBasico2 = new UIDC.UI_TecladoBasico();
             this.btnverMovimientosCaja = new System.Windows.Forms.Button();
             this.StatusStrip4 = new System.Windows.Forms.StatusStrip();
             this.btnINSVarios = new System.Windows.Forms.ToolStripButton();
@@ -281,7 +280,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.button7 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.uI_MaterialToggle1 = new UIDC.UI_MaterialToggle();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnespera = new System.Windows.Forms.Button();
             this.btnrestaurar = new System.Windows.Forms.Button();
@@ -365,7 +363,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // Panel21
             // 
             this.Panel21.BackColor = System.Drawing.Color.White;
-            this.Panel21.Controls.Add(this.uI_TecladoBasico2);
             this.Panel21.Controls.Add(this.btnverMovimientosCaja);
             this.Panel21.Controls.Add(this.StatusStrip4);
             this.Panel21.Controls.Add(this.BtnCerrar_turno);
@@ -375,28 +372,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.Panel21.Name = "Panel21";
             this.Panel21.Size = new System.Drawing.Size(1486, 56);
             this.Panel21.TabIndex = 598;
-            // 
-            // uI_TecladoBasico2
-            // 
-            this.uI_TecladoBasico2.AddControl = null;
-            this.uI_TecladoBasico2.BackColor = System.Drawing.Color.White;
-            this.uI_TecladoBasico2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uI_TecladoBasico2.FlatAppearance.BorderSize = 0;
-            this.uI_TecladoBasico2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uI_TecladoBasico2.FocusedActive = UIDC.UI_TecladoBasico._Focused.Inactive;
-            this.uI_TecladoBasico2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uI_TecladoBasico2.IconKeyBoardColor = System.Drawing.SystemColors.ControlText;
-            this.uI_TecladoBasico2.IconKeyBoardSize = 20;
-            this.uI_TecladoBasico2.IntervalShow = 5;
-            this.uI_TecladoBasico2.Location = new System.Drawing.Point(640, 11);
-            this.uI_TecladoBasico2.Mode = UIDC.UI_TecladoBasico.SEE.Claro;
-            this.uI_TecladoBasico2.ModeActive = UIDC.UI_TecladoBasico.ColourActive.None;
-            this.uI_TecladoBasico2.Name = "uI_TecladoBasico2";
-            this.uI_TecladoBasico2.Size = new System.Drawing.Size(166, 39);
-            this.uI_TecladoBasico2.TabIndex = 637;
-            this.uI_TecladoBasico2.Text = "Teclado Virtual";
-            this.uI_TecladoBasico2.TypeKeyBoard = UIDC.UI_TecladoBasico.Tec.KeyBoard;
-            this.uI_TecladoBasico2.UseVisualStyleBackColor = false;
             // 
             // btnverMovimientosCaja
             // 
@@ -3403,7 +3378,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // panel6
             // 
             this.panel6.Controls.Add(this.label1);
-            this.panel6.Controls.Add(this.uI_MaterialToggle1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(1365, 0);
             this.panel6.Name = "panel6";
@@ -3421,18 +3395,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.label1.TabIndex = 1;
             this.label1.Text = "Tema Oscuro";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // uI_MaterialToggle1
-            // 
-            this.uI_MaterialToggle1.AutoSize = true;
-            this.uI_MaterialToggle1.EllipseBorderColor = "#3b73d1";
-            this.uI_MaterialToggle1.EllipseColor = "#508ef5";
-            this.uI_MaterialToggle1.Location = new System.Drawing.Point(59, 16);
-            this.uI_MaterialToggle1.Name = "uI_MaterialToggle1";
-            this.uI_MaterialToggle1.Size = new System.Drawing.Size(47, 19);
-            this.uI_MaterialToggle1.TabIndex = 0;
-            this.uI_MaterialToggle1.Text = "uI_MaterialToggle1";
-            this.uI_MaterialToggle1.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
@@ -3623,6 +3585,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.button1.Text = "Cobros";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // PanelEnespera
             // 
@@ -3726,6 +3689,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // dataGridViewImageColumn2
@@ -3742,6 +3706,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.dataGridViewImageColumn2.Image = global::Punto_de_venta.Properties.Resources.trash_can_115312;
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn2.ToolTipText = "Opcional \"Supr\" para Eliminar";
             this.dataGridViewImageColumn2.Width = 297;
@@ -3839,7 +3804,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.panel1.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panelBienvenida.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -4069,7 +4033,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;
-        private UIDC.UI_MaterialToggle uI_MaterialToggle1;
+        //private UIDC.UI_MaterialToggle uI_MaterialToggle1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnespera;
         private System.Windows.Forms.Button btnrestaurar;
@@ -4079,7 +4043,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label15;
-        private UIDC.UI_TecladoBasico uI_TecladoBasico2;
+        //private UIDC.UI_TecladoBasico uI_TecladoBasico2;
         internal System.Windows.Forms.Button btnverMovimientosCaja;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCreditoPagar;

@@ -109,6 +109,20 @@ namespace Punto_de_venta.Logica
             styCabeceras.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             List.ColumnHeadersDefaultCellStyle = styCabeceras;
         }
+        public void MultilineaCobros2(ref DataGridView List)
+        {
+            List.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            List.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            List.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            List.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+            List.EnableHeadersVisualStyles = false;
+            DataGridViewCellStyle styCabeceras = new DataGridViewCellStyle();
+            styCabeceras.BackColor = System.Drawing.Color.FromArgb(39, 39, 39);
+            styCabeceras.ForeColor = System.Drawing.Color.White;
+            styCabeceras.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            List.ColumnHeadersDefaultCellStyle = styCabeceras;
+        }
         public static string Encriptar(string texto)
         {
             try

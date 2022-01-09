@@ -47,19 +47,19 @@ namespace Punto_de_venta.Presentacion.Conexion_remota
                 conexionManual.Open();
                 SqlCommand da = new SqlCommand("select idUsuario from USUARIO2", conexionManual);
                 id = Convert.ToInt32(da.ExecuteScalar());
-                indicador_de_conexion = "HAY CONEXION";
+                indicador_de_conexion = "Hay Conexion";
             }
             catch (Exception)
             {
-                indicador_de_conexion = "NO HAY CONEXION";
+                indicador_de_conexion = "No Hay Conexion";
             }
         }
         private void conectar_manualmente()
         {
             string IP = txtIp.Text;
-            cadena_de_conexion = "Data Source =" + IP + ";Initial Catalog=BASEADACURSO;Integrated Security=False;User Id=pruebas2020;Password=pruebas123";
+            cadena_de_conexion = "Data Source =" + IP + ";Initial Catalog=SistemaContable;Integrated Security=False;User Id=pruebas2021;Password=pruebas123";
             comprobar_conexion();
-            if (indicador_de_conexion == "HAY CONEXION")
+            if (indicador_de_conexion == "Hay Conexion")
             {
                 SavetoXML(aes.Encrypt(cadena_de_conexion, Desencryptacion.appPwdUnique, int.Parse("256")));
                 obtenerIdCaja();
@@ -106,6 +106,11 @@ namespace Punto_de_venta.Presentacion.Conexion_remota
             writer.Formatting = Formatting.Indented;
             doc.Save(writer);
             writer.Close();
+        }
+
+        private void Conexion_secundaria_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

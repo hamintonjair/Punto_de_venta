@@ -111,7 +111,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel8.Location = new System.Drawing.Point(0, 0);
             this.Panel8.Name = "Panel8";
-            this.Panel8.Size = new System.Drawing.Size(1077, 86);
+            this.Panel8.Size = new System.Drawing.Size(1189, 86);
             this.Panel8.TabIndex = 591;
             // 
             // Panel3
@@ -132,9 +132,9 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel3.Controls.Add(this.lblBasededatos);
             this.Panel3.Controls.Add(this.Label6);
             this.Panel3.Controls.Add(this.Label8);
-            this.Panel3.Location = new System.Drawing.Point(308, 22);
+            this.Panel3.Location = new System.Drawing.Point(299, 45);
             this.Panel3.Name = "Panel3";
-            this.Panel3.Size = new System.Drawing.Size(10, 10);
+            this.Panel3.Size = new System.Drawing.Size(19, 10);
             this.Panel3.TabIndex = 621;
             // 
             // GroupBox6
@@ -165,7 +165,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(134, 20);
             this.txtusuario.TabIndex = 637;
-            this.txtusuario.Text = "jojama";
+            this.txtusuario.Text = "pruebas2021";
             // 
             // Label15
             // 
@@ -340,7 +340,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // 
             this.txtnombre_scrypt.Location = new System.Drawing.Point(144, 144);
             this.txtnombre_scrypt.Name = "txtnombre_scrypt";
-            this.txtnombre_scrypt.Size = new System.Drawing.Size(79, 20);
+            this.txtnombre_scrypt.Size = new System.Drawing.Size(134, 20);
             this.txtnombre_scrypt.TabIndex = 621;
             this.txtnombre_scrypt.Text = "ScriptSistemaContable";
             // 
@@ -358,7 +358,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.lblcontraseña.Name = "lblcontraseña";
             this.lblcontraseña.Size = new System.Drawing.Size(134, 20);
             this.lblcontraseña.TabIndex = 621;
-            this.lblcontraseña.Text = "Johanjair01";
+            this.lblcontraseña.Text = "pruebas123";
             // 
             // lblnombredeservicio
             // 
@@ -373,7 +373,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // 
             this.Label11.AutoSize = true;
             this.Label11.ForeColor = System.Drawing.Color.White;
-            this.Label11.Location = new System.Drawing.Point(229, 147);
+            this.Label11.Location = new System.Drawing.Point(287, 147);
             this.Label11.Name = "Label11";
             this.Label11.Size = new System.Drawing.Size(27, 13);
             this.Label11.TabIndex = 618;
@@ -441,7 +441,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.lblwindows.BackColor = System.Drawing.Color.Transparent;
             this.lblwindows.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblwindows.ForeColor = System.Drawing.Color.White;
-            this.lblwindows.Location = new System.Drawing.Point(664, 0);
+            this.lblwindows.Location = new System.Drawing.Point(776, 0);
             this.lblwindows.Name = "lblwindows";
             this.lblwindows.Size = new System.Drawing.Size(413, 86);
             this.lblwindows.TabIndex = 607;
@@ -673,7 +673,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(1077, 685);
+            this.ClientSize = new System.Drawing.Size(1189, 685);
             this.Controls.Add(this.Panel2);
             this.Controls.Add(this.Panel8);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

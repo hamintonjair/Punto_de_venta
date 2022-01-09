@@ -12,7 +12,7 @@ using Punto_de_venta.Datos;
 namespace Punto_de_venta.Datos
 {
   public  class Insertar_datos
-    {
+  {
         int idcaja;
         int idusuario;
         public static bool insertar_Conceptos(string descripcion)

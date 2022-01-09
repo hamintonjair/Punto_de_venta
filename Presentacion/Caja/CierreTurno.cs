@@ -35,7 +35,7 @@ namespace Punto_de_venta.Presentacion.Caja
         private void cerrarCaja()
         {
 
-            Obtener_datos.mostrar_inicio_De_sesion(ref idusuario);
+            Obtener_datos.mostrar_inicio_De_sesion2(ref idusuario);
             Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
 
             Lmcaja parametros = new Lmcaja();
@@ -75,10 +75,19 @@ namespace Punto_de_venta.Presentacion.Caja
                 txtcorreo.Text = correoReceptor;
             }
         }
+        private void checkCorreo_Click(object sender, EventArgs e)
+        {
+            if (estado != "Sincronizado")
+            {
+                Presentacion.CorreoBase.ConfigurarCorreo frm = new Presentacion.CorreoBase.ConfigurarCorreo();
+                frm.FormClosing += Frm_FormClosing;
+                frm.ShowDialog();
+            }
+        }
         private void mostrarCorreoBase()
         {
             DataTable dt = new DataTable();
-            Obtener_datos.mostrarCorreoBase(ref dt);
+            Obtener_datos.mostrarCorreo(ref dt);
             foreach (DataRow row in dt.Rows)
             {
                 estado = Bases.Desencriptar(row["EstadoEnvio"].ToString());
@@ -107,7 +116,7 @@ namespace Punto_de_venta.Presentacion.Caja
             }
             if (resultado < dinerocalculado & resultado != 0)
             {
-                lblanuncio.Text = "La diferencia sera Registrada en su Turno y se enviara a Gerencia";
+                lblanuncio.Text = "La diferencia será Registrada en su Turno y se enviará a Gerencia";
                 lblanuncio.ForeColor = Color.FromArgb(231, 63, 67);
                 lbldiferencia.ForeColor = Color.FromArgb(231, 63, 67);
                 lblanuncio.Visible = true;
@@ -115,7 +124,7 @@ namespace Punto_de_venta.Presentacion.Caja
             }
             if (resultado > dinerocalculado)
             {
-                lblanuncio.Text = "La diferencia sera Registrada en su Turno y se enviara a Gerencia";
+                lblanuncio.Text = "La diferencia será Registrada en su Turno y se enviará a Gerencia";
                 lblanuncio.ForeColor = Color.FromArgb(231, 63, 67);
                 lbldiferencia.ForeColor = Color.FromArgb(231, 63, 67);
                 lblanuncio.Visible = true;
@@ -137,30 +146,25 @@ namespace Punto_de_venta.Presentacion.Caja
             }
             catch (Exception)
             {
-
-
             }
         }
-
         private void enviarcorreo()
         {
             if (checkCorreo.Checked == true)
             {
                 ReemplazarHtml();
                 bool estado;
-                estado = Bases.enviarCorreo(correobase, contraseña, htmldeEnvio.Text, "Cierre de caja ada369", txtcorreo.Text, "");
+                estado = Bases.enviarCorreo(correobase, contraseña, htmldeEnvio.Text, "Cierre de caja jojama", txtcorreo.Text, "");
                 if (estado == true)
                 {
                     MessageBox.Show("Reporte de cierre de caja enviado");
                     generarCopiaBd();
-
                 }
                 else
                 {
-                    MessageBox.Show("Error de envio al correo");
+                    MessageBox.Show("Error de envío al correo");
                     generarCopiaBd();
                 }
-
             }
             else
             {
@@ -196,13 +200,7 @@ namespace Punto_de_venta.Presentacion.Caja
         }
 
         private void checkCorreo_CheckedChanged(object sender, EventArgs e)
-        {
-            if (estado != "Sincronizado")
-            {
-                Presentacion.CorreoBase.ConfigurarCorreo frm = new Presentacion.CorreoBase.ConfigurarCorreo();
-                frm.FormClosing += Frm_FormClosing;
-                frm.ShowDialog();
-            }
+        {           
         }
         private void Frm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -226,6 +224,6 @@ namespace Punto_de_venta.Presentacion.Caja
             mostrarCorreoBase();
             mostrarcorreodeEnvio();
             mostrarUsuarioSesion();
-        }
+        }       
     }
 }

@@ -37,13 +37,15 @@ namespace Punto_de_venta.Presentacion
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.panelRestaurarcontraseña = new System.Windows.Forms.Panel();
-            this.txtcorreo = new System.Windows.Forms.ComboBox();
-            this.btncerrar = new System.Windows.Forms.Button();
-            this.btnenviar = new System.Windows.Forms.Button();
-            this.Panel12 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.txtcorreo = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btncerrar = new System.Windows.Forms.Button();
+            this.Panel12 = new System.Windows.Forms.Panel();
+            this.btnenviar = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.PanelIngreso_de_contraseña = new System.Windows.Forms.Panel();
             this.lblestadoLicencias = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -112,6 +114,8 @@ namespace Punto_de_venta.Presentacion
             this.PanelUsuarios.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panelRestaurarcontraseña.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.PanelIngreso_de_contraseña.SuspendLayout();
             this.panel3.SuspendLayout();
             this.MenuStrip15.SuspendLayout();
@@ -193,18 +197,50 @@ namespace Punto_de_venta.Presentacion
             // 
             this.panelRestaurarcontraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelRestaurarcontraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.panelRestaurarcontraseña.Controls.Add(this.txtcorreo);
-            this.panelRestaurarcontraseña.Controls.Add(this.btncerrar);
-            this.panelRestaurarcontraseña.Controls.Add(this.btnenviar);
-            this.panelRestaurarcontraseña.Controls.Add(this.Panel12);
+            this.panelRestaurarcontraseña.Controls.Add(this.pictureBox2);
+            this.panelRestaurarcontraseña.Controls.Add(this.panel1);
             this.panelRestaurarcontraseña.Controls.Add(this.label9);
-            this.panelRestaurarcontraseña.Controls.Add(this.label10);
-            this.panelRestaurarcontraseña.Controls.Add(this.label11);
-            this.panelRestaurarcontraseña.Location = new System.Drawing.Point(944, 193);
+            this.panelRestaurarcontraseña.Location = new System.Drawing.Point(944, 300);
             this.panelRestaurarcontraseña.Name = "panelRestaurarcontraseña";
-            this.panelRestaurarcontraseña.Size = new System.Drawing.Size(449, 375);
+            this.panelRestaurarcontraseña.Size = new System.Drawing.Size(429, 279);
             this.panelRestaurarcontraseña.TabIndex = 618;
             this.panelRestaurarcontraseña.Visible = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA1;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(148, 112);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 618;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.txtcorreo);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.btncerrar);
+            this.panel1.Controls.Add(this.Panel12);
+            this.panel1.Controls.Add(this.btnenviar);
+            this.panel1.Location = new System.Drawing.Point(66, 249);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(295, 304);
+            this.panel1.TabIndex = 617;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(71, 25);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(138, 20);
+            this.label11.TabIndex = 602;
+            this.label11.Text = "Correo electronico";
             // 
             // txtcorreo
             // 
@@ -212,10 +248,22 @@ namespace Punto_de_venta.Presentacion
             this.txtcorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtcorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcorreo.FormattingEnabled = true;
-            this.txtcorreo.Location = new System.Drawing.Point(177, 119);
+            this.txtcorreo.Location = new System.Drawing.Point(17, 56);
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(259, 26);
             this.txtcorreo.TabIndex = 616;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label10.Location = new System.Drawing.Point(54, 88);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(179, 15);
+            this.label10.TabIndex = 602;
+            this.label10.Text = "Con el que registraste tu cuenta";
             // 
             // btncerrar
             // 
@@ -225,13 +273,21 @@ namespace Punto_de_venta.Presentacion
             this.btncerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncerrar.ForeColor = System.Drawing.Color.White;
-            this.btncerrar.Location = new System.Drawing.Point(258, 288);
+            this.btncerrar.Location = new System.Drawing.Point(98, 225);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(98, 35);
             this.btncerrar.TabIndex = 614;
             this.btncerrar.Text = "Cerrar";
             this.btncerrar.UseVisualStyleBackColor = false;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            // 
+            // Panel12
+            // 
+            this.Panel12.BackColor = System.Drawing.Color.Silver;
+            this.Panel12.Location = new System.Drawing.Point(17, 84);
+            this.Panel12.Name = "Panel12";
+            this.Panel12.Size = new System.Drawing.Size(259, 1);
+            this.Panel12.TabIndex = 604;
             // 
             // btnenviar
             // 
@@ -241,21 +297,13 @@ namespace Punto_de_venta.Presentacion
             this.btnenviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnenviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnenviar.ForeColor = System.Drawing.Color.White;
-            this.btnenviar.Location = new System.Drawing.Point(177, 183);
+            this.btnenviar.Location = new System.Drawing.Point(17, 120);
             this.btnenviar.Name = "btnenviar";
             this.btnenviar.Size = new System.Drawing.Size(259, 35);
             this.btnenviar.TabIndex = 614;
             this.btnenviar.Text = "Enviar";
             this.btnenviar.UseVisualStyleBackColor = false;
             this.btnenviar.Click += new System.EventHandler(this.btnenviar_Click_1);
-            // 
-            // Panel12
-            // 
-            this.Panel12.BackColor = System.Drawing.Color.Silver;
-            this.Panel12.Location = new System.Drawing.Point(177, 147);
-            this.Panel12.Name = "Panel12";
-            this.Panel12.Size = new System.Drawing.Size(259, 1);
-            this.Panel12.TabIndex = 604;
             // 
             // label9
             // 
@@ -265,34 +313,10 @@ namespace Punto_de_venta.Presentacion
             this.label9.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(449, 59);
+            this.label9.Size = new System.Drawing.Size(429, 227);
             this.label9.TabIndex = 602;
             this.label9.Text = "Restaurar Contraseña";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label10.Location = new System.Drawing.Point(214, 151);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(179, 15);
-            this.label10.TabIndex = 602;
-            this.label10.Text = "Con el que registraste tu cuenta";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(231, 88);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(138, 20);
-            this.label11.TabIndex = 602;
-            this.label11.Text = "Correo electronico";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // PanelIngreso_de_contraseña
             // 
@@ -1235,7 +1259,9 @@ namespace Punto_de_venta.Presentacion
             this.PanelUsuarios.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panelRestaurarcontraseña.ResumeLayout(false);
-            this.panelRestaurarcontraseña.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.PanelIngreso_de_contraseña.ResumeLayout(false);
             this.PanelIngreso_de_contraseña.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1343,5 +1369,7 @@ namespace Punto_de_venta.Presentacion
         private System.Windows.Forms.Label LBLESTADOLicenciaLocal;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Timer timerValidarRol;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

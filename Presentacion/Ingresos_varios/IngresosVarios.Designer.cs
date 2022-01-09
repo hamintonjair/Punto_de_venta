@@ -302,6 +302,7 @@ namespace Punto_de_venta.Presentacion.Ingresos_varios
             this.Controls.Add(this.lbltipo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "IngresosVarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IngresosVarios";

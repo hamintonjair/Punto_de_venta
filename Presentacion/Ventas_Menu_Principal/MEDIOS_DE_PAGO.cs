@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 using Telerik.Reporting.Processing;
+using Punto_de_venta.Logica;
+using Punto_de_venta.Datos;
 
 namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 {
@@ -705,21 +707,18 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         }
         void buscarclientes2()
         {
-            DataTable dt = new DataTable();
-
+           
             try
-            {
-                ConexionDt.ConexionData.abrir();
-                SqlDataAdapter da = new SqlDataAdapter("buscar_cliente_POR_nombre_PARA_VENTAS_todos", ConexionDt.ConexionData.conectar);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@letra", txtclientesolicitabnte2.Text);
-                da.Fill(dt);
+            {        
+
+                DataTable dt = new DataTable();
+                Obtener_datos.buscar_clientes(ref dt, txtclientesolicitabnte2.Text);
                 datalistadoclientes2.DataSource = dt;
-                datalistadoclientes2.Columns[2].Visible = false;
+                datalistadoclientes2.Columns[1].Visible = false;
                 datalistadoclientes2.Columns[3].Visible = false;
                 datalistadoclientes2.Columns[4].Visible = false;
                 datalistadoclientes2.Columns[5].Visible = false;
-                datalistadoclientes2.Columns[1].Width = 420;
+                datalistadoclientes2.Columns[2].Width = 420;
                 ConexionDt.ConexionData.cerrar();
             }
             catch (Exception ex)
@@ -730,8 +729,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         private void datalistadoclientes2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtclientesolicitabnte2.Text = datalistadoclientes2.SelectedCells[1].Value.ToString();
-            idcliente = Convert.ToInt32(datalistadoclientes2.SelectedCells[2].Value.ToString());
+            txtclientesolicitabnte2.Text = datalistadoclientes2.SelectedCells[2].Value.ToString();
+            idcliente = Convert.ToInt32(datalistadoclientes2.SelectedCells[1].Value.ToString());
             datalistadoclientes2.Visible = false;
         }
 
@@ -752,52 +751,51 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            insertar_cliente();
+            if (!string.IsNullOrEmpty(txtnombrecliente.Text))
+            {
+                rellenarCamposVacios();
+                insertar();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un nombre", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            limpiar();
+        
             PanelregistroClientes.Visible = false;
         }
-        void insertar_cliente()
+        private void limpiar()
         {
-            if (txtnombrecliente.Text != "")
-            {
-
-                if (txtdirecciondefactura.Text == "")
-                {
-                    txtdirecciondefactura.Text = "0";
-                }
-                if (txtrucdefactura.Text == "")
-                {
-                    txtrucdefactura.Text = "0";
-                }
-                if (txtcelular.Text == "")
-                {
-                    txtcelular.Text = "0";
-                }
-                try
-                {
-                    SqlConnection con = new SqlConnection();
-                    con.ConnectionString = ConexionDt.ConexionData.conexion;
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd = new SqlCommand("insertar_cliente", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Nombre", txtnombrecliente.Text);
-                    cmd.Parameters.AddWithValue("@Direccion_para_factura", txtdirecciondefactura.Text);
-                    cmd.Parameters.AddWithValue("@Ruc", txtrucdefactura.Text);
-                    cmd.Parameters.AddWithValue("@movil", txtcelular.Text);
-                    cmd.Parameters.AddWithValue("@Cliente", "SI");
-                    cmd.Parameters.AddWithValue("@Proveedor", "NO");
-                    cmd.Parameters.AddWithValue("@Estado", "ACTIVO");
-                    cmd.Parameters.AddWithValue("@Saldo", 0);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
+            txtnombrecliente.Clear();
+            txtrucdefactura.Clear();
+            txtcelular.Clear();
+            txtdirecciondefactura.Clear();
+            txtnombrecliente.Focus();
+          
         }
+        private void rellenarCamposVacios()
+        {
+            if (string.IsNullOrEmpty(txtcelular.Text)) { txtcelular.Text = "-"; };
+            if (string.IsNullOrEmpty(txtdirecciondefactura.Text)) { txtdirecciondefactura.Text = "-"; };
+            if (string.IsNullOrEmpty(txtrucdefactura.Text)) { txtrucdefactura.Text = "-"; };
+
+        }
+        private void insertar()
+        {
+            Lclientes parametros = new Lclientes();
+            Insertar_datos funcion = new Insertar_datos();
+            parametros.Nombre = txtnombrecliente.Text;
+            parametros.IdentificadorFiscal = txtrucdefactura.Text;
+            parametros.Celular = txtcelular.Text;
+            parametros.Direccion = txtdirecciondefactura.Text;
+            if (funcion.insertar_clientes(parametros) == true)
+            {
+              
+            }
+
+        }
+
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
@@ -847,19 +845,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
         }
 
-        private void TGuardarSinImprimir_Click(object sender, EventArgs e)
-        {
-            if (restante == 0)
-            {
-                indicador = "VISTA PREVIA";
-                identificar_el_tipo_de_pago();
-                INGRESAR_LOS_DATOS();
-            }
-            else
-            {
-                MessageBox.Show("El restante debe ser 0", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
+       
         void INGRESAR_LOS_DATOS()
         {
             CONVERTIR_TOTAL_A_LETRAS();
@@ -897,7 +883,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         }
         void MOSTRAR_cliente_standar()
         {
-            SqlCommand com = new SqlCommand("select idclientev from clientes where Cliente = 'NEUTRO'", ConexionDt.ConexionData.conectar);
+            SqlCommand com = new SqlCommand("select idclientev from clientes where Estado = 0", ConexionDt.ConexionData.conectar);
             try
             {
                 ConexionDt.ConexionData.abrir();
@@ -1230,8 +1216,66 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 MessageBox.Show(ex.Message);
             }
         }
+       
+        void editar_eleccion_de_impresora()
+        {
+            try
+            {
+                ConexionDt.ConexionData.abrir();
+                SqlCommand cmd = new SqlCommand("editar_eleccion_impresoras", ConexionDt.ConexionData.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Impresora_Ticket", txtImpresora.Text);
+                cmd.Parameters.AddWithValue("@idcaja", Ventas_Menu_Princi.Id_caja);
+                cmd.ExecuteNonQuery();
+                ConexionDt.ConexionData.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
 
-        private void btnGuardarImprimirdirecto_Click(object sender, EventArgs e)
+        private void txtclientesolicitabnte3_TextChanged(object sender, EventArgs e)
+        {
+            buscarclientes3();
+            datalistadoclientes3.Visible = true;
+        }
+        void buscarclientes3()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                Obtener_datos.buscar_clientes(ref dt, txtclientesolicitabnte3.Text);
+                datalistadoclientes3.DataSource = dt;
+                datalistadoclientes2.Columns[1].Visible = false;
+                datalistadoclientes2.Columns[3].Visible = false;
+                datalistadoclientes2.Columns[4].Visible = false;
+                datalistadoclientes2.Columns[5].Visible = false;
+                datalistadoclientes2.Columns[2].Width = 420;
+                ConexionDt.ConexionData.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void datalistadoclientes3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtclientesolicitabnte2.Text = datalistadoclientes2.SelectedCells[2].Value.ToString();
+            idcliente = Convert.ToInt32(datalistadoclientes2.SelectedCells[1].Value.ToString());
+            datalistadoclientes2.Visible = false;
+        }
+
+        private void ToolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+            PanelregistroClientes.Visible = true;
+            PanelregistroClientes.Dock = DockStyle.Fill;
+            PanelregistroClientes.BringToFront();
+            limpiar_datos_de_registrodeclientes();
+        }
+
+        private void btnGuardarImprimirdirecto_Click_1(object sender, EventArgs e)
         {
             if (restante == 0)
             {
@@ -1252,21 +1296,22 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 MessageBox.Show("El restante debe ser 0", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-        void editar_eleccion_de_impresora()
+
+        private void TGuardarSinImprimir_Click_1(object sender, EventArgs e)
         {
-            try
+            ProcesoVerenpantalla();
+        }
+        private void ProcesoVerenpantalla()
+        {
+            if (restante == 0)
             {
-                ConexionDt.ConexionData.abrir();
-                SqlCommand cmd = new SqlCommand("editar_eleccion_impresoras", ConexionDt.ConexionData.conectar);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Impresora_Ticket", txtImpresora.Text);
-                cmd.Parameters.AddWithValue("@idcaja", Ventas_Menu_Princi.Id_caja);
-                cmd.ExecuteNonQuery();
-                ConexionDt.ConexionData.cerrar();
+                indicador = "VISTA PREVIA";
+                identificar_el_tipo_de_pago();
+                INGRESAR_LOS_DATOS();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show("El restante debe ser 0", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

@@ -213,6 +213,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
             this.datalistadoventas_nuevasok = new System.Windows.Forms.DataGridView();
             this.DataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Panel4 = new System.Windows.Forms.Panel();
+            this.btnLicencia = new System.Windows.Forms.Button();
             this.PanelLicencia = new System.Windows.Forms.Panel();
             this.lblestadoLicencia = new System.Windows.Forms.Label();
             this.PictureBox16 = new System.Windows.Forms.PictureBox();
@@ -439,7 +440,6 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
             this.Label72 = new System.Windows.Forms.Label();
             this.dlg = new System.Windows.Forms.OpenFileDialog();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnLicencia = new System.Windows.Forms.Button();
             this.Panel5.SuspendLayout();
             this.Panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox18)).BeginInit();
@@ -548,7 +548,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
             this.Panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel5.Location = new System.Drawing.Point(0, 0);
             this.Panel5.Name = "Panel5";
-            this.Panel5.Size = new System.Drawing.Size(1189, 65);
+            this.Panel5.Size = new System.Drawing.Size(1283, 65);
             this.Panel5.TabIndex = 539;
             // 
             // Panel14
@@ -559,7 +559,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
             this.Panel14.Controls.Add(this.PictureBox18);
             this.Panel14.Controls.Add(this.ImagenEmpresaTRUE);
             this.Panel14.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Panel14.Location = new System.Drawing.Point(1006, 0);
+            this.Panel14.Location = new System.Drawing.Point(1100, 0);
             this.Panel14.Name = "Panel14";
             this.Panel14.Size = new System.Drawing.Size(183, 65);
             this.Panel14.TabIndex = 599;
@@ -627,7 +627,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(268, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(921, 65);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1015, 65);
             this.flowLayoutPanel1.TabIndex = 638;
             // 
             // button4
@@ -2395,10 +2395,29 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
             this.Panel4.Controls.Add(this.Panel20);
             this.Panel4.Controls.Add(this.Panel18);
             this.Panel4.Controls.Add(this.Panel23);
-            this.Panel4.Location = new System.Drawing.Point(26, 71);
+            this.Panel4.Location = new System.Drawing.Point(24, 99);
             this.Panel4.Name = "Panel4";
             this.Panel4.Size = new System.Drawing.Size(1181, 673);
             this.Panel4.TabIndex = 540;
+            // 
+            // btnLicencia
+            // 
+            this.btnLicencia.BackColor = System.Drawing.Color.Transparent;
+            this.btnLicencia.BackgroundImage = global::Punto_de_venta.Properties.Resources.azul;
+            this.btnLicencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLicencia.FlatAppearance.BorderSize = 0;
+            this.btnLicencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnLicencia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLicencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLicencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLicencia.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLicencia.Location = new System.Drawing.Point(414, 135);
+            this.btnLicencia.Name = "btnLicencia";
+            this.btnLicencia.Size = new System.Drawing.Size(175, 42);
+            this.btnLicencia.TabIndex = 604;
+            this.btnLicencia.Text = "Activar Licencia";
+            this.btnLicencia.UseVisualStyleBackColor = false;
+            this.btnLicencia.Click += new System.EventHandler(this.btnLicencia_Click);
             // 
             // PanelLicencia
             // 
@@ -2527,9 +2546,9 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
             this.Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Panel1.BackgroundImage")));
             this.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Panel1.Controls.Add(this.panel29);
-            this.Panel1.Location = new System.Drawing.Point(663, 185);
+            this.Panel1.Location = new System.Drawing.Point(665, 185);
             this.Panel1.Name = "Panel1";
-            this.Panel1.Size = new System.Drawing.Size(488, 369);
+            this.Panel1.Size = new System.Drawing.Size(491, 369);
             this.Panel1.TabIndex = 534;
             // 
             // panel29
@@ -3582,9 +3601,9 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
             this.Panel17.Controls.Add(this.MenuStrip6);
             this.Panel17.Controls.Add(this.Label6);
             this.Panel17.Controls.Add(this.Label32);
-            this.Panel17.Location = new System.Drawing.Point(5, 185);
+            this.Panel17.Location = new System.Drawing.Point(7, 185);
             this.Panel17.Name = "Panel17";
-            this.Panel17.Size = new System.Drawing.Size(652, 369);
+            this.Panel17.Size = new System.Drawing.Size(655, 369);
             this.Panel17.TabIndex = 411;
             // 
             // PanelHoy
@@ -5177,31 +5196,12 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // btnLicencia
-            // 
-            this.btnLicencia.BackColor = System.Drawing.Color.Transparent;
-            this.btnLicencia.BackgroundImage = global::Punto_de_venta.Properties.Resources.azul;
-            this.btnLicencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLicencia.FlatAppearance.BorderSize = 0;
-            this.btnLicencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnLicencia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnLicencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLicencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLicencia.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLicencia.Location = new System.Drawing.Point(414, 135);
-            this.btnLicencia.Name = "btnLicencia";
-            this.btnLicencia.Size = new System.Drawing.Size(175, 42);
-            this.btnLicencia.TabIndex = 604;
-            this.btnLicencia.Text = "Activar Licencia";
-            this.btnLicencia.UseVisualStyleBackColor = false;
-            this.btnLicencia.Click += new System.EventHandler(this.btnLicencia_Click);
-            // 
             // DASHBOARD_PRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.ClientSize = new System.Drawing.Size(1189, 802);
+            this.ClientSize = new System.Drawing.Size(1283, 802);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel25);
@@ -5724,8 +5724,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
         internal System.Windows.Forms.Label label101;
         internal System.Windows.Forms.Label label102;
         internal System.Windows.Forms.Label label103;
-        internal System.Windows.Forms.OpenFileDialog dlg;
-        private UIDC.UI_AlertButton uI_AlertButton1;
+        internal System.Windows.Forms.OpenFileDialog dlg; 
         internal System.Windows.Forms.Button btnLicencia;
     }
 }

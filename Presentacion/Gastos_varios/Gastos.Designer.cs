@@ -641,6 +641,7 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             this.Controls.Add(this.lbltipo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Gastos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gastos";

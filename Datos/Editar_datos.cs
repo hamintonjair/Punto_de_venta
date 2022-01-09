@@ -204,22 +204,20 @@ namespace Punto_de_venta.Datos
                 ConexionData.cerrar();
             }
         }
-
-        public bool editarCorreobase(Lcorreo parametros)
+        public bool editarCorreoBase(Lcorreo p)
         {
             try
             {
                 ConexionData.abrir();
-                SqlCommand cmd = new SqlCommand("editar_correo_base", ConexionData.conectar);
+                SqlCommand cmd = new SqlCommand("editar_correo", ConexionData.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Correo", parametros.Correo);
-                cmd.Parameters.AddWithValue("@Password", parametros.Password);
-                cmd.Parameters.AddWithValue("@Estado_De_envio", parametros.Estado);
+                cmd.Parameters.AddWithValue("@Correo",  p.Correo);
+                cmd.Parameters.AddWithValue("@Password", p.Password);
+                cmd.Parameters.AddWithValue("@Estado_De_envio", p.Estado);
                 cmd.ExecuteNonQuery();
                 return true;
-
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return false;
@@ -229,6 +227,7 @@ namespace Punto_de_venta.Datos
                 ConexionData.cerrar();
             }
         }
+ 
         public bool cerrarCaja(Lmcaja parametros)
         {
             try

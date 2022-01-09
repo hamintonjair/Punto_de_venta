@@ -135,7 +135,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = ConexionDt.ConexionData.conexion;
-            SqlCommand com = new SqlCommand("select idclientev  from clientes where Cliente='NEUTRO'", con);
+            SqlCommand com = new SqlCommand("select idclientev  from clientes where Estado=0", con);
             try
             {
                 con.Open();
@@ -1234,6 +1234,12 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             BTNLECTORA.BackColor = Color.WhiteSmoke;
             txtbuscar.Clear();
             txtbuscar.Focus();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cobros.CobrosForm frm = new Cobros.CobrosForm();
+            frm.ShowDialog();
         }
     }
 }

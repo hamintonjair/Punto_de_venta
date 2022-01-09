@@ -34,7 +34,6 @@ namespace Punto_de_venta.Presentacion.Caja
             this.panelCaja = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.Button1 = new System.Windows.Forms.Button();
             this.txtfecha = new System.Windows.Forms.DateTimePicker();
             this.txtip = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -45,10 +44,13 @@ namespace Punto_de_venta.Presentacion.Caja
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelCaja.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCaja
@@ -68,9 +70,8 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.Button1);
-            this.panel4.Controls.Add(this.txtfecha);
             this.panel4.Controls.Add(this.txtip);
+            this.panel4.Controls.Add(this.txtfecha);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
@@ -80,32 +81,16 @@ namespace Punto_de_venta.Presentacion.Caja
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 60);
+            this.label3.Size = new System.Drawing.Size(386, 60);
             this.label3.TabIndex = 532;
             this.label3.Text = "Dinero en Caja";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Button1
-            // 
-            this.Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(197)))), ((int)(((byte)(76)))));
-            this.Button1.FlatAppearance.BorderSize = 0;
-            this.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button1.ForeColor = System.Drawing.Color.White;
-            this.Button1.Location = new System.Drawing.Point(356, 3);
-            this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(27, 32);
-            this.Button1.TabIndex = 540;
-            this.Button1.Text = "X";
-            this.Button1.UseVisualStyleBackColor = false;
             // 
             // txtfecha
             // 
@@ -131,7 +116,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // panel3
             // 
             this.panel3.Controls.Add(this.menuStrip1);
-            this.panel3.Location = new System.Drawing.Point(68, 130);
+            this.panel3.Location = new System.Drawing.Point(69, 166);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(187, 44);
             this.panel3.TabIndex = 5;
@@ -168,7 +153,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             // txtmonto
             // 
-            this.txtmonto.Location = new System.Drawing.Point(68, 96);
+            this.txtmonto.Location = new System.Drawing.Point(69, 132);
             this.txtmonto.Multiline = true;
             this.txtmonto.Name = "txtmonto";
             this.txtmonto.Size = new System.Drawing.Size(239, 28);
@@ -178,7 +163,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(64, 69);
+            this.label2.Location = new System.Drawing.Point(65, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(243, 24);
             this.label2.TabIndex = 1;
@@ -187,11 +172,24 @@ namespace Punto_de_venta.Presentacion.Caja
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(861, 233);
             this.panel2.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(861, 233);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 611;
+            this.pictureBox1.TabStop = false;
             // 
             // Apertura_de_Caja
             // 
@@ -214,6 +212,8 @@ namespace Punto_de_venta.Presentacion.Caja
             this.panel3.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,9 +230,9 @@ namespace Punto_de_venta.Presentacion.Caja
         internal System.Windows.Forms.TextBox txtmonto;
         internal System.Windows.Forms.Panel panel4;
         internal System.Windows.Forms.Label label3;
-        internal System.Windows.Forms.Button Button1;
         internal System.Windows.Forms.DateTimePicker txtfecha;
         internal System.Windows.Forms.Label txtip;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

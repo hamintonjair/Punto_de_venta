@@ -188,7 +188,7 @@ namespace Punto_de_venta.Datos
                 ConexionData.abrir();
                 SqlDataAdapter da = new SqlDataAdapter("mostrar_inicio_De_sesion", ConexionData.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@id_serial_pc", serialPC);
+                da.SelectCommand.Parameters.AddWithValue("@id_serial_pc", Bases.Encriptar( serialPC));
                 da.Fill(dt);
                 ConexionData.cerrar();
             }
@@ -416,12 +416,12 @@ namespace Punto_de_venta.Datos
                 MessageBox.Show(ex.StackTrace);
             }
         }
-        public static void mostrarCorreoBase(ref DataTable dt)
+        public static void mostrarCorreo(ref DataTable dt)
         {
             try
             {
                 ConexionData.abrir();
-                SqlDataAdapter da = new SqlDataAdapter("Select * from CorreoBase", ConexionData.conectar);
+                SqlDataAdapter da = new SqlDataAdapter("Select * from Correo", ConexionData.conectar);
                 da.Fill(dt);
                 ConexionData.cerrar();
 

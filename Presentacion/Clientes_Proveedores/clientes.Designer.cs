@@ -30,8 +30,8 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(clientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblclientesEliminados = new System.Windows.Forms.Label();
             this.lblclientesActivos = new System.Windows.Forms.Label();
@@ -52,14 +52,14 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnGuardarCambios = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtrucdefactura = new System.Windows.Forms.TextBox();
+            this.txtIdentificador = new System.Windows.Forms.TextBox();
             this.Label14 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtdirecciondefactura = new System.Windows.Forms.TextBox();
+            this.txtdireccion = new System.Windows.Forms.TextBox();
             this.txtcelular = new System.Windows.Forms.TextBox();
-            this.txtnombrecliente = new System.Windows.Forms.TextBox();
+            this.txtnombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -89,7 +89,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1075, 83);
+            this.panel1.Size = new System.Drawing.Size(1278, 83);
             this.panel1.TabIndex = 1;
             // 
             // lblclientesEliminados
@@ -97,7 +97,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.lblclientesEliminados.AutoSize = true;
             this.lblclientesEliminados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblclientesEliminados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.lblclientesEliminados.Location = new System.Drawing.Point(947, 48);
+            this.lblclientesEliminados.Location = new System.Drawing.Point(1112, 48);
             this.lblclientesEliminados.Name = "lblclientesEliminados";
             this.lblclientesEliminados.Size = new System.Drawing.Size(54, 24);
             this.lblclientesEliminados.TabIndex = 542;
@@ -108,7 +108,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.lblclientesActivos.AutoSize = true;
             this.lblclientesActivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblclientesActivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.lblclientesActivos.Location = new System.Drawing.Point(629, 48);
+            this.lblclientesActivos.Location = new System.Drawing.Point(794, 48);
             this.lblclientesActivos.Name = "lblclientesActivos";
             this.lblclientesActivos.Size = new System.Drawing.Size(54, 24);
             this.lblclientesActivos.TabIndex = 543;
@@ -118,7 +118,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             // 
             this.Label50.AutoSize = true;
             this.Label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label50.Location = new System.Drawing.Point(775, 48);
+            this.Label50.Location = new System.Drawing.Point(940, 48);
             this.Label50.Name = "Label50";
             this.Label50.Size = new System.Drawing.Size(180, 24);
             this.Label50.TabIndex = 544;
@@ -128,7 +128,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             // 
             this.Label7.AutoSize = true;
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label7.Location = new System.Drawing.Point(486, 48);
+            this.Label7.Location = new System.Drawing.Point(651, 48);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(147, 24);
             this.Label7.TabIndex = 545;
@@ -198,7 +198,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1075, 37);
+            this.label1.Size = new System.Drawing.Size(1278, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Clientes";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -208,11 +208,11 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.datalistado.AllowUserToAddRows = false;
             this.datalistado.AllowUserToDeleteRows = false;
             this.datalistado.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.datalistado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.datalistado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.datalistado.BackgroundColor = System.Drawing.Color.White;
             this.datalistado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datalistado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -228,15 +228,15 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.datalistado.ReadOnly = true;
             this.datalistado.RowHeadersVisible = false;
             this.datalistado.RowHeadersWidth = 9;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro;
-            this.datalistado.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
+            this.datalistado.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.datalistado.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.datalistado.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.datalistado.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             this.datalistado.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.datalistado.RowTemplate.Height = 40;
             this.datalistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado.Size = new System.Drawing.Size(439, 464);
+            this.datalistado.Size = new System.Drawing.Size(642, 464);
             this.datalistado.TabIndex = 360;
             this.datalistado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistado_CellClick);
             this.datalistado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistado_CellDoubleClick);
@@ -267,9 +267,9 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.Panelregistro.Controls.Add(this.panel5);
             this.Panelregistro.Controls.Add(this.panel4);
             this.Panelregistro.Controls.Add(this.panel3);
-            this.Panelregistro.Controls.Add(this.txtdirecciondefactura);
+            this.Panelregistro.Controls.Add(this.txtdireccion);
             this.Panelregistro.Controls.Add(this.txtcelular);
-            this.Panelregistro.Controls.Add(this.txtnombrecliente);
+            this.Panelregistro.Controls.Add(this.txtnombre);
             this.Panelregistro.Controls.Add(this.label4);
             this.Panelregistro.Controls.Add(this.label3);
             this.Panelregistro.Controls.Add(this.label2);
@@ -291,7 +291,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 38);
             this.button1.TabIndex = 10;
-            this.button1.Text = "Mostrar";
+            this.button1.Text = "Atras";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -334,7 +334,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtrucdefactura);
+            this.groupBox1.Controls.Add(this.txtIdentificador);
             this.groupBox1.Controls.Add(this.Label14);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -345,14 +345,14 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de FACTURACION (Opcional)";
             // 
-            // txtrucdefactura
+            // txtIdentificador
             // 
-            this.txtrucdefactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.txtrucdefactura.ForeColor = System.Drawing.Color.White;
-            this.txtrucdefactura.Location = new System.Drawing.Point(12, 63);
-            this.txtrucdefactura.Name = "txtrucdefactura";
-            this.txtrucdefactura.Size = new System.Drawing.Size(446, 26);
-            this.txtrucdefactura.TabIndex = 338;
+            this.txtIdentificador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.txtIdentificador.ForeColor = System.Drawing.Color.White;
+            this.txtIdentificador.Location = new System.Drawing.Point(12, 63);
+            this.txtIdentificador.Name = "txtIdentificador";
+            this.txtIdentificador.Size = new System.Drawing.Size(446, 26);
+            this.txtIdentificador.TabIndex = 338;
             // 
             // Label14
             // 
@@ -361,9 +361,9 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.Label14.ForeColor = System.Drawing.Color.White;
             this.Label14.Location = new System.Drawing.Point(9, 31);
             this.Label14.Name = "Label14";
-            this.Label14.Size = new System.Drawing.Size(152, 20);
+            this.Label14.Size = new System.Drawing.Size(137, 20);
             this.Label14.TabIndex = 337;
-            this.Label14.Text = "RUC/ RFC/ NIT/ CC:";
+            this.Label14.Text = "Identificador fiscal";
             // 
             // panel5
             // 
@@ -389,15 +389,15 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.panel3.Size = new System.Drawing.Size(371, 1);
             this.panel3.TabIndex = 6;
             // 
-            // txtdirecciondefactura
+            // txtdireccion
             // 
-            this.txtdirecciondefactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.txtdirecciondefactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtdirecciondefactura.ForeColor = System.Drawing.Color.White;
-            this.txtdirecciondefactura.Location = new System.Drawing.Point(121, 79);
-            this.txtdirecciondefactura.Name = "txtdirecciondefactura";
-            this.txtdirecciondefactura.Size = new System.Drawing.Size(370, 19);
-            this.txtdirecciondefactura.TabIndex = 5;
+            this.txtdireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.txtdireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtdireccion.ForeColor = System.Drawing.Color.White;
+            this.txtdireccion.Location = new System.Drawing.Point(121, 79);
+            this.txtdireccion.Name = "txtdireccion";
+            this.txtdireccion.Size = new System.Drawing.Size(370, 19);
+            this.txtdireccion.TabIndex = 5;
             // 
             // txtcelular
             // 
@@ -409,15 +409,15 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.txtcelular.Size = new System.Drawing.Size(371, 19);
             this.txtcelular.TabIndex = 4;
             // 
-            // txtnombrecliente
+            // txtnombre
             // 
-            this.txtnombrecliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.txtnombrecliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtnombrecliente.ForeColor = System.Drawing.Color.White;
-            this.txtnombrecliente.Location = new System.Drawing.Point(120, 13);
-            this.txtnombrecliente.Name = "txtnombrecliente";
-            this.txtnombrecliente.Size = new System.Drawing.Size(371, 19);
-            this.txtnombrecliente.TabIndex = 3;
+            this.txtnombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtnombre.ForeColor = System.Drawing.Color.White;
+            this.txtnombre.Location = new System.Drawing.Point(120, 13);
+            this.txtnombre.Name = "txtnombre";
+            this.txtnombre.Size = new System.Drawing.Size(371, 19);
+            this.txtnombre.TabIndex = 3;
             // 
             // label4
             // 
@@ -462,7 +462,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1016, 83);
+            this.panel2.Location = new System.Drawing.Point(1219, 83);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(59, 464);
             this.panel2.TabIndex = 363;
@@ -486,16 +486,17 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1075, 547);
+            this.ClientSize = new System.Drawing.Size(1278, 547);
             this.Controls.Add(this.datalistado);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.paneldatalistado);
             this.Controls.Add(this.Panelregistro);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.clientes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -530,14 +531,14 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnGuardarCambios;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtrucdefactura;
+        private System.Windows.Forms.TextBox txtIdentificador;
         internal System.Windows.Forms.Label Label14;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtdirecciondefactura;
+        private System.Windows.Forms.TextBox txtdireccion;
         private System.Windows.Forms.TextBox txtcelular;
-        private System.Windows.Forms.TextBox txtnombrecliente;
+        private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

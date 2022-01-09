@@ -163,6 +163,36 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2022_01_07_072646 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2022-01-07 072646", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2022_01_07_161543 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2022-01-07 161543", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cards_finance_money_icon_197129 {
+            get {
+                object obj = ResourceManager.GetObject("cards_finance_money_icon_197129", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cobrosIcono {
             get {
                 object obj = ResourceManager.GetObject("cobrosIcono", resourceCulture);
@@ -316,6 +346,16 @@ namespace Punto_de_venta.Properties {
         internal static System.Drawing.Bitmap notificacion_BLACK2 {
             get {
                 object obj = ResourceManager.GetObject("notificacion_BLACK2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap out_37478 {
+            get {
+                object obj = ResourceManager.GetObject("out_37478", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

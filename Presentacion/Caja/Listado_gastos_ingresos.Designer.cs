@@ -41,6 +41,7 @@ namespace Punto_de_venta.Presentacion.Caja
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Listado_gastos_ingresos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.datalistadoIngresos = new System.Windows.Forms.DataGridView();
             this.EliminarI = new System.Windows.Forms.DataGridViewImageColumn();
@@ -57,7 +58,6 @@ namespace Punto_de_venta.Presentacion.Caja
             this.Label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoIngresos)).BeginInit();
@@ -76,6 +76,15 @@ namespace Punto_de_venta.Presentacion.Caja
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 500);
             this.panel1.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(492, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(5, 500);
+            this.panel6.TabIndex = 2;
             // 
             // panel3
             // 
@@ -345,15 +354,6 @@ namespace Punto_de_venta.Presentacion.Caja
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(492, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(5, 500);
-            this.panel6.TabIndex = 2;
-            // 
             // Listado_gastos_ingresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,6 +363,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Listado_gastos_ingresos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado_gastos_ingresos";
@@ -387,7 +388,7 @@ namespace Punto_de_venta.Presentacion.Caja
         internal System.Windows.Forms.Label lbltotalIngresos;
         internal System.Windows.Forms.Label label4;
         internal System.Windows.Forms.Label Label2;
-        private UIDC.UI_GradientPanel uI_GradientPanel1;
+      
         private System.Windows.Forms.Panel panel2;
         internal System.Windows.Forms.DataGridView datalistadoGastos;
         private System.Windows.Forms.Panel panel4;

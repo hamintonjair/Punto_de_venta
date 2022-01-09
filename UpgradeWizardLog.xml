@@ -2,27 +2,87 @@
 <?xml-stylesheet type="text/xsl" href="_UpgradeWizard_Files\UpgradeWizardLog.xslt"?>
 <log>
   <event>Get project references.</event>
-  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\Punto_de_venta.csproj" />
-  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\App.config" />
-  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\App.config" />
-  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\App.config" />
-  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\App.config" />
-  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\App.config" />
-  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\App.config" />
-  <event action="Analyze" type="Success" name="App.config" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\App.config" />
-  <event action="Analyze" type="Success" name="Apertura_de_Caja.resx" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\Modulos\Caja\Apertura_de_Caja.resx" />
-  <event action="Analyze" type="Success" name="Cierre_de_Caja.resx" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\Modulos\Caja\Cierre_de_Caja.resx" />
-  <event action="Analyze" type="Success" name="Inventarios_Menu.resx" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\Modulos\Inventarioss_Kardex\Inventarios_Menu.resx" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\mafia\source\repos\Punto_de_venta\Punto_de_venta.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\mafia\source\repos\Punto_de_venta\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\mafia\source\repos\Punto_de_venta\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\mafia\source\repos\Punto_de_venta\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\mafia\source\repos\Punto_de_venta\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\mafia\source\repos\Punto_de_venta\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\mafia\source\repos\Punto_de_venta\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="C:\Users\mafia\source\repos\Punto_de_venta\App.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\mafia\source\repos\Punto_de_venta\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\mafia\source\repos\Punto_de_venta\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\mafia\source\repos\Punto_de_venta\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\mafia\source\repos\Punto_de_venta\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\mafia\source\repos\Punto_de_venta\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\mafia\source\repos\Punto_de_venta\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="C:\Users\mafia\source\repos\Punto_de_venta\packages.config" />
+  <event action="Analyze" type="Success" name="DASHBOARD_PRINCIPAL.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Admin_nivel_dios\DASHBOARD_PRINCIPAL.resx" />
+  <event action="Analyze" type="Success" name="PorCobrarOk.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Apertura_de_credito\PorCobrarOk.resx" />
+  <event action="Analyze" type="Success" name="PorPagar.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Apertura_de_credito\PorPagar.resx" />
+  <event action="Analyze" type="Success" name="Eleccion_Servidor_o_remoto.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Asistente_de_Instalacion_Servidor\Eleccion_Servidor_o_remoto.resx" />
+  <event action="Analyze" type="Success" name="Instalacion_del_servidorSQL.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Asistente_de_Instalacion_Servidor\Instalacion_del_servidorSQL.resx" />
+  <event action="Analyze" type="Success" name="REGISTRO_DE_EMPRESA.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Asistente_de_Instalacion_Servidor\REGISTRO_DE_EMPRESA.resx" />
+  <event action="Analyze" type="Success" name="USUARIOS_AUTORIZADOS_AL_SISTEMA.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Asistente_de_Instalacion_Servidor\USUARIOS_AUTORIZADOS_AL_SISTEMA.resx" />
+  <event action="Analyze" type="Success" name="Apertura_de_Caja.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Caja\Apertura_de_Caja.resx" />
+  <event action="Analyze" type="Success" name="Cajas_formu.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Caja\Cajas_formu.resx" />
+  <event action="Analyze" type="Success" name="Cierre_de_Caja.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Caja\Cierre_de_Caja.resx" />
+  <event action="Analyze" type="Success" name="CierreTurno.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Caja\CierreTurno.resx" />
   <event action="Analyze" type="Success" />
-  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\Modulos\Login\HTMLPage1.html" />
-  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\Modulos\Login\HTMLPage1.html" />
-  <event action="Analyze" type="Success" name="HTMLPage1.html" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\Modulos\Login\HTMLPage1.html" />
-  <event action="Analyze" type="Success" name="LOGIN.resx" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\Modulos\Login\LOGIN.resx" />
-  <event action="Analyze" type="Success" name="Productoss.resx" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\Modulos\Productos\Productoss.resx" />
-  <event action="Analyze" type="Success" name="usuarios.resx" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\Modulos\Usuarios_y_Permisos\usuarios.resx" />
-  <event action="Analyze" type="Success" name="Ventas_Menu_Princi.resx" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\Modulos\Ventas_Menu_Principal\Ventas_Menu_Princi.resx" />
-  <event action="Analyze" type="Success" name="Conexion_Manual.resx" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\Panel_de_Administracion_del_Software\Conexion_Manual.resx" />
-  <event action="Analyze" type="Success" name="Resources.resx" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\Properties\Resources.resx" />
-  <event action="Analyze" type="Success" name="Punto_de_venta" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\Punto_de_venta.csproj" />
-  <event action="Analyze" type="Success" name="Punto_de_venta" path="C:\Users\mafia\source\repos\hamintonjair\Punto_de_venta\Punto_de_venta.sln" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Caja\FormatoCierreCaja.html" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Caja\FormatoCierreCaja.html" />
+  <event action="Analyze" type="Success" name="FormatoCierreCaja.html" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Caja\FormatoCierreCaja.html" />
+  <event action="Analyze" type="Success" name="Listado_gastos_ingresos.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Caja\Listado_gastos_ingresos.resx" />
+  <event action="Analyze" type="Success" name="clientes.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Clientes_Proveedores\clientes.resx" />
+  <event action="Analyze" type="Success" name="Proveedores.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Clientes_Proveedores\Proveedores.resx" />
+  <event action="Analyze" type="Success" name="CobrosForm.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Cobros\CobrosForm.resx" />
+  <event action="Analyze" type="Success" name="MediosCobros.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Cobros\MediosCobros.resx" />
+  <event action="Analyze" type="Success" name="Caja_secundaria.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Conexion_remota\Caja_secundaria.resx" />
+  <event action="Analyze" type="Success" name="Conexion_secundaria.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Conexion_remota\Conexion_secundaria.resx" />
+  <event action="Analyze" type="Success" name="PANEL_CONFIGURACIONES.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Configuracion\PANEL_CONFIGURACIONES.resx" />
+  <event action="Analyze" type="Success" name="CrearCopiaBd.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\CopiasBd\CrearCopiaBd.resx" />
+  <event action="Analyze" type="Success" name="GeneradorAutomatico.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\CopiasBd\GeneradorAutomatico.resx" />
+  <event action="Analyze" type="Success" name="ConfigurarCorreo.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\CorreoBase\ConfigurarCorreo.resx" />
+  <event action="Analyze" type="Success" name="Ticket.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Diseñador_de_Comprobantes\Ticket.resx" />
+  <event action="Analyze" type="Success" name="EMPRESA_CONFIG.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Epresa_Configuracion\EMPRESA_CONFIG.resx" />
+  <event action="Analyze" type="Success" name="Gastos.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Gastos_varios\Gastos.resx" />
+  <event action="Analyze" type="Success" name="IngresosVarios.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Ingresos_varios\IngresosVarios.resx" />
+  <event action="Analyze" type="Success" name="Inventarios_Menu.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Inventarioss_Kardex\Inventarios_Menu.resx" />
+  <event action="Analyze" type="Success" name="Membresias.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Licencias_Membresias\Membresias.resx" />
+  <event action="Analyze" type="Success" name="MembresiasNuevo.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Licencias_Membresias\MembresiasNuevo.resx" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Login\HTMLPage1.html" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Login\HTMLPage1.html" />
+  <event action="Analyze" type="Success" name="HTMLPage1.html" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Login\HTMLPage1.html" />
+  <event action="Analyze" type="Success" name="LOGIN.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Login\LOGIN.resx" />
+  <event action="Analyze" type="Success" name="Notificaciones_form.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Notificaciones\Notificaciones_form.resx" />
+  <event action="Analyze" type="Success" name="Conexion_Manual.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Panel_de_Administracion_del_Software\Conexion_Manual.resx" />
+  <event action="Analyze" type="Success" name="Asistente_de_importacionExcel.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Productos\Asistente_de_importacionExcel.resx" />
+  <event action="Analyze" type="Success" name="Productoss.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Productos\Productoss.resx" />
+  <event action="Analyze" type="Success" name="Ticket_report.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Reportes\Impresion_de_comprobantes\Ticket_report.resx" />
+  <event action="Analyze" type="Success" name="ReportKARDEX_Movimientos_ok.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Reportes\Reportes_de_Kardex_listo\Reporte_de_Kardex_diseño\ReportKARDEX_Movimientos_ok.resx" />
+  <event action="Analyze" type="Success" name="FormInventarioTodos.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormInventarioTodos.resx" />
+  <event action="Analyze" type="Success" name="FormMovimientosBuscar.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormMovimientosBuscar.resx" />
+  <event action="Analyze" type="Success" name="FormReporteMovimientosFILTROS.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormReporteMovimientosFILTROS.resx" />
+  <event action="Analyze" type="Success" name="Reporte_Movimientos_con_filtros.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\Reporte_Movimientos_con_filtros.resx" />
+  <event action="Analyze" type="Success" name="ReportInventarios_Todos.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportInventarios_Todos.resx" />
+  <event action="Analyze" type="Success" name="ReportMovimientosBuscar.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportMovimientosBuscar.resx" />
+  <event action="Analyze" type="Success" name="SERIALIZACION.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Serializacion_de_Comprobantes\SERIALIZACION.resx" />
+  <event action="Analyze" type="Success" name="usuarios.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Usuarios_y_Permisos\usuarios.resx" />
+  <event action="Analyze" type="Success" name="CANTIDAD_A_GRANEL.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Ventas_Menu_Principal\CANTIDAD_A_GRANEL.resx" />
+  <event action="Analyze" type="Success" name="MEDIOS_DE_PAGO.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Ventas_Menu_Principal\MEDIOS_DE_PAGO.resx" />
+  <event action="Analyze" type="Success" name="Ventas_en_espera.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Ventas_Menu_Principal\Ventas_en_espera.resx" />
+  <event action="Analyze" type="Success" name="Ventas_Menu_Princi.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Ventas_Menu_Principal\Ventas_Menu_Princi.resx" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Properties\Resources.resx" />
+  <event action="Analyze" type="Success" name="Punto_de_venta" path="C:\Users\mafia\source\repos\Punto_de_venta\Punto_de_venta.csproj" />
+  <event action="Analyze" type="Success" name="Punto_de_venta" path="C:\Users\mafia\source\repos\Punto_de_venta\Punto_de_venta.sln" />
+  <event action="Backup" type="Success" name="Punto_de_venta" path="C:\Users\mafia\source\repos\Punto_de_venta\Punto_de_venta.csproj" />
+  <event action="Upgrade" type="Success" name="Assembly References" path="C:\Users\mafia\source\repos\Punto_de_venta\Punto_de_venta.csproj" />
+  <event action="Upgrade" type="Success" name="Ticket_report.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Reportes\Impresion_de_comprobantes\Ticket_report.resx" />
+  <event action="Upgrade" type="Success" name="ReportKARDEX_Movimientos_ok.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Reportes\Reportes_de_Kardex_listo\Reporte_de_Kardex_diseño\ReportKARDEX_Movimientos_ok.resx" />
+  <event action="Upgrade" type="Success" name="Reporte_Movimientos_con_filtros.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\Reporte_Movimientos_con_filtros.resx" />
+  <event action="Upgrade" type="Success" name="ReportInventarios_Todos.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportInventarios_Todos.resx" />
+  <event action="Upgrade" type="Success" name="ReportMovimientosBuscar.resx" path="C:\Users\mafia\source\repos\Punto_de_venta\Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportMovimientosBuscar.resx" />
+  <event action="Upgrade" type="Success" name="Punto_de_venta" path="C:\Users\mafia\source\repos\Punto_de_venta\Punto_de_venta.csproj" />
+  <event action="Upgrade" type="Success" name="Punto_de_venta" path="C:\Users\mafia\source\repos\Punto_de_venta\Punto_de_venta.sln" />
 </log>

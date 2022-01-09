@@ -46,6 +46,7 @@ namespace Punto_de_venta.Presentacion.Caja
 
         private void Cierre_de_Caja_Load(object sender, EventArgs e)
         {
+            FormBorderStyle = FormBorderStyle.None;
             Mostrar_cierres_de_caja_pendiente();
             lbldesdehasta.Text = "Corte de caja desde: " + fechaInicial + " Hasta: " + DateTime.Now;
             obtener_saldo_inicial();
