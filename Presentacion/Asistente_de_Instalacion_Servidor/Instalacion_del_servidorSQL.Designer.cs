@@ -104,7 +104,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // Panel8
             // 
             this.Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.Panel8.Controls.Add(this.Panel3);
             this.Panel8.Controls.Add(this.panel11);
             this.Panel8.Controls.Add(this.PictureBox7);
             this.Panel8.Controls.Add(this.lblwindows);
@@ -132,10 +131,11 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel3.Controls.Add(this.lblBasededatos);
             this.Panel3.Controls.Add(this.Label6);
             this.Panel3.Controls.Add(this.Label8);
-            this.Panel3.Location = new System.Drawing.Point(299, 45);
+            this.Panel3.Location = new System.Drawing.Point(577, 101);
             this.Panel3.Name = "Panel3";
-            this.Panel3.Size = new System.Drawing.Size(19, 10);
+            this.Panel3.Size = new System.Drawing.Size(570, 537);
             this.Panel3.TabIndex = 621;
+            this.Panel3.Visible = false;
             // 
             // GroupBox6
             // 
@@ -633,7 +633,9 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // 
             // Button2
             // 
-            this.Button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.Button2.BackColor = System.Drawing.Color.Transparent;
+            this.Button2.BackgroundImage = global::Punto_de_venta.Properties.Resources.naranja;
+            this.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button2.FlatAppearance.BorderSize = 0;
             this.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -674,6 +676,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(1189, 685);
+            this.Controls.Add(this.Panel3);
             this.Controls.Add(this.Panel2);
             this.Controls.Add(this.Panel8);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

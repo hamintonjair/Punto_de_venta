@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
+using System.IO.Ports;
 using System.Linq;
 using System.Management;
 using System.Text;
@@ -35,11 +36,16 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         double lblStock_de_Productos;
         public static double total;
         public static int Id_caja;
+        double cantidad;
         string SerialPC;      
         string sevendePor;
         public static string txtventagenerada;
         double txtprecio_unitarios;
         string lblusaInventarios;
+        string Tema;
+        string Ip;
+        int contadorVentasEspera;
+        bool EstadoCobrar = false;
 
         Panel panel_mostrador_de_productos = new Panel();
 
@@ -52,28 +58,84 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         private void Ventas_Menu_Princi_Load(object sender, EventArgs e)
         {
+           
             Bases.Cambiar_idioma_regional();
             Bases.Obtener_serialPC(ref SerialPC);
             Obtener_datos.Obtener_id_caja_PorSerial(ref Id_caja);           
-            MOSTRAR_TIPO_DE_BUSQUEDA();
+          
             Obtener_id_de_cliente_estandar();           
             Obtener_datos.mostrar_inicio_De_sesion2(ref idusuario_que_inicio_sesion);
 
+            ValidarTiposBusqueda();
+            Obtener_datos.mostrarTemaCaja(ref Tema);
+            if (Tema == "Oscuro")
+            {
+                ValidarTemaCaja2();
+            }
+            else
+            {
+                ValidarTemaCaja();
+            }
+
+            limpiar_para_venta_nueva();
+            ObtenerIpLocal();      
+                                   
+        }
+        private void ContarVentasEspera()
+        {
+            Obtener_datos.contarVentasEspera(ref contadorVentasEspera);
+            if (contadorVentasEspera == 0)
+            {
+                panelNotificacionEspera.Visible = false;
+            }
+            else
+            {
+                panelNotificacionEspera.Visible = true;
+                lblContadorEspera.Text = contadorVentasEspera.ToString();
+            }
+        }
+        private void ValidarTiposBusqueda()
+        {
+            MOSTRAR_TIPO_DE_BUSQUEDA();
             if (Tipo_de_busqueda == "TECLADO")
             {
                 lbltipodebusqueda2.Text = "Buscar con TECLADO";
                 BTNLECTORA.BackColor = Color.WhiteSmoke;
                 BTNTECLADO.BackColor = Color.FromArgb(129, 178, 20); ;
+                txtbuscar.Clear();
+                txtbuscar.Focus();
             }
             else
             {
                 lbltipodebusqueda2.Text = "Buscar con LECTORA de Codigos de Barras";
                 BTNLECTORA.BackColor = Color.FromArgb(129, 178, 20);
                 BTNTECLADO.BackColor = Color.WhiteSmoke;
+                txtbuscar.Focus();
+                txtbuscar.Clear();
             }
-            limpiar_para_venta_nueva();
         }
-      
+        private void ObtenerIpLocal()
+        {
+
+            this.Text = Bases.ObtenerIp(ref Ip);
+        }
+        private void MOSTRAR_TIPO_DE_BUSQUEDA()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = ConexionDt.ConexionData.conexion;
+            SqlCommand com = new SqlCommand("Select Modo_de_busqueda  from EMPRESA", con);
+
+            try
+            {
+                con.Open();
+                Tipo_de_busqueda = Convert.ToString(com.ExecuteScalar());
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.StackTrace);
+            }
+        }
         private void limpiar_para_venta_nueva()
         {
             idVenta = 0;
@@ -82,6 +144,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             Sumar();
             PanelEnespera.Visible = false;
             panelBienvenida.Visible = true;
+            ContarVentasEspera();
             PanelOperaciones.Visible = false;
         }
         private void Sumar()
@@ -114,23 +177,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         }  
        
         string Tipo_de_busqueda;
-        private void MOSTRAR_TIPO_DE_BUSQUEDA()
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = ConexionDt.ConexionData.conexion;
-            SqlCommand com = new SqlCommand("Select Modo_de_busqueda  from EMPRESA", con);
-
-            try
-            {
-                con.Open();
-                Tipo_de_busqueda = Convert.ToString(com.ExecuteScalar());
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.StackTrace);
-            }
-        }
+       
         private void Obtener_id_de_cliente_estandar()
         {
             SqlConnection con = new SqlConnection();
@@ -250,49 +297,17 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 Limpiar_para_venta_nueva();
             }
         }
-        private void vender_por_teclado()
-        {
-            // mostramos los registros del producto en el detalle de venta
-            mostrar_stock_de_detalle_de_ventas();
-            contar_stock_detalle_ventas();
-
-            if (contador_stock_detalle_de_venta == 0)
-            {
-                // Si es producto no esta agregado a las ventas se tomara el Stock de la tabla Productos
-                lblStock_de_Productos = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[4].Value.ToString());
-            }
-            else
-            {
-                //en caso que el producto ya este agregado al detalle de venta se va a extraer el Stock de la tabla Detalle_de_venta
-                lblStock_de_Productos = Convert.ToDouble(datalistado_stock_detalle_venta.SelectedCells[1].Value.ToString());
-            }
-            //Extraemos los datos del producto de la tabla Productos directamente
-            lblusaInventarios = DATALISTADO_PRODUCTOS_OKA.SelectedCells[3].Value.ToString();
-            lbldescripcion.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[9].Value.ToString();
-            lblcodigo.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[10].Value.ToString();
-            lblcosto.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[5].Value.ToString();
-            sevendePor = DATALISTADO_PRODUCTOS_OKA.SelectedCells[8].Value.ToString();
-            txtprecio_unitarios =Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[6].Value.ToString());
-            //Preguntamos que tipo de producto sera el que se agrege al detalle de venta
-            if (sevendePor == "Granel")
-            {
-                vender_a_granel();
-            }
-            else if (sevendePor == "Unidad")
-            {
-                txtpantalla = 1;
-                vender_por_unidad();
-            }
-
-        }
+    
         private void vender_a_granel()
         {
-
+     
             CANTIDAD_A_GRANEL frm = new CANTIDAD_A_GRANEL();
             frm.preciounitario = txtprecio_unitarios;
             frm.FormClosing += Frm_FormClosing;
             frm.ShowDialog();
+          
         }
+     
         private void Frm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ejecutar_ventas_a_granel();
@@ -465,6 +480,15 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 datalistadoDetalleVenta.Columns[16].Visible = false;
                 datalistadoDetalleVenta.Columns[17].Visible = false;
                 datalistadoDetalleVenta.Columns[18].Visible = false;
+                if (Tema == "Redentor")
+                {
+                    Bases.Multilinea2(ref datalistadoDetalleVenta);
+                }
+                else
+                {
+
+                    Bases.MultilineaTemaOscuro(ref datalistadoDetalleVenta);
+                }
                 Sumar();
 
             }
@@ -472,7 +496,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             {
                 MessageBox.Show(ex.StackTrace);
             }
-            Logica.Bases.Multilinea2(ref datalistadoDetalleVenta);
+           
         }
    
         private void insertar_detalle_venta()
@@ -597,10 +621,12 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
             if (e.ColumnIndex == this.datalistadoDetalleVenta.Columns["S"].Index)
             {
+                txtpantalla = 1;
                 editar_detalle_venta_sumar();
             }
             if (e.ColumnIndex == this.datalistadoDetalleVenta.Columns["R"].Index)
             {
+                txtpantalla = 1;
                 editar_detalle_venta_restar();
                 EliminarVentas();
 
@@ -650,6 +676,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 idproducto = Convert.ToInt32(datalistadoDetalleVenta.SelectedCells[8].Value.ToString());
                 sevendePor = datalistadoDetalleVenta.SelectedCells[17].Value.ToString();
                lblusaInventarios = datalistadoDetalleVenta.SelectedCells[16].Value.ToString();
+                cantidad = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[5].Value);
             }
             catch (Exception ex)
             {
@@ -658,7 +685,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         }
         private void editar_detalle_venta_sumar()
         {
-            txtpantalla = 1;
+           
             if (lblusaInventarios == "SI")
             {
                 lblStock_de_Productos = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[15].Value.ToString());
@@ -680,9 +707,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             Listarproductosagregados();
 
-
-
-
         }
         private void ejecutar_editar_detalle_venta_sumar()
         {
@@ -695,8 +719,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 cmd = new SqlCommand("editar_detalle_venta_sumar", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Id_producto", idproducto);
-                cmd.Parameters.AddWithValue("@cantidad", 1);
-                cmd.Parameters.AddWithValue("@Cantidad_mostrada", 1);
+                cmd.Parameters.AddWithValue("@cantidad", txtpantalla);
+                cmd.Parameters.AddWithValue("@Cantidad_mostrada", txtpantalla);
                 cmd.Parameters.AddWithValue("@Id_venta", idVenta);
                 cmd.ExecuteNonQuery();
                 con.Close();              
@@ -710,7 +734,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         }
         private void editar_detalle_venta_restar()
         {
-            txtpantalla = 1;
+           
             if (lblusaInventarios == "SI")
             {
                 ejecutar_editar_detalle_venta_restar();
@@ -793,19 +817,23 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         private void datalistadoDetalleVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Obtener_datos_del_detalle_de_venta();
-            if (e.KeyChar == Convert.ToChar("+"))
+            if (datalistadoDetalleVenta.RowCount > 0)
             {
-                editar_detalle_venta_sumar();
-            }
-            if (e.KeyChar == Convert.ToChar("-"))
-            {
-                editar_detalle_venta_restar();
-                contar_tablas_ventas();
-                if (Contador == 0)
+
+                Obtener_datos_del_detalle_de_venta();
+                if (e.KeyChar == Convert.ToChar("+"))
                 {
-                    eliminar_venta_al_agregar_productos();
-                    txtventagenerada = "VENTA NUEVA";
+                    editar_detalle_venta_sumar();
+                }
+                if (e.KeyChar == Convert.ToChar("-"))
+                {
+                    editar_detalle_venta_restar();
+                    contar_tablas_ventas();
+                    if (Contador == 0)
+                    {
+                        eliminar_venta_al_agregar_productos();
+                        txtventagenerada = "VENTA NUEVA";
+                    }
                 }
             }
         }
@@ -862,17 +890,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         private void txtmonto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar != '.') || (e.KeyChar != ','))
-            {
-
-                string CultureName = Thread.CurrentThread.CurrentCulture.Name;
-                CultureInfo ci = new CultureInfo(CultureName);
-
-                ci.NumberFormat.NumberDecimalSeparator = ".";
-                Thread.CurrentThread.CurrentCulture = ci;
-
-            }
-            Separador_de_Numeros(txtmonto, e);
+            
+           Bases.Separador_de_Numeros(txtmonto, e);
         }
         bool SECUENCIA = true;
         private void btnborrartodo_Click(object sender, EventArgs e)
@@ -892,40 +911,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             {
                 return;
             }
-        }
-        public static void Separador_de_Numeros(System.Windows.Forms.TextBox CajaTexto, System.Windows.Forms.KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-
-            else if (!(e.KeyChar == CajaTexto.Text.IndexOf('.')))
-            {
-                e.Handled = true;
-            }
-
-
-            else if (e.KeyChar == '.')
-            {
-                e.Handled = false;
-            }
-            else if (e.KeyChar == ',')
-            {
-                e.Handled = false;
-
-            }
-            else
-            {
-                e.Handled = true;
-
-            }
-
-        }
+        }      
 
         private void TimerBUSCADORcodigodebarras_Tick(object sender, EventArgs e)
         {
@@ -983,43 +969,88 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         private void Button21_Click(object sender, EventArgs e)
         {
-            if (datalistadoDetalleVenta.RowCount > 0)
+            if (!string.IsNullOrEmpty(txtmonto.Text))
             {
-
-                if (sevendePor == "Unidad")
-
+                if (datalistadoDetalleVenta.RowCount > 0)
                 {
-                    string ruta = txtmonto.Text;
-                    if (ruta.Contains("."))
-                    {
-                        MessageBox.Show("Este Producto no acepta decimales ya que esta configurado para ser vendido por UNIDAD", "Formato Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                    else
-                    {
-                      
-                        if (txtmonto.Text == "")
-                        {
-                            txtmonto.Text = Convert.ToString(0);
-                        }
 
-                        if (Convert.ToInt32(txtmonto.Text) > 0)
+                    if (sevendePor == "Unidad")
+
+                    {
+                        string cadena = txtmonto.Text;
+                        if (cadena.Contains("."))
                         {
-                            editar_detalle_venta_CANTIDAD();
+                            MessageBox.Show("Este Producto no acepta decimales ya que esta configurado para ser vendido por UNIDAD", "Formato Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                         else
                         {
-                            txtmonto.Clear();
-                            txtmonto.Focus();
+                            BotonCantidad();
+
+
                         }
                     }
+                    else if (sevendePor == "Granel")
+                    {
+                        BotonCantidad();
+                    }
+                }
+                else
+                {
+                    txtmonto.Clear();
+                    txtmonto.Focus();
+                }
+            }
+
+        }
+        private void BotonCantidad()
+        {
+
+            double MontoaIngresar;
+            MontoaIngresar = Convert.ToDouble(txtmonto.Text);
+            double Cantidad;
+            Cantidad = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[5].Value);
+
+            double stock;
+            double condicional;
+            string ControlStock;
+            ControlStock = datalistadoDetalleVenta.SelectedCells[16].Value.ToString();
+            if (ControlStock == "SI")
+            {
+                stock = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[11].Value);
+                condicional = Cantidad + stock;
+                if (condicional >= MontoaIngresar)
+                {
+                    BotonCantidadEjecuta();
+                }
+                else
+                {
+                    TimerLABEL_STOCK.Start();
                 }
             }
             else
             {
-                txtmonto.Clear();
-                txtmonto.Focus();
+                BotonCantidadEjecuta();
             }
-           
+
+
+        }
+        private void BotonCantidadEjecuta()
+        {
+            double MontoaIngresar;
+            MontoaIngresar = Convert.ToDouble(txtmonto.Text);
+            double Cantidad;
+            Cantidad = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[5].Value);
+
+            if (MontoaIngresar > Cantidad)
+            {
+                txtpantalla = MontoaIngresar - Cantidad;
+                editar_detalle_venta_sumar();
+            }
+            else if (MontoaIngresar < Cantidad)
+            {
+                txtpantalla = Cantidad - MontoaIngresar;
+                editar_detalle_venta_restar();
+            }
         }
         private void editar_detalle_venta_CANTIDAD()
         {
@@ -1058,6 +1089,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             txtventagenerada = "VENTA NUEVA";
             Sumar();
             PanelEnespera.Visible = false;
+            ContarVentasEspera();
             panelBienvenida.Visible = true;
             PanelOperaciones.Visible = false;
         }
@@ -1081,19 +1113,63 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         private void btEfectivo_Click(object sender, EventArgs e)
         {
-            total = Convert.ToDouble(txt_total_suma.Text);
-            Ventas_Menu_Principal.MEDIOS_DE_PAGO frm = new Ventas_Menu_Principal.MEDIOS_DE_PAGO();
-            frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
-            frm.ShowDialog();
+            Cobrar();
+        }
+        private void Cobrar()
+        {
+            if (datalistadoDetalleVenta.RowCount > 0)
+            {
+                total = Convert.ToDouble(txt_total_suma.Text);
+                Ventas_Menu_Principal.MEDIOS_DE_PAGO frm = new Ventas_Menu_Principal.MEDIOS_DE_PAGO();
+                frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
+                frm.ShowDialog();
+            }
+
         }
 
         private void DATALISTADO_PRODUCTOS_OKA_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            txtbuscar.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[10].Value.ToString();
-            idproducto = Convert.ToInt32(DATALISTADO_PRODUCTOS_OKA.SelectedCells[1].Value.ToString());
             vender_por_teclado();
         }
+       
+        private void vender_por_teclado()
+        {
+            ValidarVentasNuevas();
+            txtbuscar.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[10].Value.ToString();
+            idproducto = Convert.ToInt32(DATALISTADO_PRODUCTOS_OKA.SelectedCells[1].Value.ToString());
+            // mostramos los registros del producto en el detalle de venta
+            mostrar_stock_de_detalle_de_ventas();
+            contar_stock_detalle_ventas();
 
+            if (contador_stock_detalle_de_venta == 0)
+            {
+                // Si es producto no esta agregado a las ventas se tomara el Stock de la tabla Productos
+                lblStock_de_Productos = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[4].Value.ToString());
+            }
+            else
+            {
+                //en caso que el producto ya este agregado al detalle de venta se va a extraer el Stock de la tabla Detalle_de_venta
+                lblStock_de_Productos = Convert.ToDouble(datalistado_stock_detalle_venta.SelectedCells[1].Value.ToString());
+            }
+            //Extraemos los datos del producto de la tabla Productos directamente
+            lblusaInventarios = DATALISTADO_PRODUCTOS_OKA.SelectedCells[3].Value.ToString();
+            lbldescripcion.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[9].Value.ToString();
+            lblcodigo.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[10].Value.ToString();
+            lblcosto.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[5].Value.ToString();
+            sevendePor = DATALISTADO_PRODUCTOS_OKA.SelectedCells[8].Value.ToString();
+            txtprecio_unitarios = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[6].Value.ToString());
+            //Preguntamos que tipo de producto sera el que se agrege al detalle de venta
+            if (sevendePor == "Granel")
+            {
+                vender_a_granel();
+            }
+            else if (sevendePor == "Unidad")
+            {
+                txtpantalla = 1;
+                vender_por_unidad();
+            }
+
+        }
         private void btnespera_Click(object sender, EventArgs e)
         {
             if (datalistadoDetalleVenta.RowCount > 0)
@@ -1217,17 +1293,26 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         private void BTNLECTORA_Click(object sender, EventArgs e)
         {
+            ModoLectora();
+
+        }
+        private void ModoLectora()
+        {
+            ocultar_mostrar_productos();
             lbltipodebusqueda2.Text = "Buscar con LECTORA de Codigos de Barras";
             Tipo_de_busqueda = "LECTORA";
             BTNLECTORA.BackColor = Color.LightGreen;
             BTNTECLADO.BackColor = Color.WhiteSmoke;
             txtbuscar.Clear();
             txtbuscar.Focus();
-
         }
-
         private void BTNTECLADO_Click(object sender, EventArgs e)
         {
+            ModoTeclado();
+        }
+        private void ModoTeclado()
+        {
+            ocultar_mostrar_productos();
             lbltipodebusqueda2.Text = "Buscar con  TECLADO";
             Tipo_de_busqueda = "TECLADO";
             BTNTECLADO.BackColor = Color.LightGreen;
@@ -1240,6 +1325,282 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         {
             Cobros.CobrosForm frm = new Cobros.CobrosForm();
             frm.ShowDialog();
+        }
+
+        private void btnMayoreo_Click(object sender, EventArgs e)
+        {
+            aplicar_precio_mayoreo();
+        }
+        private void aplicar_precio_mayoreo()
+        {
+            if (datalistadoDetalleVenta.Rows.Count > 0)
+            {
+                LdetalleVenta parametros = new LdetalleVenta();
+                Editar_datos funcion = new Editar_datos();
+                parametros.Id_producto = idproducto;
+                parametros.iddetalle_venta = iddetalleventa;
+                if (funcion.aplicar_precio_mayoreo(parametros) == true)
+                {
+                    Listarproductosagregados();
+                }
+            }
+        }
+
+        private void Button22_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtmonto.Text))
+            {
+                LdetalleVenta parametros = new LdetalleVenta();
+                Editar_datos funcion = new Editar_datos();
+                parametros.iddetalle_venta = iddetalleventa;
+                parametros.preciounitario = Convert.ToDouble(txtmonto.Text);
+                if (funcion.editarPrecioVenta(parametros) == true)
+                {
+                    Listarproductosagregados();
+                }
+            }
+        }
+
+        private void btnDevolucion_Click(object sender, EventArgs e)
+        {
+            HistorialVentas.HistorialVentasForm frm = new HistorialVentas.HistorialVentasForm();
+            frm.ShowDialog();
+        }
+
+        private void activarTema_Click(object sender, EventArgs e)
+        {
+            Obtener_datos.mostrarTemaCaja(ref Tema);
+            Tema = "Oscuro";
+            EditarTemaCaja();
+            TemaOscuro();
+            Listarproductosagregados();
+        }
+        private void ValidarTemaCaja2()
+        {
+            Obtener_datos.mostrarTemaCaja(ref Tema);
+            if (Tema == "Oscuro")
+            {
+                TemaOscuro();
+            }                    
+           
+        }
+        private void ValidarTemaCaja()
+        {
+            Obtener_datos.mostrarTemaCaja(ref Tema);
+            if (Tema == "Redentor")           
+            {               
+                TemaClaro();              
+            }              
+        }
+        private void EditarTemaCaja()
+        {
+            Lcaja parametros = new Lcaja();
+            Editar_datos funcion = new Editar_datos();
+            parametros.Tema = Tema;
+            funcion.EditarTemaCaja(parametros);
+
+        }
+        private void TemaOscuro() 
+        {
+            //PanelC1 Encabezado
+            Panelc1.BackColor = Color.FromArgb(35, 35, 35);           
+            btnadmin.ForeColor = Color.White;
+            txtbuscar.BackColor = Color.FromArgb(20, 20, 20);
+            txtbuscar.ForeColor = Color.White;
+            lbltipodebusqueda2.BackColor = Color.FromArgb(20, 20, 20);
+            lbltipodebusqueda2.ForeColor = Color.Silver;
+            label15.ForeColor = Color.Silver;
+            panelc5.BackColor = Color.FromArgb(35, 35, 35);
+            lblpeso.ForeColor = Color.WhiteSmoke;
+            Panel15.BackColor= Color.FromArgb(20, 20, 20);
+            //datalistadoDetalleVenta.BackgroundColor = Color.Silver;
+            LABEL_STOCK.BackColor = Color.Silver;
+            //PanelC2 Intermedio
+            panelc2.BackColor = Color.FromArgb(35, 35, 35);
+            button1.BackColor = Color.FromArgb(45, 45, 45);
+            button1.ForeColor = Color.White;
+            button8.BackColor = Color.FromArgb(35, 35, 35);
+            button8.ForeColor = Color.White;
+
+
+            btnCreditoCobrar.BackColor = Color.FromArgb(45, 45, 45);
+            btnCreditoCobrar.ForeColor = Color.White;
+            btnCreditoPagar.BackColor = Color.FromArgb(45, 45, 45);
+            btnCreditoPagar.ForeColor = Color.White;
+
+            //PanelC3
+            Panelc3.BackColor = Color.FromArgb(35, 35, 35);
+            btnMayoreo.BackColor = Color.FromArgb(45, 45, 45);
+            btnMayoreo.ForeColor = Color.White;
+            btnINSVarios.BackColor = Color.FromArgb(45, 45, 45);
+            btnINSVarios.ForeColor = Color.White;
+            btnProductoRapido.BackColor = Color.FromArgb(45, 45, 45);
+            btnProductoRapido.ForeColor = Color.White;
+            btnIngresosCaja.BackColor = Color.FromArgb(45, 45, 45);
+            btnIngresosCaja.ForeColor = Color.White;
+            btnGastos.BackColor = Color.FromArgb(45, 45, 45);
+            btnGastos.ForeColor = Color.White;
+            //BtnTecladoV.BackColor = Color.FromArgb(45, 45, 45);
+            //BtnTecladoV.ForeColor = Color.White;
+            //PanelC4 Pie de pagina
+            panelc4.BackColor = Color.FromArgb(20, 20, 20);
+            btnespera.BackColor = Color.FromArgb(20, 20, 20);
+            btnespera.ForeColor = Color.White;
+            btnrestaurar.BackColor = Color.FromArgb(20, 20, 20);
+            btnrestaurar.ForeColor = Color.White;
+            btneliminar.BackColor = Color.FromArgb(20, 20, 20);
+            btneliminar.ForeColor = Color.White;
+            btnDevolucion.BackColor = Color.FromArgb(20, 20, 20);
+            btnDevolucion.ForeColor = Color.White;
+            //PanelOperaciones
+            PanelOperaciones.BackColor = Color.FromArgb(28, 28, 28);
+            txt_total_suma.ForeColor = Color.WhiteSmoke;
+            //PanelBienvenida
+            panelBienvenida.BackColor = Color.FromArgb(35, 35, 35);
+            label8.ForeColor = Color.WhiteSmoke;
+            Listarproductosagregados();
+
+
+
+        }
+
+        private void desactivarTEMA_Click(object sender, EventArgs e)
+        {
+            Obtener_datos.mostrarTemaCaja(ref Tema);
+            Tema = "Redentor";
+            EditarTemaCaja();
+            TemaClaro();
+            Listarproductosagregados();
+        }
+        private void TemaClaro()
+        {
+            //PanelC1 encabezado
+            Panelc1.BackColor = Color.FromArgb(245, 134, 52);
+            btnadmin.ForeColor = Color.Black;
+            txtbuscar.BackColor = Color.White;
+            txtbuscar.ForeColor = Color.Black;
+            lbltipodebusqueda2.BackColor = Color.White;
+            lbltipodebusqueda2.ForeColor = Color.DimGray;
+            label15.ForeColor = Color.Black;
+            panelc5.BackColor = Color.White;
+            lblpeso.ForeColor = Color.White;
+            Panel15.BackColor = Color.FromArgb(231, 63, 67);
+            //PanelC2 intermedio
+            panelc2.BackColor = Color.White;
+            button1.BackColor = Color.WhiteSmoke;
+            button1.ForeColor = Color.Black;
+            button8.BackColor = Color.WhiteSmoke;
+            button8.ForeColor = Color.Black;
+
+
+            btnCreditoCobrar.BackColor = Color.WhiteSmoke;
+            btnCreditoCobrar.ForeColor = Color.Black;
+            btnCreditoPagar.BackColor = Color.WhiteSmoke;
+            btnCreditoPagar.ForeColor = Color.Black;
+
+            //PanelC3
+            Panelc3.BackColor = Color.White;
+            btnMayoreo.BackColor = Color.WhiteSmoke;
+            btnINSVarios.BackColor = Color.White;
+            btnINSVarios.ForeColor = Color.WhiteSmoke;
+            btnMayoreo.ForeColor = Color.Black;
+            btnProductoRapido.BackColor = Color.WhiteSmoke;
+            btnProductoRapido.ForeColor = Color.Black;
+            btnIngresosCaja.BackColor = Color.WhiteSmoke;
+            btnIngresosCaja.ForeColor = Color.Black;
+            btnGastos.BackColor = Color.WhiteSmoke;
+            btnGastos.ForeColor = Color.Black;
+            //BtnTecladoV.BackColor = Color.WhiteSmoke;
+            //BtnTecladoV.ForeColor = Color.Black;
+            //PanelC4 pie de pagina
+            panelc4.BackColor = Color.Gainsboro;
+            btnespera.BackColor = Color.Gainsboro;
+            btnespera.ForeColor = Color.Black;
+            btnrestaurar.BackColor = Color.Gainsboro;
+            btnrestaurar.ForeColor = Color.Black;
+            btneliminar.BackColor = Color.Gainsboro;
+            btneliminar.ForeColor = Color.Black;
+            btnDevolucion.BackColor = Color.Gainsboro;
+            btnDevolucion.ForeColor = Color.Black;
+            //PanelOperaciones
+            PanelOperaciones.BackColor = Color.FromArgb(242, 243, 245);
+            txt_total_suma.ForeColor = Color.White;
+            //PanelBienvenida
+            panelBienvenida.BackColor = Color.White;
+            label8.ForeColor = Color.FromArgb(64, 64, 64);
+            Listarproductosagregados();
+        }
+
+        private void txtbuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            EventosTiposbusqueda(e);
+            EventosNavegarDgproductos(e);
+            EventosNavegarDgDetallVenta(e);
+        }
+        private void EventosNavegarDgDetallVenta(KeyEventArgs e)
+        {
+            if (DATALISTADO_PRODUCTOS_OKA.Visible == false)
+            {
+                if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
+                {
+                    DATALISTADO_PRODUCTOS_OKA.Focus();
+                }
+            }
+        }
+
+        private void EventosNavegarDgproductos(KeyEventArgs e)
+        {
+            EstadoCobrar = true;
+            if (DATALISTADO_PRODUCTOS_OKA.Visible == true)
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    EstadoCobrar = false;
+                    vender_por_teclado();
+                }
+                if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
+                {
+                    DATALISTADO_PRODUCTOS_OKA.Focus();
+                }
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter && EstadoCobrar == true)
+                {
+                    Cobrar();
+                }
+
+            }
+
+        }
+        private void EventoCobros(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && DATALISTADO_PRODUCTOS_OKA.Visible == false)
+            {
+                Cobrar();
+            }
+        }
+        private void EventosTiposbusqueda(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                ModoLectora();
+            }
+            if (e.KeyCode == Keys.F2)
+            {
+                ModoTeclado();
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                ValidarTiposBusqueda();
+            }
+
+        }
+
+        private void datalistadoDetalleVenta_KeyDown(object sender, KeyEventArgs e)
+        {
+            EventosTiposbusqueda(e);
+            EventoCobros(e);
         }
     }
 }

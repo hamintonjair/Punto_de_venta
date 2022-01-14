@@ -68,7 +68,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
         }
         private void mostrar_cajas()
         {
-        
+            Dispose();
             Caja.Cajas_formu frm = new Caja.Cajas_formu();
             frm.ShowDialog();
         }
@@ -133,5 +133,22 @@ namespace Punto_de_venta.Presentacion.Configuracion
             frm.ShowDialog();
         }
 
+        private void Balanzas_Click(object sender, EventArgs e)
+        {
+            BalanzaElectronica.BalanzaForm frm = new BalanzaElectronica.BalanzaForm();
+            frm.ShowDialog();
+        }
+
+        private void btbDiseño_Click(object sender, EventArgs e)
+        {
+            Diseñador_de_Comprobantes.Ticket frm = new Diseñador_de_Comprobantes.Ticket();
+            frm.ShowDialog();
+        }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            CopiasBd.CrearCopiaBd frm = new CopiasBd.CrearCopiaBd();
+            frm.ShowDialog();
+        }
     }
 }

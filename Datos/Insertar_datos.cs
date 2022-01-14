@@ -233,7 +233,7 @@ namespace Punto_de_venta.Datos
         {
             try
             {
-                Obtener_datos.mostrar_inicio_De_sesion(ref idusuario);
+                Obtener_datos.mostrar_inicio_De_sesion2(ref idusuario);
                 Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
                 ConexionData.abrir();
                 SqlCommand cmd = new SqlCommand("insertar_KARDEX_Entrada", ConexionData.conectar);
@@ -264,7 +264,7 @@ namespace Punto_de_venta.Datos
         {
             try
             {
-                Obtener_datos.mostrar_inicio_De_sesion(ref idusuario);
+                Obtener_datos.mostrar_inicio_De_sesion2(ref idusuario);
                 Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
                 ConexionData.abrir();
                 SqlCommand cmd = new SqlCommand("insertar_KARDEX_SALIDA", ConexionData.conectar);

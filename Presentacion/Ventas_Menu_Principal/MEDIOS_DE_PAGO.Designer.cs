@@ -211,9 +211,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.PanelregistroClientes.Controls.Add(this.label3);
             this.PanelregistroClientes.Controls.Add(this.label2);
             this.PanelregistroClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PanelregistroClientes.Location = new System.Drawing.Point(447, 374);
+            this.PanelregistroClientes.Location = new System.Drawing.Point(335, 308);
             this.PanelregistroClientes.Name = "PanelregistroClientes";
-            this.PanelregistroClientes.Size = new System.Drawing.Size(152, 115);
+            this.PanelregistroClientes.Size = new System.Drawing.Size(264, 181);
             this.PanelregistroClientes.TabIndex = 632;
             this.PanelregistroClientes.Visible = false;
             // 
@@ -222,10 +222,10 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.lblcp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
             this.lblcp.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblcp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.lblcp.ForeColor = System.Drawing.Color.White;
+            this.lblcp.ForeColor = System.Drawing.Color.Black;
             this.lblcp.Location = new System.Drawing.Point(0, 0);
             this.lblcp.Name = "lblcp";
-            this.lblcp.Size = new System.Drawing.Size(152, 47);
+            this.lblcp.Size = new System.Drawing.Size(264, 47);
             this.lblcp.TabIndex = 624;
             this.lblcp.Text = "NUEVO CLIENTE";
             this.lblcp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -779,6 +779,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txtcredito2.TabIndex = 563;
             this.txtcredito2.Click += new System.EventHandler(this.txtcredito2_Click);
             this.txtcredito2.TextChanged += new System.EventHandler(this.txtcredito2_TextChanged);
+            this.txtcredito2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcredito2_KeyPress);
             // 
             // Panel22
             // 
@@ -812,6 +813,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txttarjeta2.TabIndex = 560;
             this.txttarjeta2.Click += new System.EventHandler(this.txttarjeta2_Click);
             this.txttarjeta2.TextChanged += new System.EventHandler(this.txttarjeta2_TextChanged);
+            this.txttarjeta2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttarjeta2_KeyPress);
             // 
             // Panel21
             // 
@@ -845,6 +847,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txtefectivo2.TabIndex = 557;
             this.txtefectivo2.Click += new System.EventHandler(this.txtefectivo2_Click);
             this.txtefectivo2.TextChanged += new System.EventHandler(this.txtefectivo2_TextChanged);
+            this.txtefectivo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtefectivo2_KeyPress);
             // 
             // Panel20
             // 

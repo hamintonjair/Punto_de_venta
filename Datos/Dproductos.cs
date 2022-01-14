@@ -7,7 +7,7 @@ using Punto_de_venta.ConexionDt;
 using Punto_de_venta.Logica;
 using System.Data;
 using System.Data.SqlClient;
-namespace Ada369Csharp.Datos
+namespace Punto_de_venta.Datos
 {
    public class Dproductos
     {

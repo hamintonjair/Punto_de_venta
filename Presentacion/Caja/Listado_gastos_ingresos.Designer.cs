@@ -366,7 +366,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.MinimizeBox = false;
             this.Name = "Listado_gastos_ingresos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Listado_gastos_ingresos";
+            this.Text = "Listado de gastos y ingresos";
             this.Load += new System.EventHandler(this.Listado_gastos_ingresos_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

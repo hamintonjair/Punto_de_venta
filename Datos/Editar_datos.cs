@@ -364,6 +364,7 @@ namespace Punto_de_venta.Datos
             {
                 Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
                 ConexionData.abrir();
+                
                 SqlCommand cmd = new SqlCommand("EditarBascula", ConexionData.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idcaja", parametros.Id_Caja);

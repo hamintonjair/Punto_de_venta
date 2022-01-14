@@ -33,6 +33,8 @@ namespace Punto_de_venta.Presentacion.Cobros
             this.txtrestante = new System.Windows.Forms.Label();
             this.Label8 = new System.Windows.Forms.Label();
             this.pefectivo = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Label5 = new System.Windows.Forms.Label();
             this.txttarjeta2 = new System.Windows.Forms.TextBox();
             this.Panel21 = new System.Windows.Forms.Panel();
@@ -45,8 +47,6 @@ namespace Punto_de_venta.Presentacion.Cobros
             this.lbltotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button15 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pefectivo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -96,6 +96,26 @@ namespace Punto_de_venta.Presentacion.Cobros
             this.pefectivo.Name = "pefectivo";
             this.pefectivo.Size = new System.Drawing.Size(471, 288);
             this.pefectivo.TabIndex = 626;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Punto_de_venta.Properties.Resources.cards_finance_money_icon_197129;
+            this.pictureBox2.Location = new System.Drawing.Point(10, 110);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(51, 46);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 573;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Punto_de_venta.Properties.Resources.Coins_96x96_32_37900;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(42, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 572;
+            this.pictureBox1.TabStop = false;
             // 
             // Label5
             // 
@@ -232,26 +252,6 @@ namespace Punto_de_venta.Presentacion.Cobros
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Punto_de_venta.Properties.Resources.cards_finance_money_icon_197129;
-            this.pictureBox2.Location = new System.Drawing.Point(10, 110);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(51, 46);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 573;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Punto_de_venta.Properties.Resources.Coins_96x96_32_37900;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(42, 43);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 572;
-            this.pictureBox1.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -280,7 +280,7 @@ namespace Punto_de_venta.Presentacion.Cobros
             this.MinimizeBox = false;
             this.Name = "MediosCobros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Medios Cobros";
+            this.Text = "Medios de Cobros";
             this.Load += new System.EventHandler(this.MediosCobros_Load);
             this.pefectivo.ResumeLayout(false);
             this.pefectivo.PerformLayout();

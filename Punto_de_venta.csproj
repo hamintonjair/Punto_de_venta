@@ -85,6 +85,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Management.Instrumentation" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -179,6 +180,12 @@
     <Compile Include="Presentacion\Asistente_de_Instalacion_Servidor\USUARIOS_AUTORIZADOS_AL_SISTEMA.Designer.cs">
       <DependentUpon>USUARIOS_AUTORIZADOS_AL_SISTEMA.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\BalanzaElectronica\BalanzaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\BalanzaElectronica\BalanzaForm.Designer.cs">
+      <DependentUpon>BalanzaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Caja\Apertura_de_Caja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +239,24 @@
     </Compile>
     <Compile Include="Presentacion\Cobros\MediosCobros.Designer.cs">
       <DependentUpon>MediosCobros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Compras\Admincompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Compras\Admincompras.Designer.cs">
+      <DependentUpon>Admincompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Compras\HistorialCompras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Compras\HistorialCompras.Designer.cs">
+      <DependentUpon>HistorialCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Compras\RealizarCompra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Compras\RealizarCompra.Designer.cs">
+      <DependentUpon>RealizarCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Conexion_remota\Conexion_secundaria.cs">
       <SubType>Form</SubType>
@@ -287,6 +312,12 @@
     <Compile Include="Presentacion\Gastos_varios\Gastos.Designer.cs">
       <DependentUpon>Gastos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\HistorialVentas\HistorialVentasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\HistorialVentas\HistorialVentasForm.Designer.cs">
+      <DependentUpon>HistorialVentasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Ingresos_varios\IngresosVarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,11 +330,17 @@
     <Compile Include="Presentacion\Inventarioss_Kardex\Inventarios_Menu.Designer.cs">
       <DependentUpon>Inventarios_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Licencias_Membresias\Membresias.cs">
+    <Compile Include="Presentacion\Inventarioss_Kardex\KardexEntrada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Licencias_Membresias\Membresias.Designer.cs">
-      <DependentUpon>Membresias.cs</DependentUpon>
+    <Compile Include="Presentacion\Inventarioss_Kardex\KardexEntrada.Designer.cs">
+      <DependentUpon>KardexEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Inventarioss_Kardex\KardexSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Inventarioss_Kardex\KardexSalidas.Designer.cs">
+      <DependentUpon>KardexSalidas.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Licencias_Membresias\MembresiasNuevo.cs">
       <SubType>Form</SubType>
@@ -341,11 +378,29 @@
     <Compile Include="Presentacion\Reportes\Impresion_de_comprobantes\Ticket_report.Designer.cs">
       <DependentUpon>Ticket_report.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Reportes\MenuReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\MenuReportes.Designer.cs">
+      <DependentUpon>MenuReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Reportes\RCobros\rptCobros.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Presentacion\Reportes\RCobros\rptCobros.Designer.cs">
       <DependentUpon>rptCobros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\ReportePorCobrar\ReporteCobrar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\ReportePorCobrar\ReporteCobrar.Designer.cs">
+      <DependentUpon>ReporteCobrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\ReportePorPagar\ReportePagar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\ReportePorPagar\ReportePagar.Designer.cs">
+      <DependentUpon>ReportePagar.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormInventarioTodos.cs">
       <SubType>Form</SubType>
@@ -365,6 +420,18 @@
     <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormReporteMovimientosFILTROS.Designer.cs">
       <DependentUpon>FormReporteMovimientosFILTROS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportePbajomin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportePbajomin.Designer.cs">
+      <DependentUpon>ReportePbajomin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportePVencidos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportePVencidos.Designer.cs">
+      <DependentUpon>ReportePVencidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\Reporte_Movimientos_con_filtros.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -377,6 +444,12 @@
     <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportInventarios_Todos.designer.cs">
       <DependentUpon>ReportInventarios_Todos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportInventarios_Todos_todos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportInventarios_Todos_todos.Designer.cs">
+      <DependentUpon>ReportInventarios_Todos_todos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportMovimientosBuscar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -388,6 +461,12 @@
     </Compile>
     <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reporte_de_Kardex_diseño\ReportKARDEX_Movimientos_ok.designer.cs">
       <DependentUpon>ReportKARDEX_Movimientos_ok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\ReporteVentas\ResumenVentas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\ReporteVentas\ResumenVentas.Designer.cs">
+      <DependentUpon>ResumenVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Serializacion_de_Comprobantes\SERIALIZACION.cs">
       <SubType>Form</SubType>
@@ -457,6 +536,9 @@
     <EmbeddedResource Include="Presentacion\Asistente_de_Instalacion_Servidor\USUARIOS_AUTORIZADOS_AL_SISTEMA.resx">
       <DependentUpon>USUARIOS_AUTORIZADOS_AL_SISTEMA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\BalanzaElectronica\BalanzaForm.resx">
+      <DependentUpon>BalanzaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Caja\Apertura_de_Caja.resx">
       <DependentUpon>Apertura_de_Caja.cs</DependentUpon>
     </EmbeddedResource>
@@ -483,6 +565,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Cobros\MediosCobros.resx">
       <DependentUpon>MediosCobros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Compras\Admincompras.resx">
+      <DependentUpon>Admincompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Compras\HistorialCompras.resx">
+      <DependentUpon>HistorialCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Compras\RealizarCompra.resx">
+      <DependentUpon>RealizarCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Conexion_remota\Conexion_secundaria.resx">
       <DependentUpon>Conexion_secundaria.cs</DependentUpon>
@@ -511,14 +602,20 @@
     <EmbeddedResource Include="Presentacion\Gastos_varios\Gastos.resx">
       <DependentUpon>Gastos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\HistorialVentas\HistorialVentasForm.resx">
+      <DependentUpon>HistorialVentasForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Ingresos_varios\IngresosVarios.resx">
       <DependentUpon>IngresosVarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Inventarioss_Kardex\Inventarios_Menu.resx">
       <DependentUpon>Inventarios_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Licencias_Membresias\Membresias.resx">
-      <DependentUpon>Membresias.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Inventarioss_Kardex\KardexEntrada.resx">
+      <DependentUpon>KardexEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Inventarioss_Kardex\KardexSalidas.resx">
+      <DependentUpon>KardexSalidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Licencias_Membresias\MembresiasNuevo.resx">
       <DependentUpon>MembresiasNuevo.cs</DependentUpon>
@@ -538,6 +635,15 @@
     <EmbeddedResource Include="Presentacion\Reportes\Impresion_de_comprobantes\Ticket_report.resx">
       <DependentUpon>Ticket_report.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\MenuReportes.resx">
+      <DependentUpon>MenuReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\ReportePorCobrar\ReporteCobrar.resx">
+      <DependentUpon>ReporteCobrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\ReportePorPagar\ReportePagar.resx">
+      <DependentUpon>ReportePagar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormInventarioTodos.resx">
       <DependentUpon>FormInventarioTodos.cs</DependentUpon>
     </EmbeddedResource>
@@ -547,17 +653,29 @@
     <EmbeddedResource Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormReporteMovimientosFILTROS.resx">
       <DependentUpon>FormReporteMovimientosFILTROS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportePbajomin.resx">
+      <DependentUpon>ReportePbajomin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportePVencidos.resx">
+      <DependentUpon>ReportePVencidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\Reporte_Movimientos_con_filtros.resx">
       <DependentUpon>Reporte_Movimientos_con_filtros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportInventarios_Todos.resx">
       <DependentUpon>ReportInventarios_Todos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportInventarios_Todos_todos.resx">
+      <DependentUpon>ReportInventarios_Todos_todos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportMovimientosBuscar.resx">
       <DependentUpon>ReportMovimientosBuscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reporte_de_Kardex_diseño\ReportKARDEX_Movimientos_ok.resx">
       <DependentUpon>ReportKARDEX_Movimientos_ok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\ReporteVentas\ResumenVentas.resx">
+      <DependentUpon>ResumenVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Serializacion_de_Comprobantes\SERIALIZACION.resx">
       <DependentUpon>SERIALIZACION.cs</DependentUpon>
@@ -619,6 +737,14 @@
     <None Include="Resources\Captura de pantalla 2022-01-07 161543.png" />
     <None Include="Resources\out_37478.png" />
     <None Include="Resources\cards_finance_money_icon_197129.png" />
+    <None Include="Resources\balanza.png" />
+    <None Include="Resources\switch-off-icon_34344.png" />
+    <None Include="Resources\switch-on-icon_34343.png" />
+    <None Include="Resources\oval.png" />
+    <None Include="Resources\usd-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95707.png" />
+    <None Include="Resources\bar_code_22177.png" />
+    <None Include="Resources\tact_key_keyboard_9523.png" />
+    <None Include="Resources\Gmail_29991.png" />
     <Content Include="Untitled Design.ico" />
     <None Include="Resources\Captura de pantalla 2022-01-07 072646.png" />
     <None Include="Resources\pagosicono.png" />
@@ -678,5 +804,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

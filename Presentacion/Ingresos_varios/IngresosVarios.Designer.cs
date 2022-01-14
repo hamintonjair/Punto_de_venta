@@ -305,7 +305,7 @@ namespace Punto_de_venta.Presentacion.Ingresos_varios
             this.MinimizeBox = false;
             this.Name = "IngresosVarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "IngresosVarios";
+            this.Text = "Ingresos Varios";
             this.Load += new System.EventHandler(this.IngresosVarios_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panelcomprobante.ResumeLayout(false);

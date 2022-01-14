@@ -34,6 +34,7 @@ namespace Punto_de_venta.Presentacion.CopiasBd
             this.Panel12 = new System.Windows.Forms.Panel();
             this.Label1 = new System.Windows.Forms.Label();
             this.Panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.Label6 = new System.Windows.Forms.Label();
             this.lblfrecuencia = new System.Windows.Forms.ComboBox();
             this.txtRuta = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@ namespace Punto_de_venta.Presentacion.CopiasBd
             this.Label2 = new System.Windows.Forms.Label();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.Pcargando = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.lbldirectorio = new System.Windows.Forms.Label();
             this.lblfecha = new System.Windows.Forms.Label();
@@ -93,6 +93,17 @@ namespace Punto_de_venta.Presentacion.CopiasBd
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(519, 249);
             this.Panel1.TabIndex = 615;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::Punto_de_venta.Properties.Resources.out_37478;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(12, 37);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(34, 31);
+            this.button1.TabIndex = 600;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Label6
             // 
@@ -195,17 +206,6 @@ namespace Punto_de_venta.Presentacion.CopiasBd
             this.Pcargando.TabIndex = 616;
             this.Pcargando.TabStop = false;
             this.Pcargando.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::Punto_de_venta.Properties.Resources.out_37478;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(12, 37);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 31);
-            this.button1.TabIndex = 600;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Panel2
             // 

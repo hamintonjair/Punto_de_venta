@@ -178,9 +178,9 @@
             // 
             // TextBox1
             // 
-            this.TextBox1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(0.053D), Telerik.Reporting.Drawing.Unit.Cm(0.294D));
+            this.TextBox1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(7.2D), Telerik.Reporting.Drawing.Unit.Cm(0.294D));
             this.TextBox1.Name = "TextBox1";
-            this.TextBox1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(27.535D), Telerik.Reporting.Drawing.Unit.Cm(0.7D));
+            this.TextBox1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(19.135D), Telerik.Reporting.Drawing.Unit.Cm(0.7D));
             this.TextBox1.Style.Font.Bold = true;
             this.TextBox1.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(16D);
             this.TextBox1.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
@@ -189,9 +189,9 @@
             // 
             // TextBox28
             // 
-            this.TextBox28.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(0D), Telerik.Reporting.Drawing.Unit.Cm(1.4D));
+            this.TextBox28.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(7.1D), Telerik.Reporting.Drawing.Unit.Cm(1.4D));
             this.TextBox28.Name = "TextBox28";
-            this.TextBox28.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(27.535D), Telerik.Reporting.Drawing.Unit.Cm(0.7D));
+            this.TextBox28.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(19.235D), Telerik.Reporting.Drawing.Unit.Cm(0.7D));
             this.TextBox28.Style.Font.Bold = true;
             this.TextBox28.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(13D);
             this.TextBox28.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;

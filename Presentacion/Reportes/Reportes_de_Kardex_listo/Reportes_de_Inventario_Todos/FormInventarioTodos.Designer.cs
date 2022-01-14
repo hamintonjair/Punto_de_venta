@@ -44,6 +44,7 @@ namespace Punto_de_venta.Presentacion.Reportes.Reportes_de_Kardex_listo.Reportes
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(479, 518);
             this.reportViewer1.TabIndex = 1;
+            this.reportViewer1.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview;
             // 
             // panel1
             // 

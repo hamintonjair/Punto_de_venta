@@ -47,6 +47,10 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Label2 = new System.Windows.Forms.Label();
             this.Label38 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.Balanzas = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.FlowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.Button5 = new System.Windows.Forms.Button();
@@ -55,7 +59,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Panel38 = new System.Windows.Forms.Panel();
             this.FlowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.Panel40 = new System.Windows.Forms.Panel();
-            this.Button2 = new System.Windows.Forms.Button();
+            this.btbDiseño = new System.Windows.Forms.Button();
             this.Label31 = new System.Windows.Forms.Label();
             this.Label35 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -92,6 +96,8 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.FlowLayoutPanel4.SuspendLayout();
             this.Panel7.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.FlowLayoutPanel3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.Panel38.SuspendLayout();
@@ -151,10 +157,10 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // Panel5
             // 
-            this.Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.Panel5.BackColor = System.Drawing.Color.Green;
             this.Panel5.Controls.Add(this.FlowLayoutPanel5);
             this.Panel5.Controls.Add(this.Label6);
-            this.Panel5.Location = new System.Drawing.Point(392, 323);
+            this.Panel5.Location = new System.Drawing.Point(525, 323);
             this.Panel5.Name = "Panel5";
             this.Panel5.Size = new System.Drawing.Size(193, 147);
             this.Panel5.TabIndex = 597;
@@ -192,6 +198,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Button7.Size = new System.Drawing.Size(157, 47);
             this.Button7.TabIndex = 5;
             this.Button7.UseVisualStyleBackColor = true;
+            this.Button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // Label5
             // 
@@ -218,11 +225,11 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // Panel3
             // 
-            this.Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Panel3.Controls.Add(this.btnEnvios_a_correo);
             this.Panel3.Controls.Add(this.FlowLayoutPanel4);
             this.Panel3.Controls.Add(this.Label38);
-            this.Panel3.Location = new System.Drawing.Point(192, 323);
+            this.Panel3.Location = new System.Drawing.Point(325, 323);
             this.Panel3.Name = "Panel3";
             this.Panel3.Size = new System.Drawing.Size(193, 147);
             this.Panel3.TabIndex = 596;
@@ -302,13 +309,62 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.panel4.BackColor = System.Drawing.Color.Silver;
+            this.panel4.Controls.Add(this.flowLayoutPanel6);
             this.panel4.Controls.Add(this.FlowLayoutPanel3);
             this.panel4.Controls.Add(this.Label30);
+            this.panel4.ForeColor = System.Drawing.Color.White;
             this.panel4.Location = new System.Drawing.Point(52, 323);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(125, 147);
+            this.panel4.Size = new System.Drawing.Size(267, 147);
             this.panel4.TabIndex = 595;
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.Controls.Add(this.panel12);
+            this.flowLayoutPanel6.ForeColor = System.Drawing.Color.DimGray;
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(137, 34);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(115, 106);
+            this.flowLayoutPanel6.TabIndex = 603;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Transparent;
+            this.panel12.Controls.Add(this.Balanzas);
+            this.panel12.Controls.Add(this.label9);
+            this.panel12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel12.Location = new System.Drawing.Point(3, 3);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(100, 94);
+            this.panel12.TabIndex = 590;
+            // 
+            // Balanzas
+            // 
+            this.Balanzas.BackgroundImage = global::Punto_de_venta.Properties.Resources.balanza;
+            this.Balanzas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Balanzas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Balanzas.FlatAppearance.BorderSize = 0;
+            this.Balanzas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Balanzas.ForeColor = System.Drawing.Color.White;
+            this.Balanzas.Location = new System.Drawing.Point(0, 0);
+            this.Balanzas.Name = "Balanzas";
+            this.Balanzas.Size = new System.Drawing.Size(100, 75);
+            this.Balanzas.TabIndex = 5;
+            this.Balanzas.UseVisualStyleBackColor = true;
+            this.Balanzas.Click += new System.EventHandler(this.Balanzas_Click);
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(0, 75);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 19);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Balanzas";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FlowLayoutPanel3
             // 
@@ -369,7 +425,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // Panel38
             // 
-            this.Panel38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.Panel38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(200)))), ((int)(((byte)(41)))));
             this.Panel38.Controls.Add(this.FlowLayoutPanel2);
             this.Panel38.Controls.Add(this.Label35);
             this.Panel38.ForeColor = System.Drawing.Color.Black;
@@ -380,6 +436,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // FlowLayoutPanel2
             // 
+            this.FlowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
             this.FlowLayoutPanel2.Controls.Add(this.Panel40);
             this.FlowLayoutPanel2.ForeColor = System.Drawing.Color.DimGray;
             this.FlowLayoutPanel2.Location = new System.Drawing.Point(7, 34);
@@ -390,7 +447,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // Panel40
             // 
             this.Panel40.BackColor = System.Drawing.Color.Transparent;
-            this.Panel40.Controls.Add(this.Button2);
+            this.Panel40.Controls.Add(this.btbDiseño);
             this.Panel40.Controls.Add(this.Label31);
             this.Panel40.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Panel40.Location = new System.Drawing.Point(3, 3);
@@ -398,19 +455,20 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Panel40.Size = new System.Drawing.Size(115, 92);
             this.Panel40.TabIndex = 590;
             // 
-            // Button2
+            // btbDiseño
             // 
-            this.Button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button2.BackgroundImage")));
-            this.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Button2.FlatAppearance.BorderSize = 0;
-            this.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button2.ForeColor = System.Drawing.Color.White;
-            this.Button2.Location = new System.Drawing.Point(0, 0);
-            this.Button2.Name = "Button2";
-            this.Button2.Size = new System.Drawing.Size(115, 51);
-            this.Button2.TabIndex = 603;
-            this.Button2.UseVisualStyleBackColor = true;
+            this.btbDiseño.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btbDiseño.BackgroundImage")));
+            this.btbDiseño.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btbDiseño.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btbDiseño.FlatAppearance.BorderSize = 0;
+            this.btbDiseño.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btbDiseño.ForeColor = System.Drawing.Color.White;
+            this.btbDiseño.Location = new System.Drawing.Point(0, 0);
+            this.btbDiseño.Name = "btbDiseño";
+            this.btbDiseño.Size = new System.Drawing.Size(115, 51);
+            this.btbDiseño.TabIndex = 603;
+            this.btbDiseño.UseVisualStyleBackColor = true;
+            this.btbDiseño.Click += new System.EventHandler(this.btbDiseño_Click);
             // 
             // Label31
             // 
@@ -775,6 +833,8 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Panel7.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
             this.FlowLayoutPanel3.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.Panel38.ResumeLayout(false);
@@ -822,10 +882,6 @@ namespace Punto_de_venta.Presentacion.Configuracion
         internal System.Windows.Forms.Label Label4;
         internal System.Windows.Forms.Label Label30;
         internal System.Windows.Forms.Panel Panel38;
-        internal System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel2;
-        internal System.Windows.Forms.Panel Panel40;
-        internal System.Windows.Forms.Button Button2;
-        internal System.Windows.Forms.Label Label31;
         internal System.Windows.Forms.Label Label35;
         private System.Windows.Forms.Panel panel2;
         internal System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel1;
@@ -852,5 +908,13 @@ namespace Punto_de_venta.Presentacion.Configuracion
         internal System.Windows.Forms.Button Button9;
         internal System.Windows.Forms.Label Label8;
         internal System.Windows.Forms.Label Label1;
+        internal System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        internal System.Windows.Forms.Panel panel12;
+        internal System.Windows.Forms.Button Balanzas;
+        internal System.Windows.Forms.Label label9;
+        internal System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel2;
+        internal System.Windows.Forms.Panel Panel40;
+        internal System.Windows.Forms.Button btbDiseño;
+        internal System.Windows.Forms.Label Label31;
     }
 }

@@ -125,7 +125,7 @@ namespace Punto_de_venta.Presentacion.CorreoBase
             // 
             // tver
             // 
-            this.tver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.tver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
             this.tver.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.tver.ForeColor = System.Drawing.Color.Black;
             this.tver.Image = ((System.Drawing.Image)(resources.GetObject("tver.Image")));
@@ -137,7 +137,7 @@ namespace Punto_de_venta.Presentacion.CorreoBase
             // 
             // tocultar
             // 
-            this.tocultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.tocultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
             this.tocultar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.tocultar.ForeColor = System.Drawing.Color.Black;
             this.tocultar.Image = ((System.Drawing.Image)(resources.GetObject("tocultar.Image")));
@@ -191,7 +191,7 @@ namespace Punto_de_venta.Presentacion.CorreoBase
             // PictureBox2
             // 
             this.PictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
+            this.PictureBox2.Image = global::Punto_de_venta.Properties.Resources.Gmail_29991;
             this.PictureBox2.Location = new System.Drawing.Point(0, 0);
             this.PictureBox2.Name = "PictureBox2";
             this.PictureBox2.Size = new System.Drawing.Size(457, 199);
@@ -201,10 +201,10 @@ namespace Punto_de_venta.Presentacion.CorreoBase
             // 
             // btnsincronizar
             // 
-            this.btnsincronizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.btnsincronizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
             this.btnsincronizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnsincronizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.btnsincronizar.ForeColor = System.Drawing.Color.Black;
+            this.btnsincronizar.ForeColor = System.Drawing.Color.White;
             this.btnsincronizar.Location = new System.Drawing.Point(68, 361);
             this.btnsincronizar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.btnsincronizar.Name = "btnsincronizar";
@@ -242,9 +242,9 @@ namespace Punto_de_venta.Presentacion.CorreoBase
             // PictureBox3
             // 
             this.PictureBox3.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA2;
-            this.PictureBox3.Location = new System.Drawing.Point(211, 84);
+            this.PictureBox3.Location = new System.Drawing.Point(192, 71);
             this.PictureBox3.Name = "PictureBox3";
-            this.PictureBox3.Size = new System.Drawing.Size(118, 67);
+            this.PictureBox3.Size = new System.Drawing.Size(154, 84);
             this.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBox3.TabIndex = 611;
             this.PictureBox3.TabStop = false;
@@ -253,7 +253,7 @@ namespace Punto_de_venta.Presentacion.CorreoBase
             // 
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Label7.Location = new System.Drawing.Point(103, 154);
+            this.Label7.Location = new System.Drawing.Point(115, 154);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(323, 47);
             this.Label7.TabIndex = 610;
@@ -262,11 +262,12 @@ namespace Punto_de_venta.Presentacion.CorreoBase
             // 
             // Label5
             // 
+            this.Label5.Dock = System.Windows.Forms.DockStyle.Top;
             this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Label5.Location = new System.Drawing.Point(49, 27);
+            this.Label5.Location = new System.Drawing.Point(0, 0);
             this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(427, 72);
+            this.Label5.Size = new System.Drawing.Size(543, 72);
             this.Label5.TabIndex = 609;
             this.Label5.Text = "Para que puedas Recibir reportes en tu Correo deberas Sincronizar tu Cuenta Gmail" +
     " con Jojama";

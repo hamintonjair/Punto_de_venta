@@ -29,6 +29,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CANTIDAD_A_GRANEL));
             this.button1 = new System.Windows.Forms.Button();
             this.BtnCerrar_turno = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txtcantidadKilo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.puertos = new System.IO.Ports.SerialPort(this.components);
             this.SuspendLayout();
             // 
             // button1
@@ -62,6 +64,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.button1.TabIndex = 612;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // BtnCerrar_turno
             // 
@@ -199,6 +202,10 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.label2.TabIndex = 615;
             this.label2.Text = "Kilos";
             // 
+            // puertos
+            // 
+            this.puertos.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.puertos_DataReceived);
+            // 
             // CANTIDAD_A_GRANEL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,5 +251,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         internal System.Windows.Forms.TextBox txtcantidadKilo;
         internal System.Windows.Forms.Label label1;
         internal System.Windows.Forms.Label label2;
+        private System.IO.Ports.SerialPort puertos;
     }
 }

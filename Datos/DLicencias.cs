@@ -16,7 +16,7 @@ namespace Punto_de_venta.Datos
         DateTime FechaInicial;
         string estado;
         string SerialPcLicencia;
-        DateTime fechaSistema = DateTime.Today;
+        DateTime fechaSistema = DateTime.Now;
         string SerialPC;
        public void ValidarLicencias(ref string Resultado,ref string ResultFechafinal)
         {

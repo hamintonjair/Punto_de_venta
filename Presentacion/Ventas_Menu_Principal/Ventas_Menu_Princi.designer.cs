@@ -55,7 +55,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.Panel21 = new System.Windows.Forms.Panel();
+            this.Panelc3 = new System.Windows.Forms.Panel();
             this.btnverMovimientosCaja = new System.Windows.Forms.Button();
             this.StatusStrip4 = new System.Windows.Forms.StatusStrip();
             this.btnINSVarios = new System.Windows.Forms.ToolStripButton();
@@ -67,7 +67,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.MenuStrip21 = new System.Windows.Forms.MenuStrip();
             this.datalistado_stock_detalle_venta = new System.Windows.Forms.DataGridView();
             this.DataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Panel17 = new System.Windows.Forms.Panel();
+            this.Panelc1 = new System.Windows.Forms.Panel();
             this.DATALISTADO_PRODUCTOS_OKA = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtreferencia = new System.Windows.Forms.Button();
@@ -76,7 +76,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.panel13 = new System.Windows.Forms.Panel();
             this.ToolStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnadmin = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Panel26 = new System.Windows.Forms.Panel();
             this.lblROL = new System.Windows.Forms.Label();
@@ -172,7 +171,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txtProducto = new System.Windows.Forms.Label();
             this.lblidproducto = new System.Windows.Forms.Label();
             this.Label38 = new System.Windows.Forms.Label();
-            this.PictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pboxNombreSoftware = new System.Windows.Forms.PictureBox();
             this.Panel30 = new System.Windows.Forms.Panel();
             this.lblSerialPc = new System.Windows.Forms.Label();
             this.ProgressBarETIQUETA_STOCK = new System.Windows.Forms.ProgressBar();
@@ -231,7 +230,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btEfectivo = new System.Windows.Forms.Button();
             this.Panel15 = new System.Windows.Forms.Panel();
             this.txt_total_suma = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblpeso = new System.Windows.Forms.Label();
             this.Button21 = new System.Windows.Forms.Button();
             this.Paneldesc = new System.Windows.Forms.Panel();
             this.Button4 = new System.Windows.Forms.Button();
@@ -250,7 +249,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.Label11 = new System.Windows.Forms.Label();
             this.btn0 = new System.Windows.Forms.Button();
             this.Label36 = new System.Windows.Forms.Label();
-            this.Button23 = new System.Windows.Forms.Button();
             this.lblsubtotal = new System.Windows.Forms.Label();
             this.Button22 = new System.Windows.Forms.Button();
             this.lbligv = new System.Windows.Forms.Label();
@@ -275,10 +273,14 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.TimerBUSCADORcodigodebarras = new System.Windows.Forms.Timer(this.components);
             this.LABEL_STOCK = new System.Windows.Forms.Label();
             this.TimerLABEL_STOCK = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelc4 = new System.Windows.Forms.Panel();
+            this.panelNotificacionEspera = new System.Windows.Forms.Panel();
+            this.lblContadorEspera = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnDevolucion = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.activarTema = new System.Windows.Forms.PictureBox();
+            this.desactivarTEMA = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnespera = new System.Windows.Forms.Button();
@@ -289,7 +291,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelc2 = new System.Windows.Forms.Panel();
             this.btnCreditoPagar = new System.Windows.Forms.Button();
             this.btnCreditoCobrar = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -301,17 +303,17 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
+            this.panelc5 = new System.Windows.Forms.Panel();
+            this.puertos = new System.IO.Ports.SerialPort(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Panel21.SuspendLayout();
+            this.Panelc3.SuspendLayout();
             this.StatusStrip4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_stock_detalle_venta)).BeginInit();
-            this.Panel17.SuspendLayout();
+            this.Panelc1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DATALISTADO_PRODUCTOS_OKA)).BeginInit();
             this.panel13.SuspendLayout();
             this.ToolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.Panel26.SuspendLayout();
             this.Panel27.SuspendLayout();
             this.panel_granel.SuspendLayout();
@@ -333,7 +335,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             ((System.ComponentModel.ISupportInitialize)(this.datalistadocomprobante)).BeginInit();
             this.Panel4.SuspendLayout();
             this.menuStrip9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxNombreSoftware)).BeginInit();
             this.Panel30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoVentasEnEspera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).BeginInit();
@@ -349,29 +351,32 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.MenuStrip16.SuspendLayout();
             this.FlowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoDetalleVenta)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelc4.SuspendLayout();
+            this.panelNotificacionEspera.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.activarTema)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desactivarTEMA)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelBienvenida.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panelc2.SuspendLayout();
             this.PanelEnespera.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Panel21
+            // Panelc3
             // 
-            this.Panel21.BackColor = System.Drawing.Color.White;
-            this.Panel21.Controls.Add(this.btnverMovimientosCaja);
-            this.Panel21.Controls.Add(this.StatusStrip4);
-            this.Panel21.Controls.Add(this.BtnCerrar_turno);
-            this.Panel21.Controls.Add(this.MenuStrip21);
-            this.Panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel21.Location = new System.Drawing.Point(0, 104);
-            this.Panel21.Name = "Panel21";
-            this.Panel21.Size = new System.Drawing.Size(1486, 56);
-            this.Panel21.TabIndex = 598;
+            this.Panelc3.BackColor = System.Drawing.Color.White;
+            this.Panelc3.Controls.Add(this.btnverMovimientosCaja);
+            this.Panelc3.Controls.Add(this.StatusStrip4);
+            this.Panelc3.Controls.Add(this.BtnCerrar_turno);
+            this.Panelc3.Controls.Add(this.MenuStrip21);
+            this.Panelc3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Panelc3.Location = new System.Drawing.Point(0, 104);
+            this.Panelc3.Name = "Panelc3";
+            this.Panelc3.Size = new System.Drawing.Size(1486, 56);
+            this.Panelc3.TabIndex = 598;
             // 
             // btnverMovimientosCaja
             // 
@@ -430,6 +435,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btnMayoreo.Name = "btnMayoreo";
             this.btnMayoreo.Size = new System.Drawing.Size(89, 47);
             this.btnMayoreo.Text = "Mayoreo";
+            this.btnMayoreo.Click += new System.EventHandler(this.btnMayoreo_Click);
             // 
             // btnProductoRapido
             // 
@@ -552,26 +558,26 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.DataGridViewCheckBoxColumn8.Name = "DataGridViewCheckBoxColumn8";
             this.DataGridViewCheckBoxColumn8.ReadOnly = true;
             // 
-            // Panel17
+            // Panelc1
             // 
-            this.Panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
-            this.Panel17.Controls.Add(this.DATALISTADO_PRODUCTOS_OKA);
-            this.Panel17.Controls.Add(this.txtreferencia);
-            this.Panel17.Controls.Add(this.BTNTECLADO);
-            this.Panel17.Controls.Add(this.BTNLECTORA);
-            this.Panel17.Controls.Add(this.panel13);
-            this.Panel17.Controls.Add(this.Panel26);
-            this.Panel17.Controls.Add(this.panel_granel);
-            this.Panel17.Controls.Add(this.PictureBox4);
-            this.Panel17.Controls.Add(this.Panel30);
-            this.Panel17.Controls.Add(this.lbltipodebusqueda2);
-            this.Panel17.Controls.Add(this.txtbuscar);
-            this.Panel17.Controls.Add(this.Panel24);
-            this.Panel17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel17.Location = new System.Drawing.Point(0, 0);
-            this.Panel17.Name = "Panel17";
-            this.Panel17.Size = new System.Drawing.Size(1486, 56);
-            this.Panel17.TabIndex = 599;
+            this.Panelc1.BackColor = System.Drawing.Color.Coral;
+            this.Panelc1.Controls.Add(this.DATALISTADO_PRODUCTOS_OKA);
+            this.Panelc1.Controls.Add(this.txtreferencia);
+            this.Panelc1.Controls.Add(this.BTNTECLADO);
+            this.Panelc1.Controls.Add(this.BTNLECTORA);
+            this.Panelc1.Controls.Add(this.panel13);
+            this.Panelc1.Controls.Add(this.Panel26);
+            this.Panelc1.Controls.Add(this.panel_granel);
+            this.Panelc1.Controls.Add(this.pboxNombreSoftware);
+            this.Panelc1.Controls.Add(this.Panel30);
+            this.Panelc1.Controls.Add(this.lbltipodebusqueda2);
+            this.Panelc1.Controls.Add(this.txtbuscar);
+            this.Panelc1.Controls.Add(this.Panel24);
+            this.Panelc1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Panelc1.Location = new System.Drawing.Point(0, 0);
+            this.Panelc1.Name = "Panelc1";
+            this.Panelc1.Size = new System.Drawing.Size(1486, 56);
+            this.Panelc1.TabIndex = 599;
             // 
             // DATALISTADO_PRODUCTOS_OKA
             // 
@@ -590,7 +596,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.DATALISTADO_PRODUCTOS_OKA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DATALISTADO_PRODUCTOS_OKA.EnableHeadersVisualStyles = false;
             this.DATALISTADO_PRODUCTOS_OKA.GridColor = System.Drawing.SystemColors.Control;
-            this.DATALISTADO_PRODUCTOS_OKA.Location = new System.Drawing.Point(787, 7);
+            this.DATALISTADO_PRODUCTOS_OKA.Location = new System.Drawing.Point(847, 8);
             this.DATALISTADO_PRODUCTOS_OKA.MultiSelect = false;
             this.DATALISTADO_PRODUCTOS_OKA.Name = "DATALISTADO_PRODUCTOS_OKA";
             this.DATALISTADO_PRODUCTOS_OKA.ReadOnly = true;
@@ -628,13 +634,13 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.BTNTECLADO.FlatAppearance.BorderSize = 0;
             this.BTNTECLADO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNTECLADO.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNTECLADO.Image = global::Punto_de_venta.Properties.Resources.cobrosIcono;
+            this.BTNTECLADO.Image = global::Punto_de_venta.Properties.Resources.tact_key_keyboard_9523;
             this.BTNTECLADO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNTECLADO.Location = new System.Drawing.Point(594, 13);
+            this.BTNTECLADO.Location = new System.Drawing.Point(651, 10);
             this.BTNTECLADO.Name = "BTNTECLADO";
-            this.BTNTECLADO.Size = new System.Drawing.Size(96, 34);
+            this.BTNTECLADO.Size = new System.Drawing.Size(148, 34);
             this.BTNTECLADO.TabIndex = 635;
-            this.BTNTECLADO.Text = "Teclado";
+            this.BTNTECLADO.Text = "Teclado (F2)";
             this.BTNTECLADO.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BTNTECLADO.UseVisualStyleBackColor = false;
             this.BTNTECLADO.Click += new System.EventHandler(this.BTNTECLADO_Click);
@@ -645,13 +651,13 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.BTNLECTORA.FlatAppearance.BorderSize = 0;
             this.BTNLECTORA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNLECTORA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNLECTORA.Image = global::Punto_de_venta.Properties.Resources.cobrosIcono;
+            this.BTNLECTORA.Image = global::Punto_de_venta.Properties.Resources.bar_code_22177;
             this.BTNLECTORA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNLECTORA.Location = new System.Drawing.Point(496, 13);
+            this.BTNLECTORA.Location = new System.Drawing.Point(496, 9);
             this.BTNLECTORA.Name = "BTNLECTORA";
-            this.BTNLECTORA.Size = new System.Drawing.Size(96, 34);
+            this.BTNLECTORA.Size = new System.Drawing.Size(153, 34);
             this.BTNLECTORA.TabIndex = 634;
-            this.BTNLECTORA.Text = "Lectora";
+            this.BTNLECTORA.Text = "Lectora (F1)";
             this.BTNLECTORA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BTNLECTORA.UseVisualStyleBackColor = false;
             this.BTNLECTORA.Click += new System.EventHandler(this.BTNLECTORA_Click);
@@ -660,12 +666,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // 
             this.panel13.BackColor = System.Drawing.Color.Transparent;
             this.panel13.Controls.Add(this.ToolStrip1);
-            this.panel13.Controls.Add(this.pictureBox3);
             this.panel13.Controls.Add(this.menuStrip1);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel13.Location = new System.Drawing.Point(1246, 0);
+            this.panel13.Location = new System.Drawing.Point(1303, 0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(240, 56);
+            this.panel13.Size = new System.Drawing.Size(183, 56);
             this.panel13.TabIndex = 633;
             // 
             // ToolStrip1
@@ -694,16 +699,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btnadmin.Text = "Administrador";
             this.btnadmin.ToolTipText = "Agregar y ver Productos";
             this.btnadmin.Click += new System.EventHandler(this.btnadmin_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Location = new System.Drawing.Point(178, 11);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(41, 38);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 598;
-            this.pictureBox3.TabStop = false;
             // 
             // menuStrip1
             // 
@@ -1846,17 +1841,17 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.Label38.TabIndex = 0;
             this.Label38.Text = "Precio unitario = ";
             // 
-            // PictureBox4
+            // pboxNombreSoftware
             // 
-            this.PictureBox4.BackColor = System.Drawing.Color.White;
-            this.PictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PictureBox4.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA2;
-            this.PictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.PictureBox4.Name = "PictureBox4";
-            this.PictureBox4.Size = new System.Drawing.Size(83, 56);
-            this.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox4.TabIndex = 607;
-            this.PictureBox4.TabStop = false;
+            this.pboxNombreSoftware.BackColor = System.Drawing.Color.White;
+            this.pboxNombreSoftware.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pboxNombreSoftware.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA2;
+            this.pboxNombreSoftware.Location = new System.Drawing.Point(0, 0);
+            this.pboxNombreSoftware.Name = "pboxNombreSoftware";
+            this.pboxNombreSoftware.Size = new System.Drawing.Size(83, 56);
+            this.pboxNombreSoftware.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboxNombreSoftware.TabIndex = 607;
+            this.pboxNombreSoftware.TabStop = false;
             // 
             // Panel30
             // 
@@ -2255,7 +2250,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.lbltipodebusqueda2.BackColor = System.Drawing.Color.White;
             this.lbltipodebusqueda2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbltipodebusqueda2.ForeColor = System.Drawing.Color.DimGray;
-            this.lbltipodebusqueda2.Location = new System.Drawing.Point(120, 17);
+            this.lbltipodebusqueda2.Location = new System.Drawing.Point(125, 17);
             this.lbltipodebusqueda2.Name = "lbltipodebusqueda2";
             this.lbltipodebusqueda2.Size = new System.Drawing.Size(201, 18);
             this.lbltipodebusqueda2.TabIndex = 0;
@@ -2272,6 +2267,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txtbuscar.Size = new System.Drawing.Size(374, 26);
             this.txtbuscar.TabIndex = 457;
             this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
+            this.txtbuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbuscar_KeyDown);
             // 
             // Panel24
             // 
@@ -2587,7 +2583,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.PanelOperaciones.Controls.Add(this.Label11);
             this.PanelOperaciones.Controls.Add(this.btn0);
             this.PanelOperaciones.Controls.Add(this.Label36);
-            this.PanelOperaciones.Controls.Add(this.Button23);
             this.PanelOperaciones.Controls.Add(this.lblsubtotal);
             this.PanelOperaciones.Controls.Add(this.Button22);
             this.PanelOperaciones.Controls.Add(this.lbligv);
@@ -2627,7 +2622,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // 
             this.Panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(63)))), ((int)(((byte)(67)))));
             this.Panel15.Controls.Add(this.txt_total_suma);
-            this.Panel15.Controls.Add(this.label3);
+            this.Panel15.Controls.Add(this.lblpeso);
             this.Panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel15.Location = new System.Drawing.Point(0, 0);
             this.Panel15.Name = "Panel15";
@@ -2639,7 +2634,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txt_total_suma.BackColor = System.Drawing.Color.Transparent;
             this.txt_total_suma.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_total_suma.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold);
-            this.txt_total_suma.ForeColor = System.Drawing.Color.White;
+            this.txt_total_suma.ForeColor = System.Drawing.Color.Transparent;
             this.txt_total_suma.Location = new System.Drawing.Point(48, 0);
             this.txt_total_suma.Name = "txt_total_suma";
             this.txt_total_suma.Size = new System.Drawing.Size(277, 64);
@@ -2647,17 +2642,17 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txt_total_suma.Text = "0";
             this.txt_total_suma.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
+            // lblpeso
             // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 64);
-            this.label3.TabIndex = 508;
-            this.label3.Text = "$";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblpeso.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblpeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold);
+            this.lblpeso.ForeColor = System.Drawing.Color.Transparent;
+            this.lblpeso.Location = new System.Drawing.Point(0, 0);
+            this.lblpeso.Name = "lblpeso";
+            this.lblpeso.Size = new System.Drawing.Size(48, 64);
+            this.lblpeso.TabIndex = 508;
+            this.lblpeso.Text = "$";
+            this.lblpeso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Button21
             // 
@@ -2893,26 +2888,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.Label36.TabIndex = 507;
             this.Label36.Text = "Sub Total:";
             // 
-            // Button23
-            // 
-            this.Button23.BackColor = System.Drawing.Color.Transparent;
-            this.Button23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button23.BackgroundImage")));
-            this.Button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Button23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button23.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Button23.FlatAppearance.BorderSize = 0;
-            this.Button23.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.Button23.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.Button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button23.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button23.ForeColor = System.Drawing.Color.White;
-            this.Button23.Location = new System.Drawing.Point(214, 242);
-            this.Button23.Name = "Button23";
-            this.Button23.Size = new System.Drawing.Size(90, 55);
-            this.Button23.TabIndex = 41;
-            this.Button23.Text = "DESC";
-            this.Button23.UseVisualStyleBackColor = false;
-            // 
             // lblsubtotal
             // 
             this.lblsubtotal.AutoSize = true;
@@ -2944,6 +2919,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.Button22.TabIndex = 41;
             this.Button22.Text = "PREC";
             this.Button22.UseVisualStyleBackColor = false;
+            this.Button22.Click += new System.EventHandler(this.Button22_Click);
             // 
             // lbligv
             // 
@@ -3263,6 +3239,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.datalistadoDetalleVenta.Size = new System.Drawing.Size(782, 546);
             this.datalistadoDetalleVenta.TabIndex = 631;
             this.datalistadoDetalleVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistadoDetalleVenta_CellClick);
+            this.datalistadoDetalleVenta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.datalistadoDetalleVenta_KeyDown);
             this.datalistadoDetalleVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.datalistadoDetalleVenta_KeyPress);
             // 
             // EL
@@ -3339,50 +3316,99 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // 
             this.TimerLABEL_STOCK.Tick += new System.EventHandler(this.TimerLABEL_STOCK_Tick);
             // 
-            // panel1
+            // panelc4
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 706);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1486, 51);
-            this.panel1.TabIndex = 634;
+            this.panelc4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelc4.Controls.Add(this.panelNotificacionEspera);
+            this.panelc4.Controls.Add(this.panel9);
+            this.panelc4.Controls.Add(this.panel6);
+            this.panelc4.Controls.Add(this.flowLayoutPanel1);
+            this.panelc4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelc4.Location = new System.Drawing.Point(0, 706);
+            this.panelc4.Name = "panelc4";
+            this.panelc4.Size = new System.Drawing.Size(1486, 51);
+            this.panelc4.TabIndex = 634;
+            // 
+            // panelNotificacionEspera
+            // 
+            this.panelNotificacionEspera.BackgroundImage = global::Punto_de_venta.Properties.Resources.oval;
+            this.panelNotificacionEspera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelNotificacionEspera.Controls.Add(this.lblContadorEspera);
+            this.panelNotificacionEspera.Location = new System.Drawing.Point(268, 2);
+            this.panelNotificacionEspera.Name = "panelNotificacionEspera";
+            this.panelNotificacionEspera.Size = new System.Drawing.Size(22, 19);
+            this.panelNotificacionEspera.TabIndex = 7;
+            // 
+            // lblContadorEspera
+            // 
+            this.lblContadorEspera.BackColor = System.Drawing.Color.Transparent;
+            this.lblContadorEspera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblContadorEspera.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContadorEspera.ForeColor = System.Drawing.Color.White;
+            this.lblContadorEspera.Location = new System.Drawing.Point(0, 0);
+            this.lblContadorEspera.Name = "lblContadorEspera";
+            this.lblContadorEspera.Size = new System.Drawing.Size(22, 19);
+            this.lblContadorEspera.TabIndex = 3;
+            this.lblContadorEspera.Text = "10";
+            this.lblContadorEspera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.button7);
+            this.panel9.Controls.Add(this.btnDevolucion);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel9.Location = new System.Drawing.Point(1031, 0);
+            this.panel9.Location = new System.Drawing.Point(989, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(334, 51);
+            this.panel9.Size = new System.Drawing.Size(340, 51);
             this.panel9.TabIndex = 5;
             // 
-            // button7
+            // btnDevolucion
             // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = global::Punto_de_venta.Properties.Resources.suma;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(8, 10);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(320, 30);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Ver ventas del dia y Devoluciones";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnDevolucion.FlatAppearance.BorderSize = 0;
+            this.btnDevolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDevolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDevolucion.Image = global::Punto_de_venta.Properties.Resources.suma;
+            this.btnDevolucion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDevolucion.Location = new System.Drawing.Point(8, 10);
+            this.btnDevolucion.Name = "btnDevolucion";
+            this.btnDevolucion.Size = new System.Drawing.Size(320, 30);
+            this.btnDevolucion.TabIndex = 2;
+            this.btnDevolucion.Text = "Ver ventas del dia y Devoluciones";
+            this.btnDevolucion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDevolucion.UseVisualStyleBackColor = true;
+            this.btnDevolucion.Click += new System.EventHandler(this.btnDevolucion_Click);
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.activarTema);
+            this.panel6.Controls.Add(this.desactivarTEMA);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1365, 0);
+            this.panel6.Location = new System.Drawing.Point(1329, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(121, 51);
+            this.panel6.Size = new System.Drawing.Size(157, 51);
             this.panel6.TabIndex = 4;
+            // 
+            // activarTema
+            // 
+            this.activarTema.Image = global::Punto_de_venta.Properties.Resources.switch_on_icon_34343;
+            this.activarTema.Location = new System.Drawing.Point(111, 3);
+            this.activarTema.Name = "activarTema";
+            this.activarTema.Size = new System.Drawing.Size(45, 45);
+            this.activarTema.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.activarTema.TabIndex = 3;
+            this.activarTema.TabStop = false;
+            this.activarTema.Click += new System.EventHandler(this.activarTema_Click);
+            // 
+            // desactivarTEMA
+            // 
+            this.desactivarTEMA.Image = global::Punto_de_venta.Properties.Resources.switch_off_icon_34344;
+            this.desactivarTEMA.Location = new System.Drawing.Point(64, 3);
+            this.desactivarTEMA.Name = "desactivarTEMA";
+            this.desactivarTEMA.Size = new System.Drawing.Size(45, 45);
+            this.desactivarTEMA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.desactivarTEMA.TabIndex = 2;
+            this.desactivarTEMA.TabStop = false;
+            this.desactivarTEMA.Click += new System.EventHandler(this.desactivarTEMA_Click);
             // 
             // label1
             // 
@@ -3391,7 +3417,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 51);
+            this.label1.Size = new System.Drawing.Size(58, 51);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tema Oscuro";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3507,18 +3533,18 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.label15.Text = "Busca un Producto o Registra uno para Empezar a Vender";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
+            // panelc2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.btnCreditoPagar);
-            this.panel2.Controls.Add(this.btnCreditoCobrar);
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 56);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1486, 48);
-            this.panel2.TabIndex = 637;
+            this.panelc2.BackColor = System.Drawing.Color.White;
+            this.panelc2.Controls.Add(this.btnCreditoPagar);
+            this.panelc2.Controls.Add(this.btnCreditoCobrar);
+            this.panelc2.Controls.Add(this.button8);
+            this.panelc2.Controls.Add(this.button1);
+            this.panelc2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelc2.Location = new System.Drawing.Point(0, 56);
+            this.panelc2.Name = "panelc2";
+            this.panelc2.Size = new System.Drawing.Size(1486, 48);
+            this.panelc2.TabIndex = 637;
             // 
             // btnCreditoPagar
             // 
@@ -3526,11 +3552,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btnCreditoPagar.FlatAppearance.BorderSize = 0;
             this.btnCreditoPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreditoPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreditoPagar.Image = global::Punto_de_venta.Properties.Resources.costo;
+            this.btnCreditoPagar.Image = ((System.Drawing.Image)(resources.GetObject("btnCreditoPagar.Image")));
             this.btnCreditoPagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreditoPagar.Location = new System.Drawing.Point(458, 6);
+            this.btnCreditoPagar.Location = new System.Drawing.Point(492, 7);
             this.btnCreditoPagar.Name = "btnCreditoPagar";
-            this.btnCreditoPagar.Size = new System.Drawing.Size(249, 34);
+            this.btnCreditoPagar.Size = new System.Drawing.Size(276, 36);
             this.btnCreditoPagar.TabIndex = 5;
             this.btnCreditoPagar.Text = "Aperturar Credito por Pagar";
             this.btnCreditoPagar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -3543,11 +3569,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btnCreditoCobrar.FlatAppearance.BorderSize = 0;
             this.btnCreditoCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreditoCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreditoCobrar.Image = global::Punto_de_venta.Properties.Resources.euro;
+            this.btnCreditoCobrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCreditoCobrar.Image")));
             this.btnCreditoCobrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreditoCobrar.Location = new System.Drawing.Point(192, 7);
+            this.btnCreditoCobrar.Location = new System.Drawing.Point(226, 5);
             this.btnCreditoCobrar.Name = "btnCreditoCobrar";
-            this.btnCreditoCobrar.Size = new System.Drawing.Size(260, 34);
+            this.btnCreditoCobrar.Size = new System.Drawing.Size(260, 38);
             this.btnCreditoCobrar.TabIndex = 4;
             this.btnCreditoCobrar.Text = "Aperturar Credito por Cobrar";
             this.btnCreditoCobrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -3560,11 +3586,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = global::Punto_de_venta.Properties.Resources.pagosicono;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(95, 7);
+            this.button8.Location = new System.Drawing.Point(114, 5);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(91, 34);
+            this.button8.Size = new System.Drawing.Size(106, 38);
             this.button8.TabIndex = 3;
             this.button8.Text = "Pagos";
             this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -3576,11 +3602,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Punto_de_venta.Properties.Resources.cobrosIcono;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(3, 7);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 34);
+            this.button1.Size = new System.Drawing.Size(106, 34);
             this.button1.TabIndex = 2;
             this.button1.Text = "Cobros";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -3673,14 +3699,14 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.label16.TabIndex = 5;
             this.label16.Text = "Servira para que encuentres mas rapido esta Venta";
             // 
-            // panel14
+            // panelc5
             // 
-            this.panel14.BackColor = System.Drawing.Color.White;
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel14.Location = new System.Drawing.Point(0, 160);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(109, 546);
-            this.panel14.TabIndex = 639;
+            this.panelc5.BackColor = System.Drawing.Color.White;
+            this.panelc5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelc5.Location = new System.Drawing.Point(0, 160);
+            this.panelc5.Name = "panelc5";
+            this.panelc5.Size = new System.Drawing.Size(109, 546);
+            this.panelc5.TabIndex = 639;
             // 
             // dataGridViewImageColumn1
             // 
@@ -3720,30 +3746,29 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.Controls.Add(this.PanelEnespera);
             this.Controls.Add(this.LABEL_STOCK);
             this.Controls.Add(this.datalistadoDetalleVenta);
-            this.Controls.Add(this.panel14);
+            this.Controls.Add(this.panelc5);
             this.Controls.Add(this.panelBienvenida);
             this.Controls.Add(this.PanelOperaciones);
-            this.Controls.Add(this.Panel21);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.Panel17);
+            this.Controls.Add(this.Panelc3);
+            this.Controls.Add(this.panelc4);
+            this.Controls.Add(this.panelc2);
+            this.Controls.Add(this.Panelc1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Ventas_Menu_Princi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jojama";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Ventas_Menu_Princi_Load);
-            this.Panel21.ResumeLayout(false);
+            this.Panelc3.ResumeLayout(false);
             this.StatusStrip4.ResumeLayout(false);
             this.StatusStrip4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_stock_detalle_venta)).EndInit();
-            this.Panel17.ResumeLayout(false);
-            this.Panel17.PerformLayout();
+            this.Panelc1.ResumeLayout(false);
+            this.Panelc1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DATALISTADO_PRODUCTOS_OKA)).EndInit();
             this.panel13.ResumeLayout(false);
             this.ToolStrip1.ResumeLayout(false);
             this.ToolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.Panel26.ResumeLayout(false);
             this.Panel26.PerformLayout();
             this.Panel27.ResumeLayout(false);
@@ -3780,7 +3805,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.Panel4.PerformLayout();
             this.menuStrip9.ResumeLayout(false);
             this.menuStrip9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxNombreSoftware)).EndInit();
             this.Panel30.ResumeLayout(false);
             this.Panel30.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoVentasEnEspera)).EndInit();
@@ -3801,14 +3826,17 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.MenuStrip16.PerformLayout();
             this.FlowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoDetalleVenta)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.panelc4.ResumeLayout(false);
+            this.panelNotificacionEspera.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.activarTema)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desactivarTEMA)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panelBienvenida.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.panelc2.ResumeLayout(false);
             this.PanelEnespera.ResumeLayout(false);
             this.PanelEnespera.PerformLayout();
             this.ResumeLayout(false);
@@ -3816,7 +3844,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         }
 
         #endregion
-        internal System.Windows.Forms.Panel Panel21;
+        internal System.Windows.Forms.Panel Panelc3;
         internal System.Windows.Forms.StatusStrip StatusStrip4;
         internal System.Windows.Forms.ToolStripButton btnINSVarios;
         internal System.Windows.Forms.ToolStripButton btnMayoreo;
@@ -3825,8 +3853,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         internal System.Windows.Forms.ToolStripButton btnGastos;
         internal System.Windows.Forms.Button BtnCerrar_turno;
         internal System.Windows.Forms.MenuStrip MenuStrip21;
-        internal System.Windows.Forms.Panel Panel17;
-        internal System.Windows.Forms.PictureBox PictureBox4;
+        internal System.Windows.Forms.Panel Panelc1;
+        internal System.Windows.Forms.PictureBox pboxNombreSoftware;
         internal System.Windows.Forms.Panel Panel30;
         internal System.Windows.Forms.TextBox lblruta;
         internal System.Windows.Forms.Label LBLEstado_correo;
@@ -3996,7 +4024,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         internal System.Windows.Forms.Label Label11;
         internal System.Windows.Forms.Button btn0;
         internal System.Windows.Forms.Label Label36;
-        internal System.Windows.Forms.Button Button23;
         internal System.Windows.Forms.Label lblsubtotal;
         internal System.Windows.Forms.Button Button22;
         internal System.Windows.Forms.Label lbligv;
@@ -4020,7 +4047,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private System.Windows.Forms.DataGridViewImageColumn EL;
         private System.Windows.Forms.DataGridViewButtonColumn S;
         private System.Windows.Forms.DataGridViewButtonColumn R;
-        internal System.Windows.Forms.Label label3;
+        internal System.Windows.Forms.Label lblpeso;
         private System.Windows.Forms.Timer TimerBUSCADORcodigodebarras;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
@@ -4028,9 +4055,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private System.Windows.Forms.Label LABEL_STOCK;
         private System.Windows.Forms.Timer TimerLABEL_STOCK;
         private System.Windows.Forms.Button btEfectivo;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelc4;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnDevolucion;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;
         //private UIDC.UI_MaterialToggle uI_MaterialToggle1;
@@ -4045,7 +4072,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private System.Windows.Forms.Label label15;
         //private UIDC.UI_TecladoBasico uI_TecladoBasico2;
         internal System.Windows.Forms.Button btnverMovimientosCaja;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelc2;
         private System.Windows.Forms.Button btnCreditoPagar;
         private System.Windows.Forms.Button btnCreditoCobrar;
         private System.Windows.Forms.Button button8;
@@ -4053,7 +4080,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         internal System.Windows.Forms.Panel panel13;
         internal System.Windows.Forms.MenuStrip ToolStrip1;
         internal System.Windows.Forms.ToolStripMenuItem btnadmin;
-        internal System.Windows.Forms.PictureBox pictureBox3;
         internal System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Panel PanelEnespera;
         private System.Windows.Forms.Button button6;
@@ -4064,10 +4090,15 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         internal System.Windows.Forms.Label label16;
         public System.Windows.Forms.DataGridView DATALISTADO_PRODUCTOS_OKA;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
-        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panelc5;
         private System.Windows.Forms.Label lblSerialPc;
         private System.Windows.Forms.Button BTNTECLADO;
         private System.Windows.Forms.Button BTNLECTORA;
         private System.Windows.Forms.Button txtreferencia;
+        private System.IO.Ports.SerialPort puertos;
+        private System.Windows.Forms.PictureBox desactivarTEMA;
+        private System.Windows.Forms.PictureBox activarTema;
+        private System.Windows.Forms.Panel panelNotificacionEspera;
+        private System.Windows.Forms.Label lblContadorEspera;
     }
 }

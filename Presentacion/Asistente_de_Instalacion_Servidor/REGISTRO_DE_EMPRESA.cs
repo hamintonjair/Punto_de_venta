@@ -251,6 +251,21 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
                 cmd.ExecuteNonQuery();
                 con.Close();
 
+                //Insertamos el comprobante de Ticket de compra
+                con.Open();
+                cmd = new SqlCommand("insertar_Serializacion", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Serie", "TC");
+                cmd.Parameters.AddWithValue("@numeroinicio", 6);
+                cmd.Parameters.AddWithValue("@numerofin", 0);
+                cmd.Parameters.AddWithValue("@tipodoc", "TICKETC");
+                cmd.Parameters.AddWithValue("@Destino", "COMPRAS");
+                cmd.Parameters.AddWithValue("@Por_defecto", "-");
+                cmd.ExecuteNonQuery();
+                con.Close();
+                //....
+
                 con.Open();
                 cmd = new SqlCommand("Insertar_FORMATO_TICKET", con);
                 cmd.CommandType = CommandType.StoredProcedure;

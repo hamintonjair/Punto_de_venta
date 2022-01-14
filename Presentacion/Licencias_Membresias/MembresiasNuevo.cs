@@ -52,7 +52,7 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
         private void btnActivacioManual_Click(object sender, EventArgs e)
         {
             dlg.Filter = "Licencias jojama|*.xml";
-            dlg.Title = "Cargador de Licencias jojama";
+            dlg.Title = "Cargador de Licencias Jojama";
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 ruta = Path.GetFullPath(dlg.FileName);
@@ -63,7 +63,7 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
                 FechaFinLicencia = separadas[2];
                 EstadoLicencia = separadas[3];
                 NombreSoftwareLicencia = separadas[4];
-                if (NombreSoftwareLicencia == "jojama")
+                if (NombreSoftwareLicencia == "Jojama")
                 {
                     if (EstadoLicencia == "PENDIENTE")
                     {

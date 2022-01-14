@@ -105,7 +105,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
                 cantidad.Add(filas["Cantidad"]);
                 producto.Add(filas["Descripcion"]);
             }
-            //chartProductos.Series[0].Points.DataBindXY(producto, cantidad);
+            chartProductos.Series[0].Points.DataBindXY(producto, cantidad);
         }
         private void mostrarVentasGrafica()
         {
@@ -118,7 +118,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
                 fecha.Add(filas["fecha"]);
                 monto.Add(filas["Total"]);
             }
-            //chartVentas.Series[0].Points.DataBindXY(fecha, monto);
+            chartVentas.Series[0].Points.DataBindXY(fecha, monto);
             ReporteTotalVentas();
             ReporteGanancias();
         }
@@ -133,7 +133,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
                 fecha.Add(filas["fecha"]);
                 monto.Add(filas["Total"]);
             }
-            //chartVentas.Series[0].Points.DataBindXY(fecha, monto);
+            chartVentas.Series[0].Points.DataBindXY(fecha, monto);
             ReporteTotalVentasFechas();
             ReporteGananciasFecha();
         }
@@ -497,7 +497,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
                 monto.Add(filas["Monto"]);
                 descripcion.Add(filas["Descripcion"]);
             }
-            //chartGastosAño.Series[0].Points.DataBindXY(descripcion, monto);
+            chartGastosAño.Series[0].Points.DataBindXY(descripcion, monto);
         }
 
         private void txtmes_gasto_SelectedIndexChanged(object sender, EventArgs e)
@@ -516,7 +516,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
                 monto.Add(filas["Monto"]);
                 descripcion.Add(filas["Descripcion"]);
             }
-            //chartGastosMes.Series[0].Points.DataBindXY(descripcion, monto);
+            chartGastosMes.Series[0].Points.DataBindXY(descripcion, monto);
         }
 
         private void Label13_Click(object sender, EventArgs e)
@@ -548,6 +548,18 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
                 PanelFiltros.Visible = false;
                 mostrarVentasGrafica();
             }
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            Presentacion.Reportes.MenuReportes frm = new Presentacion.Reportes.MenuReportes();
+            frm.ShowDialog();
+        }
+
+        private void brtCompra_Click(object sender, EventArgs e)
+        {
+            var frm = new Compras.Admincompras();
+            frm.ShowDialog();
         }
     }
 }

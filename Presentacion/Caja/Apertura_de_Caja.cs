@@ -80,7 +80,11 @@ namespace Punto_de_venta.Presentacion.Caja
         private void centrar_panel()
         {
             panelCaja.Location = new Point((Width - panelCaja.Width) / 2, (Height - panelCaja.Height) / 2);
-        }     
-     
+        }
+
+        private void txtmonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Bases.Separador_de_Numeros(txtmonto, e);
+        }
     }
 }

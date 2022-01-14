@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Ada369Csharp.Datos
+namespace Punto_de_venta.Datos
 {
    public class Ddetallecompra
     {

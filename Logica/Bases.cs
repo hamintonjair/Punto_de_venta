@@ -53,6 +53,48 @@ namespace Punto_de_venta.Logica
             styCabeceras.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             List.ColumnHeadersDefaultCellStyle = styCabeceras;                        
         }
+        public static void Multilinea3(ref DataGridView List)
+        {
+            List.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            List.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            List.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            List.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            List.EnableHeadersVisualStyles = false;
+            List.BackgroundColor = Color.White;
+            List.RowTemplate.DefaultCellStyle.BackColor = Color.White;
+            List.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            List.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue;
+            List.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+
+
+            DataGridViewCellStyle styCabeceras = new DataGridViewCellStyle();
+            styCabeceras.BackColor = System.Drawing.Color.White;
+            styCabeceras.ForeColor = System.Drawing.Color.Black;
+            styCabeceras.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            List.ColumnHeadersDefaultCellStyle = styCabeceras;
+        }
+        public static void Multilineareportes(ref DataGridView List)
+        {
+            List.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            List.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            List.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            List.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            List.EnableHeadersVisualStyles = false;
+            //List.BackgroundColor = Color.White;
+            List.RowTemplate.DefaultCellStyle.BackColor = Color.White;
+            List.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            //List.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.Gainsboro;
+            //List.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+
+
+            DataGridViewCellStyle styCabeceras = new DataGridViewCellStyle();
+            styCabeceras.BackColor = System.Drawing.Color.White;
+            styCabeceras.ForeColor = System.Drawing.Color.Black;
+            styCabeceras.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            List.ColumnHeadersDefaultCellStyle = styCabeceras;
+        }
         public static void Multilinea2(ref DataGridView List)
         {
             List.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -81,9 +123,7 @@ namespace Punto_de_venta.Logica
             List.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             List.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             List.BackgroundColor = Color.FromArgb(35, 35, 35);
-
             List.EnableHeadersVisualStyles = false;
-
             List.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(35, 35, 35);
             List.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
             List.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.FromArgb(23, 23, 23);

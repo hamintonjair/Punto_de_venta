@@ -34,8 +34,8 @@ namespace Punto_de_venta.Presentacion.Caja
             this.panelCaja = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtfecha = new System.Windows.Forms.DateTimePicker();
             this.txtip = new System.Windows.Forms.Label();
+            this.txtfecha = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.iniciarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,8 +43,8 @@ namespace Punto_de_venta.Presentacion.Caja
             this.txtmonto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelCaja.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -92,14 +92,6 @@ namespace Punto_de_venta.Presentacion.Caja
             this.label3.Text = "Dinero en Caja";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtfecha
-            // 
-            this.txtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtfecha.Location = new System.Drawing.Point(164, 6);
-            this.txtfecha.Name = "txtfecha";
-            this.txtfecha.Size = new System.Drawing.Size(74, 20);
-            this.txtfecha.TabIndex = 566;
-            // 
             // txtip
             // 
             this.txtip.AutoSize = true;
@@ -112,6 +104,14 @@ namespace Punto_de_venta.Presentacion.Caja
             this.txtip.Size = new System.Drawing.Size(90, 13);
             this.txtip.TabIndex = 527;
             this.txtip.Text = "tu nomvbre de pc";
+            // 
+            // txtfecha
+            // 
+            this.txtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtfecha.Location = new System.Drawing.Point(164, 6);
+            this.txtfecha.Name = "txtfecha";
+            this.txtfecha.Size = new System.Drawing.Size(74, 20);
+            this.txtfecha.TabIndex = 566;
             // 
             // panel3
             // 
@@ -135,7 +135,9 @@ namespace Punto_de_venta.Presentacion.Caja
             // 
             // iniciarToolStripMenuItem
             // 
-            this.iniciarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
+            this.iniciarToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.iniciarToolStripMenuItem.BackgroundImage = global::Punto_de_venta.Properties.Resources.verde;
+            this.iniciarToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.iniciarToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.iniciarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.iniciarToolStripMenuItem.Name = "iniciarToolStripMenuItem";
@@ -158,6 +160,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.txtmonto.Name = "txtmonto";
             this.txtmonto.Size = new System.Drawing.Size(239, 28);
             this.txtmonto.TabIndex = 2;
+            this.txtmonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmonto_KeyPress);
             // 
             // label2
             // 

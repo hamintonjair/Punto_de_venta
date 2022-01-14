@@ -1314,5 +1314,20 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 MessageBox.Show("El restante debe ser 0", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void txtefectivo2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Bases.Separador_de_Numeros(txtefectivo2, e);
+        }
+
+        private void txttarjeta2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Bases.Separador_de_Numeros(txttarjeta2, e);
+        }
+
+        private void txtcredito2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Bases.Separador_de_Numeros(txtcredito2, e);
+        }
     }
 }

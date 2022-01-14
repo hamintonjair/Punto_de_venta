@@ -29,6 +29,7 @@ namespace Punto_de_venta.Presentacion.CorreoBase
         {
             bool estado;
             estado = Bases.enviarCorreo(TXTCORREO.Text, txtpass.Text, "Sincronizacion con Jojama creada Correctamente", "Sincronizacion con Jojama", TXTCORREO.Text, "");
+            MessageBox.Show("Espere por favor", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (estado == true)
             {
                 editarCorreo();

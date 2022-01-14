@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Ada369Csharp.Datos
+namespace Punto_de_venta.Datos
 {
    public class Diniciossesion
     {
@@ -21,7 +21,7 @@ namespace Ada369Csharp.Datos
                 ConexionData.abrir();
                 SqlCommand cmd = new SqlCommand("mostrar_inicio_De_sesion", ConexionData.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_serial_pc", serialpc);
+                cmd.Parameters.AddWithValue("@id_serial_pc", Bases.Encriptar(serialpc));
                 idusuario = Convert.ToInt32(cmd.ExecuteScalar());
             }
             catch (Exception ex)
@@ -34,5 +34,5 @@ namespace Ada369Csharp.Datos
                 ConexionData.cerrar();
             }
         }
-    }
+   }
 }

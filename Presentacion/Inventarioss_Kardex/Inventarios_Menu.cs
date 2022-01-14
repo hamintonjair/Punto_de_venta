@@ -61,7 +61,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
                 datalistadoInventarioBAJO.Columns[8].Visible = false;
                 datalistadoInventarioBAJO.Columns[9].Visible = false;
 
-                Logica.Bases.Multilinea(ref datalistadoInventarioBAJO);
+                Logica.Bases.Multilineareportes(ref datalistadoInventarioBAJO);
             }
             catch (Exception ex)
             {
@@ -114,7 +114,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
                 datalistadoInventariosReport.Columns[9].Visible = false;
                 datalistadoInventariosReport.Columns[10].Visible = false;
 
-                Logica.Bases.Multilinea(ref datalistadoInventariosReport);
+                Logica.Bases.Multilineareportes(ref datalistadoInventariosReport);
 
             }
             catch (Exception ex)
@@ -219,7 +219,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
                 DATALISTADO_PRODUCTOS_Movimientos.Columns[15].Visible = false;
                 DATALISTADO_PRODUCTOS_Movimientos.Columns[16].Visible = false;
 
-                Logica.Bases.Multilinea(ref DATALISTADO_PRODUCTOS_Movimientos);
+                Logica.Bases.Multilineareportes(ref DATALISTADO_PRODUCTOS_Movimientos);
 
             }
             catch (Exception ex)
@@ -267,7 +267,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
                 DatalistadoMovimientos.Columns[0].Visible = false;
                 DatalistadoMovimientos.Columns[10].Visible = false;
                 DatalistadoMovimientos.Columns[11].Visible = false;
-                Logica.Bases.Multilinea(ref DatalistadoMovimientos);
+                Logica.Bases.Multilineareportes(ref DatalistadoMovimientos);
             }
             catch (Exception ex)
             {
@@ -316,7 +316,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
                 DatalistadoMovimientos.Columns[13].Visible = false;
                 DatalistadoMovimientos.Columns[14].Visible = false;
                 DatalistadoMovimientos.Columns[12].Visible = false;
-                Logica.Bases.Multilinea(ref DatalistadoMovimientos);
+                Logica.Bases.Multilineareportes(ref DatalistadoMovimientos);
             }
             catch (Exception ex)
             {
@@ -348,7 +348,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
                 DatalistadoMovimientosACUMULADO_PRODUCTO.Columns[5].Visible = false;
                 DatalistadoMovimientosACUMULADO_PRODUCTO.Columns[6].Visible = false;
 
-                Logica.Bases.Multilinea(ref DatalistadoMovimientosACUMULADO_PRODUCTO);
+                Logica.Bases.Multilineareportes(ref DatalistadoMovimientosACUMULADO_PRODUCTO);
                 DataGridViewCellStyle styCabeceras = new DataGridViewCellStyle();
                 styCabeceras.BackColor = System.Drawing.Color.FromArgb(26, 115, 232);
                 styCabeceras.ForeColor = System.Drawing.Color.White;
@@ -479,7 +479,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
             PanelM.Visible = false;
             PanelR.Visible = false;
             Panelv.Visible = false;
-
+ 
             txtbuscarKardex_movimientos.Text = "Buscar producto";
 
         }
@@ -554,7 +554,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
                 datalistadoVencimientos.Columns[1].Visible = false;
                 datalistadoVencimientos.Columns[6].Visible = false;
                 datalistadoVencimientos.Columns[7].Visible = false;
-                Logica.Bases.Multilinea(ref datalistadoVencimientos);
+                Logica.Bases.Multilineareportes(ref datalistadoVencimientos);
 
             }
             catch (Exception ex)
@@ -587,7 +587,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
                 datalistadoVencimientos.Columns[0].Visible = false;
                 datalistadoVencimientos.Columns[1].Visible = false;
 
-                Logica.Bases.Multilinea(ref datalistadoVencimientos);
+                Logica.Bases.Multilineareportes(ref datalistadoVencimientos);
 
             }
             catch (Exception ex)
@@ -620,7 +620,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
                 datalistadoVencimientos.Columns[0].Visible = false;
                 datalistadoVencimientos.Columns[1].Visible = false;
 
-                Logica.Bases.Multilinea(ref datalistadoVencimientos);
+                Logica.Bases.Multilineareportes(ref datalistadoVencimientos);
 
             }
             catch (Exception ex)
@@ -713,13 +713,13 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
         {
             if (txtbuscarMovimiento.Text == "Buscar producto" | txtbuscarMovimiento.Text == "")
             {
-                DATALISTADO_PRODUCTOS_Movimientos.Visible = false;
+                DATALISTADO_PRODUCTOS_Movimientos.Visible = false;       
 
             }
             else
             {
                 DATALISTADO_PRODUCTOS_Movimientos.Visible = true;
-                buscar_productos_movimientos();
+                buscar_productos_movimientos();        
             }
         }
 
@@ -785,7 +785,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
                 DATALISTADO_PRODUCTOS_Kardex.Columns[15].Visible = false;
                 DATALISTADO_PRODUCTOS_Kardex.Columns[16].Visible = false;
                 DATALISTADO_PRODUCTOS_Kardex.Visible = true;
-                Logica.Bases.Multilinea2(ref DATALISTADO_PRODUCTOS_Kardex);
+                Logica.Bases.Multilineareportes(ref DATALISTADO_PRODUCTOS_Kardex);
 
             }
             catch (Exception ex)
@@ -797,6 +797,18 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
         private void ToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             Presentacion.Reportes.Reportes_de_Kardex_listo.Reportes_de_Inventario_Todos.FormMovimientosBuscar frm = new Reportes.Reportes_de_Kardex_listo.Reportes_de_Inventario_Todos.FormMovimientosBuscar();
+            frm.ShowDialog();
+        }
+
+        private void Label19_Click(object sender, EventArgs e)
+        {
+            KardexEntrada frm = new KardexEntrada();
+            frm.ShowDialog();
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+            KardexSalidas frm = new KardexSalidas();
             frm.ShowDialog();
         }
     }

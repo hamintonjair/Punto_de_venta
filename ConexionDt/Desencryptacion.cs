@@ -13,7 +13,7 @@ namespace Punto_de_venta.ConexionDt
         static public string CnString;
         static string dbcnString;
         //fase 2 de encryptacion mas segura, se pone lo que uno quieres de manera que quede bien encriptada
-        static public string appPwdUnique = "Jojama01.mono08.BASEJOJAMA.Hola_MundoÑ";
+        static public string appPwdUnique = "Jojama01.mono08.BASEJOJAMA.Hola_Mundo";
 
         //CADENA DE CONEXION
         public static object checkServer()

@@ -103,6 +103,26 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap balanza {
+            get {
+                object obj = ResourceManager.GetObject("balanza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bar_code_22177 {
+            get {
+                object obj = ResourceManager.GetObject("bar_code_22177", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap basedatoss {
             get {
                 object obj = ResourceManager.GetObject("basedatoss", resourceCulture);
@@ -253,6 +273,16 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gmail_29991 {
+            get {
+                object obj = ResourceManager.GetObject("Gmail_29991", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ios7_bell_icon_icons_com_50334 {
             get {
                 object obj = ResourceManager.GetObject("ios7-bell_icon-icons.com_50334", resourceCulture);
@@ -363,6 +393,16 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap oval {
+            get {
+                object obj = ResourceManager.GetObject("oval", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pagosicono {
             get {
                 object obj = ResourceManager.GetObject("pagosicono", resourceCulture);
@@ -413,6 +453,36 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap switch_off_icon_34344 {
+            get {
+                object obj = ResourceManager.GetObject("switch-off-icon_34344", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap switch_on_icon_34343 {
+            get {
+                object obj = ResourceManager.GetObject("switch-on-icon_34343", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tact_key_keyboard_9523 {
+            get {
+                object obj = ResourceManager.GetObject("tact_key_keyboard_9523", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap trash_can_115312 {
             get {
                 object obj = ResourceManager.GetObject("trash_can_115312", resourceCulture);
@@ -426,6 +496,16 @@ namespace Punto_de_venta.Properties {
         internal static System.Drawing.Bitmap Untitled_Design__1_ {
             get {
                 object obj = ResourceManager.GetObject("Untitled Design (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usd_crypto_cryptocurrency_cryptocurrencies_cash_money_bank_payment_95707 {
+            get {
+                object obj = ResourceManager.GetObject("usd-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95707", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -24,8 +24,6 @@ namespace Punto_de_venta.Datos
                 com.Parameters.AddWithValue("@Serial", serialPC);
                 idcaja =Convert.ToInt32( com.ExecuteScalar());
 
-
-
             }
             catch (Exception ex)
             {

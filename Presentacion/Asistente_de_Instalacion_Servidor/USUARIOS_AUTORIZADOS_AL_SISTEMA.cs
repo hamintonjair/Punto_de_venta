@@ -64,12 +64,11 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
                         insertar_cliente_standar();
                         insertar_grupo_por_defecto();
                         insertar_inicio_De_sesion();
-                        //insertar_proveedor_standar();
+                        insertar_proveedor_standar();
                         MessageBox.Show("!LISTO! RECUERDA que para Iniciar Sesión tu Usuario es: " + TXTUSUARIO.Text + " y tu Contraseña es: " + TXTCONTRASEÑA.Text, "Registro Exitoso", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                         Dispose();
-                        //Application.Restart();
-                        Presentacion.LOGIN frm = new Presentacion.LOGIN();
-                        frm.ShowDialog();
+                        Application.Restart();
+                       
                     }
                     catch (Exception ex)
                     {

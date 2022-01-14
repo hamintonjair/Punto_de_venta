@@ -281,14 +281,15 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // 
             // Label1
             // 
-            this.Label1.AutoSize = true;
+            this.Label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.Label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Label1.Location = new System.Drawing.Point(181, 0);
+            this.Label1.Location = new System.Drawing.Point(0, 0);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(340, 20);
+            this.Label1.Size = new System.Drawing.Size(666, 33);
             this.Label1.TabIndex = 2;
-            this.Label1.Text = "¿Que cajero Principal usara el Programa?";
+            this.Label1.Text = "¿Que cajero Principal usará el Programa?";
+            this.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // datalistado_empresas_nuevas
             // 

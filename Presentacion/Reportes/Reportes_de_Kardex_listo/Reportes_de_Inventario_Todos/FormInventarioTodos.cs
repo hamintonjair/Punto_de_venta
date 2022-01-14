@@ -18,7 +18,7 @@ namespace Punto_de_venta.Presentacion.Reportes.Reportes_de_Kardex_listo.Reportes
         {
             InitializeComponent();
         }
-        ReportInventarios_Todos rptFREPORT2 = new ReportInventarios_Todos();
+        ReportInventarios_Todos_todos rptFREPORT2 = new ReportInventarios_Todos_todos();
         private void mostrar()
         {
             try
@@ -32,7 +32,7 @@ namespace Punto_de_venta.Presentacion.Reportes.Reportes_de_Kardex_listo.Reportes
                 da = new SqlDataAdapter("imprimir_inventarios_todos", con);
                 da.Fill(dt);
                 con.Close();
-                rptFREPORT2 = new ReportInventarios_Todos();
+                rptFREPORT2 = new ReportInventarios_Todos_todos();
                 rptFREPORT2.DataSource = dt;
                 rptFREPORT2.table1.DataSource = dt;
                 reportViewer1.Report = rptFREPORT2;
