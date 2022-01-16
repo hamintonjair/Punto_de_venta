@@ -265,19 +265,6 @@ NPENABLED="0"
 BROWSERSVCSTARTUPTYPE="Disabled"
 </value>
   </data>
-  <data name="txtCrearUsuarioDb.Text" xml:space="preserve">
-    <value>CREATE LOGIN jojama WITH PASSWORD = 'softwarereal'
-GO
-Use BASEJOJAMA ;
-GO
-IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = N'jojama')
-BEGIN
-    CREATE USER [jojama] FOR LOGIN [jojama]
-    EXEC sp_addrolemember N'db_owner', N'jojama'
-    EXEC master..sp_addsrvrolemember @loginame = N'jojama', @rolename = N'sysadmin'
-END;
-GO</value>
-  </data>
   <data name="txtCrear_procedimientos.Text" xml:space="preserve">
     <value>USE [master]
 GO
@@ -851,7 +838,7 @@ CREATE TABLE [dbo].[ventas](
 	[Monto_total] [numeric](18, 2) NULL,
 	[Tipo_de_pago] [varchar](50) NULL,
 	[Estado] [varchar](50) NULL,
-	[IVA] [numeric](18, 1) NULL,
+	[IGV] [numeric](18, 1) NULL,
 	[Comprobante] [varchar](50) NULL,
 	[Id_usuario] [int] NULL,
 	[Fecha_de_pago] [varchar](50) NULL,
@@ -1671,7 +1658,7 @@ GO
 create procedure [dbo].[Confirmar_venta]
 @idventa int,
 @montototal as numeric(18,2),
-@IVA as numeric(18,2)
+@IGV as numeric(18,2)
 ,@Saldo numeric(18,2),
 @Tipo_de_pago varchar(50),
 @Estado varchar(50),
@@ -1693,7 +1680,7 @@ if EXISTS (SELECT Numero_de_doc  FROM ventas  where Numero_de_doc  = @Numero_de_
 RAISERROR ('Ya existe un Numero de Comprobante con ese Numero y Serie', 16,1)
 else
 BEGIN
-update ventas set Monto_total  =@montototal, IVA=@IVA ,Saldo=@Saldo,
+update ventas set Monto_total  =@montototal, IGV=@IGV ,Saldo=@Saldo,
 Tipo_de_pago=@Tipo_de_pago 
 ,Estado=@Estado ,
 Comprobante =@Comprobante ,
@@ -6201,6 +6188,38 @@ GO
 USE [master]
 GO
 ALTER DATABASE [SistemaContable] SET  READ_WRITE 
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</value>
+  </data>
+  <data name="txtCrearUsuarioDb.Text" xml:space="preserve">
+    <value>CREATE LOGIN jojama WITH PASSWORD = 'softwarereal'
+GO
+Use BASEJOJAMA ;
+GO
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = N'jojama')
+BEGIN
+    CREATE USER [jojama] FOR LOGIN [jojama]
+    EXEC sp_addrolemember N'db_owner', N'jojama'
+    EXEC master..sp_addsrvrolemember @loginame = N'jojama', @rolename = N'sysadmin'
+END;
 GO</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />

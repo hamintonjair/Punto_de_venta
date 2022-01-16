@@ -997,7 +997,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idventa", idventa);
                 cmd.Parameters.AddWithValue("@montototal", total);
-                cmd.Parameters.AddWithValue("@IVA", 0);
+                cmd.Parameters.AddWithValue("@IGV", 0);
                 cmd.Parameters.AddWithValue("@Saldo", vuelto);
                 cmd.Parameters.AddWithValue("@Tipo_de_pago", txttipo);
                 cmd.Parameters.AddWithValue("@Estado", "CONFIRMADO");
