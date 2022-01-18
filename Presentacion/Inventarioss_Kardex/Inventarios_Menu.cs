@@ -87,7 +87,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
             PanelVencimientos.Visible = false;
             PanelVencimientos.Dock = DockStyle.None;
             Panelv.Visible = false;
-            PanelR.Visible = true;
+            PanelR.Visible = true;       
             mostrar_inventarios_todos();
             sumar_costo_de_inventario_CONTAR_PRODUCTOS();
         }
@@ -271,7 +271,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+              
             }
         }
 
@@ -320,7 +320,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+              
             }
 
         }
@@ -358,7 +358,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               
             }
 
         }
@@ -465,7 +465,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
             PanelMOVIMIENTOS.Dock = DockStyle.None;
             PanelREPORTEInventario.Dock = DockStyle.None;
             PaneliNVENTARIObajo.Dock = DockStyle.None;
-            PanelMOVIMIENTOS.Visible = false;
+            PanelMOVIMIENTOS.Visible = false; 
             PanelREPORTEInventario.Visible = false;
             PaneliNVENTARIObajo.Visible = false;
             PanelKardex.Visible = true;
@@ -652,11 +652,16 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
 
         private void TMOVIMIENTOS_Click(object sender, EventArgs e)
         {
-            panel7.Visible = false;
+            
+       
+            panel33.Visible = true;
+            panel32.Visible = true;
             PanelR.Visible = false;
             PanelK.Visible = false;
             PanelI.Visible = false;          
-            Panelv.Visible = false;    
+            Panelv.Visible = false;
+            panel7.Visible = false;
+            groupBox1.Visible = false;
             PanelREPORTEInventario.Visible = false;
             PanelMOVIMIENTOS.Dock = DockStyle.Fill;
             PanelREPORTEInventario.Dock = DockStyle.None;
@@ -668,12 +673,13 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
             PanelVencimientos.Dock = DockStyle.None;
             Panelv.Visible = false;
             PanelM.Visible = true;
+            MenuStrip2.Visible = true;
+            MenuStrip6.Visible = true;
             buscar_productos_movimientos();
             buscar_usuario();
             Buscar_id_USUARIOS();
             txtbuscarMovimiento.Text = "Buscar producto";
-            MenuStrip2.Visible = true;
-            MenuStrip6.Visible = true;
+          
             PanelMOVIMIENTOS.Visible = true;
         }
 
@@ -809,6 +815,12 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
         private void Label1_Click(object sender, EventArgs e)
         {
             KardexSalidas frm = new KardexSalidas();
+            frm.ShowDialog();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Presentacion.Reportes.Reportes_de_Kardex_listo.Reportes_de_Inventario_Todos.FormInventarioTodos frm = new Presentacion.Reportes.Reportes_de_Kardex_listo.Reportes_de_Inventario_Todos.FormInventarioTodos();
             frm.ShowDialog();
         }
     }

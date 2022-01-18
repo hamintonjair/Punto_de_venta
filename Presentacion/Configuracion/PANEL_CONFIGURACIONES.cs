@@ -150,5 +150,11 @@ namespace Punto_de_venta.Presentacion.Configuracion
             CopiasBd.CrearCopiaBd frm = new CopiasBd.CrearCopiaBd();
             frm.ShowDialog();
         }
+
+        private void btnImpresoras_Click(object sender, EventArgs e)
+        {
+            Impresorass.Admin_impresoras frm = new Impresorass.Admin_impresoras();
+            frm.ShowDialog();
+        }
     }
 }

@@ -1032,8 +1032,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 int idproducto = Convert.ToInt32(row.Cells["Id_producto"].Value);
                 double cantidad = Convert.ToInt32(row.Cells["Cant"].Value);
                 try
-                {
-                    MessageBox.Show("entramos");
+                {            
                     ConexionDt.ConexionData.abrir();
                     SqlCommand cmd = new SqlCommand("disminuir_stock", ConexionDt.ConexionData.conectar);
                     cmd.CommandType = CommandType.StoredProcedure;

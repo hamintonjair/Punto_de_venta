@@ -30,7 +30,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+             
 
             }
         }
@@ -518,6 +518,21 @@ namespace Punto_de_venta.Datos
             {
                 ConexionData.abrir();
                 SqlCommand da = new SqlCommand("select count(idclientev) from clientes", ConexionData.conectar);
+                Cantidad = Convert.ToInt32(da.ExecuteScalar());
+                ConexionData.cerrar();
+            }
+            catch (Exception)
+            {
+                Cantidad = 0;
+            }
+        }
+        public static void ReporteCantProveedor(ref int Cantidad)
+        {   
+
+            try
+            {
+                ConexionData.abrir();
+                SqlCommand da = new SqlCommand("select count(IdProveedor) from Proveedores", ConexionData.conectar);
                 Cantidad = Convert.ToInt32(da.ExecuteScalar());
                 ConexionData.cerrar();
             }

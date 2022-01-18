@@ -53,7 +53,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.label9 = new System.Windows.Forms.Label();
             this.FlowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.Button5 = new System.Windows.Forms.Button();
+            this.btnImpresoras = new System.Windows.Forms.Button();
             this.Label4 = new System.Windows.Forms.Label();
             this.Label30 = new System.Windows.Forms.Label();
             this.Panel38 = new System.Windows.Forms.Panel();
@@ -378,7 +378,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.Controls.Add(this.Button5);
+            this.panel8.Controls.Add(this.btnImpresoras);
             this.panel8.Controls.Add(this.Label4);
             this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel8.Location = new System.Drawing.Point(3, 3);
@@ -386,19 +386,20 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.panel8.Size = new System.Drawing.Size(100, 94);
             this.panel8.TabIndex = 590;
             // 
-            // Button5
+            // btnImpresoras
             // 
-            this.Button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button5.BackgroundImage")));
-            this.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Button5.FlatAppearance.BorderSize = 0;
-            this.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button5.ForeColor = System.Drawing.Color.White;
-            this.Button5.Location = new System.Drawing.Point(0, 0);
-            this.Button5.Name = "Button5";
-            this.Button5.Size = new System.Drawing.Size(100, 75);
-            this.Button5.TabIndex = 5;
-            this.Button5.UseVisualStyleBackColor = true;
+            this.btnImpresoras.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnImpresoras.BackgroundImage")));
+            this.btnImpresoras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnImpresoras.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnImpresoras.FlatAppearance.BorderSize = 0;
+            this.btnImpresoras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImpresoras.ForeColor = System.Drawing.Color.White;
+            this.btnImpresoras.Location = new System.Drawing.Point(0, 0);
+            this.btnImpresoras.Name = "btnImpresoras";
+            this.btnImpresoras.Size = new System.Drawing.Size(100, 75);
+            this.btnImpresoras.TabIndex = 5;
+            this.btnImpresoras.UseVisualStyleBackColor = true;
+            this.btnImpresoras.Click += new System.EventHandler(this.btnImpresoras_Click);
             // 
             // Label4
             // 
@@ -878,7 +879,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
         internal System.Windows.Forms.Panel panel4;
         internal System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel3;
         internal System.Windows.Forms.Panel panel8;
-        internal System.Windows.Forms.Button Button5;
+        internal System.Windows.Forms.Button btnImpresoras;
         internal System.Windows.Forms.Label Label4;
         internal System.Windows.Forms.Label Label30;
         internal System.Windows.Forms.Panel Panel38;

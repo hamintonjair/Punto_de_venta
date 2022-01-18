@@ -46,7 +46,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         string Ip;
         int contadorVentasEspera;
         bool EstadoCobrar = false;
-
+        string administrador = "Administrador (Control total)";
         Panel panel_mostrador_de_productos = new Panel();
 
 
@@ -58,7 +58,15 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         private void Ventas_Menu_Princi_Load(object sender, EventArgs e)
         {
-           
+            if (LOGIN.lblRol == administrador)
+            {
+                ToolStrip1.Visible = true;
+            }
+            else
+            {
+                ToolStrip1.Visible = false;
+            }
+
             Bases.Cambiar_idioma_regional();
             Bases.Obtener_serialPC(ref SerialPC);
             Obtener_datos.Obtener_id_caja_PorSerial(ref Id_caja);           
@@ -248,6 +256,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
            
             if (Tipo_de_busqueda == "LECTORA")
             {
+              
                 ValidarVentasNuevas();
                 lbltipodebusqueda2.Visible = false;
                 TimerBUSCADORcodigodebarras.Start();
@@ -1313,7 +1322,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private void ModoTeclado()
         {
             ocultar_mostrar_productos();
-            lbltipodebusqueda2.Text = "Buscar con  TECLADO";
+            lbltipodebusqueda2.Text = "Buscar con TECLADO";
             Tipo_de_busqueda = "TECLADO";
             BTNTECLADO.BackColor = Color.LightGreen;
             BTNLECTORA.BackColor = Color.WhiteSmoke;
@@ -1419,8 +1428,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             panelc2.BackColor = Color.FromArgb(35, 35, 35);
             button1.BackColor = Color.FromArgb(45, 45, 45);
             button1.ForeColor = Color.White;
-            button8.BackColor = Color.FromArgb(35, 35, 35);
-            button8.ForeColor = Color.White;
+           
 
 
             btnCreditoCobrar.BackColor = Color.FromArgb(45, 45, 45);
@@ -1432,10 +1440,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             Panelc3.BackColor = Color.FromArgb(35, 35, 35);
             btnMayoreo.BackColor = Color.FromArgb(45, 45, 45);
             btnMayoreo.ForeColor = Color.White;
-            btnINSVarios.BackColor = Color.FromArgb(45, 45, 45);
-            btnINSVarios.ForeColor = Color.White;
-            btnProductoRapido.BackColor = Color.FromArgb(45, 45, 45);
-            btnProductoRapido.ForeColor = Color.White;
+          
             btnIngresosCaja.BackColor = Color.FromArgb(45, 45, 45);
             btnIngresosCaja.ForeColor = Color.White;
             btnGastos.BackColor = Color.FromArgb(45, 45, 45);
@@ -1489,8 +1494,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             panelc2.BackColor = Color.White;
             button1.BackColor = Color.WhiteSmoke;
             button1.ForeColor = Color.Black;
-            button8.BackColor = Color.WhiteSmoke;
-            button8.ForeColor = Color.Black;
+           
 
 
             btnCreditoCobrar.BackColor = Color.WhiteSmoke;
@@ -1501,11 +1505,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             //PanelC3
             Panelc3.BackColor = Color.White;
             btnMayoreo.BackColor = Color.WhiteSmoke;
-            btnINSVarios.BackColor = Color.White;
-            btnINSVarios.ForeColor = Color.WhiteSmoke;
+           
             btnMayoreo.ForeColor = Color.Black;
-            btnProductoRapido.BackColor = Color.WhiteSmoke;
-            btnProductoRapido.ForeColor = Color.Black;
+          
             btnIngresosCaja.BackColor = Color.WhiteSmoke;
             btnIngresosCaja.ForeColor = Color.Black;
             btnGastos.BackColor = Color.WhiteSmoke;

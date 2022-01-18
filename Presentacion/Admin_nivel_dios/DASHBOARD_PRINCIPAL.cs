@@ -61,6 +61,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
 
             ReporteProductoBajoMinimo();
             ReporteCantClientes();
+            ReporteCantProveedor();
             ReporteCantProductos();
             mostrarVentasGrafica();
             chekFiltros.Checked = false;
@@ -166,6 +167,11 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
         {
             Obtener_datos.ReporteCantClientes(ref CantClientes);
             lblNclientes.Text = CantClientes.ToString();
+        }
+        private void ReporteCantProveedor()
+        {
+            Obtener_datos.ReporteCantProveedor(ref CantClientes);
+            lblNproveedor.Text = CantClientes.ToString();
         }
         private void ReporteProductoBajoMinimo()
         {

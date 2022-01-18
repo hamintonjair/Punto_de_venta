@@ -110,7 +110,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel8.Location = new System.Drawing.Point(0, 0);
             this.Panel8.Name = "Panel8";
-            this.Panel8.Size = new System.Drawing.Size(1189, 86);
+            this.Panel8.Size = new System.Drawing.Size(1271, 86);
             this.Panel8.TabIndex = 591;
             // 
             // panel11
@@ -135,7 +135,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.lblwindows.BackColor = System.Drawing.Color.Transparent;
             this.lblwindows.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblwindows.ForeColor = System.Drawing.Color.White;
-            this.lblwindows.Location = new System.Drawing.Point(776, 0);
+            this.lblwindows.Location = new System.Drawing.Point(858, 0);
             this.lblwindows.Name = "lblwindows";
             this.lblwindows.Size = new System.Drawing.Size(413, 86);
             this.lblwindows.TabIndex = 607;
@@ -160,9 +160,9 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel3.Controls.Add(this.lblBasededatos);
             this.Panel3.Controls.Add(this.Label6);
             this.Panel3.Controls.Add(this.Label8);
-            this.Panel3.Location = new System.Drawing.Point(577, 101);
+            this.Panel3.Location = new System.Drawing.Point(574, 99);
             this.Panel3.Name = "Panel3";
-            this.Panel3.Size = new System.Drawing.Size(570, 537);
+            this.Panel3.Size = new System.Drawing.Size(685, 537);
             this.Panel3.TabIndex = 621;
             this.Panel3.Visible = false;
             // 
@@ -675,7 +675,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(1189, 685);
+            this.ClientSize = new System.Drawing.Size(1271, 685);
             this.Controls.Add(this.Panel3);
             this.Controls.Add(this.Panel2);
             this.Controls.Add(this.Panel8);

@@ -200,9 +200,9 @@ namespace Punto_de_venta.Presentacion
             this.panelRestaurarcontraseña.Controls.Add(this.pictureBox2);
             this.panelRestaurarcontraseña.Controls.Add(this.panel1);
             this.panelRestaurarcontraseña.Controls.Add(this.label9);
-            this.panelRestaurarcontraseña.Location = new System.Drawing.Point(944, 300);
+            this.panelRestaurarcontraseña.Location = new System.Drawing.Point(1159, 282);
             this.panelRestaurarcontraseña.Name = "panelRestaurarcontraseña";
-            this.panelRestaurarcontraseña.Size = new System.Drawing.Size(429, 279);
+            this.panelRestaurarcontraseña.Size = new System.Drawing.Size(26, 18);
             this.panelRestaurarcontraseña.TabIndex = 618;
             this.panelRestaurarcontraseña.Visible = false;
             // 
@@ -225,7 +225,7 @@ namespace Punto_de_venta.Presentacion
             this.panel1.Controls.Add(this.btncerrar);
             this.panel1.Controls.Add(this.Panel12);
             this.panel1.Controls.Add(this.btnenviar);
-            this.panel1.Location = new System.Drawing.Point(66, 249);
+            this.panel1.Location = new System.Drawing.Point(-135, 249);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(295, 304);
             this.panel1.TabIndex = 617;
@@ -313,7 +313,7 @@ namespace Punto_de_venta.Presentacion
             this.label9.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(429, 227);
+            this.label9.Size = new System.Drawing.Size(26, 227);
             this.label9.TabIndex = 602;
             this.label9.Text = "Restaurar Contraseña";
             this.label9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -331,9 +331,9 @@ namespace Punto_de_venta.Presentacion
             this.PanelIngreso_de_contraseña.Controls.Add(this.btnOlvidoContraseña);
             this.PanelIngreso_de_contraseña.Controls.Add(this.flowLayoutPanel2);
             this.PanelIngreso_de_contraseña.Controls.Add(this.btnCambiarUsuario);
-            this.PanelIngreso_de_contraseña.Location = new System.Drawing.Point(396, 48);
+            this.PanelIngreso_de_contraseña.Location = new System.Drawing.Point(1288, 82);
             this.PanelIngreso_de_contraseña.Name = "PanelIngreso_de_contraseña";
-            this.PanelIngreso_de_contraseña.Size = new System.Drawing.Size(397, 740);
+            this.PanelIngreso_de_contraseña.Size = new System.Drawing.Size(17, 115);
             this.PanelIngreso_de_contraseña.TabIndex = 0;
             // 
             // lblestadoLicencias
@@ -355,7 +355,7 @@ namespace Punto_de_venta.Presentacion
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 66);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(397, 52);
+            this.panel3.Size = new System.Drawing.Size(17, 52);
             this.panel3.TabIndex = 6;
             this.panel3.Visible = false;
             // 
@@ -432,7 +432,7 @@ namespace Punto_de_venta.Presentacion
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(397, 66);
+            this.label3.Size = new System.Drawing.Size(17, 66);
             this.label3.TabIndex = 4;
             this.label3.Text = "Inicio de Sesion";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

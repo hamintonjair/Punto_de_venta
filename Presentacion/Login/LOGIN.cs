@@ -31,7 +31,7 @@ namespace Punto_de_venta.Presentacion
         string cajero = "Cajero (¿Si estas autorizado para manejar dinero?)";
         string vendedor = "Solo Ventas (no esta autorizado para manejar dinero)";
         string administrador = "Administrador (Control total)";
-        string lblRol;
+        public static string lblRol;
         string txtlogin;
         string lblApertura_De_caja;
         string ResultadoLicencia;

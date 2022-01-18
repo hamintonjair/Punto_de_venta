@@ -58,18 +58,13 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.Panelc3 = new System.Windows.Forms.Panel();
             this.btnverMovimientosCaja = new System.Windows.Forms.Button();
             this.StatusStrip4 = new System.Windows.Forms.StatusStrip();
-            this.btnINSVarios = new System.Windows.Forms.ToolStripButton();
             this.btnMayoreo = new System.Windows.Forms.ToolStripButton();
-            this.btnProductoRapido = new System.Windows.Forms.ToolStripButton();
             this.btnIngresosCaja = new System.Windows.Forms.ToolStripButton();
             this.btnGastos = new System.Windows.Forms.ToolStripButton();
             this.BtnCerrar_turno = new System.Windows.Forms.Button();
-            this.MenuStrip21 = new System.Windows.Forms.MenuStrip();
             this.datalistado_stock_detalle_venta = new System.Windows.Forms.DataGridView();
             this.DataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Panelc1 = new System.Windows.Forms.Panel();
-            this.DATALISTADO_PRODUCTOS_OKA = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtreferencia = new System.Windows.Forms.Button();
             this.BTNTECLADO = new System.Windows.Forms.Button();
             this.BTNLECTORA = new System.Windows.Forms.Button();
@@ -226,6 +221,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.lblcontadortablaventas = new System.Windows.Forms.Label();
             this.lblfila = new System.Windows.Forms.Label();
             this.lblAgranellAumentar = new System.Windows.Forms.Label();
+            this.DATALISTADO_PRODUCTOS_OKA = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.PanelOperaciones = new System.Windows.Forms.Panel();
             this.btEfectivo = new System.Windows.Forms.Button();
             this.Panel15 = new System.Windows.Forms.Panel();
@@ -294,7 +291,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.panelc2 = new System.Windows.Forms.Panel();
             this.btnCreditoPagar = new System.Windows.Forms.Button();
             this.btnCreditoCobrar = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.PanelEnespera = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
@@ -307,11 +303,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.puertos = new System.IO.Ports.SerialPort(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Panelc3.SuspendLayout();
             this.StatusStrip4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_stock_detalle_venta)).BeginInit();
             this.Panelc1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DATALISTADO_PRODUCTOS_OKA)).BeginInit();
             this.panel13.SuspendLayout();
             this.ToolStrip1.SuspendLayout();
             this.Panel26.SuspendLayout();
@@ -345,6 +339,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.Panel24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoCajas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_usuario_logueado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DATALISTADO_PRODUCTOS_OKA)).BeginInit();
             this.PanelOperaciones.SuspendLayout();
             this.Panel15.SuspendLayout();
             this.Paneldesc.SuspendLayout();
@@ -368,14 +363,10 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // Panelc3
             // 
             this.Panelc3.BackColor = System.Drawing.Color.White;
-            this.Panelc3.Controls.Add(this.btnverMovimientosCaja);
-            this.Panelc3.Controls.Add(this.StatusStrip4);
-            this.Panelc3.Controls.Add(this.BtnCerrar_turno);
-            this.Panelc3.Controls.Add(this.MenuStrip21);
             this.Panelc3.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panelc3.Location = new System.Drawing.Point(0, 104);
             this.Panelc3.Name = "Panelc3";
-            this.Panelc3.Size = new System.Drawing.Size(1486, 56);
+            this.Panelc3.Size = new System.Drawing.Size(1486, 57);
             this.Panelc3.TabIndex = 598;
             // 
             // btnverMovimientosCaja
@@ -383,15 +374,16 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btnverMovimientosCaja.BackColor = System.Drawing.Color.Transparent;
             this.btnverMovimientosCaja.BackgroundImage = global::Punto_de_venta.Properties.Resources.azul;
             this.btnverMovimientosCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnverMovimientosCaja.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnverMovimientosCaja.FlatAppearance.BorderSize = 0;
             this.btnverMovimientosCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnverMovimientosCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnverMovimientosCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnverMovimientosCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnverMovimientosCaja.ForeColor = System.Drawing.Color.White;
-            this.btnverMovimientosCaja.Location = new System.Drawing.Point(816, 6);
+            this.btnverMovimientosCaja.Location = new System.Drawing.Point(1251, 0);
             this.btnverMovimientosCaja.Name = "btnverMovimientosCaja";
-            this.btnverMovimientosCaja.Size = new System.Drawing.Size(92, 44);
+            this.btnverMovimientosCaja.Size = new System.Drawing.Size(92, 48);
             this.btnverMovimientosCaja.TabIndex = 605;
             this.btnverMovimientosCaja.Text = "Ver Ingresos y Salidas";
             this.btnverMovimientosCaja.UseVisualStyleBackColor = false;
@@ -399,31 +391,19 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // 
             // StatusStrip4
             // 
+            this.StatusStrip4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.StatusStrip4.AutoSize = false;
             this.StatusStrip4.BackColor = System.Drawing.Color.Transparent;
             this.StatusStrip4.Dock = System.Windows.Forms.DockStyle.None;
             this.StatusStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnINSVarios,
             this.btnMayoreo,
-            this.btnProductoRapido,
             this.btnIngresosCaja,
             this.btnGastos});
-            this.StatusStrip4.Location = new System.Drawing.Point(1, 4);
+            this.StatusStrip4.Location = new System.Drawing.Point(882, 0);
             this.StatusStrip4.Name = "StatusStrip4";
-            this.StatusStrip4.Size = new System.Drawing.Size(632, 49);
+            this.StatusStrip4.Size = new System.Drawing.Size(366, 49);
             this.StatusStrip4.TabIndex = 602;
             this.StatusStrip4.Text = "StatusStrip4";
-            // 
-            // btnINSVarios
-            // 
-            this.btnINSVarios.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnINSVarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnINSVarios.ForeColor = System.Drawing.Color.Black;
-            this.btnINSVarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnINSVarios.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnINSVarios.Name = "btnINSVarios";
-            this.btnINSVarios.Size = new System.Drawing.Size(84, 47);
-            this.btnINSVarios.Text = "INS varios";
             // 
             // btnMayoreo
             // 
@@ -437,17 +417,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btnMayoreo.Text = "Mayoreo";
             this.btnMayoreo.Click += new System.EventHandler(this.btnMayoreo_Click);
             // 
-            // btnProductoRapido
-            // 
-            this.btnProductoRapido.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnProductoRapido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductoRapido.ForeColor = System.Drawing.Color.Black;
-            this.btnProductoRapido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductoRapido.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnProductoRapido.Name = "btnProductoRapido";
-            this.btnProductoRapido.Size = new System.Drawing.Size(195, 47);
-            this.btnProductoRapido.Text = "Producto/ Servicio Rapido";
-            // 
             // btnIngresosCaja
             // 
             this.btnIngresosCaja.AutoSize = false;
@@ -457,7 +426,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btnIngresosCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresosCaja.Image")));
             this.btnIngresosCaja.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnIngresosCaja.Name = "btnIngresosCaja";
-            this.btnIngresosCaja.Size = new System.Drawing.Size(128, 47);
+            this.btnIngresosCaja.Size = new System.Drawing.Size(130, 47);
             this.btnIngresosCaja.Text = "Ingreso dinero";
             this.btnIngresosCaja.Click += new System.EventHandler(this.btnIngresosCaja_Click);
             // 
@@ -470,7 +439,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btnGastos.Image = ((System.Drawing.Image)(resources.GetObject("btnGastos.Image")));
             this.btnGastos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnGastos.Name = "btnGastos";
-            this.btnGastos.Size = new System.Drawing.Size(121, 47);
+            this.btnGastos.Size = new System.Drawing.Size(130, 47);
             this.btnGastos.Text = "Salida dinero";
             this.btnGastos.Click += new System.EventHandler(this.btnGastos_Click);
             // 
@@ -479,33 +448,20 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.BtnCerrar_turno.BackColor = System.Drawing.Color.Transparent;
             this.BtnCerrar_turno.BackgroundImage = global::Punto_de_venta.Properties.Resources.naranja;
             this.BtnCerrar_turno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCerrar_turno.Dock = System.Windows.Forms.DockStyle.Right;
             this.BtnCerrar_turno.FlatAppearance.BorderSize = 0;
             this.BtnCerrar_turno.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.BtnCerrar_turno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BtnCerrar_turno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCerrar_turno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCerrar_turno.ForeColor = System.Drawing.Color.White;
-            this.BtnCerrar_turno.Location = new System.Drawing.Point(915, 8);
+            this.BtnCerrar_turno.Location = new System.Drawing.Point(1343, 0);
             this.BtnCerrar_turno.Name = "BtnCerrar_turno";
-            this.BtnCerrar_turno.Size = new System.Drawing.Size(143, 42);
+            this.BtnCerrar_turno.Size = new System.Drawing.Size(143, 48);
             this.BtnCerrar_turno.TabIndex = 600;
             this.BtnCerrar_turno.Text = "Cerrar Turno";
             this.BtnCerrar_turno.UseVisualStyleBackColor = false;
             this.BtnCerrar_turno.Click += new System.EventHandler(this.BtnCerrar_turno_Click);
-            // 
-            // MenuStrip21
-            // 
-            this.MenuStrip21.AutoSize = false;
-            this.MenuStrip21.BackColor = System.Drawing.Color.Transparent;
-            this.MenuStrip21.Dock = System.Windows.Forms.DockStyle.None;
-            this.MenuStrip21.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.MenuStrip21.Location = new System.Drawing.Point(88, 5);
-            this.MenuStrip21.Name = "MenuStrip21";
-            this.MenuStrip21.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MenuStrip21.ShowItemToolTips = true;
-            this.MenuStrip21.Size = new System.Drawing.Size(264, 54);
-            this.MenuStrip21.TabIndex = 597;
-            this.MenuStrip21.Text = "MenuStrip21";
             // 
             // datalistado_stock_detalle_venta
             // 
@@ -561,7 +517,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // Panelc1
             // 
             this.Panelc1.BackColor = System.Drawing.Color.Coral;
-            this.Panelc1.Controls.Add(this.DATALISTADO_PRODUCTOS_OKA);
             this.Panelc1.Controls.Add(this.txtreferencia);
             this.Panelc1.Controls.Add(this.BTNTECLADO);
             this.Panelc1.Controls.Add(this.BTNLECTORA);
@@ -578,45 +533,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.Panelc1.Name = "Panelc1";
             this.Panelc1.Size = new System.Drawing.Size(1486, 56);
             this.Panelc1.TabIndex = 599;
-            // 
-            // DATALISTADO_PRODUCTOS_OKA
-            // 
-            this.DATALISTADO_PRODUCTOS_OKA.AllowUserToAddRows = false;
-            this.DATALISTADO_PRODUCTOS_OKA.AllowUserToDeleteRows = false;
-            this.DATALISTADO_PRODUCTOS_OKA.AllowUserToResizeRows = false;
-            this.DATALISTADO_PRODUCTOS_OKA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DATALISTADO_PRODUCTOS_OKA.BackgroundColor = System.Drawing.Color.DimGray;
-            this.DATALISTADO_PRODUCTOS_OKA.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DATALISTADO_PRODUCTOS_OKA.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersVisible = false;
-            this.DATALISTADO_PRODUCTOS_OKA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn3});
-            this.DATALISTADO_PRODUCTOS_OKA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DATALISTADO_PRODUCTOS_OKA.EnableHeadersVisualStyles = false;
-            this.DATALISTADO_PRODUCTOS_OKA.GridColor = System.Drawing.SystemColors.Control;
-            this.DATALISTADO_PRODUCTOS_OKA.Location = new System.Drawing.Point(847, 8);
-            this.DATALISTADO_PRODUCTOS_OKA.MultiSelect = false;
-            this.DATALISTADO_PRODUCTOS_OKA.Name = "DATALISTADO_PRODUCTOS_OKA";
-            this.DATALISTADO_PRODUCTOS_OKA.ReadOnly = true;
-            this.DATALISTADO_PRODUCTOS_OKA.RowHeadersVisible = false;
-            this.DATALISTADO_PRODUCTOS_OKA.RowHeadersWidth = 9;
-            this.DATALISTADO_PRODUCTOS_OKA.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            this.DATALISTADO_PRODUCTOS_OKA.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.DATALISTADO_PRODUCTOS_OKA.RowTemplate.Height = 40;
-            this.DATALISTADO_PRODUCTOS_OKA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DATALISTADO_PRODUCTOS_OKA.Size = new System.Drawing.Size(92, 42);
-            this.DATALISTADO_PRODUCTOS_OKA.TabIndex = 599;
-            this.DATALISTADO_PRODUCTOS_OKA.Visible = false;
-            this.DATALISTADO_PRODUCTOS_OKA.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DATALISTADO_PRODUCTOS_OKA_CellClick_1);
-            // 
-            // dataGridViewImageColumn3
-            // 
-            this.dataGridViewImageColumn3.HeaderText = "Column1";
-            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
-            this.dataGridViewImageColumn3.ReadOnly = true;
-            this.dataGridViewImageColumn3.Visible = false;
             // 
             // txtreferencia
             // 
@@ -2572,6 +2488,45 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.lblAgranellAumentar.TabIndex = 595;
             this.lblAgranellAumentar.Text = "MacKeys v.2018";
             // 
+            // DATALISTADO_PRODUCTOS_OKA
+            // 
+            this.DATALISTADO_PRODUCTOS_OKA.AllowUserToAddRows = false;
+            this.DATALISTADO_PRODUCTOS_OKA.AllowUserToDeleteRows = false;
+            this.DATALISTADO_PRODUCTOS_OKA.AllowUserToResizeRows = false;
+            this.DATALISTADO_PRODUCTOS_OKA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DATALISTADO_PRODUCTOS_OKA.BackgroundColor = System.Drawing.Color.DimGray;
+            this.DATALISTADO_PRODUCTOS_OKA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DATALISTADO_PRODUCTOS_OKA.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersVisible = false;
+            this.DATALISTADO_PRODUCTOS_OKA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewImageColumn3});
+            this.DATALISTADO_PRODUCTOS_OKA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DATALISTADO_PRODUCTOS_OKA.EnableHeadersVisualStyles = false;
+            this.DATALISTADO_PRODUCTOS_OKA.GridColor = System.Drawing.SystemColors.Control;
+            this.DATALISTADO_PRODUCTOS_OKA.Location = new System.Drawing.Point(144, 38);
+            this.DATALISTADO_PRODUCTOS_OKA.MultiSelect = false;
+            this.DATALISTADO_PRODUCTOS_OKA.Name = "DATALISTADO_PRODUCTOS_OKA";
+            this.DATALISTADO_PRODUCTOS_OKA.ReadOnly = true;
+            this.DATALISTADO_PRODUCTOS_OKA.RowHeadersVisible = false;
+            this.DATALISTADO_PRODUCTOS_OKA.RowHeadersWidth = 9;
+            this.DATALISTADO_PRODUCTOS_OKA.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            this.DATALISTADO_PRODUCTOS_OKA.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DATALISTADO_PRODUCTOS_OKA.RowTemplate.Height = 40;
+            this.DATALISTADO_PRODUCTOS_OKA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DATALISTADO_PRODUCTOS_OKA.Size = new System.Drawing.Size(1, 1);
+            this.DATALISTADO_PRODUCTOS_OKA.TabIndex = 599;
+            this.DATALISTADO_PRODUCTOS_OKA.Visible = false;
+            this.DATALISTADO_PRODUCTOS_OKA.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DATALISTADO_PRODUCTOS_OKA_CellClick_1);
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.HeaderText = "Column1";
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
+            this.dataGridViewImageColumn3.Visible = false;
+            // 
             // PanelOperaciones
             // 
             this.PanelOperaciones.Controls.Add(this.btEfectivo);
@@ -2592,9 +2547,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.PanelOperaciones.Controls.Add(this.Panel5);
             this.PanelOperaciones.Controls.Add(this.FlowLayoutPanel2);
             this.PanelOperaciones.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PanelOperaciones.Location = new System.Drawing.Point(1161, 160);
+            this.PanelOperaciones.Location = new System.Drawing.Point(1161, 161);
             this.PanelOperaciones.Name = "PanelOperaciones";
-            this.PanelOperaciones.Size = new System.Drawing.Size(325, 546);
+            this.PanelOperaciones.Size = new System.Drawing.Size(325, 545);
             this.PanelOperaciones.TabIndex = 630;
             // 
             // btEfectivo
@@ -3224,7 +3179,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.datalistadoDetalleVenta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datalistadoDetalleVenta.EnableHeadersVisualStyles = false;
             this.datalistadoDetalleVenta.GridColor = System.Drawing.Color.Gainsboro;
-            this.datalistadoDetalleVenta.Location = new System.Drawing.Point(109, 160);
+            this.datalistadoDetalleVenta.Location = new System.Drawing.Point(109, 161);
             this.datalistadoDetalleVenta.Name = "datalistadoDetalleVenta";
             this.datalistadoDetalleVenta.ReadOnly = true;
             this.datalistadoDetalleVenta.RowHeadersVisible = false;
@@ -3236,7 +3191,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.datalistadoDetalleVenta.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.datalistadoDetalleVenta.RowTemplate.Height = 36;
             this.datalistadoDetalleVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistadoDetalleVenta.Size = new System.Drawing.Size(782, 546);
+            this.datalistadoDetalleVenta.Size = new System.Drawing.Size(782, 545);
             this.datalistadoDetalleVenta.TabIndex = 631;
             this.datalistadoDetalleVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistadoDetalleVenta_CellClick);
             this.datalistadoDetalleVenta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.datalistadoDetalleVenta_KeyDown);
@@ -3379,6 +3334,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.DATALISTADO_PRODUCTOS_OKA);
             this.panel6.Controls.Add(this.activarTema);
             this.panel6.Controls.Add(this.desactivarTEMA);
             this.panel6.Controls.Add(this.label1);
@@ -3487,9 +3443,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.panelBienvenida.Controls.Add(this.panel12);
             this.panelBienvenida.Controls.Add(this.label15);
             this.panelBienvenida.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelBienvenida.Location = new System.Drawing.Point(891, 160);
+            this.panelBienvenida.Location = new System.Drawing.Point(891, 161);
             this.panelBienvenida.Name = "panelBienvenida";
-            this.panelBienvenida.Size = new System.Drawing.Size(270, 546);
+            this.panelBienvenida.Size = new System.Drawing.Size(270, 545);
             this.panelBienvenida.TabIndex = 636;
             // 
             // pictureBox1
@@ -3498,7 +3454,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.pictureBox1.Image = global::Punto_de_venta.Properties.Resources.money_dollar_cash_coins_riches_wealth_icon_icons_com_53585;
             this.pictureBox1.Location = new System.Drawing.Point(0, 135);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(270, 219);
+            this.pictureBox1.Size = new System.Drawing.Size(270, 218);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 634;
             this.pictureBox1.TabStop = false;
@@ -3508,7 +3464,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Location = new System.Drawing.Point(0, 135);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(270, 219);
+            this.pictureBox2.Size = new System.Drawing.Size(270, 218);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -3526,7 +3482,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.label15.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(0, 354);
+            this.label15.Location = new System.Drawing.Point(0, 353);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(270, 192);
             this.label15.TabIndex = 1;
@@ -3536,9 +3492,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // panelc2
             // 
             this.panelc2.BackColor = System.Drawing.Color.White;
+            this.panelc2.Controls.Add(this.StatusStrip4);
+            this.panelc2.Controls.Add(this.btnverMovimientosCaja);
             this.panelc2.Controls.Add(this.btnCreditoPagar);
             this.panelc2.Controls.Add(this.btnCreditoCobrar);
-            this.panelc2.Controls.Add(this.button8);
+            this.panelc2.Controls.Add(this.BtnCerrar_turno);
             this.panelc2.Controls.Add(this.button1);
             this.panelc2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelc2.Location = new System.Drawing.Point(0, 56);
@@ -3554,9 +3512,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btnCreditoPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreditoPagar.Image = ((System.Drawing.Image)(resources.GetObject("btnCreditoPagar.Image")));
             this.btnCreditoPagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreditoPagar.Location = new System.Drawing.Point(492, 7);
+            this.btnCreditoPagar.Location = new System.Drawing.Point(374, 4);
             this.btnCreditoPagar.Name = "btnCreditoPagar";
-            this.btnCreditoPagar.Size = new System.Drawing.Size(276, 36);
+            this.btnCreditoPagar.Size = new System.Drawing.Size(276, 40);
             this.btnCreditoPagar.TabIndex = 5;
             this.btnCreditoPagar.Text = "Aperturar Credito por Pagar";
             this.btnCreditoPagar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -3571,30 +3529,14 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btnCreditoCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreditoCobrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCreditoCobrar.Image")));
             this.btnCreditoCobrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreditoCobrar.Location = new System.Drawing.Point(226, 5);
+            this.btnCreditoCobrar.Location = new System.Drawing.Point(110, 4);
             this.btnCreditoCobrar.Name = "btnCreditoCobrar";
-            this.btnCreditoCobrar.Size = new System.Drawing.Size(260, 38);
+            this.btnCreditoCobrar.Size = new System.Drawing.Size(260, 40);
             this.btnCreditoCobrar.TabIndex = 4;
             this.btnCreditoCobrar.Text = "Aperturar Credito por Cobrar";
             this.btnCreditoCobrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreditoCobrar.UseVisualStyleBackColor = false;
             this.btnCreditoCobrar.Click += new System.EventHandler(this.btnCreditoCobrar_Click);
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(114, 5);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(106, 38);
-            this.button8.TabIndex = 3;
-            this.button8.Text = "Pagos";
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button8.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -3604,9 +3546,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 7);
+            this.button1.Location = new System.Drawing.Point(0, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 34);
+            this.button1.Size = new System.Drawing.Size(106, 40);
             this.button1.TabIndex = 2;
             this.button1.Text = "Cobros";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -3703,9 +3645,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // 
             this.panelc5.BackColor = System.Drawing.Color.White;
             this.panelc5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelc5.Location = new System.Drawing.Point(0, 160);
+            this.panelc5.Location = new System.Drawing.Point(0, 161);
             this.panelc5.Name = "panelc5";
-            this.panelc5.Size = new System.Drawing.Size(109, 546);
+            this.panelc5.Size = new System.Drawing.Size(109, 545);
             this.panelc5.TabIndex = 639;
             // 
             // dataGridViewImageColumn1
@@ -3759,13 +3701,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.Text = "Jojama";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Ventas_Menu_Princi_Load);
-            this.Panelc3.ResumeLayout(false);
             this.StatusStrip4.ResumeLayout(false);
             this.StatusStrip4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_stock_detalle_venta)).EndInit();
             this.Panelc1.ResumeLayout(false);
             this.Panelc1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DATALISTADO_PRODUCTOS_OKA)).EndInit();
             this.panel13.ResumeLayout(false);
             this.ToolStrip1.ResumeLayout(false);
             this.ToolStrip1.PerformLayout();
@@ -3817,6 +3757,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.Panel24.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoCajas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_usuario_logueado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DATALISTADO_PRODUCTOS_OKA)).EndInit();
             this.PanelOperaciones.ResumeLayout(false);
             this.PanelOperaciones.PerformLayout();
             this.Panel15.ResumeLayout(false);
@@ -3846,13 +3787,10 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         #endregion
         internal System.Windows.Forms.Panel Panelc3;
         internal System.Windows.Forms.StatusStrip StatusStrip4;
-        internal System.Windows.Forms.ToolStripButton btnINSVarios;
         internal System.Windows.Forms.ToolStripButton btnMayoreo;
-        internal System.Windows.Forms.ToolStripButton btnProductoRapido;
         internal System.Windows.Forms.ToolStripButton btnIngresosCaja;
         internal System.Windows.Forms.ToolStripButton btnGastos;
         internal System.Windows.Forms.Button BtnCerrar_turno;
-        internal System.Windows.Forms.MenuStrip MenuStrip21;
         internal System.Windows.Forms.Panel Panelc1;
         internal System.Windows.Forms.PictureBox pboxNombreSoftware;
         internal System.Windows.Forms.Panel Panel30;
@@ -4075,7 +4013,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private System.Windows.Forms.Panel panelc2;
         private System.Windows.Forms.Button btnCreditoPagar;
         private System.Windows.Forms.Button btnCreditoCobrar;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button1;
         internal System.Windows.Forms.Panel panel13;
         internal System.Windows.Forms.MenuStrip ToolStrip1;

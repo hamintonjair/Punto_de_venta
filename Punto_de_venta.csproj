@@ -318,6 +318,12 @@
     <Compile Include="Presentacion\HistorialVentas\HistorialVentasForm.Designer.cs">
       <DependentUpon>HistorialVentasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Impresorass\Admin_impresoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Impresorass\Admin_impresoras.designer.cs">
+      <DependentUpon>Admin_impresoras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Ingresos_varios\IngresosVarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -604,6 +610,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\HistorialVentas\HistorialVentasForm.resx">
       <DependentUpon>HistorialVentasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Impresorass\Admin_impresoras.resx">
+      <DependentUpon>Admin_impresoras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Ingresos_varios\IngresosVarios.resx">
       <DependentUpon>IngresosVarios.cs</DependentUpon>
