@@ -46,6 +46,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         string Ip;
         int contadorVentasEspera;
         bool EstadoCobrar = false;
+        int impuesto;
+        double subtotal;
         string administrador = "Administrador (Control total)";
         Panel panel_mostrador_de_productos = new Panel();
 
@@ -71,8 +73,35 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             Bases.Obtener_serialPC(ref SerialPC);
             Obtener_datos.Obtener_id_caja_PorSerial(ref Id_caja);           
           
-            Obtener_id_de_cliente_estandar();           
-            Obtener_datos.mostrar_inicio_De_sesion2(ref idusuario_que_inicio_sesion);
+            Obtener_id_de_cliente_estandar();
+
+            int id = Presentacion.LOGIN.idcajavariable;
+            if (id == Convert.ToInt32(1))
+            {
+                Obtener_datos.mostrar_inicio_De_sesion2(ref idusuario_que_inicio_sesion);
+            }
+            else
+            {
+                Obtener_datos.mostrar_inicio_De_sesion(ref idusuario_que_inicio_sesion);
+            }
+
+            try
+            {
+                string Impuesto;
+                Impuesto = "SELECT Porcentaje_Impuesto FROM EMPRESA";
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = ConexionDt.ConexionData.conexion;
+                SqlCommand Porcentaje = new SqlCommand(Impuesto, con);
+                con.Open();
+                lblIVA.Text = Porcentaje.ExecuteScalar().ToString();
+                impuesto = Convert.ToInt32(lblIVA.Text);
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             ValidarTiposBusqueda();
             Obtener_datos.mostrarTemaCaja(ref Tema);
@@ -414,7 +443,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                     cmd.Parameters.AddWithValue("@ACCION", "VENTA");
                     cmd.Parameters.AddWithValue("@Saldo", 0);
                     cmd.Parameters.AddWithValue("@Pago_con", 0);
-                    cmd.Parameters.AddWithValue("@Porcentaje_IGV", 0);
+                    cmd.Parameters.AddWithValue("@Porcentaje_IGV", impuesto);
                     cmd.Parameters.AddWithValue("@Id_caja", Id_caja);
                     cmd.Parameters.AddWithValue("@Referencia_tarjeta", 0);
                     cmd.ExecuteNonQuery();
@@ -631,13 +660,17 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             if (e.ColumnIndex == this.datalistadoDetalleVenta.Columns["S"].Index)
             {
                 txtpantalla = 1;
+              
                 editar_detalle_venta_sumar();
+                subtotalImpuesto();
             }
             if (e.ColumnIndex == this.datalistadoDetalleVenta.Columns["R"].Index)
             {
                 txtpantalla = 1;
+                
                 editar_detalle_venta_restar();
                 EliminarVentas();
+                subtotalImpuesto();
 
             }
 
@@ -1002,6 +1035,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                     {
                         BotonCantidad();
                     }
+                    subtotalImpuesto();
                 }
                 else
                 {
@@ -1139,6 +1173,21 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private void DATALISTADO_PRODUCTOS_OKA_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             vender_por_teclado();
+            subtotalImpuesto();
+           
+        }
+        public void subtotalImpuesto()
+        {
+            String total = String.Format("{0},{1}", 1, lblIVA.Text);
+            double tot = Convert.ToDouble(txt_total_suma.Text) / (Convert.ToDouble(total));
+            double totall = tot * 100;
+            subtotal = Convert.ToDouble(txt_total_suma.Text) - totall;
+
+            lblsubtotal.Text = totall.ToString("N0");
+            double des=Convert.ToDouble(lblsubtotal.Text);
+            double to = Convert.ToDouble(txt_total_suma.Text);
+            double final = to - des;
+            lblvalorIva.Text =Convert.ToDouble(final).ToString();
         }
        
         private void vender_por_teclado()
@@ -1168,6 +1217,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             sevendePor = DATALISTADO_PRODUCTOS_OKA.SelectedCells[8].Value.ToString();
             txtprecio_unitarios = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[6].Value.ToString());
             //Preguntamos que tipo de producto sera el que se agrege al detalle de venta
+
+           
+
             if (sevendePor == "Granel")
             {
                 vender_a_granel();
@@ -1176,7 +1228,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             {
                 txtpantalla = 1;
                 vender_por_unidad();
-            }
+            }    
 
         }
         private void btnespera_Click(object sender, EventArgs e)
@@ -1366,6 +1418,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 if (funcion.editarPrecioVenta(parametros) == true)
                 {
                     Listarproductosagregados();
+                    subtotalImpuesto();
                 }
             }
         }

@@ -542,7 +542,6 @@ namespace Punto_de_venta.Datos
             }
         }
 
-
         //Proveedores
         public static void ReportePorPagar(ref double Monto)
         {

@@ -25,6 +25,8 @@ namespace Punto_de_venta.Presentacion.Productos
         }
         string lblSerialPc;
         string lblIDSERIALL;
+        int porcentaje;
+        string UsaIva;
         private void PictureBox2_Click(object sender, EventArgs e)
         {
             panederecho.Visible = false;
@@ -79,6 +81,7 @@ namespace Punto_de_venta.Presentacion.Productos
 
             TGUARDAR.Visible = true;
             TGUARDARCAMBIOS.Visible = false;
+          
         }
         public static int idusuario;
         public static int idcaja;
@@ -92,6 +95,7 @@ namespace Punto_de_venta.Presentacion.Productos
             txtgrupo.Text = "";
 
             agranel.Checked = false;
+            no.Checked = true;
             txtstockminimo.Text = "0";
             txtstock2.Text = "0";
             lblEstadoCodigo.Text = "NUEVO";
@@ -99,6 +103,7 @@ namespace Punto_de_venta.Presentacion.Productos
         //public static int idusuario;
         private void Productoss_Load(object sender, EventArgs e)
         {
+            mostrar();
             Bases.Cambiar_idioma_regional();
 
             PANELDEPARTAMENTO.Visible = false;
@@ -106,13 +111,46 @@ namespace Punto_de_venta.Presentacion.Productos
             sumar_costo_de_inventario_CONTAR_PRODUCTOS();
             buscar();
             mostrar_grupos();
+            int id = Presentacion.Admin_nivel_dios.DASHBOARD_PRINCIPAL.idcajavariable;
             Bases.Obtener_serialPC(ref lblSerialPc);
-            Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
-          
-            Obtener_datos.mostrar_inicio_De_sesion2(ref idusuario);         
 
-        }      
-     
+            Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
+
+            if (id == Convert.ToInt32(1))
+            {
+                Obtener_datos.mostrar_inicio_De_sesion2(ref idusuario);
+            }
+            else
+            {
+                Obtener_datos.mostrar_inicio_De_sesion(ref idusuario);
+            }
+            no.Checked = true;
+
+        }
+        private void mostrar()
+        {
+            try
+            {
+                string Impuesto;
+                string iva;
+                Impuesto = "SELECT Porcentaje_Impuesto FROM EMPRESA";
+                iva = "SELECT Impuesto FROM EMPRESA";
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = ConexionDt.ConexionData.conexion;
+                SqlCommand Porcentaje = new SqlCommand(Impuesto, con);
+                con.Open();
+                txtporcentaje.Text = Porcentaje.ExecuteScalar().ToString();
+                txtimpuesto.Text = Porcentaje.ExecuteScalar().ToString();
+
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void mostrar_grupos()
         {
             PanelGRUPOSSELECT.Visible = true;
@@ -190,7 +228,7 @@ namespace Punto_de_venta.Presentacion.Productos
                 cmd.Parameters.AddWithValue("@Precio_de_venta", TXTPRECIODEVENTA2.Text);
                 cmd.Parameters.AddWithValue("@Codigo", txtcodigodebarras.Text);
                 cmd.Parameters.AddWithValue("@A_partir_de", txtapartirde.Text);
-                cmd.Parameters.AddWithValue("@Impuesto", 0);
+                cmd.Parameters.AddWithValue("@Impuesto", UsaIva);
                 cmd.Parameters.AddWithValue("@Precio_mayoreo", txtpreciomayoreo.Text);
                 if (porunidad.Checked == true) txtse_vende_a.Text = "Unidad";
                 if (agranel.Checked == true) txtse_vende_a.Text = "Granel";
@@ -242,6 +280,7 @@ namespace Punto_de_venta.Presentacion.Productos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                ConexionDt.ConexionData.conectar.Close();
             }
 
         }
@@ -263,7 +302,7 @@ namespace Punto_de_venta.Presentacion.Productos
                 cmd.Parameters.AddWithValue("@Precio_de_venta", TXTPRECIODEVENTA2.Text);
                 cmd.Parameters.AddWithValue("@Codigo", txtcodigodebarras.Text);
                 cmd.Parameters.AddWithValue("@A_partir_de", txtapartirde.Text);
-                cmd.Parameters.AddWithValue("@Impuesto", 0);
+                cmd.Parameters.AddWithValue("@Impuesto", UsaIva);
                 cmd.Parameters.AddWithValue("@Precio_mayoreo", txtpreciomayoreo.Text);
                 if (porunidad.Checked == true) txtse_vende_a.Text = "Unidad";
                 if (agranel.Checked == true) txtse_vende_a.Text = "Granel";
@@ -305,6 +344,7 @@ namespace Punto_de_venta.Presentacion.Productos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                ConexionDt.ConexionData.conectar.Close();
             }
 
         }
@@ -769,10 +809,8 @@ namespace Punto_de_venta.Presentacion.Productos
 
         private void txtPorcentajeGanancia_TextChanged_1(object sender, EventArgs e)
         {
-            TimerCalucular_porcentaje_ganancia.Stop();
-
-            TimerCalcular_precio_venta.Start();
-            TimerCalucular_porcentaje_ganancia.Stop();
+            impuesto();
+            
         }
 
         private void txtgrupo_TextChanged_1(object sender, EventArgs e)
@@ -977,27 +1015,107 @@ namespace Punto_de_venta.Presentacion.Productos
             //TXTPRECIODEVENTA2.Text = System.String.Format(((decimal)TXTPRECIODEVENTA2.Text), "##0.00");
             if ((txtpreciomayoreoV > 0 & Convert.ToDouble(txtapartirde.Text) > 0) | (txtpreciomayoreoV == 0 & txtapartirdeV == 0))
             {
-                if (txtcostoV >= TXTPRECIODEVENTA2V)
+                if(string.IsNullOrEmpty(txtPorcentajeGanancia.Text) | string.IsNullOrEmpty(txtporcentaje.Text))
                 {
-
-                    DialogResult result;
-                    result = MessageBox.Show("El precio de Venta es menor que el COSTO, Esto Te puede Generar Perdidas", "Producto con Perdidas", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-
-                    if (result == DialogResult.OK)
-                    {
-                        insertar_productos();
-                    }
-                    else
-                    {
-                        TXTPRECIODEVENTA2.Focus();
-                    }
-
-
+                    MessageBox.Show("Revisa si el campo del IVA es igual al del sistema ó que el código no sea Cero", "aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else if (txtcostoV < TXTPRECIODEVENTA2V)
+                else
                 {
-                    insertar_productos();
+                  
+                    try
+                    {
+                       
+                        if (no.Checked == true)
+                        {
+                            UsaIva = "NO";
+                            if (txtcodigodebarras.Text != "0" & txtcodigodebarras.Text != "")
+                            {
+                                
+                                PanelImpuesto.Visible = false;                               
+                                porcentaje = 0;
+
+                                //if (txtcostoV >= TXTPRECIODEVENTA2V)
+                                //{
+                                //    DialogResult result;
+                                //    result = MessageBox.Show("El precio de Venta es menor que el COSTO, Esto Te puede Generar Perdidas", "Producto con Perdidas", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                                //    if (result == DialogResult.OK)
+                                //    {
+                                //        insertar_productos();
+                                //    }
+                                //    else
+                                //    {
+                                //        TXTPRECIODEVENTA2.Focus();
+                                //    }
+
+                                //}
+                                //else if (txtcostoV < TXTPRECIODEVENTA2V)
+                                //{
+                                //    insertar_productos();
+                                //}
+
+                            }
+                        }
+                        if (si.Checked == true)
+                        {
+                            UsaIva = "SI";
+                            PanelImpuesto.Visible = true;
+                            if (Convert.ToInt32(txtPorcentajeGanancia.Text) == porcentaje & txtcodigodebarras.Text != "0" & txtcodigodebarras.Text != "")
+                            {
+
+
+                                //if (txtcostoV >= TXTPRECIODEVENTA2V)
+                                //{
+                                //    DialogResult result;
+                                //    result = MessageBox.Show("El precio de Venta es menor que el COSTO, Esto Te puede Generar Perdidas", "Producto con Perdidas", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                                //    if (result == DialogResult.OK)
+                                //    {
+                                //        insertar_productos();
+                                //    }
+                                //    else
+                                //    {
+                                //        TXTPRECIODEVENTA2.Focus();
+                                //    }
+
+                                //}
+                                //else if (txtcostoV < TXTPRECIODEVENTA2V)
+                                //{
+                                //    insertar_productos();
+                                //}
+                                no.Checked = true;
+                                TXTPRECIODEVENTA2.Text = txtcosto.Text;
+                            }
+                        }
+                        if (txtcostoV >= TXTPRECIODEVENTA2V)
+                        {
+                            DialogResult result;
+                            result = MessageBox.Show("El precio de Venta es menor que el COSTO, Esto Te puede Generar Perdidas", "Producto con Perdidas", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                            if (result == DialogResult.OK)
+                            {
+                                insertar_productos();
+                            }
+                            else
+                            {
+                                TXTPRECIODEVENTA2.Focus();
+                            }
+
+                        }
+                        else if (txtcostoV < TXTPRECIODEVENTA2V)
+                        {
+                            insertar_productos();
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
                 }
+               
+               
             }
             else if (txtpreciomayoreoV != 0 | txtapartirdeV != 0)
             {
@@ -1023,30 +1141,91 @@ namespace Punto_de_venta.Presentacion.Productos
                 //TXTPRECIODEVENTA2.Text = System.String.Format(((decimal)TXTPRECIODEVENTA2.Text), "##0.00");
                 if ((txtpreciomayoreoV > 0 & Convert.ToDouble(txtapartirde.Text) > 0) | (txtpreciomayoreoV == 0 & txtapartirdeV == 0))
                 {
-                    if (txtcostoV >= TXTPRECIODEVENTA2V)
+                    if (string.IsNullOrEmpty(txtPorcentajeGanancia.Text))
                     {
+                        MessageBox.Show("Revisa si el campo del IVA es igual al del sistema", "aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                      
+                        
+                        if (no.Checked == true)
+                        {
+                            UsaIva = "NO";
+                            PanelImpuesto.Visible = false;
+                            TXTPRECIODEVENTA2.Text = txtcosto.Text;
+                            txtPorcentajeGanancia.Text = Convert.ToInt32(porcentaje).ToString();
 
-                        DialogResult result;
-                        result = MessageBox.Show("El precio de Venta es menor que el COSTO, Esto Te puede Generar Perdidas", "Producto con Perdidas", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                            //if (txtcostoV >= TXTPRECIODEVENTA2V)
+                            //{
 
-                        if (result == DialogResult.OK)
+                            //    DialogResult result;
+                            //    result = MessageBox.Show("El precio de Venta es menor que el COSTO, Esto Te puede Generar Perdidas", "Producto con Perdidas", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                            //    if (result == DialogResult.OK)
+                            //    {
+                            //        editar_productos();
+                            //    }
+                            //    else
+                            //    {
+                            //        TXTPRECIODEVENTA2.Focus();
+                            //    }
+                            //}
+                            //else if (txtcostoV < TXTPRECIODEVENTA2V)
+                            //{
+                            //    editar_productos();
+                            //}
+
+                        }
+                        if (si.Checked == true)
+                        {
+                            UsaIva = "SI";
+                            PanelImpuesto.Visible = true;
+                            if (Convert.ToInt32(txtPorcentajeGanancia.Text) == porcentaje & txtcodigodebarras.Text != "0" & txtcodigodebarras.Text != "")
+                            {
+                                //if (txtcostoV >= TXTPRECIODEVENTA2V)
+                                //{
+
+                                //    DialogResult result;
+                                //    result = MessageBox.Show("El precio de Venta es menor que el COSTO, Esto Te puede Generar Perdidas", "Producto con Perdidas", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                                //    if (result == DialogResult.OK)
+                                //    {
+                                //        editar_productos();
+                                //    }
+                                //    else
+                                //    {
+                                //        TXTPRECIODEVENTA2.Focus();
+                                //    }
+                                //}
+                                //else if (txtcostoV < TXTPRECIODEVENTA2V)
+                                //{
+                                //    editar_productos();
+                                //}
+                                no.Checked = true;
+                                TXTPRECIODEVENTA2.Text = txtcosto.Text;
+                            }
+                        }
+                        if (txtcostoV >= TXTPRECIODEVENTA2V)
+                        {
+
+                            DialogResult result;
+                            result = MessageBox.Show("El precio de Venta es menor que el COSTO, Esto Te puede Generar Perdidas", "Producto con Perdidas", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                            if (result == DialogResult.OK)
+                            {
+                                editar_productos();
+                            }
+                            else
+                            {
+                                TXTPRECIODEVENTA2.Focus();
+                            }
+                        }
+                        else if (txtcostoV < TXTPRECIODEVENTA2V)
                         {
                             editar_productos();
                         }
-                        else
-                        {
-                            TXTPRECIODEVENTA2.Focus();
-                        }
                     }
-                    else if (txtcostoV < TXTPRECIODEVENTA2V)
-                    {
-                        editar_productos();
-                    }
-                }
-                else if (txtpreciomayoreoV != 0 | txtapartirdeV != 0)
-                {
-                    MessageBox.Show("Estas configurando Precio mayoreo, debes completar los campos de Precio mayoreo y A partir de, si no deseas configurarlo dejalos en blanco", "Datos incompletos", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-
                 }
             }
             catch (Exception ex)
@@ -1089,6 +1268,34 @@ namespace Punto_de_venta.Presentacion.Productos
             Dispose();
             Configuracion.PANEL_CONFIGURACIONES frm = new Configuracion.PANEL_CONFIGURACIONES();
             frm.ShowDialog();
+        }
+        public void impuesto()
+        {
+
+            porcentaje = Convert.ToInt32(txtporcentaje.Text);
+            TimerCalucular_porcentaje_ganancia.Stop();
+
+            TimerCalcular_precio_venta.Start();
+            TimerCalucular_porcentaje_ganancia.Stop();
+
+        }
+
+        private void cbImpuestos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void si_Click(object sender, EventArgs e)
+        {
+            PanelImpuesto.Visible = true;
+            txtPorcentajeGanancia.Text = "";
+            impuesto();
+        }
+
+        private void no_Click(object sender, EventArgs e)
+        {
+            PanelImpuesto.Visible = false;
+            TXTPRECIODEVENTA2.Text = txtcosto.Text;
         }
     }
 }

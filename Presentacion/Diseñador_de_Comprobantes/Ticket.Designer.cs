@@ -30,12 +30,14 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ticket));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtAutorizacion_fiscal = new System.Windows.Forms.TextBox();
             this.Panel15 = new System.Windows.Forms.Panel();
             this.Panel14 = new System.Windows.Forms.Panel();
@@ -79,6 +81,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.lblcajero = new System.Windows.Forms.Label();
             this.lblfecha = new System.Windows.Forms.Label();
             this.Label4 = new System.Windows.Forms.Label();
+            this.PictureBox3 = new System.Windows.Forms.PictureBox();
             this.Label5 = new System.Windows.Forms.Label();
             this.Panel4 = new System.Windows.Forms.Panel();
             this.Panel3 = new System.Windows.Forms.Panel();
@@ -88,8 +91,6 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtEmpresa_RUC = new System.Windows.Forms.TextBox();
             this.txtempresaTICKET = new System.Windows.Forms.TextBox();
-            this.PictureBox2 = new System.Windows.Forms.PictureBox();
-            this.PictureBox3 = new System.Windows.Forms.PictureBox();
             this.ICONO = new System.Windows.Forms.PictureBox();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -101,8 +102,8 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.btnTicket = new System.Windows.Forms.Button();
             this.Label12 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label22 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICONO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
@@ -115,8 +116,10 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label22);
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtAutorizacion_fiscal);
-            this.panel1.Controls.Add(this.PictureBox2);
             this.panel1.Controls.Add(this.Panel15);
             this.panel1.Controls.Add(this.Panel14);
             this.panel1.Controls.Add(this.Panel13);
@@ -177,6 +180,26 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.panel1.Size = new System.Drawing.Size(460, 621);
             this.panel1.TabIndex = 1;
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label20.Location = new System.Drawing.Point(51, 292);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(13, 13);
+            this.label20.TabIndex = 666;
+            this.label20.Text = "1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label2.Location = new System.Drawing.Point(45, 266);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.TabIndex = 665;
+            this.label2.Text = "Cod.";
+            // 
             // txtAutorizacion_fiscal
             // 
             this.txtAutorizacion_fiscal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -184,7 +207,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.txtAutorizacion_fiscal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtAutorizacion_fiscal.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.txtAutorizacion_fiscal.ForeColor = System.Drawing.Color.Black;
-            this.txtAutorizacion_fiscal.Location = new System.Drawing.Point(48, 718);
+            this.txtAutorizacion_fiscal.Location = new System.Drawing.Point(48, 696);
             this.txtAutorizacion_fiscal.Multiline = true;
             this.txtAutorizacion_fiscal.Name = "txtAutorizacion_fiscal";
             this.txtAutorizacion_fiscal.Size = new System.Drawing.Size(384, 129);
@@ -196,7 +219,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // Panel15
             // 
             this.Panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(1)))));
-            this.Panel15.Location = new System.Drawing.Point(54, 624);
+            this.Panel15.Location = new System.Drawing.Point(54, 602);
             this.Panel15.Name = "Panel15";
             this.Panel15.Size = new System.Drawing.Size(386, 1);
             this.Panel15.TabIndex = 660;
@@ -204,7 +227,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // Panel14
             // 
             this.Panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(1)))));
-            this.Panel14.Location = new System.Drawing.Point(54, 594);
+            this.Panel14.Location = new System.Drawing.Point(54, 572);
             this.Panel14.Name = "Panel14";
             this.Panel14.Size = new System.Drawing.Size(386, 1);
             this.Panel14.TabIndex = 661;
@@ -212,7 +235,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // Panel13
             // 
             this.Panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(1)))));
-            this.Panel13.Location = new System.Drawing.Point(54, 573);
+            this.Panel13.Location = new System.Drawing.Point(54, 551);
             this.Panel13.Name = "Panel13";
             this.Panel13.Size = new System.Drawing.Size(386, 1);
             this.Panel13.TabIndex = 662;
@@ -225,7 +248,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.txtpagina_o_facebook.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtpagina_o_facebook.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.txtpagina_o_facebook.ForeColor = System.Drawing.Color.Black;
-            this.txtpagina_o_facebook.Location = new System.Drawing.Point(48, 580);
+            this.txtpagina_o_facebook.Location = new System.Drawing.Point(48, 558);
             this.txtpagina_o_facebook.Name = "txtpagina_o_facebook";
             this.txtpagina_o_facebook.Size = new System.Drawing.Size(382, 15);
             this.txtpagina_o_facebook.TabIndex = 657;
@@ -240,7 +263,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.TXTANUNCIO.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TXTANUNCIO.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.TXTANUNCIO.ForeColor = System.Drawing.Color.Black;
-            this.TXTANUNCIO.Location = new System.Drawing.Point(48, 603);
+            this.TXTANUNCIO.Location = new System.Drawing.Point(48, 581);
             this.TXTANUNCIO.Name = "TXTANUNCIO";
             this.TXTANUNCIO.Size = new System.Drawing.Size(382, 15);
             this.TXTANUNCIO.TabIndex = 658;
@@ -255,7 +278,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.txtAgradecimiento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtAgradecimiento.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.txtAgradecimiento.ForeColor = System.Drawing.Color.Black;
-            this.txtAgradecimiento.Location = new System.Drawing.Point(48, 559);
+            this.txtAgradecimiento.Location = new System.Drawing.Point(48, 537);
             this.txtAgradecimiento.Name = "txtAgradecimiento";
             this.txtAgradecimiento.Size = new System.Drawing.Size(382, 15);
             this.txtAgradecimiento.TabIndex = 659;
@@ -265,7 +288,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // Label7
             // 
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Label7.Location = new System.Drawing.Point(49, 624);
+            this.Label7.Location = new System.Drawing.Point(49, 602);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(388, 10);
             this.Label7.TabIndex = 656;
@@ -276,7 +299,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label36.AutoSize = true;
             this.Label36.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label36.Location = new System.Drawing.Point(51, 543);
+            this.Label36.Location = new System.Drawing.Point(51, 521);
             this.Label36.Name = "Label36";
             this.Label36.Size = new System.Drawing.Size(391, 13);
             this.Label36.TabIndex = 652;
@@ -287,7 +310,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label33.AutoSize = true;
             this.Label33.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label33.Location = new System.Drawing.Point(49, 517);
+            this.Label33.Location = new System.Drawing.Point(49, 495);
             this.Label33.Name = "Label33";
             this.Label33.Size = new System.Drawing.Size(391, 13);
             this.Label33.TabIndex = 653;
@@ -298,7 +321,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label35.AutoSize = true;
             this.Label35.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label35.Location = new System.Drawing.Point(418, 530);
+            this.Label35.Location = new System.Drawing.Point(418, 559);
             this.Label35.Name = "Label35";
             this.Label35.Size = new System.Drawing.Size(13, 13);
             this.Label35.TabIndex = 654;
@@ -308,7 +331,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label34.AutoSize = true;
             this.Label34.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label34.Location = new System.Drawing.Point(51, 530);
+            this.Label34.Location = new System.Drawing.Point(51, 508);
             this.Label34.Name = "Label34";
             this.Label34.Size = new System.Drawing.Size(119, 13);
             this.Label34.TabIndex = 655;
@@ -318,7 +341,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label19.AutoSize = true;
             this.Label19.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label19.Location = new System.Drawing.Point(390, 500);
+            this.Label19.Location = new System.Drawing.Point(384, 475);
             this.Label19.Name = "Label19";
             this.Label19.Size = new System.Drawing.Size(47, 13);
             this.Label19.TabIndex = 646;
@@ -328,7 +351,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label37.AutoSize = true;
             this.Label37.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label37.Location = new System.Drawing.Point(398, 475);
+            this.Label37.Location = new System.Drawing.Point(392, 450);
             this.Label37.Name = "Label37";
             this.Label37.Size = new System.Drawing.Size(35, 13);
             this.Label37.TabIndex = 647;
@@ -338,7 +361,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label31.AutoSize = true;
             this.Label31.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label31.Location = new System.Drawing.Point(398, 452);
+            this.Label31.Location = new System.Drawing.Point(392, 427);
             this.Label31.Name = "Label31";
             this.Label31.Size = new System.Drawing.Size(35, 13);
             this.Label31.TabIndex = 648;
@@ -348,7 +371,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label16.AutoSize = true;
             this.Label16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.Label16.Location = new System.Drawing.Point(312, 500);
+            this.Label16.Location = new System.Drawing.Point(306, 475);
             this.Label16.Name = "Label16";
             this.Label16.Size = new System.Drawing.Size(79, 13);
             this.Label16.TabIndex = 649;
@@ -358,7 +381,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label10.AutoSize = true;
             this.Label10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.Label10.Location = new System.Drawing.Point(341, 475);
+            this.Label10.Location = new System.Drawing.Point(335, 450);
             this.Label10.Name = "Label10";
             this.Label10.Size = new System.Drawing.Size(50, 13);
             this.Label10.TabIndex = 650;
@@ -368,7 +391,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label32.AutoSize = true;
             this.Label32.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.Label32.Location = new System.Drawing.Point(332, 452);
+            this.Label32.Location = new System.Drawing.Point(326, 427);
             this.Label32.Name = "Label32";
             this.Label32.Size = new System.Drawing.Size(59, 13);
             this.Label32.TabIndex = 651;
@@ -377,7 +400,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // Panel16
             // 
             this.Panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(1)))));
-            this.Panel16.Location = new System.Drawing.Point(220, 445);
+            this.Panel16.Location = new System.Drawing.Point(222, 372);
             this.Panel16.Name = "Panel16";
             this.Panel16.Size = new System.Drawing.Size(60, 1);
             this.Panel16.TabIndex = 645;
@@ -390,7 +413,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.txtMoneda_String.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtMoneda_String.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.txtMoneda_String.ForeColor = System.Drawing.Color.Black;
-            this.txtMoneda_String.Location = new System.Drawing.Point(220, 430);
+            this.txtMoneda_String.Location = new System.Drawing.Point(222, 357);
             this.txtMoneda_String.Name = "txtMoneda_String";
             this.txtMoneda_String.Size = new System.Drawing.Size(218, 15);
             this.txtMoneda_String.TabIndex = 644;
@@ -400,7 +423,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label1.Location = new System.Drawing.Point(58, 430);
+            this.Label1.Location = new System.Drawing.Point(60, 357);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(157, 13);
             this.Label1.TabIndex = 643;
@@ -410,7 +433,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label8.AutoSize = true;
             this.Label8.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label8.Location = new System.Drawing.Point(379, 321);
+            this.Label8.Location = new System.Drawing.Point(379, 266);
             this.Label8.Name = "Label8";
             this.Label8.Size = new System.Drawing.Size(47, 13);
             this.Label8.TabIndex = 628;
@@ -420,7 +443,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label6.AutoSize = true;
             this.Label6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label6.Location = new System.Drawing.Point(101, 321);
+            this.Label6.Location = new System.Drawing.Point(173, 266);
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(67, 13);
             this.Label6.TabIndex = 629;
@@ -430,7 +453,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label24.AutoSize = true;
             this.Label24.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label24.Location = new System.Drawing.Point(39, 360);
+            this.Label24.Location = new System.Drawing.Point(39, 305);
             this.Label24.Name = "Label24";
             this.Label24.Size = new System.Drawing.Size(391, 13);
             this.Label24.TabIndex = 630;
@@ -441,7 +464,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label11.AutoSize = true;
             this.Label11.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label11.Location = new System.Drawing.Point(41, 308);
+            this.Label11.Location = new System.Drawing.Point(41, 253);
             this.Label11.Name = "Label11";
             this.Label11.Size = new System.Drawing.Size(391, 13);
             this.Label11.TabIndex = 631;
@@ -452,7 +475,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label14.AutoSize = true;
             this.Label14.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label14.Location = new System.Drawing.Point(41, 334);
+            this.Label14.Location = new System.Drawing.Point(41, 279);
             this.Label14.Name = "Label14";
             this.Label14.Size = new System.Drawing.Size(391, 13);
             this.Label14.TabIndex = 632;
@@ -463,7 +486,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label30.AutoSize = true;
             this.Label30.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.Label30.Location = new System.Drawing.Point(329, 411);
+            this.Label30.Location = new System.Drawing.Point(329, 338);
             this.Label30.Name = "Label30";
             this.Label30.Size = new System.Drawing.Size(43, 13);
             this.Label30.TabIndex = 633;
@@ -473,7 +496,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label28.AutoSize = true;
             this.Label28.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.Label28.Location = new System.Drawing.Point(304, 393);
+            this.Label28.Location = new System.Drawing.Point(320, 404);
             this.Label28.Name = "Label28";
             this.Label28.Size = new System.Drawing.Size(65, 13);
             this.Label28.TabIndex = 634;
@@ -483,7 +506,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label25.AutoSize = true;
             this.Label25.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.Label25.Location = new System.Drawing.Point(311, 374);
+            this.Label25.Location = new System.Drawing.Point(316, 319);
             this.Label25.Name = "Label25";
             this.Label25.Size = new System.Drawing.Size(58, 13);
             this.Label25.TabIndex = 635;
@@ -493,7 +516,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label29.AutoSize = true;
             this.Label29.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label29.Location = new System.Drawing.Point(395, 411);
+            this.Label29.Location = new System.Drawing.Point(395, 338);
             this.Label29.Name = "Label29";
             this.Label29.Size = new System.Drawing.Size(35, 13);
             this.Label29.TabIndex = 636;
@@ -503,7 +526,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label27.AutoSize = true;
             this.Label27.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label27.Location = new System.Drawing.Point(395, 393);
+            this.Label27.Location = new System.Drawing.Point(386, 404);
             this.Label27.Name = "Label27";
             this.Label27.Size = new System.Drawing.Size(44, 13);
             this.Label27.TabIndex = 637;
@@ -513,7 +536,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label18.AutoSize = true;
             this.Label18.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label18.Location = new System.Drawing.Point(101, 347);
+            this.Label18.Location = new System.Drawing.Point(173, 292);
             this.Label18.Name = "Label18";
             this.Label18.Size = new System.Drawing.Size(133, 13);
             this.Label18.TabIndex = 638;
@@ -523,7 +546,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label26.AutoSize = true;
             this.Label26.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label26.Location = new System.Drawing.Point(395, 374);
+            this.Label26.Location = new System.Drawing.Point(395, 319);
             this.Label26.Name = "Label26";
             this.Label26.Size = new System.Drawing.Size(35, 13);
             this.Label26.TabIndex = 639;
@@ -533,7 +556,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label21.AutoSize = true;
             this.Label21.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label21.Location = new System.Drawing.Point(397, 347);
+            this.Label21.Location = new System.Drawing.Point(397, 292);
             this.Label21.Name = "Label21";
             this.Label21.Size = new System.Drawing.Size(35, 13);
             this.Label21.TabIndex = 640;
@@ -543,7 +566,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label15.AutoSize = true;
             this.Label15.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label15.Location = new System.Drawing.Point(43, 347);
+            this.Label15.Location = new System.Drawing.Point(115, 292);
             this.Label15.Name = "Label15";
             this.Label15.Size = new System.Drawing.Size(13, 13);
             this.Label15.TabIndex = 641;
@@ -553,7 +576,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label3.AutoSize = true;
             this.Label3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label3.Location = new System.Drawing.Point(41, 321);
+            this.Label3.Location = new System.Drawing.Point(113, 266);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(34, 13);
             this.Label3.TabIndex = 642;
@@ -563,7 +586,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.lblcliente.AutoSize = true;
             this.lblcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcliente.Location = new System.Drawing.Point(147, 285);
+            this.lblcliente.Location = new System.Drawing.Point(147, 230);
             this.lblcliente.Name = "lblcliente";
             this.lblcliente.Size = new System.Drawing.Size(152, 13);
             this.lblcliente.TabIndex = 622;
@@ -573,7 +596,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label9.AutoSize = true;
             this.Label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label9.Location = new System.Drawing.Point(41, 285);
+            this.Label9.Location = new System.Drawing.Point(41, 230);
             this.Label9.Name = "Label9";
             this.Label9.Size = new System.Drawing.Size(50, 13);
             this.Label9.TabIndex = 623;
@@ -583,7 +606,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label13.AutoSize = true;
             this.Label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label13.Location = new System.Drawing.Point(41, 241);
+            this.Label13.Location = new System.Drawing.Point(41, 186);
             this.Label13.Name = "Label13";
             this.Label13.Size = new System.Drawing.Size(47, 13);
             this.Label13.TabIndex = 624;
@@ -593,7 +616,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label17.AutoSize = true;
             this.Label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label17.Location = new System.Drawing.Point(147, 263);
+            this.Label17.Location = new System.Drawing.Point(147, 208);
             this.Label17.Name = "Label17";
             this.Label17.Size = new System.Drawing.Size(83, 13);
             this.Label17.TabIndex = 625;
@@ -603,7 +626,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.lblcajero.AutoSize = true;
             this.lblcajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcajero.Location = new System.Drawing.Point(147, 241);
+            this.lblcajero.Location = new System.Drawing.Point(147, 186);
             this.lblcajero.Name = "lblcajero";
             this.lblcajero.Size = new System.Drawing.Size(119, 13);
             this.lblcajero.TabIndex = 626;
@@ -613,7 +636,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.lblfecha.AutoSize = true;
             this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblfecha.Location = new System.Drawing.Point(41, 263);
+            this.lblfecha.Location = new System.Drawing.Point(41, 208);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(129, 13);
             this.lblfecha.TabIndex = 627;
@@ -623,12 +646,22 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.Label4.AutoSize = true;
             this.Label4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label4.Location = new System.Drawing.Point(35, 228);
+            this.Label4.Location = new System.Drawing.Point(35, 173);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(391, 13);
             this.Label4.TabIndex = 621;
             this.Label4.Text = "---------------------------------------------------------------------------------" +
     "---------------";
+            // 
+            // PictureBox3
+            // 
+            this.PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox3.Image")));
+            this.PictureBox3.Location = new System.Drawing.Point(54, 618);
+            this.PictureBox3.Name = "PictureBox3";
+            this.PictureBox3.Size = new System.Drawing.Size(378, 51);
+            this.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox3.TabIndex = 620;
+            this.PictureBox3.TabStop = false;
             // 
             // Label5
             // 
@@ -732,26 +765,6 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.txtempresaTICKET.Text = "NOMBRE DE TU EMPRESA";
             this.txtempresaTICKET.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // PictureBox2
-            // 
-            this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
-            this.PictureBox2.Location = new System.Drawing.Point(50, 637);
-            this.PictureBox2.Name = "PictureBox2";
-            this.PictureBox2.Size = new System.Drawing.Size(380, 75);
-            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox2.TabIndex = 663;
-            this.PictureBox2.TabStop = false;
-            // 
-            // PictureBox3
-            // 
-            this.PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox3.Image")));
-            this.PictureBox3.Location = new System.Drawing.Point(44, 174);
-            this.PictureBox3.Name = "PictureBox3";
-            this.PictureBox3.Size = new System.Drawing.Size(378, 51);
-            this.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox3.TabIndex = 620;
-            this.PictureBox3.TabStop = false;
-            // 
             // ICONO
             // 
             this.ICONO.BackColor = System.Drawing.Color.White;
@@ -804,50 +817,50 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.datalistado_tickets.AllowUserToAddRows = false;
             this.datalistado_tickets.AllowUserToDeleteRows = false;
             this.datalistado_tickets.AllowUserToResizeRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            this.datalistado_tickets.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.datalistado_tickets.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.datalistado_tickets.BackgroundColor = System.Drawing.Color.White;
             this.datalistado_tickets.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datalistado_tickets.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datalistado_tickets.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datalistado_tickets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datalistado_tickets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.datalistado_tickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datalistado_tickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datalistado_tickets.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datalistado_tickets.DefaultCellStyle = dataGridViewCellStyle3;
             this.datalistado_tickets.EnableHeadersVisualStyles = false;
             this.datalistado_tickets.Location = new System.Drawing.Point(21, 12);
             this.datalistado_tickets.Name = "datalistado_tickets";
             this.datalistado_tickets.ReadOnly = true;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datalistado_tickets.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datalistado_tickets.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.datalistado_tickets.RowHeadersVisible = false;
             this.datalistado_tickets.RowHeadersWidth = 9;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Gainsboro;
-            this.datalistado_tickets.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
+            this.datalistado_tickets.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.datalistado_tickets.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.datalistado_tickets.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.datalistado_tickets.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
@@ -922,6 +935,17 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label22.Location = new System.Drawing.Point(35, 376);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(391, 13);
+            this.label22.TabIndex = 667;
+            this.label22.Text = "---------------------------------------------------------------------------------" +
+    "---------------";
+            // 
             // Ticket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -937,7 +961,6 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.Load += new System.EventHandler(this.Ticket_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICONO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
@@ -953,7 +976,6 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
 
         private System.Windows.Forms.Panel panel1;
         internal System.Windows.Forms.TextBox txtAutorizacion_fiscal;
-        internal System.Windows.Forms.PictureBox PictureBox2;
         internal System.Windows.Forms.Panel Panel15;
         internal System.Windows.Forms.Panel Panel14;
         internal System.Windows.Forms.Panel Panel13;
@@ -996,7 +1018,6 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
         internal System.Windows.Forms.Label lblcajero;
         internal System.Windows.Forms.Label lblfecha;
         internal System.Windows.Forms.Label Label4;
-        internal System.Windows.Forms.PictureBox PictureBox3;
         internal System.Windows.Forms.Label Label5;
         internal System.Windows.Forms.Panel Panel4;
         internal System.Windows.Forms.Panel Panel3;
@@ -1017,5 +1038,9 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
         internal System.Windows.Forms.Button btnTicket;
         internal System.Windows.Forms.Label Label12;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        internal System.Windows.Forms.Label label20;
+        internal System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.PictureBox PictureBox3;
+        internal System.Windows.Forms.Label label22;
     }
 }

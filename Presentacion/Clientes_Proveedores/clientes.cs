@@ -15,8 +15,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
 {
     public partial class clientes : Form
     {
-        int id;
-       
+            
         public clientes()
         {
             InitializeComponent();
@@ -174,7 +173,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
         {
             try
             {
-                id = Convert.ToInt32(datalistado.SelectedCells[2].Value.ToString());
+                idcliente = Convert.ToInt32(datalistado.SelectedCells[2].Value.ToString());
                 txtnombre.Text = datalistado.SelectedCells[3].Value.ToString();
                 txtdireccion.Text = datalistado.SelectedCells[4].Value.ToString();
                 txtIdentificador.Text = datalistado.SelectedCells[5].Value.ToString();

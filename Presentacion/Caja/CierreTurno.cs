@@ -33,10 +33,19 @@ namespace Punto_de_venta.Presentacion.Caja
             cerrarCaja();
         }
         private void cerrarCaja()
-        {
-
-            Obtener_datos.mostrar_inicio_De_sesion2(ref idusuario);
+        {        
             Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
+
+            int id = Presentacion.Admin_nivel_dios.DASHBOARD_PRINCIPAL.idcajavariable;
+
+            if (id == Convert.ToInt32(1))
+            {
+                Obtener_datos.mostrar_inicio_De_sesion2(ref idusuario);
+            }
+            else
+            {
+                Obtener_datos.mostrar_inicio_De_sesion(ref idusuario);
+            }
 
             Lmcaja parametros = new Lmcaja();
             Editar_datos funcion = new Editar_datos();

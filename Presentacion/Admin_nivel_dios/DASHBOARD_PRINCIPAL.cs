@@ -26,7 +26,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
         int contador_Movimientos_de_caja;
         string lblApertura_De_caja;
         string lblIDSERIALL;
-        int idcajavariable;
+        public static int idcajavariable;
         int idusuariovariable;
         string Base_De_datos = "SistemaContable";
         string Servidor = @".\SQLEXPRESS";
@@ -53,7 +53,15 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
             validarLicencia();
             Bases.Obtener_serialPC(ref lblIDSERIALL);
             Obtener_datos.Obtener_id_caja_PorSerial(ref idcajavariable);
-            Obtener_datos.mostrar_inicio_De_sesion2(ref idusuariovariable);
+        
+            if(idcajavariable == Convert.ToInt32(1))
+            {
+                Obtener_datos.mostrar_inicio_De_sesion2(ref idusuariovariable);
+            }
+            else
+            {
+                Obtener_datos.mostrar_inicio_De_sesion(ref idusuariovariable);
+            }
           
             mostrarMoneda();
             ReportePorCobrar();

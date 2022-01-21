@@ -811,9 +811,9 @@ namespace Punto_de_venta.Presentacion
             this.PdeCarga.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PdeCarga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.PdeCarga.Image = ((System.Drawing.Image)(resources.GetObject("PdeCarga.Image")));
-            this.PdeCarga.Location = new System.Drawing.Point(40, 185);
+            this.PdeCarga.Location = new System.Drawing.Point(40, 204);
             this.PdeCarga.Name = "PdeCarga";
-            this.PdeCarga.Size = new System.Drawing.Size(433, 707);
+            this.PdeCarga.Size = new System.Drawing.Size(439, 688);
             this.PdeCarga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PdeCarga.TabIndex = 627;
             this.PdeCarga.TabStop = false;

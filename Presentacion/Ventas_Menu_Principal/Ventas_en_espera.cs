@@ -39,7 +39,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                
             }
      
         }
@@ -54,7 +54,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+              
             }
 
         }

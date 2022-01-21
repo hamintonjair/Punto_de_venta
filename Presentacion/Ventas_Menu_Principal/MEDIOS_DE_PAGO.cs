@@ -1009,7 +1009,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 cmd.Parameters.AddWithValue("@Fecha_de_pago", txtfecha_de_pago.Value);
                 cmd.Parameters.AddWithValue("@Pago_con", txtefectivo2.Text);
                 cmd.Parameters.AddWithValue("@Referencia_tarjeta", "NULO");
-                cmd.Parameters.AddWithValue("@Vuelto", vuelto);
+                cmd.Parameters.AddWithValue("@Vuelto", TXTVUELTO.Text);
                 cmd.Parameters.AddWithValue("@Efectivo", efectivo_calculado);
                 cmd.Parameters.AddWithValue("@Credito", txtcredito2.Text);
                 cmd.Parameters.AddWithValue("@Tarjeta", txttarjeta2.Text);

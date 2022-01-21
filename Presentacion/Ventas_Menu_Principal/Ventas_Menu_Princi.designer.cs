@@ -241,16 +241,14 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.ToolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lblporcentaje = new System.Windows.Forms.Label();
-            this.labeligv = new System.Windows.Forms.Label();
+            this.lblIVA = new System.Windows.Forms.Label();
             this.txtmonto = new System.Windows.Forms.TextBox();
-            this.Label11 = new System.Windows.Forms.Label();
             this.btn0 = new System.Windows.Forms.Button();
             this.Label36 = new System.Windows.Forms.Label();
             this.lblsubtotal = new System.Windows.Forms.Label();
             this.Button22 = new System.Windows.Forms.Button();
             this.lbligv = new System.Windows.Forms.Label();
             this.btnborrarderecha = new System.Windows.Forms.Button();
-            this.lbldescuento = new System.Windows.Forms.Label();
             this.btnborrartodo = new System.Windows.Forms.Button();
             this.Panel5 = new System.Windows.Forms.Panel();
             this.FlowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -303,6 +301,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.puertos = new System.IO.Ports.SerialPort(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblvalorIva = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.StatusStrip4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_stock_detalle_venta)).BeginInit();
             this.Panelc1.SuspendLayout();
@@ -2529,20 +2530,21 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // 
             // PanelOperaciones
             // 
+            this.PanelOperaciones.Controls.Add(this.lblvalorIva);
+            this.PanelOperaciones.Controls.Add(this.label10);
+            this.PanelOperaciones.Controls.Add(this.label3);
             this.PanelOperaciones.Controls.Add(this.btEfectivo);
             this.PanelOperaciones.Controls.Add(this.Panel15);
             this.PanelOperaciones.Controls.Add(this.Button21);
             this.PanelOperaciones.Controls.Add(this.Paneldesc);
-            this.PanelOperaciones.Controls.Add(this.labeligv);
+            this.PanelOperaciones.Controls.Add(this.lblIVA);
             this.PanelOperaciones.Controls.Add(this.txtmonto);
-            this.PanelOperaciones.Controls.Add(this.Label11);
             this.PanelOperaciones.Controls.Add(this.btn0);
             this.PanelOperaciones.Controls.Add(this.Label36);
             this.PanelOperaciones.Controls.Add(this.lblsubtotal);
             this.PanelOperaciones.Controls.Add(this.Button22);
             this.PanelOperaciones.Controls.Add(this.lbligv);
             this.PanelOperaciones.Controls.Add(this.btnborrarderecha);
-            this.PanelOperaciones.Controls.Add(this.lbldescuento);
             this.PanelOperaciones.Controls.Add(this.btnborrartodo);
             this.PanelOperaciones.Controls.Add(this.Panel5);
             this.PanelOperaciones.Controls.Add(this.FlowLayoutPanel2);
@@ -2775,39 +2777,27 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.lblporcentaje.TabIndex = 539;
             this.lblporcentaje.Text = "Label60";
             // 
-            // labeligv
+            // lblIVA
             // 
-            this.labeligv.AutoSize = true;
-            this.labeligv.BackColor = System.Drawing.Color.Transparent;
-            this.labeligv.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.labeligv.ForeColor = System.Drawing.Color.DimGray;
-            this.labeligv.Location = new System.Drawing.Point(29, 399);
-            this.labeligv.Name = "labeligv";
-            this.labeligv.Size = new System.Drawing.Size(96, 22);
-            this.labeligv.TabIndex = 507;
-            this.labeligv.Text = "IVA (18%):";
+            this.lblIVA.AutoSize = true;
+            this.lblIVA.BackColor = System.Drawing.Color.Transparent;
+            this.lblIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.lblIVA.ForeColor = System.Drawing.Color.DimGray;
+            this.lblIVA.Location = new System.Drawing.Point(127, 396);
+            this.lblIVA.Name = "lblIVA";
+            this.lblIVA.Size = new System.Drawing.Size(20, 22);
+            this.lblIVA.TabIndex = 507;
+            this.lblIVA.Text = "0";
             // 
             // txtmonto
             // 
             this.txtmonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.txtmonto.Location = new System.Drawing.Point(18, 76);
+            this.txtmonto.Location = new System.Drawing.Point(108, 76);
             this.txtmonto.Name = "txtmonto";
-            this.txtmonto.Size = new System.Drawing.Size(286, 35);
+            this.txtmonto.Size = new System.Drawing.Size(196, 35);
             this.txtmonto.TabIndex = 606;
             this.txtmonto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtmonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmonto_KeyPress);
-            // 
-            // Label11
-            // 
-            this.Label11.AutoSize = true;
-            this.Label11.BackColor = System.Drawing.Color.Transparent;
-            this.Label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.Label11.ForeColor = System.Drawing.Color.DimGray;
-            this.Label11.Location = new System.Drawing.Point(26, 425);
-            this.Label11.Name = "Label11";
-            this.Label11.Size = new System.Drawing.Size(101, 22);
-            this.Label11.TabIndex = 507;
-            this.Label11.Text = "Descuento:";
             // 
             // btn0
             // 
@@ -2882,11 +2872,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.lbligv.BackColor = System.Drawing.Color.Transparent;
             this.lbligv.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.lbligv.ForeColor = System.Drawing.Color.DimGray;
-            this.lbligv.Location = new System.Drawing.Point(127, 399);
+            this.lbligv.Location = new System.Drawing.Point(63, 396);
             this.lbligv.Name = "lbligv";
-            this.lbligv.Size = new System.Drawing.Size(20, 22);
+            this.lbligv.Size = new System.Drawing.Size(64, 22);
             this.lbligv.TabIndex = 507;
-            this.lbligv.Text = "0";
+            this.lbligv.Text = "IVA %:";
             // 
             // btnborrarderecha
             // 
@@ -2908,18 +2898,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btnborrarderecha.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnborrarderecha.UseVisualStyleBackColor = false;
             this.btnborrarderecha.Click += new System.EventHandler(this.btnborrarderecha_Click);
-            // 
-            // lbldescuento
-            // 
-            this.lbldescuento.AutoSize = true;
-            this.lbldescuento.BackColor = System.Drawing.Color.Transparent;
-            this.lbldescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.lbldescuento.ForeColor = System.Drawing.Color.DimGray;
-            this.lbldescuento.Location = new System.Drawing.Point(127, 425);
-            this.lbldescuento.Name = "lbldescuento";
-            this.lbldescuento.Size = new System.Drawing.Size(20, 22);
-            this.lbldescuento.TabIndex = 507;
-            this.lbldescuento.Text = "0";
             // 
             // btnborrartodo
             // 
@@ -3679,6 +3657,41 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.dataGridViewImageColumn2.ToolTipText = "Opcional \"Supr\" para Eliminar";
             this.dataGridViewImageColumn2.Width = 297;
             // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(20, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 34);
+            this.label3.TabIndex = 611;
+            this.label3.Text = "Cant:";
+            // 
+            // lblvalorIva
+            // 
+            this.lblvalorIva.AutoSize = true;
+            this.lblvalorIva.BackColor = System.Drawing.Color.Transparent;
+            this.lblvalorIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.lblvalorIva.ForeColor = System.Drawing.Color.DimGray;
+            this.lblvalorIva.Location = new System.Drawing.Point(128, 420);
+            this.lblvalorIva.Name = "lblvalorIva";
+            this.lblvalorIva.Size = new System.Drawing.Size(20, 22);
+            this.lblvalorIva.TabIndex = 612;
+            this.lblvalorIva.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.label10.ForeColor = System.Drawing.Color.DimGray;
+            this.label10.Location = new System.Drawing.Point(8, 420);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(119, 22);
+            this.label10.TabIndex = 613;
+            this.label10.Text = "Valor del IVA:";
+            // 
             // Ventas_Menu_Princi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3957,16 +3970,14 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         internal System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem10;
         internal System.Windows.Forms.ToolStripSeparator ToolStripSeparator1;
         internal System.Windows.Forms.Label lblporcentaje;
-        internal System.Windows.Forms.Label labeligv;
+        internal System.Windows.Forms.Label lblIVA;
         internal System.Windows.Forms.TextBox txtmonto;
-        internal System.Windows.Forms.Label Label11;
         internal System.Windows.Forms.Button btn0;
         internal System.Windows.Forms.Label Label36;
         internal System.Windows.Forms.Label lblsubtotal;
         internal System.Windows.Forms.Button Button22;
         internal System.Windows.Forms.Label lbligv;
         internal System.Windows.Forms.Button btnborrarderecha;
-        internal System.Windows.Forms.Label lbldescuento;
         internal System.Windows.Forms.Button btnborrartodo;
         internal System.Windows.Forms.Panel Panel5;
         internal System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel2;
@@ -4037,5 +4048,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private System.Windows.Forms.PictureBox activarTema;
         private System.Windows.Forms.Panel panelNotificacionEspera;
         private System.Windows.Forms.Label lblContadorEspera;
+        internal System.Windows.Forms.Label label3;
+        internal System.Windows.Forms.Label lblvalorIva;
+        internal System.Windows.Forms.Label label10;
     }
 }
