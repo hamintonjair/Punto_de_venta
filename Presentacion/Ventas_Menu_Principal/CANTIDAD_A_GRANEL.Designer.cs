@@ -63,7 +63,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 43);
             this.button1.TabIndex = 612;
-            this.button1.Text = "Cancelar";
+            this.button1.Text = "Limpiar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -154,7 +154,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.LblcantidadAumentar.AutoSize = true;
             this.LblcantidadAumentar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.LblcantidadAumentar.ForeColor = System.Drawing.Color.Gray;
-            this.LblcantidadAumentar.Location = new System.Drawing.Point(188, 39);
+            this.LblcantidadAumentar.Location = new System.Drawing.Point(224, 39);
             this.LblcantidadAumentar.Name = "LblcantidadAumentar";
             this.LblcantidadAumentar.Size = new System.Drawing.Size(197, 25);
             this.LblcantidadAumentar.TabIndex = 603;
@@ -166,7 +166,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txtProducto.AutoSize = true;
             this.txtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold);
             this.txtProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(63)))));
-            this.txtProducto.Location = new System.Drawing.Point(186, 0);
+            this.txtProducto.Location = new System.Drawing.Point(226, 0);
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Size = new System.Drawing.Size(195, 39);
             this.txtProducto.TabIndex = 604;

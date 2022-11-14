@@ -459,6 +459,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         {
             CANTIDAD_A_GRANEL frm = new CANTIDAD_A_GRANEL();
             frm.preciounitario = txtprecio_unitarios;
+            frm.txtProducto.Text = producto;
             frm.FormClosing += Frm_FormClosing;
             frm.ShowDialog();
         }
@@ -725,7 +726,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         }
     
-            public void mostrar_panel_de_Cobro()
+         public void mostrar_panel_de_Cobro()
         {
             panelBienvenida.Visible = false;
             PanelOperaciones.Visible = true;
@@ -1706,7 +1707,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
            
         }
-   
+
+        public string producto;
         private void vender_por_teclado_coti()
         {
             ValidarVentasNuevas();
@@ -1784,7 +1786,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             //Extraemos los datos del producto de la tabla Productos directamente
             lblusaInventarios = DATALISTADO_PRODUCTOS_OKA.SelectedCells[3].Value.ToString();
-            lbldescripcion.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[9].Value.ToString();
+            producto = lbldescripcion.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[9].Value.ToString();
             lblcodigo.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[10].Value.ToString();
             lblcosto.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[5].Value.ToString();
             sevendePor = DATALISTADO_PRODUCTOS_OKA.SelectedCells[8].Value.ToString();
@@ -1829,12 +1831,24 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 txtnombre.Clear();
             }
         }
-
+         double control;
         private void btnrestaurar_Click(object sender, EventArgs e)
         {
+         
             Ventas_en_espera frm = new Ventas_en_espera();
             frm.FormClosing += Frm_FormClosing1;
             frm.ShowDialog();
+            mostrar_panel_de_Cobro();
+            if (control > 0)
+            {
+               
+                MessageBox.Show("Se está restaurando la venta de ESPERA, recuerda eliminar el registro de la vista VENTAS EN ESPERA AL TERMINAR ESTÁ VENTA.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+              PanelOperaciones.Visible = false;
+            }         
+          
         }
 
         double vtempo;
@@ -1842,10 +1856,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         {
             Listarproductosagregados();       
        
-            double tt;
+            double tt;          
             double b19;
             tt = TOTA5 + TOTAL19 + iva;
             lblsubtotalIVA19.Text = tt.ToString("N0");
+            control = tt;
             vtempo = tt;
             vtempo = 0;
             b19 = valorTotalUnitarioiva19 + valorTotalUnitarioiva5;
@@ -1857,8 +1872,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             elimivarventas();
         }
         public void elimivarventas()
-        {
-         
+        {        
            
           
                 if (datalistadoDetalleVenta.RowCount > 0)
@@ -1905,6 +1919,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         {
             PanelEnespera.Visible = false;
             PanelEnespera.Dock = DockStyle.None;
+
         }
  
         private void button6_Click(object sender, EventArgs e)

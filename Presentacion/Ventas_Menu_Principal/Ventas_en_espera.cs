@@ -75,7 +75,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            Eliminar_datos.eliminar_venta(idventa);
+            Eliminar_ventas_esperas();
+        }
+        private void Eliminar_ventas_esperas()
+        {
+             Eliminar_datos.eliminar_venta(idventa);
             idventa = 0;
             mostrar_ventas_en_espera_con_fecha_y_monto();
             mostrar_detalle_venta();
@@ -98,13 +102,14 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 Ventas_Menu_Princi.idVenta = idventa;
                 Ventas_Menu_Princi.txtventagenerada = "VENTA GENERADA";
                 Editar_datos.cambio_de_Caja(idcaja, idventa);
-
+               
                 Dispose();
-                prin.mostrar_panel_de_Cobro();
+        
+                //prin.mostrar_panel_de_Cobro();
             }
             else
             {
-                MessageBox.Show("Esta venta ya no Existe, debes eliminarla y generarla de nuevo ", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Esta venta ya no Existe, debes eliminarla y generar otra de nuevo ", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }        
                

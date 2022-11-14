@@ -1466,7 +1466,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         private void btncerrar_Click(object sender, EventArgs e)
         {
-           Application.Exit();
+            Dispose();
         }
     }
 }
