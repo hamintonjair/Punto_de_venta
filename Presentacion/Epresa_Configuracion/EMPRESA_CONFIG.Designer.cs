@@ -30,22 +30,26 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EMPRESA_CONFIG));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel16 = new System.Windows.Forms.Panel();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.Panel13 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.datalistado = new System.Windows.Forms.DataGridView();
             this.Eli = new System.Windows.Forms.DataGridViewImageColumn();
-            this.txtteclado = new System.Windows.Forms.CheckBox();
-            this.TXTCON_LECTORA = new System.Windows.Forms.CheckBox();
             this.PanelImpuesto = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtporcentaje2 = new System.Windows.Forms.ComboBox();
             this.Panel12 = new System.Windows.Forms.Panel();
             this.txtimpuesto = new System.Windows.Forms.ComboBox();
             this.Label14 = new System.Windows.Forms.Label();
             this.txtporcentaje = new System.Windows.Forms.ComboBox();
+            this.txtteclado = new System.Windows.Forms.CheckBox();
+            this.TXTCON_LECTORA = new System.Windows.Forms.CheckBox();
             this.Label1 = new System.Windows.Forms.Label();
             this.Label16 = new System.Windows.Forms.Label();
             this.no = new System.Windows.Forms.RadioButton();
@@ -154,9 +158,9 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.Panel13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Panel13.BackgroundImage")));
             this.Panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Panel13.Controls.Add(this.panel1);
+            this.Panel13.Controls.Add(this.PanelImpuesto);
             this.Panel13.Controls.Add(this.txtteclado);
             this.Panel13.Controls.Add(this.TXTCON_LECTORA);
-            this.Panel13.Controls.Add(this.PanelImpuesto);
             this.Panel13.Controls.Add(this.Label1);
             this.Panel13.Controls.Add(this.Label16);
             this.Panel13.Controls.Add(this.no);
@@ -169,9 +173,9 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             // panel1
             // 
             this.panel1.Controls.Add(this.datalistado);
-            this.panel1.Location = new System.Drawing.Point(444, 23);
+            this.panel1.Location = new System.Drawing.Point(507, 84);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(31, 10);
+            this.panel1.Size = new System.Drawing.Size(10, 10);
             this.panel1.TabIndex = 616;
             // 
             // datalistado
@@ -206,9 +210,127 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.Eli.Name = "Eli";
             this.Eli.ReadOnly = true;
             // 
+            // PanelImpuesto
+            // 
+            this.PanelImpuesto.Controls.Add(this.label22);
+            this.PanelImpuesto.Controls.Add(this.label21);
+            this.PanelImpuesto.Controls.Add(this.label20);
+            this.PanelImpuesto.Controls.Add(this.txtporcentaje2);
+            this.PanelImpuesto.Controls.Add(this.Panel12);
+            this.PanelImpuesto.Controls.Add(this.txtimpuesto);
+            this.PanelImpuesto.Controls.Add(this.Label14);
+            this.PanelImpuesto.Controls.Add(this.txtporcentaje);
+            this.PanelImpuesto.Location = new System.Drawing.Point(32, 39);
+            this.PanelImpuesto.Name = "PanelImpuesto";
+            this.PanelImpuesto.Size = new System.Drawing.Size(434, 41);
+            this.PanelImpuesto.TabIndex = 616;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label22.Location = new System.Drawing.Point(7, 7);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(78, 20);
+            this.label22.TabIndex = 559;
+            this.label22.Text = "General:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label21.Location = new System.Drawing.Point(269, 7);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(58, 20);
+            this.label21.TabIndex = 558;
+            this.label21.Text = "Otros:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(397, 7);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(23, 20);
+            this.label20.TabIndex = 556;
+            this.label20.Text = "%";
+            // 
+            // txtporcentaje2
+            // 
+            this.txtporcentaje2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtporcentaje2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.txtporcentaje2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.txtporcentaje2.FormattingEnabled = true;
+            this.txtporcentaje2.Items.AddRange(new object[] {
+            "21",
+            "19",
+            "5",
+            "3"});
+            this.txtporcentaje2.Location = new System.Drawing.Point(327, 4);
+            this.txtporcentaje2.Name = "txtporcentaje2";
+            this.txtporcentaje2.Size = new System.Drawing.Size(64, 28);
+            this.txtporcentaje2.TabIndex = 557;
+            this.txtporcentaje2.Text = "18";
+            // 
+            // Panel12
+            // 
+            this.Panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.Panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Panel12.Location = new System.Drawing.Point(0, 37);
+            this.Panel12.Name = "Panel12";
+            this.Panel12.Size = new System.Drawing.Size(434, 4);
+            this.Panel12.TabIndex = 555;
+            // 
+            // txtimpuesto
+            // 
+            this.txtimpuesto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtimpuesto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.txtimpuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.txtimpuesto.FormattingEnabled = true;
+            this.txtimpuesto.Items.AddRange(new object[] {
+            "IVA",
+            "IGV "});
+            this.txtimpuesto.Location = new System.Drawing.Point(86, 3);
+            this.txtimpuesto.Name = "txtimpuesto";
+            this.txtimpuesto.Size = new System.Drawing.Size(64, 28);
+            this.txtimpuesto.TabIndex = 553;
+            this.txtimpuesto.Text = "IVA";
+            // 
+            // Label14
+            // 
+            this.Label14.AutoSize = true;
+            this.Label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Label14.ForeColor = System.Drawing.Color.Black;
+            this.Label14.Location = new System.Drawing.Point(241, 6);
+            this.Label14.Name = "Label14";
+            this.Label14.Size = new System.Drawing.Size(23, 20);
+            this.Label14.TabIndex = 342;
+            this.Label14.Text = "%";
+            // 
+            // txtporcentaje
+            // 
+            this.txtporcentaje.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtporcentaje.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.txtporcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.txtporcentaje.FormattingEnabled = true;
+            this.txtporcentaje.Items.AddRange(new object[] {
+            "21",
+            "19",
+            "5",
+            "3"});
+            this.txtporcentaje.Location = new System.Drawing.Point(171, 3);
+            this.txtporcentaje.Name = "txtporcentaje";
+            this.txtporcentaje.Size = new System.Drawing.Size(64, 28);
+            this.txtporcentaje.TabIndex = 553;
+            this.txtporcentaje.Text = "18";
+            // 
             // txtteclado
             // 
             this.txtteclado.AutoSize = true;
+            this.txtteclado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtteclado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtteclado.Location = new System.Drawing.Point(35, 157);
             this.txtteclado.Name = "txtteclado";
@@ -221,6 +343,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             // TXTCON_LECTORA
             // 
             this.TXTCON_LECTORA.AutoSize = true;
+            this.TXTCON_LECTORA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TXTCON_LECTORA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.TXTCON_LECTORA.Location = new System.Drawing.Point(33, 125);
             this.TXTCON_LECTORA.Name = "TXTCON_LECTORA";
@@ -229,67 +352,6 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.TXTCON_LECTORA.Text = "Con una Lectora de Barras";
             this.TXTCON_LECTORA.UseVisualStyleBackColor = true;
             this.TXTCON_LECTORA.CheckedChanged += new System.EventHandler(this.TXTCON_LECTORA_CheckedChanged);
-            // 
-            // PanelImpuesto
-            // 
-            this.PanelImpuesto.Controls.Add(this.Panel12);
-            this.PanelImpuesto.Controls.Add(this.txtimpuesto);
-            this.PanelImpuesto.Controls.Add(this.Label14);
-            this.PanelImpuesto.Controls.Add(this.txtporcentaje);
-            this.PanelImpuesto.Location = new System.Drawing.Point(41, 39);
-            this.PanelImpuesto.Name = "PanelImpuesto";
-            this.PanelImpuesto.Size = new System.Drawing.Size(233, 41);
-            this.PanelImpuesto.TabIndex = 564;
-            // 
-            // Panel12
-            // 
-            this.Panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(1)))));
-            this.Panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Panel12.Location = new System.Drawing.Point(0, 37);
-            this.Panel12.Name = "Panel12";
-            this.Panel12.Size = new System.Drawing.Size(233, 4);
-            this.Panel12.TabIndex = 555;
-            // 
-            // txtimpuesto
-            // 
-            this.txtimpuesto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.txtimpuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.txtimpuesto.FormattingEnabled = true;
-            this.txtimpuesto.Items.AddRange(new object[] {
-            "IVA ",
-            "IVA"});
-            this.txtimpuesto.Location = new System.Drawing.Point(3, 3);
-            this.txtimpuesto.Name = "txtimpuesto";
-            this.txtimpuesto.Size = new System.Drawing.Size(64, 28);
-            this.txtimpuesto.TabIndex = 553;
-            this.txtimpuesto.Text = "IVA";
-            // 
-            // Label14
-            // 
-            this.Label14.AutoSize = true;
-            this.Label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Label14.ForeColor = System.Drawing.Color.Black;
-            this.Label14.Location = new System.Drawing.Point(158, 6);
-            this.Label14.Name = "Label14";
-            this.Label14.Size = new System.Drawing.Size(23, 20);
-            this.Label14.TabIndex = 342;
-            this.Label14.Text = "%";
-            // 
-            // txtporcentaje
-            // 
-            this.txtporcentaje.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.txtporcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.txtporcentaje.FormattingEnabled = true;
-            this.txtporcentaje.Items.AddRange(new object[] {
-            "21",
-            "18",
-            "3",
-            "5"});
-            this.txtporcentaje.Location = new System.Drawing.Point(88, 3);
-            this.txtporcentaje.Name = "txtporcentaje";
-            this.txtporcentaje.Size = new System.Drawing.Size(64, 28);
-            this.txtporcentaje.TabIndex = 553;
-            this.txtporcentaje.Text = "18";
             // 
             // Label1
             // 
@@ -329,6 +391,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             // si
             // 
             this.si.AutoSize = true;
+            this.si.Cursor = System.Windows.Forms.Cursors.Hand;
             this.si.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.si.Location = new System.Drawing.Point(230, 5);
             this.si.Name = "si";
@@ -375,7 +438,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             // txtcorreo
             // 
             this.txtcorreo.BackColor = System.Drawing.Color.White;
-            this.txtcorreo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtcorreo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtcorreo.Location = new System.Drawing.Point(72, 440);
             this.txtcorreo.Name = "txtcorreo";
@@ -385,7 +448,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             // txtRuta
             // 
             this.txtRuta.BackColor = System.Drawing.Color.White;
-            this.txtRuta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtRuta.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtRuta.Enabled = false;
             this.txtRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtRuta.Location = new System.Drawing.Point(72, 388);
@@ -547,37 +610,37 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.datalistado_empresas_nuevas.AllowUserToDeleteRows = false;
             this.datalistado_empresas_nuevas.BackgroundColor = System.Drawing.Color.White;
             this.datalistado_empresas_nuevas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datalistado_empresas_nuevas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datalistado_empresas_nuevas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.datalistado_empresas_nuevas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datalistado_empresas_nuevas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DataGridViewCheckBoxColumn2});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datalistado_empresas_nuevas.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datalistado_empresas_nuevas.DefaultCellStyle = dataGridViewCellStyle2;
             this.datalistado_empresas_nuevas.EnableHeadersVisualStyles = false;
             this.datalistado_empresas_nuevas.Location = new System.Drawing.Point(81, 159);
             this.datalistado_empresas_nuevas.Name = "datalistado_empresas_nuevas";
             this.datalistado_empresas_nuevas.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datalistado_empresas_nuevas.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datalistado_empresas_nuevas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.datalistado_empresas_nuevas.RowHeadersVisible = false;
             this.datalistado_empresas_nuevas.RowHeadersWidth = 5;
             this.datalistado_empresas_nuevas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -612,6 +675,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             // 
             // txtmoneda
             // 
+            this.txtmoneda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtmoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtmoneda.DropDownWidth = 230;
             this.txtmoneda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -646,6 +710,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             // 
             // TXTPAIS
             // 
+            this.TXTPAIS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TXTPAIS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TXTPAIS.DropDownWidth = 230;
             this.TXTPAIS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -715,7 +780,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.txtempresa.BackColor = System.Drawing.Color.White;
             this.txtempresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtempresa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtempresa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtempresa.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtempresa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.txtempresa.ForeColor = System.Drawing.Color.Black;
             this.txtempresa.Location = new System.Drawing.Point(140, 22);
@@ -869,6 +934,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.ToolStripMenuItem3.Name = "ToolStripMenuItem3";
             this.ToolStripMenuItem3.Size = new System.Drawing.Size(79, 28);
             this.ToolStripMenuItem3.Text = "Cancelar";
+            this.ToolStripMenuItem3.Click += new System.EventHandler(this.ToolStripMenuItem3_Click);
             // 
             // TSIGUIENTE_Y_GUARDAR
             // 
@@ -976,11 +1042,6 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
         private System.Windows.Forms.DataGridViewImageColumn Eli;
         internal System.Windows.Forms.CheckBox txtteclado;
         internal System.Windows.Forms.CheckBox TXTCON_LECTORA;
-        internal System.Windows.Forms.Panel PanelImpuesto;
-        internal System.Windows.Forms.Panel Panel12;
-        internal System.Windows.Forms.ComboBox txtimpuesto;
-        internal System.Windows.Forms.Label Label14;
-        internal System.Windows.Forms.ComboBox txtporcentaje;
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.Label Label16;
         internal System.Windows.Forms.RadioButton no;
@@ -1020,5 +1081,14 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
         internal System.Windows.Forms.DateTimePicker txtfecha;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.OpenFileDialog dlg;
+        internal System.Windows.Forms.Panel PanelImpuesto;
+        internal System.Windows.Forms.Label label22;
+        internal System.Windows.Forms.Label label21;
+        internal System.Windows.Forms.Label label20;
+        internal System.Windows.Forms.ComboBox txtporcentaje2;
+        internal System.Windows.Forms.Panel Panel12;
+        internal System.Windows.Forms.ComboBox txtimpuesto;
+        internal System.Windows.Forms.Label Label14;
+        internal System.Windows.Forms.ComboBox txtporcentaje;
     }
 }

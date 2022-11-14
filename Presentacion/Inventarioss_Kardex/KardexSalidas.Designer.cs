@@ -307,6 +307,8 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
             this.Controls.Add(this.Panel5);
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "KardexSalidas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Panel5.ResumeLayout(false);

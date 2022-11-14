@@ -34,13 +34,13 @@ namespace Punto_de_venta.Presentacion.CopiasBd
             this.Panel12 = new System.Windows.Forms.Panel();
             this.Label1 = new System.Windows.Forms.Label();
             this.Panel1 = new System.Windows.Forms.Panel();
+            this.Label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.lbltiempo = new System.Windows.Forms.Label();
             this.txtRuta = new System.Windows.Forms.TextBox();
             this.Label4 = new System.Windows.Forms.Label();
             this.btncancelar = new System.Windows.Forms.Button();
             this.Pcargando = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timerContador = new System.Windows.Forms.Timer(this.components);
             this.Panel12.SuspendLayout();
@@ -84,6 +84,28 @@ namespace Punto_de_venta.Presentacion.CopiasBd
             this.Panel1.Size = new System.Drawing.Size(491, 260);
             this.Panel1.TabIndex = 616;
             // 
+            // Label2
+            // 
+            this.Label2.AutoSize = true;
+            this.Label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.Label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.Label2.Location = new System.Drawing.Point(58, 198);
+            this.Label2.Name = "Label2";
+            this.Label2.Size = new System.Drawing.Size(284, 24);
+            this.Label2.TabIndex = 602;
+            this.Label2.Text = "Ruta de Copias de Seguridad";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::Punto_de_venta.Properties.Resources.out_37478;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(18, 194);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(34, 31);
+            this.button1.TabIndex = 601;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // lbltiempo
             // 
             this.lbltiempo.AutoSize = true;
@@ -97,7 +119,7 @@ namespace Punto_de_venta.Presentacion.CopiasBd
             // txtRuta
             // 
             this.txtRuta.BackColor = System.Drawing.Color.White;
-            this.txtRuta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtRuta.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtRuta.Enabled = false;
             this.txtRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtRuta.Location = new System.Drawing.Point(62, 225);
@@ -121,6 +143,7 @@ namespace Punto_de_venta.Presentacion.CopiasBd
             // btncancelar
             // 
             this.btncancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
+            this.btncancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncancelar.FlatAppearance.BorderSize = 0;
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
@@ -144,28 +167,6 @@ namespace Punto_de_venta.Presentacion.CopiasBd
             this.Pcargando.TabIndex = 617;
             this.Pcargando.TabStop = false;
             this.Pcargando.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::Punto_de_venta.Properties.Resources.out_37478;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(18, 194);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 31);
-            this.button1.TabIndex = 601;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // Label2
-            // 
-            this.Label2.AutoSize = true;
-            this.Label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
-            this.Label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.Label2.Location = new System.Drawing.Point(58, 198);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(284, 24);
-            this.Label2.TabIndex = 602;
-            this.Label2.Text = "Ruta de Copias de Seguridad";
             // 
             // timer1
             // 

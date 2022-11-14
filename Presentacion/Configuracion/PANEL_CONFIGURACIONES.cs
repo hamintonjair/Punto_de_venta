@@ -18,9 +18,8 @@ namespace Punto_de_venta.Presentacion.Configuracion
         }
 
         private void Button6_Click(object sender, EventArgs e)
-        {
-            Dispose();
-            Productos.Productoss frm = new Productos.Productoss();
+        {  
+            Productos.Productos frm = new Productos.Productos();
             frm.ShowDialog();
         }
 
@@ -58,8 +57,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
         }
 
         private void PANEL_CONFIGURACIONES_Load(object sender, EventArgs e)
-        {
-
+        {         
         }
 
         private void btnCajas_Click(object sender, EventArgs e)
@@ -67,8 +65,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             mostrar_cajas();
         }
         private void mostrar_cajas()
-        {
-            Dispose();
+        {         
             Caja.Cajas_formu frm = new Caja.Cajas_formu();
             frm.ShowDialog();
         }
@@ -120,18 +117,12 @@ namespace Punto_de_venta.Presentacion.Configuracion
             correo();
         }
 
-        private void ToolStripButton22_Click(object sender, EventArgs e)
-        {
-            Dispose();
-            Admin_nivel_dios.DASHBOARD_PRINCIPAL frm = new Admin_nivel_dios.DASHBOARD_PRINCIPAL();
-            frm.ShowDialog();
-        }
-        private void PANEL_CONFIGURACIONES_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Dispose();
-            Admin_nivel_dios.DASHBOARD_PRINCIPAL frm = new Admin_nivel_dios.DASHBOARD_PRINCIPAL();
-            frm.ShowDialog();
-        }
+        //private void PANEL_CONFIGURACIONES_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    Dispose();
+        //    Admin_nivel_dios.DASHBOARD_PRINCIPAL frm = new Admin_nivel_dios.DASHBOARD_PRINCIPAL();
+        //    frm.ShowDialog();
+        //}
 
         private void Balanzas_Click(object sender, EventArgs e)
         {
@@ -154,6 +145,58 @@ namespace Punto_de_venta.Presentacion.Configuracion
         private void btnImpresoras_Click(object sender, EventArgs e)
         {
             Impresorass.Admin_impresoras frm = new Impresorass.Admin_impresoras();
+            frm.ShowDialog();
+        }  
+
+        private void Label29_Click(object sender, EventArgs e)
+        {
+            mostrarserializacion();
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+           
+            Productos.Productos frm = new Productos.Productos();
+            frm.ShowDialog();
+        }
+
+        private void Label7_Click(object sender, EventArgs e)
+        {
+            mostrarclientes();
+        }
+
+        private void Label8_Click(object sender, EventArgs e)
+        {
+            mostrarproveedor();
+        }
+
+        private void Label31_Click(object sender, EventArgs e)
+        {
+            Diseñador_de_Comprobantes.Ticket frm = new Diseñador_de_Comprobantes.Ticket();
+            frm.ShowDialog();
+        }
+
+        private void Label4_Click(object sender, EventArgs e)
+        {
+            Impresorass.Admin_impresoras frm = new Impresorass.Admin_impresoras();
+            frm.ShowDialog();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            BalanzaElectronica.BalanzaForm frm = new BalanzaElectronica.BalanzaForm();
+            frm.ShowDialog();
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+            correo();
+        }
+
+        private void Label5_Click(object sender, EventArgs e)
+        {
+
+            CopiasBd.CrearCopiaBd frm = new CopiasBd.CrearCopiaBd();
             frm.ShowDialog();
         }
     }

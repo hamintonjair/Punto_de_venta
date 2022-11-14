@@ -126,6 +126,28 @@ namespace Punto_de_venta.Datos
                 ConexionData.cerrar();
             }
         }
+        public bool eliminarControlPago(Lcontrolpagos parametros)
+        {
+            try
+            {
+                ConexionData.abrir();
+                SqlCommand cmd = new SqlCommand("eliminarControlPagos", ConexionData.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@@idProveedor", parametros.IdProveedor);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                ConexionData.cerrar();
+            }
+        }
+
         //Ventas
         public bool EliminarVentas(Lventas parametros)
         {

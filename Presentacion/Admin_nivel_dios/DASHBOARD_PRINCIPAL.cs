@@ -49,6 +49,13 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
 
         private void DASHBOARD_PRINCIPAL_Load(object sender, EventArgs e)
         {
+            lblreferencia.Visible = true;
+            if (lblreferencia.Visible == true)
+            {
+                button4.Focus();
+                button5.Focus();
+                btnvender.Focus();
+            }
             Panel4.Location = new Point((Width - Panel4.Width) / 2, (Height - Panel4.Height) / 2);
             validarLicencia();
             Bases.Obtener_serialPC(ref lblIDSERIALL);
@@ -149,18 +156,18 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
         private void ReporteGananciasFecha()
         {
             Obtener_datos.ReporteGananciasFecha(ref gananciasFecha, TXTFI.Value, TXTFF.Value);
-            lblgananciasok.Text = moneda + " " + gananciasFecha.ToString();
+            lblgananciasok.Text = moneda + " " + gananciasFecha.ToString("N0");
         }
         private void ReporteTotalVentasFechas()
         {
             Obtener_datos.ReporteTotalVentasFechas(ref totalVentas, TXTFI.Value, TXTFF.Value);
-            txtventas.Text = moneda + " " + totalVentas.ToString();
+            txtventas.Text = moneda + " " + totalVentas.ToString("N0");
         }
 
         private void ReporteTotalVentas()
         {
             Obtener_datos.ReporteTotalVentas(ref totalVentas);
-            txtventas.Text = moneda + " " + totalVentas.ToString();
+            txtventas.Text = moneda + " " + totalVentas.ToString("N0");
         }
         private void mostrarMoneda()
         {
@@ -189,19 +196,19 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
         private void ReporteGanancias()
         {
             Obtener_datos.ReporteGanancias(ref GananciasGenerales);
-            lblGanancias.Text = moneda + " " + GananciasGenerales.ToString();
+            lblGanancias.Text = moneda + " " + GananciasGenerales.ToString("N0");
             lblgananciasok.Text = lblGanancias.Text;
         }
 
         private void ReportePorCobrar()
         {
             Obtener_datos.ReportePorCobrar(ref PorCobrar);
-            lblPorcobrar.Text = moneda + " " + PorCobrar.ToString();
+            lblPorcobrar.Text = moneda + " " + PorCobrar.ToString("N0");
         }
         private void ReportePorPagar()
         {
             Obtener_datos.ReportePorPagar(ref PorPagar);
-            lblPorPagar.Text = moneda + " " + PorPagar.ToString();
+            lblPorPagar.Text = moneda + " " + PorPagar.ToString("N0");
         }
         private void validarLicencia()
         {
@@ -224,19 +231,36 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
                 Dispose();
                 Licencias_Membresias.MembresiasNuevo frm = new Licencias_Membresias.MembresiasNuevo();
                 frm.ShowDialog();
+                if(lblreferencia.Visible == true)
+                {
+                    button4.Focus();
+                    button5.Focus();
+                    btnvender.Focus();
+                }
             }
-        }
-
+        }  
         private void button3_Click(object sender, EventArgs e)
         {
             Presentacion.Inventarioss_Kardex.Inventarios_Menu frm = new Presentacion.Inventarioss_Kardex.Inventarios_Menu();
             frm.ShowDialog();
+            if (lblreferencia.Visible == true)
+            {
+                button4.Focus();
+                button5.Focus();
+                btnvender.Focus();
+            }
         }
         private void frm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Dispose();
             Admin_nivel_dios.DASHBOARD_PRINCIPAL frm = new Admin_nivel_dios.DASHBOARD_PRINCIPAL();
             frm.ShowDialog();
+            if (lblreferencia.Visible == true)
+            {
+                button4.Focus();
+                button5.Focus();
+                btnvender.Focus();
+            }
         }
         private void contar_cierres_de_caja()
         {
@@ -311,11 +335,16 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
 
         }
         private void button6_Click(object sender, EventArgs e)
-        {
-            Configuracion.PANEL_CONFIGURACIONES frm = new Configuracion.PANEL_CONFIGURACIONES();
-            frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
-            Dispose();
+        {          
+            Configuracion.PANEL_CONFIGURACIONES frm = new Configuracion.PANEL_CONFIGURACIONES();              
             frm.ShowDialog();
+            if (lblreferencia.Visible == true)
+            {
+                button4.Focus();
+                button5.Focus();
+                btnvender.Focus();
+            }
+
         }
         private void contar_movimientos_de_caja_por_usuario()
         {
@@ -419,6 +448,12 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
         {
             CopiasBd.CrearCopiaBd frm = new CopiasBd.CrearCopiaBd();
             frm.ShowDialog();
+            if (lblreferencia.Visible == true)
+            {
+                button4.Focus();
+                button5.Focus();
+                btnvender.Focus();
+            }
         }
 
         private void btnRestaurar_Click(object sender, EventArgs e)
@@ -492,13 +527,15 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
         {
             Licencias_Membresias.MembresiasNuevo frm = new Licencias_Membresias.MembresiasNuevo();
             frm.ShowDialog();
+            if (lblreferencia.Visible == true)
+            {
+                button4.Focus();
+                button5.Focus();
+                btnvender.Focus();
+            }
         }
 
-        private void txtaño_gasto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ReporteGastosAnio();
-            ReporteGastosMesCombo();
-        }
+    
         private void ReporteGastosAnio()
         {
             DataTable dt = new DataTable();
@@ -513,11 +550,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
             }
             chartGastosAño.Series[0].Points.DataBindXY(descripcion, monto);
         }
-
-        private void txtmes_gasto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ReporteGastosAnioMesGrafica();
-        }
+  
         private void ReporteGastosAnioMesGrafica()
         {
             DataTable dt = new DataTable();
@@ -568,12 +601,86 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
         {
             Presentacion.Reportes.MenuReportes frm = new Presentacion.Reportes.MenuReportes();
             frm.ShowDialog();
+            if (lblreferencia.Visible == true)
+            {
+                button4.Focus();
+                button5.Focus();
+                btnvender.Focus();
+            }
         }
 
         private void brtCompra_Click(object sender, EventArgs e)
         {
             var frm = new Compras.Admincompras();
             frm.ShowDialog();
+            if (lblreferencia.Visible == true)
+            {
+                button4.Focus();
+                button5.Focus();
+                btnvender.Focus();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            restaurar();
+        }
+        public void restaurar()
+        {
+            Application.Restart();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            exit();
+        }
+        private void exit()
+        {
+            Application.Exit();
+        }
+    
+        private void evento(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F4)
+            {
+                exit();
+            }
+            if (e.KeyCode == Keys.F3)
+            {
+                restaurar();
+            }
+            if(e.KeyCode == Keys.F2)
+            {
+              validar_aperturas_de_caja();
+            }
+         
+
+        }
+
+        private void button4_KeyDown(object sender, KeyEventArgs e)
+        {
+            evento(e);
+        }
+
+        private void button5_KeyDown(object sender, KeyEventArgs e)
+        {
+            evento(e);
+        }
+
+        private void btnvender_KeyDown(object sender, KeyEventArgs e)
+        {
+            evento(e);
+        }
+
+        private void txtaño_gasto_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ReporteGastosAnio();
+            ReporteGastosMesCombo();
+        }
+
+        private void txtmes_gasto_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ReporteGastosAnioMesGrafica();
         }
     }
 }

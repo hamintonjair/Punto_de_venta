@@ -30,8 +30,8 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(clientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblclientesEliminados = new System.Windows.Forms.Label();
             this.lblclientesActivos = new System.Windows.Forms.Label();
@@ -89,7 +89,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1278, 83);
+            this.panel1.Size = new System.Drawing.Size(1228, 83);
             this.panel1.TabIndex = 1;
             // 
             // lblclientesEliminados
@@ -97,7 +97,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.lblclientesEliminados.AutoSize = true;
             this.lblclientesEliminados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblclientesEliminados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.lblclientesEliminados.Location = new System.Drawing.Point(1112, 48);
+            this.lblclientesEliminados.Location = new System.Drawing.Point(1070, 48);
             this.lblclientesEliminados.Name = "lblclientesEliminados";
             this.lblclientesEliminados.Size = new System.Drawing.Size(54, 24);
             this.lblclientesEliminados.TabIndex = 542;
@@ -108,7 +108,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.lblclientesActivos.AutoSize = true;
             this.lblclientesActivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblclientesActivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.lblclientesActivos.Location = new System.Drawing.Point(794, 48);
+            this.lblclientesActivos.Location = new System.Drawing.Point(747, 48);
             this.lblclientesActivos.Name = "lblclientesActivos";
             this.lblclientesActivos.Size = new System.Drawing.Size(54, 24);
             this.lblclientesActivos.TabIndex = 543;
@@ -118,7 +118,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             // 
             this.Label50.AutoSize = true;
             this.Label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label50.Location = new System.Drawing.Point(940, 48);
+            this.Label50.Location = new System.Drawing.Point(892, 48);
             this.Label50.Name = "Label50";
             this.Label50.Size = new System.Drawing.Size(180, 24);
             this.Label50.TabIndex = 544;
@@ -128,7 +128,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             // 
             this.Label7.AutoSize = true;
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label7.Location = new System.Drawing.Point(651, 48);
+            this.Label7.Location = new System.Drawing.Point(603, 48);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(147, 24);
             this.Label7.TabIndex = 545;
@@ -146,7 +146,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             // 
             this.txtbusca.BackColor = System.Drawing.Color.White;
             this.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbusca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtbusca.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtbusca.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtbusca.ForeColor = System.Drawing.Color.Black;
             this.txtbusca.Location = new System.Drawing.Point(12, 50);
@@ -198,7 +198,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1278, 37);
+            this.label1.Size = new System.Drawing.Size(1228, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Clientes";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -208,11 +208,11 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.datalistado.AllowUserToAddRows = false;
             this.datalistado.AllowUserToDeleteRows = false;
             this.datalistado.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.datalistado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.datalistado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.datalistado.BackgroundColor = System.Drawing.Color.White;
             this.datalistado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datalistado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -223,20 +223,20 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.Editar});
             this.datalistado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datalistado.EnableHeadersVisualStyles = false;
-            this.datalistado.Location = new System.Drawing.Point(577, 83);
+            this.datalistado.Location = new System.Drawing.Point(541, 83);
             this.datalistado.Name = "datalistado";
             this.datalistado.ReadOnly = true;
             this.datalistado.RowHeadersVisible = false;
             this.datalistado.RowHeadersWidth = 9;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
-            this.datalistado.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro;
+            this.datalistado.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.datalistado.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.datalistado.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.datalistado.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             this.datalistado.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.datalistado.RowTemplate.Height = 40;
             this.datalistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado.Size = new System.Drawing.Size(642, 464);
+            this.datalistado.Size = new System.Drawing.Size(664, 464);
             this.datalistado.TabIndex = 360;
             this.datalistado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistado_CellClick);
             this.datalistado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistado_CellDoubleClick);
@@ -284,6 +284,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(80)))), ((int)(((byte)(20)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -307,6 +308,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -321,6 +323,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             // btnGuardarCambios
             // 
             this.btnGuardarCambios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(100)))), ((int)(((byte)(40)))));
+            this.btnGuardarCambios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardarCambios.FlatAppearance.BorderSize = 0;
             this.btnGuardarCambios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -330,6 +333,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.btnGuardarCambios.TabIndex = 8;
             this.btnGuardarCambios.Text = "Guardar Cambios";
             this.btnGuardarCambios.UseVisualStyleBackColor = false;
+            this.btnGuardarCambios.Visible = false;
             this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
             // groupBox1
@@ -361,9 +365,9 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.Label14.ForeColor = System.Drawing.Color.White;
             this.Label14.Location = new System.Drawing.Point(9, 31);
             this.Label14.Name = "Label14";
-            this.Label14.Size = new System.Drawing.Size(137, 20);
+            this.Label14.Size = new System.Drawing.Size(90, 20);
             this.Label14.TabIndex = 337;
-            this.Label14.Text = "Identificador fiscal";
+            this.Label14.Text = "Cédula / Nit";
             // 
             // panel5
             // 
@@ -455,16 +459,16 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             this.paneldatalistado.Dock = System.Windows.Forms.DockStyle.Left;
             this.paneldatalistado.Location = new System.Drawing.Point(518, 83);
             this.paneldatalistado.Name = "paneldatalistado";
-            this.paneldatalistado.Size = new System.Drawing.Size(59, 464);
+            this.paneldatalistado.Size = new System.Drawing.Size(23, 464);
             this.paneldatalistado.TabIndex = 362;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1219, 83);
+            this.panel2.Location = new System.Drawing.Point(1205, 83);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(59, 464);
+            this.panel2.Size = new System.Drawing.Size(23, 464);
             this.panel2.TabIndex = 363;
             // 
             // dataGridViewImageColumn1
@@ -486,7 +490,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1278, 547);
+            this.ClientSize = new System.Drawing.Size(1228, 547);
             this.Controls.Add(this.datalistado);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.paneldatalistado);

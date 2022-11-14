@@ -29,8 +29,8 @@ namespace Punto_de_venta.Presentacion.Compras
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RealizarCompra));
             this.panelC2 = new System.Windows.Forms.Panel();
             this.BTNLECTORA = new System.Windows.Forms.Button();
@@ -93,6 +93,7 @@ namespace Punto_de_venta.Presentacion.Compras
             // BTNLECTORA
             // 
             this.BTNLECTORA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
+            this.BTNLECTORA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTNLECTORA.FlatAppearance.BorderSize = 0;
             this.BTNLECTORA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNLECTORA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -193,6 +194,7 @@ namespace Punto_de_venta.Presentacion.Compras
             this.btnagregarPro.BackColor = System.Drawing.Color.Transparent;
             this.btnagregarPro.BackgroundImage = global::Punto_de_venta.Properties.Resources.naranja;
             this.btnagregarPro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnagregarPro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnagregarPro.FlatAppearance.BorderSize = 0;
             this.btnagregarPro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnagregarPro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -250,14 +252,14 @@ namespace Punto_de_venta.Presentacion.Compras
             this.dgDetallecompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgDetallecompra.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgDetallecompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgDetallecompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgDetallecompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgDetallecompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgDetallecompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EL});
@@ -282,14 +284,14 @@ namespace Punto_de_venta.Presentacion.Compras
             // 
             // EL
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.NullValue = null;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.EL.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.EL.DefaultCellStyle = dataGridViewCellStyle2;
             this.EL.HeaderText = "";
             this.EL.Image = global::Punto_de_venta.Properties.Resources.trash_can_115312;
             this.EL.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -321,6 +323,7 @@ namespace Punto_de_venta.Presentacion.Compras
             this.btnguardar.BackColor = System.Drawing.Color.Transparent;
             this.btnguardar.BackgroundImage = global::Punto_de_venta.Properties.Resources.verde;
             this.btnguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguardar.FlatAppearance.BorderSize = 0;
             this.btnguardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnguardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;

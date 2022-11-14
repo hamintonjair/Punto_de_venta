@@ -96,8 +96,8 @@ namespace Punto_de_venta.Datos
                 cmd.Parameters.AddWithValue("@Fecha_registro", parametros.Fecha_registro);
                 cmd.Parameters.AddWithValue("@Fecha_vencimiento", parametros.Fecha_vencimiento);
                 cmd.Parameters.AddWithValue("@Total", parametros.Total);
-                cmd.Parameters.AddWithValue("@Saldo", parametros.Saldo);
-                cmd.Parameters.AddWithValue("@Estado", "DEBE");
+                cmd.Parameters.AddWithValue("@Pago", 0);
+                cmd.Parameters.AddWithValue("@Estado", "LE DEBO");
                 cmd.Parameters.AddWithValue("@Id_caja", idcaja);
                 cmd.Parameters.AddWithValue("@Id_Proveedor", parametros.Id_proveedor );
                 cmd.ExecuteNonQuery() ;
@@ -106,6 +106,31 @@ namespace Punto_de_venta.Datos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                ConexionData.cerrar();
+            }
+
+        }
+
+        public bool insertar_cobro_proveedores(Lproveedores param)
+        {
+            try
+            {
+                ConexionData.abrir();
+                SqlCommand cmd = new SqlCommand("insertar_pagos_proveedores", ConexionData.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Saldo", param.Saldo);
+                cmd.Parameters.AddWithValue("@idproveedor", param.IdProveedor);
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
                 return false;
             }
             finally
@@ -174,13 +199,13 @@ namespace Punto_de_venta.Datos
             {
                 Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
                 ConexionData.abrir();
-                SqlCommand cmd = new SqlCommand("insertar_CreditoPorCobrar", ConexionData.conectar);
-                cmd.CommandType = CommandType.StoredProcedure;
+                SqlCommand cmd = new SqlCommand("insertar_CreditoPorCobrar", ConexionData.conectar);            
+                cmd.CommandType = CommandType.StoredProcedure;        
                 cmd.Parameters.AddWithValue("@Descripcion", parametros.Descripcion);
                 cmd.Parameters.AddWithValue("@Fecha_registro", parametros.Fecha_registro);
                 cmd.Parameters.AddWithValue("@Fecha_vencimiento", parametros.Fecha_vencimiento);
                 cmd.Parameters.AddWithValue("@Total", parametros.Total);
-                cmd.Parameters.AddWithValue("@Saldo", parametros.Saldo);
+                cmd.Parameters.AddWithValue("@Saldo", parametros.Saldo);            
                 cmd.Parameters.AddWithValue("@Estado", "DEBE");
                 cmd.Parameters.AddWithValue("@Id_caja", idcaja);
                 cmd.Parameters.AddWithValue("@Id_cliente", parametros.Id_cliente);
@@ -198,12 +223,37 @@ namespace Punto_de_venta.Datos
             }
 
         }
+        public bool insertar_cobro_cliente(Lcliente param)
+        {
+            try
+            {          
+                ConexionData.abrir();
+                SqlCommand cmd = new SqlCommand("insertar_cobros_clientes", ConexionData.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Saldo", param.Saldo);             
+                cmd.Parameters.AddWithValue("@idcliente", param.idcliente);
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                ConexionData.cerrar();
+            }
+           
+        }
         public bool Insertar_ControlCobros(Lcontrolcobros parametros)
         {
             try
             {
                 ConexionData.abrir();
                 SqlCommand cmd = new SqlCommand("Insertar_ControlCobros", ConexionData.conectar);
+              
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Monto", parametros.Monto);
                 cmd.Parameters.AddWithValue("@Fecha", parametros.Fecha);
@@ -213,7 +263,7 @@ namespace Punto_de_venta.Datos
                 cmd.Parameters.AddWithValue("@IdCaja", parametros.IdCaja);
                 cmd.Parameters.AddWithValue("@Comprobante", parametros.Comprobante);
                 cmd.Parameters.AddWithValue("@efectivo", parametros.efectivo);
-                cmd.Parameters.AddWithValue("@tarjeta", parametros.tarjeta);
+                cmd.Parameters.AddWithValue("@tarjeta", parametros.tarjeta);     
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -227,6 +277,38 @@ namespace Punto_de_venta.Datos
                 ConexionData.cerrar();
             }
         }
+
+        public bool Insertar_ControlPagos(Lcontrolpagos parametros)
+        {
+            try
+            {
+                ConexionData.abrir();
+                SqlCommand cmd = new SqlCommand("insertar_ControlPagos", ConexionData.conectar);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Monto", parametros.Monto);
+                cmd.Parameters.AddWithValue("@Fecha", parametros.Fecha);
+                cmd.Parameters.AddWithValue("@Detalle", parametros.Detalle);
+                cmd.Parameters.AddWithValue("@IdProveedor", parametros.IdProveedor);
+                cmd.Parameters.AddWithValue("@IdUsuario", parametros.IdUsuario);              
+                cmd.Parameters.AddWithValue("@Comprobante", parametros.Comprobante);
+                cmd.Parameters.AddWithValue("@efectivo", parametros.efectivo);
+                cmd.Parameters.AddWithValue("@tarjeta", parametros.tarjeta);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return true;
+            }
+            finally
+            {
+                ConexionData.cerrar();
+            }
+        }
+        
 
         //Kardex
         public bool insertar_KARDEX_Entrada(LKardex parametros)

@@ -97,6 +97,15 @@ namespace Punto_de_venta.Datos
         {
             try
             {
+                int id = Presentacion.LOGIN.idcajavariable;
+                if (id == Convert.ToInt32(1))
+                {
+                    Obtener_datos.mostrar_inicio_De_sesion2(ref Idcaja);
+                }
+                else
+                {
+                    Obtener_datos.mostrar_inicio_De_sesion(ref Idcaja);
+                }
                 var funcion = new Dcaja();
                 funcion.ObtenerIdcaja(ref Idcaja);
                 ConexionData.abrir();

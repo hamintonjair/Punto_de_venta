@@ -64,6 +64,10 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtteclado = new System.Windows.Forms.CheckBox();
             this.TXTCON_LECTORA = new System.Windows.Forms.CheckBox();
             this.Panel11 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtporcentaje2 = new System.Windows.Forms.ComboBox();
             this.Panel12 = new System.Windows.Forms.Panel();
             this.txtimpuesto = new System.Windows.Forms.ComboBox();
             this.Label14 = new System.Windows.Forms.Label();
@@ -100,12 +104,8 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtmsbox = new System.Windows.Forms.Label();
             this.txtfecha = new System.Windows.Forms.DateTimePicker();
             this.Panel15 = new System.Windows.Forms.Panel();
-            this.MenuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.TSIGUIENTE_Y_GUARDAR = new System.Windows.Forms.MenuStrip();
             this.TSIGUIENTE_Y_GUARDAR_ = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSIGUIENTE = new System.Windows.Forms.MenuStrip();
-            this.TSIGUIENTE_ = new System.Windows.Forms.ToolStripMenuItem();
             this.Panel9 = new System.Windows.Forms.Panel();
             this.PADVER = new System.Windows.Forms.PictureBox();
             this.Label2 = new System.Windows.Forms.Label();
@@ -140,6 +140,8 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.FolderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.FolderBrowserDialog2 = new System.Windows.Forms.FolderBrowserDialog();
             this.dlg = new System.Windows.Forms.OpenFileDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.TSIGUIENTE = new System.Windows.Forms.ToolStripMenuItem();
             this.Panel16.SuspendLayout();
             this.Panel2.SuspendLayout();
             this.Panel8.SuspendLayout();
@@ -158,9 +160,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.TabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).BeginInit();
             this.Panel15.SuspendLayout();
-            this.MenuStrip1.SuspendLayout();
             this.TSIGUIENTE_Y_GUARDAR.SuspendLayout();
-            this.TSIGUIENTE.SuspendLayout();
             this.Panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PADVER)).BeginInit();
             this.Panel1.SuspendLayout();
@@ -169,6 +169,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel14.SuspendLayout();
             this.Panel4.SuspendLayout();
             this.MenuStrip2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel7
@@ -235,7 +236,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // txtcorreo
             // 
             this.txtcorreo.BackColor = System.Drawing.Color.White;
-            this.txtcorreo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtcorreo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtcorreo.Location = new System.Drawing.Point(69, 492);
             this.txtcorreo.Name = "txtcorreo";
@@ -245,7 +246,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // txtRuta
             // 
             this.txtRuta.BackColor = System.Drawing.Color.White;
-            this.txtRuta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtRuta.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtRuta.Enabled = false;
             this.txtRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtRuta.Location = new System.Drawing.Point(69, 440);
@@ -340,7 +341,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtcaja.BackColor = System.Drawing.Color.White;
             this.txtcaja.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcaja.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcaja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtcaja.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcaja.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.txtcaja.ForeColor = System.Drawing.Color.Black;
             this.txtcaja.Location = new System.Drawing.Point(86, 11);
@@ -455,6 +456,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // txtteclado
             // 
             this.txtteclado.AutoSize = true;
+            this.txtteclado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtteclado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtteclado.Location = new System.Drawing.Point(32, 157);
             this.txtteclado.Name = "txtteclado";
@@ -467,6 +469,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // TXTCON_LECTORA
             // 
             this.TXTCON_LECTORA.AutoSize = true;
+            this.TXTCON_LECTORA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TXTCON_LECTORA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.TXTCON_LECTORA.Location = new System.Drawing.Point(33, 125);
             this.TXTCON_LECTORA.Name = "TXTCON_LECTORA";
@@ -478,33 +481,88 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // 
             // Panel11
             // 
+            this.Panel11.Controls.Add(this.label22);
+            this.Panel11.Controls.Add(this.label21);
+            this.Panel11.Controls.Add(this.label20);
+            this.Panel11.Controls.Add(this.txtporcentaje2);
             this.Panel11.Controls.Add(this.Panel12);
             this.Panel11.Controls.Add(this.txtimpuesto);
             this.Panel11.Controls.Add(this.Label14);
             this.Panel11.Controls.Add(this.txtporcentaje);
-            this.Panel11.Location = new System.Drawing.Point(41, 39);
+            this.Panel11.Location = new System.Drawing.Point(35, 39);
             this.Panel11.Name = "Panel11";
-            this.Panel11.Size = new System.Drawing.Size(233, 41);
+            this.Panel11.Size = new System.Drawing.Size(434, 41);
             this.Panel11.TabIndex = 564;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label22.Location = new System.Drawing.Point(7, 7);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(78, 20);
+            this.label22.TabIndex = 559;
+            this.label22.Text = "General:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label21.Location = new System.Drawing.Point(269, 7);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(58, 20);
+            this.label21.TabIndex = 558;
+            this.label21.Text = "Otros:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(397, 7);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(23, 20);
+            this.label20.TabIndex = 556;
+            this.label20.Text = "%";
+            // 
+            // txtporcentaje2
+            // 
+            this.txtporcentaje2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtporcentaje2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.txtporcentaje2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.txtporcentaje2.FormattingEnabled = true;
+            this.txtporcentaje2.Items.AddRange(new object[] {
+            "21",
+            "19",
+            "5",
+            "3"});
+            this.txtporcentaje2.Location = new System.Drawing.Point(327, 4);
+            this.txtporcentaje2.Name = "txtporcentaje2";
+            this.txtporcentaje2.Size = new System.Drawing.Size(64, 28);
+            this.txtporcentaje2.TabIndex = 557;
+            this.txtporcentaje2.Text = "18";
             // 
             // Panel12
             // 
-            this.Panel12.BackColor = System.Drawing.Color.White;
+            this.Panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
             this.Panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Panel12.Location = new System.Drawing.Point(0, 37);
             this.Panel12.Name = "Panel12";
-            this.Panel12.Size = new System.Drawing.Size(233, 4);
+            this.Panel12.Size = new System.Drawing.Size(434, 4);
             this.Panel12.TabIndex = 555;
             // 
             // txtimpuesto
             // 
+            this.txtimpuesto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtimpuesto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.txtimpuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtimpuesto.FormattingEnabled = true;
             this.txtimpuesto.Items.AddRange(new object[] {
             "IVA",
             "IGV "});
-            this.txtimpuesto.Location = new System.Drawing.Point(3, 3);
+            this.txtimpuesto.Location = new System.Drawing.Point(86, 3);
             this.txtimpuesto.Name = "txtimpuesto";
             this.txtimpuesto.Size = new System.Drawing.Size(64, 28);
             this.txtimpuesto.TabIndex = 553;
@@ -515,7 +573,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Label14.AutoSize = true;
             this.Label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Label14.ForeColor = System.Drawing.Color.Black;
-            this.Label14.Location = new System.Drawing.Point(158, 6);
+            this.Label14.Location = new System.Drawing.Point(241, 6);
             this.Label14.Name = "Label14";
             this.Label14.Size = new System.Drawing.Size(23, 20);
             this.Label14.TabIndex = 342;
@@ -523,15 +581,16 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // 
             // txtporcentaje
             // 
+            this.txtporcentaje.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtporcentaje.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.txtporcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtporcentaje.FormattingEnabled = true;
             this.txtporcentaje.Items.AddRange(new object[] {
             "21",
-            "18",
-            "3",
-            "5"});
-            this.txtporcentaje.Location = new System.Drawing.Point(88, 3);
+            "19",
+            "5",
+            "3"});
+            this.txtporcentaje.Location = new System.Drawing.Point(171, 3);
             this.txtporcentaje.Name = "txtporcentaje";
             this.txtporcentaje.Size = new System.Drawing.Size(64, 28);
             this.txtporcentaje.TabIndex = 553;
@@ -575,6 +634,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // si
             // 
             this.si.AutoSize = true;
+            this.si.Cursor = System.Windows.Forms.Cursors.Hand;
             this.si.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.si.Location = new System.Drawing.Point(230, 5);
             this.si.Name = "si";
@@ -736,6 +796,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // 
             // txtmoneda
             // 
+            this.txtmoneda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtmoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtmoneda.DropDownWidth = 230;
             this.txtmoneda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -769,6 +830,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // 
             // TXTPAIS
             // 
+            this.TXTPAIS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TXTPAIS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TXTPAIS.DropDownWidth = 230;
             this.TXTPAIS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -838,7 +900,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtempresa.BackColor = System.Drawing.Color.White;
             this.txtempresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtempresa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtempresa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtempresa.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtempresa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.txtempresa.ForeColor = System.Drawing.Color.Black;
             this.txtempresa.Location = new System.Drawing.Point(140, 22);
@@ -969,38 +1031,12 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // Panel15
             // 
             this.Panel15.BackColor = System.Drawing.Color.White;
-            this.Panel15.Controls.Add(this.MenuStrip1);
             this.Panel15.Controls.Add(this.TSIGUIENTE_Y_GUARDAR);
-            this.Panel15.Controls.Add(this.TSIGUIENTE);
-            this.Panel15.Location = new System.Drawing.Point(382, 530);
+            this.Panel15.Controls.Add(this.menuStrip1);
+            this.Panel15.Location = new System.Drawing.Point(498, 529);
             this.Panel15.Name = "Panel15";
-            this.Panel15.Size = new System.Drawing.Size(254, 63);
+            this.Panel15.Size = new System.Drawing.Size(132, 63);
             this.Panel15.TabIndex = 585;
-            // 
-            // MenuStrip1
-            // 
-            this.MenuStrip1.AutoSize = false;
-            this.MenuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.MenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem3});
-            this.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.MenuStrip1.Location = new System.Drawing.Point(157, 8);
-            this.MenuStrip1.Name = "MenuStrip1";
-            this.MenuStrip1.ShowItemToolTips = true;
-            this.MenuStrip1.Size = new System.Drawing.Size(92, 32);
-            this.MenuStrip1.TabIndex = 584;
-            this.MenuStrip1.Text = "MenuStrip1";
-            // 
-            // ToolStripMenuItem3
-            // 
-            this.ToolStripMenuItem3.BackColor = System.Drawing.Color.Gainsboro;
-            this.ToolStripMenuItem3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.ToolStripMenuItem3.ForeColor = System.Drawing.Color.Black;
-            this.ToolStripMenuItem3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ToolStripMenuItem3.Name = "ToolStripMenuItem3";
-            this.ToolStripMenuItem3.Size = new System.Drawing.Size(79, 28);
-            this.ToolStripMenuItem3.Text = "Cancelar";
             // 
             // TSIGUIENTE_Y_GUARDAR
             // 
@@ -1010,10 +1046,10 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.TSIGUIENTE_Y_GUARDAR.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSIGUIENTE_Y_GUARDAR_});
             this.TSIGUIENTE_Y_GUARDAR.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.TSIGUIENTE_Y_GUARDAR.Location = new System.Drawing.Point(27, 8);
+            this.TSIGUIENTE_Y_GUARDAR.Location = new System.Drawing.Point(14, 16);
             this.TSIGUIENTE_Y_GUARDAR.Name = "TSIGUIENTE_Y_GUARDAR";
             this.TSIGUIENTE_Y_GUARDAR.ShowItemToolTips = true;
-            this.TSIGUIENTE_Y_GUARDAR.Size = new System.Drawing.Size(127, 32);
+            this.TSIGUIENTE_Y_GUARDAR.Size = new System.Drawing.Size(108, 32);
             this.TSIGUIENTE_Y_GUARDAR.TabIndex = 583;
             this.TSIGUIENTE_Y_GUARDAR.Text = "MenuStrip4";
             // 
@@ -1030,33 +1066,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.TSIGUIENTE_Y_GUARDAR_.Text = "Siguiente";
             this.TSIGUIENTE_Y_GUARDAR_.Click += new System.EventHandler(this.TSIGUIENTE_Y_GUARDAR__Click);
             // 
-            // TSIGUIENTE
-            // 
-            this.TSIGUIENTE.AutoSize = false;
-            this.TSIGUIENTE.BackColor = System.Drawing.Color.Transparent;
-            this.TSIGUIENTE.Dock = System.Windows.Forms.DockStyle.None;
-            this.TSIGUIENTE.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TSIGUIENTE_});
-            this.TSIGUIENTE.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.TSIGUIENTE.Location = new System.Drawing.Point(30, 8);
-            this.TSIGUIENTE.Name = "TSIGUIENTE";
-            this.TSIGUIENTE.ShowItemToolTips = true;
-            this.TSIGUIENTE.Size = new System.Drawing.Size(127, 32);
-            this.TSIGUIENTE.TabIndex = 583;
-            this.TSIGUIENTE.Text = "MenuStrip4";
-            // 
-            // TSIGUIENTE_
-            // 
-            this.TSIGUIENTE_.BackColor = System.Drawing.Color.Gainsboro;
-            this.TSIGUIENTE_.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.TSIGUIENTE_.ForeColor = System.Drawing.Color.Black;
-            this.TSIGUIENTE_.Image = ((System.Drawing.Image)(resources.GetObject("TSIGUIENTE_.Image")));
-            this.TSIGUIENTE_.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TSIGUIENTE_.Name = "TSIGUIENTE_";
-            this.TSIGUIENTE_.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TSIGUIENTE_.Size = new System.Drawing.Size(105, 28);
-            this.TSIGUIENTE_.Text = "Siguiente*";
-            // 
             // Panel9
             // 
             this.Panel9.BackColor = System.Drawing.Color.White;
@@ -1064,13 +1073,13 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel9.Controls.Add(this.Label2);
             this.Panel9.Location = new System.Drawing.Point(8, 530);
             this.Panel9.Name = "Panel9";
-            this.Panel9.Size = new System.Drawing.Size(371, 63);
+            this.Panel9.Size = new System.Drawing.Size(484, 63);
             this.Panel9.TabIndex = 585;
             // 
             // PADVER
             // 
             this.PADVER.Image = ((System.Drawing.Image)(resources.GetObject("PADVER.Image")));
-            this.PADVER.Location = new System.Drawing.Point(4, 5);
+            this.PADVER.Location = new System.Drawing.Point(4, 12);
             this.PADVER.Name = "PADVER";
             this.PADVER.Size = new System.Drawing.Size(43, 40);
             this.PADVER.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1079,15 +1088,15 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // 
             // Label2
             // 
-            this.Label2.AutoSize = true;
             this.Label2.BackColor = System.Drawing.Color.Transparent;
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(63)))), ((int)(((byte)(67)))));
-            this.Label2.Location = new System.Drawing.Point(48, 5);
+            this.Label2.Location = new System.Drawing.Point(48, 12);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(315, 40);
+            this.Label2.Size = new System.Drawing.Size(433, 40);
             this.Label2.TabIndex = 556;
-            this.Label2.Text = "Ya registraste tu Empresa /Modificala \r\nmas adelante";
+            this.Label2.Text = "Ya registraste tu Empresa /Modificala mas adelante";
+            this.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Panel1
             // 
@@ -1468,6 +1477,33 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // 
             this.dlg.FileName = "OpenFileDialog1";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSIGUIENTE});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.menuStrip1.Location = new System.Drawing.Point(11, 18);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.ShowItemToolTips = true;
+            this.menuStrip1.Size = new System.Drawing.Size(108, 32);
+            this.menuStrip1.TabIndex = 584;
+            this.menuStrip1.Text = "MenuStrip4";
+            // 
+            // TSIGUIENTE
+            // 
+            this.TSIGUIENTE.BackColor = System.Drawing.Color.Gainsboro;
+            this.TSIGUIENTE.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.TSIGUIENTE.ForeColor = System.Drawing.Color.Black;
+            this.TSIGUIENTE.Image = ((System.Drawing.Image)(resources.GetObject("TSIGUIENTE.Image")));
+            this.TSIGUIENTE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TSIGUIENTE.Name = "TSIGUIENTE";
+            this.TSIGUIENTE.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TSIGUIENTE.Size = new System.Drawing.Size(99, 28);
+            this.TSIGUIENTE.Text = "Siguiente";
+            // 
             // REGISTRO_DE_EMPRESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1512,14 +1548,9 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.TabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).EndInit();
             this.Panel15.ResumeLayout(false);
-            this.MenuStrip1.ResumeLayout(false);
-            this.MenuStrip1.PerformLayout();
             this.TSIGUIENTE_Y_GUARDAR.ResumeLayout(false);
             this.TSIGUIENTE_Y_GUARDAR.PerformLayout();
-            this.TSIGUIENTE.ResumeLayout(false);
-            this.TSIGUIENTE.PerformLayout();
             this.Panel9.ResumeLayout(false);
-            this.Panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PADVER)).EndInit();
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
@@ -1531,6 +1562,8 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel4.PerformLayout();
             this.MenuStrip2.ResumeLayout(false);
             this.MenuStrip2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1598,12 +1631,8 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
         internal System.Windows.Forms.Label txtmsbox;
         internal System.Windows.Forms.DateTimePicker txtfecha;
         internal System.Windows.Forms.Panel Panel15;
-        internal System.Windows.Forms.MenuStrip MenuStrip1;
-        internal System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem3;
         internal System.Windows.Forms.MenuStrip TSIGUIENTE_Y_GUARDAR;
         internal System.Windows.Forms.ToolStripMenuItem TSIGUIENTE_Y_GUARDAR_;
-        internal System.Windows.Forms.MenuStrip TSIGUIENTE;
-        internal System.Windows.Forms.ToolStripMenuItem TSIGUIENTE_;
         internal System.Windows.Forms.Panel Panel9;
         internal System.Windows.Forms.PictureBox PADVER;
         internal System.Windows.Forms.Label Label2;
@@ -1638,5 +1667,11 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
         internal System.Windows.Forms.FolderBrowserDialog FolderBrowserDialog1;
         internal System.Windows.Forms.FolderBrowserDialog FolderBrowserDialog2;
         internal System.Windows.Forms.OpenFileDialog dlg;
+        internal System.Windows.Forms.Label label22;
+        internal System.Windows.Forms.Label label21;
+        internal System.Windows.Forms.Label label20;
+        internal System.Windows.Forms.ComboBox txtporcentaje2;
+        internal System.Windows.Forms.MenuStrip menuStrip1;
+        internal System.Windows.Forms.ToolStripMenuItem TSIGUIENTE;
     }
 }

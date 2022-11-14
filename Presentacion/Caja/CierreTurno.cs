@@ -36,7 +36,7 @@ namespace Punto_de_venta.Presentacion.Caja
         {        
             Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
 
-            int id = Presentacion.Admin_nivel_dios.DASHBOARD_PRINCIPAL.idcajavariable;
+            int id = Presentacion.LOGIN.idcajavariable;
 
             if (id == Convert.ToInt32(1))
             {

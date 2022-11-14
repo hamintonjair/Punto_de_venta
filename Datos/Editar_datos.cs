@@ -14,6 +14,37 @@ namespace Punto_de_venta.Datos
     class Editar_datos
     {
         int idcaja;
+
+        public bool InsertarControlPorPagar(Lcontrolpagos parametros)
+        {
+            try
+            {
+                Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
+                ConexionData.abrir();
+                SqlCommand cmd = new SqlCommand("insertarPago", ConexionData.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Descripcion", parametros.Detalle);
+                cmd.Parameters.AddWithValue("@Fecha_registro", parametros.Fecha);
+                cmd.Parameters.AddWithValue("@Fecha_vencimiento", parametros.Fecha);
+                cmd.Parameters.AddWithValue("@Total", 0);
+                cmd.Parameters.AddWithValue("@Pago", parametros.efectivo);
+                cmd.Parameters.AddWithValue("@Estado", "PAGO");
+                cmd.Parameters.AddWithValue("@Id_caja", idcaja);
+                cmd.Parameters.AddWithValue("@Id_Proveedor", parametros.IdProveedor);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                ConexionData.cerrar();
+            }
+        }
         public static void cambio_de_Caja(int idcaja, int idventa)
         {
             ConexionData.abrir();
@@ -34,6 +65,7 @@ namespace Punto_de_venta.Datos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idventa", idventa);
                 cmd.Parameters.AddWithValue("@nombre", nombre);
+                cmd.Parameters.AddWithValue("@fecha", DateTime.Now);
                 cmd.ExecuteNonQuery();
                 ConexionData.cerrar();
             }
@@ -342,6 +374,29 @@ namespace Punto_de_venta.Datos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idcliente", parametros.idcliente);
                 cmd.Parameters.AddWithValue("@Saldo", monto);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                ConexionData.cerrar();
+            }
+        }
+        public bool disminuirSaldoProveedor(Lproveedores parametros, double monto)
+        {
+            try
+            {
+                ConexionData.abrir();
+                SqlCommand cmd = new SqlCommand("disminuirSaldoproveedor", ConexionData.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idProveedor", parametros.IdProveedor);
+                cmd.Parameters.AddWithValue("@monto", monto);
                 cmd.ExecuteNonQuery();
                 return true;
 

@@ -61,8 +61,8 @@ namespace Punto_de_venta.Presentacion.Productos
             this.lblarchivoCargado = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.PanelGuardarData = new System.Windows.Forms.Panel();
-            this.lblRuta = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.lblRuta = new System.Windows.Forms.Label();
             this.datalistado = new System.Windows.Forms.DataGridView();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -261,6 +261,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // LinkLabel2
             // 
             this.LinkLabel2.AutoSize = true;
+            this.LinkLabel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LinkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(114)))), ((int)(((byte)(68)))));
             this.LinkLabel2.Location = new System.Drawing.Point(117, 9);
             this.LinkLabel2.Name = "LinkLabel2";
@@ -449,6 +450,14 @@ namespace Punto_de_venta.Presentacion.Productos
             this.PanelGuardarData.TabIndex = 2;
             this.PanelGuardarData.Visible = false;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.lblRuta);
+            this.panel6.Location = new System.Drawing.Point(407, 32);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(39, 27);
+            this.panel6.TabIndex = 10;
+            // 
             // lblRuta
             // 
             this.lblRuta.AutoSize = true;
@@ -457,14 +466,6 @@ namespace Punto_de_venta.Presentacion.Productos
             this.lblRuta.Size = new System.Drawing.Size(35, 13);
             this.lblRuta.TabIndex = 613;
             this.lblRuta.Text = "label4";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.lblRuta);
-            this.panel6.Location = new System.Drawing.Point(407, 32);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(39, 27);
-            this.panel6.TabIndex = 10;
             // 
             // datalistado
             // 

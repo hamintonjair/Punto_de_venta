@@ -66,6 +66,7 @@ namespace Punto_de_venta.Presentacion.Caja
             this.BtnCerrar_turno.BackColor = System.Drawing.Color.Transparent;
             this.BtnCerrar_turno.BackgroundImage = global::Punto_de_venta.Properties.Resources.naranja;
             this.BtnCerrar_turno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCerrar_turno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCerrar_turno.FlatAppearance.BorderSize = 0;
             this.BtnCerrar_turno.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.BtnCerrar_turno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -101,6 +102,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // checkCorreo
             // 
             this.checkCorreo.AutoSize = true;
+            this.checkCorreo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkCorreo.Location = new System.Drawing.Point(52, 395);
             this.checkCorreo.Name = "checkCorreo";

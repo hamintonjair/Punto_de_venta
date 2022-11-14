@@ -98,6 +98,7 @@ namespace Punto_de_venta.Presentacion.CopiasBd
             // 
             this.button1.BackgroundImage = global::Punto_de_venta.Properties.Resources.out_37478;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(12, 37);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(34, 31);
@@ -118,6 +119,7 @@ namespace Punto_de_venta.Presentacion.CopiasBd
             // lblfrecuencia
             // 
             this.lblfrecuencia.BackColor = System.Drawing.Color.White;
+            this.lblfrecuencia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblfrecuencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblfrecuencia.FormattingEnabled = true;
             this.lblfrecuencia.Items.AddRange(new object[] {
@@ -133,7 +135,7 @@ namespace Punto_de_venta.Presentacion.CopiasBd
             // txtRuta
             // 
             this.txtRuta.BackColor = System.Drawing.Color.White;
-            this.txtRuta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtRuta.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtRuta.Enabled = false;
             this.txtRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtRuta.Location = new System.Drawing.Point(54, 42);
@@ -184,6 +186,7 @@ namespace Punto_de_venta.Presentacion.CopiasBd
             // btnGenerar
             // 
             this.btnGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
+            this.btnGenerar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGenerar.FlatAppearance.BorderSize = 0;
             this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);

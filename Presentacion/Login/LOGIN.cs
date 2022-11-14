@@ -20,6 +20,7 @@ namespace Punto_de_venta.Presentacion
 {
     public partial class LOGIN : Form
     {
+        public static String inisioSecion = "INICIO";
         int contador;
         int contadorCajas;
         int contador_Movimientos_de_caja;
@@ -417,6 +418,7 @@ namespace Punto_de_venta.Presentacion
         {
             panelRestaurarcontraseña.Visible = false;
         }
+        string clave;
         private void mostrar_usuario_por_correo()
         {
             try
@@ -428,6 +430,7 @@ namespace Punto_de_venta.Presentacion
                 da.CommandType = CommandType.StoredProcedure;
                 da.Parameters.AddWithValue("@correo", txtcorreo.Text);                
                 lblresultadocontraseña.Text = Convert.ToString(da.ExecuteScalar());
+                clave = Bases.Desencriptar(lblresultadocontraseña.Text);
                 ConexionData.cerrar();
             }
             catch (Exception ex)
@@ -442,8 +445,8 @@ namespace Punto_de_venta.Presentacion
         private void enviarCorreo()
         {
             mostrar_usuario_por_correo();
-            richTextBox1.Text = richTextBox1.Text.Replace("@pass", lblresultadocontraseña.Text);
-            enviarCorreo("hamintonjair@gmail.com", "johanernestoM", richTextBox1.Text, "Solicitud de Contraseña", txtcorreo.Text, "");
+            richTextBox1.Text = richTextBox1.Text.Replace("@pass", clave);
+            enviarCorreo("hamintonjair@gmail.com", "eorjdlcmzvzufiuw", richTextBox1.Text, "Solicitud de Contraseña", txtcorreo.Text, "");
         }
         private void MOSTRAR_CAJA_POR_SERIAL()
         {
@@ -490,11 +493,11 @@ namespace Punto_de_venta.Presentacion
             funcion.ValidarLicencias(ref ResultadoLicencia, ref FechaFinal);
             if (ResultadoLicencia == "?ACTIVO?")
             {
-                lblestadoLicencias.Text = "Licencia de Prueba Activada hasta el: " + FechaFinal;
+                lblestadoLicencias.Text = "Licencia de Prueba hasta el: " + FechaFinal;
             }
             if (ResultadoLicencia == "?ACTIVADO PRO?")
             {
-                lblestadoLicencias.Text = "Licencia PROFESIONAL Activada hasta el: " + FechaFinal;
+                lblestadoLicencias.Text = "Licencia PROFESIONAL hasta el: " + FechaFinal;
             }
             if (ResultadoLicencia == "VENCIDA")
             {
@@ -555,7 +558,7 @@ namespace Punto_de_venta.Presentacion
                 correos.IsBodyHtml = true;
                 correos.To.Add((destinatario));
                 correos.From = new MailAddress(emisor);
-                envios.Credentials = new NetworkCredential(emisor, password);
+                envios.Credentials = new NetworkCredential(emisor,  password);
 
                 envios.Host = "smtp.gmail.com";
                 envios.Port = 587;
@@ -766,8 +769,7 @@ namespace Punto_de_venta.Presentacion
                         editar_inicio_De_sesion();
                         Dispose();
                         Ventas_Menu_Principal.Ventas_Menu_Princi frm = new Ventas_Menu_Principal.Ventas_Menu_Princi();
-                        frm.ShowDialog();           
-
+                        frm.ShowDialog();         
 
                     }
 
@@ -780,6 +782,12 @@ namespace Punto_de_venta.Presentacion
             PanelUsuarios.Visible = true;
             PanelIngreso_de_contraseña.Visible = false;
             txtPasswor.Clear();
+        }
+
+        private void btnOlvidoContraseña_Click(object sender, EventArgs e)
+        {
+            panelRestaurarcontraseña.Visible = true;
+            mostrar_correo();
         }
     }
 }

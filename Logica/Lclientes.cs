@@ -15,4 +15,9 @@ namespace Punto_de_venta.Logica
         public string Estado { set; get; }
         public double Saldo { set; get; }
     }
+    public class Lcliente
+    {
+        public int idcliente { set; get; }     
+        public double Saldo { set; get; }
+    }
 }

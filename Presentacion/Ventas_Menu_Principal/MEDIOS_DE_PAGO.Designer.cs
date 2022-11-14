@@ -85,13 +85,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txtcredito2 = new System.Windows.Forms.TextBox();
             this.Panel22 = new System.Windows.Forms.Panel();
             this.Label20 = new System.Windows.Forms.Label();
-            this.txttarjeta2 = new System.Windows.Forms.TextBox();
-            this.Panel21 = new System.Windows.Forms.Panel();
-            this.Label19 = new System.Windows.Forms.Label();
             this.txtefectivo2 = new System.Windows.Forms.TextBox();
             this.Panel20 = new System.Windows.Forms.Panel();
             this.Label18 = new System.Windows.Forms.Label();
             this.panelGuardado_de_datos = new System.Windows.Forms.Panel();
+            this.btncerrar = new System.Windows.Forms.Button();
             this.TGuardarSinImprimir = new System.Windows.Forms.Button();
             this.btnGuardarImprimirdirecto = new System.Windows.Forms.Button();
             this.lblCantidad_de_numeros = new System.Windows.Forms.Label();
@@ -134,6 +132,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.reportViewer3 = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.panel1.SuspendLayout();
             this.PanelregistroClientes.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
@@ -184,15 +183,12 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.panel1.Controls.Add(this.txtcredito2);
             this.panel1.Controls.Add(this.Panel22);
             this.panel1.Controls.Add(this.Label20);
-            this.panel1.Controls.Add(this.txttarjeta2);
-            this.panel1.Controls.Add(this.Panel21);
-            this.panel1.Controls.Add(this.Label19);
             this.panel1.Controls.Add(this.txtefectivo2);
             this.panel1.Controls.Add(this.Panel20);
             this.panel1.Controls.Add(this.Label18);
-            this.panel1.Location = new System.Drawing.Point(25, 93);
+            this.panel1.Location = new System.Drawing.Point(14, 93);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(613, 515);
+            this.panel1.Size = new System.Drawing.Size(613, 476);
             this.panel1.TabIndex = 5;
             // 
             // PanelregistroClientes
@@ -211,9 +207,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.PanelregistroClientes.Controls.Add(this.label3);
             this.PanelregistroClientes.Controls.Add(this.label2);
             this.PanelregistroClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PanelregistroClientes.Location = new System.Drawing.Point(335, 308);
+            this.PanelregistroClientes.Location = new System.Drawing.Point(406, 321);
             this.PanelregistroClientes.Name = "PanelregistroClientes";
-            this.PanelregistroClientes.Size = new System.Drawing.Size(264, 181);
+            this.PanelregistroClientes.Size = new System.Drawing.Size(193, 168);
             this.PanelregistroClientes.TabIndex = 632;
             this.PanelregistroClientes.Visible = false;
             // 
@@ -225,7 +221,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.lblcp.ForeColor = System.Drawing.Color.Black;
             this.lblcp.Location = new System.Drawing.Point(0, 0);
             this.lblcp.Name = "lblcp";
-            this.lblcp.Size = new System.Drawing.Size(264, 47);
+            this.lblcp.Size = new System.Drawing.Size(193, 47);
             this.lblcp.TabIndex = 624;
             this.lblcp.Text = "NUEVO CLIENTE";
             this.lblcp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -242,6 +238,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -256,6 +253,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // BtnVolver
             // 
             this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
+            this.BtnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -602,6 +600,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.lblprueba.TabIndex = 626;
             this.lblprueba.Text = "12";
             this.lblprueba.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblprueba.Visible = false;
             // 
             // txtrestante
             // 
@@ -766,6 +765,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txtclientesolicitabnte2.Size = new System.Drawing.Size(305, 29);
             this.txtclientesolicitabnte2.TabIndex = 456;
             this.txtclientesolicitabnte2.TextChanged += new System.EventHandler(this.txtclientesolicitabnte2_TextChanged);
+            this.txtclientesolicitabnte2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtclientesolicitabnte2_KeyDown);
             // 
             // txtcredito2
             // 
@@ -773,18 +773,19 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txtcredito2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcredito2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.txtcredito2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtcredito2.Location = new System.Drawing.Point(122, 95);
+            this.txtcredito2.Location = new System.Drawing.Point(122, 58);
             this.txtcredito2.Name = "txtcredito2";
             this.txtcredito2.Size = new System.Drawing.Size(177, 28);
             this.txtcredito2.TabIndex = 563;
             this.txtcredito2.Click += new System.EventHandler(this.txtcredito2_Click);
             this.txtcredito2.TextChanged += new System.EventHandler(this.txtcredito2_TextChanged);
+            this.txtcredito2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtcredito2_KeyDown);
             this.txtcredito2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcredito2_KeyPress);
             // 
             // Panel22
             // 
             this.Panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
-            this.Panel22.Location = new System.Drawing.Point(119, 128);
+            this.Panel22.Location = new System.Drawing.Point(119, 91);
             this.Panel22.Name = "Panel22";
             this.Panel22.Size = new System.Drawing.Size(180, 1);
             this.Panel22.TabIndex = 562;
@@ -794,46 +795,12 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.Label20.AutoSize = true;
             this.Label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.Label20.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Label20.Location = new System.Drawing.Point(19, 100);
+            this.Label20.Location = new System.Drawing.Point(19, 63);
             this.Label20.Name = "Label20";
             this.Label20.Size = new System.Drawing.Size(98, 29);
             this.Label20.TabIndex = 561;
             this.Label20.Text = "Credito:";
             this.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txttarjeta2
-            // 
-            this.txttarjeta2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.txttarjeta2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txttarjeta2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.txttarjeta2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txttarjeta2.Location = new System.Drawing.Point(122, 53);
-            this.txttarjeta2.Name = "txttarjeta2";
-            this.txttarjeta2.Size = new System.Drawing.Size(177, 28);
-            this.txttarjeta2.TabIndex = 560;
-            this.txttarjeta2.Click += new System.EventHandler(this.txttarjeta2_Click);
-            this.txttarjeta2.TextChanged += new System.EventHandler(this.txttarjeta2_TextChanged);
-            this.txttarjeta2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttarjeta2_KeyPress);
-            // 
-            // Panel21
-            // 
-            this.Panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
-            this.Panel21.Location = new System.Drawing.Point(119, 86);
-            this.Panel21.Name = "Panel21";
-            this.Panel21.Size = new System.Drawing.Size(180, 1);
-            this.Panel21.TabIndex = 559;
-            // 
-            // Label19
-            // 
-            this.Label19.AutoSize = true;
-            this.Label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.Label19.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Label19.Location = new System.Drawing.Point(22, 60);
-            this.Label19.Name = "Label19";
-            this.Label19.Size = new System.Drawing.Size(95, 29);
-            this.Label19.TabIndex = 558;
-            this.Label19.Text = "Tarjeta:";
-            this.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtefectivo2
             // 
@@ -841,18 +808,19 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txtefectivo2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtefectivo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.txtefectivo2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtefectivo2.Location = new System.Drawing.Point(122, 10);
+            this.txtefectivo2.Location = new System.Drawing.Point(122, 21);
             this.txtefectivo2.Name = "txtefectivo2";
             this.txtefectivo2.Size = new System.Drawing.Size(177, 28);
             this.txtefectivo2.TabIndex = 557;
             this.txtefectivo2.Click += new System.EventHandler(this.txtefectivo2_Click);
             this.txtefectivo2.TextChanged += new System.EventHandler(this.txtefectivo2_TextChanged);
+            this.txtefectivo2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtefectivo2_KeyDown);
             this.txtefectivo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtefectivo2_KeyPress);
             // 
             // Panel20
             // 
             this.Panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
-            this.Panel20.Location = new System.Drawing.Point(119, 43);
+            this.Panel20.Location = new System.Drawing.Point(119, 54);
             this.Panel20.Name = "Panel20";
             this.Panel20.Size = new System.Drawing.Size(180, 1);
             this.Panel20.TabIndex = 556;
@@ -862,7 +830,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.Label18.AutoSize = true;
             this.Label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.Label18.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Label18.Location = new System.Drawing.Point(13, 16);
+            this.Label18.Location = new System.Drawing.Point(13, 27);
             this.Label18.Name = "Label18";
             this.Label18.Size = new System.Drawing.Size(104, 29);
             this.Label18.TabIndex = 555;
@@ -872,6 +840,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // panelGuardado_de_datos
             // 
             this.panelGuardado_de_datos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(91)))), ((int)(((byte)(93)))));
+            this.panelGuardado_de_datos.Controls.Add(this.btncerrar);
             this.panelGuardado_de_datos.Controls.Add(this.TGuardarSinImprimir);
             this.panelGuardado_de_datos.Controls.Add(this.btnGuardarImprimirdirecto);
             this.panelGuardado_de_datos.Controls.Add(this.lblCantidad_de_numeros);
@@ -882,16 +851,33 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.panelGuardado_de_datos.Controls.Add(this.txtImpresora);
             this.panelGuardado_de_datos.Controls.Add(this.Label1);
             this.panelGuardado_de_datos.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelGuardado_de_datos.Location = new System.Drawing.Point(675, 0);
+            this.panelGuardado_de_datos.Location = new System.Drawing.Point(640, 0);
             this.panelGuardado_de_datos.Name = "panelGuardado_de_datos";
-            this.panelGuardado_de_datos.Size = new System.Drawing.Size(494, 620);
+            this.panelGuardado_de_datos.Size = new System.Drawing.Size(414, 592);
             this.panelGuardado_de_datos.TabIndex = 6;
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.BackColor = System.Drawing.Color.Red;
+            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.FlatAppearance.BorderSize = 0;
+            this.btncerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncerrar.Location = new System.Drawing.Point(297, 83);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(34, 38);
+            this.btncerrar.TabIndex = 618;
+            this.btncerrar.Text = "X";
+            this.btncerrar.UseVisualStyleBackColor = false;
+            this.btncerrar.Visible = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
             // TGuardarSinImprimir
             // 
             this.TGuardarSinImprimir.BackColor = System.Drawing.Color.Transparent;
             this.TGuardarSinImprimir.BackgroundImage = global::Punto_de_venta.Properties.Resources.azul1;
             this.TGuardarSinImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TGuardarSinImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TGuardarSinImprimir.FlatAppearance.BorderSize = 0;
             this.TGuardarSinImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.TGuardarSinImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -911,6 +897,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btnGuardarImprimirdirecto.BackColor = System.Drawing.Color.Transparent;
             this.btnGuardarImprimirdirecto.BackgroundImage = global::Punto_de_venta.Properties.Resources.verde;
             this.btnGuardarImprimirdirecto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardarImprimirdirecto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardarImprimirdirecto.FlatAppearance.BorderSize = 0;
             this.btnGuardarImprimirdirecto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnGuardarImprimirdirecto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -930,7 +917,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.lblCantidad_de_numeros.AutoSize = true;
             this.lblCantidad_de_numeros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantidad_de_numeros.ForeColor = System.Drawing.Color.White;
-            this.lblCantidad_de_numeros.Location = new System.Drawing.Point(121, 570);
+            this.lblCantidad_de_numeros.Location = new System.Drawing.Point(121, 554);
             this.lblCantidad_de_numeros.Name = "lblCantidad_de_numeros";
             this.lblCantidad_de_numeros.Size = new System.Drawing.Size(93, 15);
             this.lblCantidad_de_numeros.TabIndex = 613;
@@ -941,7 +928,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txtnumerofin.AutoSize = true;
             this.txtnumerofin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnumerofin.ForeColor = System.Drawing.Color.White;
-            this.txtnumerofin.Location = new System.Drawing.Point(13, 570);
+            this.txtnumerofin.Location = new System.Drawing.Point(13, 554);
             this.txtnumerofin.Name = "txtnumerofin";
             this.txtnumerofin.Size = new System.Drawing.Size(93, 15);
             this.txtnumerofin.TabIndex = 613;
@@ -955,7 +942,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.FlowLayoutPanel1.Location = new System.Drawing.Point(16, 515);
             this.FlowLayoutPanel1.Name = "FlowLayoutPanel1";
             this.FlowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.FlowLayoutPanel1.Size = new System.Drawing.Size(445, 42);
+            this.FlowLayoutPanel1.Size = new System.Drawing.Size(380, 34);
             this.FlowLayoutPanel1.TabIndex = 611;
             // 
             // lblCorrelativoconCeros
@@ -963,7 +950,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.lblCorrelativoconCeros.AutoSize = true;
             this.lblCorrelativoconCeros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorrelativoconCeros.ForeColor = System.Drawing.Color.White;
-            this.lblCorrelativoconCeros.Location = new System.Drawing.Point(349, 0);
+            this.lblCorrelativoconCeros.Location = new System.Drawing.Point(284, 0);
             this.lblCorrelativoconCeros.Name = "lblCorrelativoconCeros";
             this.lblCorrelativoconCeros.Size = new System.Drawing.Size(93, 15);
             this.lblCorrelativoconCeros.TabIndex = 606;
@@ -974,7 +961,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txtserie.AutoSize = true;
             this.txtserie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtserie.ForeColor = System.Drawing.Color.White;
-            this.txtserie.Location = new System.Drawing.Point(250, 0);
+            this.txtserie.Location = new System.Drawing.Point(185, 0);
             this.txtserie.Name = "txtserie";
             this.txtserie.Size = new System.Drawing.Size(93, 15);
             this.txtserie.TabIndex = 605;
@@ -985,7 +972,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.lblComprobante.AutoSize = true;
             this.lblComprobante.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblComprobante.ForeColor = System.Drawing.Color.White;
-            this.lblComprobante.Location = new System.Drawing.Point(151, 0);
+            this.lblComprobante.Location = new System.Drawing.Point(86, 0);
             this.lblComprobante.Name = "lblComprobante";
             this.lblComprobante.Size = new System.Drawing.Size(93, 15);
             this.lblComprobante.TabIndex = 605;
@@ -1007,7 +994,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.PANEL_CLIENTE_FACTURA.Controls.Add(this.MenuStrip10);
             this.PANEL_CLIENTE_FACTURA.Location = new System.Drawing.Point(16, 335);
             this.PANEL_CLIENTE_FACTURA.Name = "PANEL_CLIENTE_FACTURA";
-            this.PANEL_CLIENTE_FACTURA.Size = new System.Drawing.Size(442, 174);
+            this.PANEL_CLIENTE_FACTURA.Size = new System.Drawing.Size(377, 174);
             this.PANEL_CLIENTE_FACTURA.TabIndex = 610;
             this.PANEL_CLIENTE_FACTURA.Visible = false;
             // 
@@ -1038,7 +1025,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.datalistadoclientes3.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.datalistadoclientes3.RowTemplate.Height = 40;
             this.datalistadoclientes3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistadoclientes3.Size = new System.Drawing.Size(420, 94);
+            this.datalistadoclientes3.Size = new System.Drawing.Size(355, 94);
             this.datalistadoclientes3.TabIndex = 454;
             this.datalistadoclientes3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistadoclientes3_CellClick);
             // 
@@ -1124,6 +1111,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txtclientesolicitabnte3.Size = new System.Drawing.Size(310, 30);
             this.txtclientesolicitabnte3.TabIndex = 455;
             this.txtclientesolicitabnte3.TextChanged += new System.EventHandler(this.txtclientesolicitabnte3_TextChanged);
+            this.txtclientesolicitabnte3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtclientesolicitabnte3_KeyDown);
             // 
             // lbldireccion
             // 
@@ -1180,12 +1168,13 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.FlowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(99)))), ((int)(((byte)(93)))));
             this.FlowLayoutPanel3.Location = new System.Drawing.Point(16, 208);
             this.FlowLayoutPanel3.Name = "FlowLayoutPanel3";
-            this.FlowLayoutPanel3.Size = new System.Drawing.Size(442, 121);
+            this.FlowLayoutPanel3.Size = new System.Drawing.Size(377, 121);
             this.FlowLayoutPanel3.TabIndex = 609;
             // 
             // txtImpresora
             // 
             this.txtImpresora.BackColor = System.Drawing.Color.White;
+            this.txtImpresora.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtImpresora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtImpresora.FormattingEnabled = true;
             this.txtImpresora.Location = new System.Drawing.Point(16, 32);
@@ -1210,10 +1199,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.PanelImpresionvistaprevia.Controls.Add(this.pictureBox1);
             this.PanelImpresionvistaprevia.Controls.Add(this.label5);
             this.PanelImpresionvistaprevia.Controls.Add(this.reportViewer1);
-            this.PanelImpresionvistaprevia.Location = new System.Drawing.Point(437, 16);
+            this.PanelImpresionvistaprevia.Location = new System.Drawing.Point(445, 9);
             this.PanelImpresionvistaprevia.Name = "PanelImpresionvistaprevia";
-            this.PanelImpresionvistaprevia.Size = new System.Drawing.Size(52, 47);
+            this.PanelImpresionvistaprevia.Size = new System.Drawing.Size(89, 47);
             this.PanelImpresionvistaprevia.TabIndex = 13;
+            this.PanelImpresionvistaprevia.Visible = false;
             // 
             // pictureBox1
             // 
@@ -1253,9 +1243,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.panel3.Controls.Add(this.txttotaldecimal);
             this.panel3.Controls.Add(this.dtComprobantes);
             this.panel3.Controls.Add(this.txtnumeroconvertidoenletra);
-            this.panel3.Location = new System.Drawing.Point(621, 53);
+            this.panel3.Location = new System.Drawing.Point(641, 16);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 10);
+            this.panel3.Size = new System.Drawing.Size(11, 10);
             this.panel3.TabIndex = 634;
             // 
             // datalistadoDetalleVenta
@@ -1368,7 +1358,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.dtComprobantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn1});
             this.dtComprobantes.EnableHeadersVisualStyles = false;
-            this.dtComprobantes.Location = new System.Drawing.Point(88, 8);
+            this.dtComprobantes.Location = new System.Drawing.Point(88, 18);
             this.dtComprobantes.Name = "dtComprobantes";
             this.dtComprobantes.ReadOnly = true;
             this.dtComprobantes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -1381,7 +1371,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.dtComprobantes.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dtComprobantes.RowTemplate.Height = 40;
             this.dtComprobantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtComprobantes.Size = new System.Drawing.Size(45, 35);
+            this.dtComprobantes.Size = new System.Drawing.Size(45, 25);
             this.dtComprobantes.TabIndex = 454;
             // 
             // dataGridViewCheckBoxColumn1
@@ -1403,10 +1393,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // reportViewer2
             // 
             this.reportViewer2.AccessibilityKeyMap = null;
-            this.reportViewer2.Location = new System.Drawing.Point(536, 16);
+            this.reportViewer2.Location = new System.Drawing.Point(524, 19);
             this.reportViewer2.Name = "reportViewer2";
             this.reportViewer2.Size = new System.Drawing.Size(56, 44);
             this.reportViewer2.TabIndex = 633;
+            this.reportViewer2.Visible = false;
             // 
             // contextMenuStrip2
             // 
@@ -1436,18 +1427,31 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn1.ToolTipText = "Opcional \"Supr\" para Eliminar";
             // 
+            // reportViewer3
+            // 
+            this.reportViewer3.AccessibilityKeyMap = null;
+            this.reportViewer3.BackColor = System.Drawing.Color.White;
+            this.reportViewer3.Location = new System.Drawing.Point(457, 34);
+            this.reportViewer3.Name = "reportViewer3";
+            this.reportViewer3.Size = new System.Drawing.Size(77, 56);
+            this.reportViewer3.TabIndex = 635;
+            this.reportViewer3.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview;
+            this.reportViewer3.Visible = false;
+            // 
             // MEDIOS_DE_PAGO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.ClientSize = new System.Drawing.Size(1169, 620);
+            this.ClientSize = new System.Drawing.Size(1054, 592);
+            this.Controls.Add(this.reportViewer3);
             this.Controls.Add(this.PanelImpresionvistaprevia);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelGuardado_de_datos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.reportViewer2);
             this.Controls.Add(this.TXTTOTAL);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -1540,9 +1544,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         internal System.Windows.Forms.TextBox txtcredito2;
         internal System.Windows.Forms.Panel Panel22;
         internal System.Windows.Forms.Label Label20;
-        internal System.Windows.Forms.TextBox txttarjeta2;
-        internal System.Windows.Forms.Panel Panel21;
-        internal System.Windows.Forms.Label Label19;
         internal System.Windows.Forms.TextBox txtefectivo2;
         internal System.Windows.Forms.Panel Panel20;
         internal System.Windows.Forms.Label Label18;
@@ -1589,5 +1590,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         internal System.Windows.Forms.Button btnGuardarImprimirdirecto;
         internal System.Windows.Forms.Button TGuardarSinImprimir;
+        private Telerik.ReportViewer.WinForms.ReportViewer reportViewer3;
+        private System.Windows.Forms.Button btncerrar;
     }
 }

@@ -85,6 +85,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.lblpagocon = new System.Windows.Forms.Label();
             this.lbltotal = new System.Windows.Forms.Label();
             this.LBLTipodePagoOK = new System.Windows.Forms.Label();
+            this.Label46 = new System.Windows.Forms.Label();
             this.lblcajero = new System.Windows.Forms.Label();
             this.lblfecha = new System.Windows.Forms.Label();
             this.lblcomprobante = new System.Windows.Forms.Label();
@@ -95,7 +96,6 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.Label24 = new System.Windows.Forms.Label();
             this.Label32 = new System.Windows.Forms.Label();
             this.Label33 = new System.Windows.Forms.Label();
-            this.Label46 = new System.Windows.Forms.Label();
             this.Label47 = new System.Windows.Forms.Label();
             this.Label48 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -223,7 +223,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             // 
             this.txtbusca.BackColor = System.Drawing.Color.White;
             this.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbusca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtbusca.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtbusca.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtbusca.ForeColor = System.Drawing.Color.Black;
             this.txtbusca.Location = new System.Drawing.Point(12, 15);
@@ -308,7 +308,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.MenuStrip2.Name = "MenuStrip2";
             this.MenuStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.MenuStrip2.ShowItemToolTips = true;
-            this.MenuStrip2.Size = new System.Drawing.Size(131, 37);
+            this.MenuStrip2.Size = new System.Drawing.Size(118, 37);
             this.MenuStrip2.TabIndex = 545;
             this.MenuStrip2.Text = "MenuStrip7";
             // 
@@ -326,6 +326,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             // 
             // ff
             // 
+            this.ff.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ff.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.ff.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ff.Location = new System.Drawing.Point(131, 43);
@@ -336,6 +337,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             // 
             // fi
             // 
+            this.fi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fi.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.fi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.fi.Location = new System.Drawing.Point(131, 10);
@@ -380,7 +382,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.Label17.Size = new System.Drawing.Size(365, 41);
             this.Label17.TabIndex = 542;
             this.Label17.Text = "Ventas Realizadas";
-            this.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridViewImageColumn1
             // 
@@ -453,9 +455,10 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.panelDetalle.Controls.Add(this.menuStrip6);
             this.panelDetalle.Controls.Add(this.menuStrip5);
             this.panelDetalle.Controls.Add(this.PanelTICKET);
-            this.panelDetalle.Location = new System.Drawing.Point(425, 23);
+            this.panelDetalle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDetalle.Location = new System.Drawing.Point(365, 0);
             this.panelDetalle.Name = "panelDetalle";
-            this.panelDetalle.Size = new System.Drawing.Size(699, 482);
+            this.panelDetalle.Size = new System.Drawing.Size(983, 807);
             this.panelDetalle.TabIndex = 570;
             this.panelDetalle.Visible = false;
             // 
@@ -484,7 +487,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.menuStrip6.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip6.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnReimprimir});
-            this.menuStrip6.Location = new System.Drawing.Point(553, 66);
+            this.menuStrip6.Location = new System.Drawing.Point(184, 13);
             this.menuStrip6.Name = "menuStrip6";
             this.menuStrip6.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip6.ShowItemToolTips = true;
@@ -512,7 +515,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.menuStrip5.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnEliminar});
-            this.menuStrip5.Location = new System.Drawing.Point(552, 19);
+            this.menuStrip5.Location = new System.Drawing.Point(30, 13);
             this.menuStrip5.Name = "menuStrip5";
             this.menuStrip5.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip5.ShowItemToolTips = true;
@@ -534,6 +537,9 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             // 
             // PanelTICKET
             // 
+            this.PanelTICKET.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelTICKET.BackColor = System.Drawing.Color.White;
             this.PanelTICKET.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelTICKET.BackgroundImage")));
             this.PanelTICKET.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -543,6 +549,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.PanelTICKET.Controls.Add(this.lblpagocon);
             this.PanelTICKET.Controls.Add(this.lbltotal);
             this.PanelTICKET.Controls.Add(this.LBLTipodePagoOK);
+            this.PanelTICKET.Controls.Add(this.Label46);
             this.PanelTICKET.Controls.Add(this.lblcajero);
             this.PanelTICKET.Controls.Add(this.lblfecha);
             this.PanelTICKET.Controls.Add(this.lblcomprobante);
@@ -553,12 +560,11 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.PanelTICKET.Controls.Add(this.Label24);
             this.PanelTICKET.Controls.Add(this.Label32);
             this.PanelTICKET.Controls.Add(this.Label33);
-            this.PanelTICKET.Controls.Add(this.Label46);
             this.PanelTICKET.Controls.Add(this.Label47);
             this.PanelTICKET.Controls.Add(this.Label48);
             this.PanelTICKET.Location = new System.Drawing.Point(30, 63);
             this.PanelTICKET.Name = "PanelTICKET";
-            this.PanelTICKET.Size = new System.Drawing.Size(520, 663);
+            this.PanelTICKET.Size = new System.Drawing.Size(941, 663);
             this.PanelTICKET.TabIndex = 567;
             // 
             // Panelcantidad
@@ -570,9 +576,9 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.Panelcantidad.Controls.Add(this.MenuStrip3);
             this.Panelcantidad.Controls.Add(this.txtcantidad);
             this.Panelcantidad.Controls.Add(this.Label9);
-            this.Panelcantidad.Location = new System.Drawing.Point(135, 28);
+            this.Panelcantidad.Location = new System.Drawing.Point(41, 28);
             this.Panelcantidad.Name = "Panelcantidad";
-            this.Panelcantidad.Size = new System.Drawing.Size(334, 141);
+            this.Panelcantidad.Size = new System.Drawing.Size(869, 164);
             this.Panelcantidad.TabIndex = 530;
             this.Panelcantidad.Visible = false;
             // 
@@ -582,7 +588,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
             this.Label7.ForeColor = System.Drawing.Color.Black;
             this.Label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Label7.Location = new System.Drawing.Point(19, 12);
+            this.Label7.Location = new System.Drawing.Point(35, 12);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(114, 36);
             this.Label7.TabIndex = 460;
@@ -663,6 +669,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             // 
             // txtcantidad
             // 
+            this.txtcantidad.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.txtcantidad.Location = new System.Drawing.Point(168, 57);
             this.txtcantidad.Name = "txtcantidad";
@@ -688,6 +695,9 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.datalistadoDetalleVenta.AllowUserToAddRows = false;
             this.datalistadoDetalleVenta.AllowUserToDeleteRows = false;
             this.datalistadoDetalleVenta.AllowUserToResizeRows = false;
+            this.datalistadoDetalleVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.datalistadoDetalleVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.datalistadoDetalleVenta.BackgroundColor = System.Drawing.Color.White;
             this.datalistadoDetalleVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -705,7 +715,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.datalistadoDetalleVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Devolver});
             this.datalistadoDetalleVenta.GridColor = System.Drawing.Color.Gainsboro;
-            this.datalistadoDetalleVenta.Location = new System.Drawing.Point(30, 87);
+            this.datalistadoDetalleVenta.Location = new System.Drawing.Point(44, 87);
             this.datalistadoDetalleVenta.Name = "datalistadoDetalleVenta";
             this.datalistadoDetalleVenta.ReadOnly = true;
             this.datalistadoDetalleVenta.RowHeadersVisible = false;
@@ -714,7 +724,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.datalistadoDetalleVenta.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.datalistadoDetalleVenta.RowTemplate.Height = 36;
             this.datalistadoDetalleVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistadoDetalleVenta.Size = new System.Drawing.Size(464, 219);
+            this.datalistadoDetalleVenta.Size = new System.Drawing.Size(866, 181);
             this.datalistadoDetalleVenta.TabIndex = 530;
             this.datalistadoDetalleVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistadoDetalleVenta_CellClick);
             // 
@@ -741,7 +751,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.lblvuelto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblvuelto.ForeColor = System.Drawing.Color.Black;
             this.lblvuelto.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblvuelto.Location = new System.Drawing.Point(359, 370);
+            this.lblvuelto.Location = new System.Drawing.Point(469, 370);
             this.lblvuelto.Name = "lblvuelto";
             this.lblvuelto.Size = new System.Drawing.Size(20, 17);
             this.lblvuelto.TabIndex = 460;
@@ -753,7 +763,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.lblpagocon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblpagocon.ForeColor = System.Drawing.Color.Black;
             this.lblpagocon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblpagocon.Location = new System.Drawing.Point(359, 347);
+            this.lblpagocon.Location = new System.Drawing.Point(469, 347);
             this.lblpagocon.Name = "lblpagocon";
             this.lblpagocon.Size = new System.Drawing.Size(20, 17);
             this.lblpagocon.TabIndex = 460;
@@ -765,7 +775,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lbltotal.ForeColor = System.Drawing.Color.Black;
             this.lbltotal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbltotal.Location = new System.Drawing.Point(358, 322);
+            this.lbltotal.Location = new System.Drawing.Point(468, 322);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(20, 17);
             this.lbltotal.TabIndex = 460;
@@ -777,11 +787,23 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.LBLTipodePagoOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.LBLTipodePagoOK.ForeColor = System.Drawing.Color.Black;
             this.LBLTipodePagoOK.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LBLTipodePagoOK.Location = new System.Drawing.Point(151, 461);
+            this.LBLTipodePagoOK.Location = new System.Drawing.Point(280, 463);
             this.LBLTipodePagoOK.Name = "LBLTipodePagoOK";
             this.LBLTipodePagoOK.Size = new System.Drawing.Size(104, 17);
             this.LBLTipodePagoOK.TabIndex = 460;
             this.LBLTipodePagoOK.Text = "Tipo de pago";
+            // 
+            // Label46
+            // 
+            this.Label46.AutoSize = true;
+            this.Label46.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.Label46.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Label46.Location = new System.Drawing.Point(220, 201);
+            this.Label46.Name = "Label46";
+            this.Label46.Size = new System.Drawing.Size(112, 13);
+            this.Label46.TabIndex = 2;
+            this.Label46.Text = "FECHA DE EMISION :";
+            this.Label46.Visible = false;
             // 
             // lblcajero
             // 
@@ -789,7 +811,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.lblcajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblcajero.ForeColor = System.Drawing.Color.Black;
             this.lblcajero.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblcajero.Location = new System.Drawing.Point(151, 434);
+            this.lblcajero.Location = new System.Drawing.Point(280, 436);
             this.lblcajero.Name = "lblcajero";
             this.lblcajero.Size = new System.Drawing.Size(60, 17);
             this.lblcajero.TabIndex = 460;
@@ -801,7 +823,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblfecha.ForeColor = System.Drawing.Color.Black;
             this.lblfecha.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblfecha.Location = new System.Drawing.Point(139, 209);
+            this.lblfecha.Location = new System.Drawing.Point(293, 214);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(43, 17);
             this.lblfecha.TabIndex = 460;
@@ -813,7 +835,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.lblcomprobante.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblcomprobante.ForeColor = System.Drawing.Color.Black;
             this.lblcomprobante.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblcomprobante.Location = new System.Drawing.Point(27, 28);
+            this.lblcomprobante.Location = new System.Drawing.Point(170, 28);
             this.lblcomprobante.Name = "lblcomprobante";
             this.lblcomprobante.Size = new System.Drawing.Size(76, 17);
             this.lblcomprobante.TabIndex = 460;
@@ -824,7 +846,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.Label21.AutoSize = true;
             this.Label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.Label21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Label21.Location = new System.Drawing.Point(46, 462);
+            this.Label21.Location = new System.Drawing.Point(175, 464);
             this.Label21.Name = "Label21";
             this.Label21.Size = new System.Drawing.Size(99, 13);
             this.Label21.TabIndex = 2;
@@ -835,7 +857,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.Label22.AutoSize = true;
             this.Label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.Label22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Label22.Location = new System.Drawing.Point(86, 437);
+            this.Label22.Location = new System.Drawing.Point(215, 439);
             this.Label22.Name = "Label22";
             this.Label22.Size = new System.Drawing.Size(59, 13);
             this.Label22.TabIndex = 2;
@@ -846,7 +868,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.Label23.AutoSize = true;
             this.Label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.Label23.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Label23.Location = new System.Drawing.Point(82, 414);
+            this.Label23.Location = new System.Drawing.Point(211, 416);
             this.Label23.Name = "Label23";
             this.Label23.Size = new System.Drawing.Size(63, 13);
             this.Label23.TabIndex = 2;
@@ -857,7 +879,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.lblcliente.AutoSize = true;
             this.lblcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblcliente.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblcliente.Location = new System.Drawing.Point(151, 414);
+            this.lblcliente.Location = new System.Drawing.Point(280, 416);
             this.lblcliente.Name = "lblcliente";
             this.lblcliente.Size = new System.Drawing.Size(144, 13);
             this.lblcliente.TabIndex = 2;
@@ -868,7 +890,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.Label24.AutoSize = true;
             this.Label24.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.Label24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Label24.Location = new System.Drawing.Point(309, 372);
+            this.Label24.Location = new System.Drawing.Point(419, 372);
             this.Label24.Name = "Label24";
             this.Label24.Size = new System.Drawing.Size(44, 13);
             this.Label24.TabIndex = 2;
@@ -879,7 +901,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.Label32.AutoSize = true;
             this.Label32.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.Label32.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Label32.Location = new System.Drawing.Point(310, 326);
+            this.Label32.Location = new System.Drawing.Point(420, 326);
             this.Label32.Name = "Label32";
             this.Label32.Size = new System.Drawing.Size(43, 13);
             this.Label32.TabIndex = 2;
@@ -890,28 +912,17 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.Label33.AutoSize = true;
             this.Label33.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.Label33.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Label33.Location = new System.Drawing.Point(294, 349);
+            this.Label33.Location = new System.Drawing.Point(404, 349);
             this.Label33.Name = "Label33";
             this.Label33.Size = new System.Drawing.Size(59, 13);
             this.Label33.TabIndex = 2;
             this.Label33.Text = "Pago con:";
             // 
-            // Label46
-            // 
-            this.Label46.AutoSize = true;
-            this.Label46.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.Label46.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Label46.Location = new System.Drawing.Point(26, 211);
-            this.Label46.Name = "Label46";
-            this.Label46.Size = new System.Drawing.Size(112, 13);
-            this.Label46.TabIndex = 2;
-            this.Label46.Text = "FECHA DE EMISION :";
-            // 
             // Label47
             // 
             this.Label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Label47.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Label47.Location = new System.Drawing.Point(63, 477);
+            this.Label47.Location = new System.Drawing.Point(173, 477);
             this.Label47.Name = "Label47";
             this.Label47.Size = new System.Drawing.Size(389, 25);
             this.Label47.TabIndex = 2;
@@ -922,7 +933,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             // 
             this.Label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Label48.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Label48.Location = new System.Drawing.Point(60, 396);
+            this.Label48.Location = new System.Drawing.Point(170, 396);
             this.Label48.Name = "Label48";
             this.Label48.Size = new System.Drawing.Size(389, 10);
             this.Label48.TabIndex = 2;
@@ -934,7 +945,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.ClientSize = new System.Drawing.Size(1191, 807);
+            this.ClientSize = new System.Drawing.Size(1348, 807);
             this.Controls.Add(this.panelDetalle);
             this.Controls.Add(this.Pcancelado);
             this.Controls.Add(this.panelBienvenida);

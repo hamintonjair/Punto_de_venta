@@ -104,7 +104,7 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             this.panelConceptos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
             this.panelConceptos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelConceptos.Controls.Add(this.panelConceptos2);
-            this.panelConceptos.Location = new System.Drawing.Point(420, 37);
+            this.panelConceptos.Location = new System.Drawing.Point(416, 23);
             this.panelConceptos.Name = "panelConceptos";
             this.panelConceptos.Size = new System.Drawing.Size(364, 177);
             this.panelConceptos.TabIndex = 541;
@@ -134,6 +134,7 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             // btnguardarConceptos
             // 
             this.btnguardarConceptos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.btnguardarConceptos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguardarConceptos.FlatAppearance.BorderSize = 0;
             this.btnguardarConceptos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnguardarConceptos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -148,6 +149,7 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(213, 80);
@@ -189,7 +191,7 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             this.txtdescripcionConcepto.BackColor = System.Drawing.Color.White;
             this.txtdescripcionConcepto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdescripcionConcepto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtdescripcionConcepto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtdescripcionConcepto.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtdescripcionConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtdescripcionConcepto.ForeColor = System.Drawing.Color.Black;
             this.txtdescripcionConcepto.Location = new System.Drawing.Point(18, 47);
@@ -392,7 +394,7 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             this.txtBuscarconcepto.BackColor = System.Drawing.Color.White;
             this.txtBuscarconcepto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscarconcepto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBuscarconcepto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtBuscarconcepto.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBuscarconcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtBuscarconcepto.ForeColor = System.Drawing.Color.Black;
             this.txtBuscarconcepto.Location = new System.Drawing.Point(4, 30);
@@ -415,6 +417,7 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             // GuardarRegistro
             // 
             this.GuardarRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(1)))));
+            this.GuardarRegistro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GuardarRegistro.FlatAppearance.BorderSize = 0;
             this.GuardarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GuardarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -429,6 +432,7 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             // btnvolver
             // 
             this.btnvolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnvolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnvolver.FlatAppearance.BorderSize = 0;
             this.btnvolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnvolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -506,6 +510,7 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             // 
             this.txtnrocomprobante.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtnrocomprobante.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtnrocomprobante.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtnrocomprobante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtnrocomprobante.Location = new System.Drawing.Point(190, 49);
             this.txtnrocomprobante.Margin = new System.Windows.Forms.Padding(4);
@@ -517,6 +522,7 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             // 
             this.btnComprobante.AutoSize = true;
             this.btnComprobante.BackColor = System.Drawing.Color.Transparent;
+            this.btnComprobante.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnComprobante.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
             this.btnComprobante.ForeColor = System.Drawing.Color.Red;
             this.btnComprobante.Location = new System.Drawing.Point(9, 277);
@@ -545,6 +551,7 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             // 
             // txtfecha
             // 
+            this.txtfecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtfecha.Location = new System.Drawing.Point(125, 45);
@@ -556,6 +563,7 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             // 
             this.txtdetalle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtdetalle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtdetalle.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtdetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdetalle.Location = new System.Drawing.Point(125, 77);
             this.txtdetalle.Margin = new System.Windows.Forms.Padding(4);
@@ -594,6 +602,7 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             // txtimporte
             // 
             this.txtimporte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtimporte.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtimporte.Font = new System.Drawing.Font("Arial", 12F);
             this.txtimporte.Location = new System.Drawing.Point(125, 8);
             this.txtimporte.Margin = new System.Windows.Forms.Padding(4);

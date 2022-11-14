@@ -101,6 +101,7 @@ namespace Punto_de_venta.Presentacion.BalanzaElectronica
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.BackgroundImage = global::Punto_de_venta.Properties.Resources.negro;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -143,6 +144,7 @@ namespace Punto_de_venta.Presentacion.BalanzaElectronica
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = global::Punto_de_venta.Properties.Resources.Rojo;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -204,6 +206,7 @@ namespace Punto_de_venta.Presentacion.BalanzaElectronica
             this.btnProbar.BackColor = System.Drawing.Color.Transparent;
             this.btnProbar.BackgroundImage = global::Punto_de_venta.Properties.Resources.azul1;
             this.btnProbar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnProbar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProbar.FlatAppearance.BorderSize = 0;
             this.btnProbar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnProbar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -251,6 +254,7 @@ namespace Punto_de_venta.Presentacion.BalanzaElectronica
             // 
             // cbListarPuertos
             // 
+            this.cbListarPuertos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbListarPuertos.FormattingEnabled = true;
             this.cbListarPuertos.Location = new System.Drawing.Point(393, 117);
             this.cbListarPuertos.Name = "cbListarPuertos";

@@ -161,7 +161,7 @@
             this.textBox13.Style.Font.Bold = true;
             this.textBox13.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox13.StyleName = "";
-            this.textBox13.Value = "Existencias";
+            this.textBox13.Value = "SALDO";
             // 
             // pageHeaderSection1
             // 
@@ -420,7 +420,7 @@
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(1.788D), Telerik.Reporting.Drawing.Unit.Cm(0.516D));
             this.textBox26.StyleName = "";
-            this.textBox26.Value = "=Fields.Total";
+            this.textBox26.Value = "=Fields.Totall";
             // 
             // textBox31
             // 

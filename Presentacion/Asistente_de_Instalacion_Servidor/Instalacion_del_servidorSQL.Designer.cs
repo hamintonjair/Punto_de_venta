@@ -170,9 +170,9 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // 
             this.GroupBox6.Controls.Add(this.txtCrearUsuarioDb);
             this.GroupBox6.ForeColor = System.Drawing.Color.White;
-            this.GroupBox6.Location = new System.Drawing.Point(510, 202);
+            this.GroupBox6.Location = new System.Drawing.Point(495, 217);
             this.GroupBox6.Name = "GroupBox6";
-            this.GroupBox6.Size = new System.Drawing.Size(233, 306);
+            this.GroupBox6.Size = new System.Drawing.Size(202, 257);
             this.GroupBox6.TabIndex = 633;
             this.GroupBox6.TabStop = false;
             this.GroupBox6.Text = "Servira para Crear un Usuario para el Servidor - NO TOCAR";
@@ -183,7 +183,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtCrearUsuarioDb.Location = new System.Drawing.Point(3, 16);
             this.txtCrearUsuarioDb.Multiline = true;
             this.txtCrearUsuarioDb.Name = "txtCrearUsuarioDb";
-            this.txtCrearUsuarioDb.Size = new System.Drawing.Size(227, 287);
+            this.txtCrearUsuarioDb.Size = new System.Drawing.Size(196, 238);
             this.txtCrearUsuarioDb.TabIndex = 629;
             this.txtCrearUsuarioDb.Text = resources.GetString("txtCrearUsuarioDb.Text");
             // 
@@ -211,7 +211,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtArgumentosini.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtArgumentosini.Location = new System.Drawing.Point(28, 391);
             this.txtArgumentosini.Name = "txtArgumentosini";
-            this.txtArgumentosini.Size = new System.Drawing.Size(624, 216);
+            this.txtArgumentosini.Size = new System.Drawing.Size(438, 216);
             this.txtArgumentosini.TabIndex = 589;
             this.txtArgumentosini.Text = resources.GetString("txtArgumentosini.Text");
             // 
@@ -227,7 +227,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel10.Controls.Add(this.txtservidor);
             this.Panel10.Controls.Add(this.seg3);
             this.Panel10.Controls.Add(this.mil3);
-            this.Panel10.Location = new System.Drawing.Point(320, 19);
+            this.Panel10.Location = new System.Drawing.Point(333, 19);
             this.Panel10.Name = "Panel10";
             this.Panel10.Size = new System.Drawing.Size(332, 174);
             this.Panel10.TabIndex = 608;
@@ -396,7 +396,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.lblnombredeservicio.Name = "lblnombredeservicio";
             this.lblnombredeservicio.Size = new System.Drawing.Size(134, 20);
             this.lblnombredeservicio.TabIndex = 621;
-            this.lblnombredeservicio.Text = "JOJAMA";
+            this.lblnombredeservicio.Text = "SQLEXPRESS";
             // 
             // Label11
             // 
@@ -561,7 +561,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(280, 64);
             this.Label2.TabIndex = 619;
-            this.Label2.Text = "Tiempo estimado: 6 minutos";
+            this.Label2.Text = "Tiempo estimado: 5 a 10 minutos";
             this.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Label1

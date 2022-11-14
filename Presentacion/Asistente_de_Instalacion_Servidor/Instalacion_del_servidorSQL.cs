@@ -26,6 +26,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
 
             centrarPaneles();
             Reemplazar();
+            MessageBox.Show("Espere por favor, se validará si hay servidor instalado...", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             comprobar_si_ya_hay_servidor_instalado_SQL_EXPRESS();
             Conectar();          
 
@@ -39,15 +40,13 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             }
         }
         private void comprobar_si_ya_hay_servidor_instalado_SQL_NORMAL()
-        {
-            MessageBox.Show("Espere por favor, se esta validando si hay servidor instalado...");
+        {            
             txtservidor.Text = ".";
             ejecutar_scryt_ELIMINARBase_comprobacion_de_inicio();
             ejecutar_scryt_crearBase_comprobacion_De_inicio();
         }
-        private void comprobar_si_ya_hay_servidor_instalado_SQL_EXPRESS()
-        {
-            MessageBox.Show("Espere por favor, se esta validando si hay servidor instalado...");
+        private void comprobar_si_ya_hay_servidor_instalado_SQL_EXPRESS()        {
+            
             txtservidor.Text = @".\" + lblnombredeservicio.Text;
             ejecutar_scryt_ELIMINARBase_comprobacion_de_inicio();
             ejecutar_scryt_crearBase_comprobacion_De_inicio();
@@ -74,11 +73,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             Panel4.Visible = false;
             Panel4.Dock = DockStyle.None;
         }
-        private void comprobar_si_ya_hay_servidor_instalado()
-        {
-            ejecutar_scryt_ELIMINARBase_comprobacion_de_inicio();
-            ejecutar_scryt_crearBase_comprobacion_De_inicio();
-        }
+    
         private void ejecutar_scryt_ELIMINARBase_comprobacion_de_inicio()
         {
             string str;
@@ -129,6 +124,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
         private ConexionDt.AES aes = new ConexionDt.AES(); 
         private void ejecutar_scryt_crearBase_comprobacion_De_inicio()
         {
+          
             var cnn = new SqlConnection("Server=" + txtservidor.Text + "; " + "database=master; integrated security=yes");
             string s = "CREATE DATABASE " + TXTbasededatos.Text;
             var cmd = new SqlCommand(s, cnn);
@@ -147,7 +143,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             }
             catch (Exception ex)
             {
-                this.Cursor = Cursors.Default;
+                this.Cursor = Cursors.Hand;
                 Panel6.Visible = true;
                 Button2.Visible = true;
                 Panel4.Visible = false;
@@ -223,6 +219,10 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            instalar();
+        }
+        public void instalar()
+        {
             try
             {
                 txtArgumentosini.Text = txtArgumentosini.Text.Replace("PRUEBAFINAL22", lblnombredeservicio.Text);
@@ -243,7 +243,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             try
             {
                 Process Pross = new Process();
-                Pross.StartInfo.FileName = "SQLEXPR_x64_ESN.exe";
+                Pross.StartInfo.FileName = "SQLEXPR_x86_ENU.exe";// sigue en la version expañol, YA ESTA para igles
                 Pross.StartInfo.Arguments = "/ConfigurationFile=ConfigurationFile.ini /ACTION=Install /IACCEPTSQLSERVERLICENSETERMS /SECURITYMODE=SQL /SAPWD=" + lblcontraseña.Text + " /SQLSYSADMINACCOUNTS=" + nombre_del_equipo_usuario;
 
                 Pross.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
@@ -297,9 +297,9 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             string rutaPREPARAR;
             StreamWriter sw;
             rutaPREPARAR = Path.Combine(Directory.GetCurrentDirectory(), "ConfigurationFile.ini");
-            rutaPREPARAR = rutaPREPARAR.Replace("ConfigurationFile.ini", @"SQLEXPR_x64_ESN\ConfigurationFile.ini");
+            rutaPREPARAR = rutaPREPARAR.Replace("ConfigurationFile.ini", @"SQLEXPR_x86_ENU\ConfigurationFile.ini");// AQUI TAMBIEN listo para ingles
 
-
+            //donde estas creando el instalador?
             if (File.Exists(rutaPREPARAR) == true)
             {
                 TimerCRARINI.Stop();
@@ -344,14 +344,15 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
 
             if (minutos1 == 1)
             {
-
+               
                 ejecutar_scryt_ELIMINARBase();
                 ejecutar_scryt_crearBase();
 
-            }
+            }           
         }
         private void ejecutar_scryt_crearBase()
         {
+          
             var cnn = new SqlConnection("Server=" + txtservidor.Text + "; " + "database=master; integrated security=yes");
             string s = "CREATE DATABASE " + TXTbasededatos.Text;
             var cmd = new SqlCommand(s, cnn);
@@ -373,7 +374,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
                     cnn.Close();
             }
         }
-
+        public static int variableMI;
         private void timer2_Tick(object sender, EventArgs e)
         {
             milisegundo1 += 1;
@@ -384,26 +385,27 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
                 seg.Text = Convert.ToString(segundos1);
 
                 milisegundo1 = 0;
-
             }
+          
 
             if (segundos1 == 60)
             {
-                minutos1 += 1;
+                minutos1 += 1;              
 
                 min.Text = Convert.ToString(minutos1);
                 segundos1 = 0;
             }
-
-            if (minutos1 == 6)
+          
+            if (minutos1 > 7 )
             {
                 timer2.Enabled = false;
-
+            
                 ejecutar_scryt_ELIMINARBase();
                 ejecutar_scryt_crearBase();
 
                 timer3.Start();
-            }
+            }          
+
         }
     }
 }

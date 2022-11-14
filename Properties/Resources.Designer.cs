@@ -323,6 +323,16 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logoJOJAMA11 {
+            get {
+                object obj = ResourceManager.GetObject("logoJOJAMA11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logoJOJAMA2 {
             get {
                 object obj = ResourceManager.GetObject("logoJOJAMA2", resourceCulture);

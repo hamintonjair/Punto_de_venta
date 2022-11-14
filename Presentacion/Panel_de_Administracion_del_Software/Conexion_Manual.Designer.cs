@@ -123,6 +123,7 @@ namespace Punto_de_venta.Panel_de_Administracion_del_Software
             this.btnSave.BackColor = System.Drawing.Color.Transparent;
             this.btnSave.BackgroundImage = global::Punto_de_venta.Properties.Resources.verde;
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);

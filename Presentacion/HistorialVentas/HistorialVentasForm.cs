@@ -73,6 +73,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             txtcantidad.Focus();
             Panelcantidad.Location = new Point(lblcomprobante.Location.X, lblcomprobante.Location.Y);
             Panelcantidad.Size = new Size(466, 474);
+            datalistadoDetalleVenta.Visible = false;
             Panelcantidad.Visible = true;
             Panelcantidad.BringToFront();
 
@@ -106,6 +107,8 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             DataTable dt = new DataTable();
             Obtener_datos.MostrarDetalleVenta(ref dt, idventa);
             datalistadoDetalleVenta.DataSource = dt;
+            //datalistadoDetalleVenta.Columns[4].Visible = false;
+            datalistadoDetalleVenta.Columns[5].Visible = false;
             datalistadoDetalleVenta.Columns[6].Visible = false;
             datalistadoDetalleVenta.Columns[7].Visible = false;
             datalistadoDetalleVenta.Columns[8].Visible = false;
@@ -117,6 +120,17 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
             datalistadoDetalleVenta.Columns[14].Visible = false;
             datalistadoDetalleVenta.Columns[15].Visible = false;
             datalistadoDetalleVenta.Columns[16].Visible = false;
+            datalistadoDetalleVenta.Columns[17].Visible = false;
+            datalistadoDetalleVenta.Columns[18].Visible = false;
+            datalistadoDetalleVenta.Columns[19].Visible = true;
+            datalistadoDetalleVenta.Columns[22].Visible = false;
+            datalistadoDetalleVenta.Columns[23].Visible = true;
+            datalistadoDetalleVenta.Columns[24].Visible = false;
+            datalistadoDetalleVenta.Columns[25].Visible = false;
+            datalistadoDetalleVenta.Columns[26].Visible = false;
+            datalistadoDetalleVenta.Columns[27].Visible = false;
+
+
             Bases.Multilinea(ref datalistadoDetalleVenta);
 
         }
@@ -231,6 +245,7 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
         private void btnVolver_Click(object sender, EventArgs e)
         {
             Panelcantidad.Visible = false;
+            datalistadoDetalleVenta.Visible = true;
         }
 
         private void txtcantidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -299,13 +314,22 @@ namespace Punto_de_venta.Presentacion.HistorialVentas
         {
             try
             {
+
+                //TXTTOTAL.Text = Convert.ToString(total);
+                //TXTTOTAL.Text = decimal.Parse(TXTTOTAL.Text).ToString("##0.00");
+                //int numero = Convert.ToInt32(Math.Floor(Convert.ToDouble(total)));
+                //TXTTOTAL_STRING = ConexionDt.total_en_letras.Num2Text(numero);
+                //string[] a = TXTTOTAL.Text.Split('.');
+                //txttotaldecimal.Text = a[1];
+                //txtnumeroconvertidoenletra.Text = TXTTOTAL_STRING + " CON " + txttotaldecimal.Text + "/100 ";
+
                 TotalNuevo = Convert.ToDouble(lbltotal.Text);
                 int numero = Convert.ToInt32(Math.Floor(TotalNuevo));
                 TotalenterosString = total_en_letras.Num2Text(numero);
-                string[] a = lbltotal.Text.Split('.');
-                string TotalDecimales;
-                TotalDecimales = a[1];
-                TotalEnLetras = TotalenterosString + " CON " + TotalDecimales + "/100";
+                //string[] a = lbltotal.Text.Split('.');
+                //string TotalDecimales;
+                //TotalDecimales = a[1];
+                TotalEnLetras = TotalenterosString + /*" CON "*//* + TotalDecimales +*/ "/100";
             }
             catch (Exception ex)
             {

@@ -31,8 +31,16 @@ namespace Punto_de_venta.Presentacion.Productos
                     ruta = folderBrowserDialog1.SelectedPath + "ProductosJojama.xlsx";
                     SLDocument NombredeExcel = new SLDocument();
                     System.Data.DataTable dt = new System.Data.DataTable();
-                    dt.Columns.Add("Descripcion", typeof(string));
                     dt.Columns.Add("Codigo", typeof(string));
+                    dt.Columns.Add("Descripcion", typeof(string));
+                    dt.Columns.Add("Precio_de_compra", typeof(string));                  
+                    dt.Columns.Add("Precio_de_venta", typeof(string));
+                    dt.Columns.Add("Cantidad", typeof(string));
+                    dt.Columns.Add("Stock", typeof(string));
+                    dt.Columns.Add("Stock_minimo", typeof(string));
+                    dt.Columns.Add("Impuesto", typeof(string)); 
+
+
                     NombredeExcel.ImportDataTable(1, 1, dt, true);
                     NombredeExcel.SaveAs(ruta);
                     MessageBox.Show("Plantilla Obtenida ubicala en: " + ruta, "Archivo Excel Creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -122,7 +130,7 @@ namespace Punto_de_venta.Presentacion.Productos
             {
                 MessageBox.Show("Archivo Inexistente", "CSV Inexistente");
             }
-
+  
             try
             {
                 foreach (DataGridViewRow row in datalistado.Rows)
@@ -130,6 +138,14 @@ namespace Punto_de_venta.Presentacion.Productos
                     rellenar_vacios();
                     string CODIGO = Convert.ToString(row.Cells["Codigo"].Value);
                     string descripcion = Convert.ToString(row.Cells["Descripcion"].Value);
+                    string precio_de_compra = Convert.ToString(row.Cells["Precio_de_compra"].Value);                  
+                    string precio_de_venta = Convert.ToString(row.Cells["Precio_de_venta"].Value);
+                    string impuesto = Convert.ToString(row.Cells["Impuesto"].Value);
+                    string stock = Convert.ToString(row.Cells["Stock"].Value);
+                    string stock_minimo = Convert.ToString(row.Cells["Stock_minimo"].Value);
+                    string cantidad = Convert.ToString(row.Cells["Cantidad"].Value);
+
+
                     SqlCommand cmd;
                     ConexionDt.ConexionData.conectar.Open();
                     cmd = new SqlCommand("insertar_Producto_Importacion", ConexionDt.ConexionData.conectar);
@@ -137,24 +153,24 @@ namespace Punto_de_venta.Presentacion.Productos
                     cmd.Parameters.AddWithValue("@Descripcion", descripcion);
                     cmd.Parameters.AddWithValue("@Imagen", ".");
                     cmd.Parameters.AddWithValue("@Usa_inventarios", "SI");
-                    cmd.Parameters.AddWithValue("@Stock", 0);
-                    cmd.Parameters.AddWithValue("@Precio_de_compra", 0);
+                    cmd.Parameters.AddWithValue("@Stock", stock);
+                    cmd.Parameters.AddWithValue("@Precio_de_compra", precio_de_compra);
                     cmd.Parameters.AddWithValue("@Fecha_de_vencimiento", "NO APLICA");
-                    cmd.Parameters.AddWithValue("@Precio_de_venta", 0);
+                    cmd.Parameters.AddWithValue("@Precio_de_venta", precio_de_venta);
                     cmd.Parameters.AddWithValue("@Codigo", CODIGO);
 
                     cmd.Parameters.AddWithValue("@Se_vende_a", "Unidad");
-                    cmd.Parameters.AddWithValue("@Impuesto", 0);
-                    cmd.Parameters.AddWithValue("@Stock_minimo", 0);
+                    cmd.Parameters.AddWithValue("@Impuesto", impuesto);
+                    cmd.Parameters.AddWithValue("@Stock_minimo", stock_minimo);
                     cmd.Parameters.AddWithValue("@Precio_mayoreo", 0);
                     cmd.Parameters.AddWithValue("@A_partir_de", 0);
                     cmd.Parameters.AddWithValue("@Fecha", DateTime.Today);
                     cmd.Parameters.AddWithValue("@Motivo", "Registro inicial de Producto");
-                    cmd.Parameters.AddWithValue("@Cantidad", 0);
-                    cmd.Parameters.AddWithValue("@Id_usuario", Productoss.idusuario);
+                    cmd.Parameters.AddWithValue("@Cantidad", cantidad);
+                    cmd.Parameters.AddWithValue("@Id_usuario", Productos.idusuario);
                     cmd.Parameters.AddWithValue("@Tipo", "ENTRADA");
                     cmd.Parameters.AddWithValue("@Estado", "CONFIRMADO");
-                    cmd.Parameters.AddWithValue("@Id_caja", Productoss.idcaja);
+                    cmd.Parameters.AddWithValue("@Id_caja", Productos.idcaja);
                     cmd.ExecuteNonQuery();
                     ConexionDt.ConexionData.conectar.Close();
 
@@ -180,6 +196,31 @@ namespace Punto_de_venta.Presentacion.Productos
                 {
                     row.Cells["Codigo"].Value = "VACIO@";
                 }
+                if (row.Cells["Precio_de_compra"].Value.ToString() == "")
+                {
+                    row.Cells["Precio_de_compra"].Value = "VACIO@";
+                }
+                if (row.Cells["Precio_de_venta"].Value.ToString() == "")
+                {
+                    row.Cells["Precio_de_venta"].Value = "VACIO@";
+                }
+                if (row.Cells["cantidad"].Value.ToString() == "")
+                {
+                    row.Cells["cantidad"].Value = "VACIO@";
+                }
+                if (row.Cells["Stock"].Value.ToString() == "")
+                {
+                    row.Cells["Stock"].Value = "VACIO@";
+                }
+                if (row.Cells["Stock_minimo"].Value.ToString() == "")
+                {
+                    row.Cells["Stock_minimo"].Value = "VACIO@";
+                }
+                if (row.Cells["Impuesto"].Value.ToString() == "")
+                {
+                    row.Cells["Impuesto"].Value = "VACIO@";
+                }
+           
             }
         }
 

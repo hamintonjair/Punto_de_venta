@@ -72,7 +72,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
 			{
-                MessageBox.Show(ex.StackTrace);
+                //MessageBox.Show(ex.StackTrace);
                 MessageBox.Show(FechaInicial.ToString());
 
             }

@@ -1,20 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Globalization;
-using System.IO.Ports;
-using System.Linq;
-using System.Management;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Punto_de_venta.Datos;
 using Punto_de_venta.Logica;
-using Punto_de_venta.Presentacion;
 
 
 namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
@@ -24,6 +14,10 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         public Ventas_Menu_Princi()
         {
             InitializeComponent();
+            BTNTECLADO.Focus();
+            BTNTECLADO.Focus();
+
+
         }
         int contador_stock_detalle_de_venta;
         int idproducto;
@@ -33,13 +27,21 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         int iddetalleventa;
         int Contador;
         public static double txtpantalla;
+        double ValorIva_5;
+        double ValorIva_19;
+        double sinIvas;
+        double subTotal;
         double lblStock_de_Productos;
         public static double total;
+        public static double valorTotalImportiva19;
+        public static double valorTotalImportiva5;
+        public static double SinIVA;
         public static int Id_caja;
         double cantidad;
-        string SerialPC;      
+        string SerialPC;
         string sevendePor;
         public static string txtventagenerada;
+        public static string txtventageneradaS;
         double txtprecio_unitarios;
         string lblusaInventarios;
         string Tema;
@@ -47,9 +49,21 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         int contadorVentasEspera;
         bool EstadoCobrar = false;
         int impuesto;
-        double subtotal;
+        int impuesto2;
+        int impuesto_final;
+
+ 
+        public static int IVA19;
+        public static int IVA5;
+    
+        public static double Basesin5;
+        public static double Basesin19;
+    
+
         string administrador = "Administrador (Control total)";
+        string cajero = "Cajero (¿Si estas autorizado para manejar dinero?)";
         Panel panel_mostrador_de_productos = new Panel();
+        Panel panel_mostrador_de_productos_inventario = new Panel();
 
 
 
@@ -62,17 +76,24 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         {
             if (LOGIN.lblRol == administrador)
             {
-                ToolStrip1.Visible = true;
+                paneladmin.Visible = true;
+                btnCreditoPagar.Enabled = true;
+                btnverMovimientosCaja.Enabled = true;
+                StatusStrip4.Enabled = true;
             }
-            else
+            if(LOGIN.lblRol == cajero)
             {
-                ToolStrip1.Visible = false;
+                btnverMovimientosCaja.Enabled = true;
+                StatusStrip4.Enabled = true;
+        
             }
+          
+            MenuStrip10.Visible = false;
 
             Bases.Cambiar_idioma_regional();
             Bases.Obtener_serialPC(ref SerialPC);
-            Obtener_datos.Obtener_id_caja_PorSerial(ref Id_caja);           
-          
+            Obtener_datos.Obtener_id_caja_PorSerial(ref Id_caja);
+
             Obtener_id_de_cliente_estandar();
 
             int id = Presentacion.LOGIN.idcajavariable;
@@ -87,14 +108,20 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
             try
             {
+
                 string Impuesto;
+                string Impuesto2;
                 Impuesto = "SELECT Porcentaje_Impuesto FROM EMPRESA";
+                Impuesto2 = "SELECT Porcentaje_otros_Impuesto FROM EMPRESA";
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = ConexionDt.ConexionData.conexion;
                 SqlCommand Porcentaje = new SqlCommand(Impuesto, con);
+                SqlCommand Porcentaje1 = new SqlCommand(Impuesto2, con);
                 con.Open();
-                lblIVA.Text = Porcentaje.ExecuteScalar().ToString();
-                impuesto = Convert.ToInt32(lblIVA.Text);
+                lblIVA19.Text = Porcentaje.ExecuteScalar().ToString();
+                lblIVA5.Text = Porcentaje1.ExecuteScalar().ToString();
+                impuesto2 = Convert.ToInt32(lblIVA5.Text);
+                impuesto = Convert.ToInt32(lblIVA19.Text);
                 con.Close();
 
             }
@@ -115,8 +142,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
 
             limpiar_para_venta_nueva();
-            ObtenerIpLocal();      
-                                   
+            ObtenerIpLocal();
+
         }
         private void ContarVentasEspera()
         {
@@ -178,43 +205,134 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             idVenta = 0;
             Listarproductosagregados();
             txtventagenerada = "VENTA NUEVA";
+            txtventageneradaS = "COTIZACIÓN";
             Sumar();
             PanelEnespera.Visible = false;
             panelBienvenida.Visible = true;
             ContarVentasEspera();
             PanelOperaciones.Visible = false;
+            Listarproductosagregados();
         }
+
+
+        double valorTotalUnitarioiva19;
+        double valorTotalUnitarioiva5;    
+        double sub19;
+        double subt5;
+
+        double iva;
+        double TOTA5;
+        double TOTAL19;
         private void Sumar()
         {
             try
             {
-
                 int x;
                 x = datalistadoDetalleVenta.Rows.Count;
                 if (x == 0)
                 {
                     txt_total_suma.Text = "0.00";
+                    lblsubtotalIVA19.Text = "0.00";
+                    lblIVA19.Text = "0";
+                    lblIVA5.Text = "0";
+                    lblvalorIVA19.Text = "0.00";
                 }
 
-                double totalpagar;
-                totalpagar = 0;
-                foreach (DataGridViewRow fila in datalistadoDetalleVenta.Rows)
+                double total;
+                total = 0;
+                double iva19;
+                iva19 = 0;
+                double iva5;
+                iva5 = 0;
+                double sinIVA;
+                sinIVA = 0;
+                double masiva;
+                double base5;
+                base5 = 0;
+                double base19;
+                base19 = 0;
+
+                if (impuesto_final == impuesto)
                 {
+                    foreach (DataGridViewRow fila in datalistadoDetalleVenta.Rows)
+                    {
+                        total += Convert.ToDouble(fila.Cells["Vlor_Total"].Value);
+                        txt_total_suma.Text = total.ToString("N0");
 
-                    totalpagar += Convert.ToDouble(fila.Cells["Importe"].Value);
-                    txt_total_suma.Text = Convert.ToString(totalpagar);
+                        iva19 += Convert.ToDouble(fila.Cells["Vlor_IVA_19"].Value);
+                        valorTotalUnitarioiva19 = iva19;
+                        IVA19 = impuesto_final;
+                        lblIVA19.Text = IVA19.ToString();
+                        base19 += Convert.ToDouble(fila.Cells["Base_Gravable19"].Value);
+                        TOTAL19 = base19;
+
+                    }
 
                 }
+                if (impuesto_final == impuesto2)
+                {
+                    foreach (DataGridViewRow fila in datalistadoDetalleVenta.Rows)
+                    {
+                        total += Convert.ToDouble(fila.Cells["Vlor_Total"].Value);
+                        txt_total_suma.Text = total.ToString("N0");
+
+                        iva5 += Convert.ToDouble(fila.Cells["Vlor_IVA_5"].Value);
+                        valorTotalUnitarioiva5 = iva5;
+                        IVA5 = impuesto_final;
+                        lblIVA5.Text = IVA5.ToString();
+                        base5 += Convert.ToDouble(fila.Cells["Base_Gravable5"].Value);
+                        TOTA5 = base5;
+                    }
+                }
+                if (impuesto_final == 0)
+
+                {
+                    foreach (DataGridViewRow fila in datalistadoDetalleVenta.Rows)
+                    {
+
+                        total += Convert.ToDouble(fila.Cells["Vlor_Total"].Value);
+                        txt_total_suma.Text = total.ToString("N0");
+
+                        sinIVA += Convert.ToDouble(fila.Cells["V_ttSin_IVA"].Value);
+                        iva = sinIVA;
+
+                        if (id19 == impuesto)
+                        {
+
+                            iva19 += Convert.ToDouble(fila.Cells["Vlor_IVA_19"].Value);
+                            valorTotalUnitarioiva19 = iva19;                 
+                            IVA19 = id19;
+
+                            base19 += Convert.ToDouble(fila.Cells["Base_Gravable19"].Value);
+                            TOTAL19 = base19;
+                        }
+                        if (id15 == impuesto2)
+                        {
+
+                            iva5 += Convert.ToDouble(fila.Cells["Vlor_IVA_5"].Value);
+                            valorTotalUnitarioiva5 = iva5;
+                            IVA5 = id15;
+
+                            base5 += Convert.ToDouble(fila.Cells["Base_Gravable5"].Value);
+                            TOTA5 = base5;
+
+                        }
+
+                    }
+
+                }
+
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
-        }  
-       
+
+        }
+
         string Tipo_de_busqueda;
-       
+
         private void Obtener_id_de_cliente_estandar()
         {
             SqlConnection con = new SqlConnection();
@@ -239,7 +357,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 DataTable dt = new DataTable();
                 SqlDataAdapter da;
                 ConexionDt.ConexionData.abrir();
-               
+
                 da = new SqlDataAdapter("BUSCAR_PRODUCTOS_oka", ConexionDt.ConexionData.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@letrab", txtbuscar.Text);
@@ -257,18 +375,20 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 DATALISTADO_PRODUCTOS_OKA.Columns[8].Visible = false;
                 DATALISTADO_PRODUCTOS_OKA.Columns[9].Visible = false;
                 DATALISTADO_PRODUCTOS_OKA.Columns[10].Visible = false;
+                DATALISTADO_PRODUCTOS_OKA.Columns[11].Visible = false;
+
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show("");
             }
             Logica.Bases.Multilinea(ref DATALISTADO_PRODUCTOS_OKA);
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Productos.Productoss frm = new Productos.Productoss();
+            Productos.Productos frm = new Productos.Productos();
             frm.ShowDialog();
         }
 
@@ -279,13 +399,12 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             frm.ShowDialog();
         }
 
-       
+
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-           
             if (Tipo_de_busqueda == "LECTORA")
             {
-              
+
                 ValidarVentasNuevas();
                 lbltipodebusqueda2.Visible = false;
                 TimerBUSCADORcodigodebarras.Start();
@@ -304,9 +423,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 }
                 LISTAR_PRODUCTOS_Abuscador();
             }
-           
+
         }
-      
+
         private void mostrar_productos()
         {
             panel_mostrador_de_productos.Size = new System.Drawing.Size(372, 185);
@@ -335,17 +454,15 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 Limpiar_para_venta_nueva();
             }
         }
-    
+
         private void vender_a_granel()
         {
-     
             CANTIDAD_A_GRANEL frm = new CANTIDAD_A_GRANEL();
             frm.preciounitario = txtprecio_unitarios;
             frm.FormClosing += Frm_FormClosing;
             frm.ShowDialog();
-          
         }
-     
+
         private void Frm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ejecutar_ventas_a_granel();
@@ -353,17 +470,21 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         public void ejecutar_ventas_a_granel()
         {
-
             ejecutar_insertar_ventas();
-            if (txtventagenerada== "VENTA GENERADA")
+            if (txtventagenerada == "VENTA GENERADA")
             {
                 insertar_detalle_venta();
                 Listarproductosagregados();
                 txtbuscar.Text = "";
                 txtbuscar.Focus();
-
             }
-
+            if (txtventagenerada == "COTIZACIÓN")
+            {
+                ejecutar_insertar_ventas_cot();
+                Listarproductosagregados();
+                txtbuscar.Text = "";
+                txtbuscar.Focus();
+            }
         }
         private void contar_stock_detalle_ventas()
         {
@@ -386,8 +507,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 da.Fill(dt);
                 datalistado_stock_detalle_venta.DataSource = dt;
                 con.Close();
-
-
             }
             catch (Exception ex)
             {
@@ -399,19 +518,36 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         {
             try
             {
-                if (txtbuscar.Text == DATALISTADO_PRODUCTOS_OKA.SelectedCells[10].Value.ToString())
+                if (MenuStrip10.Visible == true & txtbuscar.Text == DATALISTADO_PRODUCTOS_OKA.SelectedCells[10].Value.ToString())
                 {
                     DATALISTADO_PRODUCTOS_OKA.Visible = true;
-                    ejecutar_insertar_ventas();
-                    if (txtventagenerada == "VENTA GENERADA")
+                     ejecutar_insertar_ventas_cot();
+                    if (txtventageneradaS == "COTIZACIÓN GENERADA")
                     {
+                        
                         insertar_detalle_venta();
                         Listarproductosagregados();
                         txtbuscar.Text = "";
                         txtbuscar.Focus();
-
+                    }
+                    
+                }
+                else
+                {
+                    if (txtbuscar.Text == DATALISTADO_PRODUCTOS_OKA.SelectedCells[10].Value.ToString())
+                    {
+                        DATALISTADO_PRODUCTOS_OKA.Visible = true;
+                        ejecutar_insertar_ventas();
+                        if (txtventagenerada == "VENTA GENERADA")
+                        {
+                            insertar_detalle_venta();
+                            Listarproductosagregados();
+                            txtbuscar.Text = "";
+                            txtbuscar.Focus();
+                        }
                     }
                 }
+
             }
             catch (Exception ex)
             {
@@ -420,6 +556,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         }
         private void ejecutar_insertar_ventas()
         {
+            int impu = 0;
             if (txtventagenerada == "VENTA NUEVA")
             {
                 try
@@ -436,14 +573,56 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                     cmd.Parameters.AddWithValue("@montototal", 0);
                     cmd.Parameters.AddWithValue("@Tipo_de_pago", 0);
                     cmd.Parameters.AddWithValue("@estado", "EN ESPERA");
-                    cmd.Parameters.AddWithValue("@IGV", 0);
+
+                    if (impuesto_final == impuesto)
+                    {
+                        cmd.Parameters.AddWithValue("@ValorIVA5", 0);
+                        cmd.Parameters.AddWithValue("@ValorIVA19", valorTotalImportiva19);
+                        cmd.Parameters.AddWithValue("@Sin_IVA", 0);
+                        cmd.Parameters.AddWithValue("@Base5", 0);
+                        cmd.Parameters.AddWithValue("@Base19", sub19);
+                    }
+                    if (impuesto_final == impuesto2)
+                    {
+                        cmd.Parameters.AddWithValue("@ValorIVA5", valorTotalImportiva5);
+                        cmd.Parameters.AddWithValue("@ValorIVA19", 0);
+                        cmd.Parameters.AddWithValue("@Sin_IVA", 0);
+                        cmd.Parameters.AddWithValue("@Base5", subt5);
+                        cmd.Parameters.AddWithValue("@Base19", 0);
+                    }
+                    if (impuesto_final == impu)
+                    {
+                        cmd.Parameters.AddWithValue("@ValorIVA5", 0);
+                        cmd.Parameters.AddWithValue("@ValorIVA19", 0);
+                        cmd.Parameters.AddWithValue("@Sin_IVA", 0);
+                        cmd.Parameters.AddWithValue("@Base5", 0);
+                        cmd.Parameters.AddWithValue("@Base19", 0);
+                    }
+
+
                     cmd.Parameters.AddWithValue("@Comprobante", 0);
                     cmd.Parameters.AddWithValue("@id_usuario", idusuario_que_inicio_sesion);
                     cmd.Parameters.AddWithValue("@Fecha_de_pago", DateTime.Today);
                     cmd.Parameters.AddWithValue("@ACCION", "VENTA");
                     cmd.Parameters.AddWithValue("@Saldo", 0);
                     cmd.Parameters.AddWithValue("@Pago_con", 0);
-                    cmd.Parameters.AddWithValue("@Porcentaje_IGV", impuesto);
+
+                    if (impuesto_final == impuesto)
+                    {
+                        cmd.Parameters.AddWithValue("@Porcentaje_IVA_5", impu);
+                        cmd.Parameters.AddWithValue("@Porcentaje_IVA_19", impuesto_final);
+                    }
+                    if (impuesto_final == impuesto2)
+                    {
+                        cmd.Parameters.AddWithValue("@Porcentaje_IVA_5", impuesto_final);
+                        cmd.Parameters.AddWithValue("@Porcentaje_IVA_19", impu);
+                    }
+                    if (impuesto_final == impu)
+                    {
+                        cmd.Parameters.AddWithValue("@Porcentaje_IVA_5", 0);
+                        cmd.Parameters.AddWithValue("@Porcentaje_IVA_19", 0);
+                    }
+
                     cmd.Parameters.AddWithValue("@Id_caja", Id_caja);
                     cmd.Parameters.AddWithValue("@Referencia_tarjeta", 0);
                     cmd.ExecuteNonQuery();
@@ -457,10 +636,96 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 {
                     MessageBox.Show("insertar_venta");
                 }
+            }
+
+        }
+
+        private void ejecutar_insertar_ventas_cot()
+        {
+            int impu = 0;
+            if (txtventageneradaS == "COTIZACIÓN")
+            {
+                try
+                {
+                    SqlConnection con = new SqlConnection();
+                    con.ConnectionString = ConexionDt.ConexionData.conexion;
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd = new SqlCommand("insertar_venta", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idcliente", idClienteEstandar);
+                    cmd.Parameters.AddWithValue("@fecha_venta", DateTime.Today);
+                    cmd.Parameters.AddWithValue("@nume_documento", 0);
+                    cmd.Parameters.AddWithValue("@montototal", 0);
+                    cmd.Parameters.AddWithValue("@Tipo_de_pago", 0);
+                    cmd.Parameters.AddWithValue("@estado", "COTIZACION");
+                    if (impuesto_final == impuesto)
+                    {
+                        cmd.Parameters.AddWithValue("@ValorIVA5", 0);
+                        cmd.Parameters.AddWithValue("@ValorIVA19", valorTotalImportiva19);
+                        cmd.Parameters.AddWithValue("@Sin_IVA", 0);
+                        cmd.Parameters.AddWithValue("@Base5", 0);
+                        cmd.Parameters.AddWithValue("@Base19", sub19);
+                    }
+                    if (impuesto_final == impuesto2)
+                    {
+                        cmd.Parameters.AddWithValue("@ValorIVA5", valorTotalImportiva5);
+                        cmd.Parameters.AddWithValue("@ValorIVA19", 0);
+                        cmd.Parameters.AddWithValue("@Sin_IVA", 0);
+                        cmd.Parameters.AddWithValue("@Base5", subt5);
+                        cmd.Parameters.AddWithValue("@Base19", 0);
+                    }
+                    if (impuesto_final == impu)
+                    {
+                        cmd.Parameters.AddWithValue("@ValorIVA5", 0);
+                        cmd.Parameters.AddWithValue("@ValorIVA19", 0);
+                        cmd.Parameters.AddWithValue("@Sin_IVA", 0);
+                        cmd.Parameters.AddWithValue("@Base5", 0);
+                        cmd.Parameters.AddWithValue("@Base19", 0);
+                    }
+
+                    cmd.Parameters.AddWithValue("@Comprobante", 0);
+                    cmd.Parameters.AddWithValue("@id_usuario", idusuario_que_inicio_sesion);
+                    cmd.Parameters.AddWithValue("@Fecha_de_pago", DateTime.Today);
+                    cmd.Parameters.AddWithValue("@ACCION", "COTIZACIÓN");
+                    cmd.Parameters.AddWithValue("@Saldo", 0);
+                    cmd.Parameters.AddWithValue("@Pago_con", 0);
+
+                    if (impuesto_final == impuesto)
+                    {
+
+                        cmd.Parameters.AddWithValue("@Porcentaje_IVA_5", impu);
+                        cmd.Parameters.AddWithValue("@Porcentaje_IVA_19", impuesto_final);
+                    }
+                    if (impuesto_final == impuesto2)
+                    {
+                        cmd.Parameters.AddWithValue("@Porcentaje_IVA_5", impuesto_final);
+                        cmd.Parameters.AddWithValue("@Porcentaje_IVA_19", impu);
+                    }
+                    if (impuesto_final == impu)
+                    {
+                        cmd.Parameters.AddWithValue("@Porcentaje_IVA_5", 0);
+                        cmd.Parameters.AddWithValue("@Porcentaje_IVA_19", 0);
+                    }
+                    cmd.Parameters.AddWithValue("@Id_caja", Id_caja);
+                    cmd.Parameters.AddWithValue("@Referencia_tarjeta", 0);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    Obtener_id_venta_recien_Creada();
+                    txtventageneradaS = "COTIZACIÓN GENERADA";
+                    mostrar_panel_de_Cobro();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("insertar_cotizacion");
+                }
 
             }
+
         }
-        private void mostrar_panel_de_Cobro()
+    
+            public void mostrar_panel_de_Cobro()
         {
             panelBienvenida.Visible = false;
             PanelOperaciones.Visible = true;
@@ -476,6 +741,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             {
                 con.Open();
                 idVenta = Convert.ToInt32(com.ExecuteScalar());
+              
                 con.Close();
             }
             catch (Exception ex)
@@ -483,7 +749,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 MessageBox.Show("mostrar_id_venta_por_Id_caja");
             }
         }
-        private void Listarproductosagregados()
+        public void Listarproductosagregados()
         {
             try
             {
@@ -496,28 +762,56 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@idventa", idVenta);
                 da.Fill(dt);
+                
+                
                 datalistadoDetalleVenta.DataSource = dt;
                 con.Close();
-                datalistadoDetalleVenta.Columns[0].Width = 50;
-                datalistadoDetalleVenta.Columns[1].Width = 50;
-                datalistadoDetalleVenta.Columns[2].Width = 50;
-                datalistadoDetalleVenta.Columns[3].Visible = false;
+
+                if (MenuStrip10.Visible == true)
+                {
+                    datalistadoDetalleVenta.Columns[0].Visible = false;
+                    datalistadoDetalleVenta.Columns[1].Visible = false;
+                    datalistadoDetalleVenta.Columns[2].Visible = false;
+                }
+                else
+                {
+                    datalistadoDetalleVenta.Columns[0].Visible = true;
+                    datalistadoDetalleVenta.Columns[1].Visible = true;
+                    datalistadoDetalleVenta.Columns[2].Visible = true;
+                    datalistadoDetalleVenta.Columns[0].Width = 50;
+                    datalistadoDetalleVenta.Columns[1].Width = 50;
+                    datalistadoDetalleVenta.Columns[2].Width = 50;
+                }
+               
+                datalistadoDetalleVenta.Columns[3].Width = 50;
                 datalistadoDetalleVenta.Columns[4].Width = 250;
-                datalistadoDetalleVenta.Columns[5].Width = 100;
-                datalistadoDetalleVenta.Columns[6].Width = 100;
-                datalistadoDetalleVenta.Columns[7].Width = 100;
+                datalistadoDetalleVenta.Columns[5].Width = 25;
+                datalistadoDetalleVenta.Columns[6].Visible = true;
+                datalistadoDetalleVenta.Columns[7].Visible = false;
                 datalistadoDetalleVenta.Columns[8].Visible = false;
-                datalistadoDetalleVenta.Columns[9].Visible = false;
+                datalistadoDetalleVenta.Columns[9].Width = datalistadoDetalleVenta.Width - (datalistadoDetalleVenta.Columns[0].Width - datalistadoDetalleVenta.Columns[1].Width - datalistadoDetalleVenta.Columns[2].Width - datalistadoDetalleVenta.Columns[3].Width- datalistadoDetalleVenta.Columns[4].Width - datalistadoDetalleVenta.Columns[5].Width - datalistadoDetalleVenta.Columns[7].Width - datalistadoDetalleVenta.Columns[14].Width);
                 datalistadoDetalleVenta.Columns[10].Visible = false;
-                datalistadoDetalleVenta.Columns[11].Width = datalistadoDetalleVenta.Width - (datalistadoDetalleVenta.Columns[0].Width - datalistadoDetalleVenta.Columns[1].Width - datalistadoDetalleVenta.Columns[2].Width -
-                  datalistadoDetalleVenta.Columns[4].Width - datalistadoDetalleVenta.Columns[5].Width - datalistadoDetalleVenta.Columns[6].Width - datalistadoDetalleVenta.Columns[7].Width);
+                datalistadoDetalleVenta.Columns[11].Visible = false;
                 datalistadoDetalleVenta.Columns[12].Visible = false;
                 datalistadoDetalleVenta.Columns[13].Visible = false;
-                datalistadoDetalleVenta.Columns[14].Visible = false;
+                datalistadoDetalleVenta.Columns[14].Width = 100;
                 datalistadoDetalleVenta.Columns[15].Visible = false;
-                datalistadoDetalleVenta.Columns[16].Visible = false;
-                datalistadoDetalleVenta.Columns[17].Visible = false;
-                datalistadoDetalleVenta.Columns[18].Visible = false;
+                datalistadoDetalleVenta.Columns[16].Visible = true;
+                datalistadoDetalleVenta.Columns[17].Visible = true;
+                datalistadoDetalleVenta.Columns[18].Visible = true;       
+                datalistadoDetalleVenta.Columns[19].Visible = false;
+                datalistadoDetalleVenta.Columns[20].Visible = false;
+                datalistadoDetalleVenta.Columns[21].Visible = true;
+                datalistadoDetalleVenta.Columns[22].Visible = false;
+                datalistadoDetalleVenta.Columns[23].Visible = false;
+                datalistadoDetalleVenta.Columns[24].Visible = false;
+                datalistadoDetalleVenta.Columns[25].Visible = true;
+                datalistadoDetalleVenta.Columns[26].Visible = false;
+                datalistadoDetalleVenta.Columns[27].Visible = false;
+                datalistadoDetalleVenta.Columns[28].Visible = false;
+                datalistadoDetalleVenta.Columns[29].Visible = false;
+              
+
                 if (Tema == "Redentor")
                 {
                     Bases.Multilinea2(ref datalistadoDetalleVenta);
@@ -528,13 +822,14 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                     Bases.MultilineaTemaOscuro(ref datalistadoDetalleVenta);
                 }
                 Sumar();
-
+          
+ 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.StackTrace);
-            }
-           
+            }    
+       
         }
    
         private void insertar_detalle_venta()
@@ -552,51 +847,104 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                         TimerLABEL_STOCK.Start();
                     }
                 }
-
                 else if (lblusaInventarios == "NO")
                 {
                     insertar_detalle_venta_SIN_VALIDAR();
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.StackTrace);
             }
-
         }
+
+
         private void insertar_detalle_venta_Validado()
         {
-            try
-            {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("insertar_detalle_venta", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idventa", idVenta);
-                cmd.Parameters.AddWithValue("@Id_presentacionfraccionada", idproducto);
-                cmd.Parameters.AddWithValue("@cantidad", txtpantalla);
-                cmd.Parameters.AddWithValue("@preciounitario", txtprecio_unitarios);
-                cmd.Parameters.AddWithValue("@moneda", 0);
-                cmd.Parameters.AddWithValue("@unidades", "Unidad");
-                cmd.Parameters.AddWithValue("@Cantidad_mostrada", txtpantalla);
-                cmd.Parameters.AddWithValue("@Estado", "EN ESPERA");
-                cmd.Parameters.AddWithValue("@Descripcion", lbldescripcion.Text);
-                cmd.Parameters.AddWithValue("@Codigo", lblcodigo.Text);
-                cmd.Parameters.AddWithValue("@Stock", lblStock_de_Productos);
-                cmd.Parameters.AddWithValue("@Se_vende_a", sevendePor);
-                cmd.Parameters.AddWithValue("@Usa_inventarios", lblusaInventarios);
-                cmd.Parameters.AddWithValue("@Costo", lblcosto.Text);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                disminuir_stock_en_detalle_de_venta();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.StackTrace + ex.Message);
-            }
+          
+                int impu = 0;
+                try
+                {
+                    SqlConnection con = new SqlConnection();
+                    con.ConnectionString = ConexionDt.ConexionData.conexion;
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd = new SqlCommand("insertar_detalle_venta", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idventa", idVenta);
+                    cmd.Parameters.AddWithValue("@fecha_venta", DateTime.Today);
+                    cmd.Parameters.AddWithValue("@Id_presentacionfraccionada", idproducto);
+                    cmd.Parameters.AddWithValue("@cantidad", txtpantalla);
+                    cmd.Parameters.AddWithValue("@preciounitario", txtprecio_unitarios);
+                    cmd.Parameters.AddWithValue("@moneda", 0);
+                    cmd.Parameters.AddWithValue("@unidades", "Unidad");
+                    cmd.Parameters.AddWithValue("@Cantidad_mostrada", txtpantalla);
+
+                    if (MenuStrip10.Visible == true)
+                    {
+                        cmd.Parameters.AddWithValue("@Estado", "COTIZACIÓN");
+                    }
+                    if (MenuStrip10.Visible == false)
+                    {
+                        cmd.Parameters.AddWithValue("@Estado", "EN ESPERA");
+                    }
+                
+                    cmd.Parameters.AddWithValue("@Descripcion", lbldescripcion.Text);
+                    cmd.Parameters.AddWithValue("@Codigo", lblcodigo.Text);
+                    cmd.Parameters.AddWithValue("@Stock", lblStock_de_Productos);
+                    cmd.Parameters.AddWithValue("@Se_vende_a", sevendePor);
+                    cmd.Parameters.AddWithValue("@Usa_inventarios", lblusaInventarios);
+                    cmd.Parameters.AddWithValue("@Costo", lblcosto.Text);                 
+
+
+                    if (impuesto_final == impuesto)
+                    {
+                        cmd.Parameters.AddWithValue("@IVA5", impu);
+                        cmd.Parameters.AddWithValue("@IVA19", impuesto_final);
+                        cmd.Parameters.AddWithValue("@Sub_total_variante", subTotal);
+                        cmd.Parameters.AddWithValue("@Sub_IVA_5", ValorIva_5);
+                        cmd.Parameters.AddWithValue("@Sub_IVA_19", ValorIva_19);
+                        cmd.Parameters.AddWithValue("@Sin_IVA", 0);
+                        cmd.Parameters.AddWithValue("@variante5", 0);
+                        cmd.Parameters.AddWithValue("@variante19", subTotal);
+                    }
+                    if (impuesto_final == impuesto2)
+                    {
+                        cmd.Parameters.AddWithValue("@IVA5", impuesto_final);
+                        cmd.Parameters.AddWithValue("@IVA19", 0);
+                        cmd.Parameters.AddWithValue("@Sub_total_variante", subTotal);
+                        cmd.Parameters.AddWithValue("@Sub_IVA_5", ValorIva_5);
+                        cmd.Parameters.AddWithValue("@Sub_IVA_19", ValorIva_19);
+                        cmd.Parameters.AddWithValue("@Sin_IVA", 0);
+                        cmd.Parameters.AddWithValue("@variante5", subTotal);
+                        cmd.Parameters.AddWithValue("@variante19", 0);
+                    }
+                    if (impuesto_final == impu)
+                    {
+                            cmd.Parameters.AddWithValue("@IVA5", 0);
+                            cmd.Parameters.AddWithValue("@IVA19", 0);
+                            cmd.Parameters.AddWithValue("@Sub_total_variante", subTotal);
+                            cmd.Parameters.AddWithValue("@Sub_IVA_5", 0);
+                            cmd.Parameters.AddWithValue("@Sub_IVA_19", 0);
+                            cmd.Parameters.AddWithValue("@Sin_IVA", sinIvas);
+                            cmd.Parameters.AddWithValue("@variante5", 0);
+                            cmd.Parameters.AddWithValue("@variante19", 0);
+                    }
+
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    if(MenuStrip10.Visible == false)
+                    {
+                        disminuir_stock_en_detalle_de_venta();
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.StackTrace + ex.Message);
+                }
+               
+
         }
     
         private void disminuir_stock_en_detalle_de_venta()
@@ -619,86 +967,158 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         }
         private void insertar_detalle_venta_SIN_VALIDAR()
         {
-            try
-            {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConexionDt.ConexionData.conexion;
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("insertar_detalle_venta", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idventa", idVenta);
-                cmd.Parameters.AddWithValue("@Id_presentacionfraccionada", idproducto);
-                cmd.Parameters.AddWithValue("@cantidad", txtpantalla);
-                cmd.Parameters.AddWithValue("@preciounitario", txtprecio_unitarios);
-                cmd.Parameters.AddWithValue("@moneda", 0);
-                cmd.Parameters.AddWithValue("@unidades", "Unidad");
-                cmd.Parameters.AddWithValue("@Cantidad_mostrada", txtpantalla);
-                cmd.Parameters.AddWithValue("@Estado", "EN ESPERA");
-                cmd.Parameters.AddWithValue("@Descripcion", lbldescripcion.Text);
-                cmd.Parameters.AddWithValue("@Codigo", lblcodigo.Text);
-                cmd.Parameters.AddWithValue("@Stock", lblStock_de_Productos);
-                cmd.Parameters.AddWithValue("@Se_vende_a", sevendePor);
-                cmd.Parameters.AddWithValue("@Usa_inventarios", lblusaInventarios);
-                cmd.Parameters.AddWithValue("@Costo", lblcosto.Text);
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.StackTrace + ex.Message);
-            }
-        }
-
-   
-
-        private void datalistadoDetalleVenta_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            Obtener_datos_del_detalle_de_venta();
-
-            if (e.ColumnIndex == this.datalistadoDetalleVenta.Columns["S"].Index)
-            {
-                txtpantalla = 1;
-              
-                editar_detalle_venta_sumar();
-                subtotalImpuesto();
-            }
-            if (e.ColumnIndex == this.datalistadoDetalleVenta.Columns["R"].Index)
-            {
-                txtpantalla = 1;
-                
-                editar_detalle_venta_restar();
-                EliminarVentas();
-                subtotalImpuesto();
-
-            }
-
-
-            if (e.ColumnIndex == this.datalistadoDetalleVenta.Columns["EL"].Index)
-            {
-                foreach (DataGridViewRow row in datalistadoDetalleVenta.SelectedRows)
+             int impu = 0;
+                try
                 {
-                    int iddetalle_venta = Convert.ToInt32(row.Cells["iddetalle_venta"].Value);
-                    try
+                    SqlConnection con = new SqlConnection();
+                    con.ConnectionString = ConexionDt.ConexionData.conexion;
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd = new SqlCommand("insertar_detalle_venta", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idventa", idVenta);
+                    cmd.Parameters.AddWithValue("@fecha_venta", DateTime.Today);
+                    cmd.Parameters.AddWithValue("@Id_presentacionfraccionada", idproducto);
+                    cmd.Parameters.AddWithValue("@cantidad", txtpantalla);
+                    cmd.Parameters.AddWithValue("@preciounitario", txtprecio_unitarios);
+                    cmd.Parameters.AddWithValue("@moneda", 0);
+                    cmd.Parameters.AddWithValue("@unidades", "Unidad");
+                    cmd.Parameters.AddWithValue("@Cantidad_mostrada", txtpantalla);
+                    cmd.Parameters.AddWithValue("@Estado", "EN ESPERA");
+                    cmd.Parameters.AddWithValue("@Descripcion", lbldescripcion.Text);
+                    cmd.Parameters.AddWithValue("@Codigo", lblcodigo.Text);
+                    cmd.Parameters.AddWithValue("@Stock", lblStock_de_Productos);
+                    cmd.Parameters.AddWithValue("@Se_vende_a", sevendePor);
+                    cmd.Parameters.AddWithValue("@Usa_inventarios", lblusaInventarios);
+                    cmd.Parameters.AddWithValue("@Costo", lblcosto.Text);
+
+                    if (impuesto_final == impuesto)
                     {
-                        SqlCommand cmd;
-                        SqlConnection con = new SqlConnection();
-                        con.ConnectionString = ConexionDt.ConexionData.conexion;
-                        con.Open();
-                        cmd = new SqlCommand("eliminar_detalle_venta", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@iddetalleventa", iddetalle_venta);
-                        cmd.ExecuteNonQuery();
-                        con.Close();
+                        cmd.Parameters.AddWithValue("@IVA5", impu);
+                        cmd.Parameters.AddWithValue("@IVA19", impuesto_final);
+                        cmd.Parameters.AddWithValue("@Sub_total_variante", subTotal);
+                        cmd.Parameters.AddWithValue("@Sub_IVA_5", ValorIva_5);
+                        cmd.Parameters.AddWithValue("@Sub_IVA_19", ValorIva_19);
+                        cmd.Parameters.AddWithValue("@Sin_IVA", 0);
+                        cmd.Parameters.AddWithValue("@variante5", 0);
+                        cmd.Parameters.AddWithValue("@variante19", subTotal);
                     }
-                    catch (Exception ex)
+                    if (impuesto_final == impuesto2)
                     {
-                        MessageBox.Show(ex.Message);
+                        cmd.Parameters.AddWithValue("@IVA5", impuesto_final);
+                        cmd.Parameters.AddWithValue("@IVA19", 0);
+                        cmd.Parameters.AddWithValue("@Sub_total_variante", subTotal);
+                        cmd.Parameters.AddWithValue("@Sub_IVA_5", ValorIva_5);
+                        cmd.Parameters.AddWithValue("@Sub_IVA_19", ValorIva_19);
+                        cmd.Parameters.AddWithValue("@Sin_IVA", 0);
+                        cmd.Parameters.AddWithValue("@variante5", subTotal);
+                        cmd.Parameters.AddWithValue("@variante19", 0);
                     }
+                    if (impuesto_final == impu)
+                    {
+                            cmd.Parameters.AddWithValue("@IVA5", 0);
+                            cmd.Parameters.AddWithValue("@IVA19", 0);
+                            cmd.Parameters.AddWithValue("@Sub_total_variante", subTotal);
+                            cmd.Parameters.AddWithValue("@Sub_IVA_5", 0);
+                            cmd.Parameters.AddWithValue("@Sub_IVA_19", 0);
+                            cmd.Parameters.AddWithValue("@Sin_IVA", sinIvas);
+                            cmd.Parameters.AddWithValue("@variante5", 0);
+                            cmd.Parameters.AddWithValue("@variante19", 0);
+                    }
+                                      
+
+                    cmd.ExecuteNonQuery();
+                    con.Close();
                 }
-                Listarproductosagregados();
-                EliminarVentas();
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.StackTrace + ex.Message);
+                }
+         }       
+           
+        
+
+ 
+        private void datalistadoDetalleVenta_CellClick(object sender, DataGridViewCellEventArgs e)  
+        {                 
+
+       
+            Obtener_datos_del_detalle_de_venta();
+         
+            if(MenuStrip10.Visible == true)
+            {               
+               
+                Listarproductosagregados();       
+            
+                
+            }
+            else
+            {
+                if (e.ColumnIndex == this.datalistadoDetalleVenta.Columns["S"].Index)
+                {
+
+                    txtpantalla = 1;
+                    editar_detalle_venta_sumar();
+
+
+                }
+                if (e.ColumnIndex == this.datalistadoDetalleVenta.Columns["R"].Index)
+                {
+                    txtpantalla = 1;
+                    impuesto_final = Convert.ToInt32(DATALISTADO_PRODUCTOS_OKA.SelectedCells[11].Value.ToString());
+
+                    editar_detalle_venta_restar();
+                    Eliminar_datos.eliminar_venta(idventa);
+
+
+                }
+
+                if (e.ColumnIndex == this.datalistadoDetalleVenta.Columns["EL"].Index)
+                {
+                    foreach (DataGridViewRow row in datalistadoDetalleVenta.SelectedRows)
+                    {
+                        int iddetalle_venta = Convert.ToInt32(row.Cells["iddetalle_venta"].Value);
+                        try
+                        {
+                            SqlCommand cmd;
+                            SqlConnection con = new SqlConnection();
+                            con.ConnectionString = ConexionDt.ConexionData.conexion;
+                            con.Open();
+                            cmd = new SqlCommand("eliminar_detalle_venta", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@iddetalleventa", iddetalle_venta);
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+
+                    Listarproductosagregados();
+                    EliminarVentas();
+                    //EliminardeVenta();
+                }
+
+            }
+
+           
+       
+            double TT;
+            double b5;
+            double b19;
+
+            b19 = valorTotalUnitarioiva19 + valorTotalUnitarioiva5;
+            TT = TOTA5 + TOTAL19 + iva;
+            lblsubtotalIVA19.Text = TT.ToString("N0");
+            lblvalorIVA19.Text = b19.ToString("N0");
+
+            if (datalistadoDetalleVenta.RowCount < 1)
+            {
+                PanelOperaciones.Visible = false;
+                panelBienvenida.Visible = true;
+                iva = 0.00;
             }
         }
         private void EliminarVentas()
@@ -710,15 +1130,35 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 Limpiar_para_venta_nueva();
             }
         }
+        int id19;
+        int id15;
+        int idventa;
+        int idvent;
+        double viva19;
+        double viva5;
+        double SINIVA;
+        double cost;  
+
         private void Obtener_datos_del_detalle_de_venta()
         {
+            
             try
             {
-                iddetalleventa = Convert.ToInt32(datalistadoDetalleVenta.SelectedCells[9].Value.ToString());
-                idproducto = Convert.ToInt32(datalistadoDetalleVenta.SelectedCells[8].Value.ToString());
-                sevendePor = datalistadoDetalleVenta.SelectedCells[17].Value.ToString();
-               lblusaInventarios = datalistadoDetalleVenta.SelectedCells[16].Value.ToString();
+                iddetalleventa = Convert.ToInt32(datalistadoDetalleVenta.SelectedCells[8].Value.ToString());
+                idproducto = Convert.ToInt32(datalistadoDetalleVenta.SelectedCells[7].Value.ToString());
+                idventa = Convert.ToInt32(datalistadoDetalleVenta.SelectedCells[8].Value.ToString());
+                sevendePor = datalistadoDetalleVenta.SelectedCells[14].Value.ToString();
+                lblcosto.Text = datalistadoDetalleVenta.SelectedCells[6].Value.ToString();
+                cost = Convert.ToDouble(lblcosto.Text);
+                lblusaInventarios = datalistadoDetalleVenta.SelectedCells[13].Value.ToString();
                 cantidad = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[5].Value);
+                id15 = Convert.ToInt32(datalistadoDetalleVenta.SelectedCells[16].Value.ToString());
+                id19 = Convert.ToInt32(datalistadoDetalleVenta.SelectedCells[17].Value.ToString());            
+                viva19 = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[24].Value.ToString());              
+                viva5 = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[23].Value.ToString());   
+                SINIVA = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[26].Value.ToString());
+            
+      
             }
             catch (Exception ex)
             {
@@ -730,8 +1170,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
            
             if (lblusaInventarios == "SI")
             {
-                lblStock_de_Productos = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[15].Value.ToString());
-                if (lblStock_de_Productos > 0)
+                
+                    lblStock_de_Productos = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[9].Value.ToString());
+     
+
+                if (lblStock_de_Productos > 0 )
                 {
 
                     ejecutar_editar_detalle_venta_sumar();
@@ -875,9 +1318,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                     {
                         eliminar_venta_al_agregar_productos();
                         txtventagenerada = "VENTA NUEVA";
+                        txtventageneradaS = "COTIZACIÓN";
                     }
                 }
             }
+          
         }
 
         private void btn1_Click(object sender, EventArgs e)
@@ -995,6 +1440,10 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                     lblcosto.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[5].Value.ToString();
                     txtprecio_unitarios =Convert.ToDouble( DATALISTADO_PRODUCTOS_OKA.SelectedCells[6].Value.ToString());
                     sevendePor = DATALISTADO_PRODUCTOS_OKA.SelectedCells[8].Value.ToString();
+                    impuesto_final = Convert.ToInt32(DATALISTADO_PRODUCTOS_OKA.SelectedCells[11].Value.ToString());
+                    subTotal = Convert.ToInt32(DATALISTADO_PRODUCTOS_OKA.SelectedCells[12].Value.ToString());
+                    ValorIva_5 = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[13].Value.ToString());
+                    ValorIva_19 = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[14].Value.ToString());
                     if (sevendePor == "Unidad")
                     {
                         txtpantalla = 1;
@@ -1028,14 +1477,13 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                         {
                             BotonCantidad();
 
-
                         }
                     }
                     else if (sevendePor == "Granel")
                     {
                         BotonCantidad();
                     }
-                    subtotalImpuesto();
+
                 }
                 else
                 {
@@ -1043,7 +1491,14 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                     txtmonto.Focus();
                 }
             }
+            double TT;
+            double b5;
+            double b19;
 
+            b19 = valorTotalUnitarioiva19 + valorTotalUnitarioiva5;
+            TT = TOTA5 + TOTAL19 + iva;
+            lblsubtotalIVA19.Text = TT.ToString("N0");
+            lblvalorIVA19.Text = b19.ToString("N0");
         }
         private void BotonCantidad()
         {
@@ -1073,8 +1528,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             else
             {
                 BotonCantidadEjecuta();
-            }
-
+            }    
 
         }
         private void BotonCantidadEjecuta()
@@ -1130,72 +1584,136 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             idVenta = 0;
             Listarproductosagregados();
             txtventagenerada = "VENTA NUEVA";
-            Sumar();
-            PanelEnespera.Visible = false;
-            ContarVentasEspera();
+            txtventageneradaS = "COTIZACIÓN";
+            Sumar();            
+            PanelEnespera.Visible = false;        
             panelBienvenida.Visible = true;
             PanelOperaciones.Visible = false;
+            ContarVentasEspera();
+            lblsubtotalIVA19.Text = "";
+            lblvalorIVA19.Text = "";
+            lblIVA19.Text = "";
+            lblIVA5.Text = "";
+            TOTA5 = 0;
+            TOTAL19 = 0;
+            iva = 0;
+            activado = "DESACTIVADO";
         }
 
         private void TimerLABEL_STOCK_Tick(object sender, EventArgs e)
         {
-            if (ProgressBarETIQUETA_STOCK.Value < 100)
+            if(MenuStrip10.Visible == true)
             {
-                ProgressBarETIQUETA_STOCK.Value = ProgressBarETIQUETA_STOCK.Value + 10;
-                LABEL_STOCK.Visible = true;
-                LABEL_STOCK.Dock = DockStyle.Fill;
+                if (ProgressBarETIQUETA_STOCK.Value < 100)
+                {
+                    ProgressBarETIQUETA_STOCK.Value = ProgressBarETIQUETA_STOCK.Value + 10;
+                    lblcoti.Visible = false;
+                    LABEL_STOCK.Visible = true;
+                    LABEL_STOCK.Dock = DockStyle.Fill;
+                }
+                else
+                {
+
+                    LABEL_STOCK.Visible = false;
+                    lblcoti.Visible = true;
+                    LABEL_STOCK.Dock = DockStyle.None;
+                    ProgressBarETIQUETA_STOCK.Value = 0;
+                    TimerLABEL_STOCK.Stop();
+                }
+            
             }
             else
             {
-                LABEL_STOCK.Visible = false;
-                LABEL_STOCK.Dock = DockStyle.None;
-                ProgressBarETIQUETA_STOCK.Value = 0;
-                TimerLABEL_STOCK.Stop();
+                if (ProgressBarETIQUETA_STOCK.Value < 100)
+                {
+                    ProgressBarETIQUETA_STOCK.Value = ProgressBarETIQUETA_STOCK.Value + 10;
+                    LABEL_STOCK.Visible = true;
+                    LABEL_STOCK.Dock = DockStyle.Fill;
+                }
+                else
+                {
+                    LABEL_STOCK.Visible = false;
+                    LABEL_STOCK.Dock = DockStyle.None;
+                    ProgressBarETIQUETA_STOCK.Value = 0;
+                    TimerLABEL_STOCK.Stop();
+                }
             }
+      
         }
 
         private void btEfectivo_Click(object sender, EventArgs e)
         {
-            Cobrar();
+            if(MenuStrip10.Visible==true)
+            {
+                MessageBox.Show("En el MODO COTIZADOR no puedes generar ventas, imprimir la cotización directa desde el boton IMPRIMIR ","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information );
+            }
+            else
+            {
+                Cobrar();
+            }
+            lblsubtotalIVA19.Text = "0.00";
+            lblvalorIVA19.Text = "0.00";
+            lblIVA19.Text = "0.00";
+            lblIVA5.Text = "0.00";
         }
+        public static string activado; 
         private void Cobrar()
         {
             if (datalistadoDetalleVenta.RowCount > 0)
             {
-                total = Convert.ToDouble(txt_total_suma.Text);
-                Ventas_Menu_Principal.MEDIOS_DE_PAGO frm = new Ventas_Menu_Principal.MEDIOS_DE_PAGO();
-                frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
-                frm.ShowDialog();
-            }
+                if(MenuStrip10.Visible==true)
+                {
+                    activado = "ACTIVADO";                
 
+                    total = Convert.ToDouble(txt_total_suma.Text);
+                    Ventas_Menu_Principal.MEDIOS_DE_PAGO frm = new Ventas_Menu_Principal.MEDIOS_DE_PAGO();
+                    frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
+                    frm.ShowDialog();
+                }
+            }
+            if (datalistadoDetalleVenta.RowCount > 0)
+            {
+                
+                    subt5 = Convert.ToDouble(TOTA5);
+                    sub19 = Convert.ToDouble(TOTAL19);
+
+                    total = Convert.ToDouble(txt_total_suma.Text);
+                    valorTotalImportiva19 = valorTotalUnitarioiva19;
+                    valorTotalImportiva5 = valorTotalUnitarioiva5;
+                    SinIVA = iva;
+                    Basesin5 = subt5;
+                    Basesin19 = sub19;
+                    Ventas_Menu_Principal.MEDIOS_DE_PAGO frm = new Ventas_Menu_Principal.MEDIOS_DE_PAGO();
+                    frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
+                    frm.ShowDialog();
+                
+            }
+                //Sumar();
+              
         }
+        
 
         private void DATALISTADO_PRODUCTOS_OKA_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            vender_por_teclado();
-            subtotalImpuesto();
+        
+            if (MenuStrip10.Visible ==true)
+            {
+                vender_por_teclado_coti();
+            }
+            else
+            {
+                vender_por_teclado();
+            }
            
         }
-        public void subtotalImpuesto()
-        {
-            String total = String.Format("{0},{1}", 1, lblIVA.Text);
-            double tot = Convert.ToDouble(txt_total_suma.Text) / (Convert.ToDouble(total));
-            double totall = tot * 100;
-            subtotal = Convert.ToDouble(txt_total_suma.Text) - totall;
-
-            lblsubtotal.Text = totall.ToString("N0");
-            double des=Convert.ToDouble(lblsubtotal.Text);
-            double to = Convert.ToDouble(txt_total_suma.Text);
-            double final = to - des;
-            lblvalorIva.Text =Convert.ToDouble(final).ToString();
-        }
-       
-        private void vender_por_teclado()
+   
+        private void vender_por_teclado_coti()
         {
             ValidarVentasNuevas();
             txtbuscar.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[10].Value.ToString();
             idproducto = Convert.ToInt32(DATALISTADO_PRODUCTOS_OKA.SelectedCells[1].Value.ToString());
-            // mostramos los registros del producto en el detalle de venta
+            impuesto_final = Convert.ToInt32(DATALISTADO_PRODUCTOS_OKA.SelectedCells[11].Value.ToString());
+            // mostramos los registros del producto en el detalle de venta          
             mostrar_stock_de_detalle_de_ventas();
             contar_stock_detalle_ventas();
 
@@ -1216,9 +1734,13 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             lblcosto.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[5].Value.ToString();
             sevendePor = DATALISTADO_PRODUCTOS_OKA.SelectedCells[8].Value.ToString();
             txtprecio_unitarios = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[6].Value.ToString());
-            //Preguntamos que tipo de producto sera el que se agrege al detalle de venta
+            subTotal = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[12].Value.ToString());
+            ValorIva_5 = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[13].Value.ToString());
+            ValorIva_19 = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[14].Value.ToString());
+            sinIvas = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[15].Value.ToString());
 
-           
+
+            //Preguntamos que tipo de producto sera el que se agrege al detalle de venta
 
             if (sevendePor == "Granel")
             {
@@ -1228,8 +1750,74 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             {
                 txtpantalla = 1;
                 vender_por_unidad();
-            }    
+            }
+            double TT;
+            double b5;
+            double b19;
 
+            b19 = valorTotalUnitarioiva19 + valorTotalUnitarioiva5;
+            TT = TOTA5 + TOTAL19 + iva + vtempo;
+            lblsubtotalIVA19.Text = TT.ToString("N0");
+            lblvalorIVA19.Text = b19.ToString("N0");
+            lblcoti.Visible = false;
+            lblcotizador.Visible = true;
+        }
+        private void vender_por_teclado()
+        {
+            ValidarVentasNuevas();
+            txtbuscar.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[10].Value.ToString();
+            idproducto = Convert.ToInt32(DATALISTADO_PRODUCTOS_OKA.SelectedCells[1].Value.ToString());
+            impuesto_final = Convert.ToInt32(DATALISTADO_PRODUCTOS_OKA.SelectedCells[11].Value.ToString());
+            // mostramos los registros del producto en el detalle de venta          
+            mostrar_stock_de_detalle_de_ventas();
+            contar_stock_detalle_ventas();
+
+            if (contador_stock_detalle_de_venta == 0)
+            {
+                // Si es producto no esta agregado a las ventas se tomara el Stock de la tabla Productos
+                lblStock_de_Productos = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[4].Value.ToString());
+            }
+            else
+            {
+                //en caso que el producto ya este agregado al detalle de venta se va a extraer el Stock de la tabla Detalle_de_venta
+                lblStock_de_Productos = Convert.ToDouble(datalistado_stock_detalle_venta.SelectedCells[1].Value.ToString());
+            }
+            //Extraemos los datos del producto de la tabla Productos directamente
+            lblusaInventarios = DATALISTADO_PRODUCTOS_OKA.SelectedCells[3].Value.ToString();
+            lbldescripcion.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[9].Value.ToString();
+            lblcodigo.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[10].Value.ToString();
+            lblcosto.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[5].Value.ToString();
+            sevendePor = DATALISTADO_PRODUCTOS_OKA.SelectedCells[8].Value.ToString();
+            txtprecio_unitarios = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[6].Value.ToString());
+            subTotal = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[12].Value.ToString());
+            ValorIva_5 = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[13].Value.ToString());
+            ValorIva_19 = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[14].Value.ToString());
+            sinIvas = Convert.ToDouble(DATALISTADO_PRODUCTOS_OKA.SelectedCells[15].Value.ToString());   
+        
+
+            //Preguntamos que tipo de producto sera el que se agrege al detalle de venta
+
+            if (sevendePor == "Granel")
+            {
+                vender_a_granel();
+            }
+            else if (sevendePor == "Unidad")
+            {
+                txtpantalla = 1;
+                vender_por_unidad();
+            }         
+            double TT;
+            double b5;
+            double b19;
+           
+            b19 = valorTotalUnitarioiva19 + valorTotalUnitarioiva5;       
+            
+
+                TT = TOTA5 + TOTAL19 + iva + vtempo;
+                lblsubtotalIVA19.Text = TT.ToString("N0");
+                lblvalorIVA19.Text = b19.ToString("N0");
+            
+         
         }
         private void btnespera_Click(object sender, EventArgs e)
         {
@@ -1248,23 +1836,42 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             frm.FormClosing += Frm_FormClosing1;
             frm.ShowDialog();
         }
+
+        double vtempo;
         private void Frm_FormClosing1(object sender, FormClosingEventArgs e)
         {
-            Listarproductosagregados();
-            mostrar_panel_de_Cobro();
-        }
-
+            Listarproductosagregados();       
+       
+            double tt;
+            double b19;
+            tt = TOTA5 + TOTAL19 + iva;
+            lblsubtotalIVA19.Text = tt.ToString("N0");
+            vtempo = tt;
+            vtempo = 0;
+            b19 = valorTotalUnitarioiva19 + valorTotalUnitarioiva5;
+            lblvalorIVA19.Text = b19.ToString("N0");
+        }        
+    
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            if (datalistadoDetalleVenta.RowCount > 0)
-            {
-                DialogResult pregunta = MessageBox.Show("¿Realmente desea eliminar esta Venta?", "Eliminando registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (pregunta == DialogResult.OK)
+            elimivarventas();
+        }
+        public void elimivarventas()
+        {
+         
+           
+          
+                if (datalistadoDetalleVenta.RowCount > 0)
                 {
-                    Eliminar_datos.eliminar_venta(idVenta);
-                    Limpiar_para_venta_nueva();
-                }
-            }
+                    DialogResult pregunta = MessageBox.Show("¿Realmente desea eliminar esta Venta?", "Eliminando registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (pregunta == DialogResult.OK)
+                    {
+                        Eliminar_datos.eliminar_venta(idVenta);
+                        Limpiar_para_venta_nueva();
+                    }
+                }           
+
+    
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -1272,6 +1879,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             if (!string.IsNullOrEmpty(txtnombre.Text))
             {
                 editarVentaEspera();
+                MessageBox.Show("Esta venta se mantendrá en espera por 15 minutos, Pasado ese tiempo no podrás recuperarlo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -1284,6 +1892,10 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             Editar_datos.ingresar_nombre_a_venta_en_espera(idVenta, txtnombre.Text);
             Limpiar_para_venta_nueva();
             ocularPanelenEspera();
+            lblsubtotalIVA19.Text = "0.00";
+            lblIVA19.Text = "0";
+            lblIVA5.Text = "0";
+            lblvalorIVA19.Text = "0.00";
         }
         private void button9_Click(object sender, EventArgs e)
         {
@@ -1294,11 +1906,12 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             PanelEnespera.Visible = false;
             PanelEnespera.Dock = DockStyle.None;
         }
-
+ 
         private void button6_Click(object sender, EventArgs e)
         {
-            txtnombre.Text = "Ticket" + idVenta;
+            txtnombre.Text = "Ticket" + idVenta;       
             editarVentaEspera();
+            MessageBox.Show("Esta venta se mantendrá en espera por 15 minutos, Pasado ese tiempo no podrás recuperarlo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnCreditoCobrar_Click(object sender, EventArgs e)
@@ -1362,8 +1975,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             ocultar_mostrar_productos();
             lbltipodebusqueda2.Text = "Buscar con LECTORA de Codigos de Barras";
             Tipo_de_busqueda = "LECTORA";
-            BTNLECTORA.BackColor = Color.LightGreen;
-            BTNTECLADO.BackColor = Color.WhiteSmoke;
+            activado2.Visible = true;
+            activado1.Visible = false;
+
             txtbuscar.Clear();
             txtbuscar.Focus();
         }
@@ -1376,17 +1990,13 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             ocultar_mostrar_productos();
             lbltipodebusqueda2.Text = "Buscar con TECLADO";
             Tipo_de_busqueda = "TECLADO";
-            BTNTECLADO.BackColor = Color.LightGreen;
-            BTNLECTORA.BackColor = Color.WhiteSmoke;
+            activado1.Visible = true;
+            activado2.Visible = false;                 
             txtbuscar.Clear();
             txtbuscar.Focus();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Cobros.CobrosForm frm = new Cobros.CobrosForm();
-            frm.ShowDialog();
-        }
+ 
 
         private void btnMayoreo_Click(object sender, EventArgs e)
         {
@@ -1418,7 +2028,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 if (funcion.editarPrecioVenta(parametros) == true)
                 {
                     Listarproductosagregados();
-                    subtotalImpuesto();
+                    //subtotalImpuesto();
                 }
             }
         }
@@ -1471,17 +2081,30 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             txtbuscar.ForeColor = Color.White;
             lbltipodebusqueda2.BackColor = Color.FromArgb(20, 20, 20);
             lbltipodebusqueda2.ForeColor = Color.Silver;
-            label15.ForeColor = Color.Silver;
-            panelc5.BackColor = Color.FromArgb(35, 35, 35);
+            label15.ForeColor = Color.Silver;    
+            BTNTECLADO.BackColor = Color.FromArgb(20, 20, 20);
+            BTNLECTORA.BackColor = Color.FromArgb(20, 20, 20);
+            BTNTECLADO.ForeColor = Color.White;
+            BTNLECTORA.ForeColor = Color.White;
+            lblContadorEspera.BackColor = Color.FromArgb(20, 20, 20);
+    
             lblpeso.ForeColor = Color.WhiteSmoke;
             Panel15.BackColor= Color.FromArgb(20, 20, 20);
+            button12.ForeColor = Color.FromArgb(20, 20, 20);          
+            MenuStrip10.BackColor = Color.FromArgb(20, 20, 20);
+            MenuStrip10.ForeColor = Color.White;       
+            lblcotireferencia.ForeColor = Color.White;
+            lblcotizador.ForeColor = Color.White;
             //datalistadoDetalleVenta.BackgroundColor = Color.Silver;
             LABEL_STOCK.BackColor = Color.Silver;
             //PanelC2 Intermedio
             panelc2.BackColor = Color.FromArgb(35, 35, 35);
-            button1.BackColor = Color.FromArgb(45, 45, 45);
-            button1.ForeColor = Color.White;
-           
+            Cobros.BackColor = Color.FromArgb(45, 45, 45);
+            Cobros.ForeColor = Color.White;
+            PagosProveedores.BackColor = Color.FromArgb(45, 45, 45);
+            PagosProveedores.ForeColor = Color.White;
+
+
 
 
             btnCreditoCobrar.BackColor = Color.FromArgb(45, 45, 45);
@@ -1490,7 +2113,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             btnCreditoPagar.ForeColor = Color.White;
 
             //PanelC3
-            Panelc3.BackColor = Color.FromArgb(35, 35, 35);
+           
             btnMayoreo.BackColor = Color.FromArgb(45, 45, 45);
             btnMayoreo.ForeColor = Color.White;
           
@@ -1517,9 +2140,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             panelBienvenida.BackColor = Color.FromArgb(35, 35, 35);
             label8.ForeColor = Color.WhiteSmoke;
             Listarproductosagregados();
-
-
-
         }
 
         private void desactivarTEMA_Click(object sender, EventArgs e)
@@ -1533,21 +2153,34 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private void TemaClaro()
         {
             //PanelC1 encabezado
-            Panelc1.BackColor = Color.FromArgb(245, 134, 52);
+            Panelc1.BackColor = Color.FromArgb(32, 106, 93);
             btnadmin.ForeColor = Color.Black;
             txtbuscar.BackColor = Color.White;
             txtbuscar.ForeColor = Color.Black;
             lbltipodebusqueda2.BackColor = Color.White;
             lbltipodebusqueda2.ForeColor = Color.DimGray;
-            label15.ForeColor = Color.Black;
-            panelc5.BackColor = Color.White;
+            label15.ForeColor = Color.Black;      
             lblpeso.ForeColor = Color.White;
             Panel15.BackColor = Color.FromArgb(231, 63, 67);
+            lblcotireferencia.ForeColor = Color.Black;
+            lblContadorEspera.BackColor = Color.Transparent;
+            lblcotizador.ForeColor = Color.Black;
+
+            MenuStrip10.BackColor = Color.FromArgb(32, 106, 93);
+            MenuStrip10.ForeColor = Color.White;            
+            BTNTECLADO.BackColor = Color.FromArgb(32, 106, 93);
+            BTNLECTORA.BackColor = Color.FromArgb(32, 106, 93);
+            BTNTECLADO.ForeColor = Color.White;
+            BTNLECTORA.ForeColor = Color.White;
             //PanelC2 intermedio
             panelc2.BackColor = Color.White;
-            button1.BackColor = Color.WhiteSmoke;
-            button1.ForeColor = Color.Black;
-           
+            Cobros.BackColor = Color.WhiteSmoke;
+            Cobros.ForeColor = Color.Black;
+            PagosProveedores.BackColor = Color.WhiteSmoke;
+            PagosProveedores.ForeColor = Color.Black;
+            button12.ForeColor = Color.Black;
+        
+
 
 
             btnCreditoCobrar.BackColor = Color.WhiteSmoke;
@@ -1556,7 +2189,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             btnCreditoPagar.ForeColor = Color.Black;
 
             //PanelC3
-            Panelc3.BackColor = Color.White;
+          
             btnMayoreo.BackColor = Color.WhiteSmoke;
            
             btnMayoreo.ForeColor = Color.Black;
@@ -1653,9 +2286,185 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         }
 
         private void datalistadoDetalleVenta_KeyDown(object sender, KeyEventArgs e)
-        {
+       {
             EventosTiposbusqueda(e);
             EventoCobros(e);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {    
+            Ventas_Menu_Principal.Ver_Productos_Inventario frm = new Ventas_Menu_Principal.Ver_Productos_Inventario();
+            frm.ShowDialog();
+        }      
+     
+        private void button12_Click(object sender, EventArgs e)
+        {
+
+
+            if (MenuStrip10.Visible == true & datalistadoDetalleVenta.RowCount > 0 )
+            {
+                DialogResult pregunta = MessageBox.Show("Se cerrara esta ventana y perderas la cotización", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (pregunta == DialogResult.OK)
+                {
+                    lblcoti.Visible = false;
+                    lblcoti.Dock = DockStyle.None;
+                    lblcotireferencia.Visible = false;
+                    MenuStrip10.Visible = false;
+                    Button22.Visible = true;
+                    btEfectivo.Visible = true;
+                    lblcotizador.Visible = false;
+                    Limpiar_para_venta_nueva();
+                    Listarproductosagregados();
+                    txtbuscar.Focus();
+
+                }
+                if (pregunta == DialogResult.Cancel)
+                {
+                    txtbuscar.Focus();
+                }
+
+            }
+            else if(MenuStrip10.Visible == true & datalistadoDetalleVenta.RowCount == 0)
+            {
+               
+                    lblcoti.Visible = false;
+                    lblcoti.Dock = DockStyle.None;
+                    lblcotireferencia.Visible = false;
+                    MenuStrip10.Visible = false;
+                    Button22.Visible = true;
+                    btEfectivo.Visible = true;
+                    lblcotizador.Visible = false;
+                    Limpiar_para_venta_nueva();
+                    Listarproductosagregados();
+                    txtbuscar.Focus();
+
+            }          
+            else if (datalistadoDetalleVenta.RowCount > 0)
+            {
+                DialogResult pregunta = MessageBox.Show("Pon en espera la venta antes de cerrar esta ventana", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (pregunta == DialogResult.OK)
+                {
+                    lblcoti.Visible = false;
+                    lblcoti.Dock = DockStyle.None;
+                    lblcotireferencia.Visible = false;
+                    MenuStrip10.Visible = false;
+                    Button22.Visible = true;
+                    btEfectivo.Visible = true;
+                    lblcotizador.Visible = false;
+                    Limpiar_para_venta_nueva();
+                    Listarproductosagregados();
+                    txtbuscar.Focus();
+                }
+                if (pregunta == DialogResult.Cancel)
+                {                 
+                    txtbuscar.Focus();
+                }
+            }               
+        
+        }
+
+        private void cotizador_Click(object sender, EventArgs e)
+        {
+
+
+            if (MenuStrip10.Visible == true & datalistadoDetalleVenta.RowCount > 0)
+            {
+                Cobrar();
+                Limpiar_para_venta_nueva();
+
+            }
+        }
+
+        private void btncotizador_Click(object sender, EventArgs e)
+        {
+            MenuStrip10.Visible = true;
+            MenuStrip10.Focus();
+            if (MenuStrip10.Visible == true & datalistadoDetalleVenta.RowCount > 0)
+            {
+                DialogResult pregunta = MessageBox.Show("Se cerrara esta ventana y perderas la cotización", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (pregunta == DialogResult.OK)
+                {                
+                 
+                    lblcoti.Visible = true;
+                    lblcoti.Dock = DockStyle.Fill;
+                    lblcotireferencia.Visible = true;
+                    MenuStrip10.Visible = true;
+                    Button22.Visible = false;
+                    btEfectivo.Visible = false;
+                    Limpiar_para_venta_nueva();
+                    Listarproductosagregados();
+                    txtbuscar.Focus();
+
+                }
+                if (pregunta == DialogResult.Cancel)
+                {
+                    MenuStrip10.Visible = false;
+                    txtbuscar.Focus();
+                }
+
+
+            }
+            else if (MenuStrip10.Visible == true & datalistadoDetalleVenta.RowCount == 0)
+            {
+
+             
+                lblcoti.Visible = true;
+                lblcoti.Dock = DockStyle.Fill;
+                lblcotireferencia.Visible = true;
+                MenuStrip10.Visible = true;
+                Button22.Visible = false;
+                btEfectivo.Visible = false;
+                Limpiar_para_venta_nueva();
+                Listarproductosagregados();
+            }
+            else if(datalistadoDetalleVenta.RowCount > 0)
+            {
+                DialogResult pregunta = MessageBox.Show("Pon en espera la venta antes de cerrar esta ventana", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (pregunta == DialogResult.OK)
+                {
+                
+                    lblcoti.Visible = true;
+                    lblcoti.Dock = DockStyle.Fill;
+                    lblcotireferencia.Visible = true;
+                    MenuStrip10.Visible = true;
+                    Button22.Visible = false;
+                    btEfectivo.Visible = false;
+                    Limpiar_para_venta_nueva();
+                }
+                if (pregunta == DialogResult.Cancel)
+                {
+                    MenuStrip10.Visible = false;
+                    txtbuscar.Focus();
+                }
+            }
+
+        }        //continuar para el proceso de cotizacion
+
+        private void btEfectivo_KeyDown(object sender, KeyEventArgs e)
+        {
+        
+        }
+
+        private void Cobros_Click(object sender, EventArgs e)
+        {
+            Cobros.CobrosForm frm = new Cobros.CobrosForm();
+            frm.ShowDialog();
+        }
+
+        private void PagosProveedores_Click(object sender, EventArgs e)
+        {
+            PagosProveedores.PagosForm frm = new PagosProveedores.PagosForm();
+            frm.ShowDialog();
         }
     }
 }

@@ -37,7 +37,9 @@ namespace Punto_de_venta.Presentacion.Reportes
             this.btnVentas = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Label66 = new System.Windows.Forms.Label();
+            this.PictureBox4 = new System.Windows.Forms.PictureBox();
             this.MenuStrip6 = new System.Windows.Forms.MenuStrip();
+            this.TFILTROS = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelProductos = new System.Windows.Forms.Panel();
             this.ReportViewer3 = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.FlowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -73,10 +75,9 @@ namespace Punto_de_venta.Presentacion.Reportes
             this.PVentasPorempleado = new System.Windows.Forms.Panel();
             this.PanelPorCobrarPagar = new System.Windows.Forms.Panel();
             this.reportViewer2 = new Telerik.ReportViewer.WinForms.ReportViewer();
-            this.TFILTROS = new System.Windows.Forms.ToolStripMenuItem();
-            this.PictureBox4 = new System.Windows.Forms.PictureBox();
             this.PanelBienvenida.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).BeginInit();
             this.MenuStrip6.SuspendLayout();
             this.PanelProductos.SuspendLayout();
             this.FlowLayoutPanel2.SuspendLayout();
@@ -91,7 +92,6 @@ namespace Punto_de_venta.Presentacion.Reportes
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.PanelPorCobrarPagar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelBienvenida
@@ -199,6 +199,18 @@ namespace Punto_de_venta.Presentacion.Reportes
             this.Label66.TabIndex = 612;
             this.Label66.Text = "Jojama";
             // 
+            // PictureBox4
+            // 
+            this.PictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBox4.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA2;
+            this.PictureBox4.Location = new System.Drawing.Point(4, 4);
+            this.PictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.PictureBox4.Name = "PictureBox4";
+            this.PictureBox4.Size = new System.Drawing.Size(62, 52);
+            this.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox4.TabIndex = 611;
+            this.PictureBox4.TabStop = false;
+            // 
             // MenuStrip6
             // 
             this.MenuStrip6.AutoSize = false;
@@ -213,6 +225,19 @@ namespace Punto_de_venta.Presentacion.Reportes
             this.MenuStrip6.Size = new System.Drawing.Size(121, 32);
             this.MenuStrip6.TabIndex = 613;
             this.MenuStrip6.Text = "MenuStrip6";
+            // 
+            // TFILTROS
+            // 
+            this.TFILTROS.BackColor = System.Drawing.Color.Transparent;
+            this.TFILTROS.Checked = true;
+            this.TFILTROS.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.TFILTROS.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold);
+            this.TFILTROS.ForeColor = System.Drawing.Color.DarkGray;
+            this.TFILTROS.Image = ((System.Drawing.Image)(resources.GetObject("TFILTROS.Image")));
+            this.TFILTROS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TFILTROS.Name = "TFILTROS";
+            this.TFILTROS.Size = new System.Drawing.Size(108, 28);
+            this.TFILTROS.Text = "Filtros";
             // 
             // PanelProductos
             // 
@@ -644,31 +669,6 @@ namespace Punto_de_venta.Presentacion.Reportes
             this.reportViewer2.TabIndex = 0;
             this.reportViewer2.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview;
             // 
-            // TFILTROS
-            // 
-            this.TFILTROS.BackColor = System.Drawing.Color.Transparent;
-            this.TFILTROS.Checked = true;
-            this.TFILTROS.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.TFILTROS.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold);
-            this.TFILTROS.ForeColor = System.Drawing.Color.DarkGray;
-            this.TFILTROS.Image = ((System.Drawing.Image)(resources.GetObject("TFILTROS.Image")));
-            this.TFILTROS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TFILTROS.Name = "TFILTROS";
-            this.TFILTROS.Size = new System.Drawing.Size(108, 28);
-            this.TFILTROS.Text = "Filtros";
-            // 
-            // PictureBox4
-            // 
-            this.PictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBox4.Image = global::Punto_de_venta.Properties.Resources.logoJOJAMA2;
-            this.PictureBox4.Location = new System.Drawing.Point(4, 4);
-            this.PictureBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.PictureBox4.Name = "PictureBox4";
-            this.PictureBox4.Size = new System.Drawing.Size(62, 52);
-            this.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox4.TabIndex = 611;
-            this.PictureBox4.TabStop = false;
-            // 
             // MenuReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -689,6 +689,7 @@ namespace Punto_de_venta.Presentacion.Reportes
             this.PanelBienvenida.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).EndInit();
             this.MenuStrip6.ResumeLayout(false);
             this.MenuStrip6.PerformLayout();
             this.PanelProductos.ResumeLayout(false);
@@ -707,7 +708,6 @@ namespace Punto_de_venta.Presentacion.Reportes
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.PanelPorCobrarPagar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }

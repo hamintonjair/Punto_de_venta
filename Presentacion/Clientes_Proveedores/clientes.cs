@@ -228,6 +228,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             mostrar();
             Panelregistro.Visible = true;         
             Panelregistro.Dock = DockStyle.Left;
+
             txtbusca.Clear();
         }
 

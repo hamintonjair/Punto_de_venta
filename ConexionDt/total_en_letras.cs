@@ -13,8 +13,6 @@ namespace Punto_de_venta.ConexionDt
             string tempNum2Text = null;
             try
             {
-
-
                 if (value == 0)
                 {
                     tempNum2Text = "CERO";

@@ -60,6 +60,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.lblfechadeventa = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnrestaurar = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -197,7 +198,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // 
             this.txtbusca.BackColor = System.Drawing.Color.White;
             this.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbusca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtbusca.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtbusca.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtbusca.ForeColor = System.Drawing.Color.Black;
             this.txtbusca.Location = new System.Drawing.Point(12, 63);
@@ -327,6 +328,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
             this.dataGridViewImageColumn4.ReadOnly = true;
             this.dataGridViewImageColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn4.Visible = false;
             // 
             // dataGridViewImageColumn5
             // 
@@ -335,6 +337,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.dataGridViewImageColumn5.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn5.Name = "dataGridViewImageColumn5";
             this.dataGridViewImageColumn5.ReadOnly = true;
+            this.dataGridViewImageColumn5.Visible = false;
             // 
             // panel5
             // 
@@ -348,6 +351,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // 
             // lblfechadeventa
             // 
+            this.lblfechadeventa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblfechadeventa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblfechadeventa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfechadeventa.Location = new System.Drawing.Point(134, 0);
@@ -370,6 +374,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.btneliminar);
             this.panel4.Controls.Add(this.btnrestaurar);
             this.panel4.Controls.Add(this.panel7);
@@ -379,16 +384,28 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.panel4.Size = new System.Drawing.Size(408, 53);
             this.panel4.TabIndex = 0;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(292, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Eliminar";
+            // 
             // btneliminar
             // 
-            this.btneliminar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btneliminar.BackgroundImage = global::Punto_de_venta.Properties.Resources.trash_can_115312;
+            this.btneliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btneliminar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btneliminar.FlatAppearance.BorderSize = 0;
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btneliminar.Image = global::Punto_de_venta.Properties.Resources.lapiz;
-            this.btneliminar.Location = new System.Drawing.Point(169, 6);
+            this.btneliminar.Location = new System.Drawing.Point(364, 6);
             this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(153, 47);
+            this.btneliminar.Size = new System.Drawing.Size(44, 47);
             this.btneliminar.TabIndex = 6;
             this.btneliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btneliminar.UseVisualStyleBackColor = true;
@@ -396,6 +413,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             // 
             // btnrestaurar
             // 
+            this.btnrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrestaurar.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnrestaurar.FlatAppearance.BorderSize = 0;
             this.btnrestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -403,7 +421,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btnrestaurar.Image = global::Punto_de_venta.Properties.Resources.jugar;
             this.btnrestaurar.Location = new System.Drawing.Point(0, 6);
             this.btnrestaurar.Name = "btnrestaurar";
-            this.btnrestaurar.Size = new System.Drawing.Size(169, 47);
+            this.btnrestaurar.Size = new System.Drawing.Size(212, 47);
             this.btnrestaurar.TabIndex = 7;
             this.btnrestaurar.Text = "Restaurar venta";
             this.btnrestaurar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -442,6 +460,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             ((System.ComponentModel.ISupportInitialize)(this.datalistadodetalledeventasarestaurar)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -467,8 +486,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.Button btnrestaurar;
         internal System.Windows.Forms.DataGridView datalistado_ventas_en_espera;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
-        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.Label label3;
     }
 }

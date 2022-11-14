@@ -114,7 +114,7 @@ namespace Punto_de_venta.Presentacion.Conexion_remota
             this.txtcaja.BackColor = System.Drawing.Color.White;
             this.txtcaja.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcaja.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcaja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtcaja.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcaja.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.txtcaja.ForeColor = System.Drawing.Color.Black;
             this.txtcaja.Location = new System.Drawing.Point(86, 11);

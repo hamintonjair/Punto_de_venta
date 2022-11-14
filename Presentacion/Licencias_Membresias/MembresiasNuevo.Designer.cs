@@ -41,7 +41,6 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
             this.Label4 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnCopiar = new System.Windows.Forms.Button();
-            this.btncomprar = new System.Windows.Forms.Button();
             this.Button3 = new System.Windows.Forms.Button();
             this.btnActivacioManual = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -164,6 +163,7 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
             // 
             // btnCopiar
             // 
+            this.btnCopiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCopiar.Location = new System.Drawing.Point(510, 70);
             this.btnCopiar.Name = "btnCopiar";
             this.btnCopiar.Size = new System.Drawing.Size(90, 28);
@@ -172,42 +172,31 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
             this.btnCopiar.UseVisualStyleBackColor = true;
             this.btnCopiar.Click += new System.EventHandler(this.btnCopiar_Click);
             // 
-            // btncomprar
-            // 
-            this.btncomprar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.btncomprar.FlatAppearance.BorderSize = 0;
-            this.btncomprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncomprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btncomprar.ForeColor = System.Drawing.Color.White;
-            this.btncomprar.Location = new System.Drawing.Point(49, 123);
-            this.btncomprar.Name = "btncomprar";
-            this.btncomprar.Size = new System.Drawing.Size(149, 39);
-            this.btncomprar.TabIndex = 629;
-            this.btncomprar.Text = "Comprar ";
-            this.btncomprar.UseVisualStyleBackColor = false;
-            // 
             // Button3
             // 
             this.Button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.Button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button3.FlatAppearance.BorderSize = 0;
             this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.Button3.ForeColor = System.Drawing.Color.White;
-            this.Button3.Location = new System.Drawing.Point(214, 123);
+            this.Button3.Location = new System.Drawing.Point(122, 124);
             this.Button3.Name = "Button3";
             this.Button3.Size = new System.Drawing.Size(318, 39);
             this.Button3.TabIndex = 630;
-            this.Button3.Text = "Activar via WEB (Requiere Internet)";
+            this.Button3.Text = "Comprar ";
             this.Button3.UseVisualStyleBackColor = false;
+            this.Button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // btnActivacioManual
             // 
             this.btnActivacioManual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnActivacioManual.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActivacioManual.FlatAppearance.BorderSize = 0;
             this.btnActivacioManual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActivacioManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnActivacioManual.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnActivacioManual.Location = new System.Drawing.Point(549, 123);
+            this.btnActivacioManual.Location = new System.Drawing.Point(457, 124);
             this.btnActivacioManual.Name = "btnActivacioManual";
             this.btnActivacioManual.Size = new System.Drawing.Size(281, 39);
             this.btnActivacioManual.TabIndex = 631;
@@ -264,7 +253,6 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
             this.panel5.Controls.Add(this.btnActivacioManual);
             this.panel5.Controls.Add(this.btnCopiar);
             this.panel5.Controls.Add(this.Button3);
-            this.panel5.Controls.Add(this.btncomprar);
             this.panel5.Location = new System.Drawing.Point(223, 96);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(861, 231);
@@ -298,6 +286,7 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MembresiasNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Membresias";
@@ -326,7 +315,6 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
         internal System.Windows.Forms.Label Label4;
         internal System.Windows.Forms.Panel panel6;
         internal System.Windows.Forms.Button btnCopiar;
-        internal System.Windows.Forms.Button btncomprar;
         internal System.Windows.Forms.Button Button3;
         internal System.Windows.Forms.Button btnActivacioManual;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -36,6 +36,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAutorizacion_fiscal = new System.Windows.Forms.TextBox();
@@ -102,7 +103,6 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.btnTicket = new System.Windows.Forms.Button();
             this.Label12 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label22 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICONO)).BeginInit();
@@ -180,6 +180,17 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.panel1.Size = new System.Drawing.Size(460, 621);
             this.panel1.TabIndex = 1;
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label22.Location = new System.Drawing.Point(35, 376);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(391, 13);
+            this.label22.TabIndex = 667;
+            this.label22.Text = "---------------------------------------------------------------------------------" +
+    "---------------";
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -204,7 +215,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // 
             this.txtAutorizacion_fiscal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtAutorizacion_fiscal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAutorizacion_fiscal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtAutorizacion_fiscal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAutorizacion_fiscal.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.txtAutorizacion_fiscal.ForeColor = System.Drawing.Color.Black;
             this.txtAutorizacion_fiscal.Location = new System.Drawing.Point(48, 696);
@@ -245,7 +256,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.txtpagina_o_facebook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtpagina_o_facebook.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtpagina_o_facebook.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.txtpagina_o_facebook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtpagina_o_facebook.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtpagina_o_facebook.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.txtpagina_o_facebook.ForeColor = System.Drawing.Color.Black;
             this.txtpagina_o_facebook.Location = new System.Drawing.Point(48, 558);
@@ -260,7 +271,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.TXTANUNCIO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TXTANUNCIO.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TXTANUNCIO.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTANUNCIO.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TXTANUNCIO.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TXTANUNCIO.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.TXTANUNCIO.ForeColor = System.Drawing.Color.Black;
             this.TXTANUNCIO.Location = new System.Drawing.Point(48, 581);
@@ -275,7 +286,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.txtAgradecimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtAgradecimiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAgradecimiento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAgradecimiento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtAgradecimiento.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAgradecimiento.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.txtAgradecimiento.ForeColor = System.Drawing.Color.Black;
             this.txtAgradecimiento.Location = new System.Drawing.Point(48, 537);
@@ -410,7 +421,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.txtMoneda_String.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtMoneda_String.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMoneda_String.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMoneda_String.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtMoneda_String.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMoneda_String.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.txtMoneda_String.ForeColor = System.Drawing.Color.Black;
             this.txtMoneda_String.Location = new System.Drawing.Point(222, 357);
@@ -710,7 +721,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.txtProvincia_departamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtProvincia_departamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProvincia_departamento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtProvincia_departamento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtProvincia_departamento.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtProvincia_departamento.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.txtProvincia_departamento.ForeColor = System.Drawing.Color.Black;
             this.txtProvincia_departamento.Location = new System.Drawing.Point(36, 140);
@@ -725,7 +736,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.txtDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDireccion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtDireccion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDireccion.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.txtDireccion.ForeColor = System.Drawing.Color.Black;
             this.txtDireccion.Location = new System.Drawing.Point(36, 119);
@@ -740,7 +751,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.txtEmpresa_RUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtEmpresa_RUC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmpresa_RUC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEmpresa_RUC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtEmpresa_RUC.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmpresa_RUC.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.txtEmpresa_RUC.ForeColor = System.Drawing.Color.Black;
             this.txtEmpresa_RUC.Location = new System.Drawing.Point(36, 98);
@@ -755,7 +766,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             this.txtempresaTICKET.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtempresaTICKET.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtempresaTICKET.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtempresaTICKET.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtempresaTICKET.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtempresaTICKET.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.txtempresaTICKET.ForeColor = System.Drawing.Color.Black;
             this.txtempresaTICKET.Location = new System.Drawing.Point(36, 70);
@@ -882,6 +893,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // Button4
             // 
             this.Button4.BackColor = System.Drawing.Color.White;
+            this.Button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button4.FlatAppearance.BorderSize = 2;
             this.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -896,6 +908,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // btnFacturaBoleta
             // 
             this.btnFacturaBoleta.BackColor = System.Drawing.Color.White;
+            this.btnFacturaBoleta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFacturaBoleta.FlatAppearance.BorderSize = 0;
             this.btnFacturaBoleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFacturaBoleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -910,6 +923,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // btnTicket
             // 
             this.btnTicket.BackColor = System.Drawing.Color.White;
+            this.btnTicket.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTicket.FlatAppearance.BorderSize = 0;
             this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -934,17 +948,6 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label22.Location = new System.Drawing.Point(35, 376);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(391, 13);
-            this.label22.TabIndex = 667;
-            this.label22.Text = "---------------------------------------------------------------------------------" +
-    "---------------";
             // 
             // Ticket
             // 

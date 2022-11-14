@@ -49,7 +49,7 @@ namespace Punto_de_venta.Presentacion.Caja
         private void listar_gastos()
         {
             DataTable dt = new DataTable();
-            Obtener_datos.mostrar_gastos_por_turnos(idcaja, fechaInicial, fechafinal, ref dt);
+            Obtener_datos.mostrar_gastos_por_turnos( idcaja, fechaInicial, fechafinal, ref dt);
             datalistadoGastos.DataSource = dt;
             datalistadoGastos.Columns[1].Visible = false;
             Bases.Multilinea(ref datalistadoGastos);

@@ -39,6 +39,8 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
         private void insertarCreditos()
         {
             LcreditosPorPagar parametros = new LcreditosPorPagar();
+            Lproveedores param = new Lproveedores();
+
             Insertar_datos funcion = new Insertar_datos();
             parametros.Descripcion = txtdetalle.Text;
             parametros.Fecha_registro = txtfechadeventa.Value;
@@ -46,11 +48,17 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             parametros.Total = Convert.ToDouble(txtsaldo.Text);
             parametros.Saldo = Convert.ToDouble(txtsaldo.Text);
             parametros.Id_proveedor = idproveedor;
+            param.Saldo = Convert.ToDouble(txtsaldo.Text);
+            param.IdProveedor = idproveedor;
             if (funcion.insertar_CreditoPorPagar(parametros) == true)
             {
-                MessageBox.Show("Registrado");
-                limpiar();
-                buscar_Proveedores();
+                if(funcion.insertar_cobro_proveedores(param) ==true)
+                {
+                    MessageBox.Show("Registrado");
+                    limpiar();
+                    buscar_Proveedores();
+                }
+             
 
             }
 

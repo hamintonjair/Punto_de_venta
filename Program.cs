@@ -14,7 +14,7 @@ namespace Punto_de_venta
         /// </summary>
         [STAThread]
         static void Main()
-        {
+       {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var frm = new LOGIN();

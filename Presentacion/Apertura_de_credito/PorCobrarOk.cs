@@ -19,7 +19,7 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             InitializeComponent();
         }
         int idcliente;
-        Panel p = new Panel();
+         Panel p = new Panel();
         private void PorCobrarOk_Load(object sender, EventArgs e)
         {
             buscar_clientes();
@@ -44,6 +44,8 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
         private void insertarCreditos()
         {
             LcreditoPorCobrar parametros = new LcreditoPorCobrar();
+            Lcliente param = new Lcliente();
+
             Insertar_datos funcion = new Insertar_datos();
             parametros.Descripcion = txtdetalle.Text;
             parametros.Fecha_registro = txtfechadeventa.Value;
@@ -51,11 +53,17 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             parametros.Total = Convert.ToDouble(txtsaldo.Text);
             parametros.Saldo = Convert.ToDouble(txtsaldo.Text);
             parametros.Id_cliente = idcliente;
+            param.Saldo = Convert.ToDouble(txtsaldo.Text);      
+            param.idcliente = idcliente;
             if (funcion.insertar_CreditoPorCobrar(parametros) == true)
             {
-                MessageBox.Show("Registrado");
-                limpiar();
-                buscar_clientes();
+                if (funcion.insertar_cobro_cliente(param) == true)
+                {
+                    MessageBox.Show("Registrado");
+                    limpiar();
+                    buscar_clientes();
+                }
+         
 
             }
 
@@ -72,6 +80,7 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             datalistado.Columns[5].Visible = false;
             datalistado.Columns[6].Visible = false;
             datalistado.Columns[7].Visible = false;
+
             dibujarPanel();
         }
         //----------
@@ -102,7 +111,7 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
         private void datalistado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             idcliente = Convert.ToInt32(datalistado.SelectedCells[1].Value);
-            txtcliente.Text = datalistado.SelectedCells[2].Value.ToString();
+            txtcliente.Text = datalistado.SelectedCells[2].Value.ToString();           
             Controls.Remove(p);
         }
 

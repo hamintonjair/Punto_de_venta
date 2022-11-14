@@ -34,28 +34,28 @@ namespace Punto_de_venta.Presentacion.Compras
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistorialCompras));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.datalistadoCompras = new System.Windows.Forms.DataGridView();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Panel29 = new System.Windows.Forms.Panel();
             this.txtbusca = new System.Windows.Forms.TextBox();
             this.MenuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.ToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.Label17 = new System.Windows.Forms.Label();
             this.panelProveedores = new System.Windows.Forms.Panel();
             this.lbltotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgDetallecompra = new System.Windows.Forms.DataGridView();
+            this.EL = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.EL = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoCompras)).BeginInit();
             this.panel2.SuspendLayout();
@@ -135,6 +135,16 @@ namespace Punto_de_venta.Presentacion.Compras
             this.datalistadoCompras.TabIndex = 549;
             this.datalistadoCompras.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistadoCompras_CellClick);
             // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Image = global::Punto_de_venta.Properties.Resources.trash_can_115312;
+            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Eliminar.Visible = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
@@ -159,7 +169,7 @@ namespace Punto_de_venta.Presentacion.Compras
             // 
             this.txtbusca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(168)))), ((int)(((byte)(20)))));
             this.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbusca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtbusca.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtbusca.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtbusca.ForeColor = System.Drawing.Color.Black;
             this.txtbusca.Location = new System.Drawing.Point(12, 15);
@@ -183,6 +193,19 @@ namespace Punto_de_venta.Presentacion.Compras
             this.MenuStrip1.Size = new System.Drawing.Size(67, 45);
             this.MenuStrip1.TabIndex = 535;
             this.MenuStrip1.Text = "MenuStrip1";
+            // 
+            // ToolStripMenuItem5
+            // 
+            this.ToolStripMenuItem5.AutoSize = false;
+            this.ToolStripMenuItem5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
+            this.ToolStripMenuItem5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripMenuItem5.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.ToolStripMenuItem5.ForeColor = System.Drawing.Color.Black;
+            this.ToolStripMenuItem5.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItem5.Image")));
+            this.ToolStripMenuItem5.Name = "ToolStripMenuItem5";
+            this.ToolStripMenuItem5.Size = new System.Drawing.Size(50, 30);
+            this.ToolStripMenuItem5.Text = "+";
+            this.ToolStripMenuItem5.ToolTipText = "Guardar ";
             // 
             // toolStripMenuItem1
             // 
@@ -277,6 +300,24 @@ namespace Punto_de_venta.Presentacion.Compras
             this.dgDetallecompra.Size = new System.Drawing.Size(473, 485);
             this.dgDetallecompra.TabIndex = 628;
             // 
+            // EL
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.NullValue = null;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.EL.DefaultCellStyle = dataGridViewCellStyle7;
+            this.EL.HeaderText = "";
+            this.EL.Image = global::Punto_de_venta.Properties.Resources.trash_can_115312;
+            this.EL.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.EL.Name = "EL";
+            this.EL.ReadOnly = true;
+            this.EL.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EL.ToolTipText = "Opcional \"Supr\" para Eliminar";
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
@@ -313,47 +354,6 @@ namespace Punto_de_venta.Presentacion.Compras
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn2.ToolTipText = "Opcional \"Supr\" para Eliminar";
-            // 
-            // EL
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.NullValue = null;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.EL.DefaultCellStyle = dataGridViewCellStyle7;
-            this.EL.HeaderText = "";
-            this.EL.Image = global::Punto_de_venta.Properties.Resources.trash_can_115312;
-            this.EL.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.EL.Name = "EL";
-            this.EL.ReadOnly = true;
-            this.EL.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EL.ToolTipText = "Opcional \"Supr\" para Eliminar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Image = global::Punto_de_venta.Properties.Resources.trash_can_115312;
-            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Eliminar.Visible = false;
-            // 
-            // ToolStripMenuItem5
-            // 
-            this.ToolStripMenuItem5.AutoSize = false;
-            this.ToolStripMenuItem5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
-            this.ToolStripMenuItem5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripMenuItem5.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.ToolStripMenuItem5.ForeColor = System.Drawing.Color.Black;
-            this.ToolStripMenuItem5.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItem5.Image")));
-            this.ToolStripMenuItem5.Name = "ToolStripMenuItem5";
-            this.ToolStripMenuItem5.Size = new System.Drawing.Size(50, 30);
-            this.ToolStripMenuItem5.Text = "+";
-            this.ToolStripMenuItem5.ToolTipText = "Guardar ";
             // 
             // HistorialCompras
             // 

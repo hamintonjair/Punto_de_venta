@@ -69,10 +69,11 @@ namespace Punto_de_venta.Presentacion.Cobros
             datalistadoHistorial.DataSource = dt;
             Bases estilo = new Bases();
             estilo.MultilineaCobros(ref datalistadoHistorial);
+
             panelH.Visible = true;
             panelM.Visible = false;
             panelHistorial.Visible = true;
-            panelHistorial.Dock = DockStyle.Fill;
+            //panelHistorial.Dock = DockStyle.Fill;
             panelMovimiento.Visible = false;
             panelMovimiento.Dock = DockStyle.None;
         }

@@ -28,7 +28,8 @@ namespace Punto_de_venta.Presentacion.Compras
         int iddetallecompra;
         bool SECUENCIA = true;
         private void RealizarCompra_Load(object sender, EventArgs e)
-        {
+        {          
+
             estadocompra = "COMPRA NUEVA";
             dibujarProveedores();
             eliminarComprasvacias();
@@ -409,6 +410,7 @@ namespace Punto_de_venta.Presentacion.Compras
         {
             confirmarCompra();
         }
+
         private void confirmarCompra()
         {
             var funcion = new Dcompras();

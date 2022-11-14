@@ -1,7 +1,7 @@
 ﻿
 namespace Punto_de_venta.Presentacion.Productos
 {
-    partial class Productoss
+    partial class Productos
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace Punto_de_venta.Presentacion.Productos
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productoss));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -46,6 +46,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.Label50 = new System.Windows.Forms.Label();
             this.Label7 = new System.Windows.Forms.Label();
             this.Panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.Panel29 = new System.Windows.Forms.Panel();
             this.PictureBox2 = new System.Windows.Forms.PictureBox();
             this.Panel27 = new System.Windows.Forms.Panel();
@@ -73,25 +74,29 @@ namespace Punto_de_venta.Presentacion.Productos
             this.PANELDEPARTAMENTO = new System.Windows.Forms.Panel();
             this.PANELDEPARTAMENTOS = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DATALISTADO_PRODUCTOS_OKA = new System.Windows.Forms.DataGridView();
+            this.DataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtporcentaje2 = new System.Windows.Forms.Label();
+            this.txtporcentaje = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.si = new System.Windows.Forms.RadioButton();
             this.no = new System.Windows.Forms.RadioButton();
             this.PanelImpuesto = new System.Windows.Forms.Panel();
+            this.txtImpuestos = new System.Windows.Forms.TextBox();
             this.Panel12 = new System.Windows.Forms.Panel();
             this.txtimpuesto = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPorcentajeGanancia = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtporcentaje = new System.Windows.Forms.ComboBox();
-            this.DATALISTADO_PRODUCTOS_OKA = new System.Windows.Forms.DataGridView();
-            this.DataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.txtPorcentajeGanancia = new System.Windows.Forms.TextBox();
             this.PanelGRUPOSSELECT = new System.Windows.Forms.Panel();
             this.datalistadoGrupos = new System.Windows.Forms.DataGridView();
             this.EliminarG = new System.Windows.Forms.DataGridViewImageColumn();
             this.EditarG = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Panel33 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pizquierdo = new System.Windows.Forms.Panel();
+            this.pderecho = new System.Windows.Forms.Panel();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
@@ -230,8 +235,8 @@ namespace Punto_de_venta.Presentacion.Productos
             this.BtnGuardar_Categoria = new System.Windows.Forms.Button();
             this.txtbancoseleccionado = new System.Windows.Forms.Label();
             this.Button5 = new System.Windows.Forms.Button();
-            this.panederecho = new System.Windows.Forms.Panel();
             this.panelizquierdo = new System.Windows.Forms.Panel();
+            this.panederecho = new System.Windows.Forms.Panel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -250,9 +255,9 @@ namespace Punto_de_venta.Presentacion.Productos
             this.PANELDEPARTAMENTO.SuspendLayout();
             this.PANELDEPARTAMENTOS.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DATALISTADO_PRODUCTOS_OKA)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.PanelImpuesto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DATALISTADO_PRODUCTOS_OKA)).BeginInit();
             this.PanelGRUPOSSELECT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoGrupos)).BeginInit();
             this.menuStrip2.SuspendLayout();
@@ -289,13 +294,12 @@ namespace Punto_de_venta.Presentacion.Productos
             // 
             // Panel4
             // 
-            this.Panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Panel4.BackColor = System.Drawing.Color.White;
             this.Panel4.Controls.Add(this.lblcosto_inventario);
             this.Panel4.Controls.Add(this.lblcantidad_productos);
             this.Panel4.Controls.Add(this.Label50);
             this.Panel4.Controls.Add(this.Label7);
+            this.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Panel4.Location = new System.Drawing.Point(0, 686);
             this.Panel4.Name = "Panel4";
             this.Panel4.Size = new System.Drawing.Size(1261, 56);
@@ -350,6 +354,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // Panel3
             // 
             this.Panel3.BackColor = System.Drawing.Color.White;
+            this.Panel3.Controls.Add(this.button1);
             this.Panel3.Controls.Add(this.Panel29);
             this.Panel3.Controls.Add(this.PictureBox2);
             this.Panel3.Controls.Add(this.Panel27);
@@ -364,6 +369,17 @@ namespace Punto_de_venta.Presentacion.Productos
             this.Panel3.Name = "Panel3";
             this.Panel3.Size = new System.Drawing.Size(1261, 93);
             this.Panel3.TabIndex = 372;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(563, 52);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(60, 36);
+            this.button1.TabIndex = 534;
+            this.button1.Text = " (F1)";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button1_KeyDown);
             // 
             // Panel29
             // 
@@ -389,7 +405,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // Panel27
             // 
             this.Panel27.Controls.Add(this.ProgressBar1);
-            this.Panel27.Location = new System.Drawing.Point(596, 54);
+            this.Panel27.Location = new System.Drawing.Point(867, 54);
             this.Panel27.Name = "Panel27";
             this.Panel27.Size = new System.Drawing.Size(10, 10);
             this.Panel27.TabIndex = 372;
@@ -405,7 +421,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // 
             this.txtbusca.BackColor = System.Drawing.Color.White;
             this.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbusca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtbusca.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtbusca.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtbusca.ForeColor = System.Drawing.Color.Black;
             this.txtbusca.Location = new System.Drawing.Point(11, 60);
@@ -452,7 +468,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // Panel24
             // 
             this.Panel24.Controls.Add(this.datalistado_empresa);
-            this.Panel24.Location = new System.Drawing.Point(596, 67);
+            this.Panel24.Location = new System.Drawing.Point(888, 60);
             this.Panel24.Name = "Panel24";
             this.Panel24.Size = new System.Drawing.Size(10, 11);
             this.Panel24.TabIndex = 532;
@@ -512,8 +528,8 @@ namespace Punto_de_venta.Presentacion.Productos
             this.ToolStripMenuItem15.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItem15.Image")));
             this.ToolStripMenuItem15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ToolStripMenuItem15.Name = "ToolStripMenuItem15";
-            this.ToolStripMenuItem15.Size = new System.Drawing.Size(204, 32);
-            this.ToolStripMenuItem15.Text = "&Importar desde EXCEL";
+            this.ToolStripMenuItem15.Size = new System.Drawing.Size(208, 32);
+            this.ToolStripMenuItem15.Text = "&Importar desde EXCEL ";
             this.ToolStripMenuItem15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ToolStripMenuItem15.Click += new System.EventHandler(this.ToolStripMenuItem15_Click);
             // 
@@ -593,7 +609,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.datalistado.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.datalistado.RowTemplate.Height = 40;
             this.datalistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado.Size = new System.Drawing.Size(987, 649);
+            this.datalistado.Size = new System.Drawing.Size(987, 593);
             this.datalistado.TabIndex = 542;
             this.datalistado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistado_CellClick);
             this.datalistado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistado_CellDoubleClick);
@@ -629,27 +645,25 @@ namespace Punto_de_venta.Presentacion.Productos
             // 
             // panelFrom
             // 
-            this.panelFrom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.panelFrom.BackColor = System.Drawing.Color.White;
             this.panelFrom.Controls.Add(this.PANELDEPARTAMENTO);
             this.panelFrom.Controls.Add(this.datalistado);
-            this.panelFrom.Controls.Add(this.panederecho);
             this.panelFrom.Controls.Add(this.panelizquierdo);
+            this.panelFrom.Controls.Add(this.panederecho);
             this.panelFrom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFrom.Location = new System.Drawing.Point(0, 93);
             this.panelFrom.Name = "panelFrom";
-            this.panelFrom.Size = new System.Drawing.Size(1261, 649);
+            this.panelFrom.Size = new System.Drawing.Size(1261, 593);
             this.panelFrom.TabIndex = 614;
             // 
             // PANELDEPARTAMENTO
             // 
-            this.PANELDEPARTAMENTO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.PANELDEPARTAMENTO.BackColor = System.Drawing.Color.White;
             this.PANELDEPARTAMENTO.Controls.Add(this.PANELDEPARTAMENTOS);
+            this.PANELDEPARTAMENTO.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PANELDEPARTAMENTO.Location = new System.Drawing.Point(137, 0);
             this.PANELDEPARTAMENTO.Name = "PANELDEPARTAMENTO";
-            this.PANELDEPARTAMENTO.Size = new System.Drawing.Size(987, 597);
+            this.PANELDEPARTAMENTO.Size = new System.Drawing.Size(987, 593);
             this.PANELDEPARTAMENTO.TabIndex = 0;
             this.PANELDEPARTAMENTO.Visible = false;
             // 
@@ -662,14 +676,17 @@ namespace Punto_de_venta.Presentacion.Productos
             this.PANELDEPARTAMENTOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.PANELDEPARTAMENTOS.Location = new System.Drawing.Point(0, 0);
             this.PANELDEPARTAMENTOS.Name = "PANELDEPARTAMENTOS";
-            this.PANELDEPARTAMENTOS.Size = new System.Drawing.Size(987, 597);
+            this.PANELDEPARTAMENTOS.Size = new System.Drawing.Size(987, 593);
             this.PANELDEPARTAMENTOS.TabIndex = 373;
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.DATALISTADO_PRODUCTOS_OKA);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label22);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.txtPorcentajeGanancia);
             this.groupBox1.Controls.Add(this.PanelGRUPOSSELECT);
             this.groupBox1.Controls.Add(this.menuStrip2);
             this.groupBox1.Controls.Add(this.Panel28);
@@ -701,31 +718,136 @@ namespace Punto_de_venta.Presentacion.Productos
             this.groupBox1.Controls.Add(this.MenuStrip15);
             this.groupBox1.Controls.Add(this.Panel30);
             this.groupBox1.Controls.Add(this.Panel25);
-            this.groupBox1.Location = new System.Drawing.Point(32, 47);
+            this.groupBox1.Location = new System.Drawing.Point(6, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(922, 524);
+            this.groupBox1.Size = new System.Drawing.Size(975, 550);
             this.groupBox1.TabIndex = 614;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar productos al inventario";
             // 
+            // DATALISTADO_PRODUCTOS_OKA
+            // 
+            this.DATALISTADO_PRODUCTOS_OKA.AllowUserToAddRows = false;
+            this.DATALISTADO_PRODUCTOS_OKA.AllowUserToDeleteRows = false;
+            this.DATALISTADO_PRODUCTOS_OKA.AllowUserToResizeRows = false;
+            this.DATALISTADO_PRODUCTOS_OKA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DATALISTADO_PRODUCTOS_OKA.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.DATALISTADO_PRODUCTOS_OKA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DATALISTADO_PRODUCTOS_OKA.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersVisible = false;
+            this.DATALISTADO_PRODUCTOS_OKA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridViewCheckBoxColumn8});
+            this.DATALISTADO_PRODUCTOS_OKA.EnableHeadersVisualStyles = false;
+            this.DATALISTADO_PRODUCTOS_OKA.GridColor = System.Drawing.Color.White;
+            this.DATALISTADO_PRODUCTOS_OKA.Location = new System.Drawing.Point(828, 41);
+            this.DATALISTADO_PRODUCTOS_OKA.Name = "DATALISTADO_PRODUCTOS_OKA";
+            this.DATALISTADO_PRODUCTOS_OKA.ReadOnly = true;
+            this.DATALISTADO_PRODUCTOS_OKA.RowHeadersVisible = false;
+            this.DATALISTADO_PRODUCTOS_OKA.RowHeadersWidth = 9;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.DATALISTADO_PRODUCTOS_OKA.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.DATALISTADO_PRODUCTOS_OKA.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DATALISTADO_PRODUCTOS_OKA.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DATALISTADO_PRODUCTOS_OKA.RowTemplate.Height = 40;
+            this.DATALISTADO_PRODUCTOS_OKA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DATALISTADO_PRODUCTOS_OKA.Size = new System.Drawing.Size(122, 443);
+            this.DATALISTADO_PRODUCTOS_OKA.TabIndex = 633;
+            this.DATALISTADO_PRODUCTOS_OKA.Visible = false;
+            this.DATALISTADO_PRODUCTOS_OKA.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DATALISTADO_PRODUCTOS_OKA_CellClick_1);
+            // 
+            // DataGridViewCheckBoxColumn8
+            // 
+            this.DataGridViewCheckBoxColumn8.DataPropertyName = "Marcar";
+            this.DataGridViewCheckBoxColumn8.HeaderText = "Marcar";
+            this.DataGridViewCheckBoxColumn8.Name = "DataGridViewCheckBoxColumn8";
+            this.DataGridViewCheckBoxColumn8.ReadOnly = true;
+            this.DataGridViewCheckBoxColumn8.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(292, 143);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 20);
+            this.label3.TabIndex = 648;
+            this.label3.Text = "Impuestos:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label22.Location = new System.Drawing.Point(530, 103);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(267, 20);
+            this.label22.TabIndex = 559;
+            this.label22.Text = "Aplicar impuesto General / otros";
+            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox2.Controls.Add(this.txtporcentaje2);
+            this.groupBox2.Controls.Add(this.txtporcentaje);
+            this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.si);
             this.groupBox2.Controls.Add(this.no);
             this.groupBox2.Controls.Add(this.PanelImpuesto);
-            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtporcentaje);
-            this.groupBox2.Location = new System.Drawing.Point(170, 117);
+            this.groupBox2.Location = new System.Drawing.Point(386, 126);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(487, 45);
+            this.groupBox2.Size = new System.Drawing.Size(541, 45);
             this.groupBox2.TabIndex = 615;
             this.groupBox2.TabStop = false;
+            // 
+            // txtporcentaje2
+            // 
+            this.txtporcentaje2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtporcentaje2.ForeColor = System.Drawing.Color.Black;
+            this.txtporcentaje2.Location = new System.Drawing.Point(487, 13);
+            this.txtporcentaje2.Name = "txtporcentaje2";
+            this.txtporcentaje2.Size = new System.Drawing.Size(42, 28);
+            this.txtporcentaje2.TabIndex = 661;
+            this.txtporcentaje2.Text = "18";
+            this.txtporcentaje2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtporcentaje
+            // 
+            this.txtporcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtporcentaje.ForeColor = System.Drawing.Color.Black;
+            this.txtporcentaje.Location = new System.Drawing.Point(429, 13);
+            this.txtporcentaje.Name = "txtporcentaje";
+            this.txtporcentaje.Size = new System.Drawing.Size(46, 28);
+            this.txtporcentaje.TabIndex = 660;
+            this.txtporcentaje.Text = "18";
+            this.txtporcentaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label21.Location = new System.Drawing.Point(471, 15);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(19, 25);
+            this.label21.TabIndex = 558;
+            this.label21.Text = "/";
             // 
             // si
             // 
             this.si.AutoSize = true;
+            this.si.Cursor = System.Windows.Forms.Cursors.Hand;
             this.si.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.si.Location = new System.Drawing.Point(4, 13);
             this.si.Name = "si";
@@ -739,6 +861,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // no
             // 
             this.no.AutoSize = true;
+            this.no.Cursor = System.Windows.Forms.Cursors.Hand;
             this.no.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.no.Location = new System.Drawing.Point(56, 14);
             this.no.Name = "no";
@@ -751,15 +874,23 @@ namespace Punto_de_venta.Presentacion.Productos
             // 
             // PanelImpuesto
             // 
+            this.PanelImpuesto.Controls.Add(this.txtImpuestos);
             this.PanelImpuesto.Controls.Add(this.Panel12);
             this.PanelImpuesto.Controls.Add(this.txtimpuesto);
             this.PanelImpuesto.Controls.Add(this.label1);
-            this.PanelImpuesto.Controls.Add(this.txtPorcentajeGanancia);
             this.PanelImpuesto.Location = new System.Drawing.Point(120, 12);
             this.PanelImpuesto.Name = "PanelImpuesto";
             this.PanelImpuesto.Size = new System.Drawing.Size(157, 30);
             this.PanelImpuesto.TabIndex = 655;
             this.PanelImpuesto.Visible = false;
+            // 
+            // txtImpuestos
+            // 
+            this.txtImpuestos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtImpuestos.Location = new System.Drawing.Point(65, 0);
+            this.txtImpuestos.Name = "txtImpuestos";
+            this.txtImpuestos.Size = new System.Drawing.Size(50, 26);
+            this.txtImpuestos.TabIndex = 648;
             // 
             // Panel12
             // 
@@ -796,111 +927,35 @@ namespace Punto_de_venta.Presentacion.Productos
             this.label1.TabIndex = 342;
             this.label1.Text = "%";
             // 
-            // txtPorcentajeGanancia
-            // 
-            this.txtPorcentajeGanancia.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPorcentajeGanancia.Location = new System.Drawing.Point(68, 1);
-            this.txtPorcentajeGanancia.Name = "txtPorcentajeGanancia";
-            this.txtPorcentajeGanancia.Size = new System.Drawing.Size(47, 26);
-            this.txtPorcentajeGanancia.TabIndex = 625;
-            this.txtPorcentajeGanancia.TextChanged += new System.EventHandler(this.txtPorcentajeGanancia_TextChanged_1);
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(452, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 28);
-            this.label3.TabIndex = 659;
-            this.label3.Text = "%";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(276, 14);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(281, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 20);
+            this.label4.Size = new System.Drawing.Size(146, 18);
             this.label4.TabIndex = 657;
-            this.label4.Text = "Impuesto Actual";
+            this.label4.Text = "Impuesto Actuales";
             // 
-            // txtporcentaje
+            // txtPorcentajeGanancia
             // 
-            this.txtporcentaje.Enabled = false;
-            this.txtporcentaje.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.txtporcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.txtporcentaje.FormattingEnabled = true;
-            this.txtporcentaje.Items.AddRange(new object[] {
-            "21",
-            "19",
-            "3",
-            "5"});
-            this.txtporcentaje.Location = new System.Drawing.Point(418, 11);
-            this.txtporcentaje.Name = "txtporcentaje";
-            this.txtporcentaje.Size = new System.Drawing.Size(52, 28);
-            this.txtporcentaje.TabIndex = 656;
-            this.txtporcentaje.Text = "18";
-            // 
-            // DATALISTADO_PRODUCTOS_OKA
-            // 
-            this.DATALISTADO_PRODUCTOS_OKA.AllowUserToAddRows = false;
-            this.DATALISTADO_PRODUCTOS_OKA.AllowUserToDeleteRows = false;
-            this.DATALISTADO_PRODUCTOS_OKA.AllowUserToResizeRows = false;
-            this.DATALISTADO_PRODUCTOS_OKA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.DATALISTADO_PRODUCTOS_OKA.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.DATALISTADO_PRODUCTOS_OKA.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DATALISTADO_PRODUCTOS_OKA.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersVisible = false;
-            this.DATALISTADO_PRODUCTOS_OKA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DataGridViewCheckBoxColumn8});
-            this.DATALISTADO_PRODUCTOS_OKA.EnableHeadersVisualStyles = false;
-            this.DATALISTADO_PRODUCTOS_OKA.GridColor = System.Drawing.Color.White;
-            this.DATALISTADO_PRODUCTOS_OKA.Location = new System.Drawing.Point(794, 33);
-            this.DATALISTADO_PRODUCTOS_OKA.Name = "DATALISTADO_PRODUCTOS_OKA";
-            this.DATALISTADO_PRODUCTOS_OKA.ReadOnly = true;
-            this.DATALISTADO_PRODUCTOS_OKA.RowHeadersVisible = false;
-            this.DATALISTADO_PRODUCTOS_OKA.RowHeadersWidth = 9;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.DATALISTADO_PRODUCTOS_OKA.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.DATALISTADO_PRODUCTOS_OKA.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DATALISTADO_PRODUCTOS_OKA.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.DATALISTADO_PRODUCTOS_OKA.RowTemplate.Height = 40;
-            this.DATALISTADO_PRODUCTOS_OKA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DATALISTADO_PRODUCTOS_OKA.Size = new System.Drawing.Size(122, 408);
-            this.DATALISTADO_PRODUCTOS_OKA.TabIndex = 633;
-            this.DATALISTADO_PRODUCTOS_OKA.Visible = false;
-            this.DATALISTADO_PRODUCTOS_OKA.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DATALISTADO_PRODUCTOS_OKA_CellClick_1);
-            // 
-            // DataGridViewCheckBoxColumn8
-            // 
-            this.DataGridViewCheckBoxColumn8.DataPropertyName = "Marcar";
-            this.DataGridViewCheckBoxColumn8.HeaderText = "Marcar";
-            this.DataGridViewCheckBoxColumn8.Name = "DataGridViewCheckBoxColumn8";
-            this.DataGridViewCheckBoxColumn8.ReadOnly = true;
-            this.DataGridViewCheckBoxColumn8.Visible = false;
+            this.txtPorcentajeGanancia.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPorcentajeGanancia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPorcentajeGanancia.Location = new System.Drawing.Point(175, 138);
+            this.txtPorcentajeGanancia.Name = "txtPorcentajeGanancia";
+            this.txtPorcentajeGanancia.Size = new System.Drawing.Size(67, 26);
+            this.txtPorcentajeGanancia.TabIndex = 625;
+            this.txtPorcentajeGanancia.TextChanged += new System.EventHandler(this.txtPorcentajeGanancia_TextChanged_1);
             // 
             // PanelGRUPOSSELECT
             // 
             this.PanelGRUPOSSELECT.Controls.Add(this.datalistadoGrupos);
-            this.PanelGRUPOSSELECT.Controls.Add(this.Panel33);
-            this.PanelGRUPOSSELECT.Controls.Add(this.panel1);
-            this.PanelGRUPOSSELECT.Location = new System.Drawing.Point(136, 311);
+            this.PanelGRUPOSSELECT.Controls.Add(this.pizquierdo);
+            this.PanelGRUPOSSELECT.Controls.Add(this.pderecho);
+            this.PanelGRUPOSSELECT.Location = new System.Drawing.Point(71, 303);
             this.PanelGRUPOSSELECT.Name = "PanelGRUPOSSELECT";
-            this.PanelGRUPOSSELECT.Size = new System.Drawing.Size(632, 206);
+            this.PanelGRUPOSSELECT.Size = new System.Drawing.Size(632, 112);
             this.PanelGRUPOSSELECT.TabIndex = 645;
             // 
             // datalistadoGrupos
@@ -924,7 +979,6 @@ namespace Punto_de_venta.Presentacion.Productos
             this.datalistadoGrupos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EliminarG,
             this.EditarG});
-            this.datalistadoGrupos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datalistadoGrupos.EnableHeadersVisualStyles = false;
             this.datalistadoGrupos.Location = new System.Drawing.Point(155, 0);
             this.datalistadoGrupos.Name = "datalistadoGrupos";
@@ -939,7 +993,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.datalistadoGrupos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.datalistadoGrupos.RowTemplate.Height = 40;
             this.datalistadoGrupos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistadoGrupos.Size = new System.Drawing.Size(322, 206);
+            this.datalistadoGrupos.Size = new System.Drawing.Size(322, 74);
             this.datalistadoGrupos.TabIndex = 614;
             this.datalistadoGrupos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistadoGrupos_CellClick_1);
             // 
@@ -962,23 +1016,23 @@ namespace Punto_de_venta.Presentacion.Productos
             this.EditarG.ReadOnly = true;
             this.EditarG.Width = 5;
             // 
-            // Panel33
+            // pizquierdo
             // 
-            this.Panel33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
-            this.Panel33.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Panel33.Location = new System.Drawing.Point(0, 0);
-            this.Panel33.Name = "Panel33";
-            this.Panel33.Size = new System.Drawing.Size(155, 206);
-            this.Panel33.TabIndex = 536;
+            this.pizquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
+            this.pizquierdo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pizquierdo.Location = new System.Drawing.Point(0, 0);
+            this.pizquierdo.Name = "pizquierdo";
+            this.pizquierdo.Size = new System.Drawing.Size(155, 112);
+            this.pizquierdo.TabIndex = 536;
             // 
-            // panel1
+            // pderecho
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(477, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(155, 206);
-            this.panel1.TabIndex = 537;
+            this.pderecho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
+            this.pderecho.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pderecho.Location = new System.Drawing.Point(477, 0);
+            this.pderecho.Name = "pderecho";
+            this.pderecho.Size = new System.Drawing.Size(155, 112);
+            this.pderecho.TabIndex = 537;
             // 
             // menuStrip2
             // 
@@ -990,7 +1044,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.toolStripMenuItem3,
             this.toolStripMenuItem6});
             this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.menuStrip2.Location = new System.Drawing.Point(714, 23);
+            this.menuStrip2.Location = new System.Drawing.Point(666, 20);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.ShowItemToolTips = true;
             this.menuStrip2.Size = new System.Drawing.Size(76, 45);
@@ -1021,13 +1075,14 @@ namespace Punto_de_venta.Presentacion.Productos
             this.Panel28.Controls.Add(this.ProgressApagado);
             this.Panel28.Controls.Add(this.ProgressEncendido);
             this.Panel28.Controls.Add(this.TGUARDARCAMBIOS);
-            this.Panel28.Location = new System.Drawing.Point(136, 465);
+            this.Panel28.Location = new System.Drawing.Point(71, 439);
             this.Panel28.Name = "Panel28";
             this.Panel28.Size = new System.Drawing.Size(632, 48);
             this.Panel28.TabIndex = 641;
             // 
             // TGUARDAR
             // 
+            this.TGUARDAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TGUARDAR.Image = ((System.Drawing.Image)(resources.GetObject("TGUARDAR.Image")));
             this.TGUARDAR.Location = new System.Drawing.Point(0, 0);
             this.TGUARDAR.Name = "TGUARDAR";
@@ -1057,6 +1112,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // 
             // TGUARDARCAMBIOS
             // 
+            this.TGUARDARCAMBIOS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TGUARDARCAMBIOS.Image = ((System.Drawing.Image)(resources.GetObject("TGUARDARCAMBIOS.Image")));
             this.TGUARDARCAMBIOS.Location = new System.Drawing.Point(1, -1);
             this.TGUARDARCAMBIOS.Name = "TGUARDARCAMBIOS";
@@ -1078,7 +1134,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.BtnCancelar,
             this.btnNuevoGrupo});
             this.MenuStrip9.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.MenuStrip9.Location = new System.Drawing.Point(587, 225);
+            this.MenuStrip9.Location = new System.Drawing.Point(616, 223);
             this.MenuStrip9.Name = "MenuStrip9";
             this.MenuStrip9.ShowItemToolTips = true;
             this.MenuStrip9.Size = new System.Drawing.Size(625, 37);
@@ -1146,7 +1202,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button2.ForeColor = System.Drawing.Color.Black;
-            this.Button2.Location = new System.Drawing.Point(816, 464);
+            this.Button2.Location = new System.Drawing.Point(846, 495);
             this.Button2.Name = "Button2";
             this.Button2.Size = new System.Drawing.Size(67, 49);
             this.Button2.TabIndex = 638;
@@ -1157,9 +1213,10 @@ namespace Punto_de_venta.Presentacion.Productos
             // 
             this.txtgrupo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtgrupo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtgrupo.Location = new System.Drawing.Point(170, 229);
+            this.txtgrupo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtgrupo.Location = new System.Drawing.Point(175, 237);
             this.txtgrupo.Name = "txtgrupo";
-            this.txtgrupo.Size = new System.Drawing.Size(413, 26);
+            this.txtgrupo.Size = new System.Drawing.Size(298, 26);
             this.txtgrupo.TabIndex = 644;
             this.txtgrupo.TextChanged += new System.EventHandler(this.txtgrupo_TextChanged_1);
             // 
@@ -1167,7 +1224,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // 
             this.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox3.Image")));
-            this.PictureBox3.Location = new System.Drawing.Point(170, 262);
+            this.PictureBox3.Location = new System.Drawing.Point(175, 270);
             this.PictureBox3.Name = "PictureBox3";
             this.PictureBox3.Size = new System.Drawing.Size(29, 26);
             this.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1181,9 +1238,9 @@ namespace Punto_de_venta.Presentacion.Productos
             this.PanelIMPUESTOS.Controls.Add(this.Panel6);
             this.PanelIMPUESTOS.Controls.Add(this.TXTIDPRODUCTOOk);
             this.PanelIMPUESTOS.Controls.Add(this.lblIdGrupo);
-            this.PanelIMPUESTOS.Location = new System.Drawing.Point(777, 81);
+            this.PanelIMPUESTOS.Location = new System.Drawing.Point(829, 140);
             this.PanelIMPUESTOS.Name = "PanelIMPUESTOS";
-            this.PanelIMPUESTOS.Size = new System.Drawing.Size(32, 10);
+            this.PanelIMPUESTOS.Size = new System.Drawing.Size(10, 10);
             this.PanelIMPUESTOS.TabIndex = 642;
             // 
             // Panel18
@@ -1960,7 +2017,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.Panel26.Controls.Add(this.lblIdProducto);
             this.Panel26.Controls.Add(this.datalistadoProductosNuevos);
             this.Panel26.Controls.Add(this.txtfecha_sistema);
-            this.Panel26.Location = new System.Drawing.Point(789, 435);
+            this.Panel26.Location = new System.Drawing.Point(724, 385);
             this.Panel26.Name = "Panel26";
             this.Panel26.Size = new System.Drawing.Size(10, 10);
             this.Panel26.TabIndex = 640;
@@ -2033,7 +2090,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.Panel23.Controls.Add(this.lblmoneda);
             this.Panel23.Controls.Add(this.TXTPRECIODEVENTAReferencia);
             this.Panel23.Controls.Add(this.lblEstadoCodigo);
-            this.Panel23.Location = new System.Drawing.Point(10, 44);
+            this.Panel23.Location = new System.Drawing.Point(15, 52);
             this.Panel23.Name = "Panel23";
             this.Panel23.Size = new System.Drawing.Size(18, 11);
             this.Panel23.TabIndex = 636;
@@ -2140,7 +2197,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.PANELINVENTARIO.Controls.Add(this.Label5);
             this.PANELINVENTARIO.Controls.Add(this.txtstock2);
             this.PANELINVENTARIO.Controls.Add(this.Label39);
-            this.PANELINVENTARIO.Location = new System.Drawing.Point(136, 358);
+            this.PANELINVENTARIO.Location = new System.Drawing.Point(71, 350);
             this.PANELINVENTARIO.Name = "PANELINVENTARIO";
             this.PANELINVENTARIO.Size = new System.Drawing.Size(632, 105);
             this.PANELINVENTARIO.TabIndex = 632;
@@ -2148,6 +2205,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // No_aplica_fecha
             // 
             this.No_aplica_fecha.AutoSize = true;
+            this.No_aplica_fecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.No_aplica_fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.No_aplica_fecha.ForeColor = System.Drawing.Color.Black;
             this.No_aplica_fecha.Location = new System.Drawing.Point(291, 70);
@@ -2159,6 +2217,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // 
             // txtfechaoka
             // 
+            this.txtfechaoka.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtfechaoka.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtfechaoka.Location = new System.Drawing.Point(136, 68);
             this.txtfechaoka.Name = "txtfechaoka";
@@ -2228,7 +2287,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // 
             this.agranel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.agranel.AutoSize = true;
-            this.agranel.Location = new System.Drawing.Point(322, 66);
+            this.agranel.Location = new System.Drawing.Point(327, 74);
             this.agranel.Name = "agranel";
             this.agranel.Size = new System.Drawing.Size(202, 24);
             this.agranel.TabIndex = 623;
@@ -2240,7 +2299,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // 
             this.porunidad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.porunidad.AutoSize = true;
-            this.porunidad.Location = new System.Drawing.Point(168, 65);
+            this.porunidad.Location = new System.Drawing.Point(173, 73);
             this.porunidad.Name = "porunidad";
             this.porunidad.Size = new System.Drawing.Size(149, 24);
             this.porunidad.TabIndex = 622;
@@ -2253,8 +2312,9 @@ namespace Punto_de_venta.Presentacion.Productos
             this.txtcosto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtcosto.BackColor = System.Drawing.Color.White;
             this.txtcosto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtcosto.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcosto.ForeColor = System.Drawing.Color.Black;
-            this.txtcosto.Location = new System.Drawing.Point(170, 91);
+            this.txtcosto.Location = new System.Drawing.Point(175, 99);
             this.txtcosto.Name = "txtcosto";
             this.txtcosto.Size = new System.Drawing.Size(149, 26);
             this.txtcosto.TabIndex = 624;
@@ -2265,7 +2325,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.Label47.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Label47.AutoSize = true;
             this.Label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Label47.Location = new System.Drawing.Point(521, 198);
+            this.Label47.Location = new System.Drawing.Point(526, 206);
             this.Label47.Name = "Label47";
             this.Label47.Size = new System.Drawing.Size(77, 20);
             this.Label47.TabIndex = 620;
@@ -2276,7 +2336,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.Label45.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Label45.AutoSize = true;
             this.Label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Label45.Location = new System.Drawing.Point(337, 198);
+            this.Label45.Location = new System.Drawing.Point(342, 206);
             this.Label45.Name = "Label45";
             this.Label45.Size = new System.Drawing.Size(86, 20);
             this.Label45.TabIndex = 619;
@@ -2286,7 +2346,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // 
             this.Label37.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Label37.AutoSize = true;
-            this.Label37.Location = new System.Drawing.Point(40, 198);
+            this.Label37.Location = new System.Drawing.Point(45, 206);
             this.Label37.Name = "Label37";
             this.Label37.Size = new System.Drawing.Size(122, 20);
             this.Label37.TabIndex = 617;
@@ -2296,17 +2356,17 @@ namespace Punto_de_venta.Presentacion.Productos
             // 
             this.Label49.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Label49.AutoSize = true;
-            this.Label49.Location = new System.Drawing.Point(80, 135);
+            this.Label49.Location = new System.Drawing.Point(85, 143);
             this.Label49.Name = "Label49";
-            this.Label49.Size = new System.Drawing.Size(80, 20);
+            this.Label49.Size = new System.Drawing.Size(82, 20);
             this.Label49.TabIndex = 616;
-            this.Label49.Text = "Impuesto:";
+            this.Label49.Text = "Ganancia:";
             // 
             // Label23
             // 
             this.Label23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Label23.AutoSize = true;
-            this.Label23.Location = new System.Drawing.Point(60, 167);
+            this.Label23.Location = new System.Drawing.Point(65, 175);
             this.Label23.Name = "Label23";
             this.Label23.Size = new System.Drawing.Size(100, 20);
             this.Label23.TabIndex = 615;
@@ -2316,7 +2376,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // 
             this.Label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(57, 94);
+            this.Label2.Location = new System.Drawing.Point(62, 102);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(103, 20);
             this.Label2.TabIndex = 614;
@@ -2327,9 +2387,10 @@ namespace Punto_de_venta.Presentacion.Productos
             this.txtapartirde.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtapartirde.BackColor = System.Drawing.Color.White;
             this.txtapartirde.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtapartirde.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtapartirde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtapartirde.ForeColor = System.Drawing.Color.Black;
-            this.txtapartirde.Location = new System.Drawing.Point(426, 196);
+            this.txtapartirde.Location = new System.Drawing.Point(431, 204);
             this.txtapartirde.Name = "txtapartirde";
             this.txtapartirde.Size = new System.Drawing.Size(89, 26);
             this.txtapartirde.TabIndex = 628;
@@ -2340,8 +2401,9 @@ namespace Punto_de_venta.Presentacion.Productos
             this.txtpreciomayoreo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtpreciomayoreo.BackColor = System.Drawing.Color.White;
             this.txtpreciomayoreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpreciomayoreo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtpreciomayoreo.ForeColor = System.Drawing.Color.Black;
-            this.txtpreciomayoreo.Location = new System.Drawing.Point(170, 196);
+            this.txtpreciomayoreo.Location = new System.Drawing.Point(175, 204);
             this.txtpreciomayoreo.Name = "txtpreciomayoreo";
             this.txtpreciomayoreo.Size = new System.Drawing.Size(114, 26);
             this.txtpreciomayoreo.TabIndex = 627;
@@ -2352,8 +2414,9 @@ namespace Punto_de_venta.Presentacion.Productos
             this.TXTPRECIODEVENTA2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TXTPRECIODEVENTA2.BackColor = System.Drawing.Color.White;
             this.TXTPRECIODEVENTA2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TXTPRECIODEVENTA2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TXTPRECIODEVENTA2.ForeColor = System.Drawing.Color.Black;
-            this.TXTPRECIODEVENTA2.Location = new System.Drawing.Point(170, 165);
+            this.TXTPRECIODEVENTA2.Location = new System.Drawing.Point(175, 173);
             this.TXTPRECIODEVENTA2.Name = "TXTPRECIODEVENTA2";
             this.TXTPRECIODEVENTA2.Size = new System.Drawing.Size(114, 26);
             this.TXTPRECIODEVENTA2.TabIndex = 626;
@@ -2365,7 +2428,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.Label27.AutoSize = true;
             this.Label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.Label27.ForeColor = System.Drawing.Color.Black;
-            this.Label27.Location = new System.Drawing.Point(11, 264);
+            this.Label27.Location = new System.Drawing.Point(16, 272);
             this.Label27.Name = "Label27";
             this.Label27.Size = new System.Drawing.Size(151, 20);
             this.Label27.TabIndex = 629;
@@ -2377,7 +2440,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.Label36.AutoSize = true;
             this.Label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.Label36.ForeColor = System.Drawing.Color.Black;
-            this.Label36.Location = new System.Drawing.Point(54, 35);
+            this.Label36.Location = new System.Drawing.Point(59, 43);
             this.Label36.Name = "Label36";
             this.Label36.Size = new System.Drawing.Size(108, 20);
             this.Label36.TabIndex = 630;
@@ -2389,8 +2452,9 @@ namespace Punto_de_venta.Presentacion.Productos
             this.txtcodigodebarras.BackColor = System.Drawing.Color.White;
             this.txtcodigodebarras.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcodigodebarras.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtcodigodebarras.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcodigodebarras.ForeColor = System.Drawing.Color.Black;
-            this.txtcodigodebarras.Location = new System.Drawing.Point(200, 262);
+            this.txtcodigodebarras.Location = new System.Drawing.Point(205, 270);
             this.txtcodigodebarras.Name = "txtcodigodebarras";
             this.txtcodigodebarras.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtcodigodebarras.Size = new System.Drawing.Size(218, 26);
@@ -2403,11 +2467,12 @@ namespace Punto_de_venta.Presentacion.Productos
             this.txtdescripcion.BackColor = System.Drawing.Color.White;
             this.txtdescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtdescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtdescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtdescripcion.ForeColor = System.Drawing.Color.Black;
-            this.txtdescripcion.Location = new System.Drawing.Point(168, 33);
+            this.txtdescripcion.Location = new System.Drawing.Point(173, 41);
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtdescripcion.Size = new System.Drawing.Size(546, 26);
+            this.txtdescripcion.Size = new System.Drawing.Size(490, 26);
             this.txtdescripcion.TabIndex = 621;
             this.txtdescripcion.Text = "0";
             this.txtdescripcion.TextChanged += new System.EventHandler(this.txtdescripcion_TextChanged_1);
@@ -2418,7 +2483,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.Label38.AutoSize = true;
             this.Label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.Label38.ForeColor = System.Drawing.Color.Black;
-            this.Label38.Location = new System.Drawing.Point(96, 232);
+            this.Label38.Location = new System.Drawing.Point(101, 240);
             this.Label38.Name = "Label38";
             this.Label38.Size = new System.Drawing.Size(64, 20);
             this.Label38.TabIndex = 631;
@@ -2434,7 +2499,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.btnGenerarCodigo,
             this.ToolStripMenuItem22});
             this.MenuStrip15.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.MenuStrip15.Location = new System.Drawing.Point(420, 253);
+            this.MenuStrip15.Location = new System.Drawing.Point(474, 218);
             this.MenuStrip15.Name = "MenuStrip15";
             this.MenuStrip15.ShowItemToolTips = true;
             this.MenuStrip15.Size = new System.Drawing.Size(210, 45);
@@ -2463,7 +2528,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // 
             this.Panel30.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Panel30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
-            this.Panel30.Location = new System.Drawing.Point(278, 205);
+            this.Panel30.Location = new System.Drawing.Point(283, 213);
             this.Panel30.Name = "Panel30";
             this.Panel30.Size = new System.Drawing.Size(53, 5);
             this.Panel30.TabIndex = 635;
@@ -2473,7 +2538,7 @@ namespace Punto_de_venta.Presentacion.Productos
             this.Panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
             this.Panel25.Controls.Add(this.CheckInventarios);
             this.Panel25.Controls.Add(this.Label42);
-            this.Panel25.Location = new System.Drawing.Point(136, 311);
+            this.Panel25.Location = new System.Drawing.Point(71, 303);
             this.Panel25.Name = "Panel25";
             this.Panel25.Size = new System.Drawing.Size(632, 148);
             this.Panel25.TabIndex = 639;
@@ -2481,6 +2546,7 @@ namespace Punto_de_venta.Presentacion.Productos
             // CheckInventarios
             // 
             this.CheckInventarios.AutoSize = true;
+            this.CheckInventarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CheckInventarios.Location = new System.Drawing.Point(601, 15);
             this.CheckInventarios.Name = "CheckInventarios";
             this.CheckInventarios.Size = new System.Drawing.Size(15, 14);
@@ -2572,23 +2638,23 @@ namespace Punto_de_venta.Presentacion.Productos
             this.Button5.Text = "Guardar Cambios";
             this.Button5.UseVisualStyleBackColor = false;
             // 
-            // panederecho
-            // 
-            this.panederecho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
-            this.panederecho.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panederecho.Location = new System.Drawing.Point(1124, 0);
-            this.panederecho.Name = "panederecho";
-            this.panederecho.Size = new System.Drawing.Size(137, 649);
-            this.panederecho.TabIndex = 616;
-            // 
             // panelizquierdo
             // 
             this.panelizquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
             this.panelizquierdo.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelizquierdo.Location = new System.Drawing.Point(0, 0);
             this.panelizquierdo.Name = "panelizquierdo";
-            this.panelizquierdo.Size = new System.Drawing.Size(137, 649);
+            this.panelizquierdo.Size = new System.Drawing.Size(137, 593);
             this.panelizquierdo.TabIndex = 615;
+            // 
+            // panederecho
+            // 
+            this.panederecho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
+            this.panederecho.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panederecho.Location = new System.Drawing.Point(1124, 0);
+            this.panederecho.Name = "panederecho";
+            this.panederecho.Size = new System.Drawing.Size(137, 593);
+            this.panederecho.TabIndex = 616;
             // 
             // dataGridViewImageColumn1
             // 
@@ -2622,21 +2688,20 @@ namespace Punto_de_venta.Presentacion.Productos
             this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
             // 
-            // Productoss
+            // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1261, 742);
-            this.Controls.Add(this.Panel4);
             this.Controls.Add(this.panelFrom);
             this.Controls.Add(this.Panel3);
+            this.Controls.Add(this.Panel4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Productoss";
+            this.Name = "Productos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Productoss";
+            this.Text = "Productos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Productoss_FormClosed);
             this.Load += new System.EventHandler(this.Productoss_Load);
             this.Panel4.ResumeLayout(false);
             this.Panel4.PerformLayout();
@@ -2657,11 +2722,11 @@ namespace Punto_de_venta.Presentacion.Productos
             this.PANELDEPARTAMENTOS.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DATALISTADO_PRODUCTOS_OKA)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.PanelImpuesto.ResumeLayout(false);
             this.PanelImpuesto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DATALISTADO_PRODUCTOS_OKA)).EndInit();
             this.PanelGRUPOSSELECT.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoGrupos)).EndInit();
             this.menuStrip2.ResumeLayout(false);
@@ -2762,8 +2827,8 @@ namespace Punto_de_venta.Presentacion.Productos
         private System.Windows.Forms.GroupBox groupBox1;
         internal System.Windows.Forms.Panel PanelGRUPOSSELECT;
         internal System.Windows.Forms.DataGridView datalistadoGrupos;
-        internal System.Windows.Forms.Panel Panel33;
-        internal System.Windows.Forms.Panel panel1;
+        internal System.Windows.Forms.Panel pizquierdo;
+        internal System.Windows.Forms.Panel pderecho;
         internal System.Windows.Forms.MenuStrip menuStrip2;
         internal System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         internal System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
@@ -2902,10 +2967,8 @@ namespace Punto_de_venta.Presentacion.Productos
         private System.Windows.Forms.DataGridViewImageColumn EditarG;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
-        internal System.Windows.Forms.Label label3;
         internal System.Windows.Forms.RadioButton si;
         internal System.Windows.Forms.RadioButton no;
-        internal System.Windows.Forms.ComboBox txtporcentaje;
         internal System.Windows.Forms.Panel PanelImpuesto;
         internal System.Windows.Forms.Panel Panel12;
         internal System.Windows.Forms.ComboBox txtimpuesto;
@@ -2913,5 +2976,12 @@ namespace Punto_de_venta.Presentacion.Productos
         internal System.Windows.Forms.TextBox txtPorcentajeGanancia;
         internal System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
+        internal System.Windows.Forms.Label label21;
+        internal System.Windows.Forms.Label label22;
+        internal System.Windows.Forms.Label txtporcentaje2;
+        internal System.Windows.Forms.Label txtporcentaje;
+        internal System.Windows.Forms.TextBox txtImpuestos;
+        internal System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }

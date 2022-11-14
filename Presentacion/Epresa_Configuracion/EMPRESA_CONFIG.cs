@@ -49,8 +49,9 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
                 no.Checked = true;
             }
             txtporcentaje.Text = datalistado.SelectedCells[6].Value.ToString();
-            txtimpuesto.Text = datalistado.SelectedCells[7].Value.ToString();
-            tipo_de_busqueda = datalistado.SelectedCells[8].Value.ToString();
+            txtporcentaje2.Text = datalistado.SelectedCells[7].Value.ToString();
+            txtimpuesto.Text = datalistado.SelectedCells[8].Value.ToString();
+            tipo_de_busqueda = datalistado.SelectedCells[9].Value.ToString();
             if (tipo_de_busqueda == "LECTORA")
             {
                 TXTCON_LECTORA.Checked = true;
@@ -124,6 +125,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
                         cmd.Parameters.AddWithValue("@Nombre_Empresa", txtempresa.Text);
                         cmd.Parameters.AddWithValue("@Impuesto", txtimpuesto.Text);
                         cmd.Parameters.AddWithValue("@Porcentaje_impuesto", txtporcentaje.Text);
+                        cmd.Parameters.AddWithValue("@Porcentaje_otros_impuesto", txtporcentaje2.Text);
                         cmd.Parameters.AddWithValue("@Moneda", txtmoneda.Text);
                         cmd.Parameters.AddWithValue("@Trabajas_con_impuestos", Vendes_con_impuestos);
 
@@ -238,6 +240,11 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void ToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             Dispose();
         }

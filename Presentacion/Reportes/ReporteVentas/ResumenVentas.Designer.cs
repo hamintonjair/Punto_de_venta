@@ -54,7 +54,7 @@ namespace Punto_de_venta.Presentacion.Reportes.ReporteVentas
             // textBox10
             // 
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(4.989D), Telerik.Reporting.Drawing.Unit.Cm(0.648D));
+            this.textBox10.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(4.566D), Telerik.Reporting.Drawing.Unit.Cm(0.648D));
             this.textBox10.Style.Font.Bold = true;
             this.textBox10.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox10.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
@@ -63,7 +63,7 @@ namespace Punto_de_venta.Presentacion.Reportes.ReporteVentas
             // textBox12
             // 
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(2.122D), Telerik.Reporting.Drawing.Unit.Cm(0.648D));
+            this.textBox12.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(2.837D), Telerik.Reporting.Drawing.Unit.Cm(0.648D));
             this.textBox12.Style.Font.Bold = true;
             this.textBox12.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox12.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
@@ -74,7 +74,7 @@ namespace Punto_de_venta.Presentacion.Reportes.ReporteVentas
             // 
             this.textBox6.Format = "{0:d}";
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(5.295D), Telerik.Reporting.Drawing.Unit.Cm(0.5D));
+            this.textBox6.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(4.978D), Telerik.Reporting.Drawing.Unit.Cm(0.5D));
             this.textBox6.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox6.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
             this.textBox6.StyleName = "";
@@ -230,8 +230,8 @@ namespace Punto_de_venta.Presentacion.Reportes.ReporteVentas
             // table1
             // 
             this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Cm(3.697D)));
-            this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Cm(4.989D)));
-            this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Cm(2.122D)));
+            this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Cm(4.566D)));
+            this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Cm(2.837D)));
             this.table1.Body.Rows.Add(new Telerik.Reporting.TableBodyRow(Telerik.Reporting.Drawing.Unit.Cm(0.5D)));
             this.table1.Body.SetCellContent(0, 0, this.textBox11);
             this.table1.Body.SetCellContent(0, 1, this.textBox14);
@@ -264,7 +264,7 @@ namespace Punto_de_venta.Presentacion.Reportes.ReporteVentas
             tableGroup4.ReportItem = this.textBox6;
             tableGroup4.Sortings.Add(new Telerik.Reporting.Sorting("=Fields.fecha_venta", Telerik.Reporting.SortDirection.Asc));
             this.table1.RowGroups.Add(tableGroup4);
-            this.table1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(16.104D), Telerik.Reporting.Drawing.Unit.Cm(1.148D));
+            this.table1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(16.078D), Telerik.Reporting.Drawing.Unit.Cm(1.148D));
             // 
             // textBox11
             // 
@@ -281,7 +281,7 @@ namespace Punto_de_venta.Presentacion.Reportes.ReporteVentas
             // 
             this.textBox14.Format = "{0:N2}";
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(4.989D), Telerik.Reporting.Drawing.Unit.Cm(0.5D));
+            this.textBox14.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(4.566D), Telerik.Reporting.Drawing.Unit.Cm(0.5D));
             this.textBox14.Style.BorderStyle.Left = Telerik.Reporting.Drawing.BorderType.None;
             this.textBox14.Style.BorderStyle.Top = Telerik.Reporting.Drawing.BorderType.Dashed;
             this.textBox14.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
@@ -293,7 +293,7 @@ namespace Punto_de_venta.Presentacion.Reportes.ReporteVentas
             // 
             this.textBox18.Format = "{0:N2}";
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(2.122D), Telerik.Reporting.Drawing.Unit.Cm(0.5D));
+            this.textBox18.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(2.837D), Telerik.Reporting.Drawing.Unit.Cm(0.5D));
             this.textBox18.Style.BorderStyle.Left = Telerik.Reporting.Drawing.BorderType.None;
             this.textBox18.Style.BorderStyle.Top = Telerik.Reporting.Drawing.BorderType.Dashed;
             this.textBox18.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
@@ -304,7 +304,7 @@ namespace Punto_de_venta.Presentacion.Reportes.ReporteVentas
             // textBox7
             // 
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(5.295D), Telerik.Reporting.Drawing.Unit.Cm(0.648D));
+            this.textBox7.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(4.978D), Telerik.Reporting.Drawing.Unit.Cm(0.648D));
             this.textBox7.Style.Font.Bold = true;
             this.textBox7.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox7.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;

@@ -31,17 +31,17 @@ namespace Punto_de_venta.Presentacion.Notificaciones
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Notificaciones_form));
             this.PanelCONTENEDORDENOTIFICACIONES = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelCONTENEDORDENOTIFICACIONES.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelCONTENEDORDENOTIFICACIONES
@@ -52,25 +52,6 @@ namespace Punto_de_venta.Presentacion.Notificaciones
             this.PanelCONTENEDORDENOTIFICACIONES.Name = "PanelCONTENEDORDENOTIFICACIONES";
             this.PanelCONTENEDORDENOTIFICACIONES.Size = new System.Drawing.Size(800, 450);
             this.PanelCONTENEDORDENOTIFICACIONES.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(105, 79);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(105, 48);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(695, 31);
-            this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
@@ -83,15 +64,15 @@ namespace Punto_de_venta.Presentacion.Notificaciones
             this.panel2.Size = new System.Drawing.Size(800, 79);
             this.panel2.TabIndex = 2;
             // 
-            // label1
+            // panel1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(105, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(695, 48);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(105, 48);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(695, 31);
+            this.panel1.TabIndex = 1;
             // 
             // label2
             // 
@@ -112,6 +93,25 @@ namespace Punto_de_venta.Presentacion.Notificaciones
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Location = new System.Drawing.Point(105, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(695, 48);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "label1";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(105, 79);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Notificaciones_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,10 +122,10 @@ namespace Punto_de_venta.Presentacion.Notificaciones
             this.Name = "Notificaciones_form";
             this.Load += new System.EventHandler(this.Notificaciones_form_Load);
             this.PanelCONTENEDORDENOTIFICACIONES.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

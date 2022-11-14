@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Punto_de_venta</RootNamespace>
     <AssemblyName>Punto_de_venta</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -42,6 +42,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,10 +52,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <ApplicationIcon>Untitled Design.ico</ApplicationIcon>
+    <ApplicationIcon>Icon %282%29.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>E7EC6803328534034DF49A095DFA8A6E4BD991E3</ManifestCertificateThumbprint>
@@ -366,17 +368,29 @@
     <Compile Include="Presentacion\Notificaciones\Notificaciones_form.Designer.cs">
       <DependentUpon>Notificaciones_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\PagosProveedores\MediosPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\PagosProveedores\MediosPagos.Designer.cs">
+      <DependentUpon>MediosPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\PagosProveedores\PagosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\PagosProveedores\PagosForm.Designer.cs">
+      <DependentUpon>PagosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Productos\Asistente_de_importacionExcel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Productos\Asistente_de_importacionExcel.Designer.cs">
       <DependentUpon>Asistente_de_importacionExcel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Productos\Productoss.cs">
+    <Compile Include="Presentacion\Productos\Productos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Productos\Productoss.Designer.cs">
-      <DependentUpon>Productoss.cs</DependentUpon>
+    <Compile Include="Presentacion\Productos\Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Reportes\Impresion_de_comprobantes\Ticket_report.cs">
       <SubType>Component</SubType>
@@ -425,6 +439,12 @@
     </Compile>
     <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormReporteMovimientosFILTROS.Designer.cs">
       <DependentUpon>FormReporteMovimientosFILTROS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportCotizacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportCotizacion.Designer.cs">
+      <DependentUpon>ReportCotizacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportePbajomin.cs">
       <SubType>Component</SubType>
@@ -517,6 +537,12 @@
     </Compile>
     <Compile Include="Presentacion\Panel_de_Administracion_del_Software\Conexion_Manual.Designer.cs">
       <DependentUpon>Conexion_Manual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Ventas_Menu_Principal\Ver_Productos_Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Ventas_Menu_Principal\Ver_Productos_Inventario.Designer.cs">
+      <DependentUpon>Ver_Productos_Inventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -635,11 +661,17 @@
     <EmbeddedResource Include="Presentacion\Notificaciones\Notificaciones_form.resx">
       <DependentUpon>Notificaciones_form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\PagosProveedores\MediosPagos.resx">
+      <DependentUpon>MediosPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\PagosProveedores\PagosForm.resx">
+      <DependentUpon>PagosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Productos\Asistente_de_importacionExcel.resx">
       <DependentUpon>Asistente_de_importacionExcel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Productos\Productoss.resx">
-      <DependentUpon>Productoss.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Productos\Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Impresion_de_comprobantes\Ticket_report.resx">
       <DependentUpon>Ticket_report.cs</DependentUpon>
@@ -661,6 +693,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\FormReporteMovimientosFILTROS.resx">
       <DependentUpon>FormReporteMovimientosFILTROS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportCotizacion.resx">
+      <DependentUpon>ReportCotizacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Reportes_de_Kardex_listo\Reportes_de_Inventario_Todos\ReportePbajomin.resx">
       <DependentUpon>ReportePbajomin.cs</DependentUpon>
@@ -707,6 +742,9 @@
     <EmbeddedResource Include="Presentacion\Panel_de_Administracion_del_Software\Conexion_Manual.resx">
       <DependentUpon>Conexion_Manual.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Ventas_Menu_Principal\Ver_Productos_Inventario.resx">
+      <DependentUpon>Ver_Productos_Inventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -741,6 +779,7 @@
     <None Include="Resources\add_insert_new_17850.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Icon %282%29.ico" />
     <Content Include="Presentacion\Caja\FormatoCierreCaja.html" />
     <Content Include="Presentacion\Login\HTMLPage1.html" />
     <None Include="Resources\Captura de pantalla 2022-01-07 161543.png" />
@@ -754,6 +793,7 @@
     <None Include="Resources\bar_code_22177.png" />
     <None Include="Resources\tact_key_keyboard_9523.png" />
     <None Include="Resources\Gmail_29991.png" />
+    <None Include="Resources\logoJOJAMA11.png" />
     <Content Include="Untitled Design.ico" />
     <None Include="Resources\Captura de pantalla 2022-01-07 072646.png" />
     <None Include="Resources\pagosicono.png" />

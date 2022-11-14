@@ -222,9 +222,9 @@ namespace Punto_de_venta
             this.PanelICONO.Controls.Add(this.pictureBox11);
             this.PanelICONO.Controls.Add(this.flowLayoutPanel2);
             this.PanelICONO.Controls.Add(this.flowLayoutPanel1);
-            this.PanelICONO.Location = new System.Drawing.Point(8, 0);
+            this.PanelICONO.Location = new System.Drawing.Point(8, 3);
             this.PanelICONO.Name = "PanelICONO";
-            this.PanelICONO.Size = new System.Drawing.Size(762, 510);
+            this.PanelICONO.Size = new System.Drawing.Size(759, 507);
             this.PanelICONO.TabIndex = 5;
             // 
             // pictureBox11
@@ -252,6 +252,7 @@ namespace Punto_de_venta
             // 
             // pictureBox7
             // 
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
             this.pictureBox7.Location = new System.Drawing.Point(3, 3);
             this.pictureBox7.Name = "pictureBox7";
@@ -263,6 +264,7 @@ namespace Punto_de_venta
             // 
             // pictureBox8
             // 
+            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
             this.pictureBox8.Location = new System.Drawing.Point(184, 3);
             this.pictureBox8.Name = "pictureBox8";
@@ -274,6 +276,7 @@ namespace Punto_de_venta
             // 
             // pictureBox9
             // 
+            this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
             this.pictureBox9.Location = new System.Drawing.Point(362, 3);
             this.pictureBox9.Name = "pictureBox9";
@@ -285,6 +288,7 @@ namespace Punto_de_venta
             // 
             // pictureBox10
             // 
+            this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
             this.pictureBox10.Location = new System.Drawing.Point(540, 3);
             this.pictureBox10.Name = "pictureBox10";
@@ -307,6 +311,7 @@ namespace Punto_de_venta
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(3, 3);
             this.pictureBox3.Name = "pictureBox3";
@@ -318,6 +323,7 @@ namespace Punto_de_venta
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(181, 3);
             this.pictureBox4.Name = "pictureBox4";
@@ -329,6 +335,7 @@ namespace Punto_de_venta
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(359, 3);
             this.pictureBox5.Name = "pictureBox5";
@@ -340,6 +347,7 @@ namespace Punto_de_venta
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(537, 3);
             this.pictureBox6.Name = "pictureBox6";
@@ -492,7 +500,7 @@ namespace Punto_de_venta
             this.cbRol.Items.AddRange(new object[] {
             "Solo Ventas (no esta autorizado para manejar dinero)",
             "Cajero (¿Si estas autorizado para manejar dinero?)",
-            "Administraador (Control total"});
+            "Administrador (Control total)"});
             this.cbRol.Location = new System.Drawing.Point(196, 196);
             this.cbRol.Name = "cbRol";
             this.cbRol.Size = new System.Drawing.Size(447, 28);

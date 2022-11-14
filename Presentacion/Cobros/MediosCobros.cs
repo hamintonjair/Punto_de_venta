@@ -55,15 +55,7 @@ namespace Punto_de_venta.Presentacion.Cobros
                 {
                     efectivo = Convert.ToDouble(txtefectivo2.Text);
 
-                }
-                if (string.IsNullOrEmpty(txttarjeta2.Text))
-                {
-                    tarjeta = 0;
-                }
-                else
-                {
-                    tarjeta = Convert.ToDouble(txttarjeta2.Text);
-                }
+                }          
                 //calculo de vuelto
                 if (efectivo > saldo)
                 {
@@ -98,12 +90,7 @@ namespace Punto_de_venta.Presentacion.Cobros
                     efectivo = 0;
                     txtefectivo2.Text = efectivo.ToString();
                 }
-                if (tarjeta > saldo)
-                {
-                    MessageBox.Show("El pago con tarjeta no puede ser mayor que el saldo");
-                    tarjeta = 0;
-                    txttarjeta2.Text = tarjeta.ToString();
-                }
+              
             }
             catch (Exception)
             {
@@ -163,7 +150,7 @@ namespace Punto_de_venta.Presentacion.Cobros
 
         private void txttarjeta2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Bases.Separador_de_Numeros(txttarjeta2, e);
+           
         }
     }
 }

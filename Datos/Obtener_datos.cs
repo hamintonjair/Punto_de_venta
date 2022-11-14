@@ -67,6 +67,7 @@ namespace Punto_de_venta.Datos
 
             }
         }
+
         public static void buscar_conceptos(ref DataTable dt, string buscador)
         {
             try
@@ -84,7 +85,7 @@ namespace Punto_de_venta.Datos
             }
         }
 
-        public static void mostrar_gastos_por_turnos(int idcaja, DateTime fi, DateTime ff, ref DataTable dt)
+        public static void mostrar_gastos_por_turnos( int idcaja, DateTime fi, DateTime ff, ref DataTable dt)
         {
             try
             {
@@ -99,8 +100,7 @@ namespace Punto_de_venta.Datos
                 ConexionData.cerrar();
             }
             catch (Exception ex)
-            {
-                MessageBox.Show(ex.StackTrace);
+            {               
 
             }
         }
@@ -344,6 +344,22 @@ namespace Punto_de_venta.Datos
                 MessageBox.Show(ex.StackTrace);
             }
         }
+        public static void buscarPagos(ref double monto, int idproveedor)
+        {
+            try
+            {
+                ConexionData.abrir();
+                SqlCommand da = new SqlCommand("MostrarControlPagos", ConexionData.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                da.Parameters.AddWithValue("@idProveedor", idproveedor);
+                monto = Convert.ToDouble(da.ExecuteScalar());
+                ConexionData.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
         public static void sumar_CreditoPorPagar(int idcaja, DateTime fi, DateTime ff, ref double monto)
         {
             try
@@ -463,6 +479,38 @@ namespace Punto_de_venta.Datos
             {
                 MessageBox.Show(ex.StackTrace);
             }
+        }  
+        public static void mostrarEstadosPagoProveedores(ref DataTable dt, int idproveedor)
+        {
+            try
+            {
+                ConexionData.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrarEstadosPagoProveedores", ConexionData.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idProveedor", idproveedor);
+                da.Fill(dt);
+                ConexionData.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        public static void mostrarAbonosPagoProveedores(ref DataTable dt, int idproveedor)
+        {
+            try
+            {
+                ConexionData.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrarAbonosPagoProveedores", ConexionData.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idProveedor", idproveedor);
+                da.Fill(dt);
+                ConexionData.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
         }
         public static void mostrarEstadosCuentaCliente(ref DataTable dt, int idcliente)
         {
@@ -491,6 +539,29 @@ namespace Punto_de_venta.Datos
                 da.Fill(dt);
 
                 ConexionData.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        public static void mostrar_ControlPagos(ref DataTable dt, int idproveedor)
+        {
+            try
+            {
+                //ConexionData.abrir();
+                //SqlDataAdapter da = new SqlDataAdapter("mostrar_ControlPagos", ConexionData.conectar);
+                //da.Fill(dt);
+
+                //ConexionData.cerrar();
+               
+                    ConexionData.abrir();
+                    SqlDataAdapter da = new SqlDataAdapter("mostrarEstadosAbonosProveedores", ConexionData.conectar);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@idProveedor", idproveedor);
+                    da.Fill(dt);
+                    ConexionData.cerrar();
+             
             }
             catch (Exception ex)
             {

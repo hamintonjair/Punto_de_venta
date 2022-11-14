@@ -25,7 +25,10 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         string moneda;
         int idcliente;
         int idventa;
-        double total;
+        String total;
+        double valorIVA19;
+        double valorIVA5;
+        double SINIVA;
         double vuelto = 0;
         double efectivo_calculado = 0;
         double restante = 0;
@@ -41,6 +44,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         double credito = 0;
         int idcomprobante;
         string lblSerialPC;
+        int iva19;
+        int iva5;
+        double base5;
+        double base19;
+        string cot;
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -48,6 +56,25 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         private void MEDIOS_DE_PAGO_Load(object sender, EventArgs e)
         {
+        
+            numerlent = txtnumeroconvertidoenletra.Text;
+            cot = Ventas_Menu_Princi.activado;
+            if (cot == "ACTIVADO")
+            {
+                this.Size = new System.Drawing.Size(428, 181);
+                this.StartPosition = FormStartPosition.CenterScreen;
+                btncerrar.Visible = true;
+                TGuardarSinImprimir.Visible = false;
+
+            }
+            if(cot =="DESACTIVADO")
+            {
+                this.Size = new System.Drawing.Size(1054, 592);
+                //this.FormBorderStyle = FormBorderStyle.None;
+                this.StartPosition = FormStartPosition.CenterScreen;                         
+                TGuardarSinImprimir.Visible = true;
+            }
+
             cambiar_el_formato_de_separador_de_decimales();
             MOSTRAR_comprobante_serializado_POR_DEFECTO();
             validar_tipos_de_comprobantes();
@@ -58,7 +85,12 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             mostrar_impresora();
             cargar_impresoras_del_equipo();
 
-            calcular_restante();
+            if (cot != "ACTIVADO")
+            {
+                calcular_restante();
+            }
+
+           
         }
         private void MOSTRAR_comprobante_serializado_POR_DEFECTO()
         {
@@ -139,15 +171,15 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 lblindicador_de_factura_1.ForeColor = Color.FromArgb(255, 192, 192);
 
             }
-            else if (lblComprobante.Text != "FACTURA" && txttipo == "TARJETA")
-            {
-                PANEL_CLIENTE_FACTURA.Visible = true;
-                lblindicador_de_factura_1.Text = "Cliente: (Opcional)";
-                lblindicador_de_factura_1.ForeColor = Color.DimGray;
+                else if (lblComprobante.Text != "FACTURA" && txttipo == "TARJETA")
+                {
+                    PANEL_CLIENTE_FACTURA.Visible = true;
+                    lblindicador_de_factura_1.Text = "Cliente: (Opcional)";
+                    lblindicador_de_factura_1.ForeColor = Color.DimGray;
+                }
+
+
             }
-
-
-        }
         void validar_tipos_de_comprobantes()
         {
             buscar_Tipo_de_documentos_para_insertar_en_ventas();
@@ -189,17 +221,13 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         {
             int indicadorEfectivo = 4;
             int indicadorCredito = 2;
-            int indicadorTarjeta = 3;
+            //int indicadorTarjeta = 3;
 
             // validacion para evitar valores vacios
             if (txtefectivo2.Text == "")
             {
                 txtefectivo2.Text = "0";
-            }
-            if (txttarjeta2.Text == "")
-            {
-                txttarjeta2.Text = "0";
-            }
+            }           
             if (txtcredito2.Text == "")
             {
                 txtcredito2.Text = "0";
@@ -208,11 +236,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             if (txtefectivo2.Text == ".")
             {
                 txtefectivo2.Text = "0";
-            }
-            if (txttarjeta2.Text == ".")
-            {
-                txttarjeta2.Text = "0";
-            }
+            }          
             if (txtcredito2.Text == ".")
             {
                 txtcredito2.Text = "0";
@@ -221,17 +245,13 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             if (txtefectivo2.Text == "0")
             {
                 indicadorEfectivo = 0;
-            }
-            if (txttarjeta2.Text == "0")
-            {
-                indicadorTarjeta = 0;
-            }
+            }          
             if (txtcredito2.Text == "0")
             {
                 indicadorCredito = 0;
             }
             //calculo de indicador
-            int calculo_identificacion = indicadorCredito + indicadorEfectivo + indicadorTarjeta;
+            int calculo_identificacion = indicadorCredito + indicadorEfectivo /*+ indicadorTarjeta*/;
             //consulta al identificador
             if (calculo_identificacion == 4)
             {
@@ -241,10 +261,10 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             {
                 indicador_de_tipo_de_pago_string = "CREDITO";
             }
-            if (calculo_identificacion == 3)
-            {
-                indicador_de_tipo_de_pago_string = "TARJETA";
-            }
+            //if (calculo_identificacion == 3)
+            //{
+            //    indicador_de_tipo_de_pago_string = "TARJETA";
+            //}
             if (calculo_identificacion > 4)
             {
                 indicador_de_tipo_de_pago_string = "MIXTO";
@@ -279,8 +299,15 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             TXTVUELTO.Text = "0.0";
             txtrestante.Text = "0.0";
             TXTTOTAL.Text = moneda + " " + Ventas_Menu_Princi.total;
-            total = Ventas_Menu_Princi.total;
-            txtefectivo2.Text =Convert.ToString( total);
+            txtefectivo2.Text = Ventas_Menu_Princi.total.ToString();
+            valorIVA19 = Ventas_Menu_Princi.valorTotalImportiva19;
+            valorIVA5 = Ventas_Menu_Princi.valorTotalImportiva5;
+            iva19 = Ventas_Menu_Princi.IVA19;
+            iva5 = Ventas_Menu_Princi.IVA5;
+            SINIVA = Ventas_Menu_Princi.SinIVA;
+            base5 = Ventas_Menu_Princi.Basesin5;
+            base19 = Ventas_Menu_Princi.Basesin19;
+            total = txtefectivo2.Text;
             idcliente = 0;
 
         }
@@ -314,7 +341,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         void cargar_impresoras_del_equipo()
         {
             txtImpresora.Items.Clear();
-            for (var I = 0; I < PrinterSettings.InstalledPrinters.Count; I++)
+     
+            for (var I = 0; I <PrinterSettings.InstalledPrinters.Count; I++)
             {
                 txtImpresora.Items.Add(PrinterSettings.InstalledPrinters[I]);
             }
@@ -342,16 +370,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 else
                 {
                     credito = Convert.ToDouble(txtcredito2.Text);
-                }
-                if (txttarjeta2.Text == "")
-                {
-                    tarjeta = 0;
-                }
-                else
-                {
-                    tarjeta = Convert.ToDouble(txttarjeta2.Text);
-                }
-
+                }           
+             
                 if (txtefectivo2.Text == "0.00")
                 {
                     efectivo = 0;
@@ -359,12 +379,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 if (txtcredito2.Text == "0.00")
                 {
                     credito = 0;
-                }
-                if (txttarjeta2.Text == "0.00")
-                {
-                    tarjeta = 0;
-
-                }
+                }            
 
                 if (txtefectivo2.Text == ".")
                 {
@@ -373,11 +388,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 if (txtcredito2.Text == ".")
                 {
                     tarjeta = 0;
-                }
-                if (txttarjeta2.Text == ".")
-                {
-                    credito = 0;
-                }
+                }              
                 ///////
                 //Total= 5 
                 //Efectivo= 10
@@ -391,9 +402,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
                 try
                 {
-                    if (efectivo > total)
+                    if (efectivo > Convert.ToDouble(total))
                     {
-                        efectivo_calculado = efectivo - (total + credito + tarjeta);
+                        efectivo_calculado = efectivo - (Convert.ToDouble(total) + credito + tarjeta);
                         if (efectivo_calculado < 0)
                         {
                             vuelto = 0;
@@ -403,9 +414,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                         }
                         else
                         {
-                            vuelto = efectivo - (total - credito - tarjeta);
+                            vuelto = efectivo - (Convert.ToDouble(total) - credito - tarjeta);
                             TXTVUELTO.Text = Convert.ToString(vuelto);
-                            restante = efectivo - (total + credito + tarjeta + efectivo_calculado);
+                            restante = efectivo - (Convert.ToDouble(total) + credito + tarjeta + efectivo_calculado);
                             txtrestante.Text = Convert.ToString(restante);
                             txtrestante.Text = decimal.Parse(txtrestante.Text).ToString("##0.00");
                         }
@@ -416,7 +427,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                         vuelto = 0;
                         TXTVUELTO.Text = "0";
                         efectivo_calculado = efectivo;
-                        restante = total - efectivo_calculado - credito - tarjeta;
+                        restante = Convert.ToDouble(total) - efectivo_calculado - credito - tarjeta;
                         txtrestante.Text = Convert.ToString(restante);
                         txtrestante.Text = decimal.Parse(txtrestante.Text).ToString("##0.00");
                     }
@@ -490,12 +501,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             else if (INDICADOR_DE_FOCO == 2)
             {
-                txttarjeta2.Text = txttarjeta2.Text + "1";
-            }
-            else if (INDICADOR_DE_FOCO == 3)
-            {
                 txtcredito2.Text = txtcredito2.Text + "1";
-            }
+            }         
         }
 
         private void btn2_Click(object sender, EventArgs e)
@@ -506,12 +513,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             else if (INDICADOR_DE_FOCO == 2)
             {
-                txttarjeta2.Text = txttarjeta2.Text + "2";
-            }
-            else if (INDICADOR_DE_FOCO == 3)
-            {
                 txtcredito2.Text = txtcredito2.Text + "2";
-            }
+            }         
         }
 
         private void btn3_Click(object sender, EventArgs e)
@@ -522,12 +525,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             else if (INDICADOR_DE_FOCO == 2)
             {
-                txttarjeta2.Text = txttarjeta2.Text + "3";
-            }
-            else if (INDICADOR_DE_FOCO == 3)
-            {
                 txtcredito2.Text = txtcredito2.Text + "3";
-            }
+            }          
         }
 
         private void btn4_Click(object sender, EventArgs e)
@@ -539,12 +538,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             else if (INDICADOR_DE_FOCO == 2)
             {
-                txttarjeta2.Text = txttarjeta2.Text + "4";
-            }
-            else if (INDICADOR_DE_FOCO == 3)
-            {
                 txtcredito2.Text = txtcredito2.Text + "4";
-            }
+            }          
         }
 
         private void btn5_Click(object sender, EventArgs e)
@@ -556,12 +551,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             else if (INDICADOR_DE_FOCO == 2)
             {
-                txttarjeta2.Text = txttarjeta2.Text + "5";
-            }
-            else if (INDICADOR_DE_FOCO == 3)
-            {
                 txtcredito2.Text = txtcredito2.Text + "5";
-            }
+            }          
         }
 
         private void btn6_Click(object sender, EventArgs e)
@@ -573,12 +564,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             else if (INDICADOR_DE_FOCO == 2)
             {
-                txttarjeta2.Text = txttarjeta2.Text + "6";
-            }
-            else if (INDICADOR_DE_FOCO == 3)
-            {
                 txtcredito2.Text = txtcredito2.Text + "6";
-            }
+            }          
         }
 
         private void btn7_Click(object sender, EventArgs e)
@@ -590,12 +577,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             else if (INDICADOR_DE_FOCO == 2)
             {
-                txttarjeta2.Text = txttarjeta2.Text + "7";
-            }
-            else if (INDICADOR_DE_FOCO == 3)
-            {
                 txtcredito2.Text = txtcredito2.Text + "7";
-            }
+            }        
         }
 
         private void btn8_Click(object sender, EventArgs e)
@@ -607,12 +590,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             else if (INDICADOR_DE_FOCO == 2)
             {
-                txttarjeta2.Text = txttarjeta2.Text + "8";
-            }
-            else if (INDICADOR_DE_FOCO == 3)
-            {
                 txtcredito2.Text = txtcredito2.Text + "8";
-            }
+            }        
         }
 
         private void btn9_Click(object sender, EventArgs e)
@@ -624,12 +603,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             else if (INDICADOR_DE_FOCO == 2)
             {
-                txttarjeta2.Text = txttarjeta2.Text + "9";
-            }
-            else if (INDICADOR_DE_FOCO == 3)
-            {
                 txtcredito2.Text = txtcredito2.Text + "9";
-            }
+            }          
         }
 
         private void btn0_Click(object sender, EventArgs e)
@@ -641,12 +616,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             else if (INDICADOR_DE_FOCO == 2)
             {
-                txttarjeta2.Text = txttarjeta2.Text + "0";
-            }
-            else if (INDICADOR_DE_FOCO == 3)
-            {
                 txtcredito2.Text = txtcredito2.Text + "0";
-            }
+            }         
         }
 
         private void btnpunto_Click(object sender, EventArgs e)
@@ -669,7 +640,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             {
                 if (SECUENCIA2 == true)
                 {
-                    txttarjeta2.Text = txttarjeta2.Text + ".";
+                    txtcredito2.Text = txtcredito2.Text + ".";
                     SECUENCIA2 = false;
                 }
 
@@ -678,21 +649,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                     return;
                 }
 
-            }
-            else if (INDICADOR_DE_FOCO == 3)
-            {
-                if (SECUENCIA3 == true)
-                {
-                    txtcredito2.Text = txtcredito2.Text + ".";
-                    SECUENCIA3 = false;
-                }
-
-                else
-                {
-                    return;
-                }
-
-            }
+            }       
         }
 
         private void btnborrartodo_Click(object sender, EventArgs e)
@@ -815,20 +772,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 txtefectivo2.Text = txtrestante.Text;
             }
         }
-
-        private void txttarjeta2_Click(object sender, EventArgs e)
-        {
-            calcular_restante();
-            INDICADOR_DE_FOCO = 2;
-            if (txtrestante.Text == "0.00")
-            {
-                txttarjeta2.Text = "";
-            }
-            else
-            {
-                txttarjeta2.Text = txtrestante.Text;
-            }
-        }
+   
 
         private void txtcredito2_Click(object sender, EventArgs e)
         {
@@ -849,7 +793,16 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         void INGRESAR_LOS_DATOS()
         {
             CONVERTIR_TOTAL_A_LETRAS();
-            completar_con_ceros_los_texbox_de_otros_medios_de_pago();
+            if (cot != "ACTIVADO")
+            {
+                completar_con_ceros_los_texbox_de_otros_medios_de_pago();
+            }
+            if (cot == "ACTIVADO")
+            {
+                txttipo = "MIXTO";
+            }
+
+
             if (txttipo == "EFECTIVO" && vuelto >= 0)
             {
                 vender_en_efectivo();
@@ -867,18 +820,17 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             else if (txttipo == "CREDITO" && datalistadoclientes2.Visible == true)
             {
                 MessageBox.Show("Seleccione un Cliente para Activar Pago a Credito", "Datos Incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
-            if (txttipo == "TARJETA")
-            {
-                vender_en_efectivo();
-            }
-
+            }      
 
             if (txttipo == "MIXTO")
             {
+                if (cot == "ACTIVADO")
+                {
+                    txttipo = "COTIZACIÓN";
+                }
+
                 vender_en_efectivo();
-            }
+            }                   
 
         }
         void MOSTRAR_cliente_standar()
@@ -946,11 +898,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             if (txtcredito2.Text == "")
             {
                 txtcredito2.Text = "0";
-            }
-            if (txttarjeta2.Text == "")
-            {
-                txttarjeta2.Text = "0";
-            }
+            }          
             if (TXTVUELTO.Text == "")
             {
                 TXTVUELTO.Text = "0";
@@ -960,13 +908,45 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         {
             actualizar_serie_mas_uno();
             validar_tipos_de_comprobantes();
-            CONFIRMAR_VENTA_EFECTIVO();
-            if (lblproceso == "PROCEDE")
+           
+            if(cot == "ACTIVADO")
+            {
+                CONFIRMAR_VENTA_COTIZA();           
+            }
+            else
+            {
+                CONFIRMAR_VENTA_EFECTIVO();
+            }
+
+            if (lblproceso == "PROCEDE" & cot == "ACTIVADO")
+            {             
+                if (cot == "ACTIVADO")
+                {
+                  
+                    imprimir_directo();
+                }
+                else
+                {
+                   
+                    validar_tipo_de_impresion();
+                }
+          
+            }
+            else if(lblproceso == "PROCEDE")
             {
                 disminuir_stock_productos();
                 INSERTAR_KARDEX_SALIDA();
                 aumentar_monto_a_cliente();
-                validar_tipo_de_impresion();
+                if (cot == "ACTIVADO")
+                {
+
+                    imprimir_directo();
+                }
+                else
+                {
+
+                    validar_tipo_de_impresion();
+                }
             }
         }
         void actualizar_serie_mas_uno()
@@ -991,28 +971,85 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         void CONFIRMAR_VENTA_EFECTIVO()
         {
             try
+                {
+                    ConexionDt.ConexionData.abrir();
+                    SqlCommand cmd = new SqlCommand("Confirmar_venta", ConexionDt.ConexionData.conectar);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idventa", idventa);
+                    cmd.Parameters.AddWithValue("@montototal",Convert.ToDouble(total));
+                    cmd.Parameters.AddWithValue("@Saldo", vuelto);
+                    cmd.Parameters.AddWithValue("@Tipo_de_pago", txttipo);
+                    cmd.Parameters.AddWithValue("@Estado", "CONFIRMADO");
+                    cmd.Parameters.AddWithValue("@idcliente", idcliente);
+                    cmd.Parameters.AddWithValue("@Comprobante", lblComprobante.Text);
+                    cmd.Parameters.AddWithValue("@Numero_de_doc", (txtserie.Text + "-" + lblCorrelativoconCeros.Text));
+                    cmd.Parameters.AddWithValue("@fecha_venta", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@ACCION", "VENTA");
+                    cmd.Parameters.AddWithValue("@Fecha_de_pago", txtfecha_de_pago.Value);
+                    cmd.Parameters.AddWithValue("@Pago_con", txtefectivo2.Text);
+                    cmd.Parameters.AddWithValue("@ValorIVA5", valorIVA5);
+                    cmd.Parameters.AddWithValue("@ValorIVA19", valorIVA19);
+                    cmd.Parameters.AddWithValue("@Porcentaje_IVA_5", iva5);
+                    cmd.Parameters.AddWithValue("@Porcentaje_IVA_19", iva19);
+                    cmd.Parameters.AddWithValue("@Sin_IVA", SINIVA);
+                    cmd.Parameters.AddWithValue("@Base5", base5);
+                    cmd.Parameters.AddWithValue("@Base19", base19);
+                    cmd.Parameters.AddWithValue("@Referencia_tarjeta", "NULO");
+                    cmd.Parameters.AddWithValue("@Vuelto", TXTVUELTO.Text);
+                    cmd.Parameters.AddWithValue("@Efectivo", total);
+                    cmd.Parameters.AddWithValue("@Credito", txtcredito2.Text);
+                    cmd.Parameters.AddWithValue("@Tarjeta", 0);
+                    cmd.ExecuteNonQuery();
+                    ConexionDt.ConexionData.cerrar();
+                    lblproceso = "PROCEDE";
+                }
+                catch (Exception ex)
+                {
+                    ConexionDt.ConexionData.cerrar();
+                    lblproceso = "NO PROCEDE";
+                    MessageBox.Show(ex.Message);
+                }
+            
+          
+        }
+
+        public static int ranNum;
+        void CONFIRMAR_VENTA_COTIZA()
+        {
+            Random myObject = new Random();
+            ranNum = myObject.Next(1000, 1000000000);
+
+            Random idi = new Random();
+            int id = idi.Next(1, 1000000000);
+            try
             {
                 ConexionDt.ConexionData.abrir();
-                SqlCommand cmd = new SqlCommand("Confirmar_venta", ConexionDt.ConexionData.conectar);
+                SqlCommand cmd = new SqlCommand("Confirmar_ventass", ConexionDt.ConexionData.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idventa", idventa);
-                cmd.Parameters.AddWithValue("@montototal", total);
-                cmd.Parameters.AddWithValue("@IGV", 0);
-                cmd.Parameters.AddWithValue("@Saldo", vuelto);
-                cmd.Parameters.AddWithValue("@Tipo_de_pago", txttipo);
+                cmd.Parameters.AddWithValue("@montototal", Convert.ToDouble(total));
+                cmd.Parameters.AddWithValue("@Saldo", 0);
+                cmd.Parameters.AddWithValue("@Tipo_de_pago", 0);
                 cmd.Parameters.AddWithValue("@Estado", "CONFIRMADO");
-                cmd.Parameters.AddWithValue("@idcliente", idcliente);
-                cmd.Parameters.AddWithValue("@Comprobante", lblComprobante.Text);
-                cmd.Parameters.AddWithValue("@Numero_de_doc", (txtserie.Text + "-" + lblCorrelativoconCeros.Text));
+            
+                cmd.Parameters.AddWithValue("@Comprobante", ranNum);
+                cmd.Parameters.AddWithValue("@Numero_de_doc", 0);
                 cmd.Parameters.AddWithValue("@fecha_venta", DateTime.Now);
-                cmd.Parameters.AddWithValue("@ACCION", "VENTA");
-                cmd.Parameters.AddWithValue("@Fecha_de_pago", txtfecha_de_pago.Value);
-                cmd.Parameters.AddWithValue("@Pago_con", txtefectivo2.Text);
+                cmd.Parameters.AddWithValue("@ACCION", "COTIZACIÓN");
+                cmd.Parameters.AddWithValue("@Fecha_de_pago", 0);
+                cmd.Parameters.AddWithValue("@Pago_con", 0);
+                cmd.Parameters.AddWithValue("@ValorIVA5", 0);
+                cmd.Parameters.AddWithValue("@ValorIVA19", 0);
+                cmd.Parameters.AddWithValue("@Porcentaje_IVA_5", 0);
+                cmd.Parameters.AddWithValue("@Porcentaje_IVA_19", 0);
+                cmd.Parameters.AddWithValue("@Sin_IVA", 0);
+                cmd.Parameters.AddWithValue("@Base5", 0);
+                cmd.Parameters.AddWithValue("@Base19", 0);
                 cmd.Parameters.AddWithValue("@Referencia_tarjeta", "NULO");
-                cmd.Parameters.AddWithValue("@Vuelto", TXTVUELTO.Text);
-                cmd.Parameters.AddWithValue("@Efectivo", efectivo_calculado);
-                cmd.Parameters.AddWithValue("@Credito", txtcredito2.Text);
-                cmd.Parameters.AddWithValue("@Tarjeta", txttarjeta2.Text);
+                cmd.Parameters.AddWithValue("@Vuelto", 0);
+                cmd.Parameters.AddWithValue("@Efectivo", 0);
+                cmd.Parameters.AddWithValue("@Credito", 0);
+                cmd.Parameters.AddWithValue("@Tarjeta", 0);
                 cmd.ExecuteNonQuery();
                 ConexionDt.ConexionData.cerrar();
                 lblproceso = "PROCEDE";
@@ -1020,9 +1057,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             catch (Exception ex)
             {
                 ConexionDt.ConexionData.cerrar();
-                lblproceso = "NO PROCEDE";
-                MessageBox.Show(ex.Message);
+                lblproceso = "PROCEDE";
+                //MessageBox.Show(ex.Message);
             }
+
+
         }
         void disminuir_stock_productos()
         {
@@ -1116,8 +1155,10 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             else if (indicador == "DIRECTO")
             {
                 imprimir_directo();
+            
             }
         }
+        public static string numerlent;
         void mostrar_ticket_impreso_VISTA_PREVIA()
          {
             PanelImpresionvistaprevia.Visible = true;
@@ -1125,28 +1166,30 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             panelGuardado_de_datos.Dock = DockStyle.None;
             panelGuardado_de_datos.Visible = false;
 
-            Presentacion.Reportes.Impresion_de_comprobantes.Ticket_report rpt = new Presentacion.Reportes.Impresion_de_comprobantes.Ticket_report();
-            DataTable dt = new DataTable();
-            try
-            {
-                ConexionDt.ConexionData.abrir();
-                SqlDataAdapter da = new SqlDataAdapter("mostrar_ticket_impreso", ConexionDt.ConexionData.conectar);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@Id_venta", idventa);
-                da.SelectCommand.Parameters.AddWithValue("@total_en_letras", txtnumeroconvertidoenletra.Text);
-                da.Fill(dt);
-                rpt = new Presentacion.Reportes.Impresion_de_comprobantes.Ticket_report();
-                rpt.table1.DataSource = dt;
-                rpt.DataSource = dt;
-                reportViewer1.Report = rpt;
-                reportViewer1.RefreshReport();
-                ConexionDt.ConexionData.cerrar();
+        
+                Presentacion.Reportes.Impresion_de_comprobantes.Ticket_report rpt = new Presentacion.Reportes.Impresion_de_comprobantes.Ticket_report();
+                DataTable dt = new DataTable();
+                try
+                {
+                    ConexionDt.ConexionData.abrir();
+                    SqlDataAdapter da = new SqlDataAdapter("mostrar_ticket_impreso", ConexionDt.ConexionData.conectar);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@Id_venta", idventa);
+                    da.SelectCommand.Parameters.AddWithValue("@total_en_letras", txtnumeroconvertidoenletra.Text);
+                    da.Fill(dt);
+                    rpt = new Presentacion.Reportes.Impresion_de_comprobantes.Ticket_report();
+                    rpt.table1.DataSource = dt;
+                    rpt.DataSource = dt;
+                    reportViewer1.Report = rpt;
+                    reportViewer1.RefreshReport();
+                    ConexionDt.ConexionData.cerrar();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.StackTrace);
-            }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.StackTrace);
+                }            
+   
 
         }
         void imprimir_directo()
@@ -1161,7 +1204,15 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                     PrinterSettings printerSettings = new PrinterSettings();
                     printerSettings.PrinterName = txtImpresora.Text;
                     ReportProcessor reportProcessor = new ReportProcessor();
-                    reportProcessor.PrintReport(reportViewer2.ReportSource, printerSettings);
+                    if (cot == "ACTIVADO")
+                    {
+                        reportProcessor.PrintReport(reportViewer3.ReportSource, printerSettings);
+                    }
+                    else
+                    {
+                        reportProcessor.PrintReport(reportViewer2.ReportSource, printerSettings);
+                    }
+               
                 }
                 Dispose();
             }
@@ -1172,28 +1223,71 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         }
         void mostrar_Ticket_lleno()
         {
-            Presentacion.Reportes.Impresion_de_comprobantes.Ticket_report rpt = new Presentacion.Reportes.Impresion_de_comprobantes.Ticket_report();
+            if (cot == "ACTIVADO")
+            {
+                mostrar();
+                reportViewer3.Visible = true;
+                reportViewer3.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                Presentacion.Reportes.Impresion_de_comprobantes.Ticket_report rpt = new Presentacion.Reportes.Impresion_de_comprobantes.Ticket_report();
+                DataTable dt = new DataTable();
+                try
+                {
+                    reportViewer2.Visible = true;
+                    ConexionDt.ConexionData.abrir();
+                    SqlDataAdapter da = new SqlDataAdapter("mostrar_ticket_impreso", ConexionDt.ConexionData.conectar);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@Id_venta", idventa);
+                    da.SelectCommand.Parameters.AddWithValue("@total_en_letras", txtnumeroconvertidoenletra.Text);
+                    da.Fill(dt);
+                    rpt = new Presentacion.Reportes.Impresion_de_comprobantes.Ticket_report();
+                    rpt.table1.DataSource = dt;
+                    rpt.DataSource = dt;
+                    reportViewer2.Report = rpt;
+                    reportViewer2.RefreshReport();
+                    ConexionDt.ConexionData.cerrar();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.StackTrace);
+                }
+            }
+
+           
+        }
+        private void mostrar()
+        {
+            Presentacion.Reportes.Reportes_de_Kardex_listo.Reportes_de_Inventario_Todos.ReportCotizacion rpt = new Presentacion.Reportes.Reportes_de_Kardex_listo.Reportes_de_Inventario_Todos.ReportCotizacion();
             DataTable dt = new DataTable();
             try
             {
+           
+
+
                 ConexionDt.ConexionData.abrir();
                 SqlDataAdapter da = new SqlDataAdapter("mostrar_ticket_impreso", ConexionDt.ConexionData.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@Id_venta", idventa);
                 da.SelectCommand.Parameters.AddWithValue("@total_en_letras", txtnumeroconvertidoenletra.Text);
                 da.Fill(dt);
-                rpt = new Presentacion.Reportes.Impresion_de_comprobantes.Ticket_report();
-                rpt.table1.DataSource = dt;
+                rpt = new Presentacion.Reportes.Reportes_de_Kardex_listo.Reportes_de_Inventario_Todos.ReportCotizacion();
                 rpt.DataSource = dt;
-                reportViewer2.Report = rpt;
-                reportViewer2.RefreshReport();
+                rpt.table1.DataSource = dt;
+                reportViewer3.Report = rpt;
+                reportViewer3.RefreshReport();
                 ConexionDt.ConexionData.cerrar();
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show(ex.Message);
+
             }
+
+
         }
         void mostrar_productos_agregados_a_venta()
         {
@@ -1246,11 +1340,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 DataTable dt = new DataTable();
                 Obtener_datos.buscar_clientes(ref dt, txtclientesolicitabnte3.Text);
                 datalistadoclientes3.DataSource = dt;
-                datalistadoclientes2.Columns[1].Visible = false;
-                datalistadoclientes2.Columns[3].Visible = false;
-                datalistadoclientes2.Columns[4].Visible = false;
-                datalistadoclientes2.Columns[5].Visible = false;
-                datalistadoclientes2.Columns[2].Width = 420;
+                datalistadoclientes3.Columns[1].Visible = false;
+                datalistadoclientes3.Columns[3].Visible = false;
+                datalistadoclientes3.Columns[4].Visible = false;
+                datalistadoclientes3.Columns[5].Visible = false;
+                datalistadoclientes3.Columns[2].Width = 420;
                 ConexionDt.ConexionData.cerrar();
             }
             catch (Exception ex)
@@ -1261,9 +1355,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         private void datalistadoclientes3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtclientesolicitabnte2.Text = datalistadoclientes2.SelectedCells[2].Value.ToString();
-            idcliente = Convert.ToInt32(datalistadoclientes2.SelectedCells[1].Value.ToString());
-            datalistadoclientes2.Visible = false;
+            txtclientesolicitabnte3.Text = datalistadoclientes3.SelectedCells[2].Value.ToString();
+            idcliente = Convert.ToInt32(datalistadoclientes3.SelectedCells[1].Value.ToString());
+            datalistadoclientes3.Visible = false;
         }
 
         private void ToolStripMenuItem10_Click(object sender, EventArgs e)
@@ -1276,14 +1370,28 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         private void btnGuardarImprimirdirecto_Click_1(object sender, EventArgs e)
         {
+            ProcesoImprimirdirecto();
+        }
+        private void ProcesoImprimirdirecto()
+        {
             if (restante == 0)
             {
                 if (txtImpresora.Text != "Ninguna")
                 {
                     editar_eleccion_de_impresora();
                     indicador = "DIRECTO";
-                    identificar_el_tipo_de_pago();
-                    INGRESAR_LOS_DATOS();
+
+                    if (cot == "ACTIVADO")
+                    {
+                        INGRESAR_LOS_DATOS();
+
+                    }
+                    else
+                    {
+                        identificar_el_tipo_de_pago();
+                        INGRESAR_LOS_DATOS();
+                    }
+
                 }
                 else
                 {
@@ -1295,10 +1403,10 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 MessageBox.Show("El restante debe ser 0", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
         private void TGuardarSinImprimir_Click_1(object sender, EventArgs e)
         {
             ProcesoVerenpantalla();
+         
         }
         private void ProcesoVerenpantalla()
         {
@@ -1312,21 +1420,53 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             {
                 MessageBox.Show("El restante debe ser 0", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            this.FormBorderStyle = FormBorderStyle.Sizable;
         }
 
         private void txtefectivo2_KeyPress(object sender, KeyPressEventArgs e)
         {
             Bases.Separador_de_Numeros(txtefectivo2, e);
-        }
-
-        private void txttarjeta2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Bases.Separador_de_Numeros(txttarjeta2, e);
-        }
+        }    
 
         private void txtcredito2_KeyPress(object sender, KeyPressEventArgs e)
         {
             Bases.Separador_de_Numeros(txtcredito2, e);
+        }
+
+        private void txtefectivo2_KeyDown(object sender, KeyEventArgs e)
+        {
+            EventoCobro(e);
+        }
+        private void EventoCobro(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ProcesoImprimirdirecto();
+            }
+            if (e.KeyCode == Keys.F1)
+            {
+                ProcesoVerenpantalla();
+            }
+        }
+
+        private void txtcredito2_KeyDown(object sender, KeyEventArgs e)
+        {
+            EventoCobro(e);
+        }
+
+        private void txtclientesolicitabnte2_KeyDown(object sender, KeyEventArgs e)
+        {
+            EventoCobro(e);
+        }
+
+        private void txtclientesolicitabnte3_KeyDown(object sender, KeyEventArgs e)
+        {
+            EventoCobro(e);
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+           Application.Exit();
         }
     }
 }

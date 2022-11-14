@@ -36,6 +36,7 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelproveedor = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelcorrdenadas = new System.Windows.Forms.Panel();
             this.datalistado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
@@ -104,6 +105,7 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             // panelproveedor
             // 
             this.panelproveedor.BackColor = System.Drawing.Color.White;
+            this.panelproveedor.Controls.Add(this.label1);
             this.panelproveedor.Controls.Add(this.panelcorrdenadas);
             this.panelproveedor.Controls.Add(this.datalistado);
             this.panelproveedor.Controls.Add(this.btnagregar);
@@ -119,6 +121,17 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             this.panelproveedor.Name = "panelproveedor";
             this.panelproveedor.Size = new System.Drawing.Size(450, 154);
             this.panelproveedor.TabIndex = 539;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(331, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 17);
+            this.label1.TabIndex = 510;
+            this.label1.Text = "Ver/Registrar";
             // 
             // panelcorrdenadas
             // 
@@ -179,7 +192,7 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             // btnagregar
             // 
             this.btnagregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagregar.Location = new System.Drawing.Point(358, 5);
+            this.btnagregar.Location = new System.Drawing.Point(304, 5);
             this.btnagregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(24, 24);
@@ -215,7 +228,7 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             this.txtproveedor.Location = new System.Drawing.Point(10, 6);
             this.txtproveedor.Margin = new System.Windows.Forms.Padding(4);
             this.txtproveedor.Name = "txtproveedor";
-            this.txtproveedor.Size = new System.Drawing.Size(342, 23);
+            this.txtproveedor.Size = new System.Drawing.Size(286, 23);
             this.txtproveedor.TabIndex = 455;
             this.txtproveedor.TextChanged += new System.EventHandler(this.txtproveedor_TextChanged);
             // 
@@ -310,6 +323,7 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             // txtfecha_de_pago
             // 
             this.txtfecha_de_pago.Checked = false;
+            this.txtfecha_de_pago.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtfecha_de_pago.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtfecha_de_pago.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtfecha_de_pago.Location = new System.Drawing.Point(270, 19);
@@ -345,6 +359,7 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             // txtfechadeventa
             // 
             this.txtfechadeventa.Checked = false;
+            this.txtfechadeventa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtfechadeventa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtfechadeventa.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtfechadeventa.Location = new System.Drawing.Point(103, 18);
@@ -366,6 +381,7 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             // btnRegistrar
             // 
             this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));
+            this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -447,6 +463,7 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             this.Controls.Add(this.lblTipo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PorPagar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelproveedor.ResumeLayout(false);
@@ -491,5 +508,6 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
+        internal System.Windows.Forms.Label label1;
     }
 }

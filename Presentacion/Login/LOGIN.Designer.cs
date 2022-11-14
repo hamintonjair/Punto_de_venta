@@ -143,18 +143,18 @@ namespace Punto_de_venta.Presentacion
             this.PanelUsuarios.Controls.Add(this.panel8);
             this.PanelUsuarios.Controls.Add(this.flowLayoutPanel1);
             this.PanelUsuarios.Controls.Add(this.label2);
-            this.PanelUsuarios.Location = new System.Drawing.Point(255, 59);
+            this.PanelUsuarios.Location = new System.Drawing.Point(255, 63);
             this.PanelUsuarios.Name = "PanelUsuarios";
-            this.PanelUsuarios.Size = new System.Drawing.Size(857, 536);
+            this.PanelUsuarios.Size = new System.Drawing.Size(727, 487);
             this.PanelUsuarios.TabIndex = 2;
             // 
             // panel8
             // 
             this.panel8.Controls.Add(this.btnrestaurarContraseña);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 441);
+            this.panel8.Location = new System.Drawing.Point(0, 392);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(857, 95);
+            this.panel8.Size = new System.Drawing.Size(727, 95);
             this.panel8.TabIndex = 618;
             // 
             // btnrestaurarContraseña
@@ -162,12 +162,13 @@ namespace Punto_de_venta.Presentacion
             this.btnrestaurarContraseña.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnrestaurarContraseña.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrestaurarContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnrestaurarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnrestaurarContraseña.ForeColor = System.Drawing.Color.Gray;
             this.btnrestaurarContraseña.Location = new System.Drawing.Point(188, 36);
             this.btnrestaurarContraseña.Name = "btnrestaurarContraseña";
-            this.btnrestaurarContraseña.Size = new System.Drawing.Size(495, 43);
+            this.btnrestaurarContraseña.Size = new System.Drawing.Size(365, 43);
             this.btnrestaurarContraseña.TabIndex = 0;
             this.btnrestaurarContraseña.Text = "OLVIDE MI CONTRASEÑA";
             this.btnrestaurarContraseña.UseVisualStyleBackColor = true;
@@ -178,7 +179,7 @@ namespace Punto_de_venta.Presentacion
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 112);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(857, 424);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(727, 375);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // label2
@@ -188,7 +189,7 @@ namespace Punto_de_venta.Presentacion
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(857, 112);
+            this.label2.Size = new System.Drawing.Size(727, 112);
             this.label2.TabIndex = 3;
             this.label2.Text = "¿Quién está Iniciando Sesión?";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -200,9 +201,9 @@ namespace Punto_de_venta.Presentacion
             this.panelRestaurarcontraseña.Controls.Add(this.pictureBox2);
             this.panelRestaurarcontraseña.Controls.Add(this.panel1);
             this.panelRestaurarcontraseña.Controls.Add(this.label9);
-            this.panelRestaurarcontraseña.Location = new System.Drawing.Point(1159, 282);
+            this.panelRestaurarcontraseña.Location = new System.Drawing.Point(1246, 177);
             this.panelRestaurarcontraseña.Name = "panelRestaurarcontraseña";
-            this.panelRestaurarcontraseña.Size = new System.Drawing.Size(26, 18);
+            this.panelRestaurarcontraseña.Size = new System.Drawing.Size(127, 10);
             this.panelRestaurarcontraseña.TabIndex = 618;
             this.panelRestaurarcontraseña.Visible = false;
             // 
@@ -225,7 +226,7 @@ namespace Punto_de_venta.Presentacion
             this.panel1.Controls.Add(this.btncerrar);
             this.panel1.Controls.Add(this.Panel12);
             this.panel1.Controls.Add(this.btnenviar);
-            this.panel1.Location = new System.Drawing.Point(-135, 249);
+            this.panel1.Location = new System.Drawing.Point(-85, 249);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(295, 304);
             this.panel1.TabIndex = 617;
@@ -244,6 +245,7 @@ namespace Punto_de_venta.Presentacion
             // 
             // txtcorreo
             // 
+            this.txtcorreo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcorreo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtcorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtcorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -294,6 +296,7 @@ namespace Punto_de_venta.Presentacion
             this.btnenviar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnenviar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnenviar.FlatAppearance.BorderSize = 0;
+            this.btnenviar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnenviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnenviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnenviar.ForeColor = System.Drawing.Color.White;
@@ -313,7 +316,7 @@ namespace Punto_de_venta.Presentacion
             this.label9.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(26, 227);
+            this.label9.Size = new System.Drawing.Size(127, 227);
             this.label9.TabIndex = 602;
             this.label9.Text = "Restaurar Contraseña";
             this.label9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -331,9 +334,9 @@ namespace Punto_de_venta.Presentacion
             this.PanelIngreso_de_contraseña.Controls.Add(this.btnOlvidoContraseña);
             this.PanelIngreso_de_contraseña.Controls.Add(this.flowLayoutPanel2);
             this.PanelIngreso_de_contraseña.Controls.Add(this.btnCambiarUsuario);
-            this.PanelIngreso_de_contraseña.Location = new System.Drawing.Point(1288, 82);
+            this.PanelIngreso_de_contraseña.Location = new System.Drawing.Point(1269, 28);
             this.PanelIngreso_de_contraseña.Name = "PanelIngreso_de_contraseña";
-            this.PanelIngreso_de_contraseña.Size = new System.Drawing.Size(17, 115);
+            this.PanelIngreso_de_contraseña.Size = new System.Drawing.Size(10, 10);
             this.PanelIngreso_de_contraseña.TabIndex = 0;
             // 
             // lblestadoLicencias
@@ -341,7 +344,7 @@ namespace Punto_de_venta.Presentacion
             this.lblestadoLicencias.AutoSize = true;
             this.lblestadoLicencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblestadoLicencias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblestadoLicencias.Location = new System.Drawing.Point(46, 628);
+            this.lblestadoLicencias.Location = new System.Drawing.Point(65, 536);
             this.lblestadoLicencias.Name = "lblestadoLicencias";
             this.lblestadoLicencias.Size = new System.Drawing.Size(60, 17);
             this.lblestadoLicencias.TabIndex = 8;
@@ -355,7 +358,7 @@ namespace Punto_de_venta.Presentacion
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 66);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(17, 52);
+            this.panel3.Size = new System.Drawing.Size(10, 52);
             this.panel3.TabIndex = 6;
             this.panel3.Visible = false;
             // 
@@ -432,7 +435,7 @@ namespace Punto_de_venta.Presentacion
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 66);
+            this.label3.Size = new System.Drawing.Size(10, 66);
             this.label3.TabIndex = 4;
             this.label3.Text = "Inicio de Sesion";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -457,9 +460,9 @@ namespace Punto_de_venta.Presentacion
             // pboxLicencia
             // 
             this.pboxLicencia.Image = ((System.Drawing.Image)(resources.GetObject("pboxLicencia.Image")));
-            this.pboxLicencia.Location = new System.Drawing.Point(25, 630);
+            this.pboxLicencia.Location = new System.Drawing.Point(44, 538);
             this.pboxLicencia.Name = "pboxLicencia";
-            this.pboxLicencia.Size = new System.Drawing.Size(15, 15);
+            this.pboxLicencia.Size = new System.Drawing.Size(10, 15);
             this.pboxLicencia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pboxLicencia.TabIndex = 8;
             this.pboxLicencia.TabStop = false;
@@ -469,16 +472,17 @@ namespace Punto_de_venta.Presentacion
             this.btnIniciarSesion.BackColor = System.Drawing.Color.Transparent;
             this.btnIniciarSesion.BackgroundImage = global::Punto_de_venta.Properties.Resources.Rojo;
             this.btnIniciarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnIniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIniciarSesion.FlatAppearance.BorderSize = 0;
             this.btnIniciarSesion.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnIniciarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnIniciarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnIniciarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(74, 496);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(93, 404);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
-            this.btnIniciarSesion.Size = new System.Drawing.Size(252, 51);
+            this.btnIniciarSesion.Size = new System.Drawing.Size(199, 51);
             this.btnIniciarSesion.TabIndex = 7;
             this.btnIniciarSesion.Text = "Iniciar sesion";
             this.btnIniciarSesion.UseVisualStyleBackColor = false;
@@ -490,12 +494,13 @@ namespace Punto_de_venta.Presentacion
             this.btnOlvidoContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOlvidoContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOlvidoContraseña.ForeColor = System.Drawing.Color.Gray;
-            this.btnOlvidoContraseña.Location = new System.Drawing.Point(71, 594);
+            this.btnOlvidoContraseña.Location = new System.Drawing.Point(90, 502);
             this.btnOlvidoContraseña.Name = "btnOlvidoContraseña";
-            this.btnOlvidoContraseña.Size = new System.Drawing.Size(259, 35);
+            this.btnOlvidoContraseña.Size = new System.Drawing.Size(206, 35);
             this.btnOlvidoContraseña.TabIndex = 9;
             this.btnOlvidoContraseña.Text = "¿Olvidaste tu contraseña?";
             this.btnOlvidoContraseña.UseVisualStyleBackColor = true;
+            this.btnOlvidoContraseña.Click += new System.EventHandler(this.btnOlvidoContraseña_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -511,9 +516,9 @@ namespace Punto_de_venta.Presentacion
             this.flowLayoutPanel2.Controls.Add(this.btnborrar);
             this.flowLayoutPanel2.Controls.Add(this.btn0);
             this.flowLayoutPanel2.Controls.Add(this.btnBorrarDerecha);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(71, 122);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(93, 137);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(259, 347);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(199, 264);
             this.flowLayoutPanel2.TabIndex = 5;
             // 
             // btn1
@@ -521,16 +526,17 @@ namespace Punto_de_venta.Presentacion
             this.btn1.BackColor = System.Drawing.Color.Transparent;
             this.btn1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn1.BackgroundImage")));
             this.btn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn1.FlatAppearance.BorderSize = 0;
             this.btn1.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn1.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.ForeColor = System.Drawing.Color.White;
             this.btn1.Location = new System.Drawing.Point(3, 3);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(80, 80);
+            this.btn1.Size = new System.Drawing.Size(60, 60);
             this.btn1.TabIndex = 0;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = false;
@@ -541,16 +547,17 @@ namespace Punto_de_venta.Presentacion
             this.btn2.BackColor = System.Drawing.Color.Transparent;
             this.btn2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn2.BackgroundImage")));
             this.btn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn2.FlatAppearance.BorderSize = 0;
             this.btn2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.ForeColor = System.Drawing.Color.White;
-            this.btn2.Location = new System.Drawing.Point(89, 3);
+            this.btn2.Location = new System.Drawing.Point(69, 3);
             this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(80, 80);
+            this.btn2.Size = new System.Drawing.Size(60, 60);
             this.btn2.TabIndex = 1;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = false;
@@ -561,16 +568,17 @@ namespace Punto_de_venta.Presentacion
             this.btn3.BackColor = System.Drawing.Color.Transparent;
             this.btn3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn3.BackgroundImage")));
             this.btn3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn3.FlatAppearance.BorderSize = 0;
             this.btn3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.ForeColor = System.Drawing.Color.White;
-            this.btn3.Location = new System.Drawing.Point(175, 3);
+            this.btn3.Location = new System.Drawing.Point(135, 3);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(80, 80);
+            this.btn3.Size = new System.Drawing.Size(60, 60);
             this.btn3.TabIndex = 2;
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = false;
@@ -581,16 +589,17 @@ namespace Punto_de_venta.Presentacion
             this.btn4.BackColor = System.Drawing.Color.Transparent;
             this.btn4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn4.BackgroundImage")));
             this.btn4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn4.FlatAppearance.BorderSize = 0;
             this.btn4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.ForeColor = System.Drawing.Color.White;
-            this.btn4.Location = new System.Drawing.Point(3, 89);
+            this.btn4.Location = new System.Drawing.Point(3, 69);
             this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(80, 80);
+            this.btn4.Size = new System.Drawing.Size(60, 60);
             this.btn4.TabIndex = 3;
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = false;
@@ -601,16 +610,17 @@ namespace Punto_de_venta.Presentacion
             this.btn5.BackColor = System.Drawing.Color.Transparent;
             this.btn5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn5.BackgroundImage")));
             this.btn5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn5.FlatAppearance.BorderSize = 0;
             this.btn5.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn5.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn5.ForeColor = System.Drawing.Color.White;
-            this.btn5.Location = new System.Drawing.Point(89, 89);
+            this.btn5.Location = new System.Drawing.Point(69, 69);
             this.btn5.Name = "btn5";
-            this.btn5.Size = new System.Drawing.Size(80, 80);
+            this.btn5.Size = new System.Drawing.Size(60, 60);
             this.btn5.TabIndex = 4;
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = false;
@@ -621,16 +631,17 @@ namespace Punto_de_venta.Presentacion
             this.btn6.BackColor = System.Drawing.Color.Transparent;
             this.btn6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn6.BackgroundImage")));
             this.btn6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn6.FlatAppearance.BorderSize = 0;
             this.btn6.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn6.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn6.ForeColor = System.Drawing.Color.White;
-            this.btn6.Location = new System.Drawing.Point(175, 89);
+            this.btn6.Location = new System.Drawing.Point(135, 69);
             this.btn6.Name = "btn6";
-            this.btn6.Size = new System.Drawing.Size(80, 80);
+            this.btn6.Size = new System.Drawing.Size(60, 60);
             this.btn6.TabIndex = 5;
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = false;
@@ -641,16 +652,17 @@ namespace Punto_de_venta.Presentacion
             this.btn7.BackColor = System.Drawing.Color.Transparent;
             this.btn7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn7.BackgroundImage")));
             this.btn7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn7.FlatAppearance.BorderSize = 0;
             this.btn7.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn7.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn7.ForeColor = System.Drawing.Color.White;
-            this.btn7.Location = new System.Drawing.Point(3, 175);
+            this.btn7.Location = new System.Drawing.Point(3, 135);
             this.btn7.Name = "btn7";
-            this.btn7.Size = new System.Drawing.Size(80, 80);
+            this.btn7.Size = new System.Drawing.Size(60, 60);
             this.btn7.TabIndex = 6;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = false;
@@ -661,16 +673,17 @@ namespace Punto_de_venta.Presentacion
             this.btn8.BackColor = System.Drawing.Color.Transparent;
             this.btn8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn8.BackgroundImage")));
             this.btn8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn8.FlatAppearance.BorderSize = 0;
             this.btn8.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn8.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn8.ForeColor = System.Drawing.Color.White;
-            this.btn8.Location = new System.Drawing.Point(89, 175);
+            this.btn8.Location = new System.Drawing.Point(69, 135);
             this.btn8.Name = "btn8";
-            this.btn8.Size = new System.Drawing.Size(80, 80);
+            this.btn8.Size = new System.Drawing.Size(60, 60);
             this.btn8.TabIndex = 7;
             this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = false;
@@ -681,16 +694,17 @@ namespace Punto_de_venta.Presentacion
             this.btn9.BackColor = System.Drawing.Color.Transparent;
             this.btn9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn9.BackgroundImage")));
             this.btn9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn9.FlatAppearance.BorderSize = 0;
             this.btn9.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn9.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn9.ForeColor = System.Drawing.Color.White;
-            this.btn9.Location = new System.Drawing.Point(175, 175);
+            this.btn9.Location = new System.Drawing.Point(135, 135);
             this.btn9.Name = "btn9";
-            this.btn9.Size = new System.Drawing.Size(80, 80);
+            this.btn9.Size = new System.Drawing.Size(60, 60);
             this.btn9.TabIndex = 8;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = false;
@@ -701,16 +715,17 @@ namespace Punto_de_venta.Presentacion
             this.btnborrar.BackColor = System.Drawing.Color.Transparent;
             this.btnborrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnborrar.BackgroundImage")));
             this.btnborrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnborrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnborrar.FlatAppearance.BorderSize = 0;
             this.btnborrar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnborrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnborrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnborrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnborrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnborrar.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnborrar.ForeColor = System.Drawing.Color.White;
-            this.btnborrar.Location = new System.Drawing.Point(3, 261);
+            this.btnborrar.Location = new System.Drawing.Point(3, 201);
             this.btnborrar.Name = "btnborrar";
-            this.btnborrar.Size = new System.Drawing.Size(80, 80);
+            this.btnborrar.Size = new System.Drawing.Size(60, 60);
             this.btnborrar.TabIndex = 9;
             this.btnborrar.Text = "Borrar";
             this.btnborrar.UseVisualStyleBackColor = false;
@@ -721,16 +736,17 @@ namespace Punto_de_venta.Presentacion
             this.btn0.BackColor = System.Drawing.Color.Transparent;
             this.btn0.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn0.BackgroundImage")));
             this.btn0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn0.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn0.FlatAppearance.BorderSize = 0;
             this.btn0.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn0.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn0.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn0.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn0.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn0.ForeColor = System.Drawing.Color.White;
-            this.btn0.Location = new System.Drawing.Point(89, 261);
+            this.btn0.Location = new System.Drawing.Point(69, 201);
             this.btn0.Name = "btn0";
-            this.btn0.Size = new System.Drawing.Size(80, 80);
+            this.btn0.Size = new System.Drawing.Size(60, 60);
             this.btn0.TabIndex = 10;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = false;
@@ -741,16 +757,17 @@ namespace Punto_de_venta.Presentacion
             this.btnBorrarDerecha.BackColor = System.Drawing.Color.Transparent;
             this.btnBorrarDerecha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBorrarDerecha.BackgroundImage")));
             this.btnBorrarDerecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBorrarDerecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBorrarDerecha.FlatAppearance.BorderSize = 0;
             this.btnBorrarDerecha.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnBorrarDerecha.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnBorrarDerecha.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnBorrarDerecha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnBorrarDerecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarDerecha.Font = new System.Drawing.Font("Calibri", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarDerecha.ForeColor = System.Drawing.Color.White;
-            this.btnBorrarDerecha.Location = new System.Drawing.Point(175, 261);
+            this.btnBorrarDerecha.Location = new System.Drawing.Point(135, 201);
             this.btnBorrarDerecha.Name = "btnBorrarDerecha";
-            this.btnBorrarDerecha.Size = new System.Drawing.Size(80, 80);
+            this.btnBorrarDerecha.Size = new System.Drawing.Size(60, 60);
             this.btnBorrarDerecha.TabIndex = 11;
             this.btnBorrarDerecha.Text = "<--";
             this.btnBorrarDerecha.UseVisualStyleBackColor = false;
@@ -759,13 +776,14 @@ namespace Punto_de_venta.Presentacion
             // btnCambiarUsuario
             // 
             this.btnCambiarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(194)))), ((int)(((byte)(176)))));
+            this.btnCambiarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCambiarUsuario.FlatAppearance.BorderSize = 0;
             this.btnCambiarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarUsuario.Location = new System.Drawing.Point(74, 553);
+            this.btnCambiarUsuario.Location = new System.Drawing.Point(93, 461);
             this.btnCambiarUsuario.Name = "btnCambiarUsuario";
-            this.btnCambiarUsuario.Size = new System.Drawing.Size(252, 35);
+            this.btnCambiarUsuario.Size = new System.Drawing.Size(199, 35);
             this.btnCambiarUsuario.TabIndex = 8;
             this.btnCambiarUsuario.Text = "Cambiar de Usuario";
             this.btnCambiarUsuario.UseVisualStyleBackColor = false;
@@ -773,9 +791,9 @@ namespace Punto_de_venta.Presentacion
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(149, 289);
+            this.richTextBox1.Location = new System.Drawing.Point(223, 341);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(18, 16);
+            this.richTextBox1.Size = new System.Drawing.Size(23, 21);
             this.richTextBox1.TabIndex = 617;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             this.richTextBox1.Visible = false;

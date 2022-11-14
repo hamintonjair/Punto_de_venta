@@ -71,11 +71,12 @@ namespace Punto_de_venta.Presentacion.Conexion_remota
             // 
             // btnconectar
             // 
+            this.btnconectar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnconectar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnconectar.Location = new System.Drawing.Point(157, 45);
+            this.btnconectar.Location = new System.Drawing.Point(226, 54);
             this.btnconectar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnconectar.Name = "btnconectar";
-            this.btnconectar.Size = new System.Drawing.Size(272, 57);
+            this.btnconectar.Size = new System.Drawing.Size(261, 57);
             this.btnconectar.TabIndex = 634;
             this.btnconectar.Text = "Conectar";
             this.btnconectar.UseVisualStyleBackColor = true;
@@ -85,7 +86,7 @@ namespace Punto_de_venta.Presentacion.Conexion_remota
             // 
             this.PictureBox1.BackColor = System.Drawing.Color.White;
             this.PictureBox1.Image = global::Punto_de_venta.Properties.Resources.Captura_de_pantalla_2022_01_07_161543;
-            this.PictureBox1.Location = new System.Drawing.Point(157, 139);
+            this.PictureBox1.Location = new System.Drawing.Point(226, 148);
             this.PictureBox1.Name = "PictureBox1";
             this.PictureBox1.Size = new System.Drawing.Size(261, 207);
             this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -96,7 +97,7 @@ namespace Punto_de_venta.Presentacion.Conexion_remota
             // 
             this.Label2.AutoSize = true;
             this.Label2.ForeColor = System.Drawing.Color.Black;
-            this.Label2.Location = new System.Drawing.Point(47, 12);
+            this.Label2.Location = new System.Drawing.Point(116, 21);
             this.Label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(102, 20);
@@ -107,7 +108,7 @@ namespace Punto_de_venta.Presentacion.Conexion_remota
             // 
             this.Label1.AutoSize = true;
             this.Label1.ForeColor = System.Drawing.Color.Black;
-            this.Label1.Location = new System.Drawing.Point(153, 116);
+            this.Label1.Location = new System.Drawing.Point(222, 125);
             this.Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(61, 20);
@@ -116,10 +117,10 @@ namespace Punto_de_venta.Presentacion.Conexion_remota
             // 
             // txtIp
             // 
-            this.txtIp.Location = new System.Drawing.Point(157, 9);
+            this.txtIp.Location = new System.Drawing.Point(226, 18);
             this.txtIp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtIp.Name = "txtIp";
-            this.txtIp.Size = new System.Drawing.Size(442, 26);
+            this.txtIp.Size = new System.Drawing.Size(261, 26);
             this.txtIp.TabIndex = 630;
             // 
             // Label5
@@ -129,10 +130,10 @@ namespace Punto_de_venta.Presentacion.Conexion_remota
             this.Label5.Location = new System.Drawing.Point(153, 358);
             this.Label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(432, 40);
+            this.Label5.Size = new System.Drawing.Size(433, 40);
             this.Label5.TabIndex = 631;
-            this.Label5.Text = "Abra el sistema en la PC Principal y Copie los caracteres\r\nLuego agregelos en la " +
-    "caja de texto y de click a CONECTAR";
+            this.Label5.Text = "Abra el sistema en la PC Principal y Copie los carácteres\r\nLuego agreguelos en la" +
+    " caja de texto y de clic a CONECTAR";
             // 
             // Label3
             // 

@@ -52,6 +52,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = global::Punto_de_venta.Properties.Resources.Rojo;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -71,6 +72,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.BtnCerrar_turno.BackColor = System.Drawing.Color.Transparent;
             this.BtnCerrar_turno.BackgroundImage = global::Punto_de_venta.Properties.Resources.naranja;
             this.BtnCerrar_turno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCerrar_turno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCerrar_turno.FlatAppearance.BorderSize = 0;
             this.BtnCerrar_turno.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.BtnCerrar_turno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;

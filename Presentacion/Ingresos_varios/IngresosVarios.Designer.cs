@@ -66,6 +66,7 @@ namespace Punto_de_venta.Presentacion.Ingresos_varios
             // GuardarRegistro
             // 
             this.GuardarRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(1)))));
+            this.GuardarRegistro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GuardarRegistro.FlatAppearance.BorderSize = 0;
             this.GuardarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GuardarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -80,6 +81,7 @@ namespace Punto_de_venta.Presentacion.Ingresos_varios
             // btnvolver
             // 
             this.btnvolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnvolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnvolver.FlatAppearance.BorderSize = 0;
             this.btnvolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnvolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,6 +118,7 @@ namespace Punto_de_venta.Presentacion.Ingresos_varios
             // 
             // txttipocomprobante
             // 
+            this.txttipocomprobante.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txttipocomprobante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txttipocomprobante.FormattingEnabled = true;
             this.txttipocomprobante.Items.AddRange(new object[] {
@@ -168,6 +171,7 @@ namespace Punto_de_venta.Presentacion.Ingresos_varios
             // 
             this.btnComprobante.AutoSize = true;
             this.btnComprobante.BackColor = System.Drawing.Color.Transparent;
+            this.btnComprobante.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnComprobante.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
             this.btnComprobante.ForeColor = System.Drawing.Color.Red;
             this.btnComprobante.Location = new System.Drawing.Point(5, 195);
@@ -196,6 +200,7 @@ namespace Punto_de_venta.Presentacion.Ingresos_varios
             // 
             // txtfecha
             // 
+            this.txtfecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtfecha.Location = new System.Drawing.Point(125, 45);

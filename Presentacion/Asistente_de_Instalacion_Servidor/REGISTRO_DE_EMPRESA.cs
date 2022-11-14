@@ -320,6 +320,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
                 cmd.Parameters.AddWithValue("@Nombre_Empresa", txtempresa.Text);
                 cmd.Parameters.AddWithValue("@Impuesto", txtimpuesto.Text);
                 cmd.Parameters.AddWithValue("@Porcentaje_impuesto", txtporcentaje.Text);
+                cmd.Parameters.AddWithValue("@Porcentaje_otros_impuesto", txtporcentaje2.Text);
                 cmd.Parameters.AddWithValue("@Moneda", txtmoneda.Text);
                 cmd.Parameters.AddWithValue("@Trabajas_con_impuestos", TXTTRABAJASCONIMPUESTOS.Text);
 

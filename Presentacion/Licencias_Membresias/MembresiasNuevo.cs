@@ -92,7 +92,7 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
 
             if (funcion.editarMarcan(parametros) == true)
             {
-                MessageBox.Show("Licencia activada, se cerrara el sistema para un nuevo Inicio");
+                MessageBox.Show("Licencia activada, se cerrará el sistema para un nuevo Inicio");
                 Application.Exit();
             }
         }
@@ -110,6 +110,11 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
             {
 
             }
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Todavia no está implementado, en la proxíma versión estará","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information );
         }
     }
 }

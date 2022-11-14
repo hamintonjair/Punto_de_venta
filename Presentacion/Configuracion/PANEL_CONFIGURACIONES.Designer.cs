@@ -30,8 +30,6 @@ namespace Punto_de_venta.Presentacion.Configuracion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PANEL_CONFIGURACIONES));
-            this.ToolStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ToolStripButton22 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Panel5 = new System.Windows.Forms.Panel();
             this.FlowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
@@ -87,7 +85,6 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Button9 = new System.Windows.Forms.Button();
             this.Label8 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
-            this.ToolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Panel5.SuspendLayout();
             this.FlowLayoutPanel5.SuspendLayout();
@@ -114,32 +111,6 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Panel10.SuspendLayout();
             this.Panel11.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ToolStrip1
-            // 
-            this.ToolStrip1.AutoSize = false;
-            this.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
-            this.ToolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.ToolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripButton22});
-            this.ToolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.ToolStrip1.Location = new System.Drawing.Point(9, 9);
-            this.ToolStrip1.Name = "ToolStrip1";
-            this.ToolStrip1.ShowItemToolTips = true;
-            this.ToolStrip1.Size = new System.Drawing.Size(236, 31);
-            this.ToolStrip1.TabIndex = 599;
-            this.ToolStrip1.Text = "MenuStrip6";
-            // 
-            // ToolStripButton22
-            // 
-            this.ToolStripButton22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
-            this.ToolStripButton22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.ToolStripButton22.ForeColor = System.Drawing.Color.Black;
-            this.ToolStripButton22.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButton22.Image")));
-            this.ToolStripButton22.Name = "ToolStripButton22";
-            this.ToolStripButton22.Size = new System.Drawing.Size(219, 27);
-            this.ToolStripButton22.Text = "Volver al Administrador";
-            this.ToolStripButton22.Click += new System.EventHandler(this.ToolStripButton22_Click);
             // 
             // panel1
             // 
@@ -189,6 +160,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             this.Button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button7.BackgroundImage")));
             this.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Button7.FlatAppearance.BorderSize = 0;
             this.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -202,6 +174,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // Label5
             // 
+            this.Label5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Label5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.Label5.ForeColor = System.Drawing.Color.Black;
@@ -211,6 +184,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Label5.TabIndex = 3;
             this.Label5.Text = "Respaldo de Base de datos";
             this.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // Label6
             // 
@@ -237,6 +211,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // btnEnvios_a_correo
             // 
             this.btnEnvios_a_correo.BackColor = System.Drawing.Color.Orange;
+            this.btnEnvios_a_correo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEnvios_a_correo.FlatAppearance.BorderSize = 0;
             this.btnEnvios_a_correo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnvios_a_correo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -273,6 +248,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             this.Button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button11.BackgroundImage")));
             this.Button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Button11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Button11.FlatAppearance.BorderSize = 0;
             this.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -286,6 +262,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // Label2
             // 
+            this.Label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Label2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.Label2.ForeColor = System.Drawing.Color.Black;
@@ -295,6 +272,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Label2.TabIndex = 3;
             this.Label2.Text = "Notificaciones por Correo Electronico";
             this.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // Label38
             // 
@@ -343,6 +321,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             this.Balanzas.BackgroundImage = global::Punto_de_venta.Properties.Resources.balanza;
             this.Balanzas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Balanzas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Balanzas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Balanzas.FlatAppearance.BorderSize = 0;
             this.Balanzas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -356,6 +335,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // label9
             // 
+            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label9.ForeColor = System.Drawing.Color.Black;
@@ -365,6 +345,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.label9.TabIndex = 3;
             this.label9.Text = "Balanzas";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // FlowLayoutPanel3
             // 
@@ -390,6 +371,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             this.btnImpresoras.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnImpresoras.BackgroundImage")));
             this.btnImpresoras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnImpresoras.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImpresoras.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnImpresoras.FlatAppearance.BorderSize = 0;
             this.btnImpresoras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -403,6 +385,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // Label4
             // 
+            this.Label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Label4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.Label4.ForeColor = System.Drawing.Color.Black;
@@ -412,6 +395,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Label4.TabIndex = 3;
             this.Label4.Text = "Impresoras";
             this.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label4.Click += new System.EventHandler(this.Label4_Click);
             // 
             // Label30
             // 
@@ -460,6 +444,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             this.btbDiseño.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btbDiseño.BackgroundImage")));
             this.btbDiseño.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btbDiseño.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btbDiseño.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btbDiseño.FlatAppearance.BorderSize = 0;
             this.btbDiseño.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -473,6 +458,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // Label31
             // 
+            this.Label31.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Label31.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.Label31.ForeColor = System.Drawing.Color.Black;
@@ -482,6 +468,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Label31.TabIndex = 3;
             this.Label31.Text = "Diseño de Comprobantes";
             this.Label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label31.Click += new System.EventHandler(this.Label31_Click);
             // 
             // Label35
             // 
@@ -535,6 +522,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Logo_empresa.BackColor = System.Drawing.Color.Transparent;
             this.Logo_empresa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Logo_empresa.BackgroundImage")));
             this.Logo_empresa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Logo_empresa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Logo_empresa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Logo_empresa.Location = new System.Drawing.Point(0, 0);
             this.Logo_empresa.Name = "Logo_empresa";
@@ -546,6 +534,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // Label47
             // 
+            this.Label47.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Label47.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.Label47.ForeColor = System.Drawing.Color.Black;
@@ -572,6 +561,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             this.Button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button1.BackgroundImage")));
             this.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Button1.FlatAppearance.BorderSize = 0;
             this.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -585,6 +575,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // Label26
             // 
+            this.Label26.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Label26.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.Label26.ForeColor = System.Drawing.Color.Black;
@@ -611,6 +602,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             this.btnCajas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCajas.BackgroundImage")));
             this.btnCajas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCajas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCajas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCajas.FlatAppearance.BorderSize = 0;
             this.btnCajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -624,6 +616,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // Label27
             // 
+            this.Label27.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Label27.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.Label27.ForeColor = System.Drawing.Color.Black;
@@ -650,6 +643,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             this.Button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button4.BackgroundImage")));
             this.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Button4.FlatAppearance.BorderSize = 0;
             this.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -663,6 +657,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // Label29
             // 
+            this.Label29.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Label29.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.Label29.ForeColor = System.Drawing.Color.Black;
@@ -672,6 +667,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Label29.TabIndex = 3;
             this.Label29.Text = "Serializacion";
             this.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label29.Click += new System.EventHandler(this.Label29_Click);
             // 
             // LBLEstado_correo
             // 
@@ -697,6 +693,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             this.Button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button6.BackgroundImage")));
             this.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Button6.FlatAppearance.BorderSize = 0;
             this.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -710,6 +707,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // Label3
             // 
+            this.Label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Label3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.Label3.ForeColor = System.Drawing.Color.Black;
@@ -719,6 +717,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Label3.TabIndex = 3;
             this.Label3.Text = "Productos";
             this.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // Panel10
             // 
@@ -735,6 +734,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             this.btnClientes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClientes.BackgroundImage")));
             this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClientes.FlatAppearance.BorderSize = 0;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -748,6 +748,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // Label7
             // 
+            this.Label7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Label7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.Label7.ForeColor = System.Drawing.Color.Firebrick;
@@ -757,6 +758,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Label7.TabIndex = 3;
             this.Label7.Text = "Clientes";
             this.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label7.Click += new System.EventHandler(this.Label7_Click);
             // 
             // Panel11
             // 
@@ -773,6 +775,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             this.Button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button9.BackgroundImage")));
             this.Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Button9.FlatAppearance.BorderSize = 0;
             this.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -786,6 +789,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             // 
             // Label8
             // 
+            this.Label8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Label8.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.Label8.ForeColor = System.Drawing.Color.Black;
@@ -795,6 +799,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Label8.TabIndex = 3;
             this.Label8.Text = "Proveedores";
             this.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label8.Click += new System.EventHandler(this.Label8_Click);
             // 
             // Label1
             // 
@@ -814,15 +819,14 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
             this.ClientSize = new System.Drawing.Size(953, 600);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.ToolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PANEL_CONFIGURACIONES";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuración";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PANEL_CONFIGURACIONES_Load);
-            this.ToolStrip1.ResumeLayout(false);
-            this.ToolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.Panel5.ResumeLayout(false);
             this.Panel5.PerformLayout();
@@ -859,9 +863,6 @@ namespace Punto_de_venta.Presentacion.Configuracion
         }
 
         #endregion
-
-        internal System.Windows.Forms.MenuStrip ToolStrip1;
-        internal System.Windows.Forms.ToolStripMenuItem ToolStripButton22;
         public System.Windows.Forms.Panel panel1;
         internal System.Windows.Forms.Panel Panel5;
         internal System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel5;

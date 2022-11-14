@@ -119,7 +119,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               
             }
         }
         internal void sumar_costo_de_inventario_CONTAR_PRODUCTOS()
@@ -144,7 +144,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
                 resultado = "";
             }
 
-            string importe;
+            double importe;
             string query;
             query = "SELECT      CONVERT(NUMERIC(18,2),sum(Producto1.Precio_de_compra * Stock )) as suma FROM  Producto1 where  Usa_inventarios ='SI'";
 
@@ -152,14 +152,14 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
             try
             {
                 con.Open();
-                importe = Convert.ToString(com.ExecuteScalar()); //asignamos el valor del importe
+                importe = Convert.ToDouble(com.ExecuteScalar()); //asignamos el valor del importe
                 con.Close();
-                lblcostoInventario.Text = resultado + " " + importe;
+                lblcostoInventario.Text = resultado + " " + importe.ToString("N0");
             }
             catch (Exception ex)
             {
                 con.Close();
-                MessageBox.Show(ex.Message);
+                
 
                 lblcostoInventario.Text = resultado + " " + 0;
             }
