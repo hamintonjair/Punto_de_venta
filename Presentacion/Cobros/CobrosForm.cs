@@ -19,6 +19,9 @@ namespace Punto_de_venta.Presentacion.Cobros
         }
         public static int idcliente;
         public static double saldo;
+        private static double total = 0;
+        string administrador = "Administrador (Control total)";
+
         private void CobrosForm_Load(object sender, EventArgs e)
         {
             //centrarPanel();
@@ -66,6 +69,7 @@ namespace Punto_de_venta.Presentacion.Cobros
         {
             DataTable dt = new DataTable();
             Obtener_datos.mostrarEstadosCuentaCliente(ref dt, idcliente);
+            Obtener_datos.mostrarEstadosCuentaClienteT(ref dt, idcliente);
             datalistadoHistorial.DataSource = dt;
             Bases estilo = new Bases();
             estilo.MultilineaCobros(ref datalistadoHistorial);
@@ -89,7 +93,7 @@ namespace Punto_de_venta.Presentacion.Cobros
         }
         private void mostrarControlCobros()
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable();     
             Obtener_datos.mostrar_ControlCobros(ref dt);
             datalistadoMovimientos.DataSource = dt;
             Bases estilo = new Bases();
@@ -139,36 +143,51 @@ namespace Punto_de_venta.Presentacion.Cobros
 
         private void datalistadoMovimientos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == datalistadoMovimientos.Columns["Eli"].Index)
-            {
-                DialogResult result = MessageBox.Show("¿Realmente desea eliminar esta Abono?", "Eliminando registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (result == DialogResult.OK)
-                {
-                    aumentarSaldo();
-                }
-            }
+            //if (e.ColumnIndex == datalistadoMovimientos.Columns["Eli"].Index)
+            //{
+            //    DialogResult result = MessageBox.Show("¿Realmente desea eliminar esta Abono?", "Eliminando registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            //    if (result == DialogResult.OK)
+            //    {
+            //        aumentarSaldo();
+            //    }
+            //}
         }
-        private void aumentarSaldo()
-        {
-            double monto;
-            monto = Convert.ToDouble(datalistadoMovimientos.SelectedCells[2].Value);
-            Lclientes parametros = new Lclientes();
-            Editar_datos funcion = new Editar_datos();
-            parametros.idcliente = idcliente;
-            if (funcion.aumentarSaldocliente(parametros, monto) == true)
-            {
-                eliminarControlCobros();
-            }
-
-        }
+  
         private void eliminarControlCobros()
         {
             Lcontrolcobros parametros = new Lcontrolcobros();
             Eliminar_datos funcion = new Eliminar_datos();
-            parametros.IdcontrolCobro = Convert.ToInt32(datalistadoMovimientos.SelectedCells[1].Value);
-            if (funcion.eliminarControlCobro(parametros) == true)
+            parametros.IdcontrolCobro = Convert.ToInt32(datalistadoMovimientos.SelectedCells[4].Value);
+            int idc = parametros.IdcontrolCobro;
+            if (funcion.eliminarControlCobro(idc) == true)
             {
                 buscar();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (LOGIN.lblRol == administrador)
+            {
+                DialogResult result = MessageBox.Show("¿Realmente deseas Deshacer esta Abono?", "Eliminando registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+
+                    if (total == saldo)
+                    {
+                        eliminarControlCobros();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No puedes eliminar el registro porque tienes deudas por pagar", "Eliminando registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    }
+
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("¡Solo el administrador puede eliminar estos registros", "Eliminando registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
         }
     }

@@ -20,6 +20,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
         }
         int idproveedor;
         string estado;
+        int CantClientes;
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtnombre.Text))
@@ -71,6 +72,18 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             Panelregistro.Visible = true;
             Panelregistro.Dock = DockStyle.Left;
             txtbusca.Clear();
+            ReporteCantProveedor();
+            ReporteCantProveedorEliminado();
+        }
+        private void ReporteCantProveedor()
+        {
+            Obtener_datos.ReportCantProveedor(ref CantClientes);
+            lblclientesActivos.Text = CantClientes.ToString();
+        }
+        private void ReporteCantProveedorEliminado()
+        {
+            Obtener_datos.ReporteCantProveedorEliminado(ref CantClientes);
+            lblclientesEliminados.Text = CantClientes.ToString();
         }
         private void editar()
         {
@@ -164,6 +177,8 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
                     }
                 }
             }
+            ReporteCantProveedor();
+            ReporteCantProveedorEliminado();
         }
         private void obtenerId_estado()
         {

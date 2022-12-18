@@ -102,6 +102,7 @@ namespace Punto_de_venta.Presentacion.Productos
             PanelImpuesto.Visible = false;
             label22.Visible = false;            
             agranel.Checked = false;
+            Servicios.Checked = false;
             no.Checked = true;
             
             txtstockminimo.Text = "0";
@@ -140,6 +141,15 @@ namespace Punto_de_venta.Presentacion.Productos
                 Obtener_datos.mostrar_inicio_De_sesion(ref idusuario);
             }
             no.Checked = true;
+
+            if (txtbusca.Text != "")
+            {
+                ControlSetFocus();
+            }
+            if (txtbusca.Text == "")
+            {
+                ControlSetFocus();
+            }
 
         }
  
@@ -254,6 +264,7 @@ namespace Punto_de_venta.Presentacion.Productos
 
                 if (porunidad.Checked == true) txtse_vende_a.Text = "Unidad";
                 if (agranel.Checked == true) txtse_vende_a.Text = "Granel";
+                if (Servicios.Checked == true) txtse_vende_a.Text = "Servicios";
 
                 cmd.Parameters.AddWithValue("@Se_vende_a", txtse_vende_a.Text);
                 cmd.Parameters.AddWithValue("@Id_grupo", lblIdGrupo.Text);
@@ -270,6 +281,8 @@ namespace Punto_de_venta.Presentacion.Productos
 
                     if (No_aplica_fecha.Checked == false)
                     {
+                       
+                     
                         cmd.Parameters.AddWithValue("@Fecha_de_vencimiento", txtfechaoka.Text);
                     }
                 }
@@ -333,6 +346,7 @@ namespace Punto_de_venta.Presentacion.Productos
                 cmd.Parameters.AddWithValue("@Precio_mayoreo", txtpreciomayoreo.Text);
                 if (porunidad.Checked == true) txtse_vende_a.Text = "Unidad";
                 if (agranel.Checked == true) txtse_vende_a.Text = "Granel";
+                if (Servicios.Checked == true) txtse_vende_a.Text = "Servicios";
 
                 cmd.Parameters.AddWithValue("@Se_vende_a", txtse_vende_a.Text);
                 cmd.Parameters.AddWithValue("@Id_grupo", lblIdGrupo.Text);
@@ -349,7 +363,9 @@ namespace Punto_de_venta.Presentacion.Productos
 
                     if (No_aplica_fecha.Checked == false)
                     {
+                   
                         cmd.Parameters.AddWithValue("@Fecha_de_vencimiento", txtfechaoka.Text);
+                      
                     }
 
                 }
@@ -567,6 +583,10 @@ namespace Punto_de_venta.Presentacion.Productos
                 {
                     agranel.Checked = true;
                 }
+                if (LBLSEVENDEPOR.Text == "Servicios")
+                {
+                    Servicios.Checked = true;
+                }
                 txtstockminimo.Text = datalistado.SelectedCells[11].Value.ToString();
                 lblfechasvenci.Text = datalistado.SelectedCells[12].Value.ToString();
                 if (lblfechasvenci.Text == "NO APLICA")
@@ -749,14 +769,7 @@ namespace Punto_de_venta.Presentacion.Productos
         private void txtbusca_TextChanged(object sender, EventArgs e)
        {
             buscar();
-            if (txtbusca.Text != "")
-            {
-                ControlSetFocus();
-            }
-            if (txtbusca.Text == "")
-            {
-                ControlSetFocus();
-            }
+          
         }      
         private void datalistado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1431,7 +1444,7 @@ namespace Punto_de_venta.Presentacion.Productos
             Exportar(e);
         }
         public void ControlSetFocus()        {
-                     
+          txtbusca.Focus();           
           button1.Focus();  
           
         }

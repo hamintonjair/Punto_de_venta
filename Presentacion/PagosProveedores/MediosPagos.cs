@@ -63,9 +63,15 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
             parametros.tarjeta = tarjeta;
             if (funcion.Insertar_ControlPagos(parametros) == true)
             {
-                if(funcions.InsertarControlPorPagar(parametro) == true)
+                if (funcion.Insertar_ControlPagosT(parametros) == true)
                 {
-                  Dispose();
+                    if (funcions.InsertarControlPorPagar(parametro) == true)
+                    {
+                        if (funcions.InsertarControlPorPagarT(parametro) == true)
+                        {
+                            Dispose();
+                        }
+                    }
                 }
              
             }

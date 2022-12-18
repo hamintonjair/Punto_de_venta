@@ -22,7 +22,7 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
         }
         int idcliente;
         string estado;
-
+        int CantClientes;
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtnombre.Text))
@@ -154,6 +154,8 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
                     }
                 }
             }
+            ReporteCantClientes();
+            ReporteCantClientesEliminados();
 
         }
         private void obtenerId_estado()
@@ -228,11 +230,22 @@ namespace Punto_de_venta.Presentacion.Clientes_Proveedores
             mostrar();
             Panelregistro.Visible = true;         
             Panelregistro.Dock = DockStyle.Left;
+            ReporteCantClientes();
+            ReporteCantClientesEliminados();
 
             txtbusca.Clear();
         }
+        private void ReporteCantClientes()
+        {
+            Obtener_datos.ReportCantClientes(ref CantClientes);
+            lblclientesActivos.Text = CantClientes.ToString();
+        }
+        private void ReporteCantClientesEliminados()
+        {
+            Obtener_datos.ReporteCantClientesEliminado(ref CantClientes);
+            lblclientesEliminados.Text = CantClientes.ToString();
+        }
 
-  
         private void datalistado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             obtenerDatos();

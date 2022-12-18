@@ -52,14 +52,16 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             param.IdProveedor = idproveedor;
             if (funcion.insertar_CreditoPorPagar(parametros) == true)
             {
-                if(funcion.insertar_cobro_proveedores(param) ==true)
+                if (funcion.insertar_CreditoPorPagarTemporal(parametros) == true)
                 {
-                    MessageBox.Show("Registrado");
-                    limpiar();
-                    buscar_Proveedores();
-                }
-             
+                    if (funcion.insertar_cobro_proveedores(param) == true)
+                    {
+                        MessageBox.Show("Registrado");
+                        limpiar();
+                        buscar_Proveedores();
+                    }
 
+                }
             }
 
         }

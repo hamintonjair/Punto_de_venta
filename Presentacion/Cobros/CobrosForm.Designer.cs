@@ -34,9 +34,9 @@ namespace Punto_de_venta.Presentacion.Cobros
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CobrosForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CobrosForm));
             this.PanelContenedorTODO = new System.Windows.Forms.Panel();
             this.datalistadoClientes = new System.Windows.Forms.DataGridView();
             this.Elimina = new System.Windows.Forms.DataGridViewImageColumn();
@@ -46,10 +46,7 @@ namespace Punto_de_venta.Presentacion.Cobros
             this.Panel = new System.Windows.Forms.Panel();
             this.panelMovimiento = new System.Windows.Forms.Panel();
             this.datalistadoMovimientos = new System.Windows.Forms.DataGridView();
-            this.Eli = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelHistorial = new System.Windows.Forms.Panel();
-            this.datalistadoHistorial = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel33 = new System.Windows.Forms.Panel();
             this.panel34 = new System.Windows.Forms.Panel();
             this.panelM = new System.Windows.Forms.Panel();
@@ -69,6 +66,9 @@ namespace Punto_de_venta.Presentacion.Cobros
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.datalistadoHistorial = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.PanelContenedorTODO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoClientes)).BeginInit();
             this.panelRegistros.SuspendLayout();
@@ -76,11 +76,12 @@ namespace Punto_de_venta.Presentacion.Cobros
             this.panelMovimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoMovimientos)).BeginInit();
             this.panelHistorial.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistadoHistorial)).BeginInit();
             this.panel33.SuspendLayout();
             this.panel34.SuspendLayout();
             this.panel36.SuspendLayout();
             this.menuStrip3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistadoHistorial)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelContenedorTODO
@@ -200,6 +201,7 @@ namespace Punto_de_venta.Presentacion.Cobros
             // panelMovimiento
             // 
             this.panelMovimiento.Controls.Add(this.datalistadoMovimientos);
+            this.panelMovimiento.Controls.Add(this.panel1);
             this.panelMovimiento.Location = new System.Drawing.Point(448, 54);
             this.panelMovimiento.Name = "panelMovimiento";
             this.panelMovimiento.Size = new System.Drawing.Size(188, 214);
@@ -221,11 +223,9 @@ namespace Punto_de_venta.Presentacion.Cobros
             this.datalistadoMovimientos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datalistadoMovimientos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.datalistadoMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datalistadoMovimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eli});
             this.datalistadoMovimientos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datalistadoMovimientos.EnableHeadersVisualStyles = false;
-            this.datalistadoMovimientos.Location = new System.Drawing.Point(0, 0);
+            this.datalistadoMovimientos.Location = new System.Drawing.Point(0, 42);
             this.datalistadoMovimientos.Name = "datalistadoMovimientos";
             this.datalistadoMovimientos.ReadOnly = true;
             this.datalistadoMovimientos.RowHeadersVisible = false;
@@ -239,19 +239,9 @@ namespace Punto_de_venta.Presentacion.Cobros
             this.datalistadoMovimientos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.datalistadoMovimientos.RowTemplate.Height = 40;
             this.datalistadoMovimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistadoMovimientos.Size = new System.Drawing.Size(188, 214);
+            this.datalistadoMovimientos.Size = new System.Drawing.Size(188, 172);
             this.datalistadoMovimientos.TabIndex = 366;
             this.datalistadoMovimientos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistadoMovimientos_CellClick);
-            // 
-            // Eli
-            // 
-            this.Eli.DataPropertyName = "Eli";
-            this.Eli.HeaderText = "";
-            this.Eli.Image = global::Punto_de_venta.Properties.Resources.trash_can_115312;
-            this.Eli.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Eli.Name = "Eli";
-            this.Eli.ReadOnly = true;
-            this.Eli.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // panelHistorial
             // 
@@ -261,51 +251,6 @@ namespace Punto_de_venta.Presentacion.Cobros
             this.panelHistorial.Size = new System.Drawing.Size(650, 212);
             this.panelHistorial.TabIndex = 1;
             this.panelHistorial.Visible = false;
-            // 
-            // datalistadoHistorial
-            // 
-            this.datalistadoHistorial.AllowUserToAddRows = false;
-            this.datalistadoHistorial.AllowUserToDeleteRows = false;
-            this.datalistadoHistorial.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.datalistadoHistorial.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.datalistadoHistorial.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
-            this.datalistadoHistorial.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.datalistadoHistorial.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.datalistadoHistorial.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.datalistadoHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datalistadoHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar});
-            this.datalistadoHistorial.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datalistadoHistorial.EnableHeadersVisualStyles = false;
-            this.datalistadoHistorial.Location = new System.Drawing.Point(0, 0);
-            this.datalistadoHistorial.Name = "datalistadoHistorial";
-            this.datalistadoHistorial.ReadOnly = true;
-            this.datalistadoHistorial.RowHeadersVisible = false;
-            this.datalistadoHistorial.RowHeadersWidth = 9;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gainsboro;
-            this.datalistadoHistorial.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.datalistadoHistorial.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.datalistadoHistorial.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.datalistadoHistorial.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Yellow;
-            this.datalistadoHistorial.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.datalistadoHistorial.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.datalistadoHistorial.RowTemplate.Height = 40;
-            this.datalistadoHistorial.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.datalistadoHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistadoHistorial.Size = new System.Drawing.Size(650, 212);
-            this.datalistadoHistorial.TabIndex = 366;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // panel33
             // 
@@ -527,6 +472,67 @@ namespace Punto_de_venta.Presentacion.Cobros
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // datalistadoHistorial
+            // 
+            this.datalistadoHistorial.AllowUserToAddRows = false;
+            this.datalistadoHistorial.AllowUserToDeleteRows = false;
+            this.datalistadoHistorial.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.datalistadoHistorial.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.datalistadoHistorial.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
+            this.datalistadoHistorial.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datalistadoHistorial.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.datalistadoHistorial.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.datalistadoHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datalistadoHistorial.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datalistadoHistorial.EnableHeadersVisualStyles = false;
+            this.datalistadoHistorial.Location = new System.Drawing.Point(0, 0);
+            this.datalistadoHistorial.Name = "datalistadoHistorial";
+            this.datalistadoHistorial.ReadOnly = true;
+            this.datalistadoHistorial.RowHeadersVisible = false;
+            this.datalistadoHistorial.RowHeadersWidth = 9;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gainsboro;
+            this.datalistadoHistorial.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.datalistadoHistorial.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.datalistadoHistorial.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.datalistadoHistorial.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Yellow;
+            this.datalistadoHistorial.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.datalistadoHistorial.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.datalistadoHistorial.RowTemplate.Height = 40;
+            this.datalistadoHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datalistadoHistorial.Size = new System.Drawing.Size(650, 212);
+            this.datalistadoHistorial.TabIndex = 367;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(188, 42);
+            this.panel1.TabIndex = 368;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.BackgroundImage = global::Punto_de_venta.Properties.Resources.trash_can_115312;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(64, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 42);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Eliminar Todos";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // CobrosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -550,12 +556,13 @@ namespace Punto_de_venta.Presentacion.Cobros
             this.panelMovimiento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoMovimientos)).EndInit();
             this.panelHistorial.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.datalistadoHistorial)).EndInit();
             this.panel33.ResumeLayout(false);
             this.panel34.ResumeLayout(false);
             this.panel36.ResumeLayout(false);
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistadoHistorial)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -583,16 +590,16 @@ namespace Punto_de_venta.Presentacion.Cobros
         internal System.Windows.Forms.DataGridView datalistadoClientes;
         private System.Windows.Forms.Panel panelMovimiento;
         internal System.Windows.Forms.DataGridView datalistadoMovimientos;
-        private System.Windows.Forms.DataGridViewImageColumn Eli;
         private System.Windows.Forms.Panel panelHistorial;
-        internal System.Windows.Forms.DataGridView datalistadoHistorial;
         private System.Windows.Forms.DataGridViewImageColumn Elimina;
         private System.Windows.Forms.Panel panelRegistros;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label txttotal_saldo;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.DataGridView datalistadoHistorial;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }

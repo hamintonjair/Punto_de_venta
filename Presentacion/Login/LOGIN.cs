@@ -154,6 +154,7 @@ namespace Punto_de_venta.Presentacion
             txtlogin = Convert.ToString(((PictureBox)sender).Tag);
             PanelIngreso_de_contraseña.Visible = true;
             PanelUsuarios.Visible = false;
+            txtPasswor.Focus();
       
         }
 

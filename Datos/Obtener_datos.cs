@@ -496,6 +496,22 @@ namespace Punto_de_venta.Datos
                 MessageBox.Show(ex.StackTrace);
             }
         }
+        public static void mostrarEstadosPagoProveedoresTemporal(ref DataTable dt, int idproveedor)
+        {
+            try
+            {
+                ConexionData.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrarEstadosPagoProveedoresTemporal", ConexionData.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idProveedor", idproveedor);
+                da.Fill(dt);
+                ConexionData.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }        
         public static void mostrarAbonosPagoProveedores(ref DataTable dt, int idproveedor)
         {
             try
@@ -511,6 +527,24 @@ namespace Punto_de_venta.Datos
             {
                 MessageBox.Show(ex.StackTrace);
             }
+            
+        }
+        public static void mostrarAbonosPagoProveedoresTemporal(ref DataTable dt, int idproveedor)
+        {
+            try
+            {
+                ConexionData.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrarAbonosPagoProveedoresTemporal", ConexionData.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idProveedor", idproveedor);
+                da.Fill(dt);
+                ConexionData.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+            
         }
         public static void mostrarEstadosCuentaCliente(ref DataTable dt, int idcliente)
         {
@@ -518,6 +552,22 @@ namespace Punto_de_venta.Datos
             {
                 ConexionData.abrir();
                 SqlDataAdapter da = new SqlDataAdapter("mostrarEstadosCuentaCliente", ConexionData.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idcliente", idcliente);
+                da.Fill(dt);
+                ConexionData.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        public static void mostrarEstadosCuentaClienteT(ref DataTable dt, int idcliente)
+        {
+            try
+            {
+                ConexionData.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrarEstadosCuentaClienteT", ConexionData.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@idcliente", idcliente);
                 da.Fill(dt);
@@ -544,7 +594,7 @@ namespace Punto_de_venta.Datos
             {
                 MessageBox.Show(ex.StackTrace);
             }
-        }
+        }       
         public static void mostrar_ControlPagos(ref DataTable dt, int idproveedor)
         {
             try
@@ -562,6 +612,29 @@ namespace Punto_de_venta.Datos
                     da.Fill(dt);
                     ConexionData.cerrar();
              
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        public static void mostrar_ControlPagosT(ref DataTable dt, int idproveedor)
+        {
+            try
+            {
+                //ConexionData.abrir();
+                //SqlDataAdapter da = new SqlDataAdapter("mostrar_ControlPagos", ConexionData.conectar);
+                //da.Fill(dt);
+
+                //ConexionData.cerrar();
+
+                ConexionData.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrarEstadosAbonosProveedoresTemporal", ConexionData.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idProveedor", idproveedor);
+                da.Fill(dt);
+                ConexionData.cerrar();
+
             }
             catch (Exception ex)
             {
@@ -597,6 +670,34 @@ namespace Punto_de_venta.Datos
                 Cantidad = 0;
             }
         }
+        public static void ReportCantClientes(ref int Cantidad)
+        {
+            try
+            {
+                ConexionData.abrir();
+                SqlCommand da = new SqlCommand("select count(idclientev) from clientes where Estado = 'ACTIVO' OR Estado = '0'", ConexionData.conectar);
+                Cantidad = Convert.ToInt32(da.ExecuteScalar());
+                ConexionData.cerrar();
+            }
+            catch (Exception)
+            {
+                Cantidad = 0;
+            }
+        }
+        public static void ReporteCantClientesEliminado(ref int Cantidad)
+        {
+            try
+            {
+                ConexionData.abrir();
+                SqlCommand da = new SqlCommand("select count(idclientev) from clientes where Estado = 'ELIMINADO'", ConexionData.conectar);
+                Cantidad = Convert.ToInt32(da.ExecuteScalar());
+                ConexionData.cerrar();
+            }
+            catch (Exception)
+            {
+                Cantidad = 0;
+            }
+        }
         public static void ReporteCantProveedor(ref int Cantidad)
         {   
 
@@ -612,7 +713,34 @@ namespace Punto_de_venta.Datos
                 Cantidad = 0;
             }
         }
-
+        public static void ReportCantProveedor(ref int Cantidad)
+        {
+            try
+            {
+                ConexionData.abrir();
+                SqlCommand da = new SqlCommand("select count(IdProveedor) from Proveedores where Estado = 'ACTIVO' OR Estado = 'ACTIVO'", ConexionData.conectar);
+                Cantidad = Convert.ToInt32(da.ExecuteScalar());
+                ConexionData.cerrar();
+            }
+            catch (Exception)
+            {
+                Cantidad = 0;
+            }
+        }
+        public static void ReporteCantProveedorEliminado(ref int Cantidad)
+        {
+            try
+            {
+                ConexionData.abrir();
+                SqlCommand da = new SqlCommand("select count(IdProveedor) from Proveedores where Estado = 'ELIMINADO'", ConexionData.conectar);
+                Cantidad = Convert.ToInt32(da.ExecuteScalar());
+                ConexionData.cerrar();
+            }
+            catch (Exception)
+            {
+                Cantidad = 0;
+            }
+        }
         //Proveedores
         public static void ReportePorPagar(ref double Monto)
         {

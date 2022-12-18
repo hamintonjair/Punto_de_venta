@@ -45,6 +45,36 @@ namespace Punto_de_venta.Datos
                 ConexionData.cerrar();
             }
         }
+        public bool InsertarControlPorPagarT(Lcontrolpagos parametros)
+        {
+            try
+            {
+                Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
+                ConexionData.abrir();
+                SqlCommand cmd = new SqlCommand("insertarPagoT", ConexionData.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Descripcion", parametros.Detalle);
+                cmd.Parameters.AddWithValue("@Fecha_registro", parametros.Fecha);
+                cmd.Parameters.AddWithValue("@Fecha_vencimiento", parametros.Fecha);
+                cmd.Parameters.AddWithValue("@Total", 0);
+                cmd.Parameters.AddWithValue("@Pago", parametros.efectivo);
+                cmd.Parameters.AddWithValue("@Estado", "PAGO");
+                cmd.Parameters.AddWithValue("@Id_caja", idcaja);
+                cmd.Parameters.AddWithValue("@Id_Proveedor", parametros.IdProveedor);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                ConexionData.cerrar();
+            }
+        }
         public static void cambio_de_Caja(int idcaja, int idventa)
         {
             ConexionData.abrir();

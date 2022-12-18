@@ -112,7 +112,10 @@ namespace Punto_de_venta.Presentacion.Cobros
             parametros.tarjeta = tarjeta;
             if (funcion.Insertar_ControlCobros(parametros) == true)
             {
-                Dispose();
+                if (funcion.Insertar_ControlCobrosT(parametros) == true)
+                {
+                    Dispose();
+                }
             }
         }
         private void disminuirSaldocliente()

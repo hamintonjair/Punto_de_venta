@@ -75,8 +75,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private void Ventas_Menu_Princi_Load(object sender, EventArgs e)
         {
             if (LOGIN.lblRol == administrador)
-            {
-                paneladmin.Visible = true;
+            {              
                 btnCreditoPagar.Enabled = true;
                 btnverMovimientosCaja.Enabled = true;
                 StatusStrip4.Enabled = true;
@@ -1163,7 +1162,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+              
             }
         }
         private void editar_detalle_venta_sumar()
@@ -2090,8 +2089,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private void TemaOscuro() 
         {
             //PanelC1 Encabezado
-            Panelc1.BackColor = Color.FromArgb(35, 35, 35);           
-            btnadmin.ForeColor = Color.White;
+            Panelc1.BackColor = Color.FromArgb(35, 35, 35);               
             txtbuscar.BackColor = Color.FromArgb(20, 20, 20);
             txtbuscar.ForeColor = Color.White;
             lbltipodebusqueda2.BackColor = Color.FromArgb(20, 20, 20);
@@ -2169,7 +2167,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         {
             //PanelC1 encabezado
             Panelc1.BackColor = Color.FromArgb(32, 106, 93);
-            btnadmin.ForeColor = Color.Black;
             txtbuscar.BackColor = Color.White;
             txtbuscar.ForeColor = Color.Black;
             lbltipodebusqueda2.BackColor = Color.White;

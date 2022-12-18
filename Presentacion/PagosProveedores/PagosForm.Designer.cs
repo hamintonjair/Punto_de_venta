@@ -29,12 +29,12 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagosForm));
             this.PanelContenedorTODO = new System.Windows.Forms.Panel();
             this.datalistadoProveedores = new System.Windows.Forms.DataGridView();
@@ -45,9 +45,10 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
             this.Panel = new System.Windows.Forms.Panel();
             this.panelMovimiento = new System.Windows.Forms.Panel();
             this.datalistadoMovimientos = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelHistorial = new System.Windows.Forms.Panel();
             this.datalistadoHistorial = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel33 = new System.Windows.Forms.Panel();
             this.panel34 = new System.Windows.Forms.Panel();
             this.panelM = new System.Windows.Forms.Panel();
@@ -64,21 +65,19 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.txtclientesolicitante = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.PanelContenedorTODO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoProveedores)).BeginInit();
             this.panelRegistros.SuspendLayout();
             this.Panel.SuspendLayout();
             this.panelMovimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoMovimientos)).BeginInit();
+            this.panel1.SuspendLayout();
             this.panelHistorial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoHistorial)).BeginInit();
             this.panel33.SuspendLayout();
             this.panel34.SuspendLayout();
             this.panel36.SuspendLayout();
             this.menuStrip3.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelContenedorTODO
@@ -100,11 +99,11 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
             this.datalistadoProveedores.AllowUserToAddRows = false;
             this.datalistadoProveedores.AllowUserToDeleteRows = false;
             this.datalistadoProveedores.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.datalistadoProveedores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.datalistadoProveedores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.datalistadoProveedores.BackgroundColor = System.Drawing.Color.White;
             this.datalistadoProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datalistadoProveedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -119,8 +118,8 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
             this.datalistadoProveedores.ReadOnly = true;
             this.datalistadoProveedores.RowHeadersVisible = false;
             this.datalistadoProveedores.RowHeadersWidth = 9;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Gainsboro;
-            this.datalistadoProveedores.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
+            this.datalistadoProveedores.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.datalistadoProveedores.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.datalistadoProveedores.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.datalistadoProveedores.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
@@ -210,11 +209,11 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
             this.datalistadoMovimientos.AllowUserToAddRows = false;
             this.datalistadoMovimientos.AllowUserToDeleteRows = false;
             this.datalistadoMovimientos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.datalistadoMovimientos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.datalistadoMovimientos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.datalistadoMovimientos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
             this.datalistadoMovimientos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datalistadoMovimientos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -227,8 +226,8 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
             this.datalistadoMovimientos.ReadOnly = true;
             this.datalistadoMovimientos.RowHeadersVisible = false;
             this.datalistadoMovimientos.RowHeadersWidth = 9;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Gainsboro;
-            this.datalistadoMovimientos.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro;
+            this.datalistadoMovimientos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.datalistadoMovimientos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
             this.datalistadoMovimientos.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.datalistadoMovimientos.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Yellow;
@@ -239,6 +238,33 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
             this.datalistadoMovimientos.Size = new System.Drawing.Size(531, 172);
             this.datalistadoMovimientos.TabIndex = 366;
             this.datalistadoMovimientos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistadoMovimientos_CellContentClick);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(531, 42);
+            this.panel1.TabIndex = 367;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.BackgroundImage = global::Punto_de_venta.Properties.Resources.trash_can_115312;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(407, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 42);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Eliminar Todos";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelHistorial
             // 
@@ -254,18 +280,16 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
             this.datalistadoHistorial.AllowUserToAddRows = false;
             this.datalistadoHistorial.AllowUserToDeleteRows = false;
             this.datalistadoHistorial.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            this.datalistadoHistorial.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.datalistadoHistorial.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.datalistadoHistorial.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
             this.datalistadoHistorial.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datalistadoHistorial.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datalistadoHistorial.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.datalistadoHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datalistadoHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar});
             this.datalistadoHistorial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datalistadoHistorial.EnableHeadersVisualStyles = false;
             this.datalistadoHistorial.Location = new System.Drawing.Point(0, 0);
@@ -273,8 +297,8 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
             this.datalistadoHistorial.ReadOnly = true;
             this.datalistadoHistorial.RowHeadersVisible = false;
             this.datalistadoHistorial.RowHeadersWidth = 9;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Gainsboro;
-            this.datalistadoHistorial.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gainsboro;
+            this.datalistadoHistorial.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.datalistadoHistorial.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
             this.datalistadoHistorial.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.datalistadoHistorial.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Yellow;
@@ -284,14 +308,6 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
             this.datalistadoHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datalistadoHistorial.Size = new System.Drawing.Size(467, 212);
             this.datalistadoHistorial.TabIndex = 366;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // panel33
             // 
@@ -491,33 +507,6 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
             this.txtclientesolicitante.Text = "Buscar proveedor / le debo";
             this.txtclientesolicitante.TextChanged += new System.EventHandler(this.txtclientesolicitante_TextChanged);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(531, 42);
-            this.panel1.TabIndex = 367;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.BackgroundImage = global::Punto_de_venta.Properties.Resources.trash_can_115312;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(407, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 42);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Eliminar Todos";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // PagosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -539,6 +528,7 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
             this.Panel.ResumeLayout(false);
             this.panelMovimiento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoMovimientos)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.panelHistorial.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoHistorial)).EndInit();
             this.panel33.ResumeLayout(false);
@@ -546,7 +536,6 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
             this.panel36.ResumeLayout(false);
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -564,7 +553,6 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
         internal System.Windows.Forms.DataGridView datalistadoMovimientos;
         private System.Windows.Forms.Panel panelHistorial;
         internal System.Windows.Forms.DataGridView datalistadoHistorial;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.Panel panel33;
         private System.Windows.Forms.Panel panel34;
         private System.Windows.Forms.Panel panelM;

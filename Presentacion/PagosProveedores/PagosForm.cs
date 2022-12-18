@@ -22,6 +22,7 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
         public static double pago;
         public static string estado;
         private static double total = 0;
+        public static int idpago;
 
         string administrador = "Administrador (Control total)";
         private void txtclientesolicitante_TextChanged(object sender, EventArgs e)
@@ -66,8 +67,10 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
         private void mostrarEstadosPagosProveedores()
         {
             DataTable dt = new DataTable();
-            Obtener_datos.mostrarEstadosPagoProveedores(ref dt, idproveedores);
-            Obtener_datos.mostrarAbonosPagoProveedores(ref dt, idproveedores);
+            //Obtener_datos.mostrarEstadosPagoProveedores(ref dt, idproveedores); 
+            Obtener_datos.mostrarEstadosPagoProveedoresTemporal(ref dt, idproveedores);
+            //Obtener_datos.mostrarAbonosPagoProveedores(ref dt, idproveedores); 
+            Obtener_datos.mostrarAbonosPagoProveedoresTemporal(ref dt, idproveedores);
             datalistadoHistorial.DataSource = dt;
             Bases estilo = new Bases();
             estilo.MultilineaCobros(ref datalistadoHistorial);
@@ -97,15 +100,16 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
         private void mostrarControlPagos()
         {
             DataTable dt = new DataTable();
+            //Obtener_datos.mostrar_ControlPagos(ref dt, idproveedores);
             Obtener_datos.mostrar_ControlPagos(ref dt, idproveedores);
             datalistadoMovimientos.DataSource = dt;
             Bases estilo = new Bases();
             estilo.MultilineaCobros2(ref datalistadoMovimientos);
-            datalistadoMovimientos.Columns[1].Visible = true;
+            datalistadoMovimientos.Columns[1].Visible = true;        
             datalistadoMovimientos.Columns[5].Visible = false;
             datalistadoMovimientos.Columns[6].Visible = true;
             datalistadoMovimientos.Columns[7].Visible = true;
-
+            
 
             panelH.Visible = false;
             panelM.Visible = true;
@@ -119,25 +123,16 @@ namespace Punto_de_venta.Presentacion.PagosProveedores
         {
             
         }
-        private void EliminarPago()
-        {
-            //double monto;
-            //monto = Convert.ToDouble(datalistadoMovimientos.SelectedCells[2].Value);
-            Lproveedores parametros = new Lproveedores();
-            Editar_datos funcion = new Editar_datos();
-            parametros.IdProveedor = idproveedores;
-            eliminarControlPagos();
-         
-
-        }
-       
-        private void eliminarControlPagos()
-        {
+        private void eliminarControlPagos()        {
+           
+            //idpago = (int)datalistadoMovimientos.SelectedCells[0].Value;
+            //idpago = Convert.ToInt32(datalistadoMovimientos.SelectedCells[2].Value);
 
             Lcontrolpagos parametros = new Lcontrolpagos();
             Eliminar_datos funcion = new Eliminar_datos();        
-            parametros.IdcontrolPago = Convert.ToInt32(datalistadoMovimientos.SelectedCells[1].Value);
-            if (funcion.eliminarControlPago(parametros) == true)
+            parametros.IdcontrolPago = idpago = Convert.ToInt32(datalistadoMovimientos.SelectedCells[0].Value);
+            int idc = parametros.IdcontrolPago;
+            if (funcion.eliminarControlPago(idc) == true)
             {
                 buscar();
             }

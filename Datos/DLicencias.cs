@@ -11,6 +11,7 @@ namespace Punto_de_venta.Datos
 {
     public  class DLicencias
     {
+
         DateTime fechaFinal;
 
         DateTime FechaInicial;

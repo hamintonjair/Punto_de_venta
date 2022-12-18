@@ -68,10 +68,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.txtreferencia = new System.Windows.Forms.Button();
             this.BTNTECLADO = new System.Windows.Forms.Button();
             this.BTNLECTORA = new System.Windows.Forms.Button();
-            this.paneladmin = new System.Windows.Forms.Panel();
-            this.ToolStrip1 = new System.Windows.Forms.MenuStrip();
-            this.btnadmin = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Panel26 = new System.Windows.Forms.Panel();
             this.lblROL = new System.Windows.Forms.Label();
             this.Panel27 = new System.Windows.Forms.Panel();
@@ -319,8 +315,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.StatusStrip4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_stock_detalle_venta)).BeginInit();
             this.Panelc1.SuspendLayout();
-            this.paneladmin.SuspendLayout();
-            this.ToolStrip1.SuspendLayout();
             this.Panel26.SuspendLayout();
             this.Panel27.SuspendLayout();
             this.panel_granel.SuspendLayout();
@@ -489,7 +483,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.Panelc1.Controls.Add(this.txtreferencia);
             this.Panelc1.Controls.Add(this.BTNTECLADO);
             this.Panelc1.Controls.Add(this.BTNLECTORA);
-            this.Panelc1.Controls.Add(this.paneladmin);
             this.Panelc1.Controls.Add(this.Panel26);
             this.Panelc1.Controls.Add(this.panel_granel);
             this.Panelc1.Controls.Add(this.pboxNombreSoftware);
@@ -594,56 +587,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.BTNLECTORA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BTNLECTORA.UseVisualStyleBackColor = false;
             this.BTNLECTORA.Click += new System.EventHandler(this.BTNLECTORA_Click);
-            // 
-            // paneladmin
-            // 
-            this.paneladmin.BackColor = System.Drawing.Color.Transparent;
-            this.paneladmin.Controls.Add(this.ToolStrip1);
-            this.paneladmin.Controls.Add(this.menuStrip1);
-            this.paneladmin.Dock = System.Windows.Forms.DockStyle.Right;
-            this.paneladmin.Location = new System.Drawing.Point(1314, 0);
-            this.paneladmin.Name = "paneladmin";
-            this.paneladmin.Size = new System.Drawing.Size(172, 56);
-            this.paneladmin.TabIndex = 633;
-            this.paneladmin.Visible = false;
-            // 
-            // ToolStrip1
-            // 
-            this.ToolStrip1.AutoSize = false;
-            this.ToolStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.ToolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.ToolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnadmin});
-            this.ToolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.ToolStrip1.Location = new System.Drawing.Point(11, 14);
-            this.ToolStrip1.Name = "ToolStrip1";
-            this.ToolStrip1.ShowItemToolTips = true;
-            this.ToolStrip1.Size = new System.Drawing.Size(158, 31);
-            this.ToolStrip1.TabIndex = 628;
-            this.ToolStrip1.Text = "MenuStrip6";
-            // 
-            // btnadmin
-            // 
-            this.btnadmin.BackColor = System.Drawing.Color.Transparent;
-            this.btnadmin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnadmin.ForeColor = System.Drawing.Color.Black;
-            this.btnadmin.Image = ((System.Drawing.Image)(resources.GetObject("btnadmin.Image")));
-            this.btnadmin.Name = "btnadmin";
-            this.btnadmin.Size = new System.Drawing.Size(149, 27);
-            this.btnadmin.Text = "Ir a Dashboard";
-            this.btnadmin.ToolTipText = "Agregar y ver Productos";
-            this.btnadmin.Click += new System.EventHandler(this.btnadmin_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Location = new System.Drawing.Point(482, 102);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(106, 31);
-            this.menuStrip1.TabIndex = 591;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // Panel26
             // 
@@ -2669,7 +2612,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btEfectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEfectivo.ForeColor = System.Drawing.Color.White;
             this.btEfectivo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btEfectivo.Location = new System.Drawing.Point(5, 507);
+            this.btEfectivo.Location = new System.Drawing.Point(5, 478);
             this.btEfectivo.Name = "btEfectivo";
             this.btEfectivo.Size = new System.Drawing.Size(302, 53);
             this.btEfectivo.TabIndex = 610;
@@ -3987,9 +3930,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_stock_detalle_venta)).EndInit();
             this.Panelc1.ResumeLayout(false);
             this.Panelc1.PerformLayout();
-            this.paneladmin.ResumeLayout(false);
-            this.ToolStrip1.ResumeLayout(false);
-            this.ToolStrip1.PerformLayout();
             this.Panel26.ResumeLayout(false);
             this.Panel26.PerformLayout();
             this.Panel27.ResumeLayout(false);
@@ -4294,10 +4234,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         private System.Windows.Forms.Button btnCreditoPagar;
         private System.Windows.Forms.Button btnCreditoCobrar;
         private System.Windows.Forms.Button Cobros;
-        internal System.Windows.Forms.Panel paneladmin;
-        internal System.Windows.Forms.MenuStrip ToolStrip1;
-        internal System.Windows.Forms.ToolStripMenuItem btnadmin;
-        internal System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Panel PanelEnespera;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button9;

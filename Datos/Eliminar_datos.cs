@@ -105,14 +105,14 @@ namespace Punto_de_venta.Datos
                 ConexionData.cerrar();
             }
         }
-        public bool eliminarControlCobro(Lcontrolcobros  parametros)
+        public bool eliminarControlCobro(int idc)
         {
             try
             {
                 ConexionData.abrir();
                 SqlCommand cmd = new SqlCommand("eliminarControlCobro", ConexionData.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idcontrol", parametros.IdcontrolCobro );
+                cmd.Parameters.AddWithValue("@idCliente", idc);
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -126,14 +126,15 @@ namespace Punto_de_venta.Datos
                 ConexionData.cerrar();
             }
         }
-        public bool eliminarControlPago(Lcontrolpagos parametros)
+        public bool eliminarControlPago(int idc)
         {
             try
             {
+           
                 ConexionData.abrir();
                 SqlCommand cmd = new SqlCommand("eliminarControlPagos", ConexionData.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@@idProveedor", parametros.IdProveedor);
+                cmd.Parameters.AddWithValue("@idProveedor", idc);
                 cmd.ExecuteNonQuery();
                 return true;
             }

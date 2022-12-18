@@ -746,8 +746,7 @@ namespace Punto_de_venta.Presentacion.Inventarioss_Kardex
             mostrar_kardex_movimientos();
         }
 
-        private void txtbuscarKardex_movimientos_TextChanged(object sender, EventArgs e)
-        {
+        private void txtbuscarKardex_movimientos_TextChanged(object sender, EventArgs e){
             if (txtbuscarKardex_movimientos.Text == "Buscar producto" | txtbuscarKardex_movimientos.Text == "")
             {
                 DATALISTADO_PRODUCTOS_Kardex.Visible = false;
