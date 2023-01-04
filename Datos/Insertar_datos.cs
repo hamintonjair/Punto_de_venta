@@ -54,7 +54,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
                 return false;
             }
         }
@@ -105,7 +105,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
                 return false;
             }
             finally
@@ -135,7 +135,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
                 return false;
             }
             finally
@@ -243,7 +243,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
                 return false;
             }
             finally
@@ -276,6 +276,37 @@ namespace Punto_de_venta.Datos
             }
            
         }
+
+        public bool insertar_CobrosT(LcreditoPorCobrar parametros)
+        {
+            try
+            {
+                Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
+                ConexionData.abrir();
+                SqlCommand cmd = new SqlCommand("insertar_CreditoPorCobrarTemporal", ConexionData.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Descripcion", parametros.Descripcion);
+                cmd.Parameters.AddWithValue("@Fecha_registro", parametros.Fecha_registro);
+                cmd.Parameters.AddWithValue("@Fecha_vencimiento", parametros.Fecha_vencimiento);
+                cmd.Parameters.AddWithValue("@Total", parametros.Total);
+                cmd.Parameters.AddWithValue("@Saldo", 0);
+                cmd.Parameters.AddWithValue("@Estado", "DEBE");
+                cmd.Parameters.AddWithValue("@Id_caja", idcaja);
+                cmd.Parameters.AddWithValue("@Id_cliente", parametros.Id_cliente);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
+                return false;
+            }
+            finally
+            {
+                ConexionData.cerrar();
+            }
+        }
+
         public bool Insertar_ControlCobros(Lcontrolcobros parametros)
         {
             try
@@ -330,6 +361,36 @@ namespace Punto_de_venta.Datos
             {
                 MessageBox.Show(ex.Message);
                 return true;
+            }
+            finally
+            {
+                ConexionData.cerrar();
+            }
+        }
+        public bool InsertarControlPorCobrar(Lcontrolcobros parametros)
+        {
+            try
+            {
+                Obtener_datos.Obtener_id_caja_PorSerial(ref idcaja);
+                ConexionData.abrir();
+                SqlCommand cmd = new SqlCommand("insertarPagoCliente", ConexionData.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Descripcion", parametros.Detalle);
+                cmd.Parameters.AddWithValue("@Fecha_registro", parametros.Fecha);
+                cmd.Parameters.AddWithValue("@Fecha_vencimiento", parametros.Fecha);
+                cmd.Parameters.AddWithValue("@Total", 0);
+                cmd.Parameters.AddWithValue("@Saldo", parametros.efectivo);
+                cmd.Parameters.AddWithValue("@Estado", "PAGO");
+                cmd.Parameters.AddWithValue("@Id_caja", idcaja);
+                cmd.Parameters.AddWithValue("@Id_cliente", parametros.IdCliente);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
+                return false;
             }
             finally
             {

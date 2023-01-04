@@ -60,7 +60,7 @@ namespace Punto_de_venta.Datos
             catch (Exception ex)
             {
                 idcompra = 0;
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
 
             }
             finally
@@ -143,7 +143,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
 
             }
             finally

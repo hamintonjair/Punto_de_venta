@@ -46,7 +46,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
 
             }
         }
@@ -63,7 +63,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
 
             }
         }
@@ -81,7 +81,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 
@@ -120,7 +120,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
 
             }
         }
@@ -140,7 +140,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
 
             }
         }
@@ -159,7 +159,7 @@ namespace Punto_de_venta.Datos
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void mostrar_inicio_De_sesion2(ref int idusuario)
@@ -177,7 +177,7 @@ namespace Punto_de_venta.Datos
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void mostrarUsuariosSesion(ref DataTable dt)
@@ -195,7 +195,7 @@ namespace Punto_de_venta.Datos
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void mostrar_ventas_en_efectivo_por_turno(int idcaja, DateTime fi, DateTime ff, ref double monto)
@@ -341,7 +341,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void buscarPagos(ref double monto, int idproveedor)
@@ -357,7 +357,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void sumar_CreditoPorPagar(int idcaja, DateTime fi, DateTime ff, ref double monto)
@@ -414,7 +414,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void mostrar_empresa(ref DataTable dt)
@@ -429,7 +429,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void mostrarCorreo(ref DataTable dt)
@@ -444,7 +444,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 
@@ -461,7 +461,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void buscar_clientes(ref DataTable dt, string buscador)
@@ -477,7 +477,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }  
         public static void mostrarEstadosPagoProveedores(ref DataTable dt, int idproveedor)
@@ -493,7 +493,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void mostrarEstadosPagoProveedoresTemporal(ref DataTable dt, int idproveedor)
@@ -509,7 +509,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }        
         public static void mostrarAbonosPagoProveedores(ref DataTable dt, int idproveedor)
@@ -525,7 +525,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
             
         }
@@ -542,7 +542,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
             
         }
@@ -559,7 +559,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void mostrarEstadosCuentaClienteT(ref DataTable dt, int idcliente)
@@ -575,7 +575,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 
@@ -592,7 +592,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }       
         public static void mostrar_ControlPagos(ref DataTable dt, int idproveedor)
@@ -615,7 +615,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void mostrar_ControlPagosT(ref DataTable dt, int idproveedor)
@@ -638,7 +638,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void ReportePorCobrar(ref double Monto)
@@ -767,7 +767,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 
@@ -784,7 +784,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void mostrarVentasGraficaFechas(ref DataTable dt, DateTime fi, DateTime ff)
@@ -802,7 +802,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void ReporteTotalVentas(ref double Monto)
@@ -851,7 +851,7 @@ namespace Punto_de_venta.Datos
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void buscarVentasPorFechas(ref DataTable dt, DateTime fi, DateTime ff)
@@ -869,7 +869,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void contarVentasEspera(ref int Contador)
@@ -897,7 +897,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void ReporteResumenVentasHoyEmpleado(ref DataTable dt, int idEmpleado)
@@ -914,7 +914,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 
@@ -932,7 +932,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void ReporteResumenVentasEmpleadoFechas(ref DataTable dt, int idEmpleado, DateTime fi, DateTime ff)
@@ -951,7 +951,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 
@@ -1000,7 +1000,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         //Productos
@@ -1043,7 +1043,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void imprimir_inventarios_todos(ref DataTable dt)
@@ -1057,7 +1057,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void mostrar_productos_vencidos(ref DataTable dt)
@@ -1071,7 +1071,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void MOSTRAR_Inventarios_bajo_minimo(ref DataTable dt)
@@ -1085,7 +1085,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void BUSCAR_PRODUCTOS_KARDEX(ref DataTable dt, string buscador)
@@ -1101,7 +1101,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 
@@ -1116,7 +1116,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
 
             }
         }
@@ -1133,7 +1133,7 @@ namespace Punto_de_venta.Datos
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void ReporteGastosMesCombo(ref DataTable dt, int anio)
@@ -1150,7 +1150,7 @@ namespace Punto_de_venta.Datos
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 
@@ -1167,7 +1167,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void ReporteGastosAnioMesGrafica(ref DataTable dt, int año, string mes)
@@ -1185,7 +1185,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         //Caja
@@ -1203,7 +1203,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         public static void mostrarTemaCaja(ref string Tema)
@@ -1220,7 +1220,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 
@@ -1239,7 +1239,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         //Usuarios
@@ -1254,7 +1254,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         //Clientes
@@ -1269,7 +1269,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         //Proveedores
@@ -1284,7 +1284,7 @@ namespace Punto_de_venta.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 

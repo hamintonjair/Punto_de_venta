@@ -103,7 +103,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                  MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
             dibujarCOMPROBANTES();
         }
@@ -136,7 +136,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         private void miEvento(System.Object sender, EventArgs e)
@@ -197,7 +197,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
         }
         void buscar_Tipo_de_documentos_para_insertar_en_ventas()
@@ -291,7 +291,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         void configuraciones_de_diseño()
@@ -330,12 +330,12 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.StackTrace);
+                     MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         void cargar_impresoras_del_equipo()
@@ -434,13 +434,13 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.StackTrace);
+                     MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 
@@ -489,7 +489,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 
@@ -844,7 +844,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         void vender_en_efectivo()
@@ -885,7 +885,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                  MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
 
         }
@@ -965,13 +965,25 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                  MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
         }
         void CONFIRMAR_VENTA_EFECTIVO()
         {
+             double total2 = 0;
+             double total3 = 0;
             try
                 {
+                    if (txttipo == "CREDITO" )
+                    {
+                       total2 = Convert.ToDouble(txtcredito2.Text);
+                       total3 = 0;
+                    }
+                    if (txttipo == "EFECTIVO")
+                    {
+                      total3 = Convert.ToDouble(total);
+                      total2 = 0;
+                    }
                     ConexionDt.ConexionData.abrir();
                     SqlCommand cmd = new SqlCommand("Confirmar_venta", ConexionDt.ConexionData.conectar);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -996,8 +1008,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                     cmd.Parameters.AddWithValue("@Base19", base19);
                     cmd.Parameters.AddWithValue("@Referencia_tarjeta", "NULO");
                     cmd.Parameters.AddWithValue("@Vuelto", TXTVUELTO.Text);
-                    cmd.Parameters.AddWithValue("@Efectivo", total);
-                    cmd.Parameters.AddWithValue("@Credito", txtcredito2.Text);
+                    cmd.Parameters.AddWithValue("@Efectivo", total3);
+                    cmd.Parameters.AddWithValue("@Credito", total2);
                     cmd.Parameters.AddWithValue("@Tarjeta", 0);
                     cmd.ExecuteNonQuery();
                     ConexionDt.ConexionData.cerrar();
@@ -1007,7 +1019,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 {
                     ConexionDt.ConexionData.cerrar();
                     lblproceso = "NO PROCEDE";
-                    MessageBox.Show(ex.Message);
+                      MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 }
             
           
@@ -1058,7 +1070,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             {
                 ConexionDt.ConexionData.cerrar();
                 lblproceso = "PROCEDE";
-                //MessageBox.Show(ex.Message);
+                //  MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
 
 
@@ -1083,7 +1095,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 catch (Exception ex)
                 {
                     ConexionDt.ConexionData.cerrar();
-                    MessageBox.Show(ex.Message);
+                      MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 }
             }
 
@@ -1141,7 +1153,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 catch (Exception ex)
                 {
                     ConexionDt.ConexionData.cerrar();
-                    MessageBox.Show(ex.StackTrace);
+                     MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
                 }
             }
 
@@ -1187,7 +1199,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.StackTrace);
+                     MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
                 }            
    
 
@@ -1218,7 +1230,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         void mostrar_Ticket_lleno()
@@ -1252,7 +1264,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.StackTrace);
+                     MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
                 }
             }
 
@@ -1283,7 +1295,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                  MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
             }
 
@@ -1306,7 +1318,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             catch (Exception ex)
             {
                 ConexionDt.ConexionData.cerrar();
-                MessageBox.Show(ex.Message);
+                  MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
         }
        
@@ -1324,7 +1336,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 

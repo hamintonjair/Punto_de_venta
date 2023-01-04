@@ -272,7 +272,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.txtporcentaje2.Location = new System.Drawing.Point(327, 4);
             this.txtporcentaje2.Name = "txtporcentaje2";
             this.txtporcentaje2.Size = new System.Drawing.Size(64, 28);
-            this.txtporcentaje2.TabIndex = 557;
+            this.txtporcentaje2.TabIndex = 9;
             this.txtporcentaje2.Text = "18";
             // 
             // Panel12
@@ -296,7 +296,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.txtimpuesto.Location = new System.Drawing.Point(86, 3);
             this.txtimpuesto.Name = "txtimpuesto";
             this.txtimpuesto.Size = new System.Drawing.Size(64, 28);
-            this.txtimpuesto.TabIndex = 553;
+            this.txtimpuesto.TabIndex = 7;
             this.txtimpuesto.Text = "IVA";
             // 
             // Label14
@@ -324,7 +324,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.txtporcentaje.Location = new System.Drawing.Point(171, 3);
             this.txtporcentaje.Name = "txtporcentaje";
             this.txtporcentaje.Size = new System.Drawing.Size(64, 28);
-            this.txtporcentaje.TabIndex = 553;
+            this.txtporcentaje.TabIndex = 8;
             this.txtporcentaje.Text = "18";
             // 
             // txtteclado
@@ -335,7 +335,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.txtteclado.Location = new System.Drawing.Point(35, 157);
             this.txtteclado.Name = "txtteclado";
             this.txtteclado.Size = new System.Drawing.Size(221, 24);
-            this.txtteclado.TabIndex = 565;
+            this.txtteclado.TabIndex = 11;
             this.txtteclado.Text = "Escribiendo con mi Teclado";
             this.txtteclado.UseVisualStyleBackColor = true;
             this.txtteclado.CheckedChanged += new System.EventHandler(this.txtteclado_CheckedChanged);
@@ -348,7 +348,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.TXTCON_LECTORA.Location = new System.Drawing.Point(33, 125);
             this.TXTCON_LECTORA.Name = "TXTCON_LECTORA";
             this.TXTCON_LECTORA.Size = new System.Drawing.Size(219, 24);
-            this.TXTCON_LECTORA.TabIndex = 565;
+            this.TXTCON_LECTORA.TabIndex = 10;
             this.TXTCON_LECTORA.Text = "Con una Lectora de Barras";
             this.TXTCON_LECTORA.UseVisualStyleBackColor = true;
             this.TXTCON_LECTORA.CheckedChanged += new System.EventHandler(this.TXTCON_LECTORA_CheckedChanged);
@@ -382,7 +382,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.no.Location = new System.Drawing.Point(282, 5);
             this.no.Name = "no";
             this.no.Size = new System.Drawing.Size(59, 28);
-            this.no.TabIndex = 555;
+            this.no.TabIndex = 6;
             this.no.TabStop = true;
             this.no.Text = "NO";
             this.no.UseVisualStyleBackColor = true;
@@ -396,7 +396,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.si.Location = new System.Drawing.Point(230, 5);
             this.si.Name = "si";
             this.si.Size = new System.Drawing.Size(46, 28);
-            this.si.TabIndex = 555;
+            this.si.TabIndex = 5;
             this.si.TabStop = true;
             this.si.Text = "SI";
             this.si.UseVisualStyleBackColor = true;
@@ -466,7 +466,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.Label18.Location = new System.Drawing.Point(69, 417);
             this.Label18.Name = "Label18";
             this.Label18.Size = new System.Drawing.Size(489, 20);
-            this.Label18.TabIndex = 596;
+            this.Label18.TabIndex = 13;
             this.Label18.Text = "Registra un Correo para enviarte Reporte del Cierre de Caja";
             // 
             // Label9
@@ -479,7 +479,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.Label9.Location = new System.Drawing.Point(68, 367);
             this.Label9.Name = "Label9";
             this.Label9.Size = new System.Drawing.Size(533, 20);
-            this.Label9.TabIndex = 596;
+            this.Label9.TabIndex = 12;
             this.Label9.Text = "Seleccione una Carpeta donde Guardar Las Copias de Seguridad\r\n";
             this.Label9.Click += new System.EventHandler(this.Label9_Click);
             // 
@@ -705,7 +705,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.txtmoneda.Location = new System.Drawing.Point(444, 70);
             this.txtmoneda.Name = "txtmoneda";
             this.txtmoneda.Size = new System.Drawing.Size(83, 28);
-            this.txtmoneda.TabIndex = 590;
+            this.txtmoneda.TabIndex = 3;
             this.txtmoneda.SelectedIndexChanged += new System.EventHandler(this.txtmoneda_SelectedIndexChanged);
             // 
             // TXTPAIS
@@ -740,7 +740,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.TXTPAIS.Location = new System.Drawing.Point(194, 70);
             this.TXTPAIS.Name = "TXTPAIS";
             this.TXTPAIS.Size = new System.Drawing.Size(163, 28);
-            this.TXTPAIS.TabIndex = 589;
+            this.TXTPAIS.TabIndex = 2;
             this.TXTPAIS.SelectedIndexChanged += new System.EventHandler(this.TXTPAIS_SelectedIndexChanged);
             // 
             // lbleditarLogo
@@ -752,7 +752,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.lbleditarLogo.Location = new System.Drawing.Point(25, 106);
             this.lbleditarLogo.Name = "lbleditarLogo";
             this.lbleditarLogo.Size = new System.Drawing.Size(107, 22);
-            this.lbleditarLogo.TabIndex = 588;
+            this.lbleditarLogo.TabIndex = 4;
             this.lbleditarLogo.Text = "Cambiar";
             this.lbleditarLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbleditarLogo.Click += new System.EventHandler(this.lbleditarLogo_Click);
@@ -786,7 +786,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.txtempresa.Location = new System.Drawing.Point(140, 22);
             this.txtempresa.Name = "txtempresa";
             this.txtempresa.Size = new System.Drawing.Size(360, 22);
-            this.txtempresa.TabIndex = 532;
+            this.txtempresa.TabIndex = 1;
             this.txtempresa.Text = "NOMBRE DE TU EMPRESA";
             // 
             // lblempresa
@@ -922,7 +922,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.MenuStrip1.Name = "MenuStrip1";
             this.MenuStrip1.ShowItemToolTips = true;
             this.MenuStrip1.Size = new System.Drawing.Size(92, 32);
-            this.MenuStrip1.TabIndex = 584;
+            this.MenuStrip1.TabIndex = 15;
             this.MenuStrip1.Text = "MenuStrip1";
             // 
             // ToolStripMenuItem3
@@ -948,7 +948,7 @@ namespace Punto_de_venta.Presentacion.Epresa_Configuracion
             this.TSIGUIENTE_Y_GUARDAR.Name = "TSIGUIENTE_Y_GUARDAR";
             this.TSIGUIENTE_Y_GUARDAR.ShowItemToolTips = true;
             this.TSIGUIENTE_Y_GUARDAR.Size = new System.Drawing.Size(178, 32);
-            this.TSIGUIENTE_Y_GUARDAR.TabIndex = 583;
+            this.TSIGUIENTE_Y_GUARDAR.TabIndex = 14;
             this.TSIGUIENTE_Y_GUARDAR.Text = "MenuStrip4";
             // 
             // TSIGUIENTE_Y_GUARDAR_

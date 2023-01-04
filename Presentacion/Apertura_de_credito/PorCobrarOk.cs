@@ -34,7 +34,7 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             }
             else
             {
-                MessageBox.Show("Ingrese un saldo");
+                MessageBox.Show("Ingrese un saldo", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
         }
         private void rellenarCamposVacios()
@@ -57,14 +57,18 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             param.idcliente = idcliente;
             if (funcion.insertar_CreditoPorCobrar(parametros) == true)
             {
-                if (funcion.insertar_cobro_cliente(param) == true)
+                if (funcion.insertar_CobrosT(parametros) == true)
                 {
-                    MessageBox.Show("Registrado");
-                    limpiar();
-                    buscar_clientes();
+                    if (funcion.insertar_cobro_cliente(param) == true)
+                    {
+                        MessageBox.Show("Registrado", "Mensaje", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        limpiar();
+                        buscar_clientes();
+                    }
+                 
                 }
-         
 
+            
             }
 
         }

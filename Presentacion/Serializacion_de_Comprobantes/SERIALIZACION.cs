@@ -84,7 +84,7 @@ namespace Punto_de_venta.Presentacion.Serializacion_de_Comprobantes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 
@@ -111,7 +111,7 @@ namespace Punto_de_venta.Presentacion.Serializacion_de_Comprobantes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 
@@ -144,7 +144,7 @@ namespace Punto_de_venta.Presentacion.Serializacion_de_Comprobantes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         private void ELEJIR_POR_DEFECTO()
@@ -166,7 +166,7 @@ namespace Punto_de_venta.Presentacion.Serializacion_de_Comprobantes
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.StackTrace);
+                     MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
                 }
             }
 
@@ -202,7 +202,7 @@ namespace Punto_de_venta.Presentacion.Serializacion_de_Comprobantes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 

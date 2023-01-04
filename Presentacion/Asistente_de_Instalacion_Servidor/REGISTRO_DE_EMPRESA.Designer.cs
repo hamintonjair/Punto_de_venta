@@ -106,6 +106,8 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel15 = new System.Windows.Forms.Panel();
             this.TSIGUIENTE_Y_GUARDAR = new System.Windows.Forms.MenuStrip();
             this.TSIGUIENTE_Y_GUARDAR_ = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.TSIGUIENTE = new System.Windows.Forms.ToolStripMenuItem();
             this.Panel9 = new System.Windows.Forms.Panel();
             this.PADVER = new System.Windows.Forms.PictureBox();
             this.Label2 = new System.Windows.Forms.Label();
@@ -140,8 +142,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.FolderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.FolderBrowserDialog2 = new System.Windows.Forms.FolderBrowserDialog();
             this.dlg = new System.Windows.Forms.OpenFileDialog();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.TSIGUIENTE = new System.Windows.Forms.ToolStripMenuItem();
             this.Panel16.SuspendLayout();
             this.Panel2.SuspendLayout();
             this.Panel8.SuspendLayout();
@@ -161,6 +161,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).BeginInit();
             this.Panel15.SuspendLayout();
             this.TSIGUIENTE_Y_GUARDAR.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.Panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PADVER)).BeginInit();
             this.Panel1.SuspendLayout();
@@ -169,7 +170,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel14.SuspendLayout();
             this.Panel4.SuspendLayout();
             this.MenuStrip2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel7
@@ -264,7 +264,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Label18.Location = new System.Drawing.Point(66, 469);
             this.Label18.Name = "Label18";
             this.Label18.Size = new System.Drawing.Size(489, 20);
-            this.Label18.TabIndex = 596;
+            this.Label18.TabIndex = 15;
             this.Label18.Text = "Registra un Correo para enviarte Reporte del Cierre de Caja";
             // 
             // Panel3
@@ -347,7 +347,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtcaja.Location = new System.Drawing.Point(86, 11);
             this.txtcaja.Name = "txtcaja";
             this.txtcaja.Size = new System.Drawing.Size(441, 22);
-            this.txtcaja.TabIndex = 532;
+            this.txtcaja.TabIndex = 13;
             this.txtcaja.Text = "NOMBRE DE CAJA";
             // 
             // Label19
@@ -401,7 +401,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Label9.Location = new System.Drawing.Point(65, 419);
             this.Label9.Name = "Label9";
             this.Label9.Size = new System.Drawing.Size(533, 20);
-            this.Label9.TabIndex = 596;
+            this.Label9.TabIndex = 14;
             this.Label9.Text = "Seleccione una Carpeta donde Guardar Las Copias de Seguridad\r\n";
             this.Label9.Click += new System.EventHandler(this.Label9_Click);
             // 
@@ -461,7 +461,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtteclado.Location = new System.Drawing.Point(32, 157);
             this.txtteclado.Name = "txtteclado";
             this.txtteclado.Size = new System.Drawing.Size(221, 24);
-            this.txtteclado.TabIndex = 565;
+            this.txtteclado.TabIndex = 12;
             this.txtteclado.Text = "Escribiendo con mi Teclado";
             this.txtteclado.UseVisualStyleBackColor = true;
             this.txtteclado.CheckedChanged += new System.EventHandler(this.txtteclado_CheckedChanged);
@@ -474,7 +474,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.TXTCON_LECTORA.Location = new System.Drawing.Point(33, 125);
             this.TXTCON_LECTORA.Name = "TXTCON_LECTORA";
             this.TXTCON_LECTORA.Size = new System.Drawing.Size(219, 24);
-            this.TXTCON_LECTORA.TabIndex = 565;
+            this.TXTCON_LECTORA.TabIndex = 11;
             this.TXTCON_LECTORA.Text = "Con una Lectora de Barras";
             this.TXTCON_LECTORA.UseVisualStyleBackColor = true;
             this.TXTCON_LECTORA.CheckedChanged += new System.EventHandler(this.TXTCON_LECTORA_CheckedChanged);
@@ -541,7 +541,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtporcentaje2.Location = new System.Drawing.Point(327, 4);
             this.txtporcentaje2.Name = "txtporcentaje2";
             this.txtporcentaje2.Size = new System.Drawing.Size(64, 28);
-            this.txtporcentaje2.TabIndex = 557;
+            this.txtporcentaje2.TabIndex = 10;
             this.txtporcentaje2.Text = "18";
             // 
             // Panel12
@@ -565,7 +565,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtimpuesto.Location = new System.Drawing.Point(86, 3);
             this.txtimpuesto.Name = "txtimpuesto";
             this.txtimpuesto.Size = new System.Drawing.Size(64, 28);
-            this.txtimpuesto.TabIndex = 553;
+            this.txtimpuesto.TabIndex = 7;
             this.txtimpuesto.Text = "IVA";
             // 
             // Label14
@@ -593,7 +593,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtporcentaje.Location = new System.Drawing.Point(171, 3);
             this.txtporcentaje.Name = "txtporcentaje";
             this.txtporcentaje.Size = new System.Drawing.Size(64, 28);
-            this.txtporcentaje.TabIndex = 553;
+            this.txtporcentaje.TabIndex = 8;
             this.txtporcentaje.Text = "18";
             // 
             // Label1
@@ -625,7 +625,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.no.Location = new System.Drawing.Point(282, 5);
             this.no.Name = "no";
             this.no.Size = new System.Drawing.Size(59, 28);
-            this.no.TabIndex = 555;
+            this.no.TabIndex = 6;
             this.no.TabStop = true;
             this.no.Text = "NO";
             this.no.UseVisualStyleBackColor = true;
@@ -639,7 +639,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.si.Location = new System.Drawing.Point(230, 5);
             this.si.Name = "si";
             this.si.Size = new System.Drawing.Size(46, 28);
-            this.si.TabIndex = 555;
+            this.si.TabIndex = 5;
             this.si.TabStop = true;
             this.si.Text = "SI";
             this.si.UseVisualStyleBackColor = true;
@@ -826,7 +826,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtmoneda.Location = new System.Drawing.Point(444, 70);
             this.txtmoneda.Name = "txtmoneda";
             this.txtmoneda.Size = new System.Drawing.Size(83, 28);
-            this.txtmoneda.TabIndex = 590;
+            this.txtmoneda.TabIndex = 3;
             // 
             // TXTPAIS
             // 
@@ -860,7 +860,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.TXTPAIS.Location = new System.Drawing.Point(194, 70);
             this.TXTPAIS.Name = "TXTPAIS";
             this.TXTPAIS.Size = new System.Drawing.Size(163, 28);
-            this.TXTPAIS.TabIndex = 589;
+            this.TXTPAIS.TabIndex = 2;
             this.TXTPAIS.SelectedIndexChanged += new System.EventHandler(this.TXTPAIS_SelectedIndexChanged);
             // 
             // lbleditarLogo
@@ -872,7 +872,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.lbleditarLogo.Location = new System.Drawing.Point(25, 106);
             this.lbleditarLogo.Name = "lbleditarLogo";
             this.lbleditarLogo.Size = new System.Drawing.Size(107, 22);
-            this.lbleditarLogo.TabIndex = 588;
+            this.lbleditarLogo.TabIndex = 4;
             this.lbleditarLogo.Text = "Cambiar";
             this.lbleditarLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbleditarLogo.Click += new System.EventHandler(this.lbleditarLogo_Click);
@@ -906,7 +906,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtempresa.Location = new System.Drawing.Point(140, 22);
             this.txtempresa.Name = "txtempresa";
             this.txtempresa.Size = new System.Drawing.Size(360, 22);
-            this.txtempresa.TabIndex = 532;
+            this.txtempresa.TabIndex = 1;
             this.txtempresa.Text = "NOMBRE DE TU EMPRESA";
             // 
             // lblempresa
@@ -1050,7 +1050,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.TSIGUIENTE_Y_GUARDAR.Name = "TSIGUIENTE_Y_GUARDAR";
             this.TSIGUIENTE_Y_GUARDAR.ShowItemToolTips = true;
             this.TSIGUIENTE_Y_GUARDAR.Size = new System.Drawing.Size(108, 32);
-            this.TSIGUIENTE_Y_GUARDAR.TabIndex = 583;
+            this.TSIGUIENTE_Y_GUARDAR.TabIndex = 16;
             this.TSIGUIENTE_Y_GUARDAR.Text = "MenuStrip4";
             // 
             // TSIGUIENTE_Y_GUARDAR_
@@ -1065,6 +1065,33 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.TSIGUIENTE_Y_GUARDAR_.Size = new System.Drawing.Size(99, 28);
             this.TSIGUIENTE_Y_GUARDAR_.Text = "Siguiente";
             this.TSIGUIENTE_Y_GUARDAR_.Click += new System.EventHandler(this.TSIGUIENTE_Y_GUARDAR__Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSIGUIENTE});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.menuStrip1.Location = new System.Drawing.Point(11, 18);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.ShowItemToolTips = true;
+            this.menuStrip1.Size = new System.Drawing.Size(108, 32);
+            this.menuStrip1.TabIndex = 584;
+            this.menuStrip1.Text = "MenuStrip4";
+            // 
+            // TSIGUIENTE
+            // 
+            this.TSIGUIENTE.BackColor = System.Drawing.Color.Gainsboro;
+            this.TSIGUIENTE.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.TSIGUIENTE.ForeColor = System.Drawing.Color.Black;
+            this.TSIGUIENTE.Image = ((System.Drawing.Image)(resources.GetObject("TSIGUIENTE.Image")));
+            this.TSIGUIENTE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TSIGUIENTE.Name = "TSIGUIENTE";
+            this.TSIGUIENTE.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TSIGUIENTE.Size = new System.Drawing.Size(99, 28);
+            this.TSIGUIENTE.Text = "Siguiente";
             // 
             // Panel9
             // 
@@ -1477,33 +1504,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // 
             this.dlg.FileName = "OpenFileDialog1";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TSIGUIENTE});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.menuStrip1.Location = new System.Drawing.Point(11, 18);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.ShowItemToolTips = true;
-            this.menuStrip1.Size = new System.Drawing.Size(108, 32);
-            this.menuStrip1.TabIndex = 584;
-            this.menuStrip1.Text = "MenuStrip4";
-            // 
-            // TSIGUIENTE
-            // 
-            this.TSIGUIENTE.BackColor = System.Drawing.Color.Gainsboro;
-            this.TSIGUIENTE.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.TSIGUIENTE.ForeColor = System.Drawing.Color.Black;
-            this.TSIGUIENTE.Image = ((System.Drawing.Image)(resources.GetObject("TSIGUIENTE.Image")));
-            this.TSIGUIENTE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TSIGUIENTE.Name = "TSIGUIENTE";
-            this.TSIGUIENTE.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TSIGUIENTE.Size = new System.Drawing.Size(99, 28);
-            this.TSIGUIENTE.Text = "Siguiente";
-            // 
             // REGISTRO_DE_EMPRESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1550,6 +1550,8 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel15.ResumeLayout(false);
             this.TSIGUIENTE_Y_GUARDAR.ResumeLayout(false);
             this.TSIGUIENTE_Y_GUARDAR.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.Panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PADVER)).EndInit();
             this.Panel1.ResumeLayout(false);
@@ -1562,8 +1564,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel4.PerformLayout();
             this.MenuStrip2.ResumeLayout(false);
             this.MenuStrip2.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }

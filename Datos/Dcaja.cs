@@ -28,7 +28,7 @@ namespace Punto_de_venta.Datos
             catch (Exception ex)
             {
                 idcaja = 0;
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
             finally
             {

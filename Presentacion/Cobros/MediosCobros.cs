@@ -114,7 +114,13 @@ namespace Punto_de_venta.Presentacion.Cobros
             {
                 if (funcion.Insertar_ControlCobrosT(parametros) == true)
                 {
-                    Dispose();
+                    if (funcion.InsertarControlPorCobrar(parametros) == true)
+                    {
+                        
+                            Dispose();
+                       
+                    }
+                    
                 }
             }
         }

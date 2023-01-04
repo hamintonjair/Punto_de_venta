@@ -33,9 +33,9 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
         }
         private void Conectar()
         {
-            if (Button2.Visible == true)            {
+            if (label3.Visible == true)            {
                
-                comprobar_si_ya_hay_servidor_instalado_SQL_NORMAL();
+                //comprobar_si_ya_hay_servidor_instalado_SQL_NORMAL();
 
             }
         }
@@ -145,7 +145,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             {
                 this.Cursor = Cursors.Hand;
                 Panel6.Visible = true;
-                Button2.Visible = true;
+                label3.Visible = true;
                 Panel4.Visible = false;
                 Panel4.Dock = DockStyle.None;
                 lblbuscador_de_servidores.Text = "De click a Instalar Servidor, luego de click a SI cuando se le pida, luego presione ACEPTAR y espere por favor";
@@ -217,10 +217,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             }
         }
 
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            instalar();
-        }
+    
         public void instalar()
         {
             try
@@ -323,32 +320,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
         public static int minutos1;
         private void timer3_Tick(object sender, EventArgs e)
         {
-            milisegundo1 += 1;
-            milise.Text = Convert.ToString(milisegundo1);
-            if (milisegundo1 == 60)
-            {
-                segundos1 += 1;
-                seg.Text = Convert.ToString(segundos1);
-
-                milisegundo1 = 0;
-
-            }
-
-            if (segundos1 == 60)
-            {
-                minutos1 += 1;
-
-                min.Text = Convert.ToString(minutos1);
-                segundos1 = 0;
-            }
-
-            if (minutos1 == 1)
-            {
-               
-                ejecutar_scryt_ELIMINARBase();
-                ejecutar_scryt_crearBase();
-
-            }           
+           
         }
         private void ejecutar_scryt_crearBase()
         {
@@ -377,34 +349,22 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
         public static int variableMI;
         private void timer2_Tick(object sender, EventArgs e)
         {
-            milisegundo1 += 1;
-            milise.Text = Convert.ToString(milisegundo1);
-            if (milisegundo1 == 60)
-            {
-                segundos1 += 1;
-                seg.Text = Convert.ToString(segundos1);
+           
 
-                milisegundo1 = 0;
-            }
-          
+        }
 
-            if (segundos1 == 60)
-            {
-                minutos1 += 1;              
+        private void label18_Click(object sender, EventArgs e)
+        {
 
-                min.Text = Convert.ToString(minutos1);
-                segundos1 = 0;
-            }
-          
-            if (minutos1 > 7 )
-            {
-                timer2.Enabled = false;
-            
-                ejecutar_scryt_ELIMINARBase();
-                ejecutar_scryt_crearBase();
+        }
 
-                timer3.Start();
-            }          
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            instalar();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
 
         }
     }

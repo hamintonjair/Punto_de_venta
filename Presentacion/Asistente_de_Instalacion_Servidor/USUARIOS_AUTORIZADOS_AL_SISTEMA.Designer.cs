@@ -214,7 +214,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.MenuStrip4.Name = "MenuStrip4";
             this.MenuStrip4.ShowItemToolTips = true;
             this.MenuStrip4.Size = new System.Drawing.Size(114, 32);
-            this.MenuStrip4.TabIndex = 587;
+            this.MenuStrip4.TabIndex = 4;
             this.MenuStrip4.Text = "MenuStrip4";
             // 
             // ToolStripMenuItem1
@@ -248,7 +248,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.TXTCONTRASEÑA.Name = "TXTCONTRASEÑA";
             this.TXTCONTRASEÑA.PasswordChar = '*';
             this.TXTCONTRASEÑA.Size = new System.Drawing.Size(160, 23);
-            this.TXTCONTRASEÑA.TabIndex = 3;
+            this.TXTCONTRASEÑA.TabIndex = 2;
             // 
             // TXTUSUARIO
             // 
@@ -266,7 +266,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.txtnombre.Location = new System.Drawing.Point(275, 53);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(231, 23);
-            this.txtnombre.TabIndex = 3;
+            this.txtnombre.TabIndex = 1;
             // 
             // Label6
             // 

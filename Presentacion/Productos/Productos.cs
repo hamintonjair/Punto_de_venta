@@ -13,6 +13,18 @@ using System.Windows.Forms;
 using System.Threading;
 using Punto_de_venta.Logica;
 using Punto_de_venta.Datos;
+using iText.Kernel.Pdf;
+using DocumentFormat.OpenXml.Office2013;
+//using DocumentFormat.OpenXml.Wordprocessing;
+using FontFamily = System.Drawing.FontFamily;
+using Font = System.Drawing.Font;
+using Color = System.Drawing.Color;
+using iText.Layout;
+using iText.Kernel.Geom;
+using iText.IO.Image;
+using iText.Layout.Element;
+using Punto_de_venta.ConexionDt;
+using BarcodeLib;
 
 namespace Punto_de_venta.Presentacion.Productos
 {
@@ -972,7 +984,7 @@ namespace Punto_de_venta.Presentacion.Productos
                 btnNuevoGrupo.Visible = true;
                 if (lblEstadoCodigo.Text == "NUEVO")
                 {
-                    GENERAR_CODIGO_DE_BARRAS_AUTOMATICO();
+                    GENERAR_CODIGO_DE_BARRAS_AUTOMATICO();                  
                 }
 
             }
@@ -1387,7 +1399,8 @@ namespace Punto_de_venta.Presentacion.Productos
         private void btnGenerarCodigo_Click_1(object sender, EventArgs e)
         {
             GENERAR_CODIGO_DE_BARRAS_AUTOMATICO();
-        }
+        
+        }   
 
         private void ToolStripMenuItem15_Click(object sender, EventArgs e)
         {
@@ -1447,6 +1460,90 @@ namespace Punto_de_venta.Presentacion.Productos
           txtbusca.Focus();           
           button1.Focus();  
           
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            if(txtRuta.Text == "")
+            {
+               MessageBox.Show("Por favor escoge la ruta para guardar los códigos de barra", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                QR();
+            }
+         
+        }      
+        public void QR()
+        {
+            try
+            {      
+              
+
+                PdfWriter pdfWriter = new PdfWriter(txtRuta.Text + "\\" + "Codigo_de_barra.pdf");
+                PdfDocument pdf = new PdfDocument(pdfWriter);
+                Document documento = new Document(pdf, PageSize.LETTER);
+                documento.SetMargins(20, 20, 20, 20);
+              
+                Barcode Codigo = new Barcode();
+                Codigo.IncludeLabel = true;
+
+                ConexionData.abrir();
+
+                SqlCommand da = new SqlCommand("SELECT  Codigo, Descripcion FROM Producto1", ConexionData.conectar);
+                SqlDataReader reader = da.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+       
+
+                    string codigo = (reader["Codigo"].ToString());
+                    string descripcion = (reader["Descripcion"].ToString());
+
+                    Codigo.Alignment = AlignmentPositions.CENTER;
+                    Codigo.LabelFont = new Font(FontFamily.GenericMonospace, 8, FontStyle.Regular);
+                    Codigo.Encode(TYPE.CODE128, codigo, Color.Black, Color.White, 200, 50);                 
+
+                    Codigo.SaveImage(txtRuta.Text + "\\" + codigo + " - " + descripcion + ".png", SaveTypes.JPG);
+
+                    var imagen = new iText.Layout.Element.Image(ImageDataFactory.Create(txtRuta.Text + "\\" + codigo +" - " + descripcion + ".png"));
+                    var parrafo = new Paragraph().Add(imagen);
+                    documento.Add(parrafo);
+
+                }
+                documento.Close();
+                MessageBox.Show("Códigos de barra generado", "Mensaje", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {              
+                MessageBox.Show("No se completo el proceso", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            ConexionData.cerrar();
+
+
+        }  
+        private void ObtenerRuta()
+        {
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                txtRuta.Text = folderBrowserDialog1.SelectedPath;
+            }
+        }
+
+        private void txtRuta_TextChanged(object sender, EventArgs e)
+        {
+            ObtenerRuta();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ObtenerRuta();
+        }
+
+        private void txtRuta_Click(object sender, EventArgs e)
+        {
+            ObtenerRuta();
         }
     }
 }

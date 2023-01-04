@@ -37,8 +37,6 @@ namespace Punto_de_venta.Presentacion.Reportes.Reportes_de_Kardex_listo.Reportes
             this.textBox24 = new Telerik.Reporting.TextBox();
             this.textBox39 = new Telerik.Reporting.TextBox();
             this.textBox23 = new Telerik.Reporting.TextBox();
-            this.textBox45 = new Telerik.Reporting.TextBox();
-            this.textBox44 = new Telerik.Reporting.TextBox();
             this.reportHeaderSection1 = new Telerik.Reporting.ReportHeaderSection();
             this.table1 = new Telerik.Reporting.Table();
             this.textBox15 = new Telerik.Reporting.TextBox();
@@ -59,6 +57,8 @@ namespace Punto_de_venta.Presentacion.Reportes.Reportes_de_Kardex_listo.Reportes
             this.textBox4 = new Telerik.Reporting.TextBox();
             this.textBox13 = new Telerik.Reporting.TextBox();
             this.textBox12 = new Telerik.Reporting.TextBox();
+            this.textBox44 = new Telerik.Reporting.TextBox();
+            this.textBox45 = new Telerik.Reporting.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // textBox14
@@ -283,30 +283,6 @@ namespace Punto_de_venta.Presentacion.Reportes.Reportes_de_Kardex_listo.Reportes
             this.textBox23.Style.Font.Name = "Courier New";
             this.textBox23.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox23.Value = "------------------------------------";
-            // 
-            // textBox45
-            // 
-            this.textBox45.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(0.188D), Telerik.Reporting.Drawing.Unit.Cm(5.991D));
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(4.012D), Telerik.Reporting.Drawing.Unit.Cm(0.5D));
-            this.textBox45.Style.Font.Bold = true;
-            this.textBox45.Style.Font.Name = "Courier New";
-            this.textBox45.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(10D);
-            this.textBox45.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Right;
-            this.textBox45.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox45.Value = "Tipo de impresión:";
-            // 
-            // textBox44
-            // 
-            this.textBox44.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(4.2D), Telerik.Reporting.Drawing.Unit.Cm(6D));
-            this.textBox44.Name = "textBox44";
-            this.textBox44.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(3.688D), Telerik.Reporting.Drawing.Unit.Cm(0.5D));
-            this.textBox44.Style.Font.Bold = false;
-            this.textBox44.Style.Font.Name = "Courier New";
-            this.textBox44.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(9D);
-            this.textBox44.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
-            this.textBox44.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox44.Value = "=Fields.estado";
             // 
             // reportHeaderSection1
             // 
@@ -577,6 +553,30 @@ namespace Punto_de_venta.Presentacion.Reportes.Reportes_de_Kardex_listo.Reportes
             this.textBox12.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.textBox12.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
             this.textBox12.Value = "=Fields.total_en_letras + Fields.Moneda";
+            // 
+            // textBox44
+            // 
+            this.textBox44.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(4.2D), Telerik.Reporting.Drawing.Unit.Cm(6D));
+            this.textBox44.Name = "textBox44";
+            this.textBox44.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(3.688D), Telerik.Reporting.Drawing.Unit.Cm(0.5D));
+            this.textBox44.Style.Font.Bold = false;
+            this.textBox44.Style.Font.Name = "Courier New";
+            this.textBox44.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(9D);
+            this.textBox44.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
+            this.textBox44.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox44.Value = "=Fields.estado";
+            // 
+            // textBox45
+            // 
+            this.textBox45.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(0.188D), Telerik.Reporting.Drawing.Unit.Cm(5.991D));
+            this.textBox45.Name = "textBox45";
+            this.textBox45.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(4.012D), Telerik.Reporting.Drawing.Unit.Cm(0.5D));
+            this.textBox45.Style.Font.Bold = true;
+            this.textBox45.Style.Font.Name = "Courier New";
+            this.textBox45.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(10D);
+            this.textBox45.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Right;
+            this.textBox45.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox45.Value = "Tipo de impresión:";
             // 
             // ReportCotizacion
             // 

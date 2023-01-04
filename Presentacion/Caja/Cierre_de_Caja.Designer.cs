@@ -715,7 +715,7 @@ namespace Punto_de_venta.Presentacion.Caja
             // lblVentasAcredito
             // 
             this.lblVentasAcredito.AutoSize = true;
-            this.lblVentasAcredito.BackColor = System.Drawing.Color.Transparent;
+            this.lblVentasAcredito.BackColor = System.Drawing.Color.Turquoise;
             this.lblVentasAcredito.Enabled = false;
             this.lblVentasAcredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVentasAcredito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(134)))), ((int)(((byte)(52)))));

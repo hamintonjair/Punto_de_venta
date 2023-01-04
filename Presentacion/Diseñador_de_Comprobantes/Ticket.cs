@@ -41,7 +41,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
         private void obtener_datos()
@@ -80,7 +80,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
 
@@ -148,7 +148,7 @@ namespace Punto_de_venta.Presentacion.Diseñador_de_Comprobantes
             }
             catch (Exception EX)
             {
-                MessageBox.Show(EX.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
             }
         }
     }

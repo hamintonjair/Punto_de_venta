@@ -18,7 +18,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         {
             InitializeComponent();
         }      
-        public double preciounitario;
+        public double preciounitario;   
         private string BufeerRespuesta;
         string puertoBalanza;
         string estadoPuerto;
@@ -84,8 +84,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             {
                 puertoBalanza = rdr["PuertoBalanza"].ToString();
                 estadoPuerto = rdr["EstadoBalanza"].ToString();
-            }
-            MessageBox.Show(estadoPuerto);
+            }          
+            MessageBox.Show(estadoPuerto + " DE CONFIGURAR LA BALANZA" , "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (estadoPuerto == "CONFIRMADO")
             {
                 abrirPuertosBalanza();
@@ -99,7 +99,9 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         {
             if(txtcantidad.Text != "")
             {
+                string tipo = "libra de ";
                 Ventas_Menu_Princi.txtpantalla = Convert.ToDouble(txtcantidad.Text);
+                Ventas_Menu_Princi.tipo = tipo;
                 Dispose();
             }
             if (txtcantidadKilo.Text != "")
@@ -107,8 +109,10 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 double total;
                 double cantidad;
                 cantidad = Convert.ToDouble(txtcantidadKilo.Text);
-                total =  cantidad * 2;               
+                total =  cantidad * 2;
+                string tipo = "libra de ";
                 Ventas_Menu_Princi.txtpantalla = Convert.ToDouble(total);
+                Ventas_Menu_Princi.tipo = tipo;
                 Dispose();
             }
            

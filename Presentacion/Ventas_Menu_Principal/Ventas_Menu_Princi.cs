@@ -27,6 +27,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
         int iddetalleventa;
         int Contador;
         public static double txtpantalla;
+        public static string tipo;
         double ValorIva_5;
         double ValorIva_19;
         double sinIvas;
@@ -126,7 +127,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
 
             ValidarTiposBusqueda();
@@ -196,7 +197,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.StackTrace);
+                MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
         }
         private void limpiar_para_venta_nueva()
@@ -325,7 +326,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
 
         }
@@ -345,7 +346,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
 
         }
@@ -510,7 +511,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace + ex.Message);
+                MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
         }
 
@@ -551,7 +552,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
         }
         private void ejecutar_insertar_ventas()
@@ -634,7 +635,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("insertar_venta");
+                    MessageBox.Show("insertar_venta", "Mensaje", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+       
                 }
             }
 
@@ -718,7 +720,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("insertar_cotizacion");
+                    MessageBox.Show("insertar_cotizacion", "Mensaje", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            
                 }
 
             }
@@ -827,7 +830,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }    
        
         }
@@ -854,7 +857,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
         }
 
@@ -889,7 +892,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                         cmd.Parameters.AddWithValue("@Estado", "EN ESPERA");
                     }
                 
-                    cmd.Parameters.AddWithValue("@Descripcion", lbldescripcion.Text);
+                    cmd.Parameters.AddWithValue("@Descripcion", tipo + lbldescripcion.Text);
                     cmd.Parameters.AddWithValue("@Codigo", lblcodigo.Text);
                     cmd.Parameters.AddWithValue("@Stock", lblStock_de_Productos);
                     cmd.Parameters.AddWithValue("@Se_vende_a", sevendePor);
@@ -941,7 +944,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.StackTrace + ex.Message);
+                  MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 }
                
 
@@ -961,7 +964,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception)
             {
-
+                MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
             }
         }
@@ -985,7 +988,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                     cmd.Parameters.AddWithValue("@unidades", "Unidad");
                     cmd.Parameters.AddWithValue("@Cantidad_mostrada", txtpantalla);
                     cmd.Parameters.AddWithValue("@Estado", "EN ESPERA");
-                    cmd.Parameters.AddWithValue("@Descripcion", lbldescripcion.Text);
+                    cmd.Parameters.AddWithValue("@Descripcion", tipo + lbldescripcion.Text);
                     cmd.Parameters.AddWithValue("@Codigo", lblcodigo.Text);
                     cmd.Parameters.AddWithValue("@Stock", lblStock_de_Productos);
                     cmd.Parameters.AddWithValue("@Se_vende_a", sevendePor);
@@ -1032,8 +1035,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.StackTrace + ex.Message);
-                }
+                MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
          }       
            
         
@@ -1092,7 +1095,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                         }
                     }
 
@@ -1162,7 +1165,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-              
+                MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
         }
         private void editar_detalle_venta_sumar()
@@ -1212,7 +1215,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception)
             {
-
+                MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
             }
 
@@ -1245,7 +1248,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception)
             {
-
+                MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
         }
         private void ejecutar_editar_detalle_venta_restar()
@@ -1269,7 +1272,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
 
         }
@@ -1296,7 +1299,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
         }
 
@@ -1454,7 +1457,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Escoja el tipo de busqueda", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
         }
 
@@ -1895,8 +1898,8 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
                 MessageBox.Show("Esta venta se mantendrá en espera por 15 minutos, Pasado ese tiempo no podrás recuperarlo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-            {
-                MessageBox.Show("Ingrese una referencia");
+            {     
+                MessageBox.Show("Ingrese una referencia", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void editarVentaEspera()

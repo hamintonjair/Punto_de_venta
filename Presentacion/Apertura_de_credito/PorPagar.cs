@@ -29,7 +29,9 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
             }
             else
             {
-                MessageBox.Show("Ingrese un saldo");
+
+                MessageBox.Show("Ingrese un saldo", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+             
             }
         }
         private void rellenarCamposVacios()
@@ -56,7 +58,8 @@ namespace Punto_de_venta.Presentacion.Apertura_de_credito
                 {
                     if (funcion.insertar_cobro_proveedores(param) == true)
                     {
-                        MessageBox.Show("Registrado");
+                      
+                        MessageBox.Show("Registrado", "Mensaje", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                         limpiar();
                         buscar_Proveedores();
                     }

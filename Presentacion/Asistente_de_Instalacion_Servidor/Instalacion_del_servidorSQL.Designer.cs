@@ -64,6 +64,27 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.lblBasededatos = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
             this.Label8 = new System.Windows.Forms.Label();
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.TimerCRARINI = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.Panel4 = new System.Windows.Forms.Panel();
             this.PictureBox2 = new System.Windows.Forms.PictureBox();
@@ -80,11 +101,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel9 = new System.Windows.Forms.Panel();
             this.lblbuscador_de_servidores = new System.Windows.Forms.Label();
             this.Panel1 = new System.Windows.Forms.Panel();
-            this.Button2 = new System.Windows.Forms.Button();
-            this.timer4 = new System.Windows.Forms.Timer(this.components);
-            this.TimerCRARINI = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.Button2 = new System.Windows.Forms.Label();
             this.Panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).BeginInit();
             this.Panel3.SuspendLayout();
@@ -92,10 +109,16 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel10.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel14.SuspendLayout();
+            this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel12.SuspendLayout();
             this.Panel2.SuspendLayout();
             this.Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
-            this.Panel6.SuspendLayout();
             this.Panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.Panel9.SuspendLayout();
@@ -104,6 +127,7 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // Panel8
             // 
             this.Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.Panel8.Controls.Add(this.panel12);
             this.Panel8.Controls.Add(this.panel11);
             this.Panel8.Controls.Add(this.PictureBox7);
             this.Panel8.Controls.Add(this.lblwindows);
@@ -448,16 +472,239 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Label8.TabIndex = 618;
             this.Label8.Text = "Nombre de Instancia:";
             // 
+            // timer4
+            // 
+            this.timer4.Interval = 10;
+            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
+            // 
+            // TimerCRARINI
+            // 
+            this.TimerCRARINI.Interval = 10;
+            this.TimerCRARINI.Tick += new System.EventHandler(this.TimerCRARINI_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 10;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // timer3
+            // 
+            this.timer3.Interval = 10;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::Punto_de_venta.Properties.Resources.naranja;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(35, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(413, 84);
+            this.button1.TabIndex = 610;
+            this.button1.Text = "Instalar Servidor";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.label17);
+            this.panel17.Controls.Add(this.panel18);
+            this.panel17.Location = new System.Drawing.Point(14, 112);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(452, 153);
+            this.panel17.TabIndex = 619;
+            // 
+            // panel18
+            // 
+            this.panel18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel18.BackgroundImage")));
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel18.Location = new System.Drawing.Point(0, 0);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(3, 153);
+            this.panel18.TabIndex = 615;
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(3, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(449, 153);
+            this.label17.TabIndex = 614;
+            this.label17.Text = "Buscando servidores instalados...";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.White;
+            this.panel13.Controls.Add(this.pictureBox3);
+            this.panel13.Controls.Add(this.panel14);
+            this.panel13.Controls.Add(this.label16);
+            this.panel13.Controls.Add(this.pictureBox4);
+            this.panel13.Controls.Add(this.panel16);
+            this.panel13.Location = new System.Drawing.Point(2, 105);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(482, 556);
+            this.panel13.TabIndex = 618;
+            this.panel13.Visible = false;
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel16.Location = new System.Drawing.Point(0, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(482, 13);
+            this.panel16.TabIndex = 618;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(0, 13);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(482, 57);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 604;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.label16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(0, 70);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(482, 173);
+            this.label16.TabIndex = 616;
+            this.label16.Text = "Instalando Servidor...\r\n\r\nNo Cierre esta Ventana, se cerrará Automaticamente cuan" +
+    "do esté todo Listo";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.panel15);
+            this.panel14.Controls.Add(this.label14);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel14.Location = new System.Drawing.Point(0, 243);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(482, 64);
+            this.panel14.TabIndex = 620;
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(0, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(280, 64);
+            this.label14.TabIndex = 619;
+            this.label14.Text = "Tiempo estimado: 5 a 10 minutos";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.panel15.Controls.Add(this.label3);
+            this.panel15.Controls.Add(this.label10);
+            this.panel15.Controls.Add(this.label12);
+            this.panel15.Controls.Add(this.label13);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel15.Location = new System.Drawing.Point(280, 0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(202, 64);
+            this.panel15.TabIndex = 619;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(125, 33);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(27, 20);
+            this.label13.TabIndex = 618;
+            this.label13.Text = "00";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(125, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(24, 13);
+            this.label12.TabIndex = 618;
+            this.label12.Text = "seg";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(59, 33);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(27, 20);
+            this.label10.TabIndex = 618;
+            this.label10.Text = "00";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(63, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(23, 13);
+            this.label3.TabIndex = 618;
+            this.label3.Text = "min";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 307);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(482, 249);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 617;
+            this.pictureBox3.TabStop = false;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.panel12.Controls.Add(this.panel13);
+            this.panel12.Controls.Add(this.panel17);
+            this.panel12.Controls.Add(this.button1);
+            this.panel12.Location = new System.Drawing.Point(196, 12);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(62, 20);
+            this.panel12.TabIndex = 621;
+            this.panel12.Visible = false;
+            // 
             // Panel2
             // 
             this.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.Panel2.Controls.Add(this.Panel7);
+            this.Panel2.Controls.Add(this.Button2);
             this.Panel2.Controls.Add(this.Panel4);
             this.Panel2.Controls.Add(this.Panel9);
-            this.Panel2.Controls.Add(this.Button2);
-            this.Panel2.Location = new System.Drawing.Point(69, 99);
+            this.Panel2.Location = new System.Drawing.Point(37, 120);
             this.Panel2.Name = "Panel2";
             this.Panel2.Size = new System.Drawing.Size(485, 539);
-            this.Panel2.TabIndex = 620;
+            this.Panel2.TabIndex = 622;
             // 
             // Panel4
             // 
@@ -478,35 +725,33 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.PictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
             this.PictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
-            this.PictureBox2.Location = new System.Drawing.Point(0, 307);
+            this.PictureBox2.Location = new System.Drawing.Point(0, 243);
             this.PictureBox2.Name = "PictureBox2";
-            this.PictureBox2.Size = new System.Drawing.Size(482, 249);
+            this.PictureBox2.Size = new System.Drawing.Size(482, 313);
             this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBox2.TabIndex = 617;
             this.PictureBox2.TabStop = false;
             // 
             // Panel6
             // 
-            this.Panel6.Controls.Add(this.Panel7);
-            this.Panel6.Controls.Add(this.Label2);
-            this.Panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel6.Location = new System.Drawing.Point(0, 243);
             this.Panel6.Name = "Panel6";
-            this.Panel6.Size = new System.Drawing.Size(482, 64);
+            this.Panel6.Size = new System.Drawing.Size(482, 47);
             this.Panel6.TabIndex = 620;
             // 
             // Panel7
             // 
             this.Panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
             this.Panel7.Controls.Add(this.Label5);
+            this.Panel7.Controls.Add(this.Label2);
             this.Panel7.Controls.Add(this.min);
             this.Panel7.Controls.Add(this.Label4);
             this.Panel7.Controls.Add(this.seg);
-            this.Panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel7.Location = new System.Drawing.Point(280, 0);
+            this.Panel7.Location = new System.Drawing.Point(383, 7);
             this.Panel7.Name = "Panel7";
-            this.Panel7.Size = new System.Drawing.Size(202, 64);
+            this.Panel7.Size = new System.Drawing.Size(12, 16);
             this.Panel7.TabIndex = 619;
+            this.Panel7.Visible = false;
             // 
             // Label5
             // 
@@ -554,14 +799,13 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // 
             this.Label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
             this.Label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.Label2.ForeColor = System.Drawing.Color.Black;
-            this.Label2.Location = new System.Drawing.Point(0, 0);
+            this.Label2.Location = new System.Drawing.Point(32, 21);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(280, 64);
+            this.Label2.Size = new System.Drawing.Size(54, 32);
             this.Label2.TabIndex = 619;
-            this.Label2.Text = "Tiempo estimado: 5 a 10 minutos";
+            this.Label2.Text = "Tiempo estimado: 6 minutos";
             this.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Label1
@@ -633,42 +877,16 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             // 
             // Button2
             // 
-            this.Button2.BackColor = System.Drawing.Color.Transparent;
-            this.Button2.BackgroundImage = global::Punto_de_venta.Properties.Resources.naranja;
-            this.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button2.FlatAppearance.BorderSize = 0;
-            this.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold);
-            this.Button2.ForeColor = System.Drawing.Color.Black;
-            this.Button2.Location = new System.Drawing.Point(35, 19);
+            this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button2.ForeColor = System.Drawing.SystemColors.Window;
+            this.Button2.Location = new System.Drawing.Point(23, 30);
             this.Button2.Name = "Button2";
-            this.Button2.Size = new System.Drawing.Size(413, 84);
-            this.Button2.TabIndex = 610;
-            this.Button2.Text = "Instalar Servidor";
-            this.Button2.UseVisualStyleBackColor = false;
+            this.Button2.Size = new System.Drawing.Size(440, 64);
+            this.Button2.TabIndex = 624;
+            this.Button2.Text = "Seguro no instlaste el Motor de base de datos SQLserver, cancela y inicia de nuev" +
+    "o la instalación.";
+            this.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Button2.Visible = false;
-            this.Button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // timer4
-            // 
-            this.timer4.Interval = 10;
-            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
-            // 
-            // TimerCRARINI
-            // 
-            this.TimerCRARINI.Interval = 10;
-            this.TimerCRARINI.Tick += new System.EventHandler(this.TimerCRARINI_Tick);
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 10;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // timer3
-            // 
-            this.timer3.Interval = 10;
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // Instalacion_del_servidorSQL
             // 
@@ -676,8 +894,8 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(178)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(1271, 685);
-            this.Controls.Add(this.Panel3);
             this.Controls.Add(this.Panel2);
+            this.Controls.Add(this.Panel3);
             this.Controls.Add(this.Panel8);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Instalacion_del_servidorSQL";
@@ -694,10 +912,17 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Panel10.PerformLayout();
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox2.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel14.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel12.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
             this.Panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
-            this.Panel6.ResumeLayout(false);
             this.Panel7.ResumeLayout(false);
             this.Panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
@@ -736,6 +961,32 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
         internal System.Windows.Forms.Label lblBasededatos;
         internal System.Windows.Forms.Label Label6;
         internal System.Windows.Forms.Label Label8;
+        private System.Windows.Forms.Timer timer4;
+        private System.Windows.Forms.Timer TimerCRARINI;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Panel panel11;
+        internal System.Windows.Forms.GroupBox GroupBox6;
+        internal System.Windows.Forms.TextBox txtCrearUsuarioDb;
+        internal System.Windows.Forms.TextBox txtusuario;
+        internal System.Windows.Forms.Label Label15;
+        internal System.Windows.Forms.Panel panel12;
+        internal System.Windows.Forms.Panel panel13;
+        internal System.Windows.Forms.PictureBox pictureBox3;
+        internal System.Windows.Forms.Panel panel14;
+        internal System.Windows.Forms.Panel panel15;
+        internal System.Windows.Forms.Label label3;
+        internal System.Windows.Forms.Label label10;
+        internal System.Windows.Forms.Label label12;
+        internal System.Windows.Forms.Label label13;
+        internal System.Windows.Forms.Label label14;
+        internal System.Windows.Forms.Label label16;
+        internal System.Windows.Forms.PictureBox pictureBox4;
+        internal System.Windows.Forms.Panel panel16;
+        internal System.Windows.Forms.Panel panel17;
+        internal System.Windows.Forms.Label label17;
+        internal System.Windows.Forms.Panel panel18;
+        internal System.Windows.Forms.Button button1;
         internal System.Windows.Forms.Panel Panel2;
         internal System.Windows.Forms.Panel Panel4;
         internal System.Windows.Forms.PictureBox PictureBox2;
@@ -752,15 +1003,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
         internal System.Windows.Forms.Panel Panel9;
         internal System.Windows.Forms.Label lblbuscador_de_servidores;
         internal System.Windows.Forms.Panel Panel1;
-        internal System.Windows.Forms.Button Button2;
-        private System.Windows.Forms.Timer timer4;
-        private System.Windows.Forms.Timer TimerCRARINI;
-        private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Timer timer3;
-        private System.Windows.Forms.Panel panel11;
-        internal System.Windows.Forms.GroupBox GroupBox6;
-        internal System.Windows.Forms.TextBox txtCrearUsuarioDb;
-        internal System.Windows.Forms.TextBox txtusuario;
-        internal System.Windows.Forms.Label Label15;
+        internal System.Windows.Forms.Label Button2;
     }
 }

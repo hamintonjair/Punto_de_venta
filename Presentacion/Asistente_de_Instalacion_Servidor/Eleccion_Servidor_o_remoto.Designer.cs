@@ -39,21 +39,14 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.datalistado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.PictureBox7 = new System.Windows.Forms.PictureBox();
-            this.Panel4 = new System.Windows.Forms.Panel();
-            this.Label4 = new System.Windows.Forms.Label();
-            this.Button3 = new System.Windows.Forms.Button();
-            this.Button2 = new System.Windows.Forms.Button();
-            this.Label9 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
-            this.Panel1 = new System.Windows.Forms.Panel();
-            this.Panel2 = new System.Windows.Forms.Panel();
-            this.PictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Button2 = new System.Windows.Forms.Button();
+            this.Panel4 = new System.Windows.Forms.Panel();
             this.Panel8.SuspendLayout();
             this.Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).BeginInit();
             this.Panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel8
@@ -156,55 +149,22 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.PictureBox7.TabIndex = 604;
             this.PictureBox7.TabStop = false;
             // 
-            // Panel4
+            // Label1
             // 
-            this.Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
-            this.Panel4.Controls.Add(this.Label4);
-            this.Panel4.Controls.Add(this.Button3);
-            this.Panel4.Controls.Add(this.Button2);
-            this.Panel4.Controls.Add(this.Label9);
-            this.Panel4.Controls.Add(this.Label1);
-            this.Panel4.Controls.Add(this.Panel1);
-            this.Panel4.Controls.Add(this.Panel2);
-            this.Panel4.Controls.Add(this.PictureBox1);
-            this.Panel4.Location = new System.Drawing.Point(91, 118);
-            this.Panel4.Name = "Panel4";
-            this.Panel4.Size = new System.Drawing.Size(1027, 464);
-            this.Panel4.TabIndex = 613;
-            // 
-            // Label4
-            // 
-            this.Label4.BackColor = System.Drawing.Color.Transparent;
-            this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.Label4.ForeColor = System.Drawing.Color.White;
-            this.Label4.Location = new System.Drawing.Point(669, 339);
-            this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(318, 103);
-            this.Label4.TabIndex = 0;
-            this.Label4.Text = "Se Conecta a la Computadora Principal siempre y cuando la Principal este Encendid" +
-    "a";
-            this.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Button3
-            // 
-            this.Button3.BackColor = System.Drawing.Color.Transparent;
-            this.Button3.BackgroundImage = global::Punto_de_venta.Properties.Resources.verde;
-            this.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button3.FlatAppearance.BorderSize = 0;
-            this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold);
-            this.Button3.ForeColor = System.Drawing.Color.Black;
-            this.Button3.Location = new System.Drawing.Point(39, 324);
-            this.Button3.Name = "Button3";
-            this.Button3.Size = new System.Drawing.Size(247, 84);
-            this.Button3.TabIndex = 609;
-            this.Button3.Text = "Secundaria";
-            this.Button3.UseVisualStyleBackColor = false;
-            this.Button3.Click += new System.EventHandler(this.Button3_Click);
+            this.Label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold);
+            this.Label1.ForeColor = System.Drawing.Color.White;
+            this.Label1.Location = new System.Drawing.Point(0, 0);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(1027, 242);
+            this.Label1.TabIndex = 605;
+            this.Label1.Text = "Instalar Sisconta";
+            this.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Button2
             // 
+            this.Button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Button2.BackColor = System.Drawing.Color.Transparent;
             this.Button2.BackgroundImage = global::Punto_de_venta.Properties.Resources.verde;
             this.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -213,64 +173,26 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             this.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold);
             this.Button2.ForeColor = System.Drawing.Color.Black;
-            this.Button2.Location = new System.Drawing.Point(137, 122);
+            this.Button2.Location = new System.Drawing.Point(380, 253);
             this.Button2.Name = "Button2";
             this.Button2.Size = new System.Drawing.Size(247, 84);
             this.Button2.TabIndex = 608;
-            this.Button2.Text = "Principal";
+            this.Button2.Text = "Iniciar";
             this.Button2.UseVisualStyleBackColor = false;
             this.Button2.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // Label9
+            // Panel4
             // 
-            this.Label9.BackColor = System.Drawing.Color.Transparent;
-            this.Label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.Label9.ForeColor = System.Drawing.Color.White;
-            this.Label9.Location = new System.Drawing.Point(571, 132);
-            this.Label9.Name = "Label9";
-            this.Label9.Size = new System.Drawing.Size(387, 103);
-            this.Label9.TabIndex = 0;
-            this.Label9.Text = "Esta Computadora debe estar Encendida para que las Computadoras\r\nSecundarias se C" +
-    "onecten. Si se apaga no podran conectarse.";
-            this.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Label1
-            // 
-            this.Label1.AutoSize = true;
-            this.Label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold);
-            this.Label1.ForeColor = System.Drawing.Color.White;
-            this.Label1.Location = new System.Drawing.Point(228, 16);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(473, 46);
-            this.Label1.TabIndex = 605;
-            this.Label1.Text = "¿Esta Computadora es?";
-            // 
-            // Panel1
-            // 
-            this.Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Panel1.BackgroundImage")));
-            this.Panel1.Location = new System.Drawing.Point(555, 113);
-            this.Panel1.Name = "Panel1";
-            this.Panel1.Size = new System.Drawing.Size(3, 135);
-            this.Panel1.TabIndex = 606;
-            // 
-            // Panel2
-            // 
-            this.Panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Panel2.BackgroundImage")));
-            this.Panel2.Location = new System.Drawing.Point(653, 313);
-            this.Panel2.Name = "Panel2";
-            this.Panel2.Size = new System.Drawing.Size(3, 139);
-            this.Panel2.TabIndex = 607;
-            // 
-            // PictureBox1
-            // 
-            this.PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox1.Image")));
-            this.PictureBox1.Location = new System.Drawing.Point(236, 113);
-            this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(472, 339);
-            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox1.TabIndex = 604;
-            this.PictureBox1.TabStop = false;
+            this.Panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(106)))), ((int)(((byte)(93)))));
+            this.Panel4.Controls.Add(this.Button2);
+            this.Panel4.Controls.Add(this.Label1);
+            this.Panel4.Location = new System.Drawing.Point(91, 118);
+            this.Panel4.Name = "Panel4";
+            this.Panel4.Size = new System.Drawing.Size(1027, 464);
+            this.Panel4.TabIndex = 613;
             // 
             // Eleccion_Servidor_o_remoto
             // 
@@ -291,8 +213,6 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
             ((System.ComponentModel.ISupportInitialize)(this.datalistado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).EndInit();
             this.Panel4.ResumeLayout(false);
-            this.Panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -305,14 +225,8 @@ namespace Punto_de_venta.Presentacion.Asistente_de_Instalacion_Servidor
         internal System.Windows.Forms.DataGridView datalistado;
         internal System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         internal System.Windows.Forms.PictureBox PictureBox7;
-        internal System.Windows.Forms.Panel Panel4;
-        internal System.Windows.Forms.Label Label4;
-        internal System.Windows.Forms.Button Button3;
-        internal System.Windows.Forms.Button Button2;
-        internal System.Windows.Forms.Label Label9;
         internal System.Windows.Forms.Label Label1;
-        internal System.Windows.Forms.Panel Panel1;
-        internal System.Windows.Forms.Panel Panel2;
-        internal System.Windows.Forms.PictureBox PictureBox1;
+        internal System.Windows.Forms.Button Button2;
+        internal System.Windows.Forms.Panel Panel4;
     }
 }

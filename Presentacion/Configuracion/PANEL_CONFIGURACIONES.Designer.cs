@@ -68,9 +68,6 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Panel35 = new System.Windows.Forms.Panel();
             this.Button1 = new System.Windows.Forms.Button();
             this.Label26 = new System.Windows.Forms.Label();
-            this.Panel36 = new System.Windows.Forms.Panel();
-            this.btnCajas = new System.Windows.Forms.Button();
-            this.Label27 = new System.Windows.Forms.Label();
             this.Panel37 = new System.Windows.Forms.Panel();
             this.Button4 = new System.Windows.Forms.Button();
             this.Label29 = new System.Windows.Forms.Label();
@@ -105,7 +102,6 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_empresa)).BeginInit();
             this.Panel35.SuspendLayout();
-            this.Panel36.SuspendLayout();
             this.Panel37.SuspendLayout();
             this.Panel9.SuspendLayout();
             this.Panel10.SuspendLayout();
@@ -131,7 +127,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Panel5.BackColor = System.Drawing.Color.Green;
             this.Panel5.Controls.Add(this.FlowLayoutPanel5);
             this.Panel5.Controls.Add(this.Label6);
-            this.Panel5.Location = new System.Drawing.Point(525, 323);
+            this.Panel5.Location = new System.Drawing.Point(505, 160);
             this.Panel5.Name = "Panel5";
             this.Panel5.Size = new System.Drawing.Size(193, 147);
             this.Panel5.TabIndex = 597;
@@ -203,7 +199,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Panel3.Controls.Add(this.btnEnvios_a_correo);
             this.Panel3.Controls.Add(this.FlowLayoutPanel4);
             this.Panel3.Controls.Add(this.Label38);
-            this.Panel3.Location = new System.Drawing.Point(325, 323);
+            this.Panel3.Location = new System.Drawing.Point(305, 160);
             this.Panel3.Name = "Panel3";
             this.Panel3.Size = new System.Drawing.Size(193, 147);
             this.Panel3.TabIndex = 596;
@@ -292,7 +288,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.panel4.Controls.Add(this.FlowLayoutPanel3);
             this.panel4.Controls.Add(this.Label30);
             this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(52, 323);
+            this.panel4.Location = new System.Drawing.Point(119, 313);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(267, 147);
             this.panel4.TabIndex = 595;
@@ -414,9 +410,9 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Panel38.Controls.Add(this.FlowLayoutPanel2);
             this.Panel38.Controls.Add(this.Label35);
             this.Panel38.ForeColor = System.Drawing.Color.Black;
-            this.Panel38.Location = new System.Drawing.Point(52, 151);
+            this.Panel38.Location = new System.Drawing.Point(119, 160);
             this.Panel38.Name = "Panel38";
-            this.Panel38.Size = new System.Drawing.Size(543, 166);
+            this.Panel38.Size = new System.Drawing.Size(180, 147);
             this.Panel38.TabIndex = 593;
             // 
             // FlowLayoutPanel2
@@ -426,7 +422,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.FlowLayoutPanel2.ForeColor = System.Drawing.Color.DimGray;
             this.FlowLayoutPanel2.Location = new System.Drawing.Point(7, 34);
             this.FlowLayoutPanel2.Name = "FlowLayoutPanel2";
-            this.FlowLayoutPanel2.Size = new System.Drawing.Size(526, 129);
+            this.FlowLayoutPanel2.Size = new System.Drawing.Size(157, 106);
             this.FlowLayoutPanel2.TabIndex = 602;
             // 
             // Panel40
@@ -486,16 +482,15 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(41)))));
             this.panel2.Controls.Add(this.FlowLayoutPanel1);
             this.panel2.Controls.Add(this.Label1);
-            this.panel2.Location = new System.Drawing.Point(52, 18);
+            this.panel2.Location = new System.Drawing.Point(119, 27);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(715, 127);
+            this.panel2.Size = new System.Drawing.Size(580, 127);
             this.panel2.TabIndex = 0;
             // 
             // FlowLayoutPanel1
             // 
             this.FlowLayoutPanel1.Controls.Add(this.Panel16);
             this.FlowLayoutPanel1.Controls.Add(this.Panel35);
-            this.FlowLayoutPanel1.Controls.Add(this.Panel36);
             this.FlowLayoutPanel1.Controls.Add(this.Panel37);
             this.FlowLayoutPanel1.Controls.Add(this.Panel9);
             this.FlowLayoutPanel1.Controls.Add(this.Panel10);
@@ -587,46 +582,6 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Label26.Click += new System.EventHandler(this.Label26_Click);
             // 
-            // Panel36
-            // 
-            this.Panel36.BackColor = System.Drawing.Color.Transparent;
-            this.Panel36.Controls.Add(this.btnCajas);
-            this.Panel36.Controls.Add(this.Label27);
-            this.Panel36.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Panel36.Location = new System.Drawing.Point(177, 3);
-            this.Panel36.Name = "Panel36";
-            this.Panel36.Size = new System.Drawing.Size(81, 70);
-            this.Panel36.TabIndex = 592;
-            // 
-            // btnCajas
-            // 
-            this.btnCajas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCajas.BackgroundImage")));
-            this.btnCajas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCajas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCajas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCajas.FlatAppearance.BorderSize = 0;
-            this.btnCajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCajas.ForeColor = System.Drawing.Color.White;
-            this.btnCajas.Location = new System.Drawing.Point(0, 0);
-            this.btnCajas.Name = "btnCajas";
-            this.btnCajas.Size = new System.Drawing.Size(81, 51);
-            this.btnCajas.TabIndex = 5;
-            this.btnCajas.UseVisualStyleBackColor = true;
-            this.btnCajas.Click += new System.EventHandler(this.btnCajas_Click);
-            // 
-            // Label27
-            // 
-            this.Label27.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Label27.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.Label27.ForeColor = System.Drawing.Color.Black;
-            this.Label27.Location = new System.Drawing.Point(0, 51);
-            this.Label27.Name = "Label27";
-            this.Label27.Size = new System.Drawing.Size(81, 19);
-            this.Label27.TabIndex = 3;
-            this.Label27.Text = "Cajas";
-            this.Label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Panel37
             // 
             this.Panel37.BackColor = System.Drawing.Color.Transparent;
@@ -634,7 +589,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Panel37.Controls.Add(this.Label29);
             this.Panel37.Controls.Add(this.LBLEstado_correo);
             this.Panel37.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Panel37.Location = new System.Drawing.Point(264, 3);
+            this.Panel37.Location = new System.Drawing.Point(177, 3);
             this.Panel37.Name = "Panel37";
             this.Panel37.Size = new System.Drawing.Size(96, 70);
             this.Panel37.TabIndex = 593;
@@ -684,7 +639,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Panel9.Controls.Add(this.Button6);
             this.Panel9.Controls.Add(this.Label3);
             this.Panel9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Panel9.Location = new System.Drawing.Point(366, 3);
+            this.Panel9.Location = new System.Drawing.Point(279, 3);
             this.Panel9.Name = "Panel9";
             this.Panel9.Size = new System.Drawing.Size(81, 70);
             this.Panel9.TabIndex = 594;
@@ -725,7 +680,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Panel10.Controls.Add(this.btnClientes);
             this.Panel10.Controls.Add(this.Label7);
             this.Panel10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Panel10.Location = new System.Drawing.Point(453, 3);
+            this.Panel10.Location = new System.Drawing.Point(366, 3);
             this.Panel10.Name = "Panel10";
             this.Panel10.Size = new System.Drawing.Size(81, 70);
             this.Panel10.TabIndex = 595;
@@ -766,7 +721,7 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Panel11.Controls.Add(this.Button9);
             this.Panel11.Controls.Add(this.Label8);
             this.Panel11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Panel11.Location = new System.Drawing.Point(540, 3);
+            this.Panel11.Location = new System.Drawing.Point(453, 3);
             this.Panel11.Name = "Panel11";
             this.Panel11.Size = new System.Drawing.Size(98, 70);
             this.Panel11.TabIndex = 596;
@@ -852,7 +807,6 @@ namespace Punto_de_venta.Presentacion.Configuracion
             this.Panel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Logo_empresa)).EndInit();
             this.Panel35.ResumeLayout(false);
-            this.Panel36.ResumeLayout(false);
             this.Panel37.ResumeLayout(false);
             this.Panel37.PerformLayout();
             this.Panel9.ResumeLayout(false);
@@ -893,9 +847,6 @@ namespace Punto_de_venta.Presentacion.Configuracion
         internal System.Windows.Forms.Panel Panel35;
         internal System.Windows.Forms.Button Button1;
         internal System.Windows.Forms.Label Label26;
-        internal System.Windows.Forms.Panel Panel36;
-        internal System.Windows.Forms.Button btnCajas;
-        internal System.Windows.Forms.Label Label27;
         internal System.Windows.Forms.Panel Panel37;
         internal System.Windows.Forms.Button Button4;
         internal System.Windows.Forms.Label Label29;

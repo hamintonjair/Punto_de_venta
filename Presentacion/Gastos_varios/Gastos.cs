@@ -105,7 +105,7 @@ namespace Punto_de_venta.Presentacion.Gastos_varios
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                 MessageBox.Show("No se pudo completar el proceso", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);;
 
             }
         }

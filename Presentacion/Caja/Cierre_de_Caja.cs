@@ -102,6 +102,7 @@ namespace Punto_de_venta.Presentacion.Caja
         }
         private void sumar_CreditoPorCobrar()
         {
+
             Obtener_datos.sumar_CreditoPorCobrar(idcaja, fechaInicial, fechafinal, ref creditosPorCobrar);
             lblPorCobrar.Text = creditosPorCobrar.ToString();
 
