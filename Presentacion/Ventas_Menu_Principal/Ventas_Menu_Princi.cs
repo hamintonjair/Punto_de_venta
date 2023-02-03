@@ -2130,9 +2130,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
             //PanelC3
            
-            btnMayoreo.BackColor = Color.FromArgb(45, 45, 45);
-            btnMayoreo.ForeColor = Color.White;
-          
             btnIngresosCaja.BackColor = Color.FromArgb(45, 45, 45);
             btnIngresosCaja.ForeColor = Color.White;
             btnGastos.BackColor = Color.FromArgb(45, 45, 45);
@@ -2204,11 +2201,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             btnCreditoPagar.ForeColor = Color.Black;
 
             //PanelC3
-          
-            btnMayoreo.BackColor = Color.WhiteSmoke;
-           
-            btnMayoreo.ForeColor = Color.Black;
-          
+                    
             btnIngresosCaja.BackColor = Color.WhiteSmoke;
             btnIngresosCaja.ForeColor = Color.Black;
             btnGastos.BackColor = Color.WhiteSmoke;
@@ -2481,5 +2474,7 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             PagosProveedores.PagosForm frm = new PagosProveedores.PagosForm();
             frm.ShowDialog();
         }
+
+
     }
 }

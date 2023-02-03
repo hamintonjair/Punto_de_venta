@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Punto_de_venta", "Punto_de_venta.csproj", "{D2937657-3CC5-48C7-9D0B-AF4B22CAA89D}"
 EndProject
-Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "Setup Sisconta", "..\Setup Sisconta\Setup Sisconta.aiproj", "{F96B978E-6577-4C9A-8269-6BAAE325AEE4}"
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "Sisconta", "..\Sisconta\Sisconta.aiproj", "{E94AB1A8-9F74-4686-9FF9-2CADFB9DF1CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,12 +20,12 @@ Global
 		{D2937657-3CC5-48C7-9D0B-AF4B22CAA89D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2937657-3CC5-48C7-9D0B-AF4B22CAA89D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2937657-3CC5-48C7-9D0B-AF4B22CAA89D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F96B978E-6577-4C9A-8269-6BAAE325AEE4}.All|Any CPU.ActiveCfg = DefaultBuild
-		{F96B978E-6577-4C9A-8269-6BAAE325AEE4}.All|Any CPU.Build.0 = DefaultBuild
-		{F96B978E-6577-4C9A-8269-6BAAE325AEE4}.Debug|Any CPU.ActiveCfg = DefaultBuild
-		{F96B978E-6577-4C9A-8269-6BAAE325AEE4}.Debug|Any CPU.Build.0 = DefaultBuild
-		{F96B978E-6577-4C9A-8269-6BAAE325AEE4}.Release|Any CPU.ActiveCfg = DefaultBuild
-		{F96B978E-6577-4C9A-8269-6BAAE325AEE4}.Release|Any CPU.Build.0 = DefaultBuild
+		{E94AB1A8-9F74-4686-9FF9-2CADFB9DF1CE}.All|Any CPU.ActiveCfg = DefaultBuild
+		{E94AB1A8-9F74-4686-9FF9-2CADFB9DF1CE}.All|Any CPU.Build.0 = DefaultBuild
+		{E94AB1A8-9F74-4686-9FF9-2CADFB9DF1CE}.Debug|Any CPU.ActiveCfg = DefaultBuild
+		{E94AB1A8-9F74-4686-9FF9-2CADFB9DF1CE}.Debug|Any CPU.Build.0 = DefaultBuild
+		{E94AB1A8-9F74-4686-9FF9-2CADFB9DF1CE}.Release|Any CPU.ActiveCfg = DefaultBuild
+		{E94AB1A8-9F74-4686-9FF9-2CADFB9DF1CE}.Release|Any CPU.Build.0 = DefaultBuild
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

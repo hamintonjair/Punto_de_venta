@@ -56,7 +56,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.StatusStrip4 = new System.Windows.Forms.StatusStrip();
-            this.btnMayoreo = new System.Windows.Forms.ToolStripButton();
             this.btnIngresosCaja = new System.Windows.Forms.ToolStripButton();
             this.btnGastos = new System.Windows.Forms.ToolStripButton();
             this.datalistado_stock_detalle_venta = new System.Windows.Forms.DataGridView();
@@ -296,11 +295,11 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.button12 = new System.Windows.Forms.Button();
             this.btncotizador = new System.Windows.Forms.Button();
             this.PagosProveedores = new System.Windows.Forms.Button();
-            this.btnverMovimientosCaja = new System.Windows.Forms.Button();
             this.btnCreditoPagar = new System.Windows.Forms.Button();
-            this.btnCreditoCobrar = new System.Windows.Forms.Button();
-            this.BtnCerrar_turno = new System.Windows.Forms.Button();
             this.Cobros = new System.Windows.Forms.Button();
+            this.btnCreditoCobrar = new System.Windows.Forms.Button();
+            this.btnverMovimientosCaja = new System.Windows.Forms.Button();
+            this.BtnCerrar_turno = new System.Windows.Forms.Button();
             this.PanelEnespera = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -376,26 +375,14 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.StatusStrip4.Dock = System.Windows.Forms.DockStyle.None;
             this.StatusStrip4.Enabled = false;
             this.StatusStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnMayoreo,
             this.btnIngresosCaja,
             this.btnGastos});
-            this.StatusStrip4.Location = new System.Drawing.Point(882, 0);
+            this.StatusStrip4.Location = new System.Drawing.Point(971, 0);
             this.StatusStrip4.Name = "StatusStrip4";
-            this.StatusStrip4.Size = new System.Drawing.Size(366, 49);
+            this.StatusStrip4.Size = new System.Drawing.Size(277, 49);
             this.StatusStrip4.TabIndex = 602;
             this.StatusStrip4.Text = "StatusStrip4";
-            // 
-            // btnMayoreo
-            // 
-            this.btnMayoreo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMayoreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMayoreo.ForeColor = System.Drawing.Color.Black;
-            this.btnMayoreo.Image = ((System.Drawing.Image)(resources.GetObject("btnMayoreo.Image")));
-            this.btnMayoreo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnMayoreo.Name = "btnMayoreo";
-            this.btnMayoreo.Size = new System.Drawing.Size(89, 47);
-            this.btnMayoreo.Text = "Mayoreo";
-            this.btnMayoreo.Click += new System.EventHandler(this.btnMayoreo_Click);
+            //this.StatusStrip4.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.StatusStrip4_ItemClicked);
             // 
             // btnIngresosCaja
             // 
@@ -3666,28 +3653,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.PagosProveedores.UseVisualStyleBackColor = false;
             this.PagosProveedores.Click += new System.EventHandler(this.PagosProveedores_Click);
             // 
-            // btnverMovimientosCaja
-            // 
-            this.btnverMovimientosCaja.BackColor = System.Drawing.Color.Transparent;
-            this.btnverMovimientosCaja.BackgroundImage = global::Punto_de_venta.Properties.Resources.azul;
-            this.btnverMovimientosCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnverMovimientosCaja.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnverMovimientosCaja.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnverMovimientosCaja.Enabled = false;
-            this.btnverMovimientosCaja.FlatAppearance.BorderSize = 0;
-            this.btnverMovimientosCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnverMovimientosCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnverMovimientosCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnverMovimientosCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnverMovimientosCaja.ForeColor = System.Drawing.Color.White;
-            this.btnverMovimientosCaja.Location = new System.Drawing.Point(1251, 0);
-            this.btnverMovimientosCaja.Name = "btnverMovimientosCaja";
-            this.btnverMovimientosCaja.Size = new System.Drawing.Size(92, 48);
-            this.btnverMovimientosCaja.TabIndex = 605;
-            this.btnverMovimientosCaja.Text = "Ver Ingresos y Salidas";
-            this.btnverMovimientosCaja.UseVisualStyleBackColor = false;
-            this.btnverMovimientosCaja.Click += new System.EventHandler(this.btnverMovimientosCaja_Click);
-            // 
             // btnCreditoPagar
             // 
             this.btnCreditoPagar.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -3710,6 +3675,27 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btnCreditoPagar.UseVisualStyleBackColor = false;
             this.btnCreditoPagar.Click += new System.EventHandler(this.btnCreditoPagar_Click);
             // 
+            // Cobros
+            // 
+            this.Cobros.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Cobros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cobros.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Cobros.FlatAppearance.BorderSize = 0;
+            this.Cobros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.Cobros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.Cobros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Cobros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cobros.Image = ((System.Drawing.Image)(resources.GetObject("Cobros.Image")));
+            this.Cobros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Cobros.Location = new System.Drawing.Point(184, 0);
+            this.Cobros.Name = "Cobros";
+            this.Cobros.Size = new System.Drawing.Size(116, 48);
+            this.Cobros.TabIndex = 2;
+            this.Cobros.Text = "Cobros a clientes";
+            this.Cobros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Cobros.UseVisualStyleBackColor = false;
+            this.Cobros.Click += new System.EventHandler(this.Cobros_Click);
+            // 
             // btnCreditoCobrar
             // 
             this.btnCreditoCobrar.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -3731,6 +3717,28 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.btnCreditoCobrar.UseVisualStyleBackColor = false;
             this.btnCreditoCobrar.Click += new System.EventHandler(this.btnCreditoCobrar_Click);
             // 
+            // btnverMovimientosCaja
+            // 
+            this.btnverMovimientosCaja.BackColor = System.Drawing.Color.Transparent;
+            this.btnverMovimientosCaja.BackgroundImage = global::Punto_de_venta.Properties.Resources.azul;
+            this.btnverMovimientosCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnverMovimientosCaja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnverMovimientosCaja.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnverMovimientosCaja.Enabled = false;
+            this.btnverMovimientosCaja.FlatAppearance.BorderSize = 0;
+            this.btnverMovimientosCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnverMovimientosCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnverMovimientosCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnverMovimientosCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnverMovimientosCaja.ForeColor = System.Drawing.Color.White;
+            this.btnverMovimientosCaja.Location = new System.Drawing.Point(1251, 0);
+            this.btnverMovimientosCaja.Name = "btnverMovimientosCaja";
+            this.btnverMovimientosCaja.Size = new System.Drawing.Size(92, 48);
+            this.btnverMovimientosCaja.TabIndex = 605;
+            this.btnverMovimientosCaja.Text = "Ver Ingresos y Salidas";
+            this.btnverMovimientosCaja.UseVisualStyleBackColor = false;
+            this.btnverMovimientosCaja.Click += new System.EventHandler(this.btnverMovimientosCaja_Click);
+            // 
             // BtnCerrar_turno
             // 
             this.BtnCerrar_turno.BackColor = System.Drawing.Color.Transparent;
@@ -3751,27 +3759,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
             this.BtnCerrar_turno.Text = "Cerrar Turno";
             this.BtnCerrar_turno.UseVisualStyleBackColor = false;
             this.BtnCerrar_turno.Click += new System.EventHandler(this.BtnCerrar_turno_Click);
-            // 
-            // Cobros
-            // 
-            this.Cobros.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Cobros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Cobros.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Cobros.FlatAppearance.BorderSize = 0;
-            this.Cobros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.Cobros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.Cobros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Cobros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cobros.Image = ((System.Drawing.Image)(resources.GetObject("Cobros.Image")));
-            this.Cobros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Cobros.Location = new System.Drawing.Point(184, 0);
-            this.Cobros.Name = "Cobros";
-            this.Cobros.Size = new System.Drawing.Size(116, 48);
-            this.Cobros.TabIndex = 2;
-            this.Cobros.Text = "Cobros a clientes";
-            this.Cobros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Cobros.UseVisualStyleBackColor = false;
-            this.Cobros.Click += new System.EventHandler(this.Cobros_Click);
             // 
             // PanelEnespera
             // 
@@ -4009,7 +3996,6 @@ namespace Punto_de_venta.Presentacion.Ventas_Menu_Principal
 
         #endregion
         internal System.Windows.Forms.StatusStrip StatusStrip4;
-        internal System.Windows.Forms.ToolStripButton btnMayoreo;
         internal System.Windows.Forms.ToolStripButton btnIngresosCaja;
         internal System.Windows.Forms.ToolStripButton btnGastos;
         internal System.Windows.Forms.Button BtnCerrar_turno;

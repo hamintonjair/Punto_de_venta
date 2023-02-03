@@ -303,7 +303,7 @@ namespace Punto_de_venta.Presentacion.Admin_nivel_dios
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("No hay caja iniciada", "Inicio de caja", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

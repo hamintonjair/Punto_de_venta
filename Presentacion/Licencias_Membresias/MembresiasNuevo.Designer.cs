@@ -115,7 +115,8 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(1314, 92);
             this.Label1.TabIndex = 6;
-            this.Label1.Text = "Sigue usando \"JOJAMA\" por Solo $ 450.000 (Pesos  Colombianos)\r\npor Todo 1 AÑO";
+            this.Label1.Text = "Sigue usando \"Sisconta\" por Solo $ 450.000 (Pesos  Colombianos)\r\npor Todo 1 AÑO -" +
+    " Membresia de por vida $1.500.000";
             this.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Label2
@@ -289,7 +290,7 @@ namespace Punto_de_venta.Presentacion.Licencias_Membresias
             this.MaximizeBox = false;
             this.Name = "MembresiasNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Membresias";
+            this.Text = "Membresia";
             this.Load += new System.EventHandler(this.MembresiasNuevo_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox3)).EndInit();

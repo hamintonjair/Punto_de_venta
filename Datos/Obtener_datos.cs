@@ -1209,14 +1209,16 @@ namespace Punto_de_venta.Datos
         public static void mostrarTemaCaja(ref string Tema)
         {
             try
-            {
-                Obtener_id_caja_PorSerial(ref idcaja);
-                ConexionData.abrir();
-                SqlCommand da = new SqlCommand("mostrarTemaCaja", ConexionData.conectar);
-                da.CommandType = CommandType.StoredProcedure;
-                da.Parameters.AddWithValue("@idcaja", idcaja);
-                Tema = da.ExecuteScalar().ToString();
-                ConexionData.cerrar();
+            {                
+                    Obtener_id_caja_PorSerial(ref idcaja);
+                    ConexionData.abrir();
+                    SqlCommand da = new SqlCommand("mostrarTemaCaja", ConexionData.conectar);
+                    da.CommandType = CommandType.StoredProcedure;
+                    da.Parameters.AddWithValue("@idcaja", idcaja);
+                    Tema = da.ExecuteScalar().ToString();
+                    ConexionData.cerrar();
+               
+          
             }
             catch (Exception ex)
             {

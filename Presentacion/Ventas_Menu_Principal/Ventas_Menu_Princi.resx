@@ -121,30 +121,6 @@
     <value>373, 329</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnMayoreo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQlSURBVFhH5VVtaFtVGD5+i6xOtrUmWpMqY5NoTe7Jlw6h
-        4A8RGSrDKDJ12ntvthXnB/pPJH+6rIjgD7XSJTBTEWX4o+bz3pOOTOcHSrHNWp00iYFuTdOJ4KZTt6yL
-        73tzyrJ6c7u41B/6wMPNue/z3vec87znhPw3USWX+ZnTJ6nCoMiEd5CySt+VGJV9+21Xc9XKYVfSc72k
-        0i9lRqv1lFT7nJSy38FlK4dAgFwOq94iMvqhzISTixN4Kmr7RU473Fy2spBT1AxFP5KZ7ezmqPlMD6ML
-        /9oEnk27bgP/49rKk0JZYkJQTtBZiXWfWPEJgM8O2PbPsbio0GPw+6Hto/abYZx7hnWX/Irzdi5tHuht
-        r+q60592WvirCyArjk3Q6RPaylP0e39aeADfBzI9V0oK3YyT8Y85r9LEzUL7CBN24Cqww3tTro08pEFk
-        zgfFJJ3WijM63tKt3pVcfw189JVtcforLwBHCjyGRsO4qAiPo8e1mOMAPLu1xFagd2RTG2zd66Ji+x27
-        GXz9BIrM8GJD8HwBeJyPY9tT9i6eeukQlbvXwEffxqP0BNtwCra+vy9jWyWlHU9rHQ3vofBpfII97/Uy
-        4SaeeunAzhVV+jGeX23rVeEltAJjvv2+K6Dwy1sZ/VMrrtK3tmXsN2iJrQB4ul5WhIS2rXiOVerHJuRh
-        Df6o8zqw5jm4459Hm/hrDVWY4FzCc1857nqyHHNvbcio5xGech54juvu8aOw3Q/jnwsPXxRKSUd7KeGd
-        KCe81UzCu9CIED/NU2roy7hNsmL/ihefgtXdz0NN4aeRjW3F962HipGuanG4ASGWG771Z55SAx4r6PKD
-        uAN+Jrj466Yx9gZZNx4k2cNBUl2GFZ5yHuKo98Yd6l0dfPiPcCS8tm16cO2h/N6OqiGHOk7wlNailLy3
-        fT7uys5DDxhxKmE7y1NaiyNh6IHh5XugOHzLSZ7SWny7m7RfTA9kgmSBpyyPYqbn2rm4x1eKu/rmY+6d
-        esRYKeZ5dPaDDevA40//5vlSNtMDR5OezmMJbwHPthFno5788eQ9At4Der7Xs6kemAl1rilGrN/o+lnP
-        iOXrH8Nd1uI+y0HdeB1zEeuF94ARsgOkE3zNT4J3oQA5p0eMgbfTU/3EMdFPJoy0SNBWSDnmebEcd7/a
-        kDH3a3inF/dZTblwx2fjb67+Iz9o/k2PGENNYchsyYVNzEj7Q3jVqcJQ+wzR7uQ4+GdAaK5szVfnNPo8
-        EvCe0yPGULPYA0ZaJCyqQgoh83w+ZKoAz+gxEzItFPaaRgsRs6UQMn2BYz0dUtOCpqY1HzDSAitYm+BZ
-        RK+WYfa7PURY7AEjoibbTyj8zi6NLaV2D0zuIRJwZ0MGSd/kbrJlbICsPjxAHtPGejokxFCDWswx1NYo
-        8R7/34KQvwBkaiR+GZtKzwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="btnIngresosCaja.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgUAAAIFCAYAAABCnI4NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
